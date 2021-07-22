@@ -1,0 +1,417 @@
+<div class="mt-4 mx-3  card fam-card" :id="'f'+index">
+       <div class="card-header row mx-0">
+              <h2 class="px-3 my-1 col-md-4"
+                  style='font-size:.8em'>
+                  <a @click="searchFams('fam', tdata.name)">
+                      [[ tdata.name ]]
+                  </a>
+              </h2>
+                <ul class="nav nav-pills justify-content-left 
+                            pl-3 pr-6 col-md-8"
+                    id="pills-tab" role="tablist">
+
+                  <li class="nav-item mx-2">
+                    <a class="nav-link active btn-sm gecoviz-tab" 
+                       id="pills-gecoviz-tab" 
+                       data-toggle="pill"
+                        :href="'#f' + index + '-gecoviz'" 
+                       role="tab"
+                        aria-controls="pills-gecoviz"
+                        aria-selected="tru"
+                        @click="toggleFam('f' + index + '-tab-content');
+                                toggleGeCoViz('#f'+index+'-GeCoViz', tid);"
+                        >Genomic Context</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link btn-sm" 
+                       id="pills-seqs-tab" 
+                       @click="toggleFam('f' + index + '-tab-content')"
+                       data-toggle="pill"
+                       :href="'#f' + index + '-seqs'"
+                        role="tab" 
+                        aria-controls="pills-seqs"
+                        aria-selected="false">Sequences</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link btn-sm" 
+                       id="pills-stats-tab" 
+                       @click="toggleFam('f' + index + '-tab-content')"
+                       data-toggle="pill"
+                       :href="'#f' + index + '-stats'"
+                        role="tab" 
+                        aria-controls="pills-stats"
+                        aria-selected="false">Stats</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link btn-sm" 
+                       id="pills-biomes-tab" 
+                       data-toggle="pill"
+                       :href="'#f' + index + '-biomes'"
+                        @click="toggleFam('f' + index + '-tab-content')"
+                        role="tab" 
+                        aria-controls="pills-biomes"
+                        aria-selected="false">Biome distribution</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link btn-sm" 
+                       id="pills-taxp-tab" 
+                       @click="toggleFam('f' + index + '-tab-content')"
+                       data-toggle="pill"
+                       :href="'#f' + index + '-taxp'"
+                        role="tab" 
+                        aria-controls="pills-taxp"
+                        aria-selected="false">Taxonomic distribution</a>
+                  </li>
+                  <li class="nav-item mx-3 position-absolute"
+                      style="right:40px; top:7px;">
+                    <div class="dropdown pt-2">
+                    <a class="nav-link btn-sm dropdown-toggle 
+                                dropdown-noafter" 
+                       role="button"
+                       id="dropdownMenuDownloads"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                       style="font-size: 15px; 
+                               color: var(--indigo)">
+                        <i class='fa fa-save'></i>
+                    </a>
+                      <div class="dropdown-menu dropdown-menu-arrow
+                           dropdown-menu-right dropdown-menu-rounded" 
+                          aria-labelledby="dropdownMenuDownloads">
+                        <a class="dropdown-item"
+                            @click="getNewick(tid)">Phylogeny</a>
+                        <a class="dropdown-item"
+                            @click="getSeqs(tid)">Sequences</a>
+                        <a class="dropdown-item"
+                            @click="getHMM(tid)">HMM</a>
+                      </div>
+                            
+                    </div>
+                  </li>
+
+                  <li class="nav-item mx-3 position-absolute"
+                      style="right:10px; top:12px;">
+                        <a class="btn-sm fam-toggle" 
+                           @click="toggleFam('f'+index+'-tab-content', 'hide')"
+                           style='font-size:18px; color:var(--indigo)'
+                           ><i class="fa fa-times"></i></a>
+                  </li>
+
+                </ul>
+                  
+              <div class='fam-summary col-md-12 row mt-2'>
+                  <div class='summary-spans col-md-3'>
+                      <span class='btn btn-sm bg-orange mt-2' style='cursor:default'>
+                        [[ tdata.n_members ]] members
+                      </span>
+                      <span class='btn btn-sm bg-green mt-2' style='cursor:default'>
+                        [[ tdata.n_taxa ]] taxa
+                      </span>
+                      <span class='btn btn-sm bg-blue mt-2' style='cursor:default'>
+                        [[ tdata.signalp.n_genes_sp ]] genes with signal
+                        peptide
+                      </span>
+                      <span class='btn btn-sm bg-cherry mt-2' style='cursor:default'>
+                        [[ tdata.mean_nh | toRounded ]] mean num. of TM domains
+                      </span>
+                  </div>
+                  <div class='donut-sources'
+                      :id="'f'+index+'-sources'"
+                      style='max-width: 250px; min-width: 250px'>
+                  </div>
+                  <div class='GeCoViz-summary col-md-5 mt-2'
+                      :id="'f'+index+'-GeCoViz-summary'">
+                  </div>
+              </div>
+           </div>
+           <div class="card-body p-2 rounded bg-light">
+        <div class="tab-content collapse" :id="'f' + index + '-tab-content'">
+
+          <div class="tab-pane fade" 
+               :id="'f' + index + '-seqs'" 
+               role="tabpanel"
+               aria-labelledby="pills-seqs-tab">
+                   <div class="card">
+                       <div class="card-header text-primary font-weight-bold">
+                           Sequence information
+                       </div>
+               <div class="card-body rounded">
+                   <div class="card p-0 fam-table">
+                       <div class="table-responsive">
+                           <table class="table table-vcenter card-table
+                               text-center mb-0">
+                               <thead>
+                                   <tr>
+                                       <th>Members</th>
+                                       <th>Length (aa)</th>
+                                       <th>Signal peptide (Gram+)</th>
+                                       <th>Signal peptide (Gram-)</th>
+                                       <th>Topology</th>
+                                       <th>Sequence</th>
+                                       <th>Neighbor sequences</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr v-for="m in tdata.members.show_items">
+                                       <th class="p-1 pl-3 text-left">
+                                           [[ m ]]
+                                       </th>
+                                       <th class="p-1">
+                                           [[
+                                           tdata.domains | getLen(m)
+                                           ]]
+                                       </th>
+                                       <th class="p-1">
+                                           [[ tdata.signalp.genes[m] | signalp('pos') ]]
+                                       </th>
+                                       <th class="p-1">
+                                           [[ tdata.signalp.genes[m] | signalp('neg') ]]
+                                       </th>
+                                       <th class="domains p-1 pl-3 text-left" 
+                                           :id="'d' + cleanString(m)">
+                                       </th>
+                                       <th>
+                                           <button 
+                                              class='btn btn-primary btn-sm'
+                                               @click="getSeq(m)">
+                                               Sequence
+                                           </button>
+                                       </th>
+                                       <th>
+                                           <button 
+                                              class='btn btn-primary btn-sm'
+                                               @click="getNeighSeqs(m)">
+                                               Neighborhood
+                                           </button>
+                                       </th>
+                                   </tr>
+                               </tbody>
+                           </table>
+                       </div>
+                   </div>
+                   <div v-if="tdata.members.nPages > 1">
+                       <nav aria-label="Members pagination">
+                          <ul class="pagination justify-content-center">
+                            <li class="page-item px-1"
+                                :class="{ 'disabled': (tdata.members.currentPage == 1) }">
+                              <a class="page-link" 
+                                  @click='getCardPage("previous", tid, "members")' 
+                                  aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                            </li>
+                            <li v-for='p in tdata.members.nPages' 
+                                class='page-item px-1'
+                                :key='p'
+                                :class="[ (tdata.members.currentPage == p) ? 'active' : '' ]"
+                                >
+                                <a class='page-link'
+                                    @click='getCardPage(p, tid, "members")'>[[ p ]]</a>
+                            </li>
+                            <li class="page-item px-1"
+                                :class="{ 'disabled': (tdata.members.currentPage == tdata.members.nPages) }">
+                              <a class="page-link" 
+                                  @click='getCardPage("next", tid, "members")' 
+                                  aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                            </li>
+                          </ul>
+                        </nav>
+                   </div>
+
+                   </div>
+                   </div>
+          </div>
+
+          <!--<div class="tab-pane fade" :id="'f' + index + '-stats'" role="tabpanel"-->
+              <!--aria-labelledby="pills-stats-tab">-->
+           <!--<div class="card">-->
+               <!--<div class="card-body rounded">-->
+
+                   <!--<div class="card p-0 mx-2 fam-table">-->
+                       <!--<div class="table-responsive">-->
+                           <!--<table class="table table-vcenter card-table-->
+                               <!--text-center mb-0">-->
+                               <!--<thead>-->
+                                   <!--<tr>-->
+                                       <!--<th>Members</th>-->
+                                       <!--<th>Conserved domain length</th>-->
+                                       <!--<th>Aminoacids in members</th>-->
+                                       <!--<th>Smallest sequence</th>-->
+                                       <!--<th>Largest sequence</th>-->
+                                       <!--<th>Average sequence</th>-->
+                                       <!--<th>Alignment length</th>-->
+                                       <!--<th>Average identity</th>-->
+                                       <!--<th>Most related pair identity</th>-->
+                                       <!--<th>Least related pair identity</th>-->
+                                       <!--<th>Most distant member identity</th>-->
+                                       <!--<th>dN/dS</th>-->
+                                       <!--<th>p-val RNA code</th>-->
+                                   <!--</tr>-->
+                               <!--</thead>-->
+                               <!--<tbody>-->
+                                   <!--<tr>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.align.esize | toFixed ]]-->
+                                       <!--</th>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.align.cdl | toFixed ]]-->
+                                       <!--</th>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.align.naa | toFixed ]]-->
+                                       <!--</th>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.align.sm | toFixed ]]-->
+                                       <!--</th>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.align.lg | toFixed ]]-->
+                                       <!--</th>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.align.avl | toFixed ]]-->
+                                       <!--</th>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.align.al | toFixed ]]-->
+                                       <!--</th>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.align.avi | toFixed ]]-->
+                                       <!--</th>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.align.mrp | toFixed ]]-->
+                                       <!--</th>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.align.mup | toFixed ]]-->
+                                       <!--</th>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.align.mds | toFixed ]]-->
+                                       <!--</th>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.dnds | toFixed ]]-->
+                                       <!--</th>-->
+                                       <!--<th class="p-1">-->
+                                           <!--[[ tdata.p_exp | toFixed ]]-->
+                                       <!--</th>-->
+                                   <!--</tr>-->
+                               <!--</tbody>-->
+                           <!--</table>-->
+                       <!--</div>-->
+                   <!--</div>-->
+
+               <!--</div>-->
+           <!--</div>-->
+          <!--</div>-->
+
+           <div class="tab-pane fade" 
+                :id="'f' + index + '-taxp'" 
+                role="tabpanel"
+              aria-labelledby="pills-taxp-tab">
+               <div class="card col-md-12 p-0">
+                   <div class="card-header text-primary font-weight-bold">
+                        Taxonomic assignation
+                   </div>
+                <div class="card-body">
+                   <div class='mb-5' 
+                       :id="'f'+index+'-taxSunburst'">
+                   </div>
+                   <div class="card p-0 mx-4 fam-table">
+                       <div class="table-responsive">
+                           <table class="table table-vcenter card-table
+                               text-center mb-0">
+                               <thead>
+                                   <tr>
+                                       <th>Taxonomic level</th>
+                                       <th>Number</th>
+                                       <th>Most common</th>
+                                       <th>Coverage</th>
+                                       <th>Specificity</th>
+                                       <th>Score</th>
+                                       <th>Total genomes</th>
+                                       <th>RefSeq genomes</th>
+                                   </tr>
+                               </thead>
+                               <tbody>
+                                   <tr v-for="l in [
+                                               'domain',
+                                               'phylum',
+                                               'class',
+                                               'order',
+                                               'family',
+                                               'genus',
+                                               'species'
+                                               ]">
+                                       <th class="p-1">
+                                           [[ l ]]
+                                       </th>
+                                       <th class="p-1">
+                                           [[ tdata["n_"+l[0]+''] ]]
+                                       </th>
+                                       <th class="p-1">
+                                           [[ tdata[l[0]+'_mostcommon'] |
+                                           trimTaxa]]
+                                       </th>
+                                       <th class="p-1">
+                                           [[ tdata[l[0]+'_coverage'] | toFixed ]]
+                                       </th>
+                                       <th class="p-1">
+                                           [[ tdata[l[0]+'_specificity'] | toFixed ]]
+                                       </th>
+                                       <th class="p-1">
+                                           [[ tdata[l[0]+'_score'] | toFixed ]]
+                                       </th>
+                                       <th class="p-1">
+                                           [[ tdata[l[0]+'_total_genomes'] ]]
+                                       </th>
+                                       <th class="p-1">
+                                           [[ tdata[l[0]+'_refseq_genomes'] ]]
+                                       </th>
+                                   </tr>
+                               </tbody>
+                           </table>
+                       </div>
+                   </div>
+
+               </div>
+               </div>
+           </div>
+
+
+          <!--<div class="tab-pane fade" :id="'f' + index + '-biomes'" role="tabpanel"-->
+              <!--aria-labelledby="pills-biomes-tab">-->
+           <!--<div class="card">-->
+               <!--<div class="card-header text-primary font-weight-bold">-->
+                   <!--Biome mapping-->
+               <!--</div>-->
+               <!--<div class="card-body rounded">-->
+                    <!--<div class="bg-white rounded col-md-6 mx-auto" -->
+                         <!--:id="'f' + index + '-biomesViz'">-->
+                    <!--</div>-->
+               <!--</div>-->
+           <!--</div>-->
+          <!--</div>-->
+
+
+          <div class="tab-pane fade active show" 
+               :id="'f' + index + '-gecoviz'" role="tabpanel"
+              aria-labelledby="pills-gecoviz-tab">
+           <div class="card">
+               <div class="card-body p-2 rounded"
+                        style="resize:vertical">
+                   <div class="GeCoViz" :id="'f' + index + '-GeCoViz'">
+                   </div>
+                 <div class='row justify-content-center'>
+                  <div class='progress gecoviz-progress w-75 mt-6'>
+                      <div class='progress-bar progress-bar-indeterminate'>
+                      </div>
+                  </div>
+                 </div>
+
+                </div>
+           </div>
+           </div>
+
+        </div>
+   </div>
+</div>

@@ -1,0 +1,32 @@
+{% extends 'gecoviz/base.html' %}
+{% load static %}
+{% block content %}
+
+{% include 'gecoviz/filter_cards.html'%}
+<div v-if='totalItems == 0' class='h-100'>
+    {% include 'gecoviz/example_cards.html'%}
+</div>
+
+<div v-if='totalItems > 0'
+    class='text-center mb-3'>
+    Showing results from [[ (currentPage - 1) * perPage + 1 ]] 
+    to [[ Math.min(currentPage * perPage, totalItems) ]]. Total hits: [[ totalItems ]].
+</div>
+<div v-if="nPages > 1">
+    {% include 'gecoviz/pagination.html' with currentPage=currentPage nPages=nPages field="f" only %}
+</div>
+
+<div v-for="(tdata, tid, index) in show_items">               
+    {% include 'gecoviz/card.html' %}
+</div>
+<div v-if="nPages > 1 && Object.keys(show_items).length > 3">
+    {% include 'gecoviz/pagination.html' %}
+</div>
+{% endblock %}
+{% block scripts %}
+    <script src="{% static "gecoviz/assets/tabler/js/nouislider.min.js" %}"></script>
+    <script src="{% static "gecoviz/assets/filesaver/FileSaver.min.js" %}"></script>
+    <script src="{% static "gecoviz/js/SeqSunburst.js" %}"></script>
+    <script src="{% static "gecoviz/js/gecoviz.js" %}"></script>
+    <script src="{% static "gecoviz/js/vue_app.js" %}"></script>
+{% endblock %}
