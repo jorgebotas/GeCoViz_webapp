@@ -52,6 +52,7 @@ def get_context(queries):
 
 def get_taxonomy(queries):
     taxids = [ q.split(".")[0] for q in queries ]
+    print(taxids)
     matches = col_taxonomy.find({ 'genome': { '$in': taxids } }, 
             { 'genome': 1, 'lineage': 1 })
     taxa = []
@@ -79,7 +80,6 @@ def get_emapper_matches(field, query):
 
 def get_functional_matches(field, query):
     emapper = get_emapper_matches(field, query)
-    print(emapper)
     return get_taxonomy(emapper)
 
 
