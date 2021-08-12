@@ -53,6 +53,8 @@ def get_context(queries):
 def get_taxonomy(queries):
     taxids = [ q.split(".")[0] for q in queries ]
     print(taxids)
+    print(len(taxids))
+    print(len(list(set(taxids))))
     matches = col_taxonomy.find({ 'genome': { '$in': taxids } }, 
             { 'genome': 1, 'lineage': 1 })
     taxa = []
