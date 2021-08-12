@@ -109,6 +109,8 @@ var vueapp = new Vue({
             const type = searchType || $("#search-type input:checked").val();
             $('#search-query').trigger('blur');
 
+            console.log(API_BASE_URL + `/emapper/${type}/${query}/`)
+
             await fetch(API_BASE_URL + `/emapper/${type}/${query}/`)
                  .then(response => response.json())
                  .then(this.fetchThen)
