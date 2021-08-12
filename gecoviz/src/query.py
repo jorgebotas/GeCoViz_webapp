@@ -1,6 +1,6 @@
 from collections import defaultdict, Counter
 from django.conf import settings
-from ete3 import Tree
+from ete3 import Tree, NCBITaxa
 import json
 import pickle
 from pymongo import MongoClient, ASCENDING, DESCENDING
@@ -12,7 +12,7 @@ client = MongoClient('10.0.3.1')
 db = client.progenomes2
 col_emapper = db.emapper2
 col_neighs = db.neighs
-col_taxonomy = client.mgv1.genome_taxonomy
+ncbi = NCBITaxa()
 
 
 STATIC_PATH = settings.BASE_DIR / 'static/gecoviz/'
@@ -68,23 +68,6 @@ def get_taxonomy(queries):
             'value': n,
             })
     return taxa
-
-
-# def get_taxonomy(queries):
-    # taxids = [ q.split(".")[0] for q in queries ]
-    # matches = col_taxonomy.find({ 'genome': { '$in': list(set(taxids)) } }, 
-            # { 'genome': 1, 'lineage': 1 })
-    # taxa = []
-    # for m in matches:
-        # lineage = [ t for t in m['lineage'].split(";") if t[-1] != "_" ]
-        # taxa.append({ 
-            # 'id': m['genome'],
-            # 'lineage': ";".join(lineage),
-            # 'name': lineage[-1],
-            # 'value': 1,
-            # })
-    
-    # return taxa
 
 
 def get_emapper_matches(field, query):
