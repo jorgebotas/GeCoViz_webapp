@@ -50,24 +50,42 @@ def get_context(queries):
     return context
 
 
+def get_lineage(taxid):
+    lineage = ncbi.get_lineage(taxid)
+    taxid2name = ncbi.get_taxid_translator(lineage)
+    return [ taxid2name[tid] for tid in lineage ]
+
 def get_taxonomy(queries):
     taxids = [ q.split(".")[0] for q in queries ]
-    print(taxids)
-    print(len(taxids))
-    print(len(list(set(taxids))))
-    matches = col_taxonomy.find({ 'genome': { '$in': taxids } }, 
-            { 'genome': 1, 'lineage': 1 })
+    counter = Counter(taxids)
     taxa = []
-    for m in matches:
-        lineage = [ t for t in m['lineage'].split(";") if t[-1] != "_" ]
+    print(counter)
+    for n, taxid in counter:
+        lineage = get_lineage(taxid)
         taxa.append({ 
-            'id': m['genome'],
+            'id': taxid,
             'lineage': ";".join(lineage),
             'name': lineage[-1],
-            'value': 1,
+            'value': n,
             })
-    
     return taxa
+
+
+# def get_taxonomy(queries):
+    # taxids = [ q.split(".")[0] for q in queries ]
+    # matches = col_taxonomy.find({ 'genome': { '$in': list(set(taxids)) } }, 
+            # { 'genome': 1, 'lineage': 1 })
+    # taxa = []
+    # for m in matches:
+        # lineage = [ t for t in m['lineage'].split(";") if t[-1] != "_" ]
+        # taxa.append({ 
+            # 'id': m['genome'],
+            # 'lineage': ";".join(lineage),
+            # 'name': lineage[-1],
+            # 'value': 1,
+            # })
+    
+    # return taxa
 
 
 def get_emapper_matches(field, query):

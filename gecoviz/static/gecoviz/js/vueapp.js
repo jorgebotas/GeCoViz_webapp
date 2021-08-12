@@ -372,8 +372,6 @@ var vueapp = new Vue({
         if (searchType && query)
             this.searchQuery(searchType, query, urlParams);
 
-        this.toggleSunburstSelector();
-
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
                 d3.selectAll("#add-button-container *").remove();
