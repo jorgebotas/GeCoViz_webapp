@@ -13,7 +13,7 @@ db = client.progenomes2
 col_emapper = db.emapper2
 col_neighs = db.neighs
 
-STATIC_PATH = settings.BASE_DIR + '/static/gecoviz/'
+STATIC_PATH = settings.BASE_DIR / 'static/gecoviz/'
 
 def get_pickle(filePath):
     """
@@ -26,10 +26,10 @@ def get_pickle(filePath):
         pdict = pickle.load(pickle_in)
     return pdict
 
-kegg_dict = get_pickle(STATIC_PATH + "pickle/KEGG_DESCRIPTION.pickle")
+kegg_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
 # OG level dictionary (for neighborhood sumary)
 # TODO: include level in col_og_neigh_scores
-og_level_dict = get_pickle(STATIC_PATH + "pickle/e5_og_levels.pickle")
+og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 
 
 def get_context(queries):
