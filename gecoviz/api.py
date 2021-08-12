@@ -3,8 +3,7 @@ from django.http import JsonResponse, HttpResponse
 from ete4 import Tree
 
 from json import load
-
-from .src.query.py import get_functional_matches, get_context
+from .src.query import get_functional_matches, get_context
 
 
 RESULTS_PATH = settings.BASE_DIR / 'gecoviz/tmp/'
