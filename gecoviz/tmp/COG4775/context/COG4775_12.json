@@ -1,0 +1,4466 @@
+[
+    {
+        "gene": "AXAI01000002_gene5387",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "-10",
+        "gene name": "btaA",
+        "description": "Protein of unknown function (DUF3419)",
+        "strand": "+",
+        "start": "314753",
+        "end": "315958",
+        "taxonomy": "113395",
+        "kegg": [
+            {
+                "id": "00564",
+                "description": "Glycerophospholipid metabolism"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "1MWG8",
+                "level": "1224",
+                "description": "S-adenosylmethionine diacylglycerol 3-amino-3-carboxypropyl transferase"
+            },
+            {
+                "id": "2TQKH",
+                "level": "28211",
+                "description": "S-adenosylmethionine diacylglycerol 3-amino-3-carboxypropyl transferase"
+            },
+            {
+                "id": "3JRGY",
+                "level": "41294",
+                "description": "Protein of unknown function (DUF3419)"
+            },
+            {
+                "id": "COG5379",
+                "level": "1",
+                "description": "S-adenosylmethionine diacylglycerol 3-amino-3-carboxypropyl transferase"
+            },
+            {
+                "id": "COG5379",
+                "level": "2",
+                "description": "S-adenosylmethionine diacylglycerol 3-amino-3-carboxypropyl transferase"
+            }
+        ],
+        "pfam": "[{'id': 'DUF3419', 'start': '26', 'end': '400', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5388",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "-9",
+        "gene name": "",
+        "description": "Cytochrome C oxidase, cbb3-type, subunit III",
+        "strand": "+",
+        "start": "316662",
+        "end": "317981",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MV6D",
+                "level": "1224",
+                "description": "cytochrome c"
+            },
+            {
+                "id": "2TVYT",
+                "level": "28211",
+                "description": "Cytochrome c'"
+            },
+            {
+                "id": "3JT2A",
+                "level": "41294",
+                "description": "Cytochrome C oxidase, cbb3-type, subunit III"
+            },
+            {
+                "id": "COG2010",
+                "level": "1",
+                "description": "electron transfer activity"
+            },
+            {
+                "id": "COG2010",
+                "level": "2",
+                "description": "electron transfer activity"
+            }
+        ],
+        "pfam": "[{'id': 'Cytochrome_CBB3', 'start': '310', 'end': '392', 'shape': 'rect'}, {'id': 'Cytochrom_C', 'start': '37', 'end': '138', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5389",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "-8",
+        "gene name": "nicA",
+        "description": "[2Fe-2S] binding domain",
+        "strand": "+",
+        "start": "317978",
+        "end": "318475",
+        "taxonomy": "113395",
+        "kegg": [
+            {
+                "id": "00760",
+                "description": "Nicotinate and nicotinamide metabolism"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "1RD8C",
+                "level": "1224",
+                "description": "Aerobic-type carbon monoxide dehydrogenase small subunit CoxS"
+            },
+            {
+                "id": "2U7NJ",
+                "level": "28211",
+                "description": "(2Fe-2S) binding domain protein"
+            },
+            {
+                "id": "3JVJB",
+                "level": "41294",
+                "description": "[2Fe-2S] binding domain"
+            },
+            {
+                "id": "COG2080",
+                "level": "1",
+                "description": "2 iron, 2 sulfur cluster binding"
+            },
+            {
+                "id": "COG2080",
+                "level": "2",
+                "description": "2 iron, 2 sulfur cluster binding"
+            }
+        ],
+        "pfam": "[{'id': 'Fer2', 'start': '4', 'end': '70', 'shape': 'rect'}, {'id': 'Fer2_2', 'start': '72', 'end': '145', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5390",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "-7",
+        "gene name": "",
+        "description": "Aldehyde oxidase and xanthine dehydrogenase, a/b hammerhead domain",
+        "strand": "+",
+        "start": "318472",
+        "end": "320697",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1QTTJ",
+                "level": "1224",
+                "description": "aerobic-type carbon monoxide dehydrogenase, large subunit CoxL"
+            },
+            {
+                "id": "2TQVK",
+                "level": "28211",
+                "description": "COG1529 Aerobic-type carbon monoxide dehydrogenase large subunit CoxL CutL homologs"
+            },
+            {
+                "id": "3JRND",
+                "level": "41294",
+                "description": "Aldehyde oxidase and xanthine dehydrogenase, a/b hammerhead domain"
+            },
+            {
+                "id": "COG1529",
+                "level": "1",
+                "description": "Aldehyde oxidase and xanthine dehydrogenase"
+            },
+            {
+                "id": "COG1529",
+                "level": "2",
+                "description": "Aldehyde oxidase and xanthine dehydrogenase"
+            }
+        ],
+        "pfam": "[{'id': 'Ald_Xan_dh_C', 'start': '209', 'end': '277', 'shape': 'rect'}, {'id': 'Ald_Xan_dh_C2', 'start': '16', 'end': '211', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5391",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "-6",
+        "gene name": "qor",
+        "description": "Zinc-binding dehydrogenase",
+        "strand": "+",
+        "start": "320765",
+        "end": "321742",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MWBD",
+                "level": "1224",
+                "description": "NADPH quinone reductase and related Zn-dependent oxidoreductases"
+            },
+            {
+                "id": "2TS3Z",
+                "level": "28211",
+                "description": "COG0604 NADPH quinone reductase and related Zn-dependent oxidoreductases"
+            },
+            {
+                "id": "3JR0C",
+                "level": "41294",
+                "description": "Zinc-binding dehydrogenase"
+            },
+            {
+                "id": "COG0604",
+                "level": "1",
+                "description": "alcohol dehydrogenase"
+            },
+            {
+                "id": "COG0604",
+                "level": "2",
+                "description": "alcohol dehydrogenase"
+            }
+        ],
+        "pfam": "[{'id': 'ADH_N', 'start': '28', 'end': '109', 'shape': 'rect'}, {'id': 'ADH_zinc_N', 'start': '152', 'end': '271', 'shape': 'rect'}, {'id': 'ADH_zinc_N_2', 'start': '184', 'end': '323', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5392",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "-5",
+        "gene name": "",
+        "description": "NA",
+        "strand": "-",
+        "start": "322000",
+        "end": "322275",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1RK6K",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "29BJV",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2UA1V",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "2ZYI6",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JZJ0",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "AXAI01000002_gene5393",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "-4",
+        "gene name": "MA20_34720",
+        "description": "Peptidase S24-like",
+        "strand": "-",
+        "start": "322438",
+        "end": "323058",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1R40Y",
+                "level": "1224",
+                "description": "Transcriptional regulator"
+            },
+            {
+                "id": "2TUT0",
+                "level": "28211",
+                "description": "Transcriptional regulator"
+            },
+            {
+                "id": "3JTNV",
+                "level": "41294",
+                "description": "Peptidase S24-like"
+            },
+            {
+                "id": "COG2932",
+                "level": "1",
+                "description": "Transcriptional regulator"
+            },
+            {
+                "id": "COG2932",
+                "level": "2",
+                "description": "Transcriptional regulator"
+            }
+        ],
+        "pfam": "[{'id': 'Peptidase_S24', 'start': '100', 'end': '166', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5394",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "-3",
+        "gene name": "",
+        "description": "GcrA cell cycle regulator",
+        "strand": "+",
+        "start": "323206",
+        "end": "323742",
+        "taxonomy": "113395",
+        "kegg": [
+            {
+                "id": "04112",
+                "description": "Cell cycle - Caulobacter"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "1P31N",
+                "level": "1224",
+                "description": "GcrA cell cycle regulator"
+            },
+            {
+                "id": "2TVRI",
+                "level": "28211",
+                "description": "GcrA cell cycle regulator"
+            },
+            {
+                "id": "3JSR5",
+                "level": "41294",
+                "description": "GcrA cell cycle regulator"
+            },
+            {
+                "id": "COG5352",
+                "level": "1",
+                "description": "GcrA cell cycle regulator"
+            },
+            {
+                "id": "COG5352",
+                "level": "2",
+                "description": "GcrA cell cycle regulator"
+            }
+        ],
+        "pfam": "[{'id': 'GcrA', 'start': '4', 'end': '167', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5395",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "-2",
+        "gene name": "",
+        "description": "NA",
+        "strand": "+",
+        "start": "323832",
+        "end": "324368",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1N3AI",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "2FFDN",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2TUEQ",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "347B9",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JTK2",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "AXAI01000002_gene5396",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "-1",
+        "gene name": "",
+        "description": "SPW repeat",
+        "strand": "-",
+        "start": "324515",
+        "end": "324910",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1N047",
+                "level": "1224",
+                "description": "SPW repeat"
+            },
+            {
+                "id": "2DYCJ",
+                "level": "1",
+                "description": "SPW repeat"
+            },
+            {
+                "id": "2U8RT",
+                "level": "28211",
+                "description": "SPW repeat"
+            },
+            {
+                "id": "3495B",
+                "level": "2",
+                "description": "SPW repeat"
+            },
+            {
+                "id": "3K0GG",
+                "level": "41294",
+                "description": "SPW repeat"
+            }
+        ],
+        "pfam": "[{'id': 'SPW', 'start': '62', 'end': '108', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5397",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "0",
+        "gene name": "bamA",
+        "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane",
+        "strand": "-",
+        "start": "325025",
+        "end": "327304",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MU0D",
+                "level": "1224",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "2TR7W",
+                "level": "28211",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "3JUIS",
+                "level": "41294",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "COG4775",
+                "level": "1",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "COG4775",
+                "level": "2",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            }
+        ],
+        "pfam": "[{'id': 'Bac_surface_Ag', 'start': '435', 'end': '759', 'shape': 'rect'}, {'id': 'POTRA', 'start': '335', 'end': '407', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5398",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "1",
+        "gene name": "",
+        "description": "NA",
+        "strand": "+",
+        "start": "327589",
+        "end": "328686",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1NQ3G",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "28W98",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2TT2E",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "2ZI9R",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JUHT",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "AXAI01000002_gene5399",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "2",
+        "gene name": "",
+        "description": "Isoprenylcysteine carboxyl methyltransferase (ICMT) family",
+        "strand": "+",
+        "start": "328742",
+        "end": "329419",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1R7G6",
+                "level": "1224",
+                "description": "Methyl-transferase"
+            },
+            {
+                "id": "2VG1Y",
+                "level": "28211",
+                "description": "Isoprenylcysteine carboxyl methyltransferase (ICMT) family"
+            },
+            {
+                "id": "3K6HR",
+                "level": "41294",
+                "description": "Isoprenylcysteine carboxyl methyltransferase (ICMT) family"
+            },
+            {
+                "id": "COG2020",
+                "level": "1",
+                "description": "protein C-terminal S-isoprenylcysteine carboxyl O-methyltransferase activity"
+            },
+            {
+                "id": "COG2020",
+                "level": "2",
+                "description": "protein C-terminal S-isoprenylcysteine carboxyl O-methyltransferase activity"
+            }
+        ],
+        "pfam": "[{'id': 'ICMT', 'start': '113', 'end': '204', 'shape': 'rect'}, {'id': 'PEMT', 'start': '109', 'end': '207', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5400",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "3",
+        "gene name": "hflC",
+        "description": "prohibitin homologues",
+        "strand": "+",
+        "start": "329486",
+        "end": "330244",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MUM8",
+                "level": "1224",
+                "description": "COG0330 Membrane protease subunits stomatin prohibitin homologs"
+            },
+            {
+                "id": "2TRUY",
+                "level": "28211",
+                "description": "COG0330 Membrane protease subunits stomatin prohibitin homologs"
+            },
+            {
+                "id": "3JQPQ",
+                "level": "41294",
+                "description": "prohibitin homologues"
+            },
+            {
+                "id": "COG0330",
+                "level": "1",
+                "description": "HflC and HflK could"
+            },
+            {
+                "id": "COG0330",
+                "level": "2",
+                "description": "HflC and HflK could"
+            }
+        ],
+        "pfam": "[{'id': 'Band_7', 'start': '18', 'end': '189', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5401",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "4",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "330835",
+        "end": "330927",
+        "taxonomy": "113395",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAI01000002_gene5402",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "5",
+        "gene name": "MA20_34695",
+        "description": "Phasin protein",
+        "strand": "+",
+        "start": "331049",
+        "end": "331348",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MZM4",
+                "level": "1224",
+                "description": "PFAM Phasin 2 family protein"
+            },
+            {
+                "id": "2UCPK",
+                "level": "28211",
+                "description": "PFAM Phasin 2 family protein"
+            },
+            {
+                "id": "3JYTC",
+                "level": "41294",
+                "description": "Phasin protein"
+            },
+            {
+                "id": "COG5490",
+                "level": "1",
+                "description": "Phasin protein"
+            },
+            {
+                "id": "COG5490",
+                "level": "2",
+                "description": "Phasin protein"
+            }
+        ],
+        "pfam": "[{'id': 'Phasin_2', 'start': '3', 'end': '96', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5403",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "6",
+        "gene name": "MA20_34690",
+        "description": "dienelactone hydrolase",
+        "strand": "-",
+        "start": "331744",
+        "end": "332553",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1NE14",
+                "level": "1224",
+                "description": "dienelactone hydrolase"
+            },
+            {
+                "id": "2TUTS",
+                "level": "28211",
+                "description": "dienelactone hydrolase"
+            },
+            {
+                "id": "3JR12",
+                "level": "41294",
+                "description": "dienelactone hydrolase"
+            },
+            {
+                "id": "COG4188",
+                "level": "1",
+                "description": "1-alkyl-2-acetylglycerophosphocholine esterase activity"
+            },
+            {
+                "id": "COG4188",
+                "level": "2",
+                "description": "1-alkyl-2-acetylglycerophosphocholine esterase activity"
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "AXAI01000002_gene5404",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "7",
+        "gene name": "rocF",
+        "description": "Belongs to the arginase family",
+        "strand": "+",
+        "start": "332983",
+        "end": "333960",
+        "taxonomy": "113395",
+        "kegg": [
+            {
+                "id": "00220",
+                "description": "Arginine biosynthesis"
+            },
+            {
+                "id": "00330",
+                "description": "Arginine and proline metabolism"
+            },
+            {
+                "id": "05146",
+                "description": "Amoebiasis"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "1MVFH",
+                "level": "1224",
+                "description": "Belongs to the arginase family"
+            },
+            {
+                "id": "2TRTG",
+                "level": "28211",
+                "description": "Belongs to the arginase family"
+            },
+            {
+                "id": "3JQSW",
+                "level": "41294",
+                "description": "Belongs to the arginase family"
+            },
+            {
+                "id": "COG0010",
+                "level": "1",
+                "description": "Belongs to the arginase family"
+            },
+            {
+                "id": "COG0010",
+                "level": "2",
+                "description": "Belongs to the arginase family"
+            }
+        ],
+        "pfam": "[{'id': 'Arginase', 'start': '11', 'end': '308', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5405",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "8",
+        "gene name": "pcpB",
+        "description": "FAD binding domain",
+        "strand": "-",
+        "start": "333963",
+        "end": "335510",
+        "taxonomy": "113395",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MUN4",
+                "level": "1224",
+                "description": "COG0654 2-polyprenyl-6-methoxyphenol hydroxylase and related FAD-dependent oxidoreductases"
+            },
+            {
+                "id": "2TQT8",
+                "level": "28211",
+                "description": "COG0654 2-polyprenyl-6-methoxyphenol hydroxylase and related FAD-dependent oxidoreductases"
+            },
+            {
+                "id": "3JTRW",
+                "level": "41294",
+                "description": "FAD binding domain"
+            },
+            {
+                "id": "COG0654",
+                "level": "1",
+                "description": "FAD binding"
+            },
+            {
+                "id": "COG0654",
+                "level": "2",
+                "description": "FAD binding"
+            }
+        ],
+        "pfam": "[{'id': 'FAD_binding_3', 'start': '3', 'end': '344', 'shape': 'rect'}, {'id': 'NAD_binding_8', 'start': '8', 'end': '57', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5406",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "9",
+        "gene name": "",
+        "description": "Mo-co oxidoreductase dimerisation domain",
+        "strand": "+",
+        "start": "335971",
+        "end": "337260",
+        "taxonomy": "113395",
+        "kegg": [
+            {
+                "id": "00920",
+                "description": "Sulfur metabolism"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "1MX9E",
+                "level": "1224",
+                "description": "COG2041 Sulfite oxidase and related enzymes"
+            },
+            {
+                "id": "2TRK0",
+                "level": "28211",
+                "description": "COG2041 Sulfite oxidase and related enzymes"
+            },
+            {
+                "id": "3JRFB",
+                "level": "41294",
+                "description": "Mo-co oxidoreductase dimerisation domain"
+            },
+            {
+                "id": "COG2041",
+                "level": "1",
+                "description": "nitrate assimilation"
+            },
+            {
+                "id": "COG2041",
+                "level": "2",
+                "description": "nitrate assimilation"
+            }
+        ],
+        "pfam": "[{'id': 'Mo-co_dimer', 'start': '296', 'end': '414', 'shape': 'rect'}, {'id': 'Oxidored_molyb', 'start': '118', 'end': '281', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAI01000002_gene5407",
+        "anchor": "AXAI01000002_gene5397",
+        "pos": "10",
+        "gene name": "",
+        "description": "Function proposed based on presence of conserved amino acid motif, structural feature or limited homology",
+        "strand": "+",
+        "start": "337253",
+        "end": "337810",
+        "taxonomy": "113395",
+        "kegg": [
+            {
+                "id": "00920",
+                "description": "Sulfur metabolism"
+            },
+            {
+                "id": "01524",
+                "description": "Platinum drug resistance"
+            },
+            {
+                "id": "02020",
+                "description": "Two-component system"
+            },
+            {
+                "id": "04115",
+                "description": "p53 signaling pathway"
+            },
+            {
+                "id": "04210",
+                "description": "Apoptosis"
+            },
+            {
+                "id": "04214",
+                "description": "Apoptosis - fly"
+            },
+            {
+                "id": "04215",
+                "description": "Apoptosis - multiple species"
+            },
+            {
+                "id": "04932",
+                "description": "Non-alcoholic fatty liver disease (NAFLD)"
+            },
+            {
+                "id": "05010",
+                "description": "Alzheimer disease"
+            },
+            {
+                "id": "05012",
+                "description": "Parkinson disease"
+            },
+            {
+                "id": "05014",
+                "description": "Amyotrophic lateral sclerosis (ALS)"
+            },
+            {
+                "id": "05016",
+                "description": "Huntington disease"
+            },
+            {
+                "id": "05134",
+                "description": "Legionellosis"
+            },
+            {
+                "id": "05145",
+                "description": "Toxoplasmosis"
+            },
+            {
+                "id": "05152",
+                "description": "Tuberculosis"
+            },
+            {
+                "id": "05161",
+                "description": "Hepatitis B"
+            },
+            {
+                "id": "05164",
+                "description": "Influenza A"
+            },
+            {
+                "id": "05167",
+                "description": "Kaposi sarcoma-associated herpesvirus infection"
+            },
+            {
+                "id": "05168",
+                "description": "Herpes simplex infection"
+            },
+            {
+                "id": "05200",
+                "description": "Pathways in cancer"
+            },
+            {
+                "id": "05210",
+                "description": "Colorectal cancer"
+            },
+            {
+                "id": "05222",
+                "description": "Small cell lung cancer"
+            },
+            {
+                "id": "05416",
+                "description": "Viral myocarditis"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "1QTYW",
+                "level": "1224",
+                "description": "Cytochrome c"
+            },
+            {
+                "id": "2TWPT",
+                "level": "28211",
+                "description": "Cytochrome C"
+            },
+            {
+                "id": "3JVV3",
+                "level": "41294",
+                "description": "Function proposed based on presence of conserved amino acid motif, structural feature or limited homology"
+            },
+            {
+                "id": "COG3258",
+                "level": "1",
+                "description": "oxidoreductase activity, acting on a sulfur group of donors, cytochrome as acceptor"
+            },
+            {
+                "id": "COG3258",
+                "level": "2",
+                "description": "oxidoreductase activity, acting on a sulfur group of donors, cytochrome as acceptor"
+            }
+        ],
+        "pfam": "[{'id': 'Cytochrome_CBB3', 'start': '56', 'end': '139', 'shape': 'rect'}, {'id': 'Cytochrom_C', 'start': '58', 'end': '143', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1752",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "-10",
+        "gene name": "",
+        "description": "Cytochrome C oxidase, cbb3-type, subunit III",
+        "strand": "+",
+        "start": "36420",
+        "end": "37775",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MV6D",
+                "level": "1224",
+                "description": "cytochrome c"
+            },
+            {
+                "id": "2TVYT",
+                "level": "28211",
+                "description": "Cytochrome c'"
+            },
+            {
+                "id": "3JT2A",
+                "level": "41294",
+                "description": "Cytochrome C oxidase, cbb3-type, subunit III"
+            },
+            {
+                "id": "COG2010",
+                "level": "1",
+                "description": "electron transfer activity"
+            },
+            {
+                "id": "COG2010",
+                "level": "2",
+                "description": "electron transfer activity"
+            }
+        ],
+        "pfam": "[{'id': 'Cytochrom_C', 'start': '325', 'end': '408', 'shape': 'rect'}, {'id': 'Cytochrome_CBB3', 'start': '322', 'end': '404', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1753",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "-9",
+        "gene name": "nicA",
+        "description": "[2Fe-2S] binding domain",
+        "strand": "+",
+        "start": "37772",
+        "end": "38269",
+        "taxonomy": "1040989",
+        "kegg": [
+            {
+                "id": "00760",
+                "description": "Nicotinate and nicotinamide metabolism"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "1RD8C",
+                "level": "1224",
+                "description": "Aerobic-type carbon monoxide dehydrogenase small subunit CoxS"
+            },
+            {
+                "id": "2U7NJ",
+                "level": "28211",
+                "description": "(2Fe-2S) binding domain protein"
+            },
+            {
+                "id": "3JVJB",
+                "level": "41294",
+                "description": "[2Fe-2S] binding domain"
+            },
+            {
+                "id": "COG2080",
+                "level": "1",
+                "description": "2 iron, 2 sulfur cluster binding"
+            },
+            {
+                "id": "COG2080",
+                "level": "2",
+                "description": "2 iron, 2 sulfur cluster binding"
+            }
+        ],
+        "pfam": "[{'id': 'Fer2', 'start': '4', 'end': '73', 'shape': 'rect'}, {'id': 'Fer2_2', 'start': '72', 'end': '145', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1754",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "-8",
+        "gene name": "",
+        "description": "Aldehyde oxidase and xanthine dehydrogenase, a/b hammerhead domain",
+        "strand": "+",
+        "start": "38266",
+        "end": "40500",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1QTTJ",
+                "level": "1224",
+                "description": "aerobic-type carbon monoxide dehydrogenase, large subunit CoxL"
+            },
+            {
+                "id": "2TQVK",
+                "level": "28211",
+                "description": "COG1529 Aerobic-type carbon monoxide dehydrogenase large subunit CoxL CutL homologs"
+            },
+            {
+                "id": "3JRND",
+                "level": "41294",
+                "description": "Aldehyde oxidase and xanthine dehydrogenase, a/b hammerhead domain"
+            },
+            {
+                "id": "COG1529",
+                "level": "1",
+                "description": "Aldehyde oxidase and xanthine dehydrogenase"
+            },
+            {
+                "id": "COG1529",
+                "level": "2",
+                "description": "Aldehyde oxidase and xanthine dehydrogenase"
+            }
+        ],
+        "pfam": "[{'id': 'Ald_Xan_dh_C', 'start': '212', 'end': '285', 'shape': 'rect'}, {'id': 'Ald_Xan_dh_C2', 'start': '10', 'end': '207', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1755",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "-7",
+        "gene name": "qor",
+        "description": "Zinc-binding dehydrogenase",
+        "strand": "+",
+        "start": "40563",
+        "end": "41537",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MWBD",
+                "level": "1224",
+                "description": "NADPH quinone reductase and related Zn-dependent oxidoreductases"
+            },
+            {
+                "id": "2TS3Z",
+                "level": "28211",
+                "description": "COG0604 NADPH quinone reductase and related Zn-dependent oxidoreductases"
+            },
+            {
+                "id": "3JR0C",
+                "level": "41294",
+                "description": "Zinc-binding dehydrogenase"
+            },
+            {
+                "id": "COG0604",
+                "level": "1",
+                "description": "alcohol dehydrogenase"
+            },
+            {
+                "id": "COG0604",
+                "level": "2",
+                "description": "alcohol dehydrogenase"
+            }
+        ],
+        "pfam": "[{'id': 'ADH_N', 'start': '28', 'end': '108', 'shape': 'rect'}, {'id': 'ADH_zinc_N', 'start': '151', 'end': '282', 'shape': 'rect'}, {'id': 'ADH_zinc_N_2', 'start': '183', 'end': '322', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1756",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "-6",
+        "gene name": "",
+        "description": "Major Facilitator Superfamily",
+        "strand": "-",
+        "start": "41543",
+        "end": "42880",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MUEK",
+                "level": "1224",
+                "description": "Major facilitator Superfamily"
+            },
+            {
+                "id": "2TS60",
+                "level": "28211",
+                "description": "PFAM major facilitator superfamily MFS_1"
+            },
+            {
+                "id": "3JWWC",
+                "level": "41294",
+                "description": "Major Facilitator Superfamily"
+            },
+            {
+                "id": "COG2271",
+                "level": "1",
+                "description": "Major facilitator Superfamily"
+            },
+            {
+                "id": "COG2271",
+                "level": "2",
+                "description": "Major facilitator Superfamily"
+            }
+        ],
+        "pfam": "[{'id': 'MFS_1', 'start': '25', 'end': '396', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1757",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "-5",
+        "gene name": "",
+        "description": "NA",
+        "strand": "-",
+        "start": "43015",
+        "end": "43290",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1RK6K",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "29BJV",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2UA1V",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "2ZYI6",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JZJ0",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "AWZU01000035_gene1758",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "-4",
+        "gene name": "MA20_34720",
+        "description": "Peptidase S24-like",
+        "strand": "-",
+        "start": "43455",
+        "end": "44093",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1R40Y",
+                "level": "1224",
+                "description": "Transcriptional regulator"
+            },
+            {
+                "id": "2TUT0",
+                "level": "28211",
+                "description": "Transcriptional regulator"
+            },
+            {
+                "id": "3JTNV",
+                "level": "41294",
+                "description": "Peptidase S24-like"
+            },
+            {
+                "id": "COG2932",
+                "level": "1",
+                "description": "Transcriptional regulator"
+            },
+            {
+                "id": "COG2932",
+                "level": "2",
+                "description": "Transcriptional regulator"
+            }
+        ],
+        "pfam": "[{'id': 'Peptidase_S24', 'start': '100', 'end': '168', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1759",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "-3",
+        "gene name": "",
+        "description": "GcrA cell cycle regulator",
+        "strand": "+",
+        "start": "44239",
+        "end": "44769",
+        "taxonomy": "1040989",
+        "kegg": [
+            {
+                "id": "04112",
+                "description": "Cell cycle - Caulobacter"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "1P31N",
+                "level": "1224",
+                "description": "GcrA cell cycle regulator"
+            },
+            {
+                "id": "2TVRI",
+                "level": "28211",
+                "description": "GcrA cell cycle regulator"
+            },
+            {
+                "id": "3JSR5",
+                "level": "41294",
+                "description": "GcrA cell cycle regulator"
+            },
+            {
+                "id": "COG5352",
+                "level": "1",
+                "description": "GcrA cell cycle regulator"
+            },
+            {
+                "id": "COG5352",
+                "level": "2",
+                "description": "GcrA cell cycle regulator"
+            }
+        ],
+        "pfam": "[{'id': 'GcrA', 'start': '4', 'end': '164', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1760",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "-2",
+        "gene name": "",
+        "description": "NA",
+        "strand": "+",
+        "start": "44862",
+        "end": "45434",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1N3AI",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "2FFDN",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2TUEQ",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "347B9",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JTK2",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "AWZU01000035_gene1761",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "-1",
+        "gene name": "",
+        "description": "SPW repeat",
+        "strand": "-",
+        "start": "45485",
+        "end": "45832",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1N047",
+                "level": "1224",
+                "description": "SPW repeat"
+            },
+            {
+                "id": "2DYCJ",
+                "level": "1",
+                "description": "SPW repeat"
+            },
+            {
+                "id": "2U8RT",
+                "level": "28211",
+                "description": "SPW repeat"
+            },
+            {
+                "id": "3495B",
+                "level": "2",
+                "description": "SPW repeat"
+            },
+            {
+                "id": "3K0GG",
+                "level": "41294",
+                "description": "SPW repeat"
+            }
+        ],
+        "pfam": "[{'id': 'SPW', 'start': '51', 'end': '97', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1762",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "0",
+        "gene name": "bamA",
+        "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane",
+        "strand": "-",
+        "start": "45984",
+        "end": "48254",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MU0D",
+                "level": "1224",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "2TR7W",
+                "level": "28211",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "3JUIS",
+                "level": "41294",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "COG4775",
+                "level": "1",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "COG4775",
+                "level": "2",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            }
+        ],
+        "pfam": "[{'id': 'Bac_surface_Ag', 'start': '432', 'end': '756', 'shape': 'rect'}, {'id': 'POTRA', 'start': '80', 'end': '156', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1763",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "1",
+        "gene name": "",
+        "description": "NA",
+        "strand": "+",
+        "start": "48583",
+        "end": "49635",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1NQ3G",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "28W98",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2TT2E",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "2ZI9R",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JUHT",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "AWZU01000035_gene1764",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "2",
+        "gene name": "",
+        "description": "Isoprenylcysteine carboxyl methyltransferase (ICMT) family",
+        "strand": "+",
+        "start": "49692",
+        "end": "50369",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1R7G6",
+                "level": "1224",
+                "description": "Methyl-transferase"
+            },
+            {
+                "id": "2VG1Y",
+                "level": "28211",
+                "description": "Isoprenylcysteine carboxyl methyltransferase (ICMT) family"
+            },
+            {
+                "id": "3K6HR",
+                "level": "41294",
+                "description": "Isoprenylcysteine carboxyl methyltransferase (ICMT) family"
+            },
+            {
+                "id": "COG2020",
+                "level": "1",
+                "description": "protein C-terminal S-isoprenylcysteine carboxyl O-methyltransferase activity"
+            },
+            {
+                "id": "COG2020",
+                "level": "2",
+                "description": "protein C-terminal S-isoprenylcysteine carboxyl O-methyltransferase activity"
+            }
+        ],
+        "pfam": "[{'id': 'ICMT', 'start': '113', 'end': '204', 'shape': 'rect'}, {'id': 'PEMT', 'start': '109', 'end': '209', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1765",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "3",
+        "gene name": "",
+        "description": "NA",
+        "strand": "+",
+        "start": "50590",
+        "end": "51015",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1RCPP",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "2BSE2",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2U6MR",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "32NCH",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JYCV",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "AWZU01000035_gene1766",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "4",
+        "gene name": "MA20_34695",
+        "description": "Phasin protein",
+        "strand": "+",
+        "start": "51148",
+        "end": "51447",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MZM4",
+                "level": "1224",
+                "description": "PFAM Phasin 2 family protein"
+            },
+            {
+                "id": "2UCPK",
+                "level": "28211",
+                "description": "PFAM Phasin 2 family protein"
+            },
+            {
+                "id": "3JYTC",
+                "level": "41294",
+                "description": "Phasin protein"
+            },
+            {
+                "id": "COG5490",
+                "level": "1",
+                "description": "Phasin protein"
+            },
+            {
+                "id": "COG5490",
+                "level": "2",
+                "description": "Phasin protein"
+            }
+        ],
+        "pfam": "[{'id': 'Phasin_2', 'start': '3', 'end': '97', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1767",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "5",
+        "gene name": "cycB",
+        "description": "Cytochrome c",
+        "strand": "-",
+        "start": "51502",
+        "end": "51762",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1NBAR",
+                "level": "1224",
+                "description": "Cytochrome c"
+            },
+            {
+                "id": "2UHUQ",
+                "level": "28211",
+                "description": "Cytochrome c"
+            },
+            {
+                "id": "3K16V",
+                "level": "41294",
+                "description": "Cytochrome c"
+            },
+            {
+                "id": "COG2010",
+                "level": "1",
+                "description": "electron transfer activity"
+            },
+            {
+                "id": "COG2010",
+                "level": "2",
+                "description": "electron transfer activity"
+            }
+        ],
+        "pfam": "[{'id': 'Cytochrom_C', 'start': '8', 'end': '85', 'shape': 'rect'}, {'id': 'Cytochrome_CBB3', 'start': '6', 'end': '81', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1768",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "6",
+        "gene name": "MA20_34690",
+        "description": "dienelactone hydrolase",
+        "strand": "-",
+        "start": "52287",
+        "end": "53117",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1NE14",
+                "level": "1224",
+                "description": "dienelactone hydrolase"
+            },
+            {
+                "id": "2TUTS",
+                "level": "28211",
+                "description": "dienelactone hydrolase"
+            },
+            {
+                "id": "3JR12",
+                "level": "41294",
+                "description": "dienelactone hydrolase"
+            },
+            {
+                "id": "COG4188",
+                "level": "1",
+                "description": "1-alkyl-2-acetylglycerophosphocholine esterase activity"
+            },
+            {
+                "id": "COG4188",
+                "level": "2",
+                "description": "1-alkyl-2-acetylglycerophosphocholine esterase activity"
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "AWZU01000035_gene1769",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "7",
+        "gene name": "",
+        "description": "OpgC protein",
+        "strand": "+",
+        "start": "53684",
+        "end": "54853",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1NVH2",
+                "level": "1224",
+                "description": "OpgC protein"
+            },
+            {
+                "id": "2U22F",
+                "level": "28211",
+                "description": "OpgC protein"
+            },
+            {
+                "id": "3JTF2",
+                "level": "41294",
+                "description": "OpgC protein"
+            },
+            {
+                "id": "COG4645",
+                "level": "1",
+                "description": "OpgC protein"
+            },
+            {
+                "id": "COG4645",
+                "level": "2",
+                "description": "OpgC protein"
+            }
+        ],
+        "pfam": "[{'id': 'OpgC_C', 'start': '27', 'end': '380', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1770",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "8",
+        "gene name": "",
+        "description": "NA",
+        "strand": "-",
+        "start": "54885",
+        "end": "55103",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1N1S3",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "2A6UN",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2UD7W",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "30VP1",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3K0IQ",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "AWZU01000035_gene1771",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "9",
+        "gene name": "rocF",
+        "description": "Belongs to the arginase family",
+        "strand": "+",
+        "start": "55467",
+        "end": "56381",
+        "taxonomy": "1040989",
+        "kegg": [
+            {
+                "id": "00220",
+                "description": "Arginine biosynthesis"
+            },
+            {
+                "id": "00330",
+                "description": "Arginine and proline metabolism"
+            },
+            {
+                "id": "05146",
+                "description": "Amoebiasis"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "1MVFH",
+                "level": "1224",
+                "description": "Belongs to the arginase family"
+            },
+            {
+                "id": "2TRTG",
+                "level": "28211",
+                "description": "Belongs to the arginase family"
+            },
+            {
+                "id": "3JQSW",
+                "level": "41294",
+                "description": "Belongs to the arginase family"
+            },
+            {
+                "id": "COG0010",
+                "level": "1",
+                "description": "Belongs to the arginase family"
+            },
+            {
+                "id": "COG0010",
+                "level": "2",
+                "description": "Belongs to the arginase family"
+            }
+        ],
+        "pfam": "[{'id': 'Arginase', 'start': '1', 'end': '287', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AWZU01000035_gene1772",
+        "anchor": "AWZU01000035_gene1762",
+        "pos": "10",
+        "gene name": "pcpB",
+        "description": "FAD binding domain",
+        "strand": "-",
+        "start": "56386",
+        "end": "57972",
+        "taxonomy": "1040989",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MUN4",
+                "level": "1224",
+                "description": "COG0654 2-polyprenyl-6-methoxyphenol hydroxylase and related FAD-dependent oxidoreductases"
+            },
+            {
+                "id": "2TQT8",
+                "level": "28211",
+                "description": "COG0654 2-polyprenyl-6-methoxyphenol hydroxylase and related FAD-dependent oxidoreductases"
+            },
+            {
+                "id": "3JTRW",
+                "level": "41294",
+                "description": "FAD binding domain"
+            },
+            {
+                "id": "COG0654",
+                "level": "1",
+                "description": "FAD binding"
+            },
+            {
+                "id": "COG0654",
+                "level": "2",
+                "description": "FAD binding"
+            }
+        ],
+        "pfam": "[{'id': 'NAD_binding_8', 'start': '22', 'end': '78', 'shape': 'rect'}, {'id': 'FAD_binding_3', 'start': '17', 'end': '358', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2392",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "-10",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "21573",
+        "end": "21941",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Phasin_2', 'start': '17', 'end': '121', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2393",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "-9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "22234",
+        "end": "22362",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AUES01000029_gene2394",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "-8",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "22391",
+        "end": "22504",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AUES01000029_gene2395",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "-7",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "22766",
+        "end": "23899",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'FMN_dh', 'start': '32', 'end': '354', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2396",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "-6",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "24156",
+        "end": "24266",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AUES01000029_gene2397",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "-5",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "24450",
+        "end": "25721",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'CoA_transf_3', 'start': '24', 'end': '392', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2398",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "-4",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "26029",
+        "end": "26412",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'GFA', 'start': '11', 'end': '99', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2399",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "-3",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "26488",
+        "end": "27219",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'NnrU', 'start': '51', 'end': '239', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2400",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "-2",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "27381",
+        "end": "28955",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Trans_reg_C', 'start': '23', 'end': '99', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2401",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "-1",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "29002",
+        "end": "30129",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AUES01000029_gene2402",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "0",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "30332",
+        "end": "32617",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Bac_surface_Ag', 'start': '442', 'end': '761', 'shape': 'rect'}, {'id': 'POTRA', 'start': '89', 'end': '166', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2403",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "1",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "32637",
+        "end": "33119",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AUES01000029_gene2404",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "2",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "33240",
+        "end": "33776",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'GcrA', 'start': '4', 'end': '166', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2405",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "3",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "33904",
+        "end": "34542",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Peptidase_S24', 'start': '100', 'end': '166', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2406",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "4",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "35174",
+        "end": "36454",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'OpgC_C', 'start': '10', 'end': '369', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2407",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "5",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "36741",
+        "end": "37973",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'ketoacyl-synt', 'start': '68', 'end': '154', 'shape': 'rect'}, {'id': 'Thiolase_C', 'start': '287', 'end': '409', 'shape': 'rect'}, {'id': 'Thiolase_N', 'start': '4', 'end': '231', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2408",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "6",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "38112",
+        "end": "39059",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'TctC', 'start': '38', 'end': '312', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2409",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "7",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "39071",
+        "end": "40249",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'CoA_transf_3', 'start': '1', 'end': '369', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2410",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "40382",
+        "end": "41311",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'HTH_1', 'start': '3', 'end': '62', 'shape': 'rect'}, {'id': 'LysR_substrate', 'start': '86', 'end': '294', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2411",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "41442",
+        "end": "42473",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'DctP', 'start': '31', 'end': '318', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUES01000029_gene2412",
+        "anchor": "AUES01000029_gene2402",
+        "pos": "10",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "42540",
+        "end": "43073",
+        "taxonomy": "1298867",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'DctQ', 'start': '22', 'end': '156', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5900",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "-10",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "56045",
+        "end": "56266",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAU01000003_gene5901",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "-9",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "56274",
+        "end": "56627",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Phasin_2', 'start': '17', 'end': '115', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5902",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "-8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "56981",
+        "end": "57100",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAU01000003_gene5903",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "-7",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "57101",
+        "end": "57307",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAU01000003_gene5904",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "-6",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "57467",
+        "end": "58600",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'FMN_dh', 'start': '32', 'end': '354', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5905",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "-5",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "58740",
+        "end": "60011",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'CoA_transf_3', 'start': '24', 'end': '392', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5906",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "-4",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "60299",
+        "end": "60607",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAU01000003_gene5907",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "-3",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "60758",
+        "end": "61456",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'PEMT', 'start': '109', 'end': '215', 'shape': 'rect'}, {'id': 'NnrU', 'start': '41', 'end': '226', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5908",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "-2",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "61681",
+        "end": "63237",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'TPR_16', 'start': '391', 'end': '454', 'shape': 'rect'}, {'id': 'Trans_reg_C', 'start': '21', 'end': '96', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5909",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "-1",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "63258",
+        "end": "64310",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAU01000003_gene5910",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "0",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "64596",
+        "end": "66893",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Bac_surface_Ag', 'start': '446', 'end': '765', 'shape': 'rect'}, {'id': 'POTRA', 'start': '173', 'end': '261', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5911",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "1",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "66874",
+        "end": "67383",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAU01000003_gene5912",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "2",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "67664",
+        "end": "68239",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'GcrA', 'start': '18', 'end': '179', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5913",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "3",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "68322",
+        "end": "68966",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Peptidase_S24', 'start': '102', 'end': '170', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5914",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "4",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "69140",
+        "end": "69415",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAU01000003_gene5915",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "5",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "69593",
+        "end": "70768",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'OpgC_C', 'start': '10', 'end': '368', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5916",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "6",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "70811",
+        "end": "71146",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Glyco_hydro_3', 'start': '1', 'end': '105', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5917",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "7",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "71146",
+        "end": "72111",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Glyco_hydro_3', 'start': '116', 'end': '319', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5918",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "72406",
+        "end": "73896",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'DUF4173', 'start': '251', 'end': '442', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5919",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "74009",
+        "end": "74635",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Response_reg', 'start': '1', 'end': '88', 'shape': 'rect'}, {'id': 'Trans_reg_C', 'start': '126', 'end': '201', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAU01000003_gene5920",
+        "anchor": "AXAU01000003_gene5910",
+        "pos": "10",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "74632",
+        "end": "76224",
+        "taxonomy": "1038859",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'HAMP', 'start': '243', 'end': '314', 'shape': 'rect'}, {'id': 'HATPase_c', 'start': '427', 'end': '530', 'shape': 'rect'}, {'id': 'HATPase_c_5', 'start': '426', 'end': '527', 'shape': 'rect'}, {'id': 'HisKA', 'start': '319', 'end': '390', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6378",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "-10",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "123164",
+        "end": "123277",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AUEZ01000011_gene6379",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "-9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "123644",
+        "end": "124477",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AUEZ01000011_gene6380",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "-8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "124464",
+        "end": "126464",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'COX1', 'start': '57', 'end': '504', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6381",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "-7",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "126468",
+        "end": "127118",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'COX3', 'start': '19', 'end': '214', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6382",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "-6",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "127115",
+        "end": "127504",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'COX4_pro', 'start': '31', 'end': '104', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6383",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "-5",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "127528",
+        "end": "128670",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'OpgC_C', 'start': '10', 'end': '369', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6384",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "-4",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "128857",
+        "end": "129132",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AUEZ01000011_gene6385",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "-3",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "129240",
+        "end": "129878",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Peptidase_S24', 'start': '100', 'end': '168', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6386",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "-2",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "130006",
+        "end": "130539",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'GcrA', 'start': '4', 'end': '164', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6387",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "-1",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "130637",
+        "end": "131212",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AUEZ01000011_gene6388",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "0",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "131193",
+        "end": "133553",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Bac_surface_Ag', 'start': '463', 'end': '786', 'shape': 'rect'}, {'id': 'POTRA', 'start': '110', 'end': '187', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6389",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "1",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "133781",
+        "end": "134833",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AUEZ01000011_gene6390",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "2",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "135021",
+        "end": "136283",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'CoA_transf_3', 'start': '21', 'end': '389', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6391",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "3",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "136477",
+        "end": "136662",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AUEZ01000011_gene6392",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "4",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "136750",
+        "end": "137070",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'AraC_binding', 'start': '26', 'end': '106', 'shape': 'rect'}, {'id': 'Cupin_2', 'start': '29', 'end': '97', 'shape': 'rect'}, {'id': 'Cupin_3', 'start': '24', 'end': '92', 'shape': 'rect'}, {'id': 'EutQ', 'start': '26', 'end': '101', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6393",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "5",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "137067",
+        "end": "137753",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'YqcI_YcgG', 'start': '5', 'end': '211', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6394",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "6",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "137848",
+        "end": "139140",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'MFS_1', 'start': '21', 'end': '373', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6395",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "7",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "139140",
+        "end": "139853",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AUEZ01000011_gene6396",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "140003",
+        "end": "140935",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'DJ-1_PfpI', 'start': '1', 'end': '164', 'shape': 'rect'}, {'id': 'HTH_18', 'start': '226', 'end': '306', 'shape': 'rect'}, {'id': 'HTH_AraC', 'start': '213', 'end': '251', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6397",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "141054",
+        "end": "142181",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'FMN_dh', 'start': '30', 'end': '352', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AUEZ01000011_gene6398",
+        "anchor": "AUEZ01000011_gene6388",
+        "pos": "10",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "142299",
+        "end": "142502",
+        "taxonomy": "196490",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAP01000023_gene7366",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "-10",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "35573",
+        "end": "36874",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Glyco_hydro_3', 'start': '90', 'end': '429', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7367",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "-9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "37158",
+        "end": "37991",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAP01000023_gene7368",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "-8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "37981",
+        "end": "39978",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'COX1', 'start': '56', 'end': '503', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7369",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "-7",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "39982",
+        "end": "40632",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'COX3', 'start': '18', 'end': '214', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7370",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "-6",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "40629",
+        "end": "41018",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'COX4_pro', 'start': '31', 'end': '104', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7371",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "-5",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "41044",
+        "end": "42198",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'OpgC_C', 'start': '14', 'end': '373', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7372",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "-4",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "42375",
+        "end": "42668",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAP01000023_gene7373",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "-3",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "42756",
+        "end": "43394",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Peptidase_S24', 'start': '100', 'end': '169', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7374",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "-2",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "43525",
+        "end": "44064",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'GcrA', 'start': '4', 'end': '167', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7375",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "-1",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "44162",
+        "end": "44737",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAP01000023_gene7376",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "0",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "44718",
+        "end": "47078",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Bac_surface_Ag', 'start': '463', 'end': '786', 'shape': 'rect'}, {'id': 'POTRA', 'start': '110', 'end': '187', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7377",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "1",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "47306",
+        "end": "48358",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAP01000023_gene7378",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "2",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "48558",
+        "end": "49811",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'CoA_transf_3', 'start': '21', 'end': '389', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7379",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "3",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "50010",
+        "end": "50195",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAP01000023_gene7380",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "4",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "50285",
+        "end": "50605",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'AraC_binding', 'start': '26', 'end': '106', 'shape': 'rect'}, {'id': 'Cupin_2', 'start': '29', 'end': '97', 'shape': 'rect'}, {'id': 'EutQ', 'start': '26', 'end': '102', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7381",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "5",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "50602",
+        "end": "51288",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'YqcI_YcgG', 'start': '5', 'end': '211', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7382",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "6",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "51383",
+        "end": "52675",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'MFS_1', 'start': '21', 'end': '373', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7383",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "7",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "52675",
+        "end": "53388",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "AXAP01000023_gene7384",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "53505",
+        "end": "54470",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'DJ-1_PfpI', 'start': '2', 'end': '175', 'shape': 'rect'}, {'id': 'HTH_18', 'start': '237', 'end': '317', 'shape': 'rect'}, {'id': 'HTH_AraC', 'start': '224', 'end': '262', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7385",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "54617",
+        "end": "55750",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'FMN_dh', 'start': '32', 'end': '354', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "AXAP01000023_gene7386",
+        "anchor": "AXAP01000023_gene7376",
+        "pos": "10",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "55872",
+        "end": "56075",
+        "taxonomy": "1038860",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JNIJ01000011_gene868",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "-10",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "66272",
+        "end": "66493",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JNIJ01000011_gene869",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "-9",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "66729",
+        "end": "66872",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JNIJ01000011_gene870",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "-8",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "67408",
+        "end": "67731",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JNIJ01000011_gene871",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "-7",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "68372",
+        "end": "68521",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'DUF1236', 'start': '1', 'end': '48', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JNIJ01000011_gene872",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "-6",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "68849",
+        "end": "69109",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JNIJ01000011_gene873",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "-5",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "69396",
+        "end": "70193",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Methyltransf_11', 'start': '42', 'end': '135', 'shape': 'rect'}, {'id': 'Methyltransf_12', 'start': '42', 'end': '133', 'shape': 'rect'}, {'id': 'Methyltransf_23', 'start': '15', 'end': '227', 'shape': 'rect'}, {'id': 'Methyltransf_25', 'start': '41', 'end': '131', 'shape': 'rect'}, {'id': 'RrnaAD', 'start': '21', 'end': '161', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JNIJ01000011_gene874",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "-4",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "70321",
+        "end": "71145",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'FAA_hydrolase', 'start': '53', 'end': '268', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JNIJ01000011_gene875",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "-3",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "71342",
+        "end": "71698",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Phasin_2', 'start': '14', 'end': '117', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JNIJ01000011_gene876",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "-2",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "72063",
+        "end": "72842",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'MipZ', 'start': '1', 'end': '244', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JNIJ01000011_gene877",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "-1",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "73883",
+        "end": "74935",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JNIJ01000011_gene878",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "0",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "75288",
+        "end": "77534",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Bac_surface_Ag', 'start': '423', 'end': '748', 'shape': 'rect'}, {'id': 'POTRA', 'start': '150', 'end': '238', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JNIJ01000011_gene879",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "1",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "77602",
+        "end": "78153",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JNIJ01000011_gene880",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "2",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "78283",
+        "end": "78912",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'GcrA', 'start': '3', 'end': '168', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JNIJ01000011_gene881",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "3",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "79059",
+        "end": "79697",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Peptidase_S24', 'start': '100', 'end': '168', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JNIJ01000011_gene882",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "4",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "79879",
+        "end": "80136",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JNIJ01000011_gene883",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "5",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "80807",
+        "end": "82210",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'HisKA', 'start': '222', 'end': '284', 'shape': 'rect'}, {'id': 'HATPase_c', 'start': '329', 'end': '437', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JNIJ01000011_gene884",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "6",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "82330",
+        "end": "83007",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Response_reg', 'start': '4', 'end': '114', 'shape': 'rect'}, {'id': 'Trans_reg_C', 'start': '145', 'end': '221', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JNIJ01000011_gene885",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "7",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "83621",
+        "end": "83755",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JNIJ01000011_gene886",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "83816",
+        "end": "84307",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JNIJ01000011_gene887",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "84392",
+        "end": "84595",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JNIJ01000011_gene888",
+        "anchor": "JNIJ01000011_gene878",
+        "pos": "10",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "84592",
+        "end": "85869",
+        "taxonomy": "1380355",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Biotin_lipoyl_2', 'start': '107', 'end': '156', 'shape': 'rect'}, {'id': 'HlyD_3', 'start': '232', 'end': '334', 'shape': 'rect'}, {'id': 'HlyD_D23', 'start': '97', 'end': '337', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "S58_23600",
+        "anchor": "S58_23610",
+        "pos": "-10",
+        "gene name": "",
+        "description": "NA",
+        "strand": "+",
+        "start": "2665879",
+        "end": "2666319",
+        "taxonomy": "1245469",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1PX1N",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "2AG3N",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2UBN3",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "31688",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JZJD",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23601",
+        "anchor": "S58_23610",
+        "pos": "-9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23602",
+        "anchor": "S58_23610",
+        "pos": "-8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23603",
+        "anchor": "S58_23610",
+        "pos": "-7",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23604",
+        "anchor": "S58_23610",
+        "pos": "-6",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23605",
+        "anchor": "S58_23610",
+        "pos": "-5",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23606",
+        "anchor": "S58_23610",
+        "pos": "-4",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23607",
+        "anchor": "S58_23610",
+        "pos": "-3",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23608",
+        "anchor": "S58_23610",
+        "pos": "-2",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23609",
+        "anchor": "S58_23610",
+        "pos": "-1",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23610",
+        "anchor": "S58_23610",
+        "pos": "0",
+        "gene name": "bamA",
+        "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane",
+        "strand": "-",
+        "start": "2666377",
+        "end": "2668695",
+        "taxonomy": "1245469",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MU0D",
+                "level": "1224",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "2TR7W",
+                "level": "28211",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "3JUIS",
+                "level": "41294",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "COG4775",
+                "level": "1",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "COG4775",
+                "level": "2",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            }
+        ],
+        "pfam": "[{'id': 'Bac_surface_Ag', 'start': '454', 'end': '772', 'shape': 'rect'}, {'id': 'POTRA', 'start': '181', 'end': '269', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "S58_23611",
+        "anchor": "S58_23610",
+        "pos": "1",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23612",
+        "anchor": "S58_23610",
+        "pos": "2",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23613",
+        "anchor": "S58_23610",
+        "pos": "3",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23614",
+        "anchor": "S58_23610",
+        "pos": "4",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23615",
+        "anchor": "S58_23610",
+        "pos": "5",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23616",
+        "anchor": "S58_23610",
+        "pos": "6",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23617",
+        "anchor": "S58_23610",
+        "pos": "7",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23618",
+        "anchor": "S58_23610",
+        "pos": "8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23619",
+        "anchor": "S58_23610",
+        "pos": "9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "1245469",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "S58_23620",
+        "anchor": "S58_23610",
+        "pos": "10",
+        "gene name": "",
+        "description": "NA",
+        "strand": "+",
+        "start": "2668932",
+        "end": "2669987",
+        "taxonomy": "1245469",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1NQ3G",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "28W98",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2TT2E",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "2ZI9R",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JUHT",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "BBta_5817",
+        "anchor": "BBta_5827",
+        "pos": "-10",
+        "gene name": "MA20_34695",
+        "description": "Phasin protein",
+        "strand": "-",
+        "start": "6063003",
+        "end": "6063356",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MZM4",
+                "level": "1224",
+                "description": "PFAM Phasin 2 family protein"
+            },
+            {
+                "id": "2UCPK",
+                "level": "28211",
+                "description": "PFAM Phasin 2 family protein"
+            },
+            {
+                "id": "3JYTC",
+                "level": "41294",
+                "description": "Phasin protein"
+            },
+            {
+                "id": "COG5490",
+                "level": "1",
+                "description": "Phasin protein"
+            },
+            {
+                "id": "COG5490",
+                "level": "2",
+                "description": "Phasin protein"
+            }
+        ],
+        "pfam": "[{'id': 'Phasin_2', 'start': '17', 'end': '117', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "BBta_5818",
+        "anchor": "BBta_5827",
+        "pos": "-9",
+        "gene name": "",
+        "description": "No homology to any previously reported sequences",
+        "strand": "-",
+        "start": "6063462",
+        "end": "6063761",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1NJXK",
+                "level": "1224",
+                "description": "No homology to any previously reported sequences"
+            },
+            {
+                "id": "2CCH0",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2UMA7",
+                "level": "28211",
+                "description": "No homology to any previously reported sequences"
+            },
+            {
+                "id": "302GG",
+                "level": "2",
+                "description": "No homology to any previously reported sequences"
+            },
+            {
+                "id": "3K281",
+                "level": "41294",
+                "description": "No homology to any previously reported sequences"
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "BBta_5819",
+        "anchor": "BBta_5827",
+        "pos": "-8",
+        "gene name": "",
+        "description": "DJ-1/PfpI family",
+        "strand": "-",
+        "start": "6063967",
+        "end": "6064983",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MUDK",
+                "level": "1224",
+                "description": "Transcriptional regulator containing an amidase domain and an AraC-type DNA-binding HTH domain"
+            },
+            {
+                "id": "2TS7I",
+                "level": "28211",
+                "description": "Transcriptional regulator containing an amidase domain and an AraC-type DNA-binding HTH domain"
+            },
+            {
+                "id": "3JR98",
+                "level": "41294",
+                "description": "DJ-1/PfpI family"
+            },
+            {
+                "id": "COG4977",
+                "level": "1",
+                "description": "rhamnose metabolic process"
+            },
+            {
+                "id": "COG4977",
+                "level": "2",
+                "description": "rhamnose metabolic process"
+            }
+        ],
+        "pfam": "[{'id': 'DJ-1_PfpI', 'start': '20', 'end': '193', 'shape': 'rect'}, {'id': 'HTH_18', 'start': '255', 'end': '335', 'shape': 'rect'}, {'id': 'HTH_AraC', 'start': '242', 'end': '280', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "BBta_5820",
+        "anchor": "BBta_5827",
+        "pos": "-7",
+        "gene name": "",
+        "description": "NA",
+        "strand": "+",
+        "start": "6065048",
+        "end": "6065758",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1R7B8",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "2BS73",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2TTVE",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "32M8C",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JR2P",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "BBta_5821",
+        "anchor": "BBta_5827",
+        "pos": "-6",
+        "gene name": "",
+        "description": "Major facilitator Superfamily",
+        "strand": "+",
+        "start": "6065758",
+        "end": "6067056",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1QUY6",
+                "level": "1224",
+                "description": "Major facilitator Superfamily"
+            },
+            {
+                "id": "2TWZ0",
+                "level": "28211",
+                "description": "Major Facilitator Superfamily"
+            },
+            {
+                "id": "3JTVP",
+                "level": "41294",
+                "description": "Major Facilitator Superfamily"
+            },
+            {
+                "id": "COG0477",
+                "level": "1",
+                "description": "Major facilitator Superfamily"
+            },
+            {
+                "id": "COG2814",
+                "level": "2",
+                "description": "Major Facilitator Superfamily"
+            }
+        ],
+        "pfam": "[{'id': 'MFS_1', 'start': '29', 'end': '374', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "BBta_5822",
+        "anchor": "BBta_5827",
+        "pos": "-5",
+        "gene name": "yqcI",
+        "description": "YqcI/YcgG family",
+        "strand": "+",
+        "start": "6067077",
+        "end": "6067832",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1R4AQ",
+                "level": "1224",
+                "description": "YqcI/YcgG family"
+            },
+            {
+                "id": "2U0P7",
+                "level": "28211",
+                "description": "YqcI/YcgG family"
+            },
+            {
+                "id": "3JVGC",
+                "level": "41294",
+                "description": "YqcI/YcgG family"
+            },
+            {
+                "id": "COG3403",
+                "level": "1",
+                "description": "YqcI/YcgG family"
+            },
+            {
+                "id": "COG3403",
+                "level": "2",
+                "description": "YqcI/YcgG family"
+            }
+        ],
+        "pfam": "[{'id': 'YqcI_YcgG', 'start': '24', 'end': '234', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "BBta_5823",
+        "anchor": "BBta_5827",
+        "pos": "-4",
+        "gene name": "",
+        "description": "AraC-like ligand binding domain",
+        "strand": "+",
+        "start": "6067829",
+        "end": "6068146",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1RFM2",
+                "level": "1224",
+                "description": "AraC-like ligand binding domain"
+            },
+            {
+                "id": "2U8E7",
+                "level": "28211",
+                "description": "AraC-like ligand binding domain"
+            },
+            {
+                "id": "3JYYW",
+                "level": "41294",
+                "description": "AraC-like ligand binding domain"
+            },
+            {
+                "id": "COG1917",
+                "level": "1",
+                "description": "ectoine synthase activity"
+            },
+            {
+                "id": "COG1917",
+                "level": "2",
+                "description": "ectoine synthase activity"
+            }
+        ],
+        "pfam": "[{'id': 'AraC_binding', 'start': '27', 'end': '99', 'shape': 'rect'}, {'id': 'Cupin_2', 'start': '29', 'end': '94', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "BBta_5824",
+        "anchor": "BBta_5827",
+        "pos": "-3",
+        "gene name": "MA20_34700",
+        "description": "NA",
+        "strand": "-",
+        "start": "6068158",
+        "end": "6068283",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1N7HU",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "2ADXH",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2UFZM",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "313PP",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3K18I",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "BBta_5825",
+        "anchor": "BBta_5827",
+        "pos": "-2",
+        "gene name": "",
+        "description": "NA",
+        "strand": "+",
+        "start": "6068783",
+        "end": "6069016",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1NDUI",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "29FRZ",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2UHSQ",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "302PN",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3K1KK",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "BBta_5826",
+        "anchor": "BBta_5827",
+        "pos": "-1",
+        "gene name": "",
+        "description": "NA",
+        "strand": "-",
+        "start": "6069189",
+        "end": "6070244",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1NQ3G",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "28W98",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2TT2E",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "2ZI9R",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JUHT",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "BBta_5827",
+        "anchor": "BBta_5827",
+        "pos": "0",
+        "gene name": "bamA",
+        "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane",
+        "strand": "+",
+        "start": "6070465",
+        "end": "6072813",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MU0D",
+                "level": "1224",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "2TR7W",
+                "level": "28211",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "3JUIS",
+                "level": "41294",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "COG4775",
+                "level": "1",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "COG4775",
+                "level": "2",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            }
+        ],
+        "pfam": "[{'id': 'Bac_surface_Ag', 'start': '464', 'end': '782', 'shape': 'rect'}, {'id': 'POTRA', 'start': '112', 'end': '188', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "BBta_5828",
+        "anchor": "BBta_5827",
+        "pos": "1",
+        "gene name": "",
+        "description": "NA",
+        "strand": "-",
+        "start": "6072879",
+        "end": "6073313",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1PX1N",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "2AG3N",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2UBN3",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "31688",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JZJD",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "BBta_5829",
+        "anchor": "BBta_5827",
+        "pos": "2",
+        "gene name": "MA20_34705",
+        "description": "NA",
+        "strand": "+",
+        "start": "6073573",
+        "end": "6073929",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1RDU7",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "2E1C2",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2U76E",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "32WRU",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JZ0F",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "BBta_5830",
+        "anchor": "BBta_5827",
+        "pos": "3",
+        "gene name": "",
+        "description": "NA",
+        "strand": "-",
+        "start": "6073991",
+        "end": "6074596",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1N3AI",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "2FFDN",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2TUEQ",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "347B9",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JTK2",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "BBta_5831",
+        "anchor": "BBta_5827",
+        "pos": "4",
+        "gene name": "",
+        "description": "GcrA cell cycle regulator",
+        "strand": "-",
+        "start": "6074650",
+        "end": "6075186",
+        "taxonomy": "288000",
+        "kegg": [
+            {
+                "id": "04112",
+                "description": "Cell cycle - Caulobacter"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "1P31N",
+                "level": "1224",
+                "description": "GcrA cell cycle regulator"
+            },
+            {
+                "id": "2TVRI",
+                "level": "28211",
+                "description": "GcrA cell cycle regulator"
+            },
+            {
+                "id": "3JSR5",
+                "level": "41294",
+                "description": "GcrA cell cycle regulator"
+            },
+            {
+                "id": "COG5352",
+                "level": "1",
+                "description": "GcrA cell cycle regulator"
+            },
+            {
+                "id": "COG5352",
+                "level": "2",
+                "description": "GcrA cell cycle regulator"
+            }
+        ],
+        "pfam": "[{'id': 'GcrA', 'start': '4', 'end': '167', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "BBta_5832",
+        "anchor": "BBta_5827",
+        "pos": "5",
+        "gene name": "MA20_34720",
+        "description": "Peptidase S24-like",
+        "strand": "+",
+        "start": "6075350",
+        "end": "6075970",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1R40Y",
+                "level": "1224",
+                "description": "Transcriptional regulator"
+            },
+            {
+                "id": "2TUT0",
+                "level": "28211",
+                "description": "Transcriptional regulator"
+            },
+            {
+                "id": "3JTNV",
+                "level": "41294",
+                "description": "Peptidase S24-like"
+            },
+            {
+                "id": "COG2932",
+                "level": "1",
+                "description": "Transcriptional regulator"
+            },
+            {
+                "id": "COG2932",
+                "level": "2",
+                "description": "Transcriptional regulator"
+            }
+        ],
+        "pfam": "[{'id': 'Peptidase_S24', 'start': '100', 'end': '168', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "BBta_5833",
+        "anchor": "BBta_5827",
+        "pos": "6",
+        "gene name": "",
+        "description": "NA",
+        "strand": "+",
+        "start": "6076088",
+        "end": "6076399",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1RK6K",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "29BJV",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2UA1V",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "2ZYI6",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3JZJ0",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "BBta_5834",
+        "anchor": "BBta_5827",
+        "pos": "7",
+        "gene name": "qor",
+        "description": "Zinc-binding dehydrogenase",
+        "strand": "-",
+        "start": "6076473",
+        "end": "6077447",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MWBD",
+                "level": "1224",
+                "description": "NADPH quinone reductase and related Zn-dependent oxidoreductases"
+            },
+            {
+                "id": "2TS3Z",
+                "level": "28211",
+                "description": "COG0604 NADPH quinone reductase and related Zn-dependent oxidoreductases"
+            },
+            {
+                "id": "3JR0C",
+                "level": "41294",
+                "description": "Zinc-binding dehydrogenase"
+            },
+            {
+                "id": "COG0604",
+                "level": "1",
+                "description": "alcohol dehydrogenase"
+            },
+            {
+                "id": "COG0604",
+                "level": "2",
+                "description": "alcohol dehydrogenase"
+            }
+        ],
+        "pfam": "[{'id': 'ADH_N', 'start': '28', 'end': '107', 'shape': 'rect'}, {'id': 'ADH_zinc_N_2', 'start': '183', 'end': '322', 'shape': 'rect'}, {'id': 'ADH_zinc_N', 'start': '151', 'end': '270', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "BBta_5835",
+        "anchor": "BBta_5827",
+        "pos": "8",
+        "gene name": "",
+        "description": "NA",
+        "strand": "+",
+        "start": "6077669",
+        "end": "6077929",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1N3XW",
+                "level": "1224",
+                "description": ""
+            },
+            {
+                "id": "2A63A",
+                "level": "1",
+                "description": ""
+            },
+            {
+                "id": "2UD4F",
+                "level": "28211",
+                "description": ""
+            },
+            {
+                "id": "30UVQ",
+                "level": "2",
+                "description": ""
+            },
+            {
+                "id": "3K0MP",
+                "level": "41294",
+                "description": ""
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "BBta_5836",
+        "anchor": "BBta_5827",
+        "pos": "9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "288000",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "BBta_5837",
+        "anchor": "BBta_5827",
+        "pos": "10",
+        "gene name": "sugE",
+        "description": "PFAM small multidrug resistance protein",
+        "strand": "+",
+        "start": "6078187",
+        "end": "6078513",
+        "taxonomy": "288000",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1MZ6P",
+                "level": "1224",
+                "description": "Small multidrug resistance protein"
+            },
+            {
+                "id": "2UBR4",
+                "level": "28211",
+                "description": "Small multidrug resistance protein"
+            },
+            {
+                "id": "3JZDI",
+                "level": "41294",
+                "description": "PFAM small multidrug resistance protein"
+            },
+            {
+                "id": "COG2076",
+                "level": "1",
+                "description": "lipopolysaccharide biosynthetic process"
+            },
+            {
+                "id": "COG2076",
+                "level": "2",
+                "description": "lipopolysaccharide biosynthetic process"
+            }
+        ],
+        "pfam": "[{'id': 'Multi_Drug_Res', 'start': '3', 'end': '95', 'shape': 'rect'}]"
+    }
+]

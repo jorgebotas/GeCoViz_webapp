@@ -1,0 +1,1566 @@
+[
+    {
+        "gene": "JCM19302_3133",
+        "anchor": "JCM19302_3143",
+        "pos": "-10",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "47864",
+        "end": "48286",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JCM19302_3134",
+        "anchor": "JCM19302_3143",
+        "pos": "-9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "48414",
+        "end": "49748",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JCM19302_3135",
+        "anchor": "JCM19302_3143",
+        "pos": "-8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "49823",
+        "end": "50620",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JCM19302_3136",
+        "anchor": "JCM19302_3143",
+        "pos": "-7",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "50574",
+        "end": "50687",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JCM19302_3137",
+        "anchor": "JCM19302_3143",
+        "pos": "-6",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "50701",
+        "end": "51912",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'AAA', 'start': '20', 'end': '133', 'shape': 'rect'}, {'id': 'AAA_assoc_2', 'start': '154', 'end': '230', 'shape': 'rect'}, {'id': 'MgsA_C', 'start': '231', 'end': '397', 'shape': 'rect'}, {'id': 'RuvB_N', 'start': '10', 'end': '120', 'shape': 'rect'}, {'id': 'Sigma54_activat', 'start': '6', 'end': '147', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3138",
+        "anchor": "JCM19302_3143",
+        "pos": "-5",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "52141",
+        "end": "52896",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Rhomboid', 'start': '56', 'end': '198', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3139",
+        "anchor": "JCM19302_3143",
+        "pos": "-4",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "52901",
+        "end": "53635",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'SpoU_methylase', 'start': '96', 'end': '237', 'shape': 'rect'}, {'id': 'SpoU_sub_bind', 'start': '6', 'end': '80', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3140",
+        "anchor": "JCM19302_3143",
+        "pos": "-3",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "53736",
+        "end": "55181",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'SusD-like', 'start': '1', 'end': '469', 'shape': 'rect'}, {'id': 'SusD-like_2', 'start': '8', 'end': '473', 'shape': 'rect'}, {'id': 'SusD-like_3', 'start': '34', 'end': '200', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3141",
+        "anchor": "JCM19302_3143",
+        "pos": "-2",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "55185",
+        "end": "58292",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'CarbopepD_reg_2', 'start': '11', 'end': '91', 'shape': 'rect'}, {'id': 'CarboxypepD_reg', 'start': '10', 'end': '80', 'shape': 'rect'}, {'id': 'Plug', 'start': '99', 'end': '224', 'shape': 'rect'}, {'id': 'TonB_dep_Rec', 'start': '398', 'end': '1034', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3142",
+        "anchor": "JCM19302_3143",
+        "pos": "-1",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "58697",
+        "end": "59644",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'POTRA', 'start': '11', 'end': '82', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3143",
+        "anchor": "JCM19302_3143",
+        "pos": "0",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "59812",
+        "end": "60117",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JCM19302_3144",
+        "anchor": "JCM19302_3143",
+        "pos": "1",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "60384",
+        "end": "60758",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Ribosom_S12_S23', 'start': '2', 'end': '123', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3145",
+        "anchor": "JCM19302_3143",
+        "pos": "2",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "60779",
+        "end": "61255",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Ribosomal_S7', 'start': '1', 'end': '151', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3146",
+        "anchor": "JCM19302_3143",
+        "pos": "3",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "61259",
+        "end": "63385",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'EFG_C', 'start': '612', 'end': '699', 'shape': 'rect'}, {'id': 'EFG_II', 'start': '415', 'end': '489', 'shape': 'rect'}, {'id': 'EFG_IV', 'start': '490', 'end': '610', 'shape': 'rect'}, {'id': 'GTP_EFTU', 'start': '6', 'end': '293', 'shape': 'rect'}, {'id': 'GTP_EFTU_D2', 'start': '335', 'end': '402', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3147",
+        "anchor": "JCM19302_3143",
+        "pos": "4",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "63397",
+        "end": "63702",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Ribosomal_S10', 'start': '6', 'end': '100', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3148",
+        "anchor": "JCM19302_3143",
+        "pos": "5",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "63973",
+        "end": "64560",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Ribosomal_L3', 'start': '50', 'end': '175', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3149",
+        "anchor": "JCM19302_3143",
+        "pos": "6",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "64560",
+        "end": "65189",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Ribosomal_L4', 'start': '17', 'end': '206', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3150",
+        "anchor": "JCM19302_3143",
+        "pos": "7",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "65197",
+        "end": "65487",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Ribosomal_L23', 'start': '2', 'end': '92', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3151",
+        "anchor": "JCM19302_3143",
+        "pos": "8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "65493",
+        "end": "66179",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Ribosomal_L2', 'start': '42', 'end': '118', 'shape': 'rect'}, {'id': 'Ribosomal_L2_C', 'start': '126', 'end': '228', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "JCM19302_3152",
+        "anchor": "JCM19302_3143",
+        "pos": "9",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "66188",
+        "end": "66319",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "JCM19302_3153",
+        "anchor": "JCM19302_3143",
+        "pos": "10",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "66323",
+        "end": "66601",
+        "taxonomy": "504487",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'Ribosomal_S19', 'start': '3', 'end': '83', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0746",
+        "anchor": "Theba_0756",
+        "pos": "-10",
+        "gene name": "polX",
+        "description": "Helix-hairpin-helix domain",
+        "strand": "-",
+        "start": "794120",
+        "end": "794584",
+        "taxonomy": "660470",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "2GDMK",
+                "level": "200918",
+                "description": "Helix-hairpin-helix domain"
+            },
+            {
+                "id": "COG1796",
+                "level": "1",
+                "description": "DNA polymerase"
+            },
+            {
+                "id": "COG1796",
+                "level": "2",
+                "description": "DNA polymerase"
+            }
+        ],
+        "pfam": "[{'id': 'HHH_8', 'start': '3', 'end': '73', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0747",
+        "anchor": "Theba_0756",
+        "pos": "-9",
+        "gene name": "VPA0323",
+        "description": "Dinitrogenase iron-molybdenum cofactor",
+        "strand": "-",
+        "start": "794660",
+        "end": "794977",
+        "taxonomy": "660470",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "2GDK0",
+                "level": "200918",
+                "description": "Dinitrogenase iron-molybdenum cofactor"
+            },
+            {
+                "id": "COG1433",
+                "level": "1",
+                "description": "Dinitrogenase iron-molybdenum cofactor"
+            },
+            {
+                "id": "COG1433",
+                "level": "2",
+                "description": "Dinitrogenase iron-molybdenum cofactor"
+            }
+        ],
+        "pfam": "[{'id': 'Nitro_FeMo-Co', 'start': '12', 'end': '103', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0748",
+        "anchor": "Theba_0756",
+        "pos": "-8",
+        "gene name": "",
+        "description": "-binding domain",
+        "strand": "-",
+        "start": "794980",
+        "end": "795855",
+        "taxonomy": "660470",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "2GCP7",
+                "level": "200918",
+                "description": "-binding domain"
+            },
+            {
+                "id": "COG1149",
+                "level": "1",
+                "description": "4fe-4S ferredoxin, iron-sulfur binding domain protein"
+            },
+            {
+                "id": "COG1149",
+                "level": "2",
+                "description": "4fe-4S ferredoxin, iron-sulfur binding domain protein"
+            }
+        ],
+        "pfam": "[{'id': 'Fer4', 'start': '88', 'end': '111', 'shape': 'rect'}, {'id': 'CbiA', 'start': '4', 'end': '255', 'shape': 'rect'}, {'id': 'Fer4_10', 'start': '59', 'end': '106', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0749",
+        "anchor": "Theba_0756",
+        "pos": "-7",
+        "gene name": "",
+        "description": "-binding domain",
+        "strand": "-",
+        "start": "795855",
+        "end": "796706",
+        "taxonomy": "660470",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "2GBWZ",
+                "level": "200918",
+                "description": "-binding domain"
+            },
+            {
+                "id": "COG1149",
+                "level": "1",
+                "description": "4fe-4S ferredoxin, iron-sulfur binding domain protein"
+            },
+            {
+                "id": "COG1149",
+                "level": "2",
+                "description": "4fe-4S ferredoxin, iron-sulfur binding domain protein"
+            }
+        ],
+        "pfam": "[{'id': 'ParA', 'start': '1', 'end': '81', 'shape': 'rect'}, {'id': 'Fer4', 'start': '91', 'end': '114', 'shape': 'rect'}, {'id': 'CbiA', 'start': '3', 'end': '250', 'shape': 'rect'}, {'id': 'Fer4_6', 'start': '93', 'end': '113', 'shape': 'rect'}, {'id': 'AAA_31', 'start': '1', 'end': '62', 'shape': 'rect'}, {'id': 'Fer4_10', 'start': '61', 'end': '109', 'shape': 'rect'}, {'id': 'Fer4_9', 'start': '60', 'end': '113', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0750",
+        "anchor": "Theba_0756",
+        "pos": "-6",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "796710",
+        "end": "796937",
+        "taxonomy": "660470",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'DUF5320', 'start': '1', 'end': '75', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0751",
+        "anchor": "Theba_0756",
+        "pos": "-5",
+        "gene name": "",
+        "description": "",
+        "strand": "-",
+        "start": "796942",
+        "end": "797250",
+        "taxonomy": "660470",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": "[{'id': 'DUF5320', 'start': '2', 'end': '93', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0752",
+        "anchor": "Theba_0756",
+        "pos": "-4",
+        "gene name": "",
+        "description": "methyltransferase",
+        "strand": "+",
+        "start": "797375",
+        "end": "797971",
+        "taxonomy": "660470",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "COG0500",
+                "level": "1",
+                "description": "methyltransferase"
+            },
+            {
+                "id": "COG2226",
+                "level": "2",
+                "description": "methyltransferase activity"
+            }
+        ],
+        "pfam": "[{'id': 'MetW', 'start': '29', 'end': '151', 'shape': 'rect'}, {'id': 'Methyltransf_2', 'start': '16', 'end': '153', 'shape': 'rect'}, {'id': 'Ubie_methyltran', 'start': '9', 'end': '156', 'shape': 'rect'}, {'id': 'Methyltransf_18', 'start': '42', 'end': '145', 'shape': 'rect'}, {'id': 'Methyltransf_15', 'start': '43', 'end': '152', 'shape': 'rect'}, {'id': 'Methyltransf_25', 'start': '46', 'end': '139', 'shape': 'rect'}, {'id': 'Methyltransf_23', 'start': '16', 'end': '149', 'shape': 'rect'}, {'id': 'Methyltransf_11', 'start': '47', 'end': '141', 'shape': 'rect'}, {'id': 'Methyltransf_31', 'start': '41', 'end': '155', 'shape': 'rect'}, {'id': 'Methyltransf_12', 'start': '47', 'end': '138', 'shape': 'rect'}, {'id': 'MTS', 'start': '30', 'end': '129', 'shape': 'rect'}, {'id': 'PrmA', 'start': '30', 'end': '117', 'shape': 'rect'}, {'id': 'Methyltransf_26', 'start': '43', 'end': '176', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0753",
+        "anchor": "Theba_0756",
+        "pos": "-3",
+        "gene name": "",
+        "description": "Binding-protein-dependent transport system inner membrane component",
+        "strand": "+",
+        "start": "798075",
+        "end": "799007",
+        "taxonomy": "660470",
+        "kegg": [
+            {
+                "id": "02010",
+                "description": "ABC transporters"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "2GE0B",
+                "level": "200918",
+                "description": "Binding-protein-dependent transport system inner membrane component"
+            },
+            {
+                "id": "COG1175",
+                "level": "1",
+                "description": "carbohydrate transport"
+            },
+            {
+                "id": "COG1175",
+                "level": "2",
+                "description": "carbohydrate transport"
+            }
+        ],
+        "pfam": "[{'id': 'BPD_transp_1', 'start': '50', 'end': '307', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0754",
+        "anchor": "Theba_0756",
+        "pos": "-2",
+        "gene name": "",
+        "description": "Binding-protein-dependent transport system inner membrane component",
+        "strand": "+",
+        "start": "799000",
+        "end": "799821",
+        "taxonomy": "660470",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "2GCRW",
+                "level": "200918",
+                "description": "Binding-protein-dependent transport system inner membrane component"
+            },
+            {
+                "id": "COG0395",
+                "level": "1",
+                "description": "ABC-type sugar transport system, permease component"
+            },
+            {
+                "id": "COG0395",
+                "level": "2",
+                "description": "ABC-type sugar transport system, permease component"
+            }
+        ],
+        "pfam": "[{'id': 'BPD_transp_1', 'start': '83', 'end': '268', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0755",
+        "anchor": "Theba_0756",
+        "pos": "-1",
+        "gene name": "",
+        "description": "Bacterial extracellular solute-binding protein",
+        "strand": "+",
+        "start": "799838",
+        "end": "801082",
+        "taxonomy": "660470",
+        "kegg": [
+            {
+                "id": "02010",
+                "description": "ABC transporters"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "2GDWJ",
+                "level": "200918",
+                "description": "Bacterial extracellular solute-binding protein"
+            },
+            {
+                "id": "COG1653",
+                "level": "1",
+                "description": "transport"
+            },
+            {
+                "id": "COG1653",
+                "level": "2",
+                "description": "transport"
+            }
+        ],
+        "pfam": "[{'id': 'SBP_bac_8', 'start': '39', 'end': '360', 'shape': 'rect'}, {'id': 'SBP_bac_1', 'start': '28', 'end': '326', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0756",
+        "anchor": "Theba_0756",
+        "pos": "0",
+        "gene name": "",
+        "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane",
+        "strand": "+",
+        "start": "801092",
+        "end": "802282",
+        "taxonomy": "660470",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "2GE69",
+                "level": "200918",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "COG4775",
+                "level": "1",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "COG4775",
+                "level": "2",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "Theba_0757",
+        "anchor": "Theba_0756",
+        "pos": "1",
+        "gene name": "pflA",
+        "description": "TIGRFAM anaerobic ribonucleoside-triphosphate reductase activating protein",
+        "strand": "-",
+        "start": "802380",
+        "end": "803009",
+        "taxonomy": "660470",
+        "kegg": [
+            {
+                "id": "00790",
+                "description": "Folate biosynthesis"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "2GD8W",
+                "level": "200918",
+                "description": "TIGRFAM anaerobic ribonucleoside-triphosphate reductase activating protein"
+            },
+            {
+                "id": "COG1180",
+                "level": "1",
+                "description": "Activation of pyruvate formate-lyase under anaerobic conditions by generation of an organic free radical, using S- adenosylmethionine and reduced flavodoxin as cosubstrates to produce 5'-deoxy-adenosine"
+            },
+            {
+                "id": "COG1180",
+                "level": "2",
+                "description": "Activation of pyruvate formate-lyase under anaerobic conditions by generation of an organic free radical, using S- adenosylmethionine and reduced flavodoxin as cosubstrates to produce 5'-deoxy-adenosine"
+            }
+        ],
+        "pfam": "[{'id': 'Radical_SAM', 'start': '10', 'end': '163', 'shape': 'rect'}, {'id': 'Fer4_12', 'start': '1', 'end': '117', 'shape': 'rect'}, {'id': 'Fer4_14', 'start': '11', 'end': '113', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0758",
+        "anchor": "Theba_0756",
+        "pos": "2",
+        "gene name": "nrdD",
+        "description": "TIGRFAM Anaerobic ribonucleoside-triphosphate reductase",
+        "strand": "-",
+        "start": "802960",
+        "end": "805113",
+        "taxonomy": "660470",
+        "kegg": [
+            {
+                "id": "00230",
+                "description": "Purine metabolism"
+            },
+            {
+                "id": "00240",
+                "description": "Pyrimidine metabolism"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "2GCC4",
+                "level": "200918",
+                "description": "TIGRFAM Anaerobic ribonucleoside-triphosphate reductase"
+            },
+            {
+                "id": "COG1328",
+                "level": "1",
+                "description": "CTP reductase activity"
+            },
+            {
+                "id": "COG1328",
+                "level": "2",
+                "description": "CTP reductase activity"
+            }
+        ],
+        "pfam": "[{'id': 'ATP-cone', 'start': '2', 'end': '93', 'shape': 'rect'}, {'id': 'NRDD', 'start': '121', 'end': '683', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0759",
+        "anchor": "Theba_0756",
+        "pos": "3",
+        "gene name": "",
+        "description": "DNA polymerase III is a complex, multichain enzyme responsible for most of the replicative synthesis in bacteria. The epsilon subunit contain the editing function and is a proofreading 3'-5' exonuclease",
+        "strand": "-",
+        "start": "805335",
+        "end": "805883",
+        "taxonomy": "660470",
+        "kegg": [
+            {
+                "id": "00230",
+                "description": "Purine metabolism"
+            },
+            {
+                "id": "00240",
+                "description": "Pyrimidine metabolism"
+            },
+            {
+                "id": "03030",
+                "description": "DNA replication"
+            },
+            {
+                "id": "03430",
+                "description": "Mismatch repair"
+            },
+            {
+                "id": "03440",
+                "description": "Homologous recombination"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "COG0847",
+                "level": "1",
+                "description": "exonuclease activity"
+            },
+            {
+                "id": "COG0847",
+                "level": "2",
+                "description": "exonuclease activity"
+            }
+        ],
+        "pfam": "[{'id': 'RNase_T', 'start': '4', 'end': '161', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0760",
+        "anchor": "Theba_0756",
+        "pos": "4",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "error",
+        "end": "error",
+        "taxonomy": "660470",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "Theba_0761",
+        "anchor": "Theba_0756",
+        "pos": "5",
+        "gene name": "",
+        "description": "PFAM 4Fe-4S ferredoxin iron-sulfur binding domain protein",
+        "strand": "+",
+        "start": "806275",
+        "end": "807348",
+        "taxonomy": "660470",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "2GDRD",
+                "level": "200918",
+                "description": "PFAM 4Fe-4S ferredoxin iron-sulfur binding domain protein"
+            },
+            {
+                "id": "COG1143",
+                "level": "1",
+                "description": "4 iron, 4 sulfur cluster binding"
+            },
+            {
+                "id": "COG1143",
+                "level": "2",
+                "description": "4 iron, 4 sulfur cluster binding"
+            },
+            {
+                "id": "COG2006",
+                "level": "1",
+                "description": "Domain of unknown function (DUF362)"
+            },
+            {
+                "id": "COG2006",
+                "level": "2",
+                "description": "Domain of unknown function (DUF362)"
+            }
+        ],
+        "pfam": "[{'id': 'Fer4', 'start': '300', 'end': '323', 'shape': 'rect'}, {'id': 'DUF362', 'start': '43', 'end': '240', 'shape': 'rect'}, {'id': 'Fer4_6', 'start': '299', 'end': '322', 'shape': 'rect'}, {'id': 'Fer4_10', 'start': '299', 'end': '345', 'shape': 'rect'}, {'id': 'Fer4_7', 'start': '306', 'end': '348', 'shape': 'rect'}, {'id': 'Fer4_9', 'start': '301', 'end': '349', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0762",
+        "anchor": "Theba_0756",
+        "pos": "6",
+        "gene name": "glpK",
+        "description": "Key enzyme in the regulation of glycerol uptake and metabolism. Catalyzes the phosphorylation of glycerol to yield sn- glycerol 3-phosphate",
+        "strand": "+",
+        "start": "807359",
+        "end": "808819",
+        "taxonomy": "660470",
+        "kegg": [
+            {
+                "id": "00561",
+                "description": "Glycerolipid metabolism"
+            },
+            {
+                "id": "03320",
+                "description": "PPAR signaling pathway"
+            },
+            {
+                "id": "04626",
+                "description": "Plant-pathogen interaction"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "2GC7B",
+                "level": "200918",
+                "description": "Key enzyme in the regulation of glycerol uptake and metabolism. Catalyzes the phosphorylation of glycerol to yield sn- glycerol 3-phosphate"
+            },
+            {
+                "id": "COG0554",
+                "level": "1",
+                "description": "Key enzyme in the regulation of glycerol uptake and metabolism. Catalyzes the phosphorylation of glycerol to yield sn- glycerol 3-phosphate"
+            },
+            {
+                "id": "COG0554",
+                "level": "2",
+                "description": "Key enzyme in the regulation of glycerol uptake and metabolism. Catalyzes the phosphorylation of glycerol to yield sn- glycerol 3-phosphate"
+            }
+        ],
+        "pfam": "[{'id': 'FGGY_C', 'start': '252', 'end': '442', 'shape': 'rect'}, {'id': 'FGGY_N', 'start': '3', 'end': '243', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0763",
+        "anchor": "Theba_0756",
+        "pos": "7",
+        "gene name": "yjeE",
+        "description": "Threonylcarbamoyl adenosine biosynthesis protein TsaE",
+        "strand": "+",
+        "start": "808777",
+        "end": "809334",
+        "taxonomy": "660470",
+        "kegg": [
+            {
+                "id": "00520",
+                "description": "Amino sugar and nucleotide sugar metabolism"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "2GDGE",
+                "level": "200918",
+                "description": "Threonylcarbamoyl adenosine biosynthesis protein TsaE"
+            },
+            {
+                "id": "COG0802",
+                "level": "1",
+                "description": "atpase or kinase"
+            },
+            {
+                "id": "COG0802",
+                "level": "2",
+                "description": "atpase or kinase"
+            }
+        ],
+        "pfam": "[{'id': 'TsaE', 'start': '14', 'end': '156', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0764",
+        "anchor": "Theba_0756",
+        "pos": "8",
+        "gene name": "lon",
+        "description": "ATP-dependent serine protease that mediates the selective degradation of mutant and abnormal proteins as well as certain short-lived regulatory proteins. Required for cellular homeostasis and for survival from DNA damage and developmental changes induced by stress. Degrades polypeptides processively to yield small peptide fragments that are 5 to 10 amino acids long. Binds to DNA in a double-stranded, site-specific manner",
+        "strand": "+",
+        "start": "809335",
+        "end": "811710",
+        "taxonomy": "660470",
+        "kegg": [
+            {
+                "id": "04112",
+                "description": "Cell cycle - Caulobacter"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "2GC1C",
+                "level": "200918",
+                "description": "ATP-dependent serine protease that mediates the selective degradation of mutant and abnormal proteins as well as certain short-lived regulatory proteins. Required for cellular homeostasis and for survival from DNA damage and developmental changes induced by stress. Degrades polypeptides processively to yield small peptide fragments that are 5 to 10 amino acids long. Binds to DNA in a double-stranded, site-specific manner"
+            },
+            {
+                "id": "COG0466",
+                "level": "1",
+                "description": "ATP-dependent serine protease that mediates the selective degradation of mutant and abnormal proteins as well as certain short-lived regulatory proteins. Required for cellular homeostasis and for survival from DNA damage and developmental changes induced by stress. Degrades polypeptides processively to yield small peptide fragments that are 5 to 10 amino acids long. Binds to DNA in a double-stranded, site-specific manner"
+            },
+            {
+                "id": "COG0466",
+                "level": "2",
+                "description": "ATP-dependent serine protease that mediates the selective degradation of mutant and abnormal proteins as well as certain short-lived regulatory proteins. Required for cellular homeostasis and for survival from DNA damage and developmental changes induced by stress. Degrades polypeptides processively to yield small peptide fragments that are 5 to 10 amino acids long. Binds to DNA in a double-stranded, site-specific manner"
+            }
+        ],
+        "pfam": "[{'id': 'AAA', 'start': '366', 'end': '507', 'shape': 'rect'}, {'id': 'LON_substr_bdg', 'start': '24', 'end': '218', 'shape': 'rect'}, {'id': 'AAA_5', 'start': '365', 'end': '500', 'shape': 'rect'}, {'id': 'Lon_C', 'start': '582', 'end': '785', 'shape': 'rect'}, {'id': 'ChlI', 'start': '626', 'end': '752', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0765",
+        "anchor": "Theba_0756",
+        "pos": "9",
+        "gene name": "engB",
+        "description": "Necessary for normal cell division and for the maintenance of normal septation",
+        "strand": "+",
+        "start": "811691",
+        "end": "812263",
+        "taxonomy": "660470",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "2GCYP",
+                "level": "200918",
+                "description": "Necessary for normal cell division and for the maintenance of normal septation"
+            },
+            {
+                "id": "COG0218",
+                "level": "1",
+                "description": "Necessary for normal cell division and for the maintenance of normal septation"
+            },
+            {
+                "id": "COG0218",
+                "level": "2",
+                "description": "Necessary for normal cell division and for the maintenance of normal septation"
+            }
+        ],
+        "pfam": "[{'id': 'FeoB_N', 'start': '24', 'end': '189', 'shape': 'rect'}, {'id': 'PduV-EutP', 'start': '23', 'end': '190', 'shape': 'rect'}, {'id': 'MMR_HSR1', 'start': '25', 'end': '142', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "Theba_0766",
+        "anchor": "Theba_0756",
+        "pos": "10",
+        "gene name": "hppA",
+        "description": "Proton pump that utilizes the energy of pyrophosphate hydrolysis as the driving force for proton movement across the membrane. Generates a proton motive force",
+        "strand": "-",
+        "start": "812320",
+        "end": "814314",
+        "taxonomy": "660470",
+        "kegg": [
+            {
+                "id": "00190",
+                "description": "Oxidative phosphorylation"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "2GDSS",
+                "level": "200918",
+                "description": "Proton pump that utilizes the energy of pyrophosphate hydrolysis as the driving force for proton movement across the membrane. Generates a proton motive force"
+            },
+            {
+                "id": "COG3808",
+                "level": "1",
+                "description": "pump that utilizes the energy of pyrophosphate hydrolysis as the driving force for"
+            },
+            {
+                "id": "COG3808",
+                "level": "2",
+                "description": "pump that utilizes the energy of pyrophosphate hydrolysis as the driving force for"
+            }
+        ],
+        "pfam": "[{'id': 'H_PPase', 'start': '14', 'end': '653', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0696",
+        "anchor": "IALB_0706",
+        "pos": "-10",
+        "gene name": "rplM",
+        "description": "mRNA binding",
+        "strand": "+",
+        "start": "772614",
+        "end": "773060",
+        "taxonomy": "945713",
+        "kegg": [
+            {
+                "id": "03010",
+                "description": "Ribosome"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "COG0102",
+                "level": "1",
+                "description": "This protein is one of the early assembly proteins of the 50S ribosomal subunit, although it is not seen to bind rRNA by itself. It is important during the early stages of 50S assembly"
+            },
+            {
+                "id": "COG0102",
+                "level": "2",
+                "description": "This protein is one of the early assembly proteins of the 50S ribosomal subunit, although it is not seen to bind rRNA by itself. It is important during the early stages of 50S assembly"
+            }
+        ],
+        "pfam": "[{'id': 'Ribosomal_L13', 'start': '18', 'end': '142', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0697",
+        "anchor": "IALB_0706",
+        "pos": "-9",
+        "gene name": "rpsI",
+        "description": "maturation of SSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)",
+        "strand": "+",
+        "start": "773065",
+        "end": "773451",
+        "taxonomy": "945713",
+        "kegg": [
+            {
+                "id": "03010",
+                "description": "Ribosome"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "COG0103",
+                "level": "1",
+                "description": "maturation of SSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)"
+            },
+            {
+                "id": "COG0103",
+                "level": "2",
+                "description": "maturation of SSU-rRNA from tricistronic rRNA transcript (SSU-rRNA, 5.8S rRNA, LSU-rRNA)"
+            }
+        ],
+        "pfam": "[{'id': 'Ribosomal_S9', 'start': '8', 'end': '128', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0698",
+        "anchor": "IALB_0706",
+        "pos": "-8",
+        "gene name": "rpsB",
+        "description": "Belongs to the universal ribosomal protein uS2 family",
+        "strand": "+",
+        "start": "773641",
+        "end": "774477",
+        "taxonomy": "945713",
+        "kegg": [
+            {
+                "id": "03010",
+                "description": "Ribosome"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "COG0052",
+                "level": "1",
+                "description": "endonucleolytic cleavage to generate mature 3'-end of SSU-rRNA from (SSU-rRNA, 5.8S rRNA, LSU-rRNA)"
+            },
+            {
+                "id": "COG0052",
+                "level": "2",
+                "description": "endonucleolytic cleavage to generate mature 3'-end of SSU-rRNA from (SSU-rRNA, 5.8S rRNA, LSU-rRNA)"
+            }
+        ],
+        "pfam": "[{'id': 'Ribosomal_S2', 'start': '9', 'end': '224', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0699",
+        "anchor": "IALB_0706",
+        "pos": "-7",
+        "gene name": "tsf",
+        "description": "Associates with the EF-Tu.GDP complex and induces the exchange of GDP to GTP. It remains bound to the aminoacyl-tRNA.EF- Tu.GTP complex up to the GTP hydrolysis stage on the ribosome",
+        "strand": "+",
+        "start": "774499",
+        "end": "775356",
+        "taxonomy": "945713",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "COG0264",
+                "level": "1",
+                "description": "translation elongation factor activity"
+            },
+            {
+                "id": "COG0264",
+                "level": "2",
+                "description": "translation elongation factor activity"
+            }
+        ],
+        "pfam": "[{'id': 'EF_TS', 'start': '72', 'end': '282', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0700",
+        "anchor": "IALB_0706",
+        "pos": "-6",
+        "gene name": "pyrH",
+        "description": "UMP kinase activity",
+        "strand": "+",
+        "start": "775436",
+        "end": "776179",
+        "taxonomy": "945713",
+        "kegg": [
+            {
+                "id": "00240",
+                "description": "Pyrimidine metabolism"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "COG0528",
+                "level": "1",
+                "description": "UMP kinase activity"
+            },
+            {
+                "id": "COG0528",
+                "level": "2",
+                "description": "UMP kinase activity"
+            }
+        ],
+        "pfam": "[{'id': 'AA_kinase', 'start': '7', 'end': '216', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0701",
+        "anchor": "IALB_0706",
+        "pos": "-5",
+        "gene name": "frr",
+        "description": "cytoplasmic translational termination",
+        "strand": "+",
+        "start": "776198",
+        "end": "776752",
+        "taxonomy": "945713",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "COG0233",
+                "level": "1",
+                "description": "ribosomal large subunit binding"
+            },
+            {
+                "id": "COG0233",
+                "level": "2",
+                "description": "ribosomal large subunit binding"
+            }
+        ],
+        "pfam": "[{'id': 'RRF', 'start': '19', 'end': '182', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0702",
+        "anchor": "IALB_0706",
+        "pos": "-4",
+        "gene name": "",
+        "description": "peptidase activity, acting on L-amino acid peptides",
+        "strand": "+",
+        "start": "777425",
+        "end": "778561",
+        "taxonomy": "945713",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "COG4412",
+                "level": "1",
+                "description": "M6 family metalloprotease domain protein"
+            },
+            {
+                "id": "COG4412",
+                "level": "2",
+                "description": "M6 family metalloprotease domain protein"
+            }
+        ],
+        "pfam": ""
+    },
+    {
+        "gene": "IALB_0703",
+        "anchor": "IALB_0706",
+        "pos": "-3",
+        "gene name": "",
+        "description": "cellulose binding",
+        "strand": "+",
+        "start": "778601",
+        "end": "780751",
+        "taxonomy": "945713",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "COG3292",
+                "level": "1",
+                "description": "Two component regulator propeller"
+            },
+            {
+                "id": "COG3292",
+                "level": "2",
+                "description": "Two component regulator propeller"
+            },
+            {
+                "id": "COG4447",
+                "level": "1",
+                "description": "cellulose binding"
+            },
+            {
+                "id": "COG4447",
+                "level": "2",
+                "description": "cellulose binding"
+            }
+        ],
+        "pfam": "[{'id': 'BNR', 'start': '230', 'end': '241', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0704",
+        "anchor": "IALB_0706",
+        "pos": "-2",
+        "gene name": "",
+        "description": "peptidoglycan biosynthetic process",
+        "strand": "+",
+        "start": "780991",
+        "end": "781665",
+        "taxonomy": "945713",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "COG3034",
+                "level": "1",
+                "description": "peptidoglycan biosynthetic process"
+            },
+            {
+                "id": "COG3034",
+                "level": "2",
+                "description": "peptidoglycan biosynthetic process"
+            }
+        ],
+        "pfam": "[{'id': 'YkuD', 'start': '64', 'end': '223', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0705",
+        "anchor": "IALB_0706",
+        "pos": "-1",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "781652",
+        "end": "782263",
+        "taxonomy": "945713",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "IALB_0706",
+        "anchor": "IALB_0706",
+        "pos": "0",
+        "gene name": "",
+        "description": "membrane organization",
+        "strand": "+",
+        "start": "782291",
+        "end": "784327",
+        "taxonomy": "945713",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "COG4775",
+                "level": "1",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            },
+            {
+                "id": "COG4775",
+                "level": "2",
+                "description": "Part of the outer membrane protein assembly complex, which is involved in assembly and insertion of beta-barrel proteins into the outer membrane"
+            }
+        ],
+        "pfam": "[{'id': 'Bac_surface_Ag', 'start': '298', 'end': '678', 'shape': 'rect'}, {'id': 'POTRA', 'start': '27', 'end': '123', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0707",
+        "anchor": "IALB_0706",
+        "pos": "1",
+        "gene name": "yicC",
+        "description": "YicC-like family, N-terminal region",
+        "strand": "+",
+        "start": "784401",
+        "end": "785282",
+        "taxonomy": "945713",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "COG1561",
+                "level": "1",
+                "description": "YicC-like family, N-terminal region"
+            },
+            {
+                "id": "COG1561",
+                "level": "2",
+                "description": "YicC-like family, N-terminal region"
+            }
+        ],
+        "pfam": "[{'id': 'YicC_N', 'start': '2', 'end': '156', 'shape': 'rect'}, {'id': 'DUF1732', 'start': '209', 'end': '293', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0708",
+        "anchor": "IALB_0706",
+        "pos": "2",
+        "gene name": "gmk",
+        "description": "guanylate kinase activity",
+        "strand": "+",
+        "start": "785285",
+        "end": "785860",
+        "taxonomy": "945713",
+        "kegg": [
+            {
+                "id": "00230",
+                "description": "Purine metabolism"
+            },
+            {
+                "id": "00240",
+                "description": "Pyrimidine metabolism"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "COG0194",
+                "level": "1",
+                "description": "GDP metabolic process"
+            },
+            {
+                "id": "COG0194",
+                "level": "2",
+                "description": "GDP metabolic process"
+            }
+        ],
+        "pfam": "[{'id': 'Guanylate_kin', 'start': '5', 'end': '186', 'shape': 'rect'}, {'id': 'AAA_18', 'start': '9', 'end': '156', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0709",
+        "anchor": "IALB_0706",
+        "pos": "3",
+        "gene name": "rpoZ",
+        "description": "Promotes RNA polymerase assembly. Latches the N- and C- terminal regions of the beta' subunit thereby facilitating its interaction with the beta and alpha subunits",
+        "strand": "+",
+        "start": "785862",
+        "end": "786158",
+        "taxonomy": "945713",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "1I2X0",
+                "level": "117743",
+                "description": "Promotes RNA polymerase assembly. Latches the N- and C- terminal regions of the beta' subunit thereby facilitating its interaction with the beta and alpha subunits"
+            },
+            {
+                "id": "2CT4B",
+                "level": "1",
+                "description": "RNA polymerase Rpb6"
+            },
+            {
+                "id": "32SSJ",
+                "level": "2",
+                "description": "Promotes RNA polymerase assembly. Latches the N- and C- terminal regions of the beta' subunit thereby facilitating its interaction with the beta and alpha subunits"
+            },
+            {
+                "id": "4NQ76",
+                "level": "976",
+                "description": "Promotes RNA polymerase assembly. Latches the N- and C- terminal regions of the beta' subunit thereby facilitating its interaction with the beta and alpha subunits"
+            }
+        ],
+        "pfam": "[{'id': 'RNA_pol_Rpb6', 'start': '10', 'end': '92', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0710",
+        "anchor": "IALB_0706",
+        "pos": "4",
+        "gene name": "ung",
+        "description": "deaminated base DNA N-glycosylase activity",
+        "strand": "+",
+        "start": "786251",
+        "end": "787003",
+        "taxonomy": "945713",
+        "kegg": [
+            {
+                "id": "03410",
+                "description": "Base excision repair"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "COG1573",
+                "level": "1",
+                "description": "uracil-dna glycosylase"
+            },
+            {
+                "id": "COG1573",
+                "level": "2",
+                "description": "uracil-dna glycosylase"
+            }
+        ],
+        "pfam": "[{'id': 'UDG', 'start': '93', 'end': '239', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0711",
+        "anchor": "IALB_0706",
+        "pos": "5",
+        "gene name": "dnaB",
+        "description": "intein-mediated protein splicing",
+        "strand": "+",
+        "start": "787121",
+        "end": "789574",
+        "taxonomy": "945713",
+        "kegg": [
+            {
+                "id": "03030",
+                "description": "DNA replication"
+            },
+            {
+                "id": "04112",
+                "description": "Cell cycle - Caulobacter"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "COG0305",
+                "level": "1",
+                "description": "DNA replication, synthesis of RNA primer"
+            },
+            {
+                "id": "COG0305",
+                "level": "2",
+                "description": "DNA replication, synthesis of RNA primer"
+            },
+            {
+                "id": "COG1372",
+                "level": "1",
+                "description": "Participates in initiation and elongation during chromosome replication"
+            },
+            {
+                "id": "COG1372",
+                "level": "2",
+                "description": "Participates in initiation and elongation during chromosome replication"
+            }
+        ],
+        "pfam": "[{'id': 'DnaB_C', 'start': '197', 'end': '247', 'shape': 'rect'}, {'id': 'Hom_end_hint', 'start': '229', 'end': '336', 'shape': 'rect'}, {'id': 'LAGLIDADG_3', 'start': '441', 'end': '522', 'shape': 'rect'}, {'id': 'Hom_end', 'start': '427', 'end': '515', 'shape': 'rect'}, {'id': 'DnaB', 'start': '21', 'end': '123', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0712",
+        "anchor": "IALB_0706",
+        "pos": "6",
+        "gene name": "",
+        "description": "acetylesterase activity",
+        "strand": "+",
+        "start": "789597",
+        "end": "790451",
+        "taxonomy": "945713",
+        "kegg": [],
+        "eggnog": [
+            {
+                "id": "COG0657",
+                "level": "1",
+                "description": "carboxylic ester hydrolase activity"
+            },
+            {
+                "id": "COG0657",
+                "level": "2",
+                "description": "carboxylic ester hydrolase activity"
+            }
+        ],
+        "pfam": "[{'id': 'DUF1460', 'start': '54', 'end': '276', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0713",
+        "anchor": "IALB_0706",
+        "pos": "7",
+        "gene name": "",
+        "description": "dTDP-4-dehydrorhamnose reductase activity",
+        "strand": "-",
+        "start": "790448",
+        "end": "791332",
+        "taxonomy": "945713",
+        "kegg": [
+            {
+                "id": "00521",
+                "description": "Streptomycin biosynthesis"
+            },
+            {
+                "id": "00523",
+                "description": "Polyketide sugar unit biosynthesis"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "COG1091",
+                "level": "1",
+                "description": "dTDP-4-dehydrorhamnose reductase activity"
+            },
+            {
+                "id": "COG1091",
+                "level": "2",
+                "description": "dTDP-4-dehydrorhamnose reductase activity"
+            }
+        ],
+        "pfam": "[{'id': 'RmlD_sub_bind', 'start': '1', 'end': '293', 'shape': 'rect'}, {'id': 'GDP_Man_Dehyd', 'start': '4', 'end': '169', 'shape': 'rect'}, {'id': 'NAD_binding_4', 'start': '57', 'end': '211', 'shape': 'rect'}, {'id': 'Epimerase', 'start': '3', 'end': '223', 'shape': 'rect'}, {'id': '3Beta_HSD', 'start': '4', 'end': '200', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0714",
+        "anchor": "IALB_0706",
+        "pos": "8",
+        "gene name": "",
+        "description": "",
+        "strand": "+",
+        "start": "791406",
+        "end": "792140",
+        "taxonomy": "945713",
+        "kegg": "",
+        "eggnog": "",
+        "pfam": ""
+    },
+    {
+        "gene": "IALB_0715",
+        "anchor": "IALB_0706",
+        "pos": "9",
+        "gene name": "rfbB",
+        "description": "dTDP-glucose 4,6-dehydratase activity",
+        "strand": "+",
+        "start": "792142",
+        "end": "793155",
+        "taxonomy": "945713",
+        "kegg": [
+            {
+                "id": "00052",
+                "description": "Galactose metabolism"
+            },
+            {
+                "id": "00520",
+                "description": "Amino sugar and nucleotide sugar metabolism"
+            },
+            {
+                "id": "00521",
+                "description": "Streptomycin biosynthesis"
+            },
+            {
+                "id": "00523",
+                "description": "Polyketide sugar unit biosynthesis"
+            },
+            {
+                "id": "00525",
+                "description": "Acarbose and validamycin biosynthesis"
+            },
+            {
+                "id": "01055",
+                "description": "Biosynthesis of vancomycin group antibiotics"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "COG1088",
+                "level": "1",
+                "description": "dTDP-glucose 4,6-dehydratase activity"
+            },
+            {
+                "id": "COG1088",
+                "level": "2",
+                "description": "dTDP-glucose 4,6-dehydratase activity"
+            }
+        ],
+        "pfam": "[{'id': 'RmlD_sub_bind', 'start': '1', 'end': '312', 'shape': 'rect'}, {'id': 'Polysacc_synt_2', 'start': '4', 'end': '280', 'shape': 'rect'}, {'id': 'GDP_Man_Dehyd', 'start': '5', 'end': '307', 'shape': 'rect'}, {'id': 'NAD_binding_4', 'start': '6', 'end': '189', 'shape': 'rect'}, {'id': 'Epimerase', 'start': '4', 'end': '243', 'shape': 'rect'}, {'id': '3Beta_HSD', 'start': '5', 'end': '230', 'shape': 'rect'}]"
+    },
+    {
+        "gene": "IALB_0716",
+        "anchor": "IALB_0706",
+        "pos": "10",
+        "gene name": "",
+        "description": "polysaccharide export",
+        "strand": "+",
+        "start": "793158",
+        "end": "794585",
+        "taxonomy": "945713",
+        "kegg": [
+            {
+                "id": "02026",
+                "description": "Biofilm formation - Escherichia coli"
+            }
+        ],
+        "eggnog": [
+            {
+                "id": "COG1596",
+                "level": "1",
+                "description": "polysaccharide transmembrane transporter activity"
+            },
+            {
+                "id": "COG1596",
+                "level": "2",
+                "description": "polysaccharide transmembrane transporter activity"
+            }
+        ],
+        "pfam": "[{'id': 'SLBB', 'start': '231', 'end': '281', 'shape': 'rect'}]"
+    }
+]

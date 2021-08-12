@@ -250,6 +250,7 @@ var renderSunburst = function(selector, data) {
     SeqSunburst(data, 200, selector);
 }
 
+
 var hideSpinner = function(callback) {
     setTimeout(() => {
         $('#spinner').modal('hide');
@@ -272,82 +273,60 @@ var vueapp = new Vue({
     delimiters: ['[[', ']]'],
     el: '#NovelFams',
     data: {
-        show_items: {},
+        subtrees: {},
+        orderedSubtrees: {},
+        selectedItems: [],
+        searchedItems: [],
+        allItems: [
+            {'id': 0, 'name': 'g__UBA4096', 
+                'lineage': 'd__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae;g__UBA4096', 
+                'value': 4}, 
+            {'id': 1, 'name': 's__UBA4096 sp002482685', 
+                'lineage': 'd__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae;g__UBA4096;s__UBA4096 sp002482685', 
+                'value': 1},
+            {'id': 2, 'name': 's__UBA4096 sp002422605', 
+                'lineage': 'd__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae;g__UBA4096;s__UBA4096 sp002422605',
+                'value': 1}, 
+            {'id': 3, 'name': 's__UBA4096 sp002381945', 
+                'lineage': 'd__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae;g__UBA4096;s__UBA4096 sp002381945',
+                'value': 2},
+            {'id': 4, 'name': 'g__UBA6144', 
+                'lineage': 'd__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae;g__UBA6144', 
+                'value': 1},
+            {'id': 5, 'name': 'f__Bacteriovoracaceae', 
+                'lineage': 'd__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae', 
+                'value': 1}], 
         currentPage: 1,
         perPage: 10,
-        totalItems: 0,
+        totalItems: 1,
         nPages: 1,
         currentSearch: '',
-        searchTypeChoices: undefined,
         examples: {
             ko: [],
             synapo: [],
             card: [],
         },
-        taxBadgeColors: {
-            'phylum': 'bg-red-lt',
-            'class': 'bg-green-lt',
-            'order': 'bg-yellow-lt',
-            'family': 'bg-orange-lt',
-            'genus': 'bg-pink-lt',
-            'species': 'bg-blue-lt',
-        }
     },
     methods: {
-        searchFams : async function(searchType, query, options) {
+        searchQuery : async function(searchType, query, options) {
             $('#spinner').modal('show');
-            this.show_items = [];
+            this.subtrees = {};
+            this.orderedSubtrees = {};
             this.nPages = 1;
             this.totalItems = 0;
             this.currentPage = options && options.page ? options.page : 1;
             query = query || $("#search-fams").val().trim();
             $("#search-fams").val(query);
-            const type = searchType || $("#search-type").val();
+            const type = searchType || $("#search-type input:checked").val();
             $('#search-fams').trigger('blur');
-            if (type == 'fam') {
-                this.searchFamById(query);
-            } else if (type === 'seqid') {
-                this.searchFamBySeqId(query);
-            } else if (type === 'pname') {
-                this.searchFamByGeneName(query);
-            } else if (type === 'taxa') {
-                this.searchFamByTaxa(query, '', options);
-            } else if (type === 'function') {
-                this.searchFamByFunction(query, options);
-            }  else if (type === 'biome') {
-                this.searchFamByBiome(query, options);
-            } else if (Object.keys(this.examples).includes(type)) {
-                this.searchFamByExample(type, query);
+
+            if (type == 'og') {
+            } else if (type == 'ko') {
+            } else if (type == 'pname') {
             }
         },
 
-        searchFamById : function(query) {
-            const searchParams = {
-                searchType: 'fam',
-                query: query,
-                page: this.currentPage,
-            };
-            fetch(API_BASE_URL + `/info/${query}/`)
-                .then(response => response.json())
-                .then(data => this.fetchThen(data, ''))
-                .then(() => this.updateSearchParams(searchParams))
-                .catch(e => fetchCatch(e));
-        },
-
-        searchFamBySeqId : function(query) {
-            const searchParams = {
-                searchType: 'seqid',
-                query: query,
-                page: this.currentPage,
-            };
-            fetch(API_BASE_URL + `/seqidfams/${query}/`)
-                .then(response => response.json())
-                .then(data => this.fetchThen(data, ''))
-                .then(() => this.updateSearchParams(searchParams))
-                .catch(e => fetchCatch(e));
-        },
-
-        searchFamByGeneName : function(query) {
+        searchByPreferedName : function(query) {
             const searchParams = {
                 searchType: 'pname',
                 query: query,
@@ -358,33 +337,6 @@ var vueapp = new Vue({
                 .then(data => this.fetchThen(data, ''))
                 .then(() => this.updateSearchParams(searchParams))
                 .catch(e => fetchCatch(e));
-        },
-
-        searchFamByTaxa : function(query, prefix, options) {
-            query = prefix + query;
-            const spec = options && +options.specificity >= 0
-                ? +options.specificity
-                : document
-                    .querySelector("#specificity")
-                    .noUiSlider.get();
-            const cov = options && +options.coverage >= 0
-                ? +options.coverage 
-                : document
-                    .querySelector("#coverage")
-                    .noUiSlider.get();
-            const searchParams = {
-                searchType: 'taxa',
-                query: query,
-                specificity: spec,
-                coverage: cov,
-                page: this.currentPage,
-            };
-            const fetchURL = API_BASE_URL + `/taxafams/${query}/${spec}/${cov}`;
-            fetch(`${fetchURL}/${this.currentPage}/`)
-                .then(response => response.json())
-                .then(data => this.fetchThen(data, fetchURL))
-                .then(() => this.updateSearchParams(searchParams))
-                .catch(e => fetchCatch(e))
         },
 
         searchFamByFunction : function(query, options) {
@@ -417,49 +369,82 @@ var vueapp = new Vue({
                 .catch(e => fetchCatch(e))
         },
 
-        searchFamByBiome : function(query) {
+        searchByOG: function(query) {
+            const searchParams = {
+                searchType: 'og',
+                query: query,
+                page: this.currentPage,
+            };
+            fetch(API_BASE_URL + `/subtrees/${query}/`)
+                .then(response => response.json())
+                .then(data => this.fetchThen(data, ''))
+                .then(() => this.updateSearchParams(searchParams))
+                .then(() => this.toggleGeCoViz(".left-panel .card-body",
+                                               "COG4775_1",
+                                               ".left-panel > .card-body"))
+                .catch(e => fetchCatch(e));
 
         },
 
-        searchFamByExample : function(exampleType, query) {
-            // Change selected choice
-            if (exampleType == 'synapo')
-                this.searchTypeChoices.setChoiceByValue('taxa')
-            else {
-                // Modify exampleType to match mongodb collection
-                if (exampleType == 'ko') 
-                    termType = exampleType + 's'
-                else if (exampleType == 'card') 
-                    termType = exampleType.toUpperCase();
+        updateSubtrees: function(subtrees) {
+            this.orderedSubtrees = {};
+            this.orderedSubtrees = subtrees;
+            this.subtrees = {};
+            Object.entries(subtrees).forEach(([k, v]) => {
+                this.subtrees[k] = { info: v.info };
+                Object.entries(v.subtrees).forEach(([k, v]) => {
+                    this.subtrees[k] = { info: v.info };
+                });
+            });
+        },
 
-                this.searchTypeChoices.setChoiceByValue('function')
-                d3.select('.term-type input:checked')
-                    .attr('checked', null);
-                d3.select(`.term-type input[value="${termType}"]`)
-                    .attr('checked', true);
-            }
+        updateSearch: function() {
+            setTimeout(() => {
+                const search = $("#search-taxonomy").val().trim().toLowerCase();
+                if (!search)
+                    this.searchedItems = this.selectedItems;
+                else
+                    this.searchedItems = this.allItems.filter(
+                            d => d.name.toLowerCase().includes(search))
+                        .map(d => d.id);
+            }, 100);
+        },
 
-            $('#search-fams').val(query);
-            const searchParams = {
-                searchType: exampleType,
-                query: query,
-                page: this.currentPage,
-            }
-            const fetchURL = API_BASE_URL
-                + `/examples/${exampleType}/${query}`;
-            fetch(`${fetchURL}/${this.currentPage}/`)
-                .then(response => response.json())
-                .then(data => this.fetchThen(data, fetchURL))
-                .then(() => this.updateSearchParams(searchParams))
-                .catch(e => fetchCatch(e))
+        selectItem: function(id, show) {
+            show = show || !this.selectedItems.includes(id);
+            if (this.selectedItems.includes(id)) {
+                if (!show)
+                    this.selectedItems = this.selectedItems.filter(
+                        s => s != id);
+            } else if (show)
+                this.selectedItems.push(id);
+
+            this.updateSearch();
+        },
+
+        showAddButton: function(lineage) {
+            const container = d3.select("#add-button-container")
+            container.selectAll("*").remove();
+            const button = container.append("div")
+                .attr("class", "btn btn-primary")
+                .html("Add");
+            button.on("click", () => {
+                const matches = this.allItems
+                    .filter(i => i.lineage.slice(0, lineage.length) === lineage)
+                const match = matches.filter(i => i.lineage === lineage);
+                if (match.length)
+                    this.selectItem(match[0].id, true);
+                else
+                    matches.forEach(item => this.selectItem(item.id, true));
+                button.remove();
+            });
         },
 
         fetchThen : function(data, fetchURL) {
             // Hide search filters quickly
             document.querySelectorAll('.search-filters')
                 .forEach(f => f.classList.remove('show'));
-            this.show_items = {};
-            this.show_items = data.show_items;
+            this.updateSubtrees(data.subtrees);
             this.currentSearch = fetchURL;
             this.totalItems = +data.total_matches;
             this.nPages = Math.ceil(this.totalItems/this.perPage)
@@ -470,7 +455,7 @@ var vueapp = new Vue({
                     this.showAllFams();
                 else
                     this.hideAllFams();
-                this.paginateInfo();
+                //this.paginateInfo();
                 this.renderFamInfo();
                 hideSpinner();
             }, 0)
@@ -484,7 +469,7 @@ var vueapp = new Vue({
                     ? field.slice(0, perPage)
                     : field;
                 return {
-                    show_items: itemsToShow,
+                    subtrees: itemsToShow,
                     items: field,
                     nPages: nPages,
                     perPage: perPage,
@@ -492,56 +477,64 @@ var vueapp = new Vue({
                 }
             }
             const perPage = this.perPage;
-            Object.entries(this.show_items).forEach(([f, data]) => {
+            Object.entries(this.subtrees).forEach(([f, data]) => {
                 const members = data.members;
-                this.show_items[f].members = paginate(members, perPage);
+                this.subtrees[f].members = paginate(members, perPage);
             })
         },
 
         renderFamInfo : function() {
-            Object.entries(this.show_items).forEach(([f, data]) => {
-                const idx = Object.keys(this.show_items).indexOf(f);
+            Object.entries(this.subtrees).forEach(([f, data]) => {
+                const idx = Object.keys(this.subtrees).indexOf(f);
                 // Sources donut
-                const sources = data.sources
-                renderDonut('f'+idx+'-sources',
-                    Object.keys(sources),
-                    Object.values(sources),
-                    colors,
-                    'bottom',
-                    65,
-                    250)
+                const sources = data.info.sources
+                if (sources)
+                    renderDonut('f'+f+'-sources',
+                        Object.keys(sources),
+                        Object.values(sources),
+                        colors,
+                        'bottom',
+                        65,
+                        250)
                 // Genomic context overview
-                const summary = data.context_summary;
-                const gecovizSelector = `#f${idx}-GeCoViz-summary`;
-                GeCoViz(gecovizSelector, { geneRect: { h: 20 } })
-                    .contextData(summary)//data.context_summary)
-                    .nSide(3)
-                    .geneText("Gene name")
-                    .annotation("Orthologous groups", "most conserved")
-                    .options({
-                        'showBar': false,
-                        'showLegend': false
-                    })
-                    .shuffleColors()
-                    .draw();
-                const gecovizSummary = d3.select(gecovizSelector);
-                gecovizSummary
-                    .select('.graph-container')
-                    .style('max-height', '50px');
-                gecovizSummary
-                    .selectAll('.innerContainer')
-                    .style('border', 'none');
-                gecovizSummary
-                    .style('opacity', 1)
-                    .style('visibility', 'visible');
+                const summary = data.info.context_summary;
+                if (summary) {
+                    const gecovizSelector = `#f${f}-GeCoViz-summary`;
+                    GeCoViz(gecovizSelector, { geneRect: { h: 20 } })
+                        .contextData(summary)
+                        .nSide(2)
+                        .geneText("gene name")
+                        .annotation("eggnog", 2)
+                        .options({
+                            'showTree': false,
+                            'showBar': false,
+                            'showLegend': false,
+                            'onlyViewport': false,
+                        })
+                        .shuffleColors()
+                        .draw();
+                    const gecovizSummary = d3.select(gecovizSelector);
+                    gecovizSummary
+                        .select('.graph-container')
+                        .style('max-height', '50px');
+                    gecovizSummary
+                        .selectAll('.innerContainer')
+                        .style('border', 'none');
+                    gecovizSummary
+                        .style('opacity', 1)
+                        .style('visibility', 'visible');
+                }
 
                 // Render protein topologies
-                setTimeout(() => renderDomains(data.domains, `#f${idx}`), 0)
+                if (data.domains)
+                    setTimeout(() => renderDomains(data.domains, `#f${f}`), 0)
 
                 // Render sunbursts
-                const sunburstSelector = `#f${idx}-taxSunburst`
-                SeqSunburst(data.taxonomy, 400)
-                    .draw(sunburstSelector);
+                if (data.taxonomy) {
+                    const sunburstSelector = `#f${f}-taxSunburst`
+                    SeqSunburst(data.taxonomy, 400)
+                        .draw(sunburstSelector);
+                }
             });
         },
 
@@ -552,14 +545,14 @@ var vueapp = new Vue({
                 + `/examples/${exampleType}/info`;
             await fetch(`${fetchURL}/0/`)
                 .then(response => response.json())
-                .then(data => this.examples[exampleType] = data.show_items)
+                .then(data => this.examples[exampleType] = data.subtrees)
                 .catch(e => fetchCatch(e))
             return this.examples[exampleType]
         },
 
         showAllFams : function() {
-            Object.keys(this.show_items).forEach((f, idx) => {
-                let selector = `#f${idx}-GeCoViz`;
+            Object.keys(this.subtrees).forEach((f, idx) => {
+                let selector = `#f${f}-GeCoViz`;
                 this.toggleGeCoViz(selector, f)
             });
             $('.tab-content').collapse('show');
@@ -573,10 +566,10 @@ var vueapp = new Vue({
             $("#" + id).collapse(action);
         },
 
-        toggleGeCoViz : async function(selector, query) {
+        toggleGeCoViz : async function(selector, query, scrollPortSelector=null) {
                 let newick, context;
-                newick = this.show_items[query].newick;
-                context = this.show_items[query].context;
+                newick = this.subtrees[query].newick;
+                context = this.subtrees[query].context;
                 if (context) {
                     window.onload = () => {
                         d3.select(selector)
@@ -589,30 +582,24 @@ var vueapp = new Vue({
                     newick = await get_newick(query);
                     context = await get_context(query);
                     newickFields = [
-                        'last tax level',
-                        'full name',
                         'name',
-                        'domain',
-                        'phylum',
-                        'class',
-                        'order',
-                        'family',
-                        'genus',
-                        'species'
                     ]
                     GeCoViz(selector)
                         .treeData(newick, newickFields[0], newickFields)
                         .contextData(context)
                         .nSide(4)
-                        .geneText("Gene name")
-                        .annotation("Orthologous groups", 1)
+                        .scrollPort(document.querySelector(scrollPortSelector ||
+                                                        ".right-panel > .row"))
+                        .geneText("gene name")
+                        .annotation("eggnog", 2)
+                        .options({ shrinkTreeWidth: true, showLegend: false })
                         .draw();
                     d3.select(selector)
                         .style('opacity', 1)
                         .style('visibility', 'visible');
                     $(selector + " + div .gecoviz-progress").hide();
-                    this.show_items[query].newick = newick;
-                    this.show_items[query].context = context;
+                    this.subtrees[query].newick = newick;
+                    this.subtrees[query].context = context;
                 }
             },
 
@@ -647,7 +634,7 @@ var vueapp = new Vue({
         },
 
         getCardPage : function(page, query, field) {
-            const d = this.show_items[query][field];
+            const d = this.subtrees[query][field];
             if (page == 'previous') {
                 page = d.currentPage > 1
                     ? d.currentPage - 1
@@ -658,20 +645,20 @@ var vueapp = new Vue({
                     : d.nPages;
             }
             const itemsToShow = d.items.slice(d.perPage*(page-1), d.perPage*page);
-            this.show_items[query][field].show_items = [];
-            this.show_items[query][field].show_items = itemsToShow;
-            this.show_items[query][field].currentPage = page;
+            this.subtrees[query][field].subtrees = [];
+            this.subtrees[query][field].subtrees = itemsToShow;
+            this.subtrees[query][field].currentPage = page;
             if (field == "members") {
-                const idx = Object.keys(this.show_items).indexOf(query);
+                const idx = Object.keys(this.subtrees).indexOf(query);
                 setTimeout(() => {
-                    renderDomains(this.show_items[query].domains
+                    renderDomains(this.subtrees[query].domains
                             .filter(d => itemsToShow.includes(d.gene)),`#f${idx}`);
                 }, 0)
             }
         },
 
         getPage: function(page) {
-            this.show_items = [];
+            this.subtrees = {};
             $('#spinner').modal('show');
             if (page == 'previous') {
                 page = this.currentPage > 1
@@ -686,8 +673,7 @@ var vueapp = new Vue({
             fetch(`${fetchURL}/${page}/`)
                 .then(response => response.json())
                 .then(data => {
-                    this.show_items = {};
-                    this.show_items = data.show_items;
+                    this.updateSubtrees(data.subtrees);
                     this.currentSearch = fetchURL;
                     this.currentPage = page;
                     this.totalItems = +data.total_matches;
@@ -720,6 +706,10 @@ var vueapp = new Vue({
             $("html, body").animate({ scrollTop: 0 }, "slow");
         },
 
+        showSearchFilters: function(searchType, query) {
+            $("#search-filters").collapse("show");
+        },
+
         toggleSearchFilters: async function() {
             const searchTypeSelect = $('#search-type');
             const val = searchTypeSelect.val();
@@ -729,6 +719,69 @@ var vueapp = new Vue({
             } else if (val == 'function') {
                 await $('#function-filters').collapse('show');
             }
+        },
+
+        toggleDualVis: async function() {
+            const dualVis = $("#dual-vis"); 
+            if (dualVis.hasClass("row-cols-2")) {
+                dualVis.removeClass("row-cols-2");
+                dualVis.addClass("row-cols-1");
+            } else {
+                dualVis.removeClass("row-cols-1");
+                dualVis.addClass("row-cols-2");
+            }
+        },
+
+        toggleFullScreen: async function(selector, action=null) {
+            const placeholder_div = document.getElementById("full-screen-placeholder");
+            if (placeholder_div || action) {
+                try { $("#full-screen .modal").modal('hide') } catch {};
+                return
+            }
+            let modal = document.createElement("div");
+            modal.id = "full-screen";
+            modal.innerHTML = `
+                <div class="modal modal-blur fade" 
+                      tabindex="-1" 
+                      aria-hidden="false">
+                    <div class="modal-dialog modal-dialog-centered 
+                                justify-content-center" 
+                        style="min-width:97%;"
+                        role="document">
+                    </div>
+                </div>`;
+            const placeholder = document.createElement("div");
+            placeholder.id = "full-screen-placeholder";
+            const contentNode = document.querySelector(selector);
+            const parentNode = contentNode.parentNode;
+            const content = $(parentNode.replaceChild(placeholder, contentNode));
+            if (!content.hasClass("modal-content"))
+                content.addClass("modal-content");
+            $(modal.childNodes[1].childNodes[1])
+                .append(content);
+            $("body").append($(modal))
+            $("#full-screen .modal").on("hidden.bs.modal", () => {
+                const contentDiv = $(selector);
+                contentDiv.removeClass("modal-content");
+                parentNode.replaceChild(contentDiv[0],
+                                      placeholder);
+            })
+            $("#full-screen .modal").modal("show")
+        },
+
+        toggleSubtrees: function(selector) {
+            const action = $(selector).hasClass("show") ? "hide" : "show";
+            $(selector).collapse(action);
+        },
+
+    },
+    computed: {
+        nSelected : function() {
+            return this.allItems.reduce((total, i) => {
+                if (i.id in this.selectedItems)
+                    return total + i.value;
+                return total
+            }, 0)
         },
     },
     filters : {
@@ -779,55 +832,6 @@ var vueapp = new Vue({
             'minDist': urlParams.minDist || 1,
         };
 
-        const searchTypeSelect = $('#search-type');
-        this.searchTypeChoices = new Choices(searchTypeSelect[0], {
-            classNames: {
-                containerInner: searchTypeSelect[0].className,
-                input: 'form-control',
-                inputCloned: 'form-control-sm',
-                listDropdown: 'dropdown-menu',
-                itemChoice: 'dropdown-item',
-                activeState: 'show',
-                selectedState: 'active',
-                placeholder: 'choices__placeholder',
-            },
-            shouldSort: false,
-            searchEnabled: false,
-            choices : [
-                {
-                    value: 'fam', 
-                    label: 'Family name',
-                    selected: searchType == 'fam' 
-                },
-                {
-                    value: 'seqid', 
-                    label: 'Sequence identifier',
-                    selected: searchType == 'seqid' 
-                },
-                {
-                    value: 'pname', 
-                    label: 'Gene name',
-                    selected: searchType == 'pname' 
-                },
-                {
-                    value: 'taxa', 
-                    label: 'Taxon name',
-                    selected: searchType == 'taxa' 
-                },
-                {
-                    value: 'function', 
-                    label: 'Functional context',
-                    selected: searchType == 'function' 
-                },
-                {
-                    value: 'biome', 
-                    label: 'Biome name', 
-                    selected: searchType == 'biome' 
-                },
-            ]
-          });
-        searchTypeSelect.change(() => this.toggleSearchFilters());
-
         // Build sliders
         ["specificity", "coverage", "conservation"].forEach(id => {
                 let slider = document.getElementById(id);
@@ -868,14 +872,15 @@ var vueapp = new Vue({
 
         const query = urlParams['query'];
 
-        if(searchType && query)
-            this.searchFams(searchType, query, urlParams);
+        if (searchType && query)
+            this.searchQuery(searchType, query, urlParams);
 
-        // Display examples
-        if(this.totalItems == 0) {
-            //this.showExamples('ko');
-            //this.showExamples('synapo');
-            //this.showExamples('card');
-        }
+        const taxonomy = this.allItems.map(i => [i.lineage, i.value]);
+        SeqSunburst(taxonomy, 600, 6, true, this.showAddButton)
+            .draw(".sunburst-selector");
+        document.addEventListener("click", () => {
+            if (!d3.select(".clone").node())
+                d3.selectAll("#add-button-container *").remove();
+        })
     },
 });

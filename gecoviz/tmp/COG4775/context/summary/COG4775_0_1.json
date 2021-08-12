@@ -1,0 +1,2392 @@
+[
+  {
+    "pos": -10,
+    "anchor": "anchor",
+    "gene name": "sigI",
+    "gene name(s)": [
+      {
+        "id": "sigI",
+        "score": 0.14285714285714285
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "03420",
+        "score": 0.1
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1NE2T",
+        "level": "1224",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "2MD4Y",
+        "level": "213115",
+        "score": 0.25
+      },
+      {
+        "id": "2WSDU",
+        "level": "28221",
+        "score": 0.2
+      },
+      {
+        "id": "42VZQ",
+        "level": "68525",
+        "score": 0.2
+      },
+      {
+        "id": "COG1191",
+        "level": "1",
+        "score": 0.08
+      },
+      {
+        "id": "COG1191",
+        "level": "2",
+        "score": 0.08
+      },
+      {
+        "id": "2JQ89",
+        "level": "204441",
+        "score": 0.5
+      },
+      {
+        "id": "2TQNQ",
+        "level": "28211",
+        "score": 0.5
+      },
+      {
+        "id": "3Y6D0",
+        "level": "57723",
+        "score": 0.125
+      },
+      {
+        "id": "1FJG4",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4PK6I",
+        "level": "976",
+        "score": 0.5
+      },
+      {
+        "id": "1IS9C",
+        "level": "117747",
+        "score": 1.0
+      },
+      {
+        "id": "1V5E6",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "24I8Q",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "265KC",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2G6GP",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "375R1",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2GK4Z",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4D92A",
+        "level": "85008",
+        "score": 0.5
+      },
+      {
+        "id": "2JND6",
+        "level": "204432",
+        "score": 0.16666666666666666
+      }
+    ]
+  },
+  {
+    "pos": -9,
+    "anchor": "anchor",
+    "gene name": "MA20_30780",
+    "gene name(s)": [
+      {
+        "id": "MA20_30780",
+        "score": 0.16666666666666666
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "05120",
+        "score": 0.1
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1PCPQ",
+        "level": "1224",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "2M8K7",
+        "level": "213115",
+        "score": 0.25
+      },
+      {
+        "id": "2WU8U",
+        "level": "28221",
+        "score": 0.25
+      },
+      {
+        "id": "42PU9",
+        "level": "68525",
+        "score": 0.2
+      },
+      {
+        "id": "COG5183",
+        "level": "1",
+        "score": 0.08333333333333333
+      },
+      {
+        "id": "COG5183",
+        "level": "2",
+        "score": 0.08333333333333333
+      },
+      {
+        "id": "2JRC1",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2TQZE",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "2JKWG",
+        "level": "204432",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "3Y2SF",
+        "level": "57723",
+        "score": 0.1111111111111111
+      },
+      {
+        "id": "1FJKJ",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4NSAR",
+        "level": "976",
+        "score": 0.5
+      },
+      {
+        "id": "1IP5T",
+        "level": "117747",
+        "score": 1.0
+      },
+      {
+        "id": "2G72C",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "3761H",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2GMUG",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DI3C",
+        "level": "85008",
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "pos": -8,
+    "anchor": "anchor",
+    "gene name": "rbsU",
+    "gene name(s)": [
+      {
+        "id": "rbsU",
+        "score": 0.1
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "00780",
+        "score": 0.10526315789473684
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1RCHY",
+        "level": "1224",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "2M83U",
+        "level": "213115",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "2WMR7",
+        "level": "28221",
+        "score": 0.25
+      },
+      {
+        "id": "42R1G",
+        "level": "68525",
+        "score": 0.2
+      },
+      {
+        "id": "COG2208",
+        "level": "1",
+        "score": 0.043478260869565216
+      },
+      {
+        "id": "COG2208",
+        "level": "2",
+        "score": 0.043478260869565216
+      },
+      {
+        "id": "2JT69",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2U5DW",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "3Y65C",
+        "level": "57723",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "2JI0H",
+        "level": "204432",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "1FJIX",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4NNRP",
+        "level": "976",
+        "score": 0.5
+      },
+      {
+        "id": "1IQ26",
+        "level": "117747",
+        "score": 1.0
+      },
+      {
+        "id": "2GS7K",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DBUH",
+        "level": "85008",
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "pos": -7,
+    "anchor": "anchor",
+    "gene name": "menC",
+    "gene name(s)": [
+      {
+        "id": "menC",
+        "score": 0.1111111111111111
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "00130",
+        "score": 0.07692307692307693
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1Q0TE",
+        "level": "1224",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "COG0642",
+        "level": "1",
+        "score": 0.08
+      },
+      {
+        "id": "2MF6D",
+        "level": "213115",
+        "score": 0.25
+      },
+      {
+        "id": "2X9MF",
+        "level": "28221",
+        "score": 0.25
+      },
+      {
+        "id": "COG2205",
+        "level": "2",
+        "score": 0.08
+      },
+      {
+        "id": "436V8",
+        "level": "68525",
+        "score": 0.2
+      },
+      {
+        "id": "2URQS",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "1V10X",
+        "level": "1239",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "26S0W",
+        "level": "186822",
+        "score": 1.0
+      },
+      {
+        "id": "4HD4Z",
+        "level": "91061",
+        "score": 1.0
+      },
+      {
+        "id": "2JITG",
+        "level": "204432",
+        "score": 0.125
+      },
+      {
+        "id": "3Y2QQ",
+        "level": "57723",
+        "score": 0.125
+      },
+      {
+        "id": "1FJQ4",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4NF0Q",
+        "level": "976",
+        "score": 0.5
+      },
+      {
+        "id": "24P7E",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "260UH",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2G6T8",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "375ET",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2ICAF",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DGP1",
+        "level": "85008",
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "pos": -6,
+    "anchor": "anchor",
+    "gene name": "queF",
+    "gene name(s)": [
+      {
+        "id": "queF",
+        "score": 0.125
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "00790",
+        "score": 0.09090909090909091
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1PYZZ",
+        "level": "1224",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "COG0745",
+        "level": "1",
+        "score": 0.07407407407407407
+      },
+      {
+        "id": "2M9IJ",
+        "level": "213115",
+        "score": 0.25
+      },
+      {
+        "id": "2X00U",
+        "level": "28221",
+        "score": 0.25
+      },
+      {
+        "id": "COG0745",
+        "level": "2",
+        "score": 0.07142857142857142
+      },
+      {
+        "id": "435MT",
+        "level": "68525",
+        "score": 0.2
+      },
+      {
+        "id": "2JR09",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2TS0U",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "3Y6I3",
+        "level": "57723",
+        "score": 0.1
+      },
+      {
+        "id": "2JJ8S",
+        "level": "204432",
+        "score": 0.1111111111111111
+      },
+      {
+        "id": "1FITM",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4NE6Q",
+        "level": "976",
+        "score": 1.0
+      },
+      {
+        "id": "1TPZ0",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "249IC",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "260FJ",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2G7HQ",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "375SQ",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2GJQT",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DENJ",
+        "level": "85008",
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "pos": -5,
+    "anchor": "anchor",
+    "gene name": "rlmL",
+    "gene name(s)": [
+      {
+        "id": "rlmL",
+        "score": 0.1111111111111111
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "00970",
+        "score": 0.11764705882352941
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1MUQM",
+        "level": "1224",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "2M9KQ",
+        "level": "213115",
+        "score": 0.25
+      },
+      {
+        "id": "2WJ5S",
+        "level": "28221",
+        "score": 0.25
+      },
+      {
+        "id": "42NJ1",
+        "level": "68525",
+        "score": 0.2
+      },
+      {
+        "id": "2DT4G",
+        "level": "1",
+        "score": 0.08
+      },
+      {
+        "id": "33IMY",
+        "level": "2",
+        "score": 0.08
+      },
+      {
+        "id": "2JSC4",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2U846",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "3Y3HT",
+        "level": "57723",
+        "score": 0.1
+      },
+      {
+        "id": "2JMC0",
+        "level": "204432",
+        "score": 0.125
+      },
+      {
+        "id": "1FJVT",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4NFI7",
+        "level": "976",
+        "score": 0.5
+      },
+      {
+        "id": "1IYN1",
+        "level": "117747",
+        "score": 1.0
+      },
+      {
+        "id": "1VM5Q",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "251M6",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "265MM",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2G6U5",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "377M5",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2HAGC",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DFDZ",
+        "level": "85008",
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "pos": -4,
+    "anchor": "anchor",
+    "gene name": "cwlJ",
+    "gene name(s)": [
+      {
+        "id": "cwlJ",
+        "score": 0.125
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "00061",
+        "score": 0.1
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1NS7A",
+        "level": "1224",
+        "score": 0.2222222222222222
+      },
+      {
+        "id": "2M94E",
+        "level": "213115",
+        "score": 0.4
+      },
+      {
+        "id": "2WKQ4",
+        "level": "28221",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "42MCJ",
+        "level": "68525",
+        "score": 0.2857142857142857
+      },
+      {
+        "id": "COG0697",
+        "level": "1",
+        "score": 0.07142857142857142
+      },
+      {
+        "id": "COG0697",
+        "level": "2",
+        "score": 0.07142857142857142
+      },
+      {
+        "id": "2JT2U",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2UAUQ",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "2JMNJ",
+        "level": "204432",
+        "score": 0.2
+      },
+      {
+        "id": "3Y4AU",
+        "level": "57723",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "1FJK5",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4PET9",
+        "level": "976",
+        "score": 0.5
+      },
+      {
+        "id": "1INSC",
+        "level": "117747",
+        "score": 1.0
+      },
+      {
+        "id": "2G6BR",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "375PR",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2GN2W",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DBXK",
+        "level": "85008",
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "pos": -3,
+    "anchor": "anchor",
+    "gene name": "queC",
+    "gene name(s)": [
+      {
+        "id": "queC",
+        "score": 0.1111111111111111
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "02024",
+        "score": 0.10526315789473684
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1QB1F",
+        "level": "1224",
+        "score": 0.2857142857142857
+      },
+      {
+        "id": "COG2199",
+        "level": "1",
+        "score": 0.12
+      },
+      {
+        "id": "2MDGQ",
+        "level": "213115",
+        "score": 0.5
+      },
+      {
+        "id": "2X9H1",
+        "level": "28221",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "COG3706",
+        "level": "2",
+        "score": 0.12
+      },
+      {
+        "id": "436A2",
+        "level": "68525",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "2JTVF",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2UFH4",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "2JI3Y",
+        "level": "204432",
+        "score": 0.25
+      },
+      {
+        "id": "3Y3J0",
+        "level": "57723",
+        "score": 0.2
+      },
+      {
+        "id": "1FJ38",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4NGG9",
+        "level": "976",
+        "score": 0.5
+      },
+      {
+        "id": "1IPXN",
+        "level": "117747",
+        "score": 1.0
+      },
+      {
+        "id": "1G19G",
+        "level": "1117",
+        "score": 1.0
+      },
+      {
+        "id": "1HHYS",
+        "level": "1150",
+        "score": 1.0
+      },
+      {
+        "id": "1V9Y7",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "24H54",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "265KN",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2GB3J",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "377UU",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2ICNW",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DKFV",
+        "level": "85008",
+        "score": 0.5
+      },
+      {
+        "id": "2MNGC",
+        "level": "213118",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": -2,
+    "anchor": "anchor",
+    "gene name": "lpxC",
+    "gene name(s)": [
+      {
+        "id": "lpxC",
+        "score": 0.16666666666666666
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "00061",
+        "score": 0.125
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1RHBE",
+        "level": "1224",
+        "score": 0.4
+      },
+      {
+        "id": "2MBSS",
+        "level": "213115",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "2WPQ3",
+        "level": "28221",
+        "score": 0.5
+      },
+      {
+        "id": "42T2P",
+        "level": "68525",
+        "score": 0.5
+      },
+      {
+        "id": "COG3542",
+        "level": "1",
+        "score": 0.08695652173913043
+      },
+      {
+        "id": "COG3542",
+        "level": "2",
+        "score": 0.08695652173913043
+      },
+      {
+        "id": "2JQ9D",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2U18J",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "2JNWC",
+        "level": "204432",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "3Y5UH",
+        "level": "57723",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "1FJTB",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4NEEY",
+        "level": "976",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "1IRZ1",
+        "level": "117747",
+        "score": 0.5
+      },
+      {
+        "id": "2G611",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "374ZT",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2GMGD",
+        "level": "201174",
+        "score": 1.0
+      },
+      {
+        "id": "4DEZ6",
+        "level": "85008",
+        "score": 1.0
+      },
+      {
+        "id": "2MINB",
+        "level": "213118",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": -1,
+    "anchor": "anchor",
+    "gene name": "galA",
+    "gene name(s)": [
+      {
+        "id": "galA",
+        "score": 0.2
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "00960",
+        "score": 0.1
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1NHKK",
+        "level": "1224",
+        "score": 0.625
+      },
+      {
+        "id": "2EJIR",
+        "level": "1",
+        "score": 0.20833333333333334
+      },
+      {
+        "id": "2MD08",
+        "level": "213115",
+        "score": 1.0
+      },
+      {
+        "id": "2X0PF",
+        "level": "28221",
+        "score": 0.8333333333333334
+      },
+      {
+        "id": "33D9N",
+        "level": "2",
+        "score": 0.20833333333333334
+      },
+      {
+        "id": "43EHC",
+        "level": "68525",
+        "score": 0.8333333333333334
+      },
+      {
+        "id": "2JUHC",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2UJHP",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "3Y67Z",
+        "level": "57723",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "2JMM6",
+        "level": "204432",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "1FKA6",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4P9WT",
+        "level": "976",
+        "score": 0.5
+      },
+      {
+        "id": "1ISFK",
+        "level": "117747",
+        "score": 1.0
+      },
+      {
+        "id": "2G87D",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "377KU",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2GU6H",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DGNN",
+        "level": "85008",
+        "score": 0.5
+      },
+      {
+        "id": "2MK67",
+        "level": "213118",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 0,
+    "anchor": "anchor",
+    "gene name": "bhp",
+    "gene name(s)": [
+      {
+        "id": "bhp",
+        "score": 1.0
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "00480",
+        "score": 0.3333333333333333
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1NJ1Z",
+        "level": "1224",
+        "score": 1.0
+      },
+      {
+        "id": "2MCXH",
+        "level": "213115",
+        "score": 0.625
+      },
+      {
+        "id": "2WVIX",
+        "level": "28221",
+        "score": 0.625
+      },
+      {
+        "id": "42ZV1",
+        "level": "68525",
+        "score": 0.625
+      },
+      {
+        "id": "COG4775",
+        "level": "1",
+        "score": 0.7560975609756098
+      },
+      {
+        "id": "COG4775",
+        "level": "2",
+        "score": 0.7560975609756098
+      },
+      {
+        "id": "2JY8Q",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2UMQ5",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "3Y2NP",
+        "level": "57723",
+        "score": 0.7777777777777778
+      },
+      {
+        "id": "2JIUP",
+        "level": "204432",
+        "score": 1.0
+      },
+      {
+        "id": "1FJ3U",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4NEXH",
+        "level": "976",
+        "score": 1.0
+      },
+      {
+        "id": "1UMS8",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "25GPM",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "2G87D",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "377KU",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2GK5H",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4D9TR",
+        "level": "85008",
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "pos": 1,
+    "anchor": "anchor",
+    "gene name": "plyA3",
+    "gene name(s)": [
+      {
+        "id": "plyA3",
+        "score": 0.16666666666666666
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "00500",
+        "score": 0.125
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1PGI5",
+        "level": "1224",
+        "score": 0.3
+      },
+      {
+        "id": "2MAEU",
+        "level": "213115",
+        "score": 0.75
+      },
+      {
+        "id": "2X046",
+        "level": "28221",
+        "score": 0.42857142857142855
+      },
+      {
+        "id": "435Q3",
+        "level": "68525",
+        "score": 0.42857142857142855
+      },
+      {
+        "id": "COG5434",
+        "level": "1",
+        "score": 0.11538461538461539
+      },
+      {
+        "id": "COG5434",
+        "level": "2",
+        "score": 0.11538461538461539
+      },
+      {
+        "id": "2JTAV",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2UC68",
+        "level": "28211",
+        "score": 0.5
+      },
+      {
+        "id": "4NG1T",
+        "level": "976",
+        "score": 1.0
+      },
+      {
+        "id": "1TQIA",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "24AW9",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "263IM",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2G5MX",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "3750Q",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2GK1D",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4D8DV",
+        "level": "85008",
+        "score": 1.0
+      },
+      {
+        "id": "2JMG4",
+        "level": "204432",
+        "score": 0.5
+      },
+      {
+        "id": "3Y623",
+        "level": "57723",
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "pos": 2,
+    "anchor": "anchor",
+    "gene name": "efeO",
+    "gene name(s)": [
+      {
+        "id": "efeO",
+        "score": 0.2857142857142857
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "00053",
+        "score": 0.125
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1Q01T",
+        "level": "1224",
+        "score": 0.25
+      },
+      {
+        "id": "2MDJ1",
+        "level": "213115",
+        "score": 0.4
+      },
+      {
+        "id": "2X0VW",
+        "level": "28221",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "43EJG",
+        "level": "68525",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "COG0745",
+        "level": "1",
+        "score": 0.1111111111111111
+      },
+      {
+        "id": "COG0745",
+        "level": "2",
+        "score": 0.1111111111111111
+      },
+      {
+        "id": "2JTAV",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2UC68",
+        "level": "28211",
+        "score": 0.5
+      },
+      {
+        "id": "2JIUX",
+        "level": "204432",
+        "score": 0.125
+      },
+      {
+        "id": "3Y2U0",
+        "level": "57723",
+        "score": 0.125
+      },
+      {
+        "id": "4NSK6",
+        "level": "976",
+        "score": 1.0
+      },
+      {
+        "id": "1UMIA",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "25GJ7",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "266F0",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2GBUJ",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "3777T",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2GK0T",
+        "level": "201174",
+        "score": 1.0
+      },
+      {
+        "id": "4D9RI",
+        "level": "85008",
+        "score": 1.0
+      },
+      {
+        "id": "2MQ1T",
+        "level": "213118",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 3,
+    "anchor": "anchor",
+    "gene name": "kdpA",
+    "gene name(s)": [
+      {
+        "id": "kdpA",
+        "score": 0.3333333333333333
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "02020",
+        "score": 0.5
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1MW9X",
+        "level": "1224",
+        "score": 0.42857142857142855
+      },
+      {
+        "id": "28I8X",
+        "level": "1",
+        "score": 0.125
+      },
+      {
+        "id": "2JUGW",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2UKI4",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "2Z8BQ",
+        "level": "2",
+        "score": 0.125
+      },
+      {
+        "id": "2M8HG",
+        "level": "213115",
+        "score": 0.75
+      },
+      {
+        "id": "2WTW4",
+        "level": "28221",
+        "score": 0.6
+      },
+      {
+        "id": "42Z58",
+        "level": "68525",
+        "score": 0.6
+      },
+      {
+        "id": "1ISGE",
+        "level": "117747",
+        "score": 0.5
+      },
+      {
+        "id": "4NFJX",
+        "level": "976",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "2JI8J",
+        "level": "204432",
+        "score": 0.2
+      },
+      {
+        "id": "3Y47H",
+        "level": "57723",
+        "score": 0.2
+      },
+      {
+        "id": "1FJCJ",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "1UPWC",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "24QW7",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "2GBUJ",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "3777T",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2I3CW",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DEAN",
+        "level": "85008",
+        "score": 1.0
+      },
+      {
+        "id": "2MIY0",
+        "level": "213118",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 4,
+    "anchor": "anchor",
+    "gene name": "betA",
+    "gene name(s)": [
+      {
+        "id": "betA",
+        "score": 0.125
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "00630",
+        "score": 0.08695652173913043
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1PB3I",
+        "level": "1224",
+        "score": 0.2857142857142857
+      },
+      {
+        "id": "2CIZT",
+        "level": "1",
+        "score": 0.09523809523809523
+      },
+      {
+        "id": "2ZMP3",
+        "level": "2",
+        "score": 0.09523809523809523
+      },
+      {
+        "id": "2MCZ3",
+        "level": "213115",
+        "score": 0.5
+      },
+      {
+        "id": "2WY5E",
+        "level": "28221",
+        "score": 0.4
+      },
+      {
+        "id": "43366",
+        "level": "68525",
+        "score": 0.4
+      },
+      {
+        "id": "2JZM9",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2U4CX",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "3Y6FS",
+        "level": "57723",
+        "score": 0.125
+      },
+      {
+        "id": "2JKX7",
+        "level": "204432",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "1FJAJ",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4PEMC",
+        "level": "976",
+        "score": 1.0
+      },
+      {
+        "id": "1TRRM",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "24A66",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "2GAM1",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "376PU",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2GN5R",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4D8UA",
+        "level": "85008",
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "pos": 5,
+    "anchor": "anchor",
+    "gene name": "plyA3",
+    "gene name(s)": [
+      {
+        "id": "plyA3",
+        "score": 0.14285714285714285
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "00500",
+        "score": 0.09090909090909091
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1NNTA",
+        "level": "1224",
+        "score": 0.125
+      },
+      {
+        "id": "COG4191",
+        "level": "1",
+        "score": 0.08333333333333333
+      },
+      {
+        "id": "COG4191",
+        "level": "2",
+        "score": 0.08333333333333333
+      },
+      {
+        "id": "2MCAN",
+        "level": "213115",
+        "score": 0.25
+      },
+      {
+        "id": "2WPQ7",
+        "level": "28221",
+        "score": 0.25
+      },
+      {
+        "id": "42SY1",
+        "level": "68525",
+        "score": 0.25
+      },
+      {
+        "id": "2JPR0",
+        "level": "204441",
+        "score": 0.5
+      },
+      {
+        "id": "2TVGJ",
+        "level": "28211",
+        "score": 0.5
+      },
+      {
+        "id": "2JIYY",
+        "level": "204432",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "3Y3B2",
+        "level": "57723",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "1FJDF",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4PEP5",
+        "level": "976",
+        "score": 1.0
+      },
+      {
+        "id": "1V6HX",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "24K3X",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "2624W",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2I2WV",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DC38",
+        "level": "85008",
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "pos": 6,
+    "anchor": "anchor",
+    "gene name": "ycf29",
+    "gene name(s)": [
+      {
+        "id": "ycf29",
+        "score": 0.16666666666666666
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "02020",
+        "score": 0.2222222222222222
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1PG1B",
+        "level": "1224",
+        "score": 0.1111111111111111
+      },
+      {
+        "id": "2ME87",
+        "level": "213115",
+        "score": 0.2
+      },
+      {
+        "id": "2WVQ5",
+        "level": "28221",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "430QK",
+        "level": "68525",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "COG0419",
+        "level": "1",
+        "score": 0.034482758620689655
+      },
+      {
+        "id": "COG0419",
+        "level": "2",
+        "score": 0.034482758620689655
+      },
+      {
+        "id": "2JRSR",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2U586",
+        "level": "28211",
+        "score": 0.5
+      },
+      {
+        "id": "2JHIT",
+        "level": "204432",
+        "score": 0.125
+      },
+      {
+        "id": "3Y3GY",
+        "level": "57723",
+        "score": 0.125
+      },
+      {
+        "id": "1FIME",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4PM5Y",
+        "level": "976",
+        "score": 1.0
+      },
+      {
+        "id": "1UHUA",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "24BED",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "266IB",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2I9FB",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DDHQ",
+        "level": "85008",
+        "score": 0.5
+      },
+      {
+        "id": "2MIPI",
+        "level": "213118",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 7,
+    "anchor": "anchor",
+    "gene name": "slyX",
+    "gene name(s)": [
+      {
+        "id": "slyX",
+        "score": 0.1
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "00190",
+        "score": 0.05128205128205128
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1QTQY",
+        "level": "1224",
+        "score": 0.125
+      },
+      {
+        "id": "COG0346",
+        "level": "1",
+        "score": 0.07407407407407407
+      },
+      {
+        "id": "2MFH5",
+        "level": "213115",
+        "score": 0.2
+      },
+      {
+        "id": "2X1QP",
+        "level": "28221",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "COG0346",
+        "level": "2",
+        "score": 0.07407407407407407
+      },
+      {
+        "id": "436ZZ",
+        "level": "68525",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "2JU50",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2UF7M",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "2JN3C",
+        "level": "204432",
+        "score": 0.1111111111111111
+      },
+      {
+        "id": "3Y7TX",
+        "level": "57723",
+        "score": 0.1111111111111111
+      },
+      {
+        "id": "1FJJ3",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4NSA9",
+        "level": "976",
+        "score": 0.5
+      },
+      {
+        "id": "1TP2A",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "2493V",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "260QU",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2GK4S",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DC0Z",
+        "level": "85008",
+        "score": 0.5
+      },
+      {
+        "id": "2MJUI",
+        "level": "213118",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 8,
+    "anchor": "anchor",
+    "gene name": "Z012_01170",
+    "gene name(s)": [
+      {
+        "id": "Z012_01170",
+        "score": 0.1111111111111111
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "00190",
+        "score": 0.047619047619047616
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1RBF9",
+        "level": "1224",
+        "score": 0.125
+      },
+      {
+        "id": "COG2318",
+        "level": "1",
+        "score": 0.07692307692307693
+      },
+      {
+        "id": "2MH7T",
+        "level": "213115",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "2X6X2",
+        "level": "28221",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "COG2318",
+        "level": "2",
+        "score": 0.07692307692307693
+      },
+      {
+        "id": "43DR4",
+        "level": "68525",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "2JPPD",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2TVB0",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "2JJE8",
+        "level": "204432",
+        "score": 0.1111111111111111
+      },
+      {
+        "id": "3Y4US",
+        "level": "57723",
+        "score": 0.1
+      },
+      {
+        "id": "1FJFU",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4NM9N",
+        "level": "976",
+        "score": 0.5
+      },
+      {
+        "id": "1IWMY",
+        "level": "117747",
+        "score": 1.0
+      },
+      {
+        "id": "1TPG5",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "24827",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "260Q6",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2G8VY",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "377DY",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2IBMB",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DB7D",
+        "level": "85008",
+        "score": 0.5
+      },
+      {
+        "id": "2MMQV",
+        "level": "213118",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 9,
+    "anchor": "anchor",
+    "gene name": "sufS",
+    "gene name(s)": [
+      {
+        "id": "sufS",
+        "score": 0.125
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "02020",
+        "score": 0.23076923076923078
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1MW1Q",
+        "level": "1224",
+        "score": 0.1111111111111111
+      },
+      {
+        "id": "COG0840",
+        "level": "1",
+        "score": 0.07692307692307693
+      },
+      {
+        "id": "2MCW1",
+        "level": "213115",
+        "score": 0.2
+      },
+      {
+        "id": "2WTAW",
+        "level": "28221",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "COG0840",
+        "level": "2",
+        "score": 0.07692307692307693
+      },
+      {
+        "id": "42XW7",
+        "level": "68525",
+        "score": 0.16666666666666666
+      },
+      {
+        "id": "2JVXC",
+        "level": "204441",
+        "score": 1.0
+      },
+      {
+        "id": "2UIQC",
+        "level": "28211",
+        "score": 0.5
+      },
+      {
+        "id": "2JNWJ",
+        "level": "204432",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "3Y5GZ",
+        "level": "57723",
+        "score": 0.125
+      },
+      {
+        "id": "1FJ5S",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4NDUB",
+        "level": "976",
+        "score": 0.5
+      },
+      {
+        "id": "1ISA6",
+        "level": "117747",
+        "score": 1.0
+      },
+      {
+        "id": "1V3K6",
+        "level": "1239",
+        "score": 0.5
+      },
+      {
+        "id": "24HBN",
+        "level": "186801",
+        "score": 0.5
+      },
+      {
+        "id": "261RK",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2G6EJ",
+        "level": "200795",
+        "score": 1.0
+      },
+      {
+        "id": "375EY",
+        "level": "32061",
+        "score": 1.0
+      },
+      {
+        "id": "2GKY8",
+        "level": "201174",
+        "score": 0.5
+      },
+      {
+        "id": "4DD0W",
+        "level": "85008",
+        "score": 1.0
+      },
+      {
+        "id": "2MJVA",
+        "level": "213118",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 10,
+    "anchor": "anchor",
+    "gene name": "pepQ",
+    "gene name(s)": [
+      {
+        "id": "pepQ",
+        "score": 0.1111111111111111
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "00280",
+        "score": 0.25
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1PC7T",
+        "level": "1224",
+        "score": 0.09090909090909091
+      },
+      {
+        "id": "2A486",
+        "level": "1",
+        "score": 0.037037037037037035
+      },
+      {
+        "id": "2MFKR",
+        "level": "213115",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "2X1SQ",
+        "level": "28221",
+        "score": 0.125
+      },
+      {
+        "id": "30STE",
+        "level": "2",
+        "score": 0.037037037037037035
+      },
+      {
+        "id": "43EU7",
+        "level": "68525",
+        "score": 0.125
+      },
+      {
+        "id": "2JYD5",
+        "level": "204441",
+        "score": 0.5
+      },
+      {
+        "id": "2UK0K",
+        "level": "28211",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "2JJEG",
+        "level": "204432",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "3Y51P",
+        "level": "57723",
+        "score": 0.14285714285714285
+      },
+      {
+        "id": "1FIY1",
+        "level": "1100069",
+        "score": 1.0
+      },
+      {
+        "id": "4NFPG",
+        "level": "976",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "1IU9C",
+        "level": "117747",
+        "score": 0.5
+      },
+      {
+        "id": "1UJ40",
+        "level": "1239",
+        "score": 1.0
+      },
+      {
+        "id": "24JIS",
+        "level": "186801",
+        "score": 1.0
+      },
+      {
+        "id": "267BY",
+        "level": "186807",
+        "score": 1.0
+      },
+      {
+        "id": "2GN6F",
+        "level": "201174",
+        "score": 1.0
+      },
+      {
+        "id": "4DA4B",
+        "level": "85008",
+        "score": 1.0
+      },
+      {
+        "id": "2MKRQ",
+        "level": "213118",
+        "score": 1.0
+      }
+    ]
+  }
+]

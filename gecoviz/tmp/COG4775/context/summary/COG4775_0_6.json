@@ -1,0 +1,896 @@
+[
+  {
+    "pos": -10,
+    "anchor": "anchor",
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "02010",
+        "score": 0.6
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1R2T0",
+        "level": "1224",
+        "score": 0.3
+      },
+      {
+        "id": "2USBQ",
+        "level": "28211",
+        "score": 0.375
+      },
+      {
+        "id": "COG2274",
+        "level": "1",
+        "score": 0.2727272727272727
+      },
+      {
+        "id": "COG2274",
+        "level": "2",
+        "score": 0.2727272727272727
+      },
+      {
+        "id": "4KNGY",
+        "level": "93682",
+        "score": 1.0
+      },
+      {
+        "id": "2PYBK",
+        "level": "265",
+        "score": 1.0
+      },
+      {
+        "id": "3ZV6A",
+        "level": "60136",
+        "score": 1.0
+      },
+      {
+        "id": "2PETI",
+        "level": "252301",
+        "score": 1.0
+      },
+      {
+        "id": "46RV4",
+        "level": "74030",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": -9,
+    "anchor": "anchor",
+    "gene name": "rhcC2",
+    "gene name(s)": [
+      {
+        "id": "rhcC2",
+        "score": 1.0
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "02024",
+        "score": 0.5
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1MVYI",
+        "level": "1224",
+        "score": 0.25
+      },
+      {
+        "id": "2TSRT",
+        "level": "28211",
+        "score": 0.25
+      },
+      {
+        "id": "COG0410",
+        "level": "1",
+        "score": 0.25
+      },
+      {
+        "id": "COG0410",
+        "level": "2",
+        "score": 0.25
+      },
+      {
+        "id": "46NBQ",
+        "level": "74030",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": -8,
+    "anchor": "anchor",
+    "gene name": "caiB",
+    "gene name(s)": [
+      {
+        "id": "caiB",
+        "score": 1.0
+      }
+    ],
+    "strand": "+",
+    "eggnog": [
+      {
+        "id": "1MU2K",
+        "level": "1224",
+        "score": 0.25
+      },
+      {
+        "id": "2TR7Q",
+        "level": "28211",
+        "score": 0.25
+      },
+      {
+        "id": "COG1804",
+        "level": "1",
+        "score": 0.2
+      },
+      {
+        "id": "COG1804",
+        "level": "2",
+        "score": 0.2
+      },
+      {
+        "id": "46P53",
+        "level": "74030",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": -7,
+    "anchor": "anchor",
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "05133",
+        "score": 0.5
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1MZ5D",
+        "level": "1224",
+        "score": 0.25
+      },
+      {
+        "id": "2UBX9",
+        "level": "28211",
+        "score": 0.25
+      },
+      {
+        "id": "COG0494",
+        "level": "1",
+        "score": 0.25
+      },
+      {
+        "id": "COG0494",
+        "level": "2",
+        "score": 0.25
+      },
+      {
+        "id": "46NBI",
+        "level": "74030",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": -6,
+    "anchor": "anchor",
+    "gene name": "murF",
+    "gene name(s)": [
+      {
+        "id": "murF",
+        "score": 1.0
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "00300",
+        "score": 0.3333333333333333
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1MVXK",
+        "level": "1224",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "2TSYI",
+        "level": "28211",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "COG0306",
+        "level": "1",
+        "score": 0.25
+      },
+      {
+        "id": "COG0306",
+        "level": "2",
+        "score": 0.25
+      }
+    ]
+  },
+  {
+    "pos": -5,
+    "anchor": "anchor",
+    "gene name": "tolC",
+    "gene name(s)": [
+      {
+        "id": "tolC",
+        "score": 1.0
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "00330",
+        "score": 0.14285714285714285
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1MUI8",
+        "level": "1224",
+        "score": 0.5
+      },
+      {
+        "id": "2TSP0",
+        "level": "28211",
+        "score": 0.5
+      },
+      {
+        "id": "COG0845",
+        "level": "1",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "COG0845",
+        "level": "2",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "4KNUT",
+        "level": "93682",
+        "score": 1.0
+      },
+      {
+        "id": "2PYNX",
+        "level": "265",
+        "score": 1.0
+      },
+      {
+        "id": "3ZVSC",
+        "level": "60136",
+        "score": 1.0
+      },
+      {
+        "id": "2PFU0",
+        "level": "252301",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": -4,
+    "anchor": "anchor",
+    "gene name": "speB_2",
+    "gene name(s)": [
+      {
+        "id": "speB_2",
+        "score": 1.0
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "00330",
+        "score": 1.0
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1MVFH",
+        "level": "1224",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "2TQSZ",
+        "level": "28211",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "COG0010",
+        "level": "1",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "COG0010",
+        "level": "2",
+        "score": 0.3333333333333333
+      }
+    ]
+  },
+  {
+    "pos": -3,
+    "anchor": "anchor",
+    "strand": "+",
+    "eggnog": [
+      {
+        "id": "1MYX2",
+        "level": "1224",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "2U11B",
+        "level": "28211",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "COG1538",
+        "level": "1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "COG1538",
+        "level": "2",
+        "score": 0.6666666666666666
+      }
+    ]
+  },
+  {
+    "pos": -2,
+    "anchor": "anchor",
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "02010",
+        "score": 1.0
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "COG2274",
+        "level": "1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "COG2274",
+        "level": "2",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "1R2T0",
+        "level": "1224",
+        "score": 1.0
+      },
+      {
+        "id": "2USBQ",
+        "level": "28211",
+        "score": 1.0
+      },
+      {
+        "id": "4NB6Z",
+        "level": "97050",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": -1,
+    "anchor": "anchor",
+    "strand": "+",
+    "eggnog": [
+      {
+        "id": "1MUI8",
+        "level": "1224",
+        "score": 0.5
+      },
+      {
+        "id": "2TSP0",
+        "level": "28211",
+        "score": 0.5
+      },
+      {
+        "id": "COG0845",
+        "level": "1",
+        "score": 0.5
+      },
+      {
+        "id": "COG0845",
+        "level": "2",
+        "score": 0.5
+      },
+      {
+        "id": "4NCE6",
+        "level": "97050",
+        "score": 1.0
+      },
+      {
+        "id": "2PFNR",
+        "level": "252301",
+        "score": 1.0
+      },
+      {
+        "id": "46S1S",
+        "level": "74030",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 0,
+    "anchor": "anchor",
+    "strand": "+",
+    "eggnog": [
+      {
+        "id": "1R5P5",
+        "level": "1224",
+        "score": 0.9
+      },
+      {
+        "id": "2TTZS",
+        "level": "28211",
+        "score": 0.9
+      },
+      {
+        "id": "COG4775",
+        "level": "1",
+        "score": 1.0
+      },
+      {
+        "id": "COG4775",
+        "level": "2",
+        "score": 1.0
+      },
+      {
+        "id": "3ZYQ4",
+        "level": "60136",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 1,
+    "anchor": "anchor",
+    "gene name": "cusB",
+    "gene name(s)": [
+      {
+        "id": "cusB",
+        "score": 1.0
+      }
+    ],
+    "strand": "+",
+    "eggnog": [
+      {
+        "id": "COG0845",
+        "level": "1",
+        "score": 0.25
+      },
+      {
+        "id": "COG0845",
+        "level": "2",
+        "score": 0.25
+      },
+      {
+        "id": "1NJ19",
+        "level": "1224",
+        "score": 0.5
+      },
+      {
+        "id": "2U1SH",
+        "level": "28211",
+        "score": 0.5
+      }
+    ]
+  },
+  {
+    "pos": 2,
+    "anchor": "anchor",
+    "strand": "+",
+    "eggnog": [
+      {
+        "id": "1P4TD",
+        "level": "1224",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "2U06A",
+        "level": "28211",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "4N9YA",
+        "level": "97050",
+        "score": 1.0
+      },
+      {
+        "id": "COG2197",
+        "level": "1",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "COG2197",
+        "level": "2",
+        "score": 0.6666666666666666
+      },
+      {
+        "id": "2PDNQ",
+        "level": "252301",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 3,
+    "anchor": "anchor",
+    "gene name": "secA2",
+    "gene name(s)": [
+      {
+        "id": "secA2",
+        "score": 1.0
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "03060",
+        "score": 0.3333333333333333
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1MX0P",
+        "level": "1224",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "2U086",
+        "level": "28211",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "COG0653",
+        "level": "1",
+        "score": 0.2
+      },
+      {
+        "id": "COG0653",
+        "level": "2",
+        "score": 0.2
+      },
+      {
+        "id": "2PDNQ",
+        "level": "252301",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 4,
+    "anchor": "anchor",
+    "gene name": "yydH",
+    "gene name(s)": [
+      {
+        "id": "yydH",
+        "score": 0.5
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "04626",
+        "score": 0.5
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1MW9I",
+        "level": "1224",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "2U0H8",
+        "level": "28211",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "COG0845",
+        "level": "1",
+        "score": 0.25
+      },
+      {
+        "id": "COG0845",
+        "level": "2",
+        "score": 0.25
+      },
+      {
+        "id": "2PEIB",
+        "level": "252301",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 5,
+    "anchor": "anchor",
+    "gene name": "folB",
+    "gene name(s)": [
+      {
+        "id": "folB",
+        "score": 1.0
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "00790",
+        "score": 1.0
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1NJ19",
+        "level": "1224",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "2U1SH",
+        "level": "28211",
+        "score": 0.375
+      },
+      {
+        "id": "COG0438",
+        "level": "1",
+        "score": 0.3
+      },
+      {
+        "id": "COG0438",
+        "level": "2",
+        "score": 0.3
+      },
+      {
+        "id": "3ZYHM",
+        "level": "60136",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 6,
+    "anchor": "anchor",
+    "gene name": "cpaE1",
+    "gene name(s)": [
+      {
+        "id": "cpaE1",
+        "score": 1.0
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "02024",
+        "score": 1.0
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1MU7T",
+        "level": "1224",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "COG2931",
+        "level": "1",
+        "score": 0.25
+      },
+      {
+        "id": "COG2931",
+        "level": "2",
+        "score": 0.25
+      },
+      {
+        "id": "2PDSS",
+        "level": "252301",
+        "score": 1.0
+      },
+      {
+        "id": "2TSJS",
+        "level": "28211",
+        "score": 0.5
+      },
+      {
+        "id": "46Q50",
+        "level": "74030",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 7,
+    "anchor": "anchor",
+    "gene name": "cpaF",
+    "gene name(s)": [
+      {
+        "id": "cpaF",
+        "score": 1.0
+      }
+    ],
+    "strand": "+",
+    "kegg": [
+      {
+        "id": "02024",
+        "score": 1.0
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1Q227",
+        "level": "1224",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "2U2IQ",
+        "level": "28211",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "COG1262",
+        "level": "1",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "COG1262",
+        "level": "2",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "46NNN",
+        "level": "74030",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 8,
+    "anchor": "anchor",
+    "strand": "+",
+    "eggnog": [
+      {
+        "id": "COG1538",
+        "level": "1",
+        "score": 0.25
+      },
+      {
+        "id": "COG1538",
+        "level": "2",
+        "score": 0.25
+      },
+      {
+        "id": "1PBHA",
+        "level": "1224",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "2TRQF",
+        "level": "28211",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "4NCIX",
+        "level": "97050",
+        "score": 1.0
+      },
+      {
+        "id": "46PNH",
+        "level": "74030",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 9,
+    "anchor": "anchor",
+    "strand": "+",
+    "eggnog": [
+      {
+        "id": "COG2801",
+        "level": "1",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "COG2801",
+        "level": "2",
+        "score": 0.3333333333333333
+      },
+      {
+        "id": "1MVAB",
+        "level": "1224",
+        "score": 0.5
+      },
+      {
+        "id": "2PF13",
+        "level": "252301",
+        "score": 1.0
+      },
+      {
+        "id": "2U1TN",
+        "level": "28211",
+        "score": 0.5
+      },
+      {
+        "id": "46P4U",
+        "level": "74030",
+        "score": 1.0
+      }
+    ]
+  },
+  {
+    "pos": 10,
+    "anchor": "anchor",
+    "gene name": "parE",
+    "gene name(s)": [
+      {
+        "id": "parE",
+        "score": 1.0
+      }
+    ],
+    "strand": "-",
+    "kegg": [
+      {
+        "id": "02010",
+        "score": 0.3333333333333333
+      }
+    ],
+    "eggnog": [
+      {
+        "id": "1P9SM",
+        "level": "1224",
+        "score": 0.2222222222222222
+      },
+      {
+        "id": "2TV17",
+        "level": "28211",
+        "score": 0.2222222222222222
+      },
+      {
+        "id": "COG2197",
+        "level": "1",
+        "score": 0.3
+      },
+      {
+        "id": "COG2197",
+        "level": "2",
+        "score": 0.3
+      },
+      {
+        "id": "3ZHKB",
+        "level": "58840",
+        "score": 1.0
+      },
+      {
+        "id": "2PXR6",
+        "level": "265",
+        "score": 1.0
+      },
+      {
+        "id": "3ZYGZ",
+        "level": "60136",
+        "score": 1.0
+      },
+      {
+        "id": "4NA3K",
+        "level": "97050",
+        "score": 1.0
+      }
+    ]
+  }
+]

@@ -1,5 +1,6 @@
 {% load static %}
-  <header class="navbar navbar-expand-md navbar-dark d-print-none mb-3 p-2">
+  <header class="navbar navbar-expand-md navbar-dark d-print-none mb-3 p-2"
+          style="z-index:100;">
       <div class="container-sm pl-4 justify-content-center" 
            style='min-width:100%'>
           <h1 class="navbar-brand navbar-brand-autodark
@@ -15,37 +16,54 @@
             <em class="gecoviz-title">Co</em>ntext 
             <em class="gecoviz-title">Viz</em>ualizer
           </h2>
-          <div class="navbar-nav d-flex order-md-last pt-2"
-              style="width: 75%">
-                <div class="m-2">
-                    <select name="search-type" id="search-type"
-                        class="form-select form-control">
-                    </select>
-                </div>
-                <div class="input-icon w-100 m-2" style='min-width:250px'>
+          <div class="navbar-nav d-flex pt-2">
+              <div class="input-icon w-100 m-2 mr-4" style='min-width:250px'>
                     <input type="text"
                            class="form-control text-left"
-                           id="search-fams"
-                           @keypress.enter.prevent="searchFams()"
-                           placeholder="Search context"/>
+                           id="search-query"
+                           @keypress.enter.prevent="searchQuery()"
+                           placeholder="Search..."/>
                     <span class="input-icon-addon search-icon">
                         <i class="fa fa-search"
                            aria-hidden="true"
-                           @click="searchFams()">
-                        </i>
-                        <i class="mx-3 fa fa-sliders" 
-                           aria-hidden="true"
-                           @click="toggleSearchFilters()">
+                           @click="searchQuery()">
                         </i>
                     </span>
-                </div>
-                <button class="btn btn-primary btn-sm mx-1 my-auto
-                                d-none d-md-block"
-                    @click="showAllFams()"
-                    style="min-width:80px">
-                    Open all
-                </button>
+              </div>
+
+              <div id="search-type"
+                   class="form-selectgroup dark-form-selectgroup"
+                   style="min-width: 400px">
+                  <label class="form-selectgroup-item my-2">
+                      <input type="radio"
+                             name="search-type" 
+                             value="kos" 
+                             class="form-selectgroup-input" 
+                             checked="">
+                      <span class="form-selectgroup-label">
+                          KEGG Orthology
+                      </span>
+                  </label>
+                  <label class="form-selectgroup-item my-2">
+                      <input type="radio"
+                             name="search-type" 
+                             value="ogs" 
+                             class="form-selectgroup-input">
+                      <span class="form-selectgroup-label">
+                          eggNOG OG
+                      </span>
+                  </label>
+                  <label class="form-selectgroup-item my-2">
+                      <input type="radio"
+                             name="search-type" 
+                             value="pname" 
+                             class="form-selectgroup-input">
+                      <span class="form-selectgroup-label">
+                          gene name
+                      </span>
+                  </label>
+              </div>
+
           </div>
+      </div>
   </header>
-
-

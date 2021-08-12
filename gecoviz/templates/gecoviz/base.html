@@ -43,7 +43,8 @@
     <body class="antialiased">
         <div class="page">
             <div class="content p-0">
-                <div class="container-fluid p-0" id="NovelFams">
+                <div class="container-fluid p-0" id="GeCoVizApp"
+                    style="background:#f4f6fa;">
                     {% include "gecoviz/navbar.html" %}
                         {% block content %}
                         {% endblock %}
@@ -56,6 +57,8 @@
         <!-- Libs JS -->
         <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
         <script src="https://d3js.org/d3.v6.min.js"></script>
+        <script src="{% static "gecoviz/assets/tabler/js/apexcharts.min.js" %}"></script>
+
         <script src="{% static "gecoviz/assets/jquery/jquery.min.js" %}"></script>
         <script src="{% static "gecoviz/assets/tabler/js/bootstrap.bundle.min.js" %}"></script>
         <script src="{% static "gecoviz/assets/tabler/js/tabler.min.js" %}"></script>

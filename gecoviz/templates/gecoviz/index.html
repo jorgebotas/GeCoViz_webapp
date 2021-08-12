@@ -2,31 +2,97 @@
 {% load static %}
 {% block content %}
 
-{% include 'gecoviz/filter_cards.html'%}
-<div v-if='totalItems == 0' class='h-100'>
-    {% include 'gecoviz/example_cards.html'%}
+<div class="container-xxl" style="max-width:100%;">
+    <div id="form-accordion" class="accordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed"
+                 @click="focusSearchbar()">
+                1. Query a gene of interest from the search bar
+                </button>
+            </h2>
+        </div>
+        <div class="accordion-item">
+           <h2 class="accordion-header" id="step2-header">
+               <button class="accordion-button collapsed"
+                   @click="toggleSunburstSelector()">
+                2. Select a maximum of 200 genomes
+               </button>
+           </h2>
+           <div id="sunburst-selector-container" 
+               class="accordion-collapse collapse"
+               aria-labelledby="step2-header" 
+               data-bs-parent="#form-accordion">
+               <div class="accordion-body">
+                    <div class="mt-0 d-flex">
+                        <div class="sunburst-selector w-50"></div>
+                        <div class="w-50">
+                            <div class="input-icon m-2" 
+                                 style='min-width:250px; max-width: 500px;'>
+                                <input type="text"
+                                       class="form-control text-left"
+                                       id="search-taxonomy"
+                                       @keydown="updateSearch()"
+                                       placeholder="Search..."/>
+                                <span class="input-icon-addon search-icon">
+                                    <i class="fa fa-search"
+                                       aria-hidden="true">
+                                    </i>
+                                </span>
+                            </div>
+                            <div class="card-header" style="min-height: 70px">
+                                Selected: [[ nSelected ]]
+                                <button class="btn btn-primary ml-3"
+                                     @click="visualizeSelection()"
+                                     :disabled="nSelected < 1">
+                                    Visualize
+                                    <i class="fas fa-chevron-right ml-3"></i>
+                                </button>
+                                <div id="add-button-container" class="ml-3"></div>
+                            </div>
+                            <div id="shown-items" class="d-flex" style="flex-wrap:wrap;">
+                                <label v-for="sp in allItems" 
+                                       v-if="searchedItems.includes(sp.id)"
+                                    class="form-selectgroup-item m-1">
+                                    <input class="form-selectgroup-input"
+                                           type="checkbox" 
+                                           :value="sp.id"
+                                           :checked="selectedItems.includes(sp.id)"
+                                           @click="selectItem(sp.id)">
+                                    <span class="form-selectgroup-label">[[ sp.name ]] ([[ sp.value ]])</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+           </div>
+        </div> 
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="step3-header">
+                <button class="accordion-button collapsed"
+                 @click="visualizeSelection()">
+                3. Visualize genomic context
+                </button>
+            </h2>
+           <div id="visualization-container" 
+               class="accordion-collapse collapse"
+               aria-labelledby="step3-header" 
+               data-bs-parent="#form-accordion">
+               <div class="accordion-body" id="gecoviz-container">
+                       
+               </div>
+           </div>
+        </div>
+
+    </div>
 </div>
 
-<div v-if='totalItems > 0'
-    class='text-center mb-3'>
-    Showing results from [[ (currentPage - 1) * perPage + 1 ]] 
-    to [[ Math.min(currentPage * perPage, totalItems) ]]. Total hits: [[ totalItems ]].
-</div>
-<div v-if="nPages > 1">
-    {% include 'gecoviz/pagination.html' with currentPage=currentPage nPages=nPages field="f" only %}
-</div>
-
-<div v-for="(tdata, tid, index) in show_items">               
-    {% include 'gecoviz/card.html' %}
-</div>
-<div v-if="nPages > 1 && Object.keys(show_items).length > 3">
-    {% include 'gecoviz/pagination.html' %}
-</div>
 {% endblock %}
 {% block scripts %}
     <script src="{% static "gecoviz/assets/tabler/js/nouislider.min.js" %}"></script>
     <script src="{% static "gecoviz/assets/filesaver/FileSaver.min.js" %}"></script>
     <script src="{% static "gecoviz/js/SeqSunburst.js" %}"></script>
     <script src="{% static "gecoviz/js/gecoviz.js" %}"></script>
-    <script src="{% static "gecoviz/js/vue_app.js" %}"></script>
+    <script src="{% static "gecoviz/js/vueapp.js" %}"></script>
 {% endblock %}
