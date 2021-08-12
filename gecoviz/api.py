@@ -15,9 +15,3 @@ def emapper(request, field, query):
 
 def context(request, query):
     get_context(query)
-
-# def context(request, query):
-    # og = query.split("_")[0]
-    # with open(f'{RESULTS_PATH}/{og}/context/{query}.json') as handle:
-        # context = load(handle)
-    # return JsonResponse({ 'context': context })

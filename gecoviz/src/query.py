@@ -68,6 +68,8 @@ def get_taxonomy(queries):
 
 
 def get_emapper_matches(field, query):
+    print(field)
+    print(query)
     matches = col_emapper.find({ 
         field: { '$elemMatch': { '$eq': query } } },
         { 'q': 1 })
