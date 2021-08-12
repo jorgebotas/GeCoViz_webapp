@@ -12,6 +12,8 @@ client = MongoClient('10.0.3.1')
 db = client.progenomes2
 col_emapper = db.emapper2
 col_neighs = db.neighs
+col_taxonomy = client.mgv1.genome_taxonomy
+
 
 STATIC_PATH = settings.BASE_DIR / 'static/gecoviz/'
 
