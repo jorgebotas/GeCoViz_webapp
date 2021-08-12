@@ -59,8 +59,7 @@ def get_taxonomy(queries):
     taxids = [ q.split(".")[0] for q in queries ]
     counter = Counter(taxids)
     taxa = []
-    print(counter)
-    for n, taxid in counter:
+    for taxid, n in counter.items():
         lineage = get_lineage(taxid)
         taxa.append({ 
             'id': taxid,
