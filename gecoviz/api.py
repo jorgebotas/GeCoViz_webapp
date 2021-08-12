@@ -13,7 +13,7 @@ def emapper(request, field, query):
     print(query)
     matches = get_functional_matches(field, query)
     print(matches)
-    return JsonResponse(matches)
+    return JsonResponse({ 'matches': matches })
 
 def context(request, query):
     get_context(query)
