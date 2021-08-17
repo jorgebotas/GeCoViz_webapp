@@ -192,8 +192,8 @@ var vueapp = new Vue({
             if (container.hasClass("show"))
                 hide("#visualization-container")
             else {
-                show("#visualization-container")
                 await this.toggleGeCoViz();
+                show("#visualization-container")
             }
         },
 
