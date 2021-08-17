@@ -96,7 +96,7 @@ def get_ko_desc(ko):
     return ""
 
 
-def get_og_des(og):
+def get_og_desc(og):
     return ""
 
 
