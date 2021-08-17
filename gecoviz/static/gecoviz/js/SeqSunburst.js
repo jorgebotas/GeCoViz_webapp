@@ -441,14 +441,8 @@ class BreadCrumb {
             .attr('class', 'breadcrumb-polygon-text')
             .text(d => {
                 let name = d.data.name.split("__")[1];
-                while (name.length > 16) {
-                    const split = name.split(" ")
-                    if (split.length === 1)
-                        name = name.slice(0, 13) + "...";
-                    else
-                        name = split.slice(1).join(" ");
-
-                }
+                if (name.length > 16)
+                    name = name.slice(0, 13) + "...";
                 return name;
             })
             .attr('x', this.tipWidth + this.polygonWidth/2)
