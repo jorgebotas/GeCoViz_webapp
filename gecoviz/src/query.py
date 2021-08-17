@@ -28,10 +28,10 @@ def get_pickle(filePath):
         pdict = pickle.load(pickle_in)
     return pdict
 
-# kegg_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
+kegg_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
 # OG level dictionary (for neighborhood sumary)
 # TODO: include level in col_og_neigh_scores
-# og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
+og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 
 
 def get_context(field, query, taxids):
@@ -96,6 +96,9 @@ def get_ko_desc(ko):
     return ""
 
 
+def get_og_level(og):
+    return og_level_dict.get(og, "")
+
 def get_og_desc(og):
     return ""
 
@@ -109,8 +112,11 @@ def get_emapper_annotation(genes):
         name = m.get("pname", "")
         kos = [ { "id": ko, "description": get_ko_desc(ko) } 
                 for ko in m.get("kos", []) ]
-        ogs = [ { "id": og, "description": get_og_desc(og) } 
-                for og in m.get("ogs", []) ]
+        ogs = [ { 
+                "id": og,
+                "level": get_og_level(og),
+                "description": get_og_desc(og) 
+            } for og in m.get("ogs", []) ]
 
         annotation[gene] = { 
                 "Gene name": name,
