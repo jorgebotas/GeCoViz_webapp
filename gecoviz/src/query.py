@@ -36,7 +36,7 @@ def get_pickle(filePath):
 
 def get_context(field, query, taxids):
     emapper_matches = get_emapper_matches(field, query);
-    queries = [ m if m.split(".")[0] in taxids ]
+    queries = [ m for m in taxids if m.split(".")[0] ]
 
     matches = col_neighs.find({ 'c': { '$in': queries } })
     context = []
