@@ -201,6 +201,8 @@ var vueapp = new Vue({
             const selector = "#gecoviz-container";
             $('#spinner').modal('show');
 
+            d3.selectAll("#gecoviz-container").remove();
+
             // Fetch context data
             await this.searchContext();
 
