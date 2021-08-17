@@ -111,12 +111,12 @@ def get_emapper_annotation(genes):
         gene = m["q"]
         name = m.get("pname", "")
         kos = [ { "id": ko, "description": get_ko_desc(ko) } 
-                for ko in m.get("kos", []) ]
+                for ko in set(m.get("kos", [])) ]
         ogs = [ { 
                 "id": og,
                 "level": get_og_level(og),
                 "description": get_og_desc(og) 
-            } for og in m.get("ogs", []) ]
+            } for og in set(m.get("ogs", [])) ]
 
         annotation[gene] = { 
                 "Gene name": name,

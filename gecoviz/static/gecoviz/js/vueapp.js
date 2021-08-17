@@ -199,7 +199,7 @@ var vueapp = new Vue({
 
         toggleGeCoViz : async function() {
             const selector = "#gecoviz-container";
-            $(selector + " + div .gecoviz-progress").show();
+            $('#spinner').modal('show');
 
             // Fetch context data
             await this.searchContext();
@@ -209,7 +209,7 @@ var vueapp = new Vue({
             newickFields = [
                 'name',
             ]
-            GeCoViz(selector)
+            await GeCoViz(selector)
                 .treeData(newick, newickFields[0], newickFields)
                 .contextData(context)
                 .nSide(4)
@@ -218,10 +218,9 @@ var vueapp = new Vue({
                 .annotation("eggnog", 2)
                 .options({ shrinkTreeWidth: true })
                 .draw();
-            //d3.select(selector)
-                //.style('opacity', 1)
-                //.style('visibility', 'visible');
-            $(selector + " + div .gecoviz-progress").hide();
+
+            setTimeout(hideSpinner, 10);
+
         },
 
         getSeq : function(query) {
