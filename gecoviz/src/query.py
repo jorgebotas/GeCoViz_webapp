@@ -48,15 +48,15 @@ def get_context(field, query, taxids):
     context = []
     for m in matches:
         count += 1
-        anchor_pos = next(g["p"] for g in m["genes"] if g["g"] in queries)
+        anchor_pos = next(g for g in m["genes"] if g["g"] in queries)
         context.extend( { 
-            "anchor": m['c'],
+            "anchor": anchor["g"],
             "name": g["g"],
-            "pos": g["p"] - anchor_pos,
+            "pos": g["p"] - anchor["p"],
             "start": g["s"],
             "end": g["e"],
             "strand": g["o"],
-        } for g in m["genes"] if abs(anchor_pos - g["p"]) <= nside)
+        } for g in m["genes"] if abs(anchor["p"] - g["p"]) <= nside)
 
     print(count)
 
