@@ -44,8 +44,10 @@ def get_context(field, query, taxids):
     matches = col_neighs.find({ 'genes': { '$elemMatch': 
         { 'p': 0, 'g': { '$in': queries } } } })
 
+    count = 0
     context = []
     for m in matches:
+        count += 1
         context.extend( { 
             "anchor": m['c'],
             "name": g["g"],
@@ -55,7 +57,7 @@ def get_context(field, query, taxids):
             "strand": g["o"],
         } for g in m["genes"] )
 
-    print(len(context))
+    print(count)
 
     return context
 
