@@ -77,25 +77,7 @@ var vueapp = new Vue({
         searchTimeout: undefined,
         selectedItems: [],
         searchedItems: [],
-        allItems: [
-            {'id': 0, 'name': 'g__UBA4096', 
-                'lineage': 'd__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae;g__UBA4096', 
-                'value': 4}, 
-            {'id': 1, 'name': 's__UBA4096 sp002482685', 
-                'lineage': 'd__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae;g__UBA4096;s__UBA4096 sp002482685', 
-                'value': 1},
-            {'id': 2, 'name': 's__UBA4096 sp002422605', 
-                'lineage': 'd__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae;g__UBA4096;s__UBA4096 sp002422605',
-                'value': 1}, 
-            {'id': 3, 'name': 's__UBA4096 sp002381945', 
-                'lineage': 'd__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae;g__UBA4096;s__UBA4096 sp002381945',
-                'value': 2},
-            {'id': 4, 'name': 'g__UBA6144', 
-                'lineage': 'd__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae;g__UBA6144', 
-                'value': 1},
-            {'id': 5, 'name': 'f__Bacteriovoracaceae', 
-                'lineage': 'd__Bacteria;p__Bdellovibrionota;c__Bacteriovoracia;o__Bacteriovoracales;f__Bacteriovoracaceae', 
-                'value': 1}], 
+        allItems: [], 
         contextData: {
             newick: "",
             context: [],
@@ -162,7 +144,13 @@ var vueapp = new Vue({
                     this.searchedItems = this.allItems.filter(
                             d => d.name.toLowerCase().includes(search))
                         .map(d => d.id);
+                if (this.searchedItems.length > 20)
+                    this.sliceSearch();
             }, 500);
+        },
+
+        sliceSearch: function() {
+
         },
 
         selectItem: function(id, show) {
