@@ -192,7 +192,7 @@ var vueapp = new Vue({
                 hide("#visualization-container")
             else {
                 show("#visualization-container")
-                //this.toggleGeCoViz("#gecoviz-container")
+                this.toggleGeCoViz();
             }
         },
 
