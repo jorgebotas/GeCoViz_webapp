@@ -14,5 +14,4 @@ def emapper(request, field, query):
 
 def context(request, field, query, taxids):
     context = get_context(field, query, taxids.split(','))
-    print(context)
     return JsonResponse( { 'context': context } )

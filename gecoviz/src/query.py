@@ -38,10 +38,13 @@ def get_context(field, query, taxids):
     emapper_matches = get_emapper_matches(field, query);
     queries = [ m for m in emapper_matches if m.split(".")[0] in taxids ]
     print(len(taxids))
+    print(len(list(set(taxids))))
     print(len(queries))
 
     matches = col_neighs.find({ 'genes': { '$elemMatch': 
         { 'p': 0, 'g': { '$in': queries } } } })
+
+    print(len(matches))
 
     context = []
     for m in matches:
