@@ -52,7 +52,7 @@ def get_context(field, query, taxids):
         context.extend( { 
             "anchor": m['c'],
             "name": g["g"],
-            "pos": g["p"],
+            "pos": g["p"] - anchor_pos,
             "start": g["s"],
             "end": g["e"],
             "strand": g["o"],
