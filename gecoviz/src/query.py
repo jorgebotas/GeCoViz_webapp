@@ -51,12 +51,19 @@ def get_context(field, query, taxids):
         anchor = next(g for g in m["genes"] if g["g"] in queries)
         context.extend( { 
             "anchor": anchor["g"],
-            "name": g["g"],
+            "gene": g["g"],
             "pos": g["p"] - anchor["p"],
             "start": g["s"],
             "end": g["e"],
             "strand": g["o"],
-        } for g in m["genes"] if abs(anchor["p"] - g["p"]) <= nside)
+        } for g in m["genes"] if abs(g["p"] - anchor["p"]) <= nside)
+
+
+    all_genes = [ g["g"] for g in context ]
+    functional_info = get_emapper_annotation(all_genes)
+
+    context = [ { **gene, **functional_info.get(gene["gene"], {}) }
+                for gene in context ]
 
     print(count)
 
@@ -83,6 +90,32 @@ def get_taxonomy(queries):
             'value': n,
             })
     return taxa
+
+
+def get_ko_desc(ko):
+    return ""
+
+
+def get_og_des(og):
+    return ""
+
+
+def get_emapper_annotation(genes):
+    matches = col_emapper.find({ "q": { "$in": genes } })
+
+    annotation = {}
+    for m in matches:
+        gene = m["g"]
+        name = m["pname"]
+        kos = [ { "id": ko, "description": get_ko_desc(ko) } for ko in m["kos"] ]
+        ogs = [ { "id": ogs, "description": get_og_desc(og) } for og in m["ogs"] ]
+        annotation[gene] = { 
+                "Gene name": name,
+                "KEGG Orthology": kos,
+                "Orthologous groups": ogs, }
+
+    return annotation
+
 
 
 def get_emapper_matches(field, query):
