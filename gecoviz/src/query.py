@@ -48,7 +48,7 @@ def get_context(field, query, taxids):
     context = []
     for m in matches:
         count += 1
-        anchor_pos = next(g for g in m["genes"] if g["g"] in queries)
+        anchor = next(g for g in m["genes"] if g["g"] in queries)
         context.extend( { 
             "anchor": anchor["g"],
             "name": g["g"],
