@@ -65,7 +65,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
         return partition(hierarchy);
     }
 
-    const radius = width / ((depth + 1) * 2)
+    const radius = width / ((depth + 1) * 2);
     // Arc function
     const arc = d3.arc()
       .startAngle(d => d.x0)
@@ -73,10 +73,10 @@ var SeqSunburst = function(unformattedData, width, depth=2,
       .padAngle(d => Math.min((d.x1 - d.x0) / 2, 0.005))
       .padRadius(radius * 1.5)
       .innerRadius(d => d.y0 * radius)
-      .outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius - 1))
+      .outerRadius(d => Math.max(d.y0 * radius, d.y1 * radius - 1));
 
     // Value formatter
-    const format = d3.format(",d")
+    const format = d3.format(",d");
 
     const data = buildRoot(unformattedData);
 
@@ -439,7 +439,7 @@ class BreadCrumb {
         breadcrumbsEnter
             .append('text')
             .attr('class', 'breadcrumb-polygon-text')
-            .text(d => d.data.name.slice(3))
+            .text(d => d.data.name.split("__")[1])
             .attr('x', this.tipWidth + this.polygonWidth/2)
             .attr('y', this.fieldsHeight + this.polygonHeight/1.5)
             .style('text-anchor', 'middle')
@@ -449,7 +449,7 @@ class BreadCrumb {
         breadcrumbsEnter
             .append('text')
             .attr('class', 'breadcrumb-top-text')
-            .text(d => capitalize(this.fields[d.data.name.slice(0, 1)]))
+            .text(d => capitalize(d.data.name.split("__")[0]))
             .attr('x', this.tipWidth + this.polygonWidth/2)
             .attr('y', this.fieldsHeight - 5)
             .style('text-anchor', 'middle')

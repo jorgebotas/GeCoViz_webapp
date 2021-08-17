@@ -195,7 +195,7 @@ var vueapp = new Vue({
             else {
                 show("#sunburst-selector-container")
                 d3.selectAll(".sunburst-selector *").remove();
-                const taxonomy = this.allItems.map(i => [i.lineage, i.value]);
+                const taxonomy = this.allItems.map(i => [i.lineage, i.rank, i.value]);
                 SeqSunburst(taxonomy, 500, 6, true, this.showAddButton)
                     .draw(".sunburst-selector");
             }
@@ -208,6 +208,7 @@ var vueapp = new Vue({
                 hide("#visualization-container")
             else {
                 show("#visualization-container")
+                //this.toggleGeCoViz("#gecoviz-container")
             }
         },
 

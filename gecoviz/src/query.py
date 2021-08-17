@@ -53,16 +53,15 @@ def get_context(queries):
 def get_lineage(taxid):
     lineage = ncbi.get_lineage(taxid)
     taxid2name = ncbi.get_taxid_translator(lineage)
-    return [ taxid2name[tid] for tid in lineage ]
+    ranks = ncbi.get_rank(lineage)
+    return [ f'{ranks[tid]}__{taxid2name[tid]}' for tid in lineage ]
+
 
 def get_taxonomy(queries):
     taxids = [ q.split(".")[0] for q in queries ]
     counter = Counter(taxids)
     taxa = []
-    ranks = set()
     for taxid, n in counter.items():
-        lin = ncbi.get_lineage(taxid)
-        ranks.update(ncbi.get_rank(lin).values())
         lineage = get_lineage(taxid)
         taxa.append({ 
             'id': taxid,
@@ -70,7 +69,6 @@ def get_taxonomy(queries):
             'name': lineage[-1],
             'value': n,
             })
-    print(ranks)
     return taxa
 
 
