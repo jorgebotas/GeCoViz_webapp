@@ -12,5 +12,7 @@ def emapper(request, field, query):
     matches = get_functional_matches(field, query)
     return JsonResponse({ 'matches': matches })
 
-def context(request, query):
-    get_context(query)
+def context(request, field, query, taxids):
+    context = get_context(field, query, taxids.split(','))
+    print(context)
+    return JsonResponse( { 'context': context } )

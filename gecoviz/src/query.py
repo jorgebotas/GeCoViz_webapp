@@ -34,7 +34,10 @@ def get_pickle(filePath):
 # og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 
 
-def get_context(queries):
+def get_context(field, query, taxids):
+    emapper_matches = get_emapper_matches(field, query);
+    queries = [ m if m.split(".")[0] in taxids ]
+
     matches = col_neighs.find({ 'c': { '$in': queries } })
     context = []
     for m in matches:

@@ -18,24 +18,6 @@ var cleanString = function(s) {
     return String(clean)
 }
 
-var get_newick = async (query) => {
-    let newick;
-    await fetch(API_BASE_URL + '/tree/' + query + '/')
-         .then(response => response.text())
-         .then(tree => newick = tree)
-         .catch(e => console.log(e))
-    return newick;
-}
-
-var get_context = async (query) => {
-    let context;
-    await fetch(API_BASE_URL + '/context/'+ query + '/')
-        .then(response => response.json())
-         .then(data => context = eval(data.context))
-         .catch(e => console.log(e));
-    return context;
-}
-
 var hideSpinner = function(callback) {
     setTimeout(() => {
         $('#spinner').modal('hide');
@@ -74,9 +56,11 @@ var vueapp = new Vue({
     delimiters: ['[[', ']]'],
     el: '#GeCoVizApp',
     data: {
-        searchTimeout: undefined,
+        query: undefined,
+        queryType: undefined,
         selectedItems: [],
         searchedItems: [],
+        searchTimeout: undefined,
         allItems: [], 
         contextData: {
             newick: "",
@@ -87,14 +71,12 @@ var vueapp = new Vue({
     methods: {
         searchQuery : async function(searchType, query, options) {
             $('#spinner').modal('show');
-            query = query || $("#search-query").val().trim();
-            $("#search-query").val(query);
-            const type = searchType || $("#search-type input:checked").val();
+            this.query = query || $("#search-query").val().trim();
+            $("#search-query").val(this.query);
+            this.queryType = searchType || $("#search-type input:checked").val();
             $('#search-query').trigger('blur');
 
-            console.log(API_BASE_URL + `/emapper/${type}/${query}/`)
-
-            await fetch(API_BASE_URL + `/emapper/${type}/${query}/`)
+            await fetch(API_BASE_URL + `/emapper/${this.queryType}/${this.query}/`)
                  .then(response => response.json())
                  .then(this.fetchThen)
                  .catch(fetchCatch)
@@ -119,9 +101,10 @@ var vueapp = new Vue({
                 return context;
             }
 
-            const endpoint = "";
+            const taxids = this.selectedItems.join(",");
+            const endpoint = `${this.queryType}/${this.query}/${taxids}`;
 
-            this.contextData.newick = await getNewick(endpoint);
+            this.contextData.newick = ""; // await getNewick(endpoint);
             this.contextData.context = await getContext(endpoint);
         },
 
@@ -213,42 +196,32 @@ var vueapp = new Vue({
             }
         },
 
-        toggleGeCoViz : async function(selector, query, scrollPortSelector=null) {
-                let newick, context;
-                newick = this.subtrees[query].newick;
-                context = this.subtrees[query].context;
-                if (context) {
-                    window.onload = () => {
-                        d3.select(selector)
-                            .style('opacity', 1)
-                            .style('visibility', 'visible');
-                        $(selector + " + div .gecoviz-progress").hide();
-                    }
-                } else {
-                    $(selector + " + div .gecoviz-progress").show();
-                    newick = await get_newick(query);
-                    context = await get_context(query);
-                    newickFields = [
-                        'name',
-                    ]
-                    GeCoViz(selector)
-                        .treeData(newick, newickFields[0], newickFields)
-                        .contextData(context)
-                        .nSide(4)
-                        .scrollPort(document.querySelector(scrollPortSelector ||
-                                                        ".right-panel > .row"))
-                        .geneText("gene name")
-                        .annotation("eggnog", 2)
-                        .options({ shrinkTreeWidth: true, showLegend: false })
-                        .draw();
-                    d3.select(selector)
-                        .style('opacity', 1)
-                        .style('visibility', 'visible');
-                    $(selector + " + div .gecoviz-progress").hide();
-                    this.subtrees[query].newick = newick;
-                    this.subtrees[query].context = context;
-                }
-            },
+        toggleGeCoViz : async function() {
+            const selector = "#gecoviz-container";
+            $(selector + " + div .gecoviz-progress").show();
+
+            // Fetch context data
+            await this.searchContext();
+
+            const [newick, context] = [this.contextData.newick, 
+                                       this.contextData.context];
+            newickFields = [
+                'name',
+            ]
+            GeCoViz(selector)
+                .treeData(newick, newickFields[0], newickFields)
+                .contextData(context)
+                .nSide(4)
+                .scrollPort(document.querySelector(selector))
+                .geneText("gene name")
+                .annotation("eggnog", 2)
+                .options({ shrinkTreeWidth: true })
+                .draw();
+            //d3.select(selector)
+                //.style('opacity', 1)
+                //.style('visibility', 'visible');
+            $(selector + " + div .gecoviz-progress").hide();
+        },
 
         getSeq : function(query) {
             fetch(API_BASE_URL + `/seq/${query}/`)
