@@ -74,6 +74,7 @@ var vueapp = new Vue({
     delimiters: ['[[', ']]'],
     el: '#GeCoVizApp',
     data: {
+        searchTimeout: undefined,
         selectedItems: [],
         searchedItems: [],
         allItems: [
@@ -151,7 +152,9 @@ var vueapp = new Vue({
         },
 
         updateSearch: function() {
-            setTimeout(() => {
+            if (this.searchTimeout)
+                clearTimeout(this.searchTimeout);
+            this.searchTimeout = setTimeout(() => {
                 const search = $("#search-taxonomy").val().trim().toLowerCase();
                 if (!search)
                     this.searchedItems = this.selectedItems;
@@ -159,7 +162,7 @@ var vueapp = new Vue({
                     this.searchedItems = this.allItems.filter(
                             d => d.name.toLowerCase().includes(search))
                         .map(d => d.id);
-            }, 100);
+            }, 500);
         },
 
         selectItem: function(id, show) {
