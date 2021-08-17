@@ -107,8 +107,11 @@ def get_emapper_annotation(genes):
     for m in matches:
         gene = m["q"]
         name = m["pname"]
-        kos = [ { "id": ko, "description": get_ko_desc(ko) } for ko in m["kos"] ]
-        ogs = [ { "id": og, "description": get_og_desc(og) } for og in m["ogs"] ]
+        kos = [ { "id": ko, "description": get_ko_desc(ko) } 
+                for ko in m.get("kos", []) ]
+        ogs = [ { "id": og, "description": get_og_desc(og) } 
+                for og in m.get("ogs", []) ]
+
         annotation[gene] = { 
                 "Gene name": name,
                 "KEGG Orthology": kos,

@@ -74,6 +74,7 @@ var vueapp = new Vue({
             this.query = query || $("#search-query").val().trim();
             $("#search-query").val(this.query);
             this.queryType = searchType || $("#search-type input:checked").val();
+            //$("#searchType input[value=${this.queryType}]").checked
             $('#search-query').trigger('blur');
 
             await fetch(API_BASE_URL + `/emapper/${this.queryType}/${this.query}/`)
