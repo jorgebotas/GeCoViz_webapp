@@ -51,7 +51,7 @@ def get_context(queries):
 
 
 def get_lineage(taxid):
-    lineage = ncbi.get_lineage(taxid)
+    lineage = ncbi.get_lineage(taxid)[1:]
     taxid2name = ncbi.get_taxid_translator(lineage)
     ranks = ncbi.get_rank(lineage)
     return [ f'{ranks[tid]}__{taxid2name[tid]}' for tid in lineage ]
