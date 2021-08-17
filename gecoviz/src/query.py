@@ -59,7 +59,7 @@ def get_context(field, query, taxids):
         } for g in m["genes"] if abs(g["p"] - anchor["p"]) <= nside)
 
 
-    all_genes = [ g["g"] for g in context ]
+    all_genes = [ g["gene"] for g in context ]
     functional_info = get_emapper_annotation(all_genes)
 
     context = [ { **gene, **functional_info.get(gene["gene"], {}) }
