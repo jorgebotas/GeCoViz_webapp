@@ -446,7 +446,7 @@ class BreadCrumb {
                     if (split.length === 1)
                         name = name.slice(0, 13) + "...";
                     else
-                        name = split.slice(1).split(" ");
+                        name = split.slice(1).join(" ");
 
                 }
                 return name;
