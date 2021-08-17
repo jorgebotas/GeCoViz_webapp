@@ -62,7 +62,7 @@ def get_taxonomy(queries):
     ranks = set()
     for taxid, n in counter.items():
         lin = ncbi.get_lineage(taxid)
-        ranks.update(ncbi.get_rank(lin))
+        ranks.update(ncbi.get_rank(lin).values())
         lineage = get_lineage(taxid)
         taxa.append({ 
             'id': taxid,
