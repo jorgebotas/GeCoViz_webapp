@@ -10,7 +10,6 @@ RESULTS_PATH = settings.BASE_DIR / 'gecoviz/tmp/'
 
 def emapper(request, field, query):
     matches = get_functional_matches(field, query)
-    print(matches)
     return JsonResponse({ 'matches': matches })
 
 def context(request, query):
