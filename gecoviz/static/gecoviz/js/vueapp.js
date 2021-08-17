@@ -185,14 +185,14 @@ var vueapp = new Vue({
             }
         },
 
-        visualizeSelection() {
+        async visualizeSelection() {
             hide("#sunburst-selector-container")
             const container = $("#visualization-container");
             if (container.hasClass("show"))
                 hide("#visualization-container")
             else {
+                await this.toggleGeCoViz();
                 show("#visualization-container")
-                this.toggleGeCoViz();
             }
         },
 
