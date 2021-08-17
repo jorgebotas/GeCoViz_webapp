@@ -145,7 +145,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .attr("y", 0)
             .attr("dx", () => semiCircle ? "0.5em" : 0)
             .attr("dy", "0.3em")
-            .attr("font-size", "20px")
+            .attr("font-size", "16px")
             .text("");
 
         function mouseEnter(_, d) {
