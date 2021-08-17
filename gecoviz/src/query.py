@@ -37,11 +37,12 @@ def get_pickle(filePath):
 def get_context(field, query, taxids):
     emapper_matches = get_emapper_matches(field, query);
     queries = [ m for m in emapper_matches if m.split(".")[0] in taxids ]
-    print(queries)
+    print(len(taxids))
     print(len(queries))
 
     matches = col_neighs.find({ 'genes': { '$elemMatch': 
         { 'p': 0, 'g': { '$in': queries } } } })
+
     context = []
     for m in matches:
         context.extend( { 
