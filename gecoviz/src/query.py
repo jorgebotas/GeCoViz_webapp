@@ -71,11 +71,12 @@ def get_taxonomy(queries):
 
 
 def get_emapper_matches(field, query):
-    print(field)
-    print(query)
-    matches = col_emapper.find({ 
-        field: { '$elemMatch': { '$eq': query } } },
-        { 'q': 1 })
+    if field == 'pname':
+        mongo_query = { field: query }
+    else:
+        mongo_query = { field: { '$elemMatch': { '$eq': query } } }
+
+    matches = col_emapper.find(mongo_query, { 'q': 1 })
 
     return [ m['q'] for m in matches ]
 
