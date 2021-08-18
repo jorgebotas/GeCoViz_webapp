@@ -217,7 +217,7 @@ var vueapp = new Vue({
                 .nSide(4)
                 .scrollPort(document.querySelector(selector))
                 .geneText("Gene name")
-                .annotation("Orthologous group", 2)
+                .annotation("Orthologous groups", 2)
                 .options({ shrinkTreeWidth: true })
                 .draw();
 
