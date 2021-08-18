@@ -158,15 +158,14 @@ var vueapp = new Vue({
                 .filter(i => i.lineage.slice(0, lineage.length) === lineage)
             const match = matches.filter(i => i.lineage === lineage);
 
-            const totalSelected = this.nSelected + (
-                match.length ? +match[0].value : 
-                +matches.reduce((total, i) => total + i.value, 0)
-            );
+            const toBeSelected = match.length ? +match[0].value : 
+                +matches.reduce((total, i) => total + i.value, 0);
+            const totalSelected = this.nSelected + toBeSelected;
 
             const button = container.append("button")
                 .attr("class", "btn btn-primary")
                 .attr("disabled", () => totalSelected > 200 ? true : null)
-                .html("Add");
+                .html("Add " + toBeSelected);
             button.on("click", () => {
                 if (match.length)
                     this.selectItem(match[0].id, true);
