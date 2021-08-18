@@ -32,7 +32,7 @@
                                 <input type="text"
                                        class="form-control text-left"
                                        id="search-taxonomy"
-                                       @keypress.enter.prevent="updateSearch()"
+                                       @keydown="updateSearch()"
                                        placeholder="Search..."/>
                                 <span class="input-icon-addon search-icon">
                                     <i class="fa fa-search"

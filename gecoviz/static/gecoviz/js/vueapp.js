@@ -120,9 +120,11 @@ var vueapp = new Vue({
             }, 0)
         },
 
-        updateSearch: function() {
+        updateSearch: function(event) {
             if (this.searchTimeout)
                 clearTimeout(this.searchTimeout);
+            if (!event.enterKey)
+                return
             this.searchTimeout = setTimeout(() => {
                 const search = $("#search-taxonomy").val().trim().toLowerCase();
                 if (!search)
