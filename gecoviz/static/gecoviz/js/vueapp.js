@@ -158,9 +158,9 @@ var vueapp = new Vue({
                 .filter(i => i.lineage.slice(0, lineage.length) === lineage)
             const match = matches.filter(i => i.lineage === lineage);
 
-            const totalSelected = this.nSelected + +(
-                match.length ? match[0].value : 
-                matches.reduce((total, i) => total + i.value, 0)
+            const totalSelected = this.nSelected + (
+                match.length ? +match[0].value : 
+                +matches.reduce((total, i) => total + i.value, 0)
             );
 
             const button = container.append("button")
@@ -316,6 +316,9 @@ var vueapp = new Vue({
         },
     },
     computed: {
+        nMatches : function() {
+            return this.allItems.reduce((total, i) => total + i.value);
+        },
         nSelected : function() {
             return this.allItems.reduce((total, i) => {
                 if (this.selectedItems.includes(i.id))
