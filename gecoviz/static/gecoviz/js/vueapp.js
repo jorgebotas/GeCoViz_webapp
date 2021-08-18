@@ -112,6 +112,8 @@ var vueapp = new Vue({
 
         fetchThen : function(data, fetchURL) {
             this.allItems = data.matches;
+            if (this.allItems.length == 0)
+                this.fetchCatch();
             setTimeout(() => {
                 this.toggleSunburstSelector();
                 hideSpinner();
