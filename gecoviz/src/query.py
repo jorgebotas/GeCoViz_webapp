@@ -1,6 +1,7 @@
 from collections import defaultdict, Counter
 from django.conf import settings
-from ete3 import Tree, NCBITaxa
+from ete3 import NCBITaxa
+from ete4 import Tree
 import json
 import pickle
 from pymongo import MongoClient, ASCENDING, DESCENDING
