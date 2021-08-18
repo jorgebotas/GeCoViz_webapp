@@ -50,7 +50,9 @@
                                 </button>
                                 <div id="add-button-container" class="ml-3"></div>
                             </div>
-                            <div id="shown-items" class="d-flex" style="flex-wrap:wrap;">
+                            <div id="shown-items" class="d-flex" 
+                                style="flex-wrap:wrap; max-height:350px;
+                                       overflow-y:scroll;">
                                 <label v-for="sp in allItems" 
                                        v-if="searchedItems.includes(sp.id)"
                                     class="form-selectgroup-item m-1">

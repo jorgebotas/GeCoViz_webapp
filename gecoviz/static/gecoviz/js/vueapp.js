@@ -127,7 +127,7 @@ var vueapp = new Vue({
                     this.searchedItems = this.selectedItems;
                 else
                     this.searchedItems = this.allItems.filter(
-                            d => d.name.toLowerCase().includes(search))
+                            d => d.lineage.toLowerCase().includes(search))
                         .map(d => d.id);
                 if (this.searchedItems.length > 20)
                     this.sliceSearch();
