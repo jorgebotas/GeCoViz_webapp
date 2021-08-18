@@ -160,10 +160,11 @@ var vueapp = new Vue({
 
             const totalSelected = this.nSelected + +(
                 match.length ? match[0].value : 
-                matches.reduce((total, i) => total + i.value)
+                matches.reduce((total, i) => total + i.value, 0)
             );
 
             console.log(this.nSelected)
+            console.log(matches.reduce((total, i) => total + i.value, 0))
             console.log(totalSelected)
 
             const button = container.append("div")
