@@ -5,7 +5,7 @@ import json
 import pickle
 from pymongo import MongoClient, ASCENDING, DESCENDING
 from re import split as resplit
-import sys
+import sys, os
 import time
 
 client = MongoClient('10.0.3.1')
@@ -38,6 +38,8 @@ def get_newick(field, query, taxids):
     emapper_matches = get_emapper_matches(field, query);
     genomes = [ ".".join(m.split(".")[0:2]) 
             for m in emapper_matches if m.split(".")[0] in taxids ]
+    print(STATIC_PATH / "trees/progenomes.nw")
+    print(os.path.exists(STATIC_PATH / "trees/progenomes.nw"))
     tree = Tree(STATIC_PATH / "trees/progenomes.nw")
     pruned_tree = tree.prune(genomes)
     print(f'Genomes: {len(genomes)}')
