@@ -311,7 +311,7 @@ var vueapp = new Vue({
     computed: {
         nSelected : function() {
             return this.allItems.reduce((total, i) => {
-                if (this.selectedItems.included(i.id))
+                if (this.selectedItems.includes(i.id))
                     return total + i.value;
                 return total
             }, 0)
