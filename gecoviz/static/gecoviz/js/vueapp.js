@@ -317,7 +317,7 @@ var vueapp = new Vue({
     },
     computed: {
         nMatches : function() {
-            return this.allItems.reduce((total, i) => total + i.value);
+            return this.allItems.reduce((total, i) => total + i.value, 0);
         },
         nSelected : function() {
             return this.allItems.reduce((total, i) => {
