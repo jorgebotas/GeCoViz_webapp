@@ -39,8 +39,7 @@ def get_newick(field, query, taxids):
     emapper_matches = get_emapper_matches(field, query);
     genomes = [ ".".join(m.split(".")[0:2]) 
             for m in emapper_matches if m.split(".")[0] in taxids ]
-    print(Tree("A"))
-    tree = Tree(STATIC_PATH / "trees/progenomes.nw")
+    tree = Tree(str(STATIC_PATH / "trees/progenomes.nw"))
     pruned_tree = tree.prune(genomes)
     print(f'Genomes: {len(genomes)}')
     print(f'pruned: {len(pruned_tree)}')
