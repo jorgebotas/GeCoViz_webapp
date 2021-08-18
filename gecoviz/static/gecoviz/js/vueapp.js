@@ -153,14 +153,21 @@ var vueapp = new Vue({
         showAddButton: function(lineage) {
             const container = d3.select("#add-button-container")
             container.selectAll("*").remove();
+
+            const matches = this.allItems
+                .filter(i => i.lineage.slice(0, lineage.length) === lineage)
+            const match = matches.filter(i => i.lineage === lineage);
+
+            const totalSelected = this.nSelected + (
+                match.length ? match[0].value : 
+                matches.reduce((total, i) => total + i.value)
+            );
+
             const button = container.append("div")
                 .attr("class", "btn btn-primary")
-                .attr(":visibility", "")
-                .html("Add")
+                .attr("disabled", () => totalSelected > 200 ? true : null)
+                .html("Add");
             button.on("click", () => {
-                const matches = this.allItems
-                    .filter(i => i.lineage.slice(0, lineage.length) === lineage)
-                const match = matches.filter(i => i.lineage === lineage);
                 if (match.length)
                     this.selectItem(match[0].id, true);
                 else
