@@ -74,7 +74,8 @@ var vueapp = new Vue({
             this.query = query || $("#search-query").val().trim();
             $("#search-query").val(this.query);
             this.queryType = searchType || $("#search-type input:checked").val();
-            //$("#searchType input[value=${this.queryType}]").checked
+            d3.select("#search-type input[value=${this.queryType}]")
+                .attr("checked", true);
             $('#search-query').trigger('blur');
 
             await fetch(API_BASE_URL + `/emapper/${this.queryType}/${this.query}/`)
@@ -88,8 +89,8 @@ var vueapp = new Vue({
             async function getNewick(endpoint) {
                 let newick;
                 await fetch(API_BASE_URL + '/tree/' + endpoint)
-                     .then(response => response.text())
-                     .then(tree => newick = tree)
+                     .then(response => response.json())
+                     .then(data => newick = data.tree)
                      .catch(e => console.log(e))
                 return newick;
             }
@@ -105,7 +106,7 @@ var vueapp = new Vue({
             const taxids = this.selectedItems.join(",");
             const endpoint = `${this.queryType}/${this.query}/${taxids}/`;
 
-            this.contextData.newick = await getNewick(endpoint);
+            this.contextData.newick = ""; //await getNewick(endpoint);
             this.contextData.context = await getContext(endpoint);
         },
 
@@ -310,7 +311,7 @@ var vueapp = new Vue({
     computed: {
         nSelected : function() {
             return this.allItems.reduce((total, i) => {
-                if (i.id in this.selectedItems)
+                if (this.selectedItems.included(i.id))
                     return total + i.value;
                 return total
             }, 0)
