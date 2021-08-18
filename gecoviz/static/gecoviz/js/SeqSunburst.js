@@ -259,7 +259,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
         });
 
         path.append("title")
-            .text(d => d.ancestors().map(d => d.data.name).reverse().join("/")
+            .text(d => d.ancestors().map(d => d.data.name).reverse().join(" > ")
                 + "\n" + format(d.value));
 
 
