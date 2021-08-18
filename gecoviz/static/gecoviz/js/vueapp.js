@@ -215,7 +215,7 @@ var vueapp = new Vue({
                 .treeData(newick, newickFields[0], newickFields)
                 .contextData(context)
                 .nSide(4)
-                .scrollPort(document.querySelector(selector))
+                .viewPort(document.querySelector(selector))
                 .geneText("Gene name")
                 .annotation("Orthologous groups", 2)
                 .options({ shrinkTreeWidth: true })

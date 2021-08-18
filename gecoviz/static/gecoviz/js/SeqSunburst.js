@@ -188,6 +188,9 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 mouseEnterTimeout = setTimeout(() => mouseEnter(e, d), 100);
             });
         path.on("mouseleave", () => {
+                if (mouseEnterTimeout)
+                    clearTimeout(mouseEnterTimeout);
+
                 path.attr("fill-opacity", d => 
                     arcVisible(d.current) ? (d.children ? 0.8 : 0.6) : 0)
                     .attr("stroke-width", 0);
