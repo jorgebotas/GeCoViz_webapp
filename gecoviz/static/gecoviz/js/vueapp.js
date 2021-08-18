@@ -74,7 +74,7 @@ var vueapp = new Vue({
             this.query = query || $("#search-query").val().trim();
             $("#search-query").val(this.query);
             this.queryType = searchType || $("#search-type input:checked").val();
-            d3.select("#search-type input[value=${this.queryType}]")
+            d3.select(`#search-type input[value="${this.queryType}"]`)
                 .attr("checked", true);
             $('#search-query').trigger('blur');
 
