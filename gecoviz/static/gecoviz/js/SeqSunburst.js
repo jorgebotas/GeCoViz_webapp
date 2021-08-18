@@ -130,7 +130,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .attr("viewBox", `${semiCircle ? 0 : -width/2} ${-width/2} ${width} ${width}`)
             .style("max-width", `${width}px`)
             .attr("class", "seq-sunburst")
-            .style("overflow-x", "visible")
+            .style("overflow", "visible")
             .style("font", "10px sans-serif");
 
         const g = svg.append("g");
@@ -170,6 +170,8 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 (sequence.indexOf(node) >= 0 ? 1 : 0.8) : 0);
         }
 
+        let mouseEnterTimeout;
+
         const path = g.append("g")
           .selectAll("path")
           .data(root.descendants()) //.slice(1))
@@ -177,10 +179,14 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .attr('fill', d => palette(d.data.name))
             //.attr("fill", d => { while (d.depth > 1) d = d.parent; return palette(d.data.name); })
             .attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.8 : 0.8) : 0)
-            .attr("stroke", "lightgray")
+            .attr("stroke", "black")
             .attr("stroke-width", 0)
             .attr("d", d => arc(d.current))
-            .on("mouseenter", mouseEnter);
+            .on("mouseenter", (e, d) => {
+                if (mouseEnterTimeout)
+                    clearTimeout(mouseEnterTimeout);
+                mouseEnterTimeout = setTimeout(() => mouseEnter(e, d), 100);
+            });
         path.on("mouseleave", () => {
                 path.attr("fill-opacity", d => 
                     arcVisible(d.current) ? (d.children ? 0.8 : 0.6) : 0)
@@ -207,13 +213,13 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                     .each(function() {
                         const clone = d3.select(this.cloneNode(false))
                             .attr("fill-opacity", 1)
-                            .style("stroke", "lightgray")
+                            .style("stroke", "black")
                             .style("stroke-width", "1.5px");
                         gClone.node().appendChild(clone.node());
                     })
                 const clone = d3.select(this.cloneNode(true))
                             .attr("fill-opacity", 1)
-                            .style("stroke", "lightgray")
+                            .style("stroke", "black")
                             .style("stroke-width", "1.5px");
                 clone.on("click", () => {
                     setTimeout(() => {
