@@ -8,7 +8,8 @@
             <h2 class="accordion-header">
                 <button class="accordion-button collapsed"
                  @click="focusSearchbar()">
-                1. Query a gene of interest from the search bar
+                <div class="badge bg-indigo mr-2">1</div>
+                Query a gene of interest from the search bar
                 </button>
             </h2>
         </div>
@@ -16,7 +17,8 @@
            <h2 class="accordion-header" id="step2-header">
                <button class="accordion-button collapsed"
                    @click="toggleSunburstSelector()">
-                2. Select a maximum of 200 genomes
+                <div class="badge bg-indigo mr-2">2</div>
+                Select a maximum of 200 genomes
                </button>
            </h2>
            <div id="sunburst-selector-container" 
@@ -75,7 +77,8 @@
             <h2 class="accordion-header" id="step3-header">
                 <button class="accordion-button collapsed"
                  @click="visualizeSelection()">
-                3. Visualize genomic context
+                <div class="badge bg-indigo mr-2">3</div>
+                Visualize genomic context
                 </button>
             </h2>
            <div id="visualization-container" 
