@@ -158,11 +158,12 @@ var vueapp = new Vue({
                 .filter(i => i.lineage.slice(0, lineage.length) === lineage)
             const match = matches.filter(i => i.lineage === lineage);
 
-            const totalSelected = this.nSelected + (
+            const totalSelected = this.nSelected + +(
                 match.length ? match[0].value : 
                 matches.reduce((total, i) => total + i.value)
             );
 
+            console.log(this.nSelected)
             console.log(totalSelected)
 
             const button = container.append("div")
