@@ -163,6 +163,8 @@ var vueapp = new Vue({
                 matches.reduce((total, i) => total + i.value)
             );
 
+            console.log(totalSelected)
+
             const button = container.append("div")
                 .attr("class", "btn btn-primary")
                 .attr("disabled", () => totalSelected > 200 ? true : null)
