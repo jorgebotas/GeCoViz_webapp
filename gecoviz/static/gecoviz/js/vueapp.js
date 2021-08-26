@@ -106,7 +106,7 @@ var vueapp = new Vue({
             const taxids = this.selectedItems.join(",");
             const endpoint = `${this.queryType}/${this.query}/${taxids}/`;
 
-            this.contextData.newick = ""; //await getNewick(endpoint);
+            this.contextData.newick = await getNewick(endpoint);
             this.contextData.context = await getContext(endpoint);
         },
 
