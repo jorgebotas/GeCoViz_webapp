@@ -37,13 +37,13 @@ og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 
 def get_newick(field, query, taxids):
     emapper_matches = get_emapper_matches(field, query);
-    genomes_in_taxid = defaultdict(list)
+    members_in_taxid = defaultdict(list)
     for match in emapper_matches:
         taxid = match.split(".")[0]
-        genomes_in_taxid[taxid].append(match)
+        members_in_taxid[taxid].append(match)
     tree = ncbi.get_topology(taxids)
     for leaf in tree:
-        children = genomes_in_taxid[leaf.name]
+        children = [ Tree(name=t) for t in members_in_taxid[leaf.name] ]
         leaf.children = children
     print(tree)
     return tree.write()
