@@ -154,6 +154,7 @@ var vueapp = new Vue({
 
         deselectAll: function() {
             this.selectedItems = [];
+            this.updateSearch();
         },
 
         showAddButton: function(lineage) {
