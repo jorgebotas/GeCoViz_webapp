@@ -46,8 +46,9 @@ def get_newick(field, query, taxids):
         children = members_in_taxid[leaf.name]
         if len(children) == 1:
             leaf.name = children[0]
-        for ch in children:
-            leaf.add_child(name=ch)
+        else:
+            for ch in children:
+                leaf.add_child(name=ch)
 
     print(tree)
     print(tree.write())
