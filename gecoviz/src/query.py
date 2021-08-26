@@ -36,6 +36,9 @@ og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 
 
 def get_newick(field, query, taxids):
+    tree = ncbi.get_topology(taxids)
+    print(tree)
+    return tree.write()
     emapper_matches = get_emapper_matches(field, query);
     genomes = [ ".".join(m.split(".")[0:2]) 
             for m in emapper_matches if m.split(".")[0] in taxids ]
@@ -51,6 +54,7 @@ def get_newick(field, query, taxids):
     print(f'pruned: {len(pruned_tree)}')
 
     return pruned_tree.write()
+
 
 def get_genome_info(field, query, taxids):
 
