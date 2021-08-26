@@ -120,7 +120,7 @@ var vueapp = new Vue({
             }, 0)
         },
 
-        updateSearch: function(event) {
+        updateSearch: function() {
             if (this.searchTimeout)
                 clearTimeout(this.searchTimeout);
             this.searchTimeout = setTimeout(() => {
