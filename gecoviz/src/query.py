@@ -44,9 +44,12 @@ def get_newick(field, query, taxids):
     tree = ncbi.get_topology(taxids)
     for leaf in tree:
         children = [ tree.__class__(name=t) for t in members_in_taxid[leaf.name] ]
-        print(children)
-        leaf.children = children
+        if len(children) == 1:
+            leaf.name = children[0]
+        else:
+            leaf.children = children
     print(tree)
+    print(tree.write())
     return tree.write()
     genomes = [ ".".join(m.split(".")[0:2]) 
             for m in emapper_matches if m.split(".")[0] in taxids ]
