@@ -45,7 +45,7 @@ def get_newick(field, query, taxids):
     for leaf in tree:
         children = members_in_taxid[leaf.name]
         if len(children) == 1:
-            leaf.name = children[0]
+            leaf.name = children[0].replace(".", "")
         else:
             for ch in children:
                 leaf.add_child(name=ch.replace(".", ""))
