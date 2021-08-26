@@ -47,6 +47,12 @@
                             <div class="card-header" style="min-height: 70px">
                                 Total matches: [[ nMatches ]]<br>
                                 Selected: [[ nSelected ]]
+                                <button class="btn btn-clean ml-5"
+                                     @click="visualizeSelection()"
+                                     :disabled="nSelected < 1">
+                                    Deselect all
+                                    <i class="fas fa-chevron-right ml-3"></i>
+                                </button>
                                 <button class="btn btn-primary ml-5"
                                      @click="visualizeSelection()"
                                      :disabled="nSelected < 1">

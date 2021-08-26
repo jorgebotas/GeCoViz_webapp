@@ -152,6 +152,10 @@ var vueapp = new Vue({
             this.updateSearch();
         },
 
+        deselectAll: function() {
+            this.selectedItems = [];
+        },
+
         showAddButton: function(lineage) {
             const container = d3.select("#add-button-container")
             container.selectAll("*").remove();

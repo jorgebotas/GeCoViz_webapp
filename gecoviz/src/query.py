@@ -49,26 +49,9 @@ def get_newick(field, query, taxids):
         else:
             for ch in children:
                 leaf.add_child(name=ch.replace(".", ""))
-
-    print(tree)
-    print(tree.write())
+    
+    print(f'Matches: {len(emapper_matches)};\nTree: {len(tree)}')
     return tree.write()
-
-    genomes = [ ".".join(m.split(".")[0:2]) 
-            for m in emapper_matches if m.split(".")[0] in taxids ]
-    print(f'Genomes: {len(genomes)}')
-
-    tree = ncbi.get_topology(genomes)
-    print(tree)
-
-    return tree.write()
-
-    tree = Tree(str(STATIC_PATH / "trees/progenomes.nw"))
-    pruned_tree = tree.prune(genomes)
-    print(f'pruned: {len(pruned_tree)}')
-
-    return pruned_tree.write()
-
 
 def get_genome_info(field, query, taxids):
 
