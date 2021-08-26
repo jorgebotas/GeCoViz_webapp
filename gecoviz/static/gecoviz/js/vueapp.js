@@ -123,7 +123,6 @@ var vueapp = new Vue({
         updateSearch: function(event) {
             if (this.searchTimeout)
                 clearTimeout(this.searchTimeout);
-            console.log(event)
             this.searchTimeout = setTimeout(() => {
                 const search = $("#search-taxonomy").val().trim().toLowerCase();
                 if (!search)
