@@ -43,7 +43,7 @@ def get_newick(field, query, taxids):
         members_in_taxid[taxid].append(match)
     tree = ncbi.get_topology(taxids)
     for leaf in tree:
-        children = [ Tree(name=t) for t in members_in_taxid[leaf.name] ]
+        children = [ tree.__class__(name=t) for t in members_in_taxid[leaf.name] ]
         print(children)
         leaf.children = children
     print(tree)
