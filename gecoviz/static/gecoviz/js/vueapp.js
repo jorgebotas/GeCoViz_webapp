@@ -214,7 +214,11 @@ var vueapp = new Vue({
             const selector = "#gecoviz-container";
             $('#spinner').modal('show');
 
-            this.updateSearchParams({ taxids: this.selectedItems.join(",") });
+            this.updateSearchParams({
+                query: this.query,
+                searchType: this.searchType,
+                taxids: this.selectedItems.join(",")
+            });
 
             d3.selectAll("#gecoviz-container *").remove();
 
@@ -356,6 +360,8 @@ var vueapp = new Vue({
         const taxids = urlParams['taxids'];
 
         if (searchType && query) {
+            this.query = query;
+            this.searchType = searchType;
             if (taxids) {
                 this.selectedItems = taxids.split(",")
                 this.toggleGeCoViz();
