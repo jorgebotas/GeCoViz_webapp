@@ -122,7 +122,7 @@ var vueapp = new Vue({
             }, 0)
         },
 
-        updateSuggestions: async function() {
+        updateSuggestions:function() {
             if (this.suggestionTimeout)
                 clearTimeout(this.suggestionTimeout);
             this.suggestionTimeout = setTimeout(() => {
@@ -134,7 +134,7 @@ var vueapp = new Vue({
                     return
                 }
                 
-                await fetch(`${API_BASE_URL}/suggestions/${this.searchType}/${search}/`)
+                fetch(`${API_BASE_URL}/suggestions/${this.searchType}/${search}/`)
                     .then(response => response.json())
                     .then(data => {
                         console.log(data)
