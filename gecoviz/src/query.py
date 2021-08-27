@@ -32,6 +32,7 @@ def get_pickle(filePath):
 kpath_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
 ko_dict = get_pickle(STATIC_PATH / "pickle/KO_DESCRIPTION.pickle")
 og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
+og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
 
 
 def get_newick(field, query, taxids):
@@ -134,7 +135,7 @@ def get_og_level(og):
     return og_level_dict.get(og, "")
 
 def get_og_desc(og):
-    return ""
+    return og_dict.get(og, ("", ""))[1]
 
 
 def get_emapper_annotation(genes):
@@ -154,7 +155,7 @@ def get_emapper_annotation(genes):
         ogs = [ { 
                 "id": og,
                 "level": get_og_level(og),
-                "description": get_og_desc(og) 
+                "description": get_og_desc(og),
             } for og in set(m.get("ogs", [])) ]
 
         annotation[gene] = { 
