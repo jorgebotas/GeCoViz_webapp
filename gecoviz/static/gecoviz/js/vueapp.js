@@ -115,7 +115,7 @@ var vueapp = new Vue({
         fetchThen : function(data, fetchURL) {
             this.allItems = data.matches;
             if (this.allItems.length == 0)
-                this.fetchCatch();
+                fetchCatch();
             setTimeout(() => {
                 this.toggleSunburstSelector();
                 hideSpinner();
@@ -398,5 +398,17 @@ var vueapp = new Vue({
             if (!d3.select(".clone").node())
                 d3.selectAll("#add-button-container *").remove();
         })
+
+        const searchbar = $(`#search-query`);
+        const suggestions = $(`#search-suggestions`);
+        searchbar.on("focus", () => {
+            suggestions.css("display", "block");
+        })
+        searchbar.on("blur", () => {
+            setTimeout(() => {
+                suggestions.css("display", "none");
+            }, 100)
+        })
+
     },
 });
