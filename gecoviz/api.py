@@ -21,12 +21,14 @@ def suggestions(request, field, query):
 
     # Return hits in ids
     if query.length <= 10:
-        keys_hits = [ k:v for k,v in desc_dict.items() if k.__contains__(query) ]
+        keys_hits = [ { 'id': k, 'desc', v }
+                for k,v in desc_dict.items() if k.__contains__(query) ]
         if key_hits.length > 0:
             return JsonResponse({ 'suggestions': key_hits })
 
     # Return hits in descriptions
-    desc_hits = [ k:v for k,v in desc_dict.items() if v.__contains__(query) ]
+    desc_hits = [ { 'id': k, 'desc', v }
+                for k,v in desc_dict.items() if v.__contains__(query) ]
     return JsonResponse({ 'suggestions': desc_hits })
 
 
