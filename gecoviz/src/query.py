@@ -29,9 +29,8 @@ def get_pickle(filePath):
         pdict = pickle.load(pickle_in)
     return pdict
 
-kegg_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
-# OG level dictionary (for neighborhood sumary)
-# TODO: include level in col_og_neigh_scores
+kpath_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
+ko_dict = get_pickle(STATIC_PATH / "pickle/KO_DESCRIPTION.pickle")
 og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 
 
@@ -125,10 +124,10 @@ def get_taxonomy(queries):
 
 
 def get_ko_desc(ko):
-    return ""
+    return ko_dict.get(ko, "")
 
 def get_kpath_desc(kpath):
-    return kegg_dict.get(kpath[-5:], "")
+    return kpath_dict.get(kpath[-5:], "")
 
 def get_og_level(og):
     return og_level_dict.get(og, "")
