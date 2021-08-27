@@ -234,6 +234,7 @@ var vueapp = new Vue({
                 .options({ shrinkTreeWidth: true })
                 .draw();
 
+            this.updateSearchParams({ taxids: this.selectedItems.join(",") });
             setTimeout(hideSpinner, 10);
 
         },
@@ -349,11 +350,17 @@ var vueapp = new Vue({
             return vars;
         }
         const urlParams = getUrlParams();
-        const searchType = urlParams['searchType'] || 'fam';
+        const searchType = urlParams['searchType'] || 'pname';
         const query = urlParams['query'];
+        const taxids = urlParams['taxids'];
 
-        if (searchType && query)
-            this.searchQuery(searchType, query, urlParams);
+        if (searchType && query) {
+            if (taxids) {
+                this.selectedItems = taxids.split(",")
+                this.toggleGeCoViz();
+            } else
+                this.searchQuery(searchType, query, urlParams);
+        }
 
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
