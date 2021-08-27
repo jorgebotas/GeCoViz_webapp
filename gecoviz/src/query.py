@@ -56,7 +56,6 @@ def get_newick(field, query, taxids):
         if len(children) == 1:
             child_name = children[0].replace(".", "")
             leaf.name = ".".join([ child_name, *lineage ])
-            print(leaf.name)
         else:
             for ch in children:
                 child_name = ch.replace(".", "")
