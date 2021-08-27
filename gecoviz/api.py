@@ -1,12 +1,35 @@
 from django.conf import settings
-from django.http import JsonResponse, HttpResponse
+from django.http import JsonResponse, HttpResponse, HttpResponseNotFound
 from ete4 import Tree
 
 from json import load
-from .src.query import get_functional_matches, get_newick, get_context
+from .src.query import get_pickle, get_functional_matches, get_newick, get_context
 
 
-RESULTS_PATH = settings.BASE_DIR / 'gecoviz/tmp/'
+RESULTS_PATH = settings.BASE_DIR / 'gecoviz/tmp'
+PICKLE_PATH = settings.STATIC_DIR / 'geco/pickle'
+
+def suggestions(request, field, query):
+    if field == "ogs":
+        path = PICKLE_PATH / 'OG_DESCRIPTION.pickle'
+    elif field == "kos":
+        path = PICKLE_PATH / 'KO_DESCRIPTION.pickle'
+    else:
+        return HttpResponseNotFound()
+
+    desc_dict = get_pickle(str(path))
+
+    # Return hits in ids
+    if query.length <= 10:
+        keys_hits = [ k:v for k,v in desc_dict.items() if k.__contains__(query) ]
+        if key_hits.length > 0:
+            return JsonResponse({ 'suggestions': key_hits })
+
+    # Return hits in descriptions
+    desc_hits = [ k:v for k,v in desc_dict.items() if v.__contains__(query) ]
+    return JsonResponse({ 'suggestions': desc_hits })
+
+
 
 def emapper(request, field, query):
     matches = get_functional_matches(field, query)

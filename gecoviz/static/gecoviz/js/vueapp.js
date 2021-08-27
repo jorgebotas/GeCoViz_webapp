@@ -58,6 +58,7 @@ var vueapp = new Vue({
     data: {
         query: undefined,
         searchType: undefined,
+        suggestions: [],
         selectedItems: [],
         searchedItems: [],
         searchTimeout: undefined,
@@ -118,6 +119,24 @@ var vueapp = new Vue({
                 this.toggleSunburstSelector();
                 hideSpinner();
             }, 0)
+        },
+
+        updateSuggestions: async function() {
+            this.searchType = $("#search-type input:checked").val();
+            const search = $("#search-query").val();
+
+            if (search.length < 3) {
+                this.suggestions = [];
+                return
+            }
+            
+            await fetch(`${API_BASE_URL}/suggestions/${searchType}/${search}/`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    this.suggestions = data.suggestions;
+                })
+                .catch(fetchCatch);
         },
 
         updateSearch: function() {

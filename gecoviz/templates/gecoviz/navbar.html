@@ -18,9 +18,26 @@
           </h2>
           <div class="navbar-nav d-flex pt-2">
               <div class="input-icon w-100 m-2 mr-4" style='min-width:250px'>
+                    <ul class="dropdown-menu suggestion-menu" 
+                      v-if="suggestions.length"
+                      role="menu" id="search-suggestions"
+                      style="top: 100% !important">
+                      <li class="dropdown-item"
+                          v-for="s in suggestions"
+                          @click="searchQuery(undefined, s.id)">
+                          <b><b class="f-bold">[[ s.id ]]</b>
+                          <br>
+                          <b class="text-muted"
+                              style="font-size:.6rem;
+                              color: rgba(33, 43, 54, 0.5184) !important;">
+                              [[ s.desc ]]
+                          </b></b>
+                      </li>
+                    </ul>
                     <input type="text"
                            class="form-control text-left"
                            id="search-query"
+                           @keydown="updateSuggestions()"
                            @keypress.enter.prevent="searchQuery()"
                            placeholder="Search..."/>
                     <span class="input-icon-addon search-icon">

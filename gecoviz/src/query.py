@@ -135,7 +135,7 @@ def get_og_level(og):
     return og_level_dict.get(og, "")
 
 def get_og_desc(og):
-    return og_dict.get(og, ("", ""))[1]
+    return og_dict.get(og, "")
 
 
 def get_emapper_annotation(genes):
