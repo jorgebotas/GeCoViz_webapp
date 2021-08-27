@@ -42,7 +42,7 @@ def get_newick(field, query, taxids):
         taxid = match.split(".")[0]
         if taxid in taxids:
             members_in_taxid[taxid].append(match)
-    taxid_lineages = { t: ncbi.get_lineage(t) for t in taxids }
+    taxid_lineages = { t: get_lineage(t) for t in taxids }
     print(taxid_lineages)
     if len(taxids) < 2:
         tree = Tree(name=taxids[0])
