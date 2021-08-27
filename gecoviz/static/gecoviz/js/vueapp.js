@@ -61,6 +61,7 @@ var vueapp = new Vue({
         suggestions: [],
         selectedItems: [],
         searchedItems: [],
+        suggestionTimeout: undefined,
         searchTimeout: undefined,
         allItems: [], 
         contextData: {
@@ -122,21 +123,26 @@ var vueapp = new Vue({
         },
 
         updateSuggestions: async function() {
-            this.searchType = $("#search-type input:checked").val();
-            const search = $("#search-query").val();
+            if (this.suggestionTimeout)
+                clearTimeout(this.suggestionTimeout);
+            this.suggestionTimeout = setTimeout(() => {
+                this.searchType = $("#search-type input:checked").val();
+                const search = $("#search-query").val();
 
-            if (search.length < 3) {
-                this.suggestions = [];
-                return
-            }
-            
-            await fetch(`${API_BASE_URL}/suggestions/${this.searchType}/${search}/`)
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data)
-                    this.suggestions = data.suggestions;
-                })
-                .catch(fetchCatch);
+                if (search.length < 3) {
+                    this.suggestions = [];
+                    return
+                }
+                
+                await fetch(`${API_BASE_URL}/suggestions/${this.searchType}/${search}/`)
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log(data)
+                        this.suggestions = data.suggestions;
+                    })
+                    .catch(fetchCatch);
+                
+            }, 500);
         },
 
         updateSearch: function() {
