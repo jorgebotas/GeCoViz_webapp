@@ -43,7 +43,6 @@ def get_newick(field, query, taxids):
         if taxid in taxids:
             members_in_taxid[taxid].append(match)
     taxid_lineages = { t: get_lineage(t) for t in taxids }
-    print(taxid_lineages)
     if len(taxids) < 2:
         tree = Tree(name=taxids[0])
     else:
@@ -56,11 +55,10 @@ def get_newick(field, query, taxids):
             continue
         children = members_in_taxid[taxid]
         lineage = taxid_lineages[taxid]
-        print(lineage)
+        print(len(children))
         if len(children) == 1:
             child_name = children[0].replace(".", "")
             leaf.name = ".".join([ child_name, *lineage ])
-            print(".".join([ child_name, *lineage ]))
         else:
             for ch in children:
                 child_name = ch.replace(".", "")
@@ -78,9 +76,6 @@ def get_genome_info(field, query, taxids):
 def get_context(field, query, taxids):
     emapper_matches = get_emapper_matches(field, query);
     queries = [ m for m in emapper_matches if m.split(".")[0] in taxids ]
-    print(len(taxids))
-    print(len(list(set(taxids))))
-    print(len(queries))
 
     matches = col_neighs.find({ 'genes.g': { '$in': queries } })
 
@@ -105,8 +100,6 @@ def get_context(field, query, taxids):
 
     context = [ { **gene, **functional_info.get(gene["gene"], {}) }
                 for gene in context ]
-
-    print(count)
 
     return context
 
