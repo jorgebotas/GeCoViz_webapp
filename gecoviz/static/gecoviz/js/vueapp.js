@@ -231,6 +231,7 @@ var vueapp = new Vue({
                                        this.contextData.context];
             newickFields = [
                 'name',
+                'last tax level',
             ]
             await GeCoViz(selector)
                 .treeData(newick, newickFields[0], newickFields)
