@@ -214,6 +214,8 @@ var vueapp = new Vue({
             const selector = "#gecoviz-container";
             $('#spinner').modal('show');
 
+            this.updateSearchParams({ taxids: this.selectedItems.join(",") });
+
             d3.selectAll("#gecoviz-container *").remove();
 
             // Fetch context data
@@ -234,7 +236,6 @@ var vueapp = new Vue({
                 .options({ shrinkTreeWidth: true })
                 .draw();
 
-            this.updateSearchParams({ taxids: this.selectedItems.join(",") });
             setTimeout(hideSpinner, 10);
 
         },
