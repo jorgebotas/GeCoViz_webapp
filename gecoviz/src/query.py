@@ -41,17 +41,23 @@ def get_newick(field, query, taxids):
     for match in emapper_matches:
         taxid = match.split(".")[0]
         members_in_taxid[taxid].append(match)
+    taxid_lineages = { t: ncbig.get_lineage(t) for t in taxids }
     tree = ncbi.get_topology(taxids)
     for leaf in tree:
-        children = members_in_taxid[leaf.name]
+        taxid = leaf.name
+        children = members_in_taxid[taxid]
+        lineage = taxid_lineages[taxid]
         if len(children) == 1:
-            leaf.name = children[0].replace(".", "")
+            child_name = children[0].replace(".", "")
+            leaf.name = ".".join([ child_name, *lineage ])
         else:
             for ch in children:
-                leaf.add_child(name=ch.replace(".", ""))
+                child_name = ch.replace(".", "")
+                leaf.add_child(name=".".join([ child_name, *lineage ]))
     
     print(f'Matches: {len(emapper_matches)};\nTree: {len(tree)}')
     return tree.write()
+
 
 def get_genome_info(field, query, taxids):
 
@@ -127,6 +133,7 @@ def get_og_level(og):
 
 def get_og_desc(og):
     return ""
+
 
 def get_emapper_annotation(genes):
     matches = col_emapper.find({ "q": { "$in": genes } })
