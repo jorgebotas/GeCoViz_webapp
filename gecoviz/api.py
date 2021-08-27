@@ -7,7 +7,7 @@ from .src.query import get_pickle, get_functional_matches, get_newick, get_conte
 
 
 RESULTS_PATH = settings.BASE_DIR / 'gecoviz/tmp'
-PICKLE_PATH = settings.STATIC_ROOT / 'geco/pickle'
+PICKLE_PATH = settings.STATIC_ROOT / 'gecoviz/pickle'
 
 def suggestions(request, field, query):
     if field == "ogs":

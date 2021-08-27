@@ -122,7 +122,7 @@ var vueapp = new Vue({
             }, 0)
         },
 
-        updateSuggestions:function() {
+        updateSuggestions: function() {
             if (this.suggestionTimeout)
                 clearTimeout(this.suggestionTimeout);
             this.suggestionTimeout = setTimeout(() => {
