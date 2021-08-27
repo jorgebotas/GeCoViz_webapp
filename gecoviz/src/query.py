@@ -124,6 +124,7 @@ def get_taxonomy(queries):
 
 
 def get_ko_desc(ko):
+    print(ko_dict.get(ko))
     return ko_dict.get(ko, "")
 
 def get_kpath_desc(kpath):
