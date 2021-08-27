@@ -171,7 +171,7 @@ var vueapp = new Vue({
 
             const button = container.append("button")
                 .attr("class", "btn btn-primary")
-                .attr("disabled", () => totalSelected > 500 ? true : null)
+                .attr("disabled", () => totalSelected > 250 ? true : null)
                 .html("Add " + toBeSelected);
             button.on("click", () => {
                 if (match.length)
