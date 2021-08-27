@@ -21,7 +21,7 @@ def suggestions(request, field, query):
 
     # Return hits in ids
     if len(query) <= 10:
-        keys_hits = [ { 'id': k, 'desc': v }
+        key_hits = [ { 'id': k, 'desc': v }
                 for k,v in desc_dict.items() if k.__contains__(query) ]
         if len(key_hits) > 0:
             return JsonResponse({ 'suggestions': key_hits })
