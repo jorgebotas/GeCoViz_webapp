@@ -130,8 +130,7 @@ var vueapp = new Vue({
                         this.selectedItems.includes(d.id));
                 else
                     this.searchedItems = this.allItems.filter(
-                            d => d.lineage.toLowerCase().includes(search))
-                        .map(d => d.id);
+                            d => d.lineage.toLowerCase().includes(search));
             }, 500);
         },
 
