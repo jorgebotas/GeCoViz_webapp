@@ -364,6 +364,7 @@ var vueapp = new Vue({
             this.searchType = searchType;
             if (taxids && taxids.length) {
                 this.selectedItems = taxids.split(",")
+                console.log(this.selectedItems)
                 this.visualizeSelection();
             } else
                 this.searchQuery(searchType, query, urlParams);
