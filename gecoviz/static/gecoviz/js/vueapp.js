@@ -400,12 +400,13 @@ var vueapp = new Vue({
         })
 
         const searchbar = $("#search-query");
+        const suggestions = $("#search-suggestions");
         searchbar.on("focus", () => {
-            $("#search-suggestions").css("display", "block")
+            suggestions.css("display", "block");
         })
         searchbar.on("blur", () => {
             setTimeout(() => {
-                $("#search-suggestions").css("display", "none");
+                suggestions.css("display", "none");
             }, 100)
         })
 
