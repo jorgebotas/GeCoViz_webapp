@@ -13116,6 +13116,27 @@ a:hover {
   background-color: rgba(132, 144, 215, 0.2);
   color: #6574cd; }
 
+.suggestion-menu {
+  color: #212b36;
+  min-width: 14rem;
+  text-align: left;
+  list-style: none;
+  background-color: white;
+  background-clip: padding-box;
+  border: 1px solid rgba(95, 102, 110, 0.2);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  font-size: .7rem;
+  user-select: none;
+  margin: 0;
+  position: absolute;
+  z-index: 1030;
+  top: 100% !important;
+  left: 50%;
+  transform: translate(-125px, 5px);
+  max-height: 300px;
+  overflow: scroll; }
+
 .choices__list {
   border-radius: 25px !important;
   padding: 5px !important; }
