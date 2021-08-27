@@ -234,7 +234,7 @@ var vueapp = new Vue({
                 'last tax level',
             ]
             await GeCoViz(selector)
-                .treeData(newick, newickFields[0], newickFields)
+                .treeData(newick, newickFields[1], newickFields)
                 .contextData(context)
                 .nSide(4)
                 .viewPort(document.querySelector(selector))
