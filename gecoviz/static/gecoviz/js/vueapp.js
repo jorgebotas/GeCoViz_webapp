@@ -57,7 +57,7 @@ var vueapp = new Vue({
     el: '#GeCoVizApp',
     data: {
         query: undefined,
-        queryType: undefined,
+        searchType: undefined,
         selectedItems: [],
         searchedItems: [],
         searchTimeout: undefined,
@@ -73,12 +73,12 @@ var vueapp = new Vue({
             $('#spinner').modal('show');
             this.query = query || $("#search-query").val().trim();
             $("#search-query").val(this.query);
-            this.queryType = searchType || $("#search-type input:checked").val();
-            d3.select(`#search-type input[value="${this.queryType}"]`)
+            this.searchType = searchType || $("#search-type input:checked").val();
+            d3.select(`#search-type input[value="${this.searchType}"]`)
                 .attr("checked", true);
             $('#search-query').trigger('blur');
 
-            await fetch(API_BASE_URL + `/emapper/${this.queryType}/${this.query}/`)
+            await fetch(API_BASE_URL + `/emapper/${this.searchType}/${this.query}/`)
                  .then(response => response.json())
                  .then(this.fetchThen)
                  .catch(fetchCatch)
@@ -104,7 +104,7 @@ var vueapp = new Vue({
             }
 
             const taxids = this.selectedItems.join(",");
-            const endpoint = `${this.queryType}/${this.query}/${taxids}/`;
+            const endpoint = `${this.searchType}/${this.query}/${taxids}/`;
 
             this.contextData.newick = await getNewick(endpoint);
             this.contextData.context = await getContext(endpoint);
