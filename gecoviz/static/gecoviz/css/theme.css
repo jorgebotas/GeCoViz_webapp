@@ -13135,7 +13135,8 @@ a:hover {
   left: 50%;
   transform: translate(-125px, 5px);
   max-height: 300px;
-  overflow: scroll; }
+  overflow: scroll;
+  display: none; }
 
 .choices__list {
   border-radius: 25px !important;
