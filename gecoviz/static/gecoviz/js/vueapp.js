@@ -363,7 +363,8 @@ var vueapp = new Vue({
             this.query = query;
             this.searchType = searchType;
             if (taxids && taxids.length) {
-                this.selectedItems = taxids.split("%252C");
+                this.selectedItems = taxids.split("%2C");
+                console.log(taxids)
                 console.log(this.selectedItems);
                 this.visualizeSelection();
             } else
