@@ -66,7 +66,7 @@ def get_newick(field, query, taxids):
                 child_name = ch.replace(".", "")
                 leaf.add_child(name=".".join([ child_name, *lineage ]))
     
-    print(f'Matches: {len(sum(len(m) for m in members_in_taxid.values()))}\nTree: {len(tree)}')
+    print(f'Matches: {sum(len(m) for m in members_in_taxid.values())}\nTree: {len(tree)}')
     return tree.write()
 
 
