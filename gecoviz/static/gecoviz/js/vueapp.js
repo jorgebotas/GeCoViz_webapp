@@ -128,7 +128,7 @@ var vueapp = new Vue({
                 if (search) {
                     this.searchedItems = this.allItems.filter(
                             d => d.lineage.toLowerCase().includes(search));
-                    this.showAddButton()
+                    this.showAddButton(search)
 
                 } else {
                     this.searchedItems = this.allItems.filter(d => 
