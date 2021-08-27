@@ -13136,7 +13136,11 @@ a:hover {
   transform: translate(-125px, 5px);
   max-height: 300px;
   overflow: scroll;
-  display: none; }
+  padding: 7px !important;
+  white-space: normal; }
+
+.suggestion-menu .dropdown-item {
+  border-radius: 5px; }
 
 .choices__list {
   border-radius: 25px !important;
