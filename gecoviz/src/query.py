@@ -41,7 +41,7 @@ def get_newick(field, query, taxids):
     for match in emapper_matches:
         taxid = match.split(".")[0]
         members_in_taxid[taxid].append(match)
-    taxid_lineages = { t: ncbig.get_lineage(t) for t in taxids }
+    taxid_lineages = { t: ncbi.get_lineage(t) for t in taxids }
     tree = ncbi.get_topology(taxids)
     for leaf in tree:
         taxid = leaf.name
