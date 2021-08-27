@@ -125,12 +125,15 @@ var vueapp = new Vue({
                 clearTimeout(this.searchTimeout);
             this.searchTimeout = setTimeout(() => {
                 const search = $("#search-taxonomy").val().trim().toLowerCase();
-                if (!search)
-                    this.searchedItems = this.allItems.filter(d => 
-                        this.selectedItems.includes(d.id));
-                else
+                if (search) {
                     this.searchedItems = this.allItems.filter(
                             d => d.lineage.toLowerCase().includes(search));
+                    this.showAddButton()
+
+                } else {
+                    this.searchedItems = this.allItems.filter(d => 
+                        this.selectedItems.includes(d.id));
+                }
             }, 500);
         },
 
@@ -156,7 +159,7 @@ var vueapp = new Vue({
             container.selectAll("*").remove();
 
             const matches = this.allItems
-                .filter(i => i.lineage.slice(0, lineage.length) === lineage)
+                .filter(i =>  i.lineage.includes(lineage))//)i.lineage.slice(0, lineage.length) === lineage)
             const match = matches.filter(i => i.lineage === lineage);
 
             const toBeSelected = match.length ? +match[0].value : 
