@@ -52,7 +52,7 @@ def get_newick(field, query, taxids):
     print(f'Taxid_lineages: {len(taxids)}   =====  {len(taxid_lineages.keys())}')
     for leaf in tree:
         taxid = leaf.name
-        if type taxid != int:
+        if type(taxid) != int:
             continue
         children = members_in_taxid[taxid]
         lineage = taxid_lineages[taxid]
