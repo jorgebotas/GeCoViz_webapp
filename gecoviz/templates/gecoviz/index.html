@@ -65,7 +65,7 @@
                                 style="flex-wrap:wrap; max-height:350px;
                                        overflow-y:scroll;">
                                 <label v-for="sp in allItems" 
-                                       v-if="searchedItems.includes(sp.id)"
+                                       v-if="inTaxSearch(sp)"
                                     class="form-selectgroup-item m-1">
                                     <input class="form-selectgroup-input"
                                            type="checkbox" 

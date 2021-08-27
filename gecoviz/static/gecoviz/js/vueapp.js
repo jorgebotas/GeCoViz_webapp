@@ -60,7 +60,8 @@ var vueapp = new Vue({
         searchType: undefined,
         selectedItems: [],
         searchedItems: [],
-        searchTimeout: undefined,
+        taxSearch: "",
+        taxSearchTimeout: undefined,
         allItems: [], 
         contextData: {
             newick: "",
@@ -120,24 +121,18 @@ var vueapp = new Vue({
             }, 0)
         },
 
-        updateSearch: function() {
-            if (this.searchTimeout)
-                clearTimeout(this.searchTimeout);
-            this.searchTimeout = setTimeout(() => {
-                const search = $("#search-taxonomy").val().trim().toLowerCase();
-                if (!search)
-                    this.searchedItems = this.selectedItems;
-                else
-                    this.searchedItems = this.allItems.filter(
-                            d => d.lineage.toLowerCase().includes(search))
-                        .map(d => d.id);
-                if (this.searchedItems.length > 20)
-                    this.sliceSearch();
-            }, 500);
+
+        inSearch: function(d) {
+            return !this.taxSearch && 
+                d.lineage.toLowerCase().includes(this.taxSearch);
         },
 
-        sliceSearch: function() {
-
+        updateSearch: function() {
+            if (this.taxSearchTimeout)
+                clearTimeout(this.taxSearchTimeout);
+            this.taxSearchTimeout = setTimeout(() => {
+                this.taxSearch = $("#search-taxonomy").val().trim().toLowerCase();
+            }, 500);
         },
 
         selectItem: function(id, show) {
