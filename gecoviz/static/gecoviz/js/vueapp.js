@@ -399,14 +399,13 @@ var vueapp = new Vue({
                 d3.selectAll("#add-button-container *").remove();
         })
 
-        const searchbar = $(`#search-query`);
-        const suggestions = $(`#search-suggestions`);
+        const searchbar = $("#search-query");
         searchbar.on("focus", () => {
-            suggestions.css("display", "block");
+            $("#search-suggestions").css("display", "block");
         })
         searchbar.on("blur", () => {
             setTimeout(() => {
-                suggestions.css("display", "none");
+                $("#search-suggestions").css("display", "none");
             }, 100)
         })
 
