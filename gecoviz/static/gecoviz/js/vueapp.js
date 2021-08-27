@@ -130,7 +130,7 @@ var vueapp = new Vue({
                 return
             }
             
-            await fetch(`${API_BASE_URL}/suggestions/${searchType}/${search}/`)
+            await fetch(`${API_BASE_URL}/suggestions/${this.searchType}/${search}/`)
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
