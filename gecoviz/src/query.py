@@ -146,8 +146,6 @@ def get_emapper_annotation(genes):
         name = m.get("pname", "")
         
         description = m.get("?", "")
-        print(m)
-        if description: print(description)
 
         kpaths = [ { "id": kp, "description": get_kpath_desc(kp) } 
                 for kp in set(m.get("kpath", [])) ]
