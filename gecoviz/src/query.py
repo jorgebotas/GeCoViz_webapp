@@ -47,7 +47,7 @@ def get_newick(field, query, taxids):
         tree = Tree(name=taxids[0])
     else:
         tree = ncbi.get_topology(taxids)
-    print(f'Taxids: {len(taxids)}   =====  {len(tree)}')
+    print(f'Taxids: {len(taxids)}   =====  Tree: {len(tree)}')
     print(f'Taxid_lineages: {len(taxids)}   =====  {len(taxid_lineages.keys())}')
     for leaf in tree.get_leaves():
         taxid = leaf.name
@@ -58,6 +58,7 @@ def get_newick(field, query, taxids):
             child_name = children[0].replace(".", "")
             leaf.name = ".".join([ child_name, last_tax_level, *lineage ])
         else:
+            print(len(children))
             for ch in children:
                 child_name = ch.replace(".", "")
                 leaf.add_child(name=".".join([ child_name, last_tax_level, *lineage ]))
