@@ -37,6 +37,7 @@ og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
 
 def get_newick(field, query, taxids):
     emapper_matches = get_emapper_matches(field, query);
+    print(f'MATCHES LEN: {len([ q.split(".")[0] for q in emapper_matches ])}')
     members_in_taxid = defaultdict(list)
     for match in emapper_matches:
         taxid = match.split(".")[0]
@@ -190,4 +191,5 @@ def get_emapper_matches(field, query):
 
 def get_functional_matches(field, query):
     emapper = get_emapper_matches(field, query)
+    print(f'MATCHES LEN: {len([ q.split(".")[0] for q in emapper ])}')
     return get_taxonomy(emapper)
