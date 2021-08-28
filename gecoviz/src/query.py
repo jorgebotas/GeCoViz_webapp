@@ -125,7 +125,6 @@ def get_taxonomy(queries):
 
 
 def get_ko_desc(ko):
-    print(ko_dict.get(ko))
     return ko_dict.get(ko, "")
 
 def get_kpath_desc(kpath):
@@ -160,7 +159,7 @@ def get_emapper_annotation(genes):
                 "description": get_og_desc(og),
             } for og in set(m.get("ogs", [])) ]
 
-        pfam = [ { "id": p, "description": get_pfam_desc(p)
+        pfam = [ { "id": p, "description": get_pfam_desc(p) }
                 for p in m.get("pfam", [])} ]
 
         annotation[gene] = { 
