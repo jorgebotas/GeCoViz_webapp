@@ -199,11 +199,6 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 breadcrumb.update(rootSequence)
             })
 
-        path.style("cursor", "pointer")
-            .on("dblclick", (e, p) => {
-                e.preventDefault();
-                console.log(getSequence(p))
-            });
         path.on("click", function(_, d) {
                 const gClone = g.insert("g", ".text-labels")
                     .attr("class", "clone");
@@ -211,6 +206,9 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 if (clickCallBack) {
                     const sequenceString = sequence
                         .map(d => d.data.name).join(separator);
+
+                    console.log(d)
+                    console.log(sequence)
                     clickCallBack(sequenceString);
                 }
                 path.filter(d => sequence.slice(0, -1).indexOf(d) >= 0)
