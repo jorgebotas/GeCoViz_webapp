@@ -145,6 +145,8 @@ def get_emapper_annotation(genes):
     for m in matches:
         gene = m["q"]
         name = m.get("pname", "")
+        
+        description = m.get("?", "")
 
         kpaths = [ { "id": kp, "description": get_kpath_desc(kp) } 
                 for kp in set(m.get("kpath", [])) ]
@@ -158,11 +160,17 @@ def get_emapper_annotation(genes):
                 "description": get_og_desc(og),
             } for og in set(m.get("ogs", [])) ]
 
+        pfam = [ { "id": p, "description": get_pfam_desc(p)
+                for p in m.get("pfam", [])} ]
+
         annotation[gene] = { 
                 "Gene name": name,
+                "Description": description
                 "KEGG pathways": kpaths,
                 "KEGG Orthology": kos,
-                "Orthologous groups": ogs, }
+                "Orthologous groups": ogs,
+                "Pfam": pfam,
+                }
 
     return annotation
 
