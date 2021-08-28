@@ -58,7 +58,6 @@ def get_newick(field, query, taxids):
             child_name = children[0].replace(".", "")
             leaf.name = ".".join([ child_name, last_tax_level, *lineage ])
         else:
-            print(len(children))
             for ch in children:
                 child_name = ch.replace(".", "")
                 leaf.add_child(name=".".join([ child_name, last_tax_level, *lineage ]))
