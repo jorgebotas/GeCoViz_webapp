@@ -13118,7 +13118,7 @@ a:hover {
 
 .suggestion-menu {
   color: #212b36;
-  min-width: 14.5rem;
+  min-width: 14rem;
   text-align: left;
   list-style: none;
   background-color: white;
@@ -13139,6 +13139,7 @@ a:hover {
   padding: 7px !important; }
 
 .suggestion-menu .dropdown-item {
+  min-width: 14.5rem;
   border-radius: 5px;
   white-space: normal;
   padding: .25rem .5rem; }
