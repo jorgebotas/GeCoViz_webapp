@@ -165,7 +165,7 @@ def get_emapper_annotation(genes):
 
         annotation[gene] = { 
                 "Gene name": name,
-                "Description": description
+                "Description": description,
                 "KEGG pathways": kpaths,
                 "KEGG Orthology": kos,
                 "Orthologous groups": ogs,
