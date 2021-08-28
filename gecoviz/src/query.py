@@ -56,6 +56,8 @@ def get_newick(field, query, taxids):
     for leaf in tree.get_leaves():
         taxid = leaf.name
         children = members_in_taxid[taxid]
+        if len(children) == 0:
+            print(taxid)
         lineage = taxid_lineages[taxid]
         last_tax_level = lineage[-1]
         if len(children) == 1:
