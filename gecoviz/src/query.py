@@ -50,6 +50,7 @@ def get_newick(field, query, taxids):
     for l in tree:
         assert l.name in taxids
     print(f'Taxids: {len(taxids)}   =====  Tree: {len(tree)}')
+    print(f'Taxids: {len(taxids)}   =====  members: {len(members_in_taxid.keys())}')
     print(f'Taxid_lineages: {len(taxids)}   =====  {len(taxid_lineages.keys())}')
     for leaf in tree.get_leaves():
         taxid = leaf.name
