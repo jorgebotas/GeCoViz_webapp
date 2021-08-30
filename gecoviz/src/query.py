@@ -164,7 +164,7 @@ def get_emapper_annotation(genes):
         ogs = [ { 
                 "id": og,
                 "level": get_og_level(og),
-                "levelName": get_tax_levelname(int(get_og_level(og))),
+                "levelName": get_tax_levelname(str(get_og_level(og))),
                 "description": get_og_desc(og),
             } for og in set(m.get("ogs", [])) ]
 
