@@ -390,8 +390,10 @@ var vueapp = new Vue({
                 console.log(it.lineage)
                 console.log(t)
                 if (i === 0)
-                    return it.lineage.split(";");
-                return t.filter((d, i) => d === it[i])
+                    t =  it.lineage.split(";");
+                else
+                    t = t.filter((d, i) => d === it[i])
+                return t
             }, [])[-1] || ""
         },
         addButtonVisibility: function() {
