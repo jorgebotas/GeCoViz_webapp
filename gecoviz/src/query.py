@@ -96,7 +96,7 @@ def get_context(field, query, taxids):
         context.extend( { 
             "anchor": anchor["g"],
             "gene": g["g"],
-            "pos": g["p"] - anchor["p"],
+            "pos": int(g["p"] - anchor["p"]),
             "start": g["s"],
             "end": g["e"],
             "strand": g["o"],
