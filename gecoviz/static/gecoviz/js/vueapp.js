@@ -243,17 +243,21 @@ var vueapp = new Vue({
 
         toggleGeCoViz : async function() {
             const selector = "#gecoviz-container";
+
+            const content = d3.selectAll("#gecoviz-container *");
+            if (content.nodes().length) {
+                content.remove();
+                return
+            }
+
             $('#spinner').modal('show');
             const params = {
                 query: this.query,
                 searchType: this.searchType,
                 taxids: this.selectedItems.join(",")
             }
-            console.log(params)
 
             this.updateSearchParams(params);
-
-            d3.selectAll("#gecoviz-container *").remove();
 
             // Fetch context data
             await this.searchContext();
