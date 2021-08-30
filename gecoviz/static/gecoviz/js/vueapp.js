@@ -389,7 +389,7 @@ var vueapp = new Vue({
                 if (i == 0)
                     return it.lineage.split(";");
                 return t.filter((d, i) => d === it[i])
-            })[-1]
+            }, [])[-1]
         },
         addButtonVisibility: function() {
             if (d3.select(".clone").node())
