@@ -61,12 +61,12 @@
                                 </button>
                                 <div id="add-button-container" class="ml-3"></div>
                             </div>
-                            <div id="shown-items" class="d-flex" 
+                            <div id="shown-items" class="" 
                                 style="max-height:350px;
                                        overflow-y:scroll;">
                                 <label v-for="sp in searchedItems" 
                                     class="form-selectgroup-item"
-                                    style="margin: .3rem;">
+                                    style="margin: .3rem; clear: both">
                                     <input class="form-selectgroup-input"
                                            type="checkbox" 
                                            :value="sp.id"
