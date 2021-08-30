@@ -127,6 +127,7 @@ var vueapp = new Vue({
                 this.toggleSunburstSelector();
                 this.updateSearch();
                 hideSpinner();
+                console.log(this.selectedTaxa)
             }, 0)
         },
 
