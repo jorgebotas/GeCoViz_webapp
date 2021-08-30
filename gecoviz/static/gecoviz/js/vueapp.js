@@ -278,7 +278,7 @@ var vueapp = new Vue({
 
         },
 
-        downloadSeq : function(query) {
+        getSeq : function(query) {
             fetch(API_BASE_URL + `/seq/${query}/`)
                 .then(response => response.blob())
                 .then(blob => saveAs(blob, `${query}_sequence.fasta`))
