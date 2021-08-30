@@ -128,7 +128,7 @@ def get_taxonomy(queries):
     return taxa
 
 def get_tax_levelname(taxid):
-    print(tax_level_dict.get(taxid, ""))
+    print(taxid)
     return tax_level_dict.get(taxid, "")
 
 def get_ko_desc(ko):
