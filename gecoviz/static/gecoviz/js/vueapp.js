@@ -387,8 +387,8 @@ var vueapp = new Vue({
         },
         selectedTaxa: function() {
             return this.searchedItems.reduce((t, it, i) => {
-                console.log(it.lineage)
-                console.log(t)
+                //console.log(it.lineage)
+                //console.log(t)
                 if (i === 0) {
                     t =  it.lineage.split(";")
                     console.log(t)
