@@ -147,7 +147,7 @@ def get_og_desc(og):
 def get_emapper_annotation(genes):
     matches = col_emapper.find({ "q": { "$in": genes } })
 
-    print(tax_level_dict)
+    print(len(tax_level_dict.keys()))
 
     annotation = {}
     for m in matches:
