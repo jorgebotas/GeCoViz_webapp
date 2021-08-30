@@ -165,7 +165,7 @@ var vueapp = new Vue({
                 this.searchedItems = this.searchedItems.sort((a, b) =>  {
                     const [ rankA, nameA ] = a.name.split("__");
                     const [ rankB, nameB ] = b.name.split("__");
-                    return rankA === rankB ? nameA > nameB : rankA > rankB;
+                    return rankA === rankB ? nameA > nameB : ranking[rankA] > ranking[rankB];
                 })
             }, 500);
         },
