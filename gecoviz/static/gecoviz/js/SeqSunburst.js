@@ -477,7 +477,7 @@ class BreadCrumb {
             .append('title')
             .html(d => {
                 const [ rank, name ] = d.data.name.split("__");
-                return `${capitalize(rank)}: <i>${name}</i>`;
+                return `${capitalize(rank)}: <i style="font-style:oblique">${name}</i>`;
             })
 
         breadcrumbsEnter
