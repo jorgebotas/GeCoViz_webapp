@@ -128,7 +128,10 @@ def get_taxonomy(queries):
     return taxa
 
 def get_tax_levelname(taxid):
-    return ncbi.get_taxid_translator(taxid)[0]
+    translator = ncbi.get_taxid_translator(taxid)
+    if len(translator) > 0:
+        return translator[0]
+    return ""
     # return tax_level_dict.get(taxid, "")
 
 def get_ko_desc(ko):
