@@ -208,7 +208,7 @@ var vueapp = new Vue({
             hide("#visualization-container");
             // Do not toggle if now query has been processed
             if (!this.allItems.length)
-                return
+                this.searchQuery();
             const container = $("#sunburst-selector-container")
             if (container.hasClass("show"))
                 hide("#sunburst-selector-container")
