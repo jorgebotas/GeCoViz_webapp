@@ -118,6 +118,7 @@ var vueapp = new Vue({
                 fetchCatch();
             setTimeout(() => {
                 this.toggleSunburstSelector();
+                this.updateSearch();
                 hideSpinner();
             }, 0)
         },
@@ -219,7 +220,6 @@ var vueapp = new Vue({
                 SeqSunburst(taxonomy, 500, 6, true, this.showAddButton)
                     .draw(".sunburst-selector");
             }
-            console.log(this.selectedItems)
         },
 
         async visualizeSelection() {
