@@ -56,7 +56,6 @@ def get_newick(field, query, taxids):
     for leaf in tree.get_leaves():
         taxid = leaf.name
         children = members_in_taxid[taxid]
-        print(len(children))
         lineage = taxid_lineages[taxid]
         last_tax_level = lineage[-1]
         if len(children) == 1:
@@ -129,6 +128,7 @@ def get_taxonomy(queries):
     return taxa
 
 def get_tax_levelname(taxid):
+    print(tax_level_dict.get(taxid, ""))
     return tax_level_dict.get(taxid, "")
 
 def get_ko_desc(ko):
@@ -146,8 +146,6 @@ def get_og_desc(og):
 
 def get_emapper_annotation(genes):
     matches = col_emapper.find({ "q": { "$in": genes } })
-
-    print(tax_level_dict)
 
     annotation = {}
     for m in matches:
