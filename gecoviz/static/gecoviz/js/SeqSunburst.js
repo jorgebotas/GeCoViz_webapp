@@ -463,8 +463,6 @@ class BreadCrumb {
                     const extended = fittedName + s
                     if (extended.length <= maxChar)
                         fittedName = extended;
-                    else
-                        break;
                 })
                 return `<tspan>${fittedName}</tspan>
                         <tspan>${name}</tspan>`;
