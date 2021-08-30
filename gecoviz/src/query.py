@@ -128,7 +128,6 @@ def get_taxonomy(queries):
     return taxa
 
 def get_tax_levelname(taxid):
-    print(tax_level_dict.get("2"))
     return tax_level_dict.get(taxid, "")
 
 def get_ko_desc(ko):
@@ -146,6 +145,8 @@ def get_og_desc(og):
 
 def get_emapper_annotation(genes):
     matches = col_emapper.find({ "q": { "$in": genes } })
+
+    print(tax_level_dict)
 
     annotation = {}
     for m in matches:
