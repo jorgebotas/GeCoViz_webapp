@@ -165,7 +165,8 @@ var vueapp = new Vue({
                 this.searchedItems = this.searchedItems.sort((a, b) =>  {
                     const [ rankA, nameA ] = a.name.split("__");
                     const [ rankB, nameB ] = b.name.split("__");
-                    return rankA === rankB ? nameA > nameB : ranking[rankA] > ranking[rankB];
+                    return rankA === rankB ? nameA > nameB 
+                        : (ranking[rankA] || 1000) > (ranking[rankB] || 1000);
                 })
             }, 500);
         },
@@ -277,7 +278,7 @@ var vueapp = new Vue({
 
         },
 
-        getSeq : function(query) {
+        downloadSeq : function(query) {
             fetch(API_BASE_URL + `/seq/${query}/`)
                 .then(response => response.blob())
                 .then(blob => saveAs(blob, `${query}_sequence.fasta`))

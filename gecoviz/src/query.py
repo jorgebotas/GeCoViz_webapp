@@ -13,6 +13,7 @@ client = MongoClient('10.0.3.1')
 db = client.progenomes2
 col_emapper = db.emapper2
 col_neighs = db.neighs
+col_proteins = db.proteins
 ncbi = NCBITaxa()
 
 
@@ -34,6 +35,13 @@ kpath_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
 ko_dict = get_pickle(STATIC_PATH / "pickle/KO_DESCRIPTION.pickle")
 og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
+
+
+def get_sequence(query, fasta=True):
+    seq = col_proteins.find_one({'gene': query}).get('aa', 'Sequence not found')
+    if fasta:
+        return '>{}\n{}'.format(query, seq)
+    return seq
 
 
 def get_newick(field, query, taxids):
@@ -96,6 +104,7 @@ def get_context(field, query, taxids):
         context.extend( { 
             "anchor": anchor["g"],
             "gene": g["g"],
+            "seqID": g["g"],
             "pos": int(g["p"] - anchor["p"]),
             "start": g["s"],
             "end": g["e"],
@@ -134,7 +143,11 @@ def get_taxonomy(queries):
     return taxa
 
 def get_tax_levelname(taxid):
-    return list(ncbi.get_taxid_translator(taxid).values())[-1]
+    lineage = list(ncbi.get_taxid_translator(taxid).values())
+    if len(lineage) > 0:
+        return lineage[-1]
+    else:
+        return ""
 
 def get_ko_desc(ko):
     return ko_dict.get(ko, "")
@@ -151,8 +164,6 @@ def get_og_desc(og):
 
 def get_emapper_annotation(genes):
     matches = col_emapper.find({ "q": { "$in": genes } })
-
-    print(len(tax_level_dict.keys()))
 
     annotation = {}
     for m in matches:

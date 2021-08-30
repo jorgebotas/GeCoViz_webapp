@@ -3,7 +3,8 @@ from django.http import JsonResponse, HttpResponse, HttpResponseNotFound
 from ete4 import Tree
 
 from json import load
-from .src.query import get_pickle, get_functional_matches, get_newick, get_context
+from .src.query import get_pickle, get_functional_matches, get_newick,\
+                       get_context, get_sequence
 
 
 RESULTS_PATH = settings.BASE_DIR / 'gecoviz/tmp'
@@ -45,3 +46,9 @@ def tree(request, field, query, taxids):
 def context(request, field, query, taxids):
     context = get_context(field, query, taxids.split(','))
     return JsonResponse( { 'context': context } )
+
+
+def seq(request, query):
+    sequence = get_sequence(query, fasta=True)
+    return HttpResponse(sequence)
+

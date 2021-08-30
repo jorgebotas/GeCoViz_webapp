@@ -9,4 +9,5 @@ urlpatterns = [
     path(r'api/emapper/<str:field>/<str:query>/', api.emapper),
     path(r'api/tree/<str:field>/<str:query>/<str:taxids>/', api.tree),
     path(r'api/context/<str:field>/<str:query>/<str:taxids>/', api.context),
+    path(r'api/seq/<str:query>/', api.seq),
 ]
