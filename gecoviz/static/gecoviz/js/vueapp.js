@@ -160,6 +160,9 @@ var vueapp = new Vue({
                     this.searchedItems = this.allItems.filter(d => 
                         this.selectedItems.includes(d.id));
                 }
+
+                this.searchedItems.sort((a, b) => 
+                    a.name < b.name)
             }, 500);
         },
 
