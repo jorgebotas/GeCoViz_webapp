@@ -161,7 +161,7 @@ var vueapp = new Vue({
                         this.selectedItems.includes(d.id));
                 }
 
-                this.searchedItems.sort((a, b) => 
+                this.searchedItems = this.searchedItems.sort((a, b) => 
                     a.name < b.name)
             }, 500);
         },
