@@ -244,6 +244,7 @@ var vueapp = new Vue({
                 hide("#visualization-container")
             else {
                 show("#visualization-container")
+
                 await this.toggleGeCoViz();
             }
         },
@@ -382,6 +383,13 @@ var vueapp = new Vue({
                     return total + i.value;
                 return total
             }, 0)
+        },
+        selectedTaxa: function() {
+            const t = this.searchedItems.reduce((t, it, i) => {
+                if (i == 0)
+                    return it.lineage.split(";");
+                return t.filter((d, i) => d === it[i])
+            })
         },
         addButtonVisibility: function() {
             if (d3.select(".clone").node())
