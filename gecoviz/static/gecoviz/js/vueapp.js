@@ -161,10 +161,11 @@ var vueapp = new Vue({
                         this.selectedItems.includes(d.id));
                 }
 
+                const ranking = { genus: 0, species: 1, strain: 2, isolate: 3 }
                 this.searchedItems = this.searchedItems.sort((a, b) =>  {
-
-                    console.log(a.name.split("__")[1])
-                    return a.name.split("__")[1] > b.name.split("__")[1]
+                    const [ rankA, nameA ] = a.name.split("__");
+                    const [ rankB, nameB ] = b.name.split("__");
+                    return rankA === rankB ? nameA > nameB : rankA > rankB;
                 })
             }, 500);
         },
