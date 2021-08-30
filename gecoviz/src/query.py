@@ -129,6 +129,9 @@ def get_taxonomy(queries):
     return taxa
 
 
+def get_tax_levelname(taxid):
+    return tax_level_dict.get(taxid, "")
+
 def get_ko_desc(ko):
     return ko_dict.get(ko, "")
 
@@ -161,6 +164,7 @@ def get_emapper_annotation(genes):
         ogs = [ { 
                 "id": og,
                 "level": get_og_level(og),
+                "levelName": get_tax_levelname(taxid),
                 "description": get_og_desc(og),
             } for og in set(m.get("ogs", [])) ]
 
