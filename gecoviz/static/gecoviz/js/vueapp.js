@@ -386,7 +386,7 @@ var vueapp = new Vue({
         },
         selectedTaxa: function() {
             return this.searchedItems.reduce((t, it, i) => {
-                if (i == 0)
+                if (i === 0)
                     return it.lineage.split(";");
                 return t.filter((d, i) => d === it[i])
             }, [])[-1]
