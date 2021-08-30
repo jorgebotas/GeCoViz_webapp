@@ -93,7 +93,7 @@ var vueapp = new Vue({
                 await fetch(API_BASE_URL + '/tree/' + endpoint)
                      .then(response => response.json())
                      .then(data => newick = data.tree)
-                     .catch(e => console.log(e))
+                     .catch(fetchCatch)
                 return newick;
             }
             async function getContext(endpoint) {
@@ -101,7 +101,7 @@ var vueapp = new Vue({
                 await fetch(API_BASE_URL + '/context/'+ endpoint)
                     .then(response => response.json())
                      .then(data => context = eval(data.context))
-                     .catch(e => console.log(e));
+                     .catch(fetchCatch);
                 return context;
             }
 
