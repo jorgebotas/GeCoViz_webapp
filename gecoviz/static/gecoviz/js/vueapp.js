@@ -389,10 +389,12 @@ var vueapp = new Vue({
             return this.searchedItems.reduce((t, it, i) => {
                 console.log(it.lineage)
                 console.log(t)
-                if (i === 0)
-                    t =  it.lineage.split(";");
+                if (i === 0) {
+                    t =  it.lineage.split(";")
+                    console.log(t)
+                }
                 else
-                    t = t.filter((d, i) => d === it[i])
+                    t = t.filter((d, i) => d === it[i]);
                 return t
             }, [])[-1] || ""
         },
