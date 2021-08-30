@@ -163,8 +163,8 @@ var vueapp = new Vue({
 
                 this.searchedItems = this.searchedItems.sort((a, b) =>  {
 
-                    console.log(a.split("__")[1])
-                    return a.split("__")[1] > b.name.split("__")[1]
+                    console.log(a.name.split("__")[1])
+                    return a.name.split("__")[1] > b.name.split("__")[1]
                 })
             }, 500);
         },
