@@ -114,8 +114,10 @@ var vueapp = new Vue({
 
         fetchThen : function(data, fetchURL) {
             this.allItems = data.matches;
-            if (this.allItems.length == 0)
+            if (this.allItems.length == 0) {
                 fetchCatch();
+                return;
+            }
             setTimeout(() => {
                 this.toggleSunburstSelector();
                 this.updateSearch();
@@ -216,7 +218,7 @@ var vueapp = new Vue({
         toggleSunburstSelector: function() {
             hide("#visualization-container");
             // Do not toggle if now query has been processed
-            if (!this.allItems.length)
+            if (this.allItems.length == 0)
                 this.searchQuery();
             const container = $("#sunburst-selector-container")
             if (container.hasClass("show"))
