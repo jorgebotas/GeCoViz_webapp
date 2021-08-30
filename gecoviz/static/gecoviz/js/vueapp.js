@@ -75,7 +75,7 @@ var vueapp = new Vue({
             $('#spinner').modal('show');
             this.query = query || $("#search-query").val().trim() || this.query;
             $("#search-query").val(this.query);
-            this.searchType = searchType || $("#search-type input:checked").val() || this.searchType;
+            this.searchType = searchType || $("#search-type input:checked").val();
             d3.select(`#search-type input[value="${this.searchType}"]`)
                 .attr("checked", true);
             $('#search-query').trigger('blur');
@@ -387,6 +387,11 @@ var vueapp = new Vue({
         if (searchType && query) {
             this.query = query;
             this.searchType = searchType;
+            
+            $("#search-query").val(this.query);
+            d3.select(`#search-type input[value="${this.searchType}"]`)
+                .attr("checked", true);
+
             if (taxids && taxids.length) {
                 this.selectedItems = taxids.split("%2C");
                 this.visualizeSelection();
