@@ -43,18 +43,22 @@ def get_newick(field, query, taxids):
         taxid = match.split(".")[0]
         if taxid in taxids:
             members_in_taxid[taxid].append(match)
-    all_taxids = [ m.split(".")[0] for m in emapper_matches ]
-    assert all(taxid in all_taxids for taxid in taxids)
+
     taxid_lineages = { t: get_lineage(t) for t in taxids }
     if len(taxids) < 2:
         tree = Tree(name=taxids[0])
     else:
         tree = ncbi.get_topology(taxids)
+
+    all_taxids = [ m.split(".")[0] for m in emapper_matches ]
+    assert all(taxid in all_taxids for taxid in taxids)
     for l in tree:
         assert l.name in taxids
+
     print(f'Taxids: {len(taxids)}   =====  Tree: {len(tree)}')
     print(f'Taxids: {len(taxids)}   =====  members: {len(members_in_taxid.keys())}')
     print(f'Taxid_lineages: {len(taxids)}   =====  {len(taxid_lineages.keys())}')
+
     for leaf in tree.get_leaves():
         taxid = leaf.name
         children = members_in_taxid[taxid]
