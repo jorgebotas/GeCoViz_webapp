@@ -74,8 +74,11 @@ var vueapp = new Vue({
         searchQuery : async function(searchType, query, options) {
             $('#spinner').modal('show');
             const newQuery = query || $("#search-query").val().trim();
-            if (newQuery)
+            if (newQuery) {
+                this.selectedItems = [];
+                this.searchedItems = [];
                 this.query = newQuery;
+            }
             $("#search-query").val(this.query);
             this.searchType = searchType || $("#search-type input:checked").val();
             d3.select(`#search-type input[value="${this.searchType}"]`)
