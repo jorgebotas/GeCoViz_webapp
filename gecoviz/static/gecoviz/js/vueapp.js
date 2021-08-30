@@ -386,14 +386,16 @@ var vueapp = new Vue({
             }, 0)
         },
         selectedTaxa: function() {
-            return this.searchedItems.reduce((t, it, i) => {
+            result = this.searchedItems.reduce((t, it, i) => {
                 const itSplit = it.lineage.split(";")
                 if (i === 0)
                     t =  itSplit
                 else
                     t = t.filter((d, i) => d === itSplit[i]);
                 return t
-            }, [])[-1] || ""
+            }, [])
+            console.log(result)
+            return result[-1] || ""
         },
         addButtonVisibility: function() {
             if (d3.select(".clone").node())
