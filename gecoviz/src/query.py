@@ -29,6 +29,7 @@ def get_pickle(filePath):
         pdict = pickle.load(pickle_in)
     return pdict
 
+tax_level_dict = get_pickle(STATIC_PATH / "pickle/TAX_LEVELS.pickle")
 kpath_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
 ko_dict = get_pickle(STATIC_PATH / "pickle/KO_DESCRIPTION.pickle")
 og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
@@ -55,8 +56,7 @@ def get_newick(field, query, taxids):
     for leaf in tree.get_leaves():
         taxid = leaf.name
         children = members_in_taxid[taxid]
-        if len(children) == 0:
-            print(taxid)
+        print(len(children))
         lineage = taxid_lineages[taxid]
         last_tax_level = lineage[-1]
         if len(children) == 1:
