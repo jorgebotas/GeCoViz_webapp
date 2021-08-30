@@ -43,6 +43,8 @@ def get_newick(field, query, taxids):
         taxid = match.split(".")[0]
         if taxid in taxids:
             members_in_taxid[taxid].append(match)
+    all_taxids = [ m.split(".")[0] for m in emapper_matches ]
+    assert all(taxid in all_taxids for taxid in taxids)
     taxid_lineages = { t: get_lineage(t) for t in taxids }
     if len(taxids) < 2:
         tree = Tree(name=taxids[0])
@@ -128,10 +130,7 @@ def get_taxonomy(queries):
     return taxa
 
 def get_tax_levelname(taxid):
-    translator = ncbi.get_taxid_translator(taxid).values()
-    print(translator)
-    return list(translator)[-1]
-    # return tax_level_dict.get(taxid, "")
+    return tax_level_dict.get(taxid, "")
 
 def get_ko_desc(ko):
     return ko_dict.get(ko, "")
