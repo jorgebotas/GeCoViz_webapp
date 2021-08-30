@@ -387,16 +387,11 @@ var vueapp = new Vue({
         },
         selectedTaxa: function() {
             return this.searchedItems.reduce((t, it, i) => {
-                //console.log(it.lineage)
-                //console.log(t)
+                const itSplit = it.lineage.split(";")
                 if (i === 0)
-                    t =  it.lineage.split(";")
+                    t =  itSplit
                 else
-                    t = t.filter((d, i) => {
-                        console.log(d)
-                        console.log(it[i])
-                        console.log(d === it[i])
-                    });
+                    t = t.filter((d, i) => d === itSplit[i]);
                 return t
             }, [])[-1] || ""
         },
