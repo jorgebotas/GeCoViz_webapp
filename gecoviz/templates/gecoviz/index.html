@@ -62,16 +62,19 @@
                                 <div id="add-button-container" class="ml-3"></div>
                             </div>
                             <div id="shown-items" class="d-flex" 
-                                style="flex-wrap:wrap; max-height:350px;
+                                style="max-height:350px;
                                        overflow-y:scroll;">
                                 <label v-for="sp in searchedItems" 
-                                    class="form-selectgroup-item m-1">
+                                    class="form-selectgroup-item"
+                                    style="margin: .3rem;">
                                     <input class="form-selectgroup-input"
                                            type="checkbox" 
                                            :value="sp.id"
                                            :checked="selectedItems.includes(sp.id)"
                                            @click="selectItem(sp.id)">
-                                    <span class="form-selectgroup-label">[[ sp.name ]] ([[ sp.value ]])</span>
+                                    <span class="form-selectgroup-label"
+                                        style="font-size:.6rem; padding: .1rem .5rem">
+                                        [[ sp.name ]] ([[ sp.value ]])</span>
                                 </label>
                             </div>
                         </div>
