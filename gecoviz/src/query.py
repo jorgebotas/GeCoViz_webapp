@@ -123,7 +123,14 @@ def get_context(field, query, taxids):
 
 def get_lineage(taxid):
     lineage = ncbi.get_lineage(taxid)[1:]
+
+    old_stdout = sys.stdout # backup current stdout
+    sys.stdout = open(os.devnull, "w")
+
     taxid2name = ncbi.get_taxid_translator(lineage)
+
+    sys.stdout = old_stdout # reset old stdout
+
     ranks = ncbi.get_rank(lineage)
     return [ f'{ranks[tid]}__{taxid2name[tid]}' for tid in lineage ]
 
@@ -143,7 +150,13 @@ def get_taxonomy(queries):
     return taxa
 
 def get_tax_levelname(taxid):
+    old_stdout = sys.stdout # backup current stdout
+    sys.stdout = open(os.devnull, "w")
+
     lineage = list(ncbi.get_taxid_translator(taxid).values())
+
+    sys.stdout = old_stdout # reset old stdout
+
     if len(lineage) > 0:
         return lineage[-1]
     else:
