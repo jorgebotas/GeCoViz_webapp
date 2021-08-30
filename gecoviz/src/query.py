@@ -168,6 +168,8 @@ def get_emapper_annotation(genes):
                 "description": get_og_desc(og),
             } for og in set(m.get("ogs", [])) ]
 
+        print(ogs)
+
         pfam = [ { "id": p, "description": get_pfam_desc(p) }
                 for p in m.get("pfam", []) ]
 
