@@ -214,11 +214,8 @@ def get_emapper_annotation(genes):
 
 
 def get_emapper_matches(field, query):
-    if field == 'pname':
-        mongo_query = { field: query }
-    else:
-        mongo_query = { field: { '$elemMatch': { '$eq': query } } }
 
+    mongo_query = { field: query }
     matches = col_emapper.find(mongo_query, { 'q': 1 })
 
     return [ m['q'] for m in matches ]
