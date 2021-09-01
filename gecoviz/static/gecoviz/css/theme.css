@@ -13149,7 +13149,7 @@ a:hover {
   padding: .3rem .5rem;
   margin-top: .4rem !important; }
 
-#term-type .choices__list {
+.navbar .choices__list {
   left: -3rem; }
 
 .choices__list {
