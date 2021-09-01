@@ -81,7 +81,8 @@ var vueapp = new Vue({
                 this.query = newQuery;
             }
             $("#search-query").val(this.query);
-            this.searchType = searchType || this.searchTypeChoices.getValue();
+            console.log(this.searchTypeChoices.getValue(true))
+            this.searchType = searchType || this.searchTypeChoices.getValue(true);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
             //d3.select(`#search-type input[value="${this.searchType}"]`)
                 //.attr("checked", true);
@@ -137,7 +138,7 @@ var vueapp = new Vue({
             if (this.suggestionTimeout)
                 clearTimeout(this.suggestionTimeout);
             this.suggestionTimeout = setTimeout(() => {
-                this.searchType = this.searchTypeChoices.getValue();
+                this.searchType = this.searchTypeChoices.getValue(true);
                 const search = $("#search-query").val();
 
                 if (search.length < 3) {
