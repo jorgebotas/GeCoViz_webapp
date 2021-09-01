@@ -58,6 +58,7 @@ var vueapp = new Vue({
     data: {
         query: undefined,
         searchType: undefined,
+        searchTypeChoices: undefined,
         suggestions: [],
         selectedItems: [],
         searchedItems: [],
@@ -80,9 +81,10 @@ var vueapp = new Vue({
                 this.query = newQuery;
             }
             $("#search-query").val(this.query);
-            this.searchType = searchType || $("#search-type input:checked").val();
-            d3.select(`#search-type input[value="${this.searchType}"]`)
-                .attr("checked", true);
+            this.searchType = searchType || this.searchTypeChoices.getValue();
+            this.searchTypeChoices.setChoiceByValue(this.searchType);
+            //d3.select(`#search-type input[value="${this.searchType}"]`)
+                //.attr("checked", true);
             $('#search-query').trigger('blur');
 
             await fetch(API_BASE_URL + `/emapper/${this.searchType}/${this.query}/`)
@@ -135,7 +137,7 @@ var vueapp = new Vue({
             if (this.suggestionTimeout)
                 clearTimeout(this.suggestionTimeout);
             this.suggestionTimeout = setTimeout(() => {
-                this.searchType = $("#search-type input:checked").val();
+                this.searchType = this.searchTypeChoices.getValue();
                 const search = $("#search-query").val();
 
                 if (search.length < 3) {
