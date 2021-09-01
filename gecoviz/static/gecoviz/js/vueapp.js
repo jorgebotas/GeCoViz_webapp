@@ -406,6 +406,60 @@ var vueapp = new Vue({
     filters : {
     },
     mounted: function() {
+        document.addEventListener("click", () => {
+            if (!d3.select(".clone").node())
+                d3.selectAll("#add-button-container *").remove();
+        })
+
+        const searchbar = $("#search-query");
+        const suggestions = $("#search-suggestions");
+        searchbar.on("focus", () => {
+            suggestions.css("display", "block");
+        })
+        searchbar.on("blur", () => {
+            setTimeout(() => {
+                suggestions.css("display", "none");
+            }, 100)
+        })
+
+
+        // Choices
+        const searchTypeSelect = $("#search-type");
+        this.searchTypeChoices = new Choices(searchTypeSelect[0], {
+            classNames: {
+                containerInner: searchTypeSelect[0].className,
+                input: 'form-control',
+                inputCloned: 'form-control-sm',
+                listDropdown: 'dropdown-menu',
+                itemChoice: 'dropdown-item',
+                activeState: 'show',
+                selectedState: 'active',
+                placeholder: 'choices__placeholder',
+            },
+            shouldSort: false,
+            searchEnabled: false,
+            choices : [
+                {
+                    value: 'ogs', 
+                    label: 'Orthologous groups',
+                    selected: this.searchType == 'ogs' 
+                },
+                {
+                    value: 'kos', 
+                    label: 'KEGG Orthology',
+                    selected: this.searchType == 'kos' 
+                },
+                {
+                    value: 'pname', 
+                    label: 'Gene name',
+                    selected: this.searchType == 'pname' 
+                },
+            ]
+          });
+        searchTypeSelect.change(() => this.updateSuggestions());
+
+
+
         // Allow searches coded in URL
         function getUrlParams() {
             const vars = {};
@@ -423,6 +477,7 @@ var vueapp = new Vue({
             this.searchType = searchType;
             
             $("#search-query").val(this.query);
+            this.searchTypeChoices.setChoiceByValue(this.searchType);
             d3.select(`#search-type input[value="${this.searchType}"]`)
                 .attr("checked", true);
 
@@ -432,22 +487,5 @@ var vueapp = new Vue({
             } else
                 this.searchQuery(searchType, query, urlParams);
         }
-
-        document.addEventListener("click", () => {
-            if (!d3.select(".clone").node())
-                d3.selectAll("#add-button-container *").remove();
-        })
-
-        const searchbar = $("#search-query");
-        const suggestions = $("#search-suggestions");
-        searchbar.on("focus", () => {
-            suggestions.css("display", "block");
-        })
-        searchbar.on("blur", () => {
-            setTimeout(() => {
-                suggestions.css("display", "none");
-            }, 100)
-        })
-
     },
 });

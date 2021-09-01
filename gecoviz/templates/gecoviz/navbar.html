@@ -48,41 +48,43 @@
                     </span>
               </div>
 
-              <div id="search-type"
-                   class="form-selectgroup dark-form-selectgroup"
-                   style="min-width: 400px">
-                  <label class="form-selectgroup-item my-2">
-                      <input type="radio"
-                             name="search-type" 
-                             value="kos" 
-                             @click="updateSuggestions"
-                             class="form-selectgroup-input" 
-                             checked="">
-                      <span class="form-selectgroup-label">
-                          KEGG Orthology
-                      </span>
-                  </label>
-                  <label class="form-selectgroup-item my-2">
-                      <input type="radio"
-                             name="search-type" 
-                             value="ogs" 
-                             @click="updateSuggestions"
-                             class="form-selectgroup-input">
-                      <span class="form-selectgroup-label">
-                          eggNOG OG
-                      </span>
-                  </label>
-                  <label class="form-selectgroup-item my-2">
-                      <input type="radio"
-                             name="search-type" 
-                             value="pname" 
-                             @click="updateSuggestions"
-                             class="form-selectgroup-input">
-                      <span class="form-selectgroup-label">
-                          gene name
-                      </span>
-                  </label>
-              </div>
+              <div class="#search-type"></div>
+
+              {% comment %}<div id="search-type"{% endcomment %}
+                   {% comment %}class="form-selectgroup dark-form-selectgroup"{% endcomment %}
+                   {% comment %}style="min-width: 400px">{% endcomment %}
+                  {% comment %}<label class="form-selectgroup-item my-2">{% endcomment %}
+                      {% comment %}<input type="radio"{% endcomment %}
+                             {% comment %}name="search-type" {% endcomment %}
+                             {% comment %}value="kos" {% endcomment %}
+                             {% comment %}@click="updateSuggestions"{% endcomment %}
+                             {% comment %}class="form-selectgroup-input" {% endcomment %}
+                             {% comment %}checked="">{% endcomment %}
+                      {% comment %}<span class="form-selectgroup-label">{% endcomment %}
+                          {% comment %}KEGG Orthology{% endcomment %}
+                      {% comment %}</span>{% endcomment %}
+                  {% comment %}</label>{% endcomment %}
+                  {% comment %}<label class="form-selectgroup-item my-2">{% endcomment %}
+                      {% comment %}<input type="radio"{% endcomment %}
+                             {% comment %}name="search-type" {% endcomment %}
+                             {% comment %}value="ogs" {% endcomment %}
+                             {% comment %}@click="updateSuggestions"{% endcomment %}
+                             {% comment %}class="form-selectgroup-input">{% endcomment %}
+                      {% comment %}<span class="form-selectgroup-label">{% endcomment %}
+                          {% comment %}eggNOG OG{% endcomment %}
+                      {% comment %}</span>{% endcomment %}
+                  {% comment %}</label>{% endcomment %}
+                  {% comment %}<label class="form-selectgroup-item my-2">{% endcomment %}
+                      {% comment %}<input type="radio"{% endcomment %}
+                             {% comment %}name="search-type" {% endcomment %}
+                             {% comment %}value="pname" {% endcomment %}
+                             {% comment %}@click="updateSuggestions"{% endcomment %}
+                             {% comment %}class="form-selectgroup-input">{% endcomment %}
+                      {% comment %}<span class="form-selectgroup-label">{% endcomment %}
+                          {% comment %}gene name{% endcomment %}
+                      {% comment %}</span>{% endcomment %}
+                  {% comment %}</label>{% endcomment %}
+              {% comment %}</div>{% endcomment %}
 
           </div>
       </div>
