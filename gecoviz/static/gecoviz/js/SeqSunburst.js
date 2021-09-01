@@ -61,7 +61,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
               (root);
         }
 
-        const hierarchy = json ? data : buildHierarchy(data);
+        const hierarchy = buildHierarchy(data);
         return partition(hierarchy);
     }
 
