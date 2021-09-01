@@ -172,6 +172,10 @@ def get_og_level(og):
     return og_level_dict.get(og, "")
 
 def get_og_desc(og):
+    if !og.startswith("COG") && !og.startswith("ENOG"):
+        e5_og = f'ENOG50${og}'
+    else:
+        e5_og = og
     return og_dict.get(og, "")
 
 
