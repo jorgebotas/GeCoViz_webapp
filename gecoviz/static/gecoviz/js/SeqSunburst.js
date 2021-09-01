@@ -135,6 +135,8 @@ var SeqSunburst = function(unformattedData, width, depth=2,
 
         const g = svg.append("g");
 
+        const t = g.transition().duration(1000);
+
         const label = g
             .append("text")
             .attr("text-anchor", "middle")
@@ -199,12 +201,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 breadcrumb.update(rootSequence)
             })
 
-        path.style("cursor", "pointer")
-            .on("dblclick", (e, p) => {
-                e.preventDefault();
-                console.log(getSequence(p))
-            });
-        path.on("click", function(_, d) {
+        path.style("cursor", "pointer").on("click", function(_, d) {
                 const gClone = g.insert("g", ".text-labels")
                     .attr("class", "clone");
                 const sequence = getSequence(d);
@@ -263,6 +260,9 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .text(d => d.ancestors().map(d => d.data.name).reverse().join(" > ")
                 + "\n" + format(d.value));
 
+        path.append("text")
+            .text(d => d.data.name)
+
 
         //const textLabels = g.append("g")
             //.attr("class", "text-labels")
@@ -296,8 +296,6 @@ var SeqSunburst = function(unformattedData, width, depth=2,
               y0: Math.max(0, d.y0 - p.depth),
               y1: Math.max(0, d.y1 - p.depth)
             });
-
-            const t = g.transition().duration(1000);
 
             // Transition the data on all arcs, even the ones that aren’t visible,
             // so that if this transition is interrupted, entering arcs will start
