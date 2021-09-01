@@ -135,8 +135,6 @@ var SeqSunburst = function(unformattedData, width, depth=2,
 
         const g = svg.append("g");
 
-        const t = g.transition().duration(1000);
-
         const label = g
             .append("text")
             .attr("text-anchor", "middle")
@@ -176,7 +174,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
 
         const path = g.append("g")
           .selectAll("path")
-          .data(root.descendants()) //.filter(arcVisible(d.current) || arcVisible(d.target))) //.slice(1))
+          .data(root.descendants().filter(d => arcVisible(d.current) || arcVisible(d.target))) //.slice(1))) //
           .join("path")
             .attr('fill', d => palette(d.data.name))
             //.attr("fill", d => { while (d.depth > 1) d = d.parent; return palette(d.data.name); })
@@ -260,7 +258,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .text(d => d.ancestors().map(d => d.data.name).reverse().join(" > ")
                 + "\n" + format(d.value));
 
-        path.append("text")
+        g.select("g").append("text")
             .text(d => d.data.name)
 
 
@@ -297,6 +295,8 @@ var SeqSunburst = function(unformattedData, width, depth=2,
               y1: Math.max(0, d.y1 - p.depth)
             });
 
+
+            const t = g.transition().duration(1000);
             // Transition the data on all arcs, even the ones that aren’t visible,
             // so that if this transition is interrupted, entering arcs will start
             // the next transition from the desired position.
