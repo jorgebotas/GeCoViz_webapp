@@ -81,7 +81,6 @@ var vueapp = new Vue({
                 this.query = newQuery;
             }
             $("#search-query").val(this.query);
-            console.log(this.searchTypeChoices.getValue(true))
             this.searchType = searchType || this.searchTypeChoices.getValue(true);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
             //d3.select(`#search-type input[value="${this.searchType}"]`)
@@ -130,7 +129,6 @@ var vueapp = new Vue({
                 this.toggleSunburstSelector();
                 this.updateSearch();
                 hideSpinner();
-                console.log(this.selectedTaxa)
             }, 0)
         },
 
@@ -149,10 +147,11 @@ var vueapp = new Vue({
                 fetch(`${API_BASE_URL}/suggestions/${this.searchType}/${search}/`)
                     .then(response => response.json())
                     .then(data => {
-                        console.log(data)
                         this.suggestions = data.suggestions;
                     })
-                    .catch(fetchCatch);
+                    .catch(() => {
+                        this.suggestions = [];
+                    });
                 
             }, 500);
         },
@@ -397,7 +396,6 @@ var vueapp = new Vue({
                     t = t.filter((d, i) => d === itSplit[i]);
                 return t
             }, [])
-            console.log(result)
             return result[-1] || ""
         },
         addButtonVisibility: function() {
