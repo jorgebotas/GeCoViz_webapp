@@ -434,6 +434,7 @@ var vueapp = new Vue({
                 itemChoice: 'dropdown-item',
                 activeState: 'show',
                 selectedState: 'active',
+                dataType: 'select-one',
                 placeholder: 'choices__placeholder',
             },
             shouldSort: false,
