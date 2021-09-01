@@ -174,7 +174,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
 
         const path = g.append("g")
           .selectAll("path")
-          .data(root.descendants().filter(d => arcVisible(d.current) || arcVisible(d.target))) //.slice(1))) //
+          .data(root.descendants().slice(1))) //.filter(d => arcVisible(d.current) || arcVisible(d.target))) // //
           .join("path")
             .attr('fill', d => palette(d.data.name))
             //.attr("fill", d => { while (d.depth > 1) d = d.parent; return palette(d.data.name); })
