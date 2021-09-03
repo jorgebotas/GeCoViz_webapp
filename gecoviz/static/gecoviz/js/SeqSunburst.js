@@ -456,29 +456,28 @@ class BreadCrumb {
                 //return name;
             //})
             .html(d => {
-                const maxChar = 18;
+                const maxChar = 20;
                 let name = d.data.name.split("__")[1];
                 if (name.length <= maxChar)
                     return name
                 const shortName = name.slice(0, maxChar);
-                console.log(shortName)
                 const shortNameSplit = shortName.split(" ")
-                console.log(shortNameSplit)
-                let fittedName;
+                let fittedName = "";
                 for (let s in shortNameSplit) {
-                    const extended = fittedName + s;
+                    const extended = fittedName + " " + s;
                     if (extended.length <= maxChar)
                         fittedName = extended;
                     else
                         break;
                 }
+                const remainderName = d.data.name.slice(fittedName.length).slice(0, maxChar);
                 return `<tspan x="${this.tipWidth + this.polygonWidth/2}"
                                dy="-6px">
                             ${fittedName}
                         </tspan>
                         <tspan x="${this.tipWidth + this.polygonWidth/2}"
                                dy="9px">
-                            ${name}
+                            ${remainderName}
                         </tspan>`;
             })
             .attr('x', this.tipWidth + this.polygonWidth/2)
