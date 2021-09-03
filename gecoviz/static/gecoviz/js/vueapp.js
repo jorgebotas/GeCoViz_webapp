@@ -305,7 +305,8 @@ var vueapp = new Vue({
                 .then(blob => saveAs(blob, `${query}_sequences.fasta`))
         },
 
-        downloadNeighborhood: function() {
+        downloadNeighborhood: function(event) {
+            event.stopPropation();
             const fields = ["anchor", "pos", "gene", "Gene name", 
                 "Description", "strand", "start", "end", "KEGG pathways",
                 "KEGG Orthology", "Orthologous groups"];
