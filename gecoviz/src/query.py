@@ -36,11 +36,6 @@ ko_dict = get_pickle(STATIC_PATH / "pickle/KO_DESCRIPTION.pickle")
 og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
 
-print([ og for og in list(og_dict.keys()) if not (og.startswith("COG") or og.startswith("ENOG") or og.startswith("arCOG") or og.startswith("KOG")) ])
-
-print(og_dict.get("2Z9HZ"))
-
-
 def get_sequence(query, fasta=True):
     seq = col_proteins.find_one({'n': query}).get('aa', 'Sequence not found')
     print(seq)
@@ -177,12 +172,7 @@ def get_og_level(og):
     return og_level_dict.get(og, "")
 
 def get_og_desc(og):
-    if not (og.startswith("COG") or og.startswith("ENOG") \
-            or og.startswith("arCOG") or og.startswith("KOG")):
-        e5_og = f'ENOG50{og}'
-    else:
-        e5_og = og
-    return og_dict.get(e5_og, "")
+    return og_dict.get(og, "")
 
 
 def get_emapper_annotation(genes):
