@@ -118,6 +118,7 @@ def get_context(field, query, taxids):
     context = [ { **gene, **functional_info.get(gene["gene"], {}) }
                 for gene in context ]
 
+    print(context)
     return context
 
 
