@@ -132,9 +132,6 @@
                 <div class="badge bg-indigo mr-2" 
                      style="font-family:'Impact'; font-size:1.1rem">3</div>
                 Visualize genomic context
-                <button v-if="contextData.context"
-                    class="btn btn-sm btn-primary"
-                    @click="downloadNeighborhood($event)">Download</button>
                 </button>
             </h2>
            <div id="visualization-container" 
@@ -143,6 +140,11 @@
                data-bs-parent="#form-accordion">
                <div class="accordion-body" id="gecoviz-container"
                    style="width: 100%">
+                   <div>
+                        <button v-if="contextData.context"
+                            class="btn btn-sm btn-primary"
+                            @click="downloadNeighborhood($event)">Download</button>
+                   </div>
                        
                </div>
            </div>
