@@ -473,7 +473,7 @@ class BreadCrumb {
                         break;
                 }
                 return `<tspan x="${this.tipWidth + this.polygonWidth/2}"
-                               dy="-6px;">
+                               dy="-6px">
                             ${fittedName}
                         </tspan>
                         <tspan x="${this.tipWidth + this.polygonWidth/2}"
