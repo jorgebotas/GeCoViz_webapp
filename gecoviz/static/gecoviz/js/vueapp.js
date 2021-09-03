@@ -312,7 +312,7 @@ var vueapp = new Vue({
             const tsv = this.contextData.context.map(g => {
                 return fields.map(f => {
                     const info = g[f];
-                    return typeof info === "object" ? info.id : info;
+                    return typeof info === "object" ? info.map(i => i.id) : info;
                 }).join("\t")
             }).join("\n")
 
