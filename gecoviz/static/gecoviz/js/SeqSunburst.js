@@ -20,6 +20,8 @@ function twoLineText(name, maxChar) {
         .slice(fittedName.length)
     if (remainderName.length > maxChar)
         remainderName = remainderName.slice(0, maxChar - 3) + "...";
+    console.log(fittedName)
+    console.log(remainderName)
     return [ fittedName, remainderName ]
 }
 
