@@ -306,7 +306,7 @@ var vueapp = new Vue({
         },
 
         downloadNeighborhood: function() {
-            const tsv = this.contextData.map(g => {
+            const tsv = this.contextData.context.map(g => {
                 const fields = ["anchor", "pos", "gene", "Gene name", 
                     "Description", "strand", "start", "end", "KEGG pathways",
                     "KEGG Orthology", "Orthologous groups"];
