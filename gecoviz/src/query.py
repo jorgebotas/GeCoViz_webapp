@@ -93,11 +93,7 @@ def get_context(field, query, taxids):
     emapper_matches = get_emapper_matches(field, query);
     queries = [ m for m in emapper_matches if m.split(".")[0] in taxids ]
 
-    print(len(queries))
-
     matches = col_neighs.find({ 'genes.g': { '$in': queries } })
-
-    print(len(list(matches)))
 
     count = 0
     nside = 10
@@ -106,6 +102,7 @@ def get_context(field, query, taxids):
         print(anchor)
         count += 1
         anchor = next(g for g in m["genes"] if g["g"] in queries)
+        print(len([ g for g in m["genes"] if g["g"] in queries ]))
         context.extend( { 
             "anchor": anchor["g"],
             "gene": g["g"],
