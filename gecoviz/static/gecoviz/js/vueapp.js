@@ -414,11 +414,12 @@ var vueapp = new Vue({
             }, [])
             return result[-1] || ""
         },
-        addButtonVisibility: function() {
-            if (d3.select(".clone").node())
-                return "visible"
-            return "hidden"
-        },
+
+        nAnchors: function() {
+            if (!this.contextData.context)
+                return
+            return this.contextData.map(c => c.pos == 0).length
+        }
     },
     filters : {
     },
