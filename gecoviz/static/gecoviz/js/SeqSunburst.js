@@ -470,12 +470,9 @@ class BreadCrumb {
                     else
                         break;
                 }
-                const remainderName = d.data.name
+                const remainderName = name
                     .slice(fittedName.length)
                     .slice(0, maxChar - 3) + "...";
-                console.log(d.data.name)
-                console.log(d.data.name.slice(fittedName.length))
-                console.log(fittedName.length)
                 return `<tspan x="${this.tipWidth + this.polygonWidth/2}"
                                dy="-6px">
                             ${fittedName}
