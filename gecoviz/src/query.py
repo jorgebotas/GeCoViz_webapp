@@ -97,14 +97,15 @@ def get_context(field, query, taxids):
 
     matches = col_neighs.find({ 'genes.g': { '$in': queries } })
 
+    print(len(list(matches)))
+
     count = 0
     nside = 10
     context = []
     for m in matches:
-        print(m)
+        print(anchor)
         count += 1
         anchor = next(g for g in m["genes"] if g["g"] in queries)
-        print(anchor)
         context.extend( { 
             "anchor": anchor["g"],
             "gene": g["g"],
