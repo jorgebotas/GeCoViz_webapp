@@ -458,7 +458,7 @@ class BreadCrumb {
             .html(d => {
                 const maxChar = 18;
                 let name = d.data.name.split("__")[1];
-                if (name.length < maxChar)
+                if (name.length <= maxChar)
                     return name
                 const shortName = name.slice(0, maxChar);
                 console.log(shortName)
