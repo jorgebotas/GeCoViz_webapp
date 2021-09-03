@@ -177,6 +177,7 @@ def get_og_desc(og):
         e5_og = f'ENOG50${og}'
     else:
         e5_og = og
+    print(e5_og)
     return og_dict.get(e5_og, "")
 
 
