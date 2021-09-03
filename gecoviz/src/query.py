@@ -36,8 +36,7 @@ ko_dict = get_pickle(STATIC_PATH / "pickle/KO_DESCRIPTION.pickle")
 og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
 
-print([ o for o in list(og_dict.keys()) if not (o.startswith("arCOG") \
-    or o.startswith("COG")) ])
+print([ o for o in list(og_dict.keys()) if not (og.startswith("COG") or og.startswith("ENOG") or og.startswith("arCOG") or og.startswith("KOG")) ])
 
 
 def get_sequence(query, fasta=True):
@@ -177,7 +176,7 @@ def get_og_level(og):
 
 def get_og_desc(og):
     if not (og.startswith("COG") or og.startswith("ENOG") \
-            or og.startswith("arCOG")):
+            or og.startswith("arCOG") or og.startswith("KOG")):
         e5_og = f'ENOG50{og}'
     else:
         e5_og = og
