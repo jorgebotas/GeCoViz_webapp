@@ -138,8 +138,8 @@
                class="accordion-collapse collapse"
                aria-labelledby="step3-header" 
                data-bs-parent="#form-accordion">
-               <div v-if="contextData.context">
-                   Showing [[ nAnchors ]] context(s).
+               <div class="text-center" v-if="contextData.context">
+                   Showing [[ nAnchors ]] context(s)
                     <button class="btn btn-sm btn-primary"
                         @click="downloadNeighborhood()">Download</button>
                </div>
