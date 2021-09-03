@@ -449,28 +449,38 @@ class BreadCrumb {
         breadcrumbsEnter
             .append('text')
             .attr('class', 'breadcrumb-polygon-text')
-            .text(d => {
-                let name = d.data.name.split("__")[1];
-                if (name.length > 18)
-                    name = name.slice(0, 15) + "...";
-                return name;
-            })
-            //.html(d => {
-                //const maxChar = 18;
+//            .text(d => {
                 //let name = d.data.name.split("__")[1];
-                //if (name.length < maxChar)
-                    //return name
-                //const shortName = name.slice(0, maxChar);
-                //const shortNameSplit = shortName.split(" ")
-                //let fittedName;
-                //shortNameSplit.forEach(s => {
-                    //const extended = fittedName + s
-                    //if (extended.length <= maxChar)
-                        //fittedName = extended;
-                //})
-                //return `<tspan>${fittedName}</tspan>
-                        //<tspan>${name}</tspan>`;
+                //if (name.length > 18)
+                    //name = name.slice(0, 15) + "...";
+                //return name;
             //})
+            .html(d => {
+                const maxChar = 18;
+                let name = d.data.name.split("__")[1];
+                if (name.length < maxChar)
+                    return name
+                const shortName = name.slice(0, maxChar);
+                console.log(shortName)
+                const shortNameSplit = shortName.split(" ")
+                console.log(shortNameSplit)
+                let fittedName;
+                for (let s in shortNameSplit) {
+                    const extended = fittedName + s;
+                    if (extended.length <= maxChar)
+                        fittedName = extended;
+                    else
+                        break;
+                }
+                return `<tspan x="${this.tipWidth + this.polygonWidth/2}"
+                               dy="-6px;">
+                            ${fittedName}
+                        </tspan>
+                        <tspan x="${this.tipWidth + this.polygonWidth/2}"
+                               dy="9px">
+                            ${name}
+                        </tspan>`;
+            })
             .attr('x', this.tipWidth + this.polygonWidth/2)
             .attr('y', this.fieldsHeight + this.polygonHeight/1.5)
             .style('text-anchor', 'middle')
