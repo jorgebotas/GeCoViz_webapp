@@ -5,7 +5,7 @@
 
 function twoLineText(name, maxChar) {
     if (name.length <= maxChar)
-        return name
+        return [ name,  ]
     const shortName = name.slice(0, maxChar);
     const shortNameSplit = shortName.split(" ");
     let fittedName = "";
@@ -20,8 +20,6 @@ function twoLineText(name, maxChar) {
         .slice(fittedName.length)
     if (remainderName.length > maxChar)
         remainderName = remainderName.slice(0, maxChar - 3) + "...";
-    console.log(fittedName)
-    console.log(remainderName)
     return [ fittedName, remainderName ]
 }
 
@@ -482,6 +480,10 @@ class BreadCrumb {
                 const [ 
                     fittedName, remainderName
                 ] = twoLineText(d.data.name.split("__")[1], 20);
+
+                if (!remainderName)
+                    return fittedName
+
                 return `<tspan x="${this.tipWidth + this.polygonWidth/2}"
                                dy="-6px">
                             ${fittedName}
