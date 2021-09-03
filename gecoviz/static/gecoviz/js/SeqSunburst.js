@@ -464,13 +464,17 @@ class BreadCrumb {
                 const shortNameSplit = shortName.split(" ")
                 let fittedName = "";
                 for (let s in shortNameSplit) {
+                    console.log(s)
                     const extended = fittedName + " " + s;
+                    console.log(extended)
                     if (extended.length <= maxChar)
                         fittedName = extended;
                     else
                         break;
                 }
-                const remainderName = d.data.name.slice(fittedName.length).slice(0, maxChar);
+                const remainderName = d.data.name
+                    .slice(fittedName.length)
+                    .slice(0, maxChar - 3) + "...";
                 return `<tspan x="${this.tipWidth + this.polygonWidth/2}"
                                dy="-6px">
                             ${fittedName}
