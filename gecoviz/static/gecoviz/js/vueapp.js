@@ -316,7 +316,9 @@ var vueapp = new Vue({
                 }).join("\t")
             });
 
-            saveAs(new Blob([...fields, ...tsv]), "neighborhood.tsv")
+            const headedTsv = [ ...fields, ...tsv ].join("\n");
+
+            saveAs(new Blob([headedTsv]), "neighborhood.tsv")
         },
 
         getNewick: function(query) {
