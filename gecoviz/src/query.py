@@ -101,6 +101,7 @@ def get_context(field, query, taxids):
     nside = 10
     context = []
     for m in matches:
+        print(m)
         count += 1
         anchor = next(g for g in m["genes"] if g["g"] in queries)
         print(anchor)
@@ -120,9 +121,6 @@ def get_context(field, query, taxids):
 
     context = [ { **gene, **functional_info.get(gene["gene"], {}) }
                 for gene in context ]
-
-    print([a for a in context if a["pos"] == 0])
-    print(len(context))
     return context
 
 
