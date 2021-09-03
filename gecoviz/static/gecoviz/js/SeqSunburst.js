@@ -258,8 +258,8 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .text(d => d.ancestors().map(d => d.data.name).reverse().join(" > ")
                 + "\n" + format(d.value));
 
-        g.select("g").append("text")
-            .text(d => d.data.name)
+        //g.select("g").append("text")
+            //.text(d => d.data.name)
 
 
         //const textLabels = g.append("g")
