@@ -462,11 +462,9 @@ class BreadCrumb {
                     return name
                 const shortName = name.slice(0, maxChar);
                 const shortNameSplit = shortName.split(" ");
-                console.log(shortNameSplit)
                 let fittedName = "";
-                for (let s in shortNameSplit) {
-                    console.log(s)
-                    const extended = fittedName + " " + s;
+                for (let i in shortNameSplit) {
+                    const extended = fittedName + " " + shortNameSplit[i];
                     console.log(extended)
                     if (extended.length <= maxChar)
                         fittedName = extended;
