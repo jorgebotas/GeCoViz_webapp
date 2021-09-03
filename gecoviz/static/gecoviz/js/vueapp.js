@@ -312,8 +312,9 @@ var vueapp = new Vue({
                     "KEGG Orthology", "Orthologous groups"];
                 return fields.map(f => g[f]).join("\t")
             }).join("\n")
-            saveAs(tsv.blob(), "neighborhood.tsv")
-
+            fetch(tsv).then(response => response.blob()).then(blob => {
+                saveAs(blob, "neighborhood.tsv")
+            })
         },
 
         getNewick: function(query) {
