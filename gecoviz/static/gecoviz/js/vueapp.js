@@ -314,9 +314,9 @@ var vueapp = new Vue({
                     const info = g[f];
                     return typeof info === "object" ? info.map(i => i.id) : info;
                 }).join("\t")
-            }).join("\n")
+            });
 
-            saveAs(new Blob([tsv]), "neighborhood.tsv")
+            saveAs(new Blob([...fields, ...tsv]), "neighborhood.tsv")
         },
 
         getNewick: function(query) {
