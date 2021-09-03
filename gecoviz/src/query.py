@@ -118,7 +118,7 @@ def get_context(field, query, taxids):
     context = [ { **gene, **functional_info.get(gene["gene"], {}) }
                 for gene in context ]
 
-    print(len(a for a in context if a["pos"] == 0))
+    print(len([a for a in context if a["pos"] == 0]))
     print(len(context))
     return context
 
