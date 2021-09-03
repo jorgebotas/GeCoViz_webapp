@@ -418,7 +418,7 @@ var vueapp = new Vue({
         nAnchors: function() {
             if (!this.contextData.context)
                 return
-            return this.contextData.map(c => c.pos == 0).length
+            return this.contextData.context.map(c => c.pos == 0).length
         }
     },
     filters : {
