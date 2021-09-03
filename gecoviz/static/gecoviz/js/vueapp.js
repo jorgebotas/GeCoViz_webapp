@@ -305,6 +305,17 @@ var vueapp = new Vue({
                 .then(blob => saveAs(blob, `${query}_sequences.fasta`))
         },
 
+        downloadNeighborhood: function() {
+            const tsv = this.contextData.map(g => {
+                const fields = ["anchor", "pos", "gene", "Gene name", 
+                    "Description", "strand", "start", "end", "KEGG pathways",
+                    "KEGG Orthology", "Orthologous groups"];
+                return fields.map(f => g[f]).join("\t")
+            }).join("\n")
+            saveAs(tsv.blob(), "neighborhood.tsv")
+
+        },
+
         getNewick: function(query) {
             fetch(API_BASE_URL + '/tree/' + query + '/')
                 .then(response => response.blob())
