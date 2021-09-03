@@ -306,11 +306,14 @@ var vueapp = new Vue({
         },
 
         downloadNeighborhood: function() {
+            const fields = ["anchor", "pos", "gene", "Gene name", 
+                "Description", "strand", "start", "end", "KEGG pathways",
+                "KEGG Orthology", "Orthologous groups"];
             const tsv = this.contextData.context.map(g => {
-                const fields = ["anchor", "pos", "gene", "Gene name", 
-                    "Description", "strand", "start", "end", "KEGG pathways",
-                    "KEGG Orthology", "Orthologous groups"];
-                return fields.map(f => g[f]).join("\t")
+                return fields.map(f => {
+                    const info = g[f];
+                    return typeof info === "object" ? info.id : info;
+                }).join("\t")
             }).join("\n")
 
             saveAs(new Blob([tsv]), "neighborhood.tsv")
