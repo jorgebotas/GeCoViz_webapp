@@ -100,17 +100,17 @@ def get_context(field, query, taxids):
     context = []
     for m in matches:
         count += 1
-        anchor = next(g for g in m["genes"] if g["g"] in queries)
-        print(len([ g for g in m["genes"] if g["g"] in queries ]))
-        context.extend( { 
-            "anchor": anchor["g"],
-            "gene": g["g"],
-            "seqID": g["g"],
-            "pos": int(g["p"] - anchor["p"]),
-            "start": g["s"],
-            "end": g["e"],
-            "strand": g["o"],
-        } for g in m["genes"] if abs(g["p"] - anchor["p"]) <= nside)
+        anchors = (g for g in m["genes"] if g["g"] in queries)
+        for anchor in anchors:
+            context.extend( { 
+                "anchor": anchor["g"],
+                "gene": g["g"],
+                "seqID": g["g"],
+                "pos": int(g["p"] - anchor["p"]),
+                "start": g["s"],
+                "end": g["e"],
+                "strand": g["o"],
+            } for g in m["genes"] if abs(g["p"] - anchor["p"]) <= nside)
 
 
     all_genes = [ g["gene"] for g in context ]
