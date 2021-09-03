@@ -39,6 +39,7 @@ og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
 
 def get_sequence(query, fasta=True):
     seq = col_proteins.find_one({'gene': query}).get('aa', 'Sequence not found')
+    print(seq)
     if fasta:
         return '>{}\n{}'.format(query, seq)
     return seq
