@@ -2,6 +2,27 @@
 // Sequence: separated by ';'
 // count: int
 
+
+function twoLineText(name, maxChar) {
+    if (name.length <= maxChar)
+        return name
+    const shortName = name.slice(0, maxChar);
+    const shortNameSplit = shortName.split(" ");
+    let fittedName = "";
+    for (let i in shortNameSplit) {
+        const extended = fittedName + " " + shortNameSplit[i];
+        if (extended.length <= maxChar)
+            fittedName = extended;
+        else
+            break;
+    }
+    let remainderName = name
+        .slice(fittedName.length)
+    if (remainderName.length > maxChar)
+        remainderName = remainderName.slice(0, maxChar - 3) + "...";
+    return [ fittedName, remainderName ]
+}
+
 var SeqSunburst = function(unformattedData, width, depth=2,
     semiCircle=false, clickCallBack) {
 
@@ -456,24 +477,9 @@ class BreadCrumb {
                 //return name;
             //})
             .html(d => {
-                const maxChar = 20;
-                let name = d.data.name.split("__")[1];
-                if (name.length <= maxChar)
-                    return name
-                const shortName = name.slice(0, maxChar);
-                const shortNameSplit = shortName.split(" ");
-                let fittedName = "";
-                for (let i in shortNameSplit) {
-                    const extended = fittedName + " " + shortNameSplit[i];
-                    if (extended.length <= maxChar)
-                        fittedName = extended;
-                    else
-                        break;
-                }
-                let remainderName = name
-                    .slice(fittedName.length)
-                if (remainderName.length > maxChar)
-                    remainderName = remainderName.slice(0, maxChar - 3) + "...";
+                const [ 
+                    fittedName, remainderName
+                ] = twoLineText(d.data.name.split("__")[1], 20);
                 return `<tspan x="${this.tipWidth + this.polygonWidth/2}"
                                dy="-6px">
                             ${fittedName}
