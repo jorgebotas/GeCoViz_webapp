@@ -36,7 +36,7 @@ ko_dict = get_pickle(STATIC_PATH / "pickle/KO_DESCRIPTION.pickle")
 og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
 
-print([ og for og in list(og_dict.keys()) if not (og.startswith("COG") or og.startswith("ENOG") or og.startswith("arCOG") or og.startswith("KOG")) ])
+print(og_dict.get("2Z9HZ"))
 
 
 def get_sequence(query, fasta=True):
