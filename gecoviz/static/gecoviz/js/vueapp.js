@@ -404,7 +404,7 @@ var vueapp = new Vue({
             }, 0)
         },
         selectedTaxa: function() {
-            result = this.searchedItems.reduce((t, it, i) => {
+            const result = this.searchedItems.reduce((t, it, i) => {
                 const itSplit = it.lineage.split(";")
                 if (i === 0)
                     t =  itSplit
