@@ -414,7 +414,7 @@ var vueapp = new Vue({
                 return t
             }, [])
             console.log(result)
-            return result[-1] || ""
+            return result[result.length-1] || ""
         },
 
         nAnchors: function() {
