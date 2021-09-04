@@ -406,12 +406,14 @@ var vueapp = new Vue({
         selectedTaxa: function() {
             const result = this.searchedItems.reduce((t, it, i) => {
                 const itSplit = it.lineage.split(";")
+                console.log(t)
                 if (i === 0)
                     t =  itSplit
                 else
                     t = t.filter((d, i) => d === itSplit[i]);
                 return t
             }, [])
+            console.log(result)
             return result[-1] || ""
         },
 
