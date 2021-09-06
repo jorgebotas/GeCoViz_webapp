@@ -218,10 +218,11 @@ def get_emapper_matches(field, query, rep_only=True):
     mongo_query = { field: query }
     matches = col_emapper.find(mongo_query, { 'q': 1 })
 
+    print(list(matches))
+
     return [ m['q'] for m in matches ]
 
 
 def get_functional_matches(field, query):
     emapper = get_emapper_matches(field, query)
-    print(emapper)
     return get_taxonomy(emapper)
