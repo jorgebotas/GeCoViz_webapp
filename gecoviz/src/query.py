@@ -225,7 +225,7 @@ def get_emapper_matches(field, query, representative_only=True):
     matches = col_emapper.find(mongo_query, { 'q': 1 })
 
     return [ m['q'] for m in matches 
-            if !representative_only or m['q'] in representative_taxids ]
+            if not representative_only or m['q'] in representative_taxids ]
 
 
 def get_functional_matches(field, query):
