@@ -413,6 +413,7 @@ var vueapp = new Vue({
                 return t
             }, [])
             if (sharedTaxa.length > 1)
+                return sharedTaxa[sharedTaxa.length-1]
             return sharedTaxa[sharedTaxa.length-1] || ""
         },
 

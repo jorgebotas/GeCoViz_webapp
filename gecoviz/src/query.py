@@ -230,4 +230,5 @@ def get_emapper_matches(field, query, representative_only=True):
 
 def get_functional_matches(field, query):
     emapper = get_emapper_matches(field, query)
+    print(emapper)
     return get_taxonomy(emapper)
