@@ -404,17 +404,16 @@ var vueapp = new Vue({
             }, 0)
         },
         selectedTaxa: function() {
-            const result = this.searchedItems.reduce((t, it, i) => {
+            const sharedTaxa = this.searchedItems.reduce((t, it, i) => {
                 const itSplit = it.lineage.split(";")
-                console.log(t)
                 if (i === 0)
                     t =  itSplit
                 else
                     t = t.filter((d, i) => d === itSplit[i]);
                 return t
             }, [])
-            console.log(result)
-            return result[result.length-1] || ""
+            if (sharedTaxa.length > 1)
+            return sharedTaxa[sharedTaxa.length-1] || ""
         },
 
         nAnchors: function() {
