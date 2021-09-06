@@ -30,11 +30,17 @@ def get_pickle(filePath):
         pdict = pickle.load(pickle_in)
     return pdict
 
+def get_list(filePath):
+    with open(filePath) as handle:
+        return [ l.strip() for l in handle.readlines() ]
+
 tax_level_dict = get_pickle(STATIC_PATH / "pickle/TAX_LEVELS.pickle")
 kpath_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
 ko_dict = get_pickle(STATIC_PATH / "pickle/KO_DESCRIPTION.pickle")
 og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
+representative_taxids = get_list(STATIC_PATH / "txt/representative_taxids.txt")
+
 
 def get_sequence(query, fasta=True):
     seq = col_proteins.find_one({'n': query}).get('aa', 'Sequence not found')
@@ -213,12 +219,13 @@ def get_emapper_annotation(genes):
     return annotation
 
 
-def get_emapper_matches(field, query, rep_only=True):
+def get_emapper_matches(field, query, representative_only=True):
 
     mongo_query = { field: query }
     matches = col_emapper.find(mongo_query, { 'q': 1 })
 
-    return [ m['q'] for m in matches ]
+    return [ m['q'] for m in matches 
+            if !representative_only or m['q'] in representative_taxids ]
 
 
 def get_functional_matches(field, query):
