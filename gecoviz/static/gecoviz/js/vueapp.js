@@ -83,8 +83,13 @@ var vueapp = new Vue({
             $("#search-query").val(this.query);
             this.searchType = searchType || this.searchTypeChoices.getValue(true);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
-            //d3.select(`#search-type input[value="${this.searchType}"]`)
-                //.attr("checked", true);
+
+            const params = {
+                query: this.query,
+                searchType: this.searchType,
+            }
+            this.updateSearchParams(params);
+
             $('#search-query').trigger('blur');
 
             await fetch(API_BASE_URL + `/emapper/${this.searchType}/${this.query}/`)
