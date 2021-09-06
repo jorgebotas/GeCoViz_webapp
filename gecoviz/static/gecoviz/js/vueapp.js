@@ -283,6 +283,15 @@ var vueapp = new Vue({
             newickFields = [
                 'name',
                 'last tax level',
+                'domain',
+                'phylum',
+                'class',
+                'order',
+                'family',
+                'genus',
+                'species',
+                'subspecies',
+                'strain',
             ]
             await GeCoViz(selector)
                 .treeData(newick, newickFields[1], newickFields)
