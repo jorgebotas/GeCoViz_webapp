@@ -245,7 +245,7 @@ var vueapp = new Vue({
             }
         },
 
-        async visualizeSelection() {
+        async visualizeSelection(refresh=true) {
             hide("#sunburst-selector-container")
             const container = $("#visualization-container");
             if (container.hasClass("show"))
@@ -253,7 +253,8 @@ var vueapp = new Vue({
             else {
                 show("#visualization-container")
 
-                await this.toggleGeCoViz();
+                if (refresh)
+                    await this.toggleGeCoViz();
             }
         },
 
