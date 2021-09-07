@@ -32,7 +32,7 @@ def get_pickle(filePath):
 
 def get_list(filePath):
     with open(filePath) as handle:
-        return [ l.strip() for l in handle.readlines() ]
+        return set([ l.strip() for l in handle.readlines() ])
 
 tax_level_dict = get_pickle(STATIC_PATH / "pickle/TAX_LEVELS.pickle")
 kpath_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
