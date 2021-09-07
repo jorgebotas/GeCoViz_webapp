@@ -438,6 +438,10 @@ var vueapp = new Vue({
         }
     },
     filters : {
+        styleTaxa: function(taxa) {
+            const [ rank, t ] = taxa.split("__");
+            return `${rank}: ${t}`;
+        }
     },
     mounted: function() {
         document.addEventListener("click", () => {
