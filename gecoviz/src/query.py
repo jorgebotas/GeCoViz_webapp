@@ -226,7 +226,7 @@ def get_emapper_matches(field, query, representative_only=True):
     print(f'{time.time() - start}')
 
     return [ m['q'] for m in matches 
-            if not representative_only or (list(m['q'].split("."))[0:2] in representative_genomes) ]
+            if not representative_only or (m['q'].split(".")[0:2].join(".") in representative_genomes) ]
 
 
 def get_functional_matches(field, query):
