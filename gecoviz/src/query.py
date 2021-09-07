@@ -223,7 +223,7 @@ def get_emapper_matches(field, query, representative_only=True):
 
     start = time.time()
     mongo_query = { field: query }
-    matches = col_emapper.find(mongo_query, { 'q': 1 })
+    matches = list(col_emapper.find(mongo_query, { 'q': 1 }))
     print(f'{time.time() - start}')
 
     return [ m['q'] for m in matches 
