@@ -221,14 +221,17 @@ def get_emapper_annotation(genes):
 
 def get_emapper_matches(field, query, representative_only=True):
 
+    start = time.time()
     mongo_query = { field: query }
     matches = col_emapper.find(mongo_query, { 'q': 1 })
+    print(f'{time.time() - start}')
 
     return [ m['q'] for m in matches 
             if not representative_only or m['q'].split(".")[0] in representative_taxids ]
 
 
 def get_functional_matches(field, query):
+    start = time.time()
     emapper = get_emapper_matches(field, query)
-    print(emapper)
+    print(f'{time.time() - start}')
     return get_taxonomy(emapper)
