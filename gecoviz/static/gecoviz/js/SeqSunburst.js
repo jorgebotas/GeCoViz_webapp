@@ -8,8 +8,8 @@ function twoLineText(name, maxChar) {
         return [ name,  ]
     const shortName = name.slice(0, maxChar);
     const shortNameSplit = shortName.split(" ");
-    let fittedName = "";
-    for (let i in shortNameSplit) {
+    let fittedName = shortNameSplit[0];
+    for (let i in shortNameSplit.slice(1)) {
         const extended = fittedName + " " + shortNameSplit[i];
         if (extended.length <= maxChar)
             fittedName = extended;
@@ -281,6 +281,45 @@ var SeqSunburst = function(unformattedData, width, depth=2,
 
         //g.select("g").append("text")
             //.text(d => d.data.name)
+
+
+
+
+        //const visibleStates = states.filter(s => s.show);
+        //const labelHeight = 14;
+
+        //const labels = visibleStates.map(s => {
+          //return {
+            //fx: 0,
+            //targetY: y(s.currentPopulation)
+          //};
+        //});
+
+        //const force = d3.forceSimulation()
+          //.nodes(labels)
+          //.force('collide', d3.forceCollide(labelHeight / 2))
+          //.force('y', d3.forceY(d => d.targetY).strength(1))    
+          //.stop();
+        //for (let i = 0; i < 300; i++) force.tick();
+
+        //labels.sort((a, b) => a.y - b.y);
+        //visibleStates.sort((a, b) => b.currentPopulation - a.currentPopulation);
+        //visibleStates.forEach((state, i) => state.y = labels[i].y);
+
+        //const legendItems = chart.selectAll('.legend-item').data(visibleStates, d => d.name);
+        //legendItems.exit().remove();
+        //legendItems.attr('y', d => d.y);
+        //legendItems.enter().append('text')
+          //.attr('class', 'legend-item')
+          //.html(d => d.name)
+          //.attr('fill', d => d.color)
+          //.attr('font-size', labelHeight)
+          //.attr('alignment-baseline', 'middle')
+          //.attr('x', width)
+          //.attr('dx', '.5em')
+          //.attr('y', d => d.y);
+        
+
 
 
         //const textLabels = g.append("g")
