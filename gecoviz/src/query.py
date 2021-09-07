@@ -219,7 +219,7 @@ def get_emapper_annotation(genes):
     return annotation
 
 
-def get_emapper_matches(field, query, representative_only=True):
+def get_emapper_matches(field, query, representative_only=False):
 
     mongo_query = { field: query }
     matches = col_emapper.find(mongo_query, { 'q': 1 })

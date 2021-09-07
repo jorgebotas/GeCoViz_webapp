@@ -512,8 +512,8 @@ var vueapp = new Vue({
             
             $("#search-query").val(this.query);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
-            d3.select(`#search-type input[value="${this.searchType}"]`)
-                .attr("checked", true);
+            //d3.select(`#search-type input[value="${this.searchType}"]`)
+                //.attr("checked", true);
 
             if (taxids && taxids.length) {
                 this.selectedItems = taxids.split("%2C");
