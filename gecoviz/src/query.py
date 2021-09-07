@@ -107,19 +107,7 @@ def get_context(field, query, taxids):
     for m in matches:
         count += 1
         anchors = (g for g in m["genes"] if g["g"] in queries)
-        for anchor in anchors:
-            context.extend( { 
-                "anchor": anchor["g"],
-                "gene": g["g"],
-                "seqID": g["g"],
-                "pos": int(g["p"] - anchor["p"]),
-                "start": g["s"],
-                "end": g["e"],
-                "strand": g["o"],
-            } for g in m["genes"] if abs(g["p"] - anchor["p"]) <= nside)
-
-
-    all_genes = [ g["gene"] for g in context ]
+        for anchor in anchors
     functional_info = get_emapper_annotation(all_genes)
 
     context = [ { **gene, **functional_info.get(gene["gene"], {}) }
