@@ -11,6 +11,11 @@
                 <div class="badge bg-indigo mr-2" 
                      style="font-family:'Impact'; font-size:1.1rem">1</div>
                 Query a gene of interest from the search bar
+                <div class="ml-4 badge bg-indigo"
+                    v-if="query"
+                    style="font-size:.9rem">
+                    [[ query ]]
+                </div>
                 </button>
             </h2>
 {% comment %}            <div>{% endcomment %}
