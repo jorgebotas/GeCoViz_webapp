@@ -39,7 +39,7 @@ kpath_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
 ko_dict = get_pickle(STATIC_PATH / "pickle/KO_DESCRIPTION.pickle")
 og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
-representative_taxids = get_list(STATIC_PATH / "txt/representative_taxids.txt")
+representative_genomes = get_list(STATIC_PATH / "txt/representative_genomes.txt")
 
 
 def get_sequence(query, fasta=True):
@@ -222,12 +222,11 @@ def get_emapper_annotation(genes):
 def get_emapper_matches(field, query, representative_only=True):
 
     start = time.time()
-    mongo_query = { field: query }
-    matches = list(col_emapper.find(mongo_query, { 'q': 1 }))
+    matches = list(col_emapper.find({ field: query }, { 'q': 1 }))
     print(f'{time.time() - start}')
 
     return [ m['q'] for m in matches 
-            if not representative_only or m['q'].split(".")[0] in representative_taxids ]
+            if not representative_only or m['q'].split(".")[:2] in representative_genomes ]
 
 
 def get_functional_matches(field, query):
