@@ -439,6 +439,7 @@ var vueapp = new Vue({
     },
     filters : {
         styleTaxa: function(taxa) {
+            if (!taxa) return 
             const [ rank, t ] = taxa.split("__");
             return `${rank}: ${t}`;
         }
