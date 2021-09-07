@@ -283,18 +283,18 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             //.text(d => d.data.name)
 
 
-        //const textLabels = g.append("g")
-            //.attr("class", "text-labels")
-            //.attr("pointer-events", "none")
-            //.attr("text-anchor", "middle")
-            //.style("user-select", "none")
-          //.selectAll("text")
-          //.data(root.descendants().slice(1))
-          //.join("text")
-            //.attr("dy", "0.35em")
-            //.attr("fill-opacity", d => +labelVisible(d.current))
-            //.attr("transform", d => labelTransform(d.current))
-            //.text(d => d.value);
+        const textLabels = g.append("g")
+            .attr("class", "text-labels")
+            .attr("pointer-events", "none")
+            .attr("text-anchor", "middle")
+            .style("user-select", "none")
+          .selectAll("text")
+          .data(root.descendants().slice(1))
+          .join("text")
+            .attr("dy", "0.35em")
+            .attr("fill-opacity", d => +labelVisible(d.current))
+            .attr("transform", d => labelTransform(d.current))
+            .text(d => d.value);
 
         const parent = g.append("circle")
             .datum(root)
