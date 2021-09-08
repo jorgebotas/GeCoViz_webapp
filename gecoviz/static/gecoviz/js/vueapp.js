@@ -204,25 +204,13 @@ var vueapp = new Vue({
         },
 
         getDescendantLevels: function(target) {
-            console.log(target)
-            function counter (arr, attr) {
-                let fn = (counter, d) => {
-                    let a = d[attr]
-                    counter[a] = counter[a]
-                                ? counter[a] + 1
-                                : 1;
-                    return counter;
-                };
-                return arr.reduce(fn, {});
-            }
-
-            const depth = target.depth
-            console.log(depth)
-            const levels = target.descendants().reduce((lvls, d) => {
-                const l = d.depth - depth;
-                lvls[l] = lvls[l] || [];
-                lvls[l].push(d)
-                return lvls
+            const levels = target.descendants().slice(1).reduce((ranks, d) => {
+                const rank = d.data.name.split("__")[0];
+                ranks[rank] = ranks[rank] || [];
+                const lineage = d.ancestors().map(d => d.data.name)
+                    .reverse().join(";");
+                ranks[rank].push(lineage);
+                return ranks
             }, {})
             console.log(levels)
         },
