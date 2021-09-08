@@ -51,6 +51,63 @@ var hide = function (selector) {
     $(".accordion-button", $(selector).prev()).addClass("collapsed");
 }
 
+// Converts data to hierarchical format
+const separator = ";";
+function buildTaxaHierarchy(data) {
+    const buildHierarchy = data => {
+        const root = { name: "root", children: [] };
+        for (let i = 0; i < data.length; i++) {
+          const sequence = data[i][0];
+          const size = +data[i][1];
+          if (isNaN(size)) {
+            // e.g. if this is a header row
+            continue;
+          }
+          const parts = sequence.split(separator);
+          let currentNode = root;
+          for (let j = 0; j < parts.length; j++) {
+            const children = currentNode["children"];
+            const nodeName = parts[j];
+            let childNode = null;
+            if (j + 1 < parts.length) {
+              // Not yet at the end of the sequence; move down the tree.
+              let foundChild = false;
+              for (let k = 0; k < children.length; k++) {
+                if (children[k]["name"] == nodeName) {
+                  childNode = children[k];
+                  foundChild = true;
+                  break;
+                }
+              }
+              // If we don't already have a child node for this branch, create it.
+              if (!foundChild) {
+                childNode = { name: nodeName, children: [] };
+                children.push(childNode);
+              }
+              currentNode = childNode;
+            } else {
+              // Reached the end of the sequence; create a leaf node.
+              childNode = { name: nodeName, value: size, children: [] };
+              children.push(childNode);
+            }
+          }
+        }
+        return root;
+    }
+    const partition = data => {
+        const root = d3.hierarchy(data)
+            .sum(d => d.value)
+            .sort((a, b) => b.value - a.value);
+        return d3.partition()
+            .size([maxAngle, root.height + 1])
+          (root);
+    }
+
+    const hierarchy = buildHierarchy(data);
+    return partition(hierarchy);
+}
+
+
 
 var vueapp = new Vue({
     delimiters: ['[[', ']]'],
@@ -65,6 +122,7 @@ var vueapp = new Vue({
         suggestionTimeout: undefined,
         searchTimeout: undefined,
         allItems: [], 
+        taxaHierarchy: undefined,
         contextData: {
             newick: "",
             context: [],
@@ -126,6 +184,12 @@ var vueapp = new Vue({
 
         fetchThen : function(data, fetchURL) {
             this.allItems = data.matches;
+            this.allTaxa = buildTaxaHierarchy(this.allItems
+                .map(i => [i.lineage, i.value])).descendants().slice(1);
+            this.allTaxa.forEach(t => {
+                t.data.lineage = t.ancestors().reverse().slice(1);
+            })
+            console.log(allTaxa)
             if (this.allItems.length == 0) {
                 fetchCatch();
                 return;
