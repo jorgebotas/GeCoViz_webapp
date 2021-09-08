@@ -189,6 +189,8 @@ var vueapp = new Vue({
                 .map(i => [i.lineage, i.value])).descendants().slice(1);
             this.allTaxaNames = this.allTaxa.map(t => t.data.name);
             console.log(this.allTaxaNames)
+            console.log(this.allTaxaNames.length)
+            console.log([... new Set(this.allTaxaNames)].length)
             if (this.allItems.length == 0) {
                 fetchCatch();
                 return;
