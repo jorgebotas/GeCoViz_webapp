@@ -197,7 +197,7 @@ var vueapp = new Vue({
         fetchThen : function(data, fetchURL) {
             this.allItems = data.matches;
             this.allTaxa = buildTaxaHierarchy(this.allItems
-                .map(i => [i.lineage, i.value])).descendants();
+                .map(i => [i.lineage, i.value])).descendants().slice(1);
             this.allTaxa.forEach(t => t.lineage = getLineage(t));
             this.allTaxaLineages = [...new Set(this.allTaxa.map(t => t.lineage))]
                 .map(lineage => { 
