@@ -21,12 +21,12 @@
               <div class="input-icon w-100 m-2" style='min-width:250px'>
                     <input type="text"
                            class="form-control text-left"
-                           id="search-query"
+                           id="query-search"
                            @keydown="updateSuggestions()"
                            @keypress.enter.prevent="searchQuery()"
                            placeholder="Search..."/>
                     <ul class="dropdown-menu suggestion-menu" 
-                      role="menu" id="search-suggestions"
+                      role="menu" id="query-suggestions"
                       style="top: 100% !important"
                       :style="{ 'visibility': suggestions.length ? 'visible' : 'hidden' }">
                       <li class="dropdown-item"

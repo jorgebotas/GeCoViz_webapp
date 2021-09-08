@@ -144,13 +144,13 @@ var vueapp = new Vue({
     methods: {
         searchQuery : async function(searchType, query, options) {
             $('#spinner').modal('show');
-            const newQuery = query || $("#search-query").val().trim();
+            const newQuery = query || $("#query-search").val().trim();
             if (newQuery) {
                 this.selectedItems = [];
                 this.searchedTaxa = [];
                 this.query = newQuery;
             }
-            $("#search-query").val(this.query);
+            $("#query-search").val(this.query);
             this.searchType = searchType || this.searchTypeChoices.getValue(true);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
 
@@ -160,7 +160,7 @@ var vueapp = new Vue({
             }
             this.updateSearchParams(params);
 
-            $('#search-query').trigger('blur');
+            $('#query-search').trigger('blur');
 
             await fetch(API_BASE_URL + `/emapper/${this.searchType}/${this.query}/`)
                  .then(response => response.json())
@@ -221,7 +221,7 @@ var vueapp = new Vue({
                 clearTimeout(this.suggestionTimeout);
             this.suggestionTimeout = setTimeout(() => {
                 this.searchType = this.searchTypeChoices.getValue(true);
-                const search = $("#search-query").val();
+                const search = $("#query-search").val();
 
                 if (search.length < 3) {
                     this.suggestions = [];
@@ -244,7 +244,7 @@ var vueapp = new Vue({
             if (this.searchTimeout)
                 clearTimeout(this.searchTimeout);
             this.searchTimeout = setTimeout(() => {
-                const search = $("#search-taxonomy").val().trim().toLowerCase();
+                const search = $("#taxa-search").val().trim().toLowerCase();
 
                 if (search.length < 3) {
                     this.searchedTaxa = [];
@@ -459,7 +459,7 @@ var vueapp = new Vue({
         },
 
         focusSearchbar: function() {
-            $("#search-query").focus();
+            $("#query-search").focus();
             $("#visualization-container").collapse("hide");
             $("#sunburst-selector-container").collapse("hide");
         },
@@ -545,15 +545,17 @@ var vueapp = new Vue({
                 d3.selectAll("#add-button-container *").remove();
         })
 
-        const searchbar = $("#search-query");
-        const suggestions = $("#search-suggestions");
-        searchbar.on("focus", () => {
-            suggestions.css("display", "block");
-        })
-        searchbar.on("blur", () => {
-            setTimeout(() => {
-                suggestions.css("display", "none");
-            }, 100)
+        ["query", "taxa"].forEach(d => {
+            const searchbar = $(`#${d}-search`);
+            const suggestions = $(`#${d}-suggestions`);
+            searchbar.on("focus", () => {
+                suggestions.css("display", "block");
+            })
+            searchbar.on("blur", () => {
+                setTimeout(() => {
+                    suggestions.css("display", "none");
+                }, 100)
+            })
         })
 
 
@@ -610,7 +612,7 @@ var vueapp = new Vue({
             this.query = query;
             this.searchType = searchType;
             
-            $("#search-query").val(this.query);
+            $("#query-search").val(this.query);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
             //d3.select(`#search-type input[value="${this.searchType}"]`)
                 //.attr("checked", true);
