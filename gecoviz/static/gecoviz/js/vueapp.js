@@ -187,10 +187,8 @@ var vueapp = new Vue({
             this.allItems = data.matches;
             this.allTaxa = buildTaxaHierarchy(this.allItems
                 .map(i => [i.lineage, i.value])).descendants().slice(1);
-            this.allTaxaNames = this.allTaxa.map(t => t.data.name);
-            console.log(this.allTaxaNames)
-            console.log(this.allTaxaNames.length)
-            console.log([... new Set(this.allTaxaNames)].length)
+            this.allTaxa.forEach(d => d.lineage = d.ancestors().reverse().slice(1));
+            this.allTaxaNames = [... new Set(this.allTaxa.map(t => t.lineage))];
             if (this.allItems.length == 0) {
                 fetchCatch();
                 return;
@@ -232,8 +230,8 @@ var vueapp = new Vue({
             this.searchTimeout = setTimeout(() => {
                 const search = $("#search-taxonomy").val().trim().toLowerCase();
                 if (search) {
-                    this.searchedItems = this.allItems.filter(
-                            d => d.lineage.toLowerCase().includes(search));
+                    this.searchedItems = this.allTaxaNames.filter(
+                            d => d.name.toLowerCase().includes(search));
                     this.showAddButton(search)
 
                 } else {
@@ -249,6 +247,18 @@ var vueapp = new Vue({
                         : (ranking[rankA] || 1000) > (ranking[rankB] || 1000);
                 })
             }, 500);
+        },
+
+        selectTaxa: function(lineage, allDescendants=false) {
+            if (allDescendants)
+                this.allItems
+                    .filter(d => d.lineage.includes(lineage))
+                    .forEach(d => this.selectItem(d.id, true))
+            else {
+                const taxid = this.allItems.find(
+                    d => d.lineage.includes(lineage)).id;
+                this.selectItem(taxid, true);
+            }
         },
 
         selectItem: function(id, show) {
