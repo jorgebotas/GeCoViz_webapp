@@ -128,7 +128,7 @@ var vueapp = new Vue({
         searchTimeout: undefined,
         allItems: [], 
         allTaxa: [],
-        allTaxaNames: [],
+        allTaxaLineages: [],
         contextData: {
             newick: "",
             context: [],
@@ -195,6 +195,7 @@ var vueapp = new Vue({
             this.allTaxa.forEach(d => d.lineage = d.ancestors().reverse().slice(1));
             this.allTaxaLineages = [... new Set(this.allTaxa.map(t => t.lineage))]
                 .map(lineage => { 
+                    console.log(lineage)
                     const [ rank, name ] = getNameFromLineage(lineage).split("__");
                     return { rank: rank, name: name, lineage: lineage }
                 })
