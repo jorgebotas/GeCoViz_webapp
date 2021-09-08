@@ -204,6 +204,7 @@ var vueapp = new Vue({
         },
 
         getDescendantLevels: function(target) {
+            console.log(target)
             function counter (arr, attr) {
                 let fn = (counter, d) => {
                     let a = d[attr]
