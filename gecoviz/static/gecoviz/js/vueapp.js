@@ -547,7 +547,9 @@ var vueapp = new Vue({
 
         ["query", "taxa"].forEach(d => {
             const searchbar = $(`#${d}-search`);
+            console.log(searchbar)
             const suggestions = $(`#${d}-suggestions`);
+            console.log(suggestions)
             searchbar.on("focus", () => {
                 suggestions.css("display", "block");
             })
