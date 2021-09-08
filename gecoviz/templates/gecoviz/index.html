@@ -84,6 +84,21 @@
                                        id="search-taxonomy"
                                        @keydown="updateSearch"
                                        placeholder="Search..."/>
+                                <ul class="dropdown-menu suggestion-menu" 
+                                  role="menu" id="taxa-suggestions"
+                                  style="top: 100% !important">
+                                  <li class="dropdown-item"
+                                      v-for="t in searchedTaxa"
+                                      @click="selectTaxa(t.lineage)">
+                                      <b><b class="f-bold">[[ t.name ]]</b>
+                                      <br>
+                                      <b class="text-muted"
+                                          style="font-size:.6rem;
+                                          color: rgba(33, 43, 54, 0.5184) !important;">
+                                          [[ s.rank ]]
+                                      </b></b>
+                                  </li>
+                                </ul>
                                 <span class="input-icon-addon search-icon">
                                     <i class="fa fa-search"
                                        aria-hidden="true">
@@ -111,20 +126,20 @@
                                 style="max-height:350px;
                                        overflow-y:scroll;
                                        flex-direction:column;">
-                                <div v-for="sp in searchedItems" 
-                                    class="w-100 d-flex text-align-left">
-                                    <label class="form-selectgroup-item"
-                                        style="margin: .2rem .5rem;">
-                                        <input class="form-selectgroup-input"
-                                               type="checkbox" 
-                                               :value="sp.id"
-                                               :checked="selectedItems.includes(sp.id)"
-                                               @click="selectItem(sp.id)">
-                                        <span class="form-selectgroup-label"
-                                            style="font-size:.7rem; padding: .1rem .5rem">
-                                            [[ sp.name ]] ([[ sp.value ]])</span>
-                                    </label>
-                                </div>
+                                {% comment %}<div v-for="sp in searchedItems" {% endcomment %}
+                                    {% comment %}class="w-100 d-flex text-align-left">{% endcomment %}
+                                    {% comment %}<label class="form-selectgroup-item"{% endcomment %}
+                                        {% comment %}style="margin: .2rem .5rem;">{% endcomment %}
+                                        {% comment %}<input class="form-selectgroup-input"{% endcomment %}
+                                               {% comment %}type="checkbox" {% endcomment %}
+                                               {% comment %}:value="sp.id"{% endcomment %}
+                                               {% comment %}:checked="selectedItems.includes(sp.id)"{% endcomment %}
+                                               {% comment %}@click="selectItem(sp.id)">{% endcomment %}
+                                        {% comment %}<span class="form-selectgroup-label"{% endcomment %}
+                                            {% comment %}style="font-size:.7rem; padding: .1rem .5rem">{% endcomment %}
+                                            {% comment %}[[ sp.name ]] ([[ sp.value ]])</span>{% endcomment %}
+                                    {% comment %}</label>{% endcomment %}
+                                {% comment %}</div>{% endcomment %}
                             </div>
                         </div>
                     </div>

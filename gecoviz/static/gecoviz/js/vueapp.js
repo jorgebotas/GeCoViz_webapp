@@ -51,6 +51,11 @@ var hide = function (selector) {
     $(".accordion-button", $(selector).prev()).addClass("collapsed");
 }
 
+function getNameFromLineage(d) {
+    const dSplit = d.split(";")
+    return dSplit[dSplit.length-1]
+}
+
 // Converts data to hierarchical format
 const separator = ";";
 function buildTaxaHierarchy(data) {
@@ -118,7 +123,7 @@ var vueapp = new Vue({
         searchTypeChoices: undefined,
         suggestions: [],
         selectedItems: [],
-        searchedItems: [],
+        searchedTaxa: [],
         suggestionTimeout: undefined,
         searchTimeout: undefined,
         allItems: [], 
@@ -136,7 +141,7 @@ var vueapp = new Vue({
             const newQuery = query || $("#search-query").val().trim();
             if (newQuery) {
                 this.selectedItems = [];
-                this.searchedItems = [];
+                this.searchedTaxa = [];
                 this.query = newQuery;
             }
             $("#search-query").val(this.query);
@@ -188,7 +193,11 @@ var vueapp = new Vue({
             this.allTaxa = buildTaxaHierarchy(this.allItems
                 .map(i => [i.lineage, i.value])).descendants().slice(1);
             this.allTaxa.forEach(d => d.lineage = d.ancestors().reverse().slice(1));
-            this.allTaxaNames = [... new Set(this.allTaxa.map(t => t.lineage))];
+            this.allTaxaLineages = [... new Set(this.allTaxa.map(t => t.lineage))]
+                .map(lineage => { 
+                    const [ rank, name ] = getNameFromLineage(lineage).split("__");
+                    return { rank: rank, name: name, lineage: lineage }
+                })
             if (this.allItems.length == 0) {
                 fetchCatch();
                 return;
@@ -229,23 +238,15 @@ var vueapp = new Vue({
                 clearTimeout(this.searchTimeout);
             this.searchTimeout = setTimeout(() => {
                 const search = $("#search-taxonomy").val().trim().toLowerCase();
-                if (search) {
-                    this.searchedItems = this.allTaxaNames.filter(
-                            d => d.name.toLowerCase().includes(search));
-                    this.showAddButton(search)
 
-                } else {
-                    this.searchedItems = this.allItems.filter(d => 
-                        this.selectedItems.includes(d.id));
+                if (search.length < 3) {
+                    this.searchedTaxa = [];
+                    return
                 }
 
-                const ranking = { genus: 0, species: 1, strain: 2, isolate: 3 }
-                this.searchedItems = this.searchedItems.sort((a, b) =>  {
-                    const [ rankA, nameA ] = a.name.split("__");
-                    const [ rankB, nameB ] = b.name.split("__");
-                    return rankA === rankB ? nameA > nameB 
-                        : (ranking[rankA] || 1000) > (ranking[rankB] || 1000);
-                })
+                this.searchedTaxa = this.allTaxaLineages.filter(d =>
+                    d.name.toLowerCase().includes(search))
+                console.log(this.searchedTaxa)
             }, 500);
         },
 
@@ -506,7 +507,7 @@ var vueapp = new Vue({
             }, 0)
         },
         selectedTaxa: function() {
-            const sharedTaxa = this.searchedItems.reduce((t, it, i) => {
+            const sharedTaxa = this.searchedTaxa.reduce((t, it, i) => {
                 const itSplit = it.lineage.split(";")
                 if (i === 0)
                     t =  itSplit
