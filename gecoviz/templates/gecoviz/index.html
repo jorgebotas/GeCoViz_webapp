@@ -128,7 +128,7 @@
                                 style="max-height:350px;
                                        overflow-y:scroll;
                                        flex-direction:column;">
-                                <div v-for="d in allTaxaLineages" 
+                                <div v-for="d in allItems" 
                                      v-if="selectedItems.includes(d.id)"
                                     class="w-100 d-flex text-align-left">
                                     <label class="form-selectgroup-item"
@@ -137,7 +137,7 @@
                                                type="checkbox" 
                                                :value="d.id"
                                                :checked="selectedItems.includes(d.id)"
-                                               @click="selectTaxa(d.lineage)">
+                                               @click="selectTaxa(d.lineage, false)">
                                         <span class="form-selectgroup-label"
                                             style="font-size:.7rem; padding: .1rem .5rem">
                                             [[ d.name ]]</span>
