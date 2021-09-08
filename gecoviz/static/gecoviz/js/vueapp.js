@@ -266,6 +266,7 @@ var vueapp = new Vue({
                 const taxid = this.allItems.find(
                     d => d.lineage.includes(lineage)).id;
                 this.selectItem(taxid, true);
+                console.log(this.selectedItems)
             }
         },
 
