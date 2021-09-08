@@ -57,9 +57,9 @@ function getNameFromLineage(d) {
 }
 
 function getLineage(d) {
-    return d.ancestors().slice(1)
-        .map(d => d.data.name)
-        .reverse().join(";")
+    return d.ancestors()
+        .reverse().slice(1)
+        .map(d => d.data.name).join(";")
 }
 
 // Converts data to hierarchical format
