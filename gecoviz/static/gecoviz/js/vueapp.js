@@ -122,7 +122,7 @@ var vueapp = new Vue({
         suggestionTimeout: undefined,
         searchTimeout: undefined,
         allItems: [], 
-        taxaHierarchy: undefined,
+        allTaxa: [],
         contextData: {
             newick: "",
             context: [],
