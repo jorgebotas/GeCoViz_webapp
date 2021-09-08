@@ -224,9 +224,6 @@ var vueapp = new Vue({
                 lvls[l].push(d)
                 return lvls
             }, {})
-            const levelCount = levels.map(l => {
-                
-            })
             console.log(levels)
         },
 
