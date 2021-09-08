@@ -128,20 +128,21 @@
                                 style="max-height:350px;
                                        overflow-y:scroll;
                                        flex-direction:column;">
-                                {% comment %}<div v-for="sp in searchedItems" {% endcomment %}
-                                    {% comment %}class="w-100 d-flex text-align-left">{% endcomment %}
-                                    {% comment %}<label class="form-selectgroup-item"{% endcomment %}
-                                        {% comment %}style="margin: .2rem .5rem;">{% endcomment %}
-                                        {% comment %}<input class="form-selectgroup-input"{% endcomment %}
-                                               {% comment %}type="checkbox" {% endcomment %}
-                                               {% comment %}:value="sp.id"{% endcomment %}
-                                               {% comment %}:checked="selectedItems.includes(sp.id)"{% endcomment %}
-                                               {% comment %}@click="selectItem(sp.id)">{% endcomment %}
-                                        {% comment %}<span class="form-selectgroup-label"{% endcomment %}
-                                            {% comment %}style="font-size:.7rem; padding: .1rem .5rem">{% endcomment %}
-                                            {% comment %}[[ sp.name ]] ([[ sp.value ]])</span>{% endcomment %}
-                                    {% comment %}</label>{% endcomment %}
-                                {% comment %}</div>{% endcomment %}
+                                <div v-for="d in allTaxaLineages" 
+                                     v-if="selectedTaxa.includes(d.id)"
+                                    class="w-100 d-flex text-align-left">
+                                    <label class="form-selectgroup-item"
+                                        style="margin: .2rem .5rem;">
+                                        <input class="form-selectgroup-input"
+                                               type="checkbox" 
+                                               :value="d.id"
+                                               :checked="selectedTaxa.includes(d.id)"
+                                               @click="selectTaxa(d.id)">
+                                        <span class="form-selectgroup-label"
+                                            style="font-size:.7rem; padding: .1rem .5rem">
+                                            [[ d.name ]]</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
