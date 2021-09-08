@@ -56,6 +56,12 @@ function getNameFromLineage(d) {
     return dSplit[dSplit.length-1]
 }
 
+function getLineage(d) {
+    d.ancestors()
+        .map(d => d.data.name)
+        .reverse().join(";")
+}
+
 // Converts data to hierarchical format
 const separator = ";";
 function buildTaxaHierarchy(data) {
@@ -192,8 +198,8 @@ var vueapp = new Vue({
             this.allItems = data.matches;
             this.allTaxa = buildTaxaHierarchy(this.allItems
                 .map(i => [i.lineage, i.value])).descendants().slice(1);
-            this.allTaxa.forEach(d => d.lineage = d.ancestors().reverse().slice(1));
-            this.allTaxaLineages = [... new Set(this.allTaxa.map(t => t.lineage))]
+            this.allTaxa.forEach(d => d.lineage = getLineage(d));
+            this.allTaxaLineages = [...new Set(this.allTaxa.map(t => t.lineage))]
                 .map(lineage => { 
                     console.log(lineage)
                     const [ rank, name ] = getNameFromLineage(lineage).split("__");
@@ -284,8 +290,7 @@ var vueapp = new Vue({
             const levels = target.descendants().slice(1).reduce((ranks, d) => {
                 const rank = d.data.name.split("__")[0];
                 ranks[rank] = ranks[rank] || [];
-                const lineage = d.ancestors().map(d => d.data.name)
-                    .reverse().join(";");
+                const lineage = getLineage(d);
                 ranks[rank].push(lineage);
                 return ranks
             }, {})
