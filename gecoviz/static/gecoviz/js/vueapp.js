@@ -123,6 +123,7 @@ var vueapp = new Vue({
         searchTimeout: undefined,
         allItems: [], 
         allTaxa: [],
+        allTaxaNames: [],
         contextData: {
             newick: "",
             context: [],
@@ -186,10 +187,8 @@ var vueapp = new Vue({
             this.allItems = data.matches;
             this.allTaxa = buildTaxaHierarchy(this.allItems
                 .map(i => [i.lineage, i.value])).descendants().slice(1);
-            this.allTaxa.forEach(t => {
-                t.data.lineage = t.ancestors().reverse().slice(1);
-            })
-            console.log(this.allTaxa)
+            this.allTaxaNames = this.allTaxa.map(t => t.data.name);
+            console.log(this.allTaxaNames)
             if (this.allItems.length == 0) {
                 fetchCatch();
                 return;
