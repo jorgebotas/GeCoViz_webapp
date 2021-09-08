@@ -217,8 +217,11 @@ var vueapp = new Vue({
             }
 
             const depth = target.data.depth
-            const levels = target.descendants().reduce((lvls, d) =>
-                lvls[d.data.depth - depth].push(d), {})
+            console.log(depth)
+            const levels = target.descendants().reduce((lvls, d) => {
+                console.log(d.data)
+                return lvls[d.data.depth - depth].push(d)
+            }, {})
             const levelCount = levels.map(l => {
                 
             })
