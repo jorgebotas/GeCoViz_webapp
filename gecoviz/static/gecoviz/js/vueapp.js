@@ -189,7 +189,7 @@ var vueapp = new Vue({
             this.allTaxa.forEach(t => {
                 t.data.lineage = t.ancestors().reverse().slice(1);
             })
-            console.log(allTaxa)
+            console.log(this.allTaxa)
             if (this.allItems.length == 0) {
                 fetchCatch();
                 return;
