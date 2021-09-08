@@ -99,7 +99,7 @@ function buildTaxaHierarchy(data) {
             .sum(d => d.value)
             .sort((a, b) => b.value - a.value);
         return d3.partition()
-            .size([maxAngle, root.height + 1])
+            .size([Math.PI, root.height + 1])
           (root);
     }
 
