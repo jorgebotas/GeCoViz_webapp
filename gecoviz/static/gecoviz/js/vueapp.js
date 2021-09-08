@@ -203,6 +203,27 @@ var vueapp = new Vue({
             this.updateSearch();
         },
 
+        getDescendantLevels: function(target) {
+            function counter (arr, attr) {
+                let fn = (counter, d) => {
+                    let a = d[attr]
+                    counter[a] = counter[a]
+                                ? counter[a] + 1
+                                : 1;
+                    return counter;
+                };
+                return arr.reduce(fn, {});
+            }
+
+            const depth = target.depth
+            const levels = target.descendants.reduce((lvls, d) =>
+                lvls[d.depth - depth].push(d), {})
+            const levelCount = levels.map(l => {
+                
+            })
+            console.log(levels)
+        },
+
         showAddButton: function(lineage) {
             const container = d3.select("#add-button-container")
             container.selectAll("*").remove();
@@ -240,7 +261,7 @@ var vueapp = new Vue({
                 show("#sunburst-selector-container")
                 d3.selectAll(".sunburst-selector *").remove();
                 const taxonomy = this.allItems.map(i => [i.lineage, i.value]);
-                SeqSunburst(taxonomy, 500, 6, true, this.showAddButton)
+                SeqSunburst(taxonomy, 500, 6, true, this.getDescendantLevels)
                     .draw(".sunburst-selector");
             }
         },
