@@ -57,7 +57,6 @@ function getNameFromLineage(d) {
 }
 
 function getLineage(d) {
-    console.log(d.ancestors())
     d.ancestors().reverse()
         .map(d => d.data.name)
         .reverse().join(";")
@@ -198,7 +197,7 @@ var vueapp = new Vue({
         fetchThen : function(data, fetchURL) {
             this.allItems = data.matches;
             this.allTaxa = buildTaxaHierarchy(this.allItems
-                .map(i => [i.lineage, i.value])).descendants().slice(1);
+                .map(i => [i.lineage, i.value])).descendants();
             this.allTaxa.forEach(d => d.lineage = getLineage(d));
             this.allTaxaLineages = [...new Set(this.allTaxa.map(t => t.lineage))]
                 .map(lineage => { 
