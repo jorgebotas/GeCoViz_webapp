@@ -129,14 +129,14 @@
                                        overflow-y:scroll;
                                        flex-direction:column;">
                                 <div v-for="d in allTaxaLineages" 
-                                     v-if="selectedTaxa.includes(d.id)"
+                                     v-if="selectedItems.includes(d.id)"
                                     class="w-100 d-flex text-align-left">
                                     <label class="form-selectgroup-item"
                                         style="margin: .2rem .5rem;">
                                         <input class="form-selectgroup-input"
                                                type="checkbox" 
                                                :value="d.id"
-                                               :checked="selectedTaxa.includes(d.id)"
+                                               :checked="selectedItems.includes(d.id)"
                                                @click="selectTaxa(d.id)">
                                         <span class="form-selectgroup-label"
                                             style="font-size:.7rem; padding: .1rem .5rem">
