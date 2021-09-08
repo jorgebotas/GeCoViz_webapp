@@ -201,10 +201,10 @@ var vueapp = new Vue({
             this.allTaxa.forEach(t => t.lineage = getLineage(t));
             this.allTaxaLineages = [...new Set(this.allTaxa.map(t => t.lineage))]
                 .map(lineage => { 
-                    console.log(lineage)
                     const [ rank, name ] = getNameFromLineage(lineage).split("__");
                     return { rank: rank, name: name, lineage: lineage }
                 })
+            console.log(this.allTaxaLineages)
             if (this.allItems.length == 0) {
                 fetchCatch();
                 return;
