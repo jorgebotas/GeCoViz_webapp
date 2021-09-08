@@ -58,7 +58,7 @@ function getNameFromLineage(d) {
 
 function getLineage(d) {
     return d.ancestors()
-        .reverse()
+        .reverse().slice(1)
         .map(d => d.data.name).join(";")
 }
 
