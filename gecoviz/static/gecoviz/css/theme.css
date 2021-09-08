@@ -13118,7 +13118,7 @@ a:hover {
 
 .suggestion-menu {
   color: #212b36;
-  min-width: 14rem;
+  min-width: 100%;
   text-align: left;
   list-style: none;
   background-color: white;
@@ -13132,8 +13132,6 @@ a:hover {
   position: absolute;
   z-index: 1030;
   top: 100% !important;
-  left: 50%;
-  transform: translate(-125px, 5px);
   max-height: 300px;
   overflow: scroll;
   padding: 7px !important; }
