@@ -668,7 +668,7 @@ var vueapp = new Vue({
 
             if (taxids && taxids.length) {
                 console.log(this.root)
-                taxids.split("%2C").forEach(t => this.selectTaxid(t, this.root));
+                taxids.split("%2C").forEach(t => { this.selectTaxid(t, this.root) });
                 console.log(this.selectedTaxids)
                 this.visualizeSelection();
             }
