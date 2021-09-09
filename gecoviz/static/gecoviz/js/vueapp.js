@@ -263,17 +263,17 @@ var vueapp = new Vue({
 
             this.sunBurst.highlightPath(taxa)
             
-            const lineage = taxa.lineage
+            const lineage = taxa.data.lineage
 
-            if (allDescendants)
-                this.allItems
-                    .filter(d => d.lineage.includes(lineage))
-                    .forEach(d => this.selectTaxid(d.id, true))
-            else {
-                const taxid = this.allItems.find(
-                    d => d.lineage.includes(lineage)).id;
-                this.selectTaxid(taxid, true);
-            }
+            //if (allDescendants)
+                //this.allItems
+                    //.filter(d => d.lineage.includes(lineage))
+                    //.forEach(d => this.selectTaxid(d.id, true))
+            //else {
+                //const taxid = this.allItems.find(
+                    //d => d.lineage.includes(lineage)).id;
+                //this.selectTaxid(taxid, true);
+            //}
         },
 
         selectTaxid: function(id, show) {
