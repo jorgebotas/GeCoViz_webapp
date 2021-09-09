@@ -273,6 +273,10 @@ var vueapp = new Vue({
             }, 500);
         },
 
+        showLevels: function(d) {
+            console.log(d)
+        },
+
         selectTaxa: function(taxa, allDescendants=false) {
 
             this.sunBurst.highlightPath(taxa)
@@ -310,14 +314,18 @@ var vueapp = new Vue({
             this.updateSearch();
         },
 
-        getDescendantLevels: function(target) {
-            const levels = target.descendants().slice(1).reduce((ranks, d) => {
+        getDescendantLevels: function(d) {
+            const source = d.source
+            const levels = source.descendants().slice(1).reduce((ranks, d) => {
                 const rank = d.data.name.split("__")[0];
                 ranks[rank] = ranks[rank] || [];
                 const lineage = getLineage(d);
                 ranks[rank].push(lineage);
                 return ranks
             }, {})
+
+            d.descendantLevels = levels;
+            console.log(d)
         },
 
         showAddButton: function(lineage) {

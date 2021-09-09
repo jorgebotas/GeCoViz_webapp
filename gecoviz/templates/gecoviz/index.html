@@ -125,7 +125,7 @@
                                 <div id="add-button-container" class="ml-3">
                                 </div>
                             </div>
-                            <div id="shown-items" class="d-flex" 
+                            <div id="shown-items" class="d-flex h-100" 
                                 style="max-height:350px;
                                        overflow-y:scroll;
                                        flex-direction:column;">
@@ -139,25 +139,28 @@
                                     <a @click="sunBurst.highlightPath(d.source)">
                                         [[ d.source.data.tname ]] 
                                     </a>
-                                    <div class="dropdown">
+                                    <div class="dropdown d-inline">
                                         <a class="color-yellow f-bold dropdown-toggle no-after"
                                           style="font-size: .8rem;"
                                           data-toggle="dropdown"
                                           data-bs-auto-close="outside"
+                                          @click="getDescendantLevels(d)"
                                           role="button">
                                             ([[ d.taxids.length ]] genomes)
                                         </a>
                                         <ul class="dropdown-menu suggestion-menu">
-                                            <li class="dropdown-item">hi</li>
-                                            <li class="dropdown-item">hi</li>
-                                            <li class="dropdown-item">hi</li>
-                                            <li class="dropdown-item">hi</li>
+                                            <li v-for="(lineages, level) in d.descendantLevels"
+                                                class="dropdown-item"
+                                                @click="showLevels(level)">
+                                                [[ level ]]: [[ lineages.length ]]
+                                            </li>
                                         </ul>
                                     </div>
 
                                     <a class="ml-1" role="button"
                                         @click="deselectTaxa(d.source)">
-                                        <i class="fas fa-times"></i>
+                                        <i class="fas fa-times"
+                                           style="transform:translate(0,.2px)"></i>
                                     </a>
                                 </div>
                             </div>
