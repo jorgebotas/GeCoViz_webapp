@@ -59,19 +59,19 @@
                     Total matches: [[ nMatches ]]<br>
                     Selected: [[ nSelected ]] hit(s), [[
                     selectedTaxids.length ]] genome(s)
-                    <div>
-                        <button class="btn btn-clean ml-5"
+                    <div class="w-100">
+                        <button class="btn btn-clean d-inline"
                              @click="deselectAll()"
                              :disabled="nSelected < 1">
                             Deselect all
                         </button>
-                        <button class="btn btn-primary mx-2 my-1"
+                        <button class="btn btn-primary mx-2 my-1 d-inline"
                              @click="visualizeSelection()"
                              :disabled="nSelected < 1">
                             Visualize
                             <i class="fas fa-chevron-right ml-3"></i>
                         </button>
-                        <div id="add-button-container" class="ml-3">
+                        <div id="add-button-container" class="ml-3 d-inline">
                         </div>
                     </div>
                 </div>
