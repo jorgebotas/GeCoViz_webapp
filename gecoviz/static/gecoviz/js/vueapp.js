@@ -149,7 +149,9 @@ var vueapp = new Vue({
             const toAdd = $(`#${selector}-navlink`);
             if (toRemove.hasClass("active"))
                 toRemove.removeClass("active");
-            toAdd.addClass("active");
+            setTimeout(() => {
+                toAdd.addClass("active");
+            }, 10)
             this.show = selector;
         },
 
