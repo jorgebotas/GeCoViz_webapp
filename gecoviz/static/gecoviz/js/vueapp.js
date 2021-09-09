@@ -301,6 +301,7 @@ var vueapp = new Vue({
             } else if (show)
                 this.selectedTaxids.push({ id: id, source: source });
             console.log(this.selectedTaxids)
+            console.log(this.selectedTaxa)
         },
 
         deselectAll: function() {
