@@ -149,6 +149,9 @@
                                         </a>
                                         <ul class="dropdown-menu suggestion-menu"
                                             v-if="d.source.descendantLevels">
+                                            <li class="card-title text-muted">
+                                                Select representatives taxonomic level
+                                            </li>
                                             <li v-for="(lineages, level) in d.source.descendantLevels"
                                                 class="dropdown-item"
                                                 @click="showLevels(level)">
