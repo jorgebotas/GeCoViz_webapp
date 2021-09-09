@@ -173,10 +173,6 @@ var SeqSunburst = function(unformattedData, width, depth=2,
         function mouseEnter(_, d) {
             if (!arcVisible(d.current))
                 return
-            label
-                .style("visibility", null)
-                .select(".value")
-                .text(d.value);
 
             graph.highlightPath(d)
         }
@@ -377,6 +373,11 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                     (sequence.indexOf(node) >= 0 ? 1 : 0.8) : 0)
                     .attr("stroke-width", node => arcVisible(node.current) && 
                         sequence.indexOf(node) >= 0 ? "1.5px" : 0);
+                // Value label
+                label
+                    .style("visibility", null)
+                    .select(".value")
+                    .text(d.value);
                 
                 //Update breadcrumb
                 breadcrumb.update(sequence)
