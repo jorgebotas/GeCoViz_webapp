@@ -90,7 +90,7 @@
                                   :style="{ 'visibility': searchedTaxa.length ? 'visible' : 'hidden' }">
                                   <li class="dropdown-item"
                                       v-for="t in searchedTaxa"
-                                      @click="selectTaxa(t.lineage)">
+                                      @click="selectTaxa(t)">
                                       <b><b class="f-bold">[[ t.name ]]</b>
                                       <br>
                                       <b class="text-muted"
@@ -137,7 +137,7 @@
                                                type="checkbox" 
                                                :value="d.id"
                                                :checked="selectedTaxids.includes(d.id)"
-                                               @click="selectTaxa(d.lineage, false)">
+                                               @click="selectTaxa(t, false)">
                                         <span class="form-selectgroup-label"
                                             style="font-size:.7rem; padding: .1rem .5rem">
                                             [[ d.name | styleTaxa ]]</span>

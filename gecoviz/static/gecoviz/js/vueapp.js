@@ -137,6 +137,7 @@ var vueapp = new Vue({
         allItems: [], 
         allTaxa: [],
         allTaxaLineages: [],
+        sunBurst: undefined,
         contextData: {
             newick: "",
             context: [],
@@ -198,10 +199,10 @@ var vueapp = new Vue({
 
         fetchThen : function(data, fetchURL) {
             this.allItems = data.matches;
-            this.allTaxa = buildTaxaHierarchy(this.allItems
-                .map(i => [i.lineage, i.id, i.value])).descendants().slice(1);
-            this.allTaxa.forEach(t => t.lineage = getLineage(t));
-            this.allTaxaLineages = [...new Set(this.allTaxa.map(t => t.lineage))]
+            this.root =  buildTaxaHierarchy(this.allItems
+                .map(i => [i.lineage, i.id, i.value]))
+            root.descendants().forEach(t => t.data.lineage = getLineage(t));
+            this.allTaxaLineages = [...new Set(this.allTaxa.map(t => t.data.lineage))]
                 .map(lineage => { 
                     const [ rank, name ] = getNameFromLineage(lineage).split("__");
                     return { rank: rank, name: name, lineage: lineage }
@@ -257,19 +258,24 @@ var vueapp = new Vue({
             }, 500);
         },
 
-        selectTaxa: function(lineage, allDescendants=false) {
+        selectTaxa: function(taxa, allDescendants=false) {
+
+            sunBurst.highlightPath(taxa)
+            
+            const lineage = taxa.lineage
+
             if (allDescendants)
                 this.allItems
                     .filter(d => d.lineage.includes(lineage))
-                    .forEach(d => this.selectItem(d.id, true))
+                    .forEach(d => this.selectTaxid(d.id, true))
             else {
                 const taxid = this.allItems.find(
                     d => d.lineage.includes(lineage)).id;
-                this.selectItem(taxid, true);
+                this.selectTaxid(taxid, true);
             }
         },
 
-        selectItem: function(id, show) {
+        selectTaxid: function(id, show) {
             show = show || !this.selectedTaxids.includes(id);
             if (this.selectedTaxids.includes(id)) {
                 if (!show)
@@ -277,8 +283,6 @@ var vueapp = new Vue({
                         s => s != id);
             } else if (show)
                 this.selectedTaxids.push(id);
-
-            this.updateSearch();
         },
 
         deselectAll: function() {
@@ -315,9 +319,9 @@ var vueapp = new Vue({
                 .html("Add " + toBeSelected);
             button.on("click", () => {
                 if (match.length)
-                    this.selectItem(match[0].id, true);
+                    this.selectTaxid(match[0].id, true);
                 else
-                    matches.forEach(item => this.selectItem(item.id, true));
+                    matches.forEach(item => this.selectTaxid(item.id, true));
                 button.remove();
             });
         },
@@ -334,7 +338,7 @@ var vueapp = new Vue({
                 show("#sunburst-selector-container")
                 d3.selectAll(".sunburst-selector *").remove();
                 const taxonomy = this.allItems.map(i => [i.lineage, i.value]);
-                SeqSunburst(taxonomy, 500, 6, true, this.getDescendantLevels)
+                this.sunBurst = SeqSunburst(taxonomy, 500, 6, true, this.getDescendantLevels)
                     .draw(".sunburst-selector");
             }
         },
