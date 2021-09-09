@@ -421,6 +421,7 @@ var vueapp = new Vue({
                 .treeData(newick, newickFields[1], newickFields)
                 .contextData(context)
                 .nSide(4)
+                .zoom(0.3)
                 .viewPort(document.querySelector(selector))
                 .geneText("Gene name")
                 .annotation("Orthologous groups", 2)
@@ -428,10 +429,7 @@ var vueapp = new Vue({
                 .draw();
 
             setTimeout(hideSpinner, 10);
-            setTimeout(() => {
-                gecoviz.scaleDist()
-                .zoom(0.3);
-            }, 1000);
+            setTimeout(() => gecoviz.scaleDist, 1000);
 
         },
 
