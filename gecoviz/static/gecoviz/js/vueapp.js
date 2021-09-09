@@ -297,6 +297,7 @@ var vueapp = new Vue({
         },
 
         selectLineages: function(lineages, taxa) {
+            this.deselectTaxa(taxa);
             lineages.forEach(l => this.selectLineage(l, taxa));
         },
 
