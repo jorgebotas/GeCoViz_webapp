@@ -388,7 +388,7 @@ var vueapp = new Vue({
             const params = {
                 query: this.query,
                 searchType: this.searchType,
-                taxids: this.selectedTaxids.join(",")
+                taxids: this.selectedTaxids.map(t => t.id).join(",")
             }
 
             this.updateSearchParams(params);
