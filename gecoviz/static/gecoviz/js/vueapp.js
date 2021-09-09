@@ -292,7 +292,6 @@ var vueapp = new Vue({
             else {
                 const taxid = this.root.leaves().find(
                     d => d.data.lineage.includes(lineage)).data.id;
-                console.log(taxid)
                 this.selectTaxid(taxid, taxa, true);
            }
         },
@@ -329,7 +328,6 @@ var vueapp = new Vue({
                 return ranks
             }, {})
 
-            console.log(levels)
             return levels
         },
 
