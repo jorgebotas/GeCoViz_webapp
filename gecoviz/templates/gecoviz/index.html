@@ -22,7 +22,8 @@
         :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none' }">
         <div class="mt-0"
             :class="{ 'd-flex' : !isScreenLarge }"
-            :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
+            :style="{ 'visibility': allItems.length ? 'visible' : 'hidden',
+                       'width': isScreenLarge ? '40%' : '100%' }">
             <div class="sunburst-selector"
                  :class="{ 'w-100' : isScreenLarge, 'w-50' : !isScreenLarge }"
                  style="z-index: 1"></div>
@@ -132,7 +133,8 @@
    </div>
 
    <div id="visualization-container"
-        :style="{ 'display': (isScreenLarge || show === 'gecoviz') ? 'block' : 'none' }">
+        :style="{ 'display': (isScreenLarge || show === 'gecoviz') ? 'block' : 'none',
+                       'width': isScreenLarge ? '60%' : '100%' } }">
        <div class="text-center mb-3" v-if="contextData.context && nAnchors">
            Showing [[ nAnchors ]] context(s)
             <button class="btn btn-sm btn-primary ml-2"
