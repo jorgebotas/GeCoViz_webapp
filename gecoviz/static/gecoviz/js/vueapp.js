@@ -292,6 +292,7 @@ var vueapp = new Vue({
             else {
                 const taxid = this.root.leaves().find(
                     d => d.data.lineage.includes(lineage)).data.id;
+                console.log(taxid)
                 this.selectTaxid(taxid, taxa, true);
            }
         },
@@ -542,8 +543,10 @@ var vueapp = new Vue({
         },
 
         nSelected : function() {
+            const selectedTaxids = this.selectedTaxids.map(d => d.id);
+            console.log(selectedTaxids)
             return this.allItems.reduce((total, i) => {
-                if (this.selectedTaxids.map(d => d.id).includes(i.id))
+                if (selectedTaxids.includes(i.id))
                     return total + i.value;
                 return total
             }, 0)
