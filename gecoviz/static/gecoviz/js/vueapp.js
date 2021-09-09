@@ -231,8 +231,10 @@ var vueapp = new Vue({
                 this.updateSearch();
                 hideSpinner();
 
-                if (this.allItems.length <= 250)
+                if (this.allItems.length <= 250) {
                     this.selectTaxa(this.root, true)
+                    this.toggleGeCoViz();
+                }
             }, 0)
         },
 
