@@ -586,7 +586,7 @@ var vueapp = new Vue({
             return `${rank}: ${t}`;
         }
     },
-    mounted: async function() {
+    mounted: function() {
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
                 d3.selectAll("#add-button-container *").remove();
@@ -664,7 +664,7 @@ var vueapp = new Vue({
             //d3.select(`#search-type inpu.split("%2C")t[value="${this.searchType}"]`)
                 //.attr("checked", true);
 
-            await this.searchQuery(searchType, query, urlParams);
+            this.searchQuery(searchType, query, urlParams);
 
             if (taxids && taxids.length) {
                 taxids.split("%2C").forEach(t => this.selectTaxid(t, this.root));
