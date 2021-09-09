@@ -130,7 +130,8 @@
                                        overflow-y:scroll;
                                        flex-direction:column;">
                                 <div v-for="d in selectedTaxa"
-                                    class="w-100 text-align-left my-1">
+                                    class="w-100 text-align-left my-1"
+                                    style="overflow-y:visible">
                                     <span class="badge mr-1"
                                         :class="taxBadgeColors[d.source.data.rank] || 'bg-indigo-lt'">
                                         [[ d.source.data.rank ]]
@@ -138,19 +139,21 @@
                                     <a @click="sunBurst.highlightPath(d.source)">
                                         [[ d.source.data.tname ]] 
                                     </a>
-                                    <a class="color-yellow f-bold dropdown-toggle no-after"
-                                      style="font-size: .8rem;"
-                                      data-toggle="dropdown"
-                                      data-bs-auto-close="outside"
-                                      role="button">
-                                        ([[ d.taxids.length ]] genomes)
-                                    </a>
-                                    <ul class="dropdown-menu suggestion-menu species-menu">
-                                        <li>hi</li>
-                                        <li>hi</li>
-                                        <li>hi</li>
-                                        <li>hi</li>
-                                    </ul>
+                                    <div class="dropdown">
+                                        <a class="color-yellow f-bold dropdown-toggle no-after"
+                                          style="font-size: .8rem;"
+                                          data-toggle="dropdown"
+                                          data-bs-auto-close="outside"
+                                          role="button">
+                                            ([[ d.taxids.length ]] genomes)
+                                        </a>
+                                        <ul class="dropdown-menu suggestion-menu species-menu">
+                                            <li>hi</li>
+                                            <li>hi</li>
+                                            <li>hi</li>
+                                            <li>hi</li>
+                                        </ul>
+                                    </div>
 
                                     <a class="ml-1" role="button"
                                         @click="deselectTaxa(d.source)">
