@@ -19,11 +19,11 @@
 <div class="container-xxl row" style="max-width:100%;">
 
    <div id="sunburst-selector-container" 
-        :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none' }">
+        :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none',
+                  'width': isScreenLarge ? '40%' : '100%'  }">
         <div class="mt-0"
             :class="{ 'd-flex' : !isScreenLarge }"
-            :style="{ 'visibility': allItems.length ? 'visible' : 'hidden',
-                       'width': isScreenLarge ? '40%' : '100%' }">
+            :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
             <div class="sunburst-selector"
                  :class="{ 'w-100' : isScreenLarge, 'w-50' : !isScreenLarge }"
                  style="z-index: 1"></div>
