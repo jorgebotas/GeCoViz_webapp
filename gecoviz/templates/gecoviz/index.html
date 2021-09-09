@@ -21,7 +21,8 @@
    <div id="sunburst-selector-container" 
         class="col-xxl-5 col-sm-12"
         :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none' }">
-        <div class="mt-0 d-flex">
+        <div class="mt-0 d-flex"
+            :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
             <div class="sunburst-selector w-50"
                  style="z-index: 1"></div>
             <div class="w-50">
