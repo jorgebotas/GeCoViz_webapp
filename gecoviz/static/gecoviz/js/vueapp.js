@@ -273,19 +273,22 @@ var vueapp = new Vue({
             }, 500);
         },
 
-        showLevels: function(d) {
-            console.log(d)
+        selectTaxid: function(id, source, show) {
+            const isSelected = this.selectedTaxids.find(t => t.id === id);
+            show = show || !isSelected;
+            if (isSelected) {
+                if (!show)
+                    this.selectedTaxids = this.selectedTaxids.filter(
+                        t => t.id != id);
+            } else if (show)
+                this.selectedTaxids.push({ id: id, source: source });
         },
 
-        selectTaxa: function(taxa, allDescendants=false) {
+        selectLineages: function(lineages) {
+            lineages.forEach(l => selectLineage(l));
+        },
 
-            this.sunBurst.highlightPath(taxa)
-
-            if (!taxa.data.descendantLevels)
-                taxa.descendantLevels = this.getDescendantLevels(taxa)
-            
-            const lineage = taxa.data.lineage
-
+        selectLineage: function(lineage, allDescendants=false) {
             if (allDescendants)
                 this.allItems
                     .filter(d => d.lineage.includes(lineage))
@@ -297,15 +300,14 @@ var vueapp = new Vue({
             }
         },
 
-        selectTaxid: function(id, source, show) {
-            const isSelected = this.selectedTaxids.find(t => t.id === id);
-            show = show || !isSelected;
-            if (isSelected) {
-                if (!show)
-                    this.selectedTaxids = this.selectedTaxids.filter(
-                        t => t.id != id);
-            } else if (show)
-                this.selectedTaxids.push({ id: id, source: source });
+        selectTaxa: function(taxa, allDescendants=false) {
+            this.sunBurst.highlightPath(taxa);
+
+            if (!taxa.data.descendantLevels)
+                taxa.descendantLevels = this.getDescendantLevels(taxa);
+            
+            const lineage = taxa.data.lineage;
+            this.selectLineage(lineage, allDescendants);
         },
 
         deselectTaxa: function(taxa) {
