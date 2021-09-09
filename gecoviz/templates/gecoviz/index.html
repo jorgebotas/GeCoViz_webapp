@@ -16,7 +16,7 @@
   </li>
 </ul>
 
-<div class="container-xxl" style="max-width:100%;">
+<div class="container-xxl row" style="max-width:100%;">
 
    <div id="sunburst-selector-container" 
         :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none' }">
@@ -82,7 +82,7 @@
                 </div>
                 <div id="shown-items" class="d-flex h-100" 
                     style="max-height:350px;
-                           overflow-y:scroll;
+                           overflow:visible;
                            flex-direction:column;">
                     <div v-for="d in selectedTaxa"
                         class="w-100 text-align-left my-1"
