@@ -154,7 +154,7 @@
                                             </li>
                                             <li v-for="(lineages, level) in d.source.descendantLevels"
                                                 class="dropdown-item"
-                                                @click="selectLineages(lineages)">
+                                                @click="selectLineages(lineages, d.source)">
                                                 [[ level ]]: [[ lineages.length ]]
                                             </li>
                                         </ul>

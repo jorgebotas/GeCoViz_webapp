@@ -284,11 +284,11 @@ var vueapp = new Vue({
                 this.selectedTaxids.push({ id: id, source: source });
         },
 
-        selectLineages: function(lineages) {
-            lineages.forEach(l => selectLineage(l));
+        selectLineages: function(lineages, taxa) {
+            lineages.forEach(l => selectLineage(l, taxa));
         },
 
-        selectLineage: function(lineage, allDescendants=false) {
+        selectLineage: function(lineage, taxa, allDescendants=false) {
             if (allDescendants)
                 this.allItems
                     .filter(d => d.lineage.includes(lineage))
@@ -307,7 +307,7 @@ var vueapp = new Vue({
                 taxa.descendantLevels = this.getDescendantLevels(taxa);
             
             const lineage = taxa.data.lineage;
-            this.selectLineage(lineage, allDescendants);
+            this.selectLineage(lineage, taxa, allDescendants);
         },
 
         deselectTaxa: function(taxa) {
