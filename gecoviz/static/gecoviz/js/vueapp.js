@@ -357,19 +357,14 @@ var vueapp = new Vue({
             $("#sunburst-navlink").addClass("active");
             this.show = "sunburst";
 
-            hide("#visualization-container");
             // Do not toggle if now query has been processed
             if (this.allItems.length == 0)
                 this.searchQuery();
-            const container = $("#sunburst-selector-container")
-            if (container.hasClass("show"))
-                hide("#sunburst-selector-container")
-            else {
-                show("#sunburst-selector-container")
-                d3.selectAll(".sunburst-selector *").remove();
-                const taxonomy = this.allItems.map(d => [d.lineage, d.value]);
-                this.sunBurst = SeqSunburst(taxonomy, 500, 6, true, this.showAddButton, this.root)
-                    .draw(".sunburst-selector");
+
+            d3.selectAll(".sunburst-selector *").remove();
+            const taxonomy = this.allItems.map(d => [d.lineage, d.value]);
+            this.sunBurst = SeqSunburst(taxonomy, 500, 6, true, this.showAddButton, this.root)
+                .draw(".sunburst-selector");
             }
         },
 
