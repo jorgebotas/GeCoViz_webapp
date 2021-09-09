@@ -272,7 +272,6 @@ var vueapp = new Vue({
         },
 
         selectTaxid: function(id, source, show) {
-            console.log(this.selectedTaxids)
             const isSelected = this.selectedTaxids.find(t => t.id === id);
             show = show || !isSelected;
             if (isSelected) {
@@ -551,7 +550,6 @@ var vueapp = new Vue({
         commonSelectedTaxa: function() {
             const sharedTaxa = this.selectedTaxa.reduce((t, it, i) => {
                 const itSplit = it.source.data.lineage.split(";");
-                console.log(itSplit)
                 if (i === 0)
                     t =  itSplit
                 else
