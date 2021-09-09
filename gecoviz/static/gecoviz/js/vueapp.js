@@ -586,7 +586,7 @@ var vueapp = new Vue({
             return `${rank}: ${t}`;
         }
     },
-    mounted: function() {
+    mounted: async function() {
         console.log(this.isScreenLarge)
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
@@ -667,6 +667,8 @@ var vueapp = new Vue({
 
             if (taxids && taxids.length) {
                 this.selectedTaxids = taxids.split("%2C").map(t => ({ id: t }));
+                if (this.isScreenLarge)
+                    await this.searchQuery(searchType, query, urlParams);
                 this.visualizeSelection();
             } else
                 this.searchQuery(searchType, query, urlParams);
