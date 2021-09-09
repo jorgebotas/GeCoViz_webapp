@@ -16,10 +16,9 @@
   </li>
 </ul>
 
-<div class="container-xxl row" style="max-width:100%;">
+<div class="container-xxl" style="max-width:100%;">
 
    <div id="sunburst-selector-container" 
-        class="col-xxl-5 col-sm-12"
         :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none' }">
         <div class="mt-0 d-flex"
             :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
@@ -127,7 +126,6 @@
    </div>
 
    <div id="visualization-container"
-        class="col-xxl-7 col-sm-12"
         :style="{ 'display': (isScreenLarge || show === 'gecoviz') ? 'block' : 'none' }">
        <div class="text-center mb-3" v-if="contextData.context && nAnchors">
            Showing [[ nAnchors ]] context(s)
