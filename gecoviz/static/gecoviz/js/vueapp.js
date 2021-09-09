@@ -381,8 +381,8 @@ var vueapp = new Vue({
         },
 
         toggleGeCoViz : async function() {
-            $("#sunburst-tab-pill").removeClass("active");
-            $("#gecoviz-tab-pill").addClass("active");
+            $("#sunburst-navlink").removeClass("active");
+            $("#gecoviz-navlink").addClass("active");
             this.show = "gecoviz";
 
             const selector = "#gecoviz-container";
