@@ -91,7 +91,7 @@
                                   <li class="dropdown-item"
                                       v-for="t in searchedTaxa"
                                       @click="selectTaxa(t)">
-                                      <b><span class="badge"
+                                      <b><span class="badge mr-1"
                                               :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
                                               [[ t.data.rank ]]
                                           </span>
@@ -128,7 +128,7 @@
                                 style="max-height:350px;
                                        overflow-y:scroll;
                                        flex-direction:column;">
-                                <div v-for="d in allItems" 
+                                <div v-for="d in allItems"
                                      v-if="selectedTaxids.includes(d.id)"
                                     class="w-100 d-flex text-align-left">
                                     <label class="form-selectgroup-item"

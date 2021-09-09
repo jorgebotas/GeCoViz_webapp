@@ -13129,6 +13129,7 @@ a:hover {
   font-size: .7rem;
   user-select: none;
   margin: 0;
+  margin-top: 7px;
   position: absolute;
   z-index: 1030;
   top: 100% !important;
