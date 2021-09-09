@@ -590,7 +590,7 @@ var vueapp = new Vue({
         }
     },
     mounted: function() {
-        this.isScreenLarge = window.screen.availWidth > 1900;
+        this.isScreenLarge = +window.screen.availWidth > 1900;
 
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
