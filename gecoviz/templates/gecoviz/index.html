@@ -91,10 +91,12 @@
                                   <li class="dropdown-item"
                                       v-for="t in searchedTaxa"
                                       @click="selectTaxa(t)">
-                                      <b><span class="badge bg-indigo-lt">[[ t.data.rank ]]</span>
+                                      <b><span class="badge"
+                                              :class="taxBadgeColors[t.data.rank] || bg-indigo-lt">
+                                              [[ t.data.rank ]]
+                                          </span>
                                       <b class="f-bold">
                                           [[ t.data.tname ]]
-                                          {% comment %}[[ t.rank ]]{% endcomment %}
                                       </b></b>
                                   </li>
                                 </ul>

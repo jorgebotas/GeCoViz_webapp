@@ -142,6 +142,16 @@ var vueapp = new Vue({
             newick: "",
             context: [],
         },
+        taxBadgeColors: {
+            'phylum': 'bg-red-lt',
+            'class': 'bg-green-lt',
+            'order': 'bg-yellow-lt',
+            'family': 'bg-orange-lt',
+            'genus': 'bg-pink-lt',
+            'species': 'bg-blue-lt',
+            'subspecies': 'bg-red-lt',
+            'strain': 'bg-green-lt',
+        }
     },
 
     methods: {
