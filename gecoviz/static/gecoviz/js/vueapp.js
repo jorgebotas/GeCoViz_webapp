@@ -557,7 +557,6 @@ var vueapp = new Vue({
 
         commonSelectedTaxa: function() {
             const sharedTaxa = this.selectedTaxa.reduce((t, it, i) => {
-                console.log(it)
                 const itSplit = it.source.data.lineage.split(";");
                 console.log(itSplit)
                 if (i === 0)

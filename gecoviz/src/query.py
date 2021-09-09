@@ -77,7 +77,7 @@ def get_newick(field, query, taxids):
     for leaf in tree.get_leaves():
         taxid = leaf.name
         children = members_in_taxid[taxid]
-        lineage = taxid_lineages[taxid]
+        lineage = taxid_lineages.get(taxid, [""])
         last_tax_level = lineage[-1].replace("__", "_")
         if len(children) == 1:
             child_name = children[0].replace(".", "")
