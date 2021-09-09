@@ -16,7 +16,7 @@
 <div class="container-xxl" style="max-width:100%;">
 
    <div id="sunburst-selector-container" 
-        v-if="show === 'sunburst'">
+        style="{ 'display': show === 'sunburst' ? 'block' : 'none' }">
        <div class="accordion-body">
             <div class="mt-0 d-flex">
                 <div class="sunburst-selector w-50"
@@ -124,7 +124,7 @@
    </div>
 
    <div id="visualization-container"
-        v-if="show === 'gecoviz'">
+        style="{ 'display': show === 'gecoviz' ? 'block' : 'none' }">
        <div class="text-center" v-if="contextData.context && nAnchors">
            Showing [[ nAnchors ]] context(s)
             <button class="btn btn-sm btn-primary ml-2"

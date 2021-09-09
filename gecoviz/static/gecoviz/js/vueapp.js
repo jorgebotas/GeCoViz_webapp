@@ -125,6 +125,7 @@ var vueapp = new Vue({
     delimiters: ['[[', ']]'],
     el: '#GeCoVizApp',
     data: {
+        show: "sunburst",
         query: undefined,
         searchType: undefined,
         searchTypeChoices: undefined,
