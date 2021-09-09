@@ -13037,6 +13037,9 @@ Antialiasing
   background: #2a2a2a;
   box-shadow: 5px 5px 16px #212121, -5px -5px 16px #333333; }
 
+.f-bold {
+  font-weight: bold !important; }
+
 a {
   text-decoration: none !important;
   color: #6574cd;
