@@ -69,7 +69,8 @@ function buildTaxaHierarchy(data) {
         const root = { name: "root", children: [] };
         for (let i = 0; i < data.length; i++) {
           const sequence = data[i][0];
-          const size = +data[i][1];
+          const id = +data[i][1]
+          const size = +data[i][2];
           if (isNaN(size)) {
             // e.g. if this is a header row
             continue;
@@ -98,7 +99,7 @@ function buildTaxaHierarchy(data) {
               currentNode = childNode;
             } else {
               // Reached the end of the sequence; create a leaf node.
-              childNode = { name: nodeName, value: size, children: [] };
+              childNode = { name: nodeName, id: id, value: size, children: [] };
               children.push(childNode);
             }
           }
@@ -128,7 +129,8 @@ var vueapp = new Vue({
         searchType: undefined,
         searchTypeChoices: undefined,
         suggestions: [],
-        selectedItems: [],
+        selectedTaxids: [],
+        selectedTaxa: [],
         searchedTaxa: [],
         suggestionTimeout: undefined,
         searchTimeout: undefined,
@@ -146,7 +148,7 @@ var vueapp = new Vue({
             $('#spinner').modal('show');
             const newQuery = query || $("#query-search").val().trim();
             if (newQuery) {
-                this.selectedItems = [];
+                this.selectedTaxids = [];
                 this.searchedTaxa = [];
                 this.query = newQuery;
             }
@@ -187,7 +189,7 @@ var vueapp = new Vue({
                 return context;
             }
 
-            const taxids = this.selectedItems.join(",");
+            const taxids = this.selectedTaxids.join(",");
             const endpoint = `${this.searchType}/${this.query}/${taxids}/`;
 
             this.contextData.newick = await getNewick(endpoint);
@@ -197,14 +199,13 @@ var vueapp = new Vue({
         fetchThen : function(data, fetchURL) {
             this.allItems = data.matches;
             this.allTaxa = buildTaxaHierarchy(this.allItems
-                .map(i => [i.lineage, i.value])).descendants().slice(1);
+                .map(i => [i.lineage, i.id, i.value])).descendants().slice(1);
             this.allTaxa.forEach(t => t.lineage = getLineage(t));
             this.allTaxaLineages = [...new Set(this.allTaxa.map(t => t.lineage))]
                 .map(lineage => { 
                     const [ rank, name ] = getNameFromLineage(lineage).split("__");
                     return { rank: rank, name: name, lineage: lineage }
                 })
-            console.log(this.allTaxaLineages)
             if (this.allItems.length == 0) {
                 fetchCatch();
                 return;
@@ -253,7 +254,6 @@ var vueapp = new Vue({
 
                 this.searchedTaxa = this.allTaxaLineages.filter(d =>
                     d.name.toLowerCase().includes(search))
-                console.log(this.searchedTaxa)
             }, 500);
         },
 
@@ -266,24 +266,23 @@ var vueapp = new Vue({
                 const taxid = this.allItems.find(
                     d => d.lineage.includes(lineage)).id;
                 this.selectItem(taxid, true);
-                console.log(this.selectedItems)
             }
         },
 
         selectItem: function(id, show) {
-            show = show || !this.selectedItems.includes(id);
-            if (this.selectedItems.includes(id)) {
+            show = show || !this.selectedTaxids.includes(id);
+            if (this.selectedTaxids.includes(id)) {
                 if (!show)
-                    this.selectedItems = this.selectedItems.filter(
+                    this.selectedTaxids = this.selectedTaxids.filter(
                         s => s != id);
             } else if (show)
-                this.selectedItems.push(id);
+                this.selectedTaxids.push(id);
 
             this.updateSearch();
         },
 
         deselectAll: function() {
-            this.selectedItems = [];
+            this.selectedTaxids = [];
             this.updateSearch();
         },
 
@@ -366,7 +365,7 @@ var vueapp = new Vue({
             const params = {
                 query: this.query,
                 searchType: this.searchType,
-                taxids: this.selectedItems.join(",")
+                taxids: this.selectedTaxids.join(",")
             }
 
             this.updateSearchParams(params);
@@ -508,12 +507,12 @@ var vueapp = new Vue({
         },
         nSelected : function() {
             return this.allItems.reduce((total, i) => {
-                if (this.selectedItems.includes(i.id))
+                if (this.selectedTaxids.includes(i.id))
                     return total + i.value;
                 return total
             }, 0)
         },
-        selectedTaxa: function() {
+        commonSelectedTaxa: function() {
             const sharedTaxa = this.searchedTaxa.reduce((t, it, i) => {
                 const itSplit = it.lineage.split(";")
                 if (i === 0)
@@ -622,7 +621,7 @@ var vueapp = new Vue({
                 //.attr("checked", true);
 
             if (taxids && taxids.length) {
-                this.selectedItems = taxids.split("%2C");
+                this.selectedTaxids = taxids.split("%2C");
                 this.visualizeSelection();
             } else
                 this.searchQuery(searchType, query, urlParams);

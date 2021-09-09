@@ -62,9 +62,9 @@
                      style="font-family:'Impact'; font-size:1.1rem">2</div>
                 Select a maximum of 250 genomes
                 <div class="ml-4 badge bg-indigo"
-                    v-if="selectedTaxa"
+                    v-if="commonSelectedTaxa"
                     style="font-size:.9rem">
-                    [[ selectedTaxa | styleTaxa ]]
+                    [[ commonSelectedTaxa | styleTaxa ]]
                 </div>
                </button>
            </h2>
@@ -110,7 +110,7 @@
                                  style="min-height:70px; flex-wrap:wrap">
                                 Total matches: [[ nMatches ]]<br>
                                 Selected: [[ nSelected ]] hit(s), [[
-                                selectedItems.length ]] genome(s)
+                                selectedTaxids.length ]] genome(s)
                                 <button class="btn btn-clean ml-5"
                                      @click="deselectAll()"
                                      :disabled="nSelected < 1">
@@ -129,14 +129,14 @@
                                        overflow-y:scroll;
                                        flex-direction:column;">
                                 <div v-for="d in allItems" 
-                                     v-if="selectedItems.includes(d.id)"
+                                     v-if="selectedTaxids.includes(d.id)"
                                     class="w-100 d-flex text-align-left">
                                     <label class="form-selectgroup-item"
                                         style="margin: .2rem .5rem;">
                                         <input class="form-selectgroup-input"
                                                type="checkbox" 
                                                :value="d.id"
-                                               :checked="selectedItems.includes(d.id)"
+                                               :checked="selectedTaxids.includes(d.id)"
                                                @click="selectTaxa(d.lineage, false)">
                                         <span class="form-selectgroup-label"
                                             style="font-size:.7rem; padding: .1rem .5rem">
