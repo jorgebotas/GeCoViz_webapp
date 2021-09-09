@@ -368,7 +368,7 @@ var vueapp = new Vue({
         },
 
         toggleGeCoViz : async function() {
-            showTab("gecoviz");
+            this.showTab("gecoviz");
 
             const selector = "#gecoviz-container";
 
