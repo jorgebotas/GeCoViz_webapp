@@ -656,7 +656,7 @@ var vueapp = new Vue({
             //d3.select(`#search-type inpu.split("%2C")t[value="${this.searchType}"]`)
                 //.attr("checked", true);
 
-            await this.searchQuery(searchType, query, taxids && taxids.length);
+            await this.searchQuery(searchType, query, !(taxids && taxids.length));
 
             if (taxids && taxids.length)
                 setTimeout(() => {
