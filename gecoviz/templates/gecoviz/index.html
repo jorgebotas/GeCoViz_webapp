@@ -24,9 +24,11 @@
              {% comment %}:class="{ d-flex : !isScreenLarge }"{% endcomment %}
             :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
             <div class="sunburst-selector"
-                 :class="{ isScreenLarge ? 'w-100' : 'w-50' }"
+                 {% comment %}:class="{ isScreenLarge ? 'w-100' : 'w-50' }"{% endcomment %}
                  style="z-index: 1"></div>
-            <div :class="{ isScreenLarge ? 'w-100' : 'w-50' }">
+            <div 
+                 {% comment %}:class="{ isScreenLarge ? 'w-100' : 'w-50' }"{% endcomment %}
+                >
                 <div class="input-icon m-2" 
                      style='min-width:250px; max-width: 500px;'>
                     <input type="text"
