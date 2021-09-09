@@ -127,7 +127,8 @@
 
    <div id="visualization-container"
         class="col-lg-7 col-sm-12"
-        :style="{ 'display': show === 'gecoviz' ? 'block' : 'none' }">
+        {% comment %}:style="{ 'display': show === 'gecoviz' ? 'block' : 'none' }"{% endcomment %}
+        >
        <div class="text-center mb-3" v-if="contextData.context && nAnchors">
            Showing [[ nAnchors ]] context(s)
             <button class="btn btn-sm btn-primary ml-2"
