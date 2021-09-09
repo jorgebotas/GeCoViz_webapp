@@ -230,6 +230,9 @@ var vueapp = new Vue({
                 this.toggleSunburstSelector();
                 this.updateSearch();
                 hideSpinner();
+
+                if (this.allItems.length <= 250)
+                    this.selectTaxa(this.root, true)
             }, 0)
         },
 
