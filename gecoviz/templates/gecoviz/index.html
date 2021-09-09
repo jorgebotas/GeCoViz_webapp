@@ -11,7 +11,7 @@
   <li class="nav-item">
     <a class="nav-link" 
        id="gecoviz-navlink"
-       :class="{ disabled : selectedTaxids.length }"
+       :class="{ disabled : !selectedTaxids.length }"
         @click="toggleGeCoViz()">Genomic context</a>
   </li>
 </ul>
