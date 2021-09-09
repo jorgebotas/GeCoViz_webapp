@@ -20,10 +20,9 @@
 
    <div id="sunburst-selector-container" 
         :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none' }">
-        <div class="mt-0"
+        <div class="mt-0 d-flex"
             :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
             <div class="sunburst-selector"
-                 :class="{ isScreenLarge ? w-100 : w-50 }"
                  style="z-index: 1"></div>
             <div class="w-50">
                 <div class="input-icon m-2" 
