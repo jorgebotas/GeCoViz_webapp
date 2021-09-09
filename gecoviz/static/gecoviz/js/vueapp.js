@@ -586,7 +586,8 @@ var vueapp = new Vue({
         }
     },
     mounted: async function() {
-        console.log(this.isScreenLarge)
+        console.log(this.nAnchors)
+        console.log(this.contextData)
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
                 d3.selectAll("#add-button-container *").remove();
