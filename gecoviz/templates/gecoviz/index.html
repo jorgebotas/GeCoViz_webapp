@@ -129,7 +129,7 @@
                                 style="max-height:350px;
                                        overflow-y:scroll;
                                        flex-direction:column;">
-                                <div v-for="(d, taxids) in selectedTaxa"
+                                <div v-for="(taxids, d) in selectedTaxa"
                                     class="w-100 d-flex text-align-left">
                                     <span class="badge"
                                         :class="taxBadgeColors[d.data.rank] || 'bg-indigo-lt'">
