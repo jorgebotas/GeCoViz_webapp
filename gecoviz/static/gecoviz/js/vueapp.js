@@ -179,6 +179,7 @@ var vueapp = new Vue({
                  .then(response => response.json())
                  .then(this.fetchThen)
                  .catch(fetchCatch)
+
         },
 
         searchContext: async function () {
@@ -306,7 +307,6 @@ var vueapp = new Vue({
         },
 
         selectTaxa: function(taxa, allDescendants=false) {
-            console.log(taxa)
             this.sunBurst.highlightPath(taxa);
 
             if (!taxa.data.descendantLevels)
@@ -587,6 +587,7 @@ var vueapp = new Vue({
         }
     },
     mounted: function() {
+        console.log(this.isScreenLarge)
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
                 d3.selectAll("#add-button-container *").remove();
@@ -661,16 +662,14 @@ var vueapp = new Vue({
             
             $("#query-search").val(this.query);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
-            //d3.select(`#search-type inpu.split("%2C")t[value="${this.searchType}"]`)
+            //d3.select(`#search-type input[value="${this.searchType}"]`)
                 //.attr("checked", true);
 
-            this.searchQuery(searchType, query, urlParams);
-
             if (taxids && taxids.length) {
-                taxids.split("%2C").forEach(t => this.selectTaxid(t, this.root));
-                console.log(this.selectedTaxids)
+                this.selectedTaxids = taxids.split("%2C").map(t => ({ id: t }));
                 this.visualizeSelection();
-            }
+            } else
+                this.searchQuery(searchType, query, urlParams);
         }
     },
 });
