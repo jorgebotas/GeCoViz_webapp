@@ -199,7 +199,7 @@ var vueapp = new Vue({
                 return context;
             }
 
-            const taxids = this.selectedTaxids.join(",");
+            const taxids = this.selectedTaxids.map(t => t.id).join(",");
             const endpoint = `${this.searchType}/${this.query}/${taxids}/`;
 
             this.contextData.newick = await getNewick(endpoint);
@@ -668,7 +668,7 @@ var vueapp = new Vue({
                 //.attr("checked", true);
 
             if (taxids && taxids.length) {
-                this.selectedTaxids = taxids.split("%2C");
+                this.selectedTaxids = taxids.split("%2C").map(t => ({ id: t }));
                 this.visualizeSelection();
             } else
                 this.searchQuery(searchType, query, urlParams);
