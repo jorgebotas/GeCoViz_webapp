@@ -13029,6 +13029,9 @@ Antialiasing
 .no-box-shadow {
   box-shadow: none !important; }
 
+.no-after::after {
+  display: none !important; }
+
 .neomorph-dark {
   border-radius: 32px;
   background: #2a2a2a;
@@ -13135,23 +13138,14 @@ a:hover {
   top: 100% !important;
   max-height: 300px;
   overflow: scroll;
-  padding: 7px !important; }
+  padding: 7px !important;
+  transform: none !important; }
 
 .suggestion-menu .dropdown-item {
   min-width: 14.5rem;
   border-radius: 5px;
   white-space: normal;
   padding: .25rem .5rem;
-  cursor: pointer; }
-
-.tb-close {
-  line-height: 0;
-  background: transparent;
-  border: none;
-  font-size: .8rem;
-  color: white !important;
-  padding: .3rem;
-  padding-left: .6rem;
   cursor: pointer; }
 
 .navbar .choices > .form-control {
