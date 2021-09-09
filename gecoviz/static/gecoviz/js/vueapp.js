@@ -147,9 +147,8 @@ var vueapp = new Vue({
             const otherSelector = selector === "sunburst" ? "gecoviz" : "sunburst";
             const toRemove = $(`#${otherSelector}-navlink`);
             const toAdd = $(`#${selector}-navlink`);
-            if (toRemove.hasClass("active"))
-                toRemove.removeClass("active");
             setTimeout(() => {
+                toRemove.removeClass("active");
                 toAdd.addClass("active");
             }, 100)
             this.show = selector;
