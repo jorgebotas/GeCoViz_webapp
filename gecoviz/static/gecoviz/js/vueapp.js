@@ -363,7 +363,7 @@ var vueapp = new Vue({
 
             d3.selectAll(".sunburst-selector *").remove();
             const taxonomy = this.allItems.map(d => [d.lineage, d.value]);
-            this.sunBurst = SeqSunburst(taxonomy, 600, 6, true, this.showAddButton, this.root)
+            this.sunBurst = SeqSunburst(taxonomy, 500, 6, true, this.showAddButton, this.root)
                 .draw(".sunburst-selector");
         },
 
@@ -383,8 +383,10 @@ var vueapp = new Vue({
             const selector = "#gecoviz-container";
 
             const content = d3.selectAll("#gecoviz-container *");
-            if (content.nodes().length)
+            if (content.nodes().length) {
                 content.remove();
+                return
+            }
 
             $('#spinner').modal('show');
             const params = {
