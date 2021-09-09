@@ -154,7 +154,7 @@ var vueapp = new Vue({
             this.show = selector;
         },
 
-        searchQuery : async function(searchType, query, options) {
+        searchQuery : async function(searchType, query, _hideSpinner) {
             $('#spinner').modal('show');
             const newQuery = query || $("#query-search").val().trim();
             if (newQuery) {
@@ -179,7 +179,7 @@ var vueapp = new Vue({
 
             await fetch(API_BASE_URL + `/emapper/${this.searchType}/${this.query}/`)
                  .then(response => response.json())
-                 .then(this.fetchThen)
+                 .then(data => this.fetchThen(data, _hideSpinner))
                  .catch(fetchCatch)
         },
 
@@ -209,7 +209,7 @@ var vueapp = new Vue({
             this.contextData.context = await getContext(endpoint);
         },
 
-        fetchThen : function(data, fetchURL) {
+        fetchThen : function(data, _hideSpinner=true) {
             this.allItems = data.matches;
             this.root =  buildTaxaHierarchy(this.allItems
                 .map(i => [i.lineage, i.id, i.value]))
@@ -227,7 +227,8 @@ var vueapp = new Vue({
             setTimeout(() => {
                 this.toggleSunburstSelector();
                 this.updateSearch();
-                hideSpinner();
+                if (_hideSpinner)
+                    hideSpinner();
 
                 if (this.allItems.length <= 250) {
                     this.selectTaxa(this.root, true);
@@ -350,7 +351,7 @@ var vueapp = new Vue({
             });
         },
 
-        toggleSunburstSelector: function() {
+        toggleSunburstSelector: function(hideSpinner=true) {
             this.showTab("sunburst");
             // Do not toggle if now query has been processed
             if (this.allItems.length == 0)
@@ -655,9 +656,9 @@ var vueapp = new Vue({
             //d3.select(`#search-type inpu.split("%2C")t[value="${this.searchType}"]`)
                 //.attr("checked", true);
 
-            await this.searchQuery(searchType, query, urlParams);
+            await this.searchQuery(searchType, query, taxids && taxids.length);
 
-            if (taxids && taxids.length) {
+            if (taxids && taxids.length)
                 setTimeout(() => {
                     this.root.descendantLevels = this.getDescendantLevels(this.root);
                     this.selectedTaxids = taxids.split("%2C").map(t => { 
@@ -665,7 +666,6 @@ var vueapp = new Vue({
                     });
                     this.visualizeSelection();
                 }, 100);
-            }
         }
     },
 });
