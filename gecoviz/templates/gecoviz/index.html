@@ -123,7 +123,6 @@
                                     <i class="fas fa-chevron-right ml-3"></i>
                                 </button>
                                 <div id="add-button-container" class="ml-3">
-                                    <button>Add </button>
                                 </div>
                             </div>
                             <div id="shown-items" class="d-flex" 
@@ -133,7 +132,7 @@
                                 <div v-for="(d, taxids) in selectedTaxa"
                                     class="w-100 d-flex text-align-left">
                                     <span class="badge"
-                                        :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
+                                        :class="taxBadgeColors[d.data.rank] || 'bg-indigo-lt'">
                                     </span>
                                     <b>[[ d.data.name ]] ([[ taxids.length ]] genomes)</b>
                                 </div>
