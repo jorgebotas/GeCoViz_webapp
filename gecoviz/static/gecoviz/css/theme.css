@@ -13144,6 +13144,16 @@ a:hover {
   padding: .25rem .5rem;
   cursor: pointer; }
 
+.tb-close {
+  line-height: 0;
+  background: transparent;
+  border: none;
+  font-size: .8rem;
+  color: white !important;
+  padding: .3rem;
+  padding-left: .6rem;
+  cursor: pointer; }
+
 .navbar .choices > .form-control {
   padding: .3rem .5rem;
   margin-top: .4rem !important; }
