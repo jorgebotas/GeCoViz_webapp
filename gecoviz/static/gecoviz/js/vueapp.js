@@ -666,11 +666,11 @@ var vueapp = new Vue({
 
             this.searchQuery(searchType, query, urlParams);
 
-            //if (taxids && taxids.length) {
-                //taxids.split("%2C").forEach(t => this.selectTaxid(t, this.root));
-                //console.log(this.selectedTaxids)
+            if (taxids && taxids.length) {
+                taxids.split("%2C").forEach(t => this.selectTaxid(t, this.root));
+                console.log(this.selectedTaxids)
                 //this.visualizeSelection();
-            //}
+            }
         }
     },
 });
