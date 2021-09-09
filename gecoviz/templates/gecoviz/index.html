@@ -18,7 +18,7 @@
 <div class="container-xxl" style="max-width:100%;">
 
    <div id="sunburst-selector-container" 
-        style="{ 'display': show === 'sunburst' ? 'block' : 'none' }">
+        :style="{ 'display': show === 'sunburst' ? 'block' : 'none' }">
         <div class="mt-0 d-flex">
             <div class="sunburst-selector w-50"
                  style="z-index: 1"></div>
@@ -124,7 +124,7 @@
    </div>
 
    <div id="visualization-container"
-        style="{ 'display': show === 'gecoviz' ? 'block' : 'none' }">
+        :style="{ 'display': show === 'gecoviz' ? 'block' : 'none' }">
        <div class="text-center" v-if="contextData.context && nAnchors">
            Showing [[ nAnchors ]] context(s)
             <button class="btn btn-sm btn-primary ml-2"
