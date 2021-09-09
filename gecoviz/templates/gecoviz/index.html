@@ -60,7 +60,7 @@
                 </div>
                 <div class="card-header d-flex"
                      style="min-height:70px; flex-wrap:wrap">
-                    Total matches: [[ nMatches ]]<br>
+                    <b class="mr-3">Total matches: [[ nMatches ]]</b>
                     Selected: [[ nSelected ]] hit(s), [[
                     selectedTaxids.length ]] genome(s)
                     <div class="w-100 mt-2">
@@ -110,7 +110,7 @@
                                 </li>
                                 <li class="dropdown-item"
                                     @click="selectTaxa(d.source, true)">
-                                    All genomes ([[ d.taxids.length ]])
+                                    All genomes
                                 </li>
                                 <li v-for="(lineages, level) in d.source.descendantLevels"
                                     class="dropdown-item"
