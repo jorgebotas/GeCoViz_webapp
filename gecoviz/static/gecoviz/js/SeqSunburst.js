@@ -197,7 +197,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
           .selectAll("path")
           .data(root.descendants().slice(1)) //.filter(d => arcVisible(d.current) || arcVisible(d.target))) // //
           .join("path")
-            .attr("class", d => getSequence(d).map(a => a.data.name).join(separator))
+            .attr("class", d => getSequence(d).map(a => a.data.name).join("--").replace(" ", ""))
             .attr("fill", d => palette(d.data.name))
             //.attr("fill", d => { while (d.depth > 1) d = d.parent; return palette(d.data.name); })
             .attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.8 : 0.8) : 0)
@@ -227,7 +227,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 const sequence = getSequence(d);
                 if (clickCallBack) {
                     const sequenceString = sequence
-                        .map(d => d.data.name).join("--").replace(" ", "");
+                        .map(d => d.data.name).join(separator);
                     clickCallBack(d);
                 }
                 path.filter(d => sequence.slice(0, -1).indexOf(d) >= 0)
