@@ -135,7 +135,9 @@
                                         :class="taxBadgeColors[d.source.data.rank] || 'bg-indigo-lt'">
                                         [[ d.source.data.rank ]]
                                     </span>
-                                    [[ d.source.data.tname ]] 
+                                    <a @click="sunBurst.highlightPath(d.source)">
+                                        [[ d.source.data.tname ]] 
+                                    </a>
                                     <a> 
                                         ([[ d.taxids.length ]] genomes)
                                     </a>
