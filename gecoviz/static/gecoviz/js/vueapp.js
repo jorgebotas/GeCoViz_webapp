@@ -670,7 +670,7 @@ var vueapp = new Vue({
                 setTimeout(() => {
                     console.log(taxids)
                     console.log(this.selectedTaxids)
-                    this.selectedTaxids = taxids.split("%2C").map(t => ({ id: t }));
+                    this.selectedTaxids = taxids.split("%2C").map(t => { return { id: t } });
                     this.visualizeSelection();
                 }, 100)
 
