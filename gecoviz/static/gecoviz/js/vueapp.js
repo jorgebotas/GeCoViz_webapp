@@ -663,11 +663,10 @@ var vueapp = new Vue({
 
             if (taxids && taxids.length) {
                 setTimeout(() => {
-                    const st = taxids.split("%2C").map(t => { 
+                    this.root.descendantLevels = this.getDescendantLevels(this.root);
+                    this.selectedTaxids = taxids.split("%2C").map(t => { 
                         return { id: t, source: this.root }
                     });
-                    console.log(st)
-                    this.selectedTaxids = st;
                     //this.visualizeSelection();
                 }, 100);
             }
