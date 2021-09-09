@@ -304,6 +304,10 @@ var vueapp = new Vue({
             console.log(this.selectedTaxa)
         },
 
+        deselectTaxa: function(taxa) {
+            this.selectedTaxids.filter(t => t.source != taxa);
+        },
+
         deselectAll: function() {
             this.selectedTaxids = [];
             this.updateSearch();
