@@ -539,7 +539,7 @@ var vueapp = new Vue({
         selectedTaxa: function() {
             return this.selectedTaxids.reduce( (selected, t) => {
                 const source = t.source || { data: { tname: t.id } };
-                (selected[source] || []).push(t.id)
+                (selected[source] = selected[source] || []).push(t.id)
                 return selected
             }, {})
         },
