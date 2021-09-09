@@ -667,8 +667,10 @@ var vueapp = new Vue({
             if (taxids && taxids.length) {
                 if (this.isScreenLarge)
                     await this.searchQuery(searchType, query, urlParams);
+
                 this.selectedTaxids = taxids.split("%2C").map(t => ({ id: t }));
                 this.visualizeSelection();
+
             } else
                 this.searchQuery(searchType, query, urlParams);
         }
