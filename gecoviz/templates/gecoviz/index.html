@@ -114,6 +114,7 @@
                                 </li>
                                 <li v-for="(lineages, level) in d.source.descendantLevels"
                                     class="dropdown-item"
+                                    :disabled="nSelected + lineages.length > 250"
                                     @click="selectLineages(lineages, d.source)">
                                     [[ level ]]: [[ lineages.length ]]
                                 </li>
