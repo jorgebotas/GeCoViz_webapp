@@ -545,7 +545,7 @@ var vueapp = new Vue({
         nSelected : function() {
             const selectedTaxids = this.selectedTaxids.map(d => d.id);
             const s = this.allItems.reduce((total, i) => {
-                if (selectedTaxids[0] == i.id)
+                if (selectedTaxids[0] === i.id)
                     console.log(i.value)
                 if (selectedTaxids.includes(i.id))
                     console.log(i.value)
