@@ -201,6 +201,7 @@ var vueapp = new Vue({
             const taxids = this.selectedTaxids.map(t => t.id).join(",");
             const endpoint = `${this.searchType}/${this.query}/${taxids}/`;
 
+            this.contextData.context = [];
             this.contextData.newick = await getNewick(endpoint);
             this.contextData.context = await getContext(endpoint);
         },
