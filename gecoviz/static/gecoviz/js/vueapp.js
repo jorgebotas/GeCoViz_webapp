@@ -315,6 +315,7 @@ var vueapp = new Vue({
         },
 
         getDescendantLevels: function(d) {
+            console.log('hiiii')
             const source = d.source
             const levels = source.descendants().slice(1).reduce((ranks, d) => {
                 const rank = d.data.name.split("__")[0];
