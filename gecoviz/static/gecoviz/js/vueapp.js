@@ -369,16 +369,11 @@ var vueapp = new Vue({
         },
 
         async visualizeSelection(refresh=true) {
-            hide("#sunburst-selector-container")
-            const container = $("#visualization-container");
-            if (container.hasClass("show"))
-                hide("#visualization-container")
-            else {
-                show("#visualization-container")
-
-                if (refresh)
-                    await this.toggleGeCoViz();
-            }
+            const content = d3.selectAll("#gecoviz-container *").nodes();
+            if (content.length && !refresh)
+                this.show = "gecoviz"
+            else
+                await this.toggleGeCoViz();
         },
 
         toggleGeCoViz : async function() {
