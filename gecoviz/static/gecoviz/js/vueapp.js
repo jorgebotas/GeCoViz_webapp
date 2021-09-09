@@ -306,6 +306,7 @@ var vueapp = new Vue({
         },
 
         selectTaxa: function(taxa, allDescendants=false) {
+            console.log(taxa)
             this.sunBurst.highlightPath(taxa);
 
             if (!taxa.data.descendantLevels)
