@@ -133,8 +133,11 @@
                                     class="w-100 d-flex text-align-left">
                                     <span class="badge"
                                         :class="taxBadgeColors[d.source.data.rank] || 'bg-indigo-lt'">
+                                        [[ d.source.data.rank ]]
                                     </span>
-                                    <b>[[ d.source.data.name ]] ([[ d.taxids.length ]] genomes)</b>
+                                    <b>[[ d.source.data.tname ]] <a > 
+                                            ([[ d.taxids.length ]] genomes)
+                                        </a></b>
                                 </div>
                             </div>
                         </div>
