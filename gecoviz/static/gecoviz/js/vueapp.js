@@ -660,7 +660,7 @@ var vueapp = new Vue({
             
             $("#query-search").val(this.query);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
-            //d3.select(`#search-type input[value="${this.searchType}"]`)
+            //d3.select(`#search-type inpu.split("%2C")t[value="${this.searchType}"]`)
                 //.attr("checked", true);
 
             if (taxids && taxids.length) {
@@ -670,7 +670,7 @@ var vueapp = new Vue({
                 setTimeout(() => {
                     console.log(taxids.split("%2C"))
                     console.log(this.selectedTaxids)
-                    this.selectedTaxids = taxids.split("%2C").map(t => { return { id: t } });
+                    taxids.split("%2C").forEach(t => this.selectTaxid(t, {}));
                     this.visualizeSelection();
                 }, 100)
 
