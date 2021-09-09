@@ -353,8 +353,8 @@ var vueapp = new Vue({
         },
 
         toggleSunburstSelector: function() {
-            $("#gecoviz-tab-pill").removeClass("active");
-            $("#sunburst-tab-pill").addClass("active");
+            $("#gecoviz-navlink").removeClass("active");
+            $("#sunburst-navlink").addClass("active");
             this.show = "sunburst";
 
             hide("#visualization-container");
