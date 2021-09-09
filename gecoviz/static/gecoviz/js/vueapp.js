@@ -159,6 +159,9 @@ var vueapp = new Vue({
             const newQuery = query || $("#query-search").val().trim();
             if (newQuery) {
                 this.selectedTaxids = [];
+                this.allItems = [];
+                this.root = [];
+                this.allTaxa = [];
                 this.searchedTaxa = [];
                 this.query = newQuery;
             }
