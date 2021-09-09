@@ -546,7 +546,7 @@ var vueapp = new Vue({
             const selectedTaxids = this.selectedTaxids.map(d => d.id);
             const s = this.allItems.reduce((total, i) => {
                 if (selectedTaxids[0] == i.id)
-                    console.log('hii')
+                    console.log(i.value)
                 if (selectedTaxids.includes(i.id))
                     return total + i.value;
                 return total
