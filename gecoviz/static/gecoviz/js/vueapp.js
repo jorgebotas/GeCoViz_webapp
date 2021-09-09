@@ -663,19 +663,12 @@ var vueapp = new Vue({
             //d3.select(`#search-type inpu.split("%2C")t[value="${this.searchType}"]`)
                 //.attr("checked", true);
 
+            await this.searchQuery(searchType, query, urlParams);
+
             if (taxids && taxids.length) {
-                if (this.isScreenLarge)
-                    await this.searchQuery(searchType, query, urlParams);
-
-                setTimeout(() => {
-                    console.log(taxids.split("%2C"))
-                    console.log(this.selectedTaxids)
-                    taxids.split("%2C").forEach(t => this.selectTaxid(t, {}));
-                    this.visualizeSelection();
-                }, 100)
-
-            } else
-                this.searchQuery(searchType, query, urlParams);
+                taxids.split("%2C").forEach(t => this.selectTaxid(t, this.root));
+                this.visualizeSelection();
+            }
         }
     },
 });
