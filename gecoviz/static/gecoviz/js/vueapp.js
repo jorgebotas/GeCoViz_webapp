@@ -331,27 +331,16 @@ var vueapp = new Vue({
             return levels
         },
 
-        showAddButton: function(lineage) {
+        showAddButton: function(d) {
             const container = d3.select("#add-button-container")
             container.selectAll("*").remove();
 
-            const matches = this.allItems
-                .filter(i =>  i.lineage.includes(lineage))//)i.lineage.slice(0, lineage.length) === lineage)
-            const match = matches.filter(i => i.lineage === lineage);
-
-            const toBeSelected = match.length ? +match[0].value : 
-                +matches.reduce((total, i) => total + i.value, 0);
-            const totalSelected = this.nSelected + toBeSelected;
-
             const button = container.append("button")
                 .attr("class", "btn btn-primary")
-                .attr("disabled", () => totalSelected > 250 ? true : null)
-                .html("Add " + toBeSelected);
+                .attr("disabled", () => nSelected > 250 ? true : null)
+                .html("Add " + d.data.tname);
             button.on("click", () => {
-                if (match.length)
-                    this.selectTaxid(match[0].id, undefined, true);
-                else
-                    matches.forEach(item => this.selectTaxid(item.id, true));
+                this.selectTaxa(d);
                 button.remove();
             });
         },
