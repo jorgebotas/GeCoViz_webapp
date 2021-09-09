@@ -133,11 +133,11 @@
    <div id="visualization-container"
         :style="{ 'display': (isScreenLarge || show === 'gecoviz') ? 'block' : 'none',
                   'width': isScreenLarge ? '60%' : '100%' }">
-       <div class="text-center mb-3" v-if="contextData.context && nAnchors">
-           Showing [[ nAnchors ]] context(s)
-            <button class="btn btn-sm btn-primary ml-2"
-                @click="downloadNeighborhood()">Download (tsv)</button>
-       </div>
+       {% comment %}<div class="text-center mb-3" v-if="contextData.context && nAnchors">{% endcomment %}
+           {% comment %}Showing [[ nAnchors ]] context(s){% endcomment %}
+            {% comment %}<button class="btn btn-sm btn-primary ml-2"{% endcomment %}
+                {% comment %}@click="downloadNeighborhood()">Download (tsv)</button>{% endcomment %}
+       {% comment %}</div>{% endcomment %}
        <div class="w-100" id="gecoviz-container"></div>
    </div>
 
