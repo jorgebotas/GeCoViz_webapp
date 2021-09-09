@@ -667,7 +667,7 @@ var vueapp = new Vue({
                         return { id: t, source: this.root }
                     });
                     //this.visualizeSelection();
-                }, 10000);
+                }, 100);
             }
         }
     },
