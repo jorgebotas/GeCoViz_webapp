@@ -411,6 +411,7 @@ var vueapp = new Vue({
                 .contextData(context)
                 .nSide(4)
                 .zoom(0.3)
+                .scaleDist()
                 .viewPort(document.querySelector(selector))
                 .geneText("Gene name")
                 .annotation("Orthologous groups", 2)
@@ -418,7 +419,6 @@ var vueapp = new Vue({
                 .draw();
 
             setTimeout(hideSpinner, 10);
-            setTimeout(gecoviz.scaleDist, 1000);
         },
 
         getSeq : function(query) {
