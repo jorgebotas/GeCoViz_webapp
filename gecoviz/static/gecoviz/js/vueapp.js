@@ -537,11 +537,13 @@ var vueapp = new Vue({
         },
 
         selectedTaxa: function() {
-            return this.selectedTaxids.reduce( (selected, t) => {
-                const source = t.source || { data: { tname: t.id } };
-                (selected[source] = selected[source] || []).push(t.id)
+            return Object.values(this.selectedTaxids.reduce( (selected, t) => {
+                const source = t.source || { data: { tname: t.id, lineage: t.id } };
+                selected[source.lineage] = selected[source.lineage] 
+                    || { source: source, taxids: [] };
+                selected[source.lineage].taxids.push(t.id);
                 return selected
-            }, {})
+            }, {}))
         },
 
         commonSelectedTaxa: function() {

@@ -129,12 +129,12 @@
                                 style="max-height:350px;
                                        overflow-y:scroll;
                                        flex-direction:column;">
-                                <div v-for="(taxids, d) in selectedTaxa"
+                                <div v-for="d in selectedTaxa"
                                     class="w-100 d-flex text-align-left">
                                     <span class="badge"
-                                        :class="taxBadgeColors[d.data.rank] || 'bg-indigo-lt'">
+                                        :class="taxBadgeColors[d.source.data.rank] || 'bg-indigo-lt'">
                                     </span>
-                                    <b>[[ d.data.name ]] ([[ taxids.length ]] genomes)</b>
+                                    <b>[[ d.source.data.name ]] ([[ d.taxids.length ]] genomes)</b>
                                 </div>
                             </div>
                         </div>
