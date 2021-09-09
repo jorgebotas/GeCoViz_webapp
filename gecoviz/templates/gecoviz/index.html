@@ -3,6 +3,18 @@
 {% block content %}
 
 <div class="container-xxl" style="max-width:100%;">
+
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link active" 
+            @click="toggleSunburstSelector()">Taxonomy selector</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" 
+            @click="toggleGeCoViz()">Genomic context</a>
+      </li>
+    </ul>
+
     <div id="form-accordion" class="accordion">
         <div class="accordion-item">
            <h2 class="accordion-header" id="step2-header">

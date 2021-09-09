@@ -429,7 +429,7 @@ var vueapp = new Vue({
                 .draw();
 
             setTimeout(hideSpinner, 10);
-            setTimeout(() => gecoviz.scaleDist, 1000);
+            setTimeout(() => gecoviz.scaleDist, 2000);
 
         },
 
