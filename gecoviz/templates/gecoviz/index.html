@@ -91,11 +91,9 @@
                                   <li class="dropdown-item"
                                       v-for="t in searchedTaxa"
                                       @click="selectTaxa(t)">
-                                      <b><b class="f-bold">[[ t.data.name ]]</b>
-                                      <br>
-                                      <b class="text-muted"
-                                          style="font-size:.6rem;
-                                          color: rgba(33, 43, 54, 0.5184) !important;">
+                                      <b><span class="badge bg-indigo-lt">[[ t.data.rank ]]</span>
+                                      <b class="f-bold">
+                                          [[ t.data.tname ]]
                                           {% comment %}[[ t.rank ]]{% endcomment %}
                                       </b></b>
                                   </li>
