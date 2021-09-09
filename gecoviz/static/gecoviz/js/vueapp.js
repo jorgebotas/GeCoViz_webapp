@@ -337,7 +337,7 @@ var vueapp = new Vue({
 
             const button = container.append("button")
                 .attr("class", "btn btn-primary")
-                .attr("disabled", () => nSelected > 250 ? true : null)
+                .attr("disabled", () => this.nSelected > 250 ? true : null)
                 .html("Add " + d.data.tname);
             button.on("click", () => {
                 this.selectTaxa(d);
