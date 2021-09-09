@@ -130,8 +130,8 @@
                                        overflow-y:scroll;
                                        flex-direction:column;">
                                 <div v-for="d in selectedTaxa"
-                                    class="w-100 text-align-left">
-                                    <span class="badge"
+                                    class="w-100 text-align-left my-1">
+                                    <span class="badge mr-1"
                                         :class="taxBadgeColors[d.source.data.rank] || 'bg-indigo-lt'">
                                         [[ d.source.data.rank ]]
                                     </span>
@@ -141,7 +141,7 @@
                                     <a> 
                                         ([[ d.taxids.length ]] genomes)
                                     </a>
-                                    <a role="button"
+                                    <a class="ml-1" role="button"
                                         @click="deselectTaxa(d.source)">
                                         <i class="fas fa-times"></i>
                                     </>
