@@ -261,7 +261,7 @@ var vueapp = new Vue({
 
         selectTaxa: function(taxa, allDescendants=false) {
 
-            sunBurst.highlightPath(taxa)
+            this.sunBurst.highlightPath(taxa)
             
             const lineage = taxa.lineage
 
