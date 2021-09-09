@@ -441,7 +441,7 @@ var vueapp = new Vue({
                 }).join("\t")
             });
 
-            const headedTsv = [ ...fields.join("\t"), ...tsv ].join("\n");
+            const headedTsv = [ fields.join("\t"), ...tsv ].join("\n");
 
             saveAs(new Blob([headedTsv]), "neighborhood.tsv")
         },
