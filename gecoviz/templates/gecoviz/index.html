@@ -110,7 +110,7 @@
                                 </li>
                                 <li class="dropdown-item"
                                     @click="selectTaxa(d.source, true)">
-                                    All genomes
+                                    All genomes ([[ d.taxids.length ]])
                                 </li>
                                 <li v-for="(lineages, level) in d.source.descendantLevels"
                                     class="dropdown-item"
