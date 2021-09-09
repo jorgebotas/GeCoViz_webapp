@@ -383,10 +383,8 @@ var vueapp = new Vue({
             const selector = "#gecoviz-container";
 
             const content = d3.selectAll("#gecoviz-container *");
-            if (content.nodes().length) {
+            if (content.nodes().length)
                 content.remove();
-                return
-            }
 
             $('#spinner').modal('show');
             const params = {
