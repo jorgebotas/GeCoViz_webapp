@@ -307,6 +307,7 @@ var vueapp = new Vue({
                 taxa.descendantLevels = this.getDescendantLevels(taxa);
             
             const lineage = taxa.data.lineage;
+            this.deselectTaxa(taxa);
             this.selectLineage(lineage, taxa, allDescendants);
         },
 
