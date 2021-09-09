@@ -254,8 +254,8 @@ var vueapp = new Vue({
                     return
                 }
 
-                this.searchedTaxa = this.allTaxaLineages.filter(d =>
-                    d.name.toLowerCase().includes(search))
+                this.searchedTaxa = this.allTaxa.filter(d =>
+                    d.data.name.toLowerCase().includes(search))
             }, 500);
         },
 
@@ -299,7 +299,6 @@ var vueapp = new Vue({
                 ranks[rank].push(lineage);
                 return ranks
             }, {})
-            console.log(levels)
         },
 
         showAddButton: function(lineage) {
@@ -519,7 +518,7 @@ var vueapp = new Vue({
         },
         commonSelectedTaxa: function() {
             const sharedTaxa = this.searchedTaxa.reduce((t, it, i) => {
-                const itSplit = it.lineage.split(";")
+                const itSplit = it.data.lineage.split(";")
                 if (i === 0)
                     t =  itSplit
                 else
@@ -551,11 +550,8 @@ var vueapp = new Vue({
         //})
 
         ["query", "taxa"].forEach(d => {
-            console.log(d)
             const searchbar = $(`#${d}-search`);
-            console.log(searchbar)
             const suggestions = $(`#${d}-suggestions`);
-            console.log(suggestions)
             searchbar.on("focus", () => {
                 suggestions.css("display", "block");
             })

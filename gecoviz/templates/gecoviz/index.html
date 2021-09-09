@@ -87,16 +87,16 @@
                                 <ul class="dropdown-menu suggestion-menu" 
                                   role="menu" id="taxa-suggestions"
                                   style="top: 100% !important"
-                                  :style="{ 'visibility': searchedTaxa.length ? 'visible' : 'hidden' }">
+                                  v-if="searchedTaxa.length">
                                   <li class="dropdown-item"
                                       v-for="t in searchedTaxa"
                                       @click="selectTaxa(t)">
-                                      <b><b class="f-bold">[[ t.name ]]</b>
+                                      <b><b class="f-bold">[[ t.data.name ]]</b>
                                       <br>
                                       <b class="text-muted"
                                           style="font-size:.6rem;
                                           color: rgba(33, 43, 54, 0.5184) !important;">
-                                          [[ t.rank ]]
+                                          {% comment %}[[ t.rank ]]{% endcomment %}
                                       </b></b>
                                   </li>
                                 </ul>
