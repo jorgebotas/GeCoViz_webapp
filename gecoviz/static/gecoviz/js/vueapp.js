@@ -668,9 +668,9 @@ var vueapp = new Vue({
                     await this.searchQuery(searchType, query, urlParams);
 
                 setTimeout(() => {
-                    this.selectedTaxids = taxids.split("%2C").map(t => ({ id: t }));
                     console.log(taxids)
                     console.log(this.selectedTaxids)
+                    this.selectedTaxids = taxids.split("%2C").map(t => ({ id: t }));
                     this.visualizeSelection();
                 }, 100)
 
