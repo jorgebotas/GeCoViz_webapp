@@ -280,6 +280,9 @@ var vueapp = new Vue({
         selectTaxa: function(taxa, allDescendants=false) {
 
             this.sunBurst.highlightPath(taxa)
+
+            if (!taxa.data.descendantLevels)
+                taxa.descendantLevels = this.getDescendantLevels(taxa)
             
             const lineage = taxa.data.lineage
 
@@ -315,9 +318,7 @@ var vueapp = new Vue({
         },
 
         getDescendantLevels: function(d) {
-            console.log('hiiii')
-            const source = d.source
-            const levels = source.descendants().slice(1).reduce((ranks, d) => {
+            const levels = d.descendants().slice(1).reduce((ranks, d) => {
                 const rank = d.data.name.split("__")[0];
                 ranks[rank] = ranks[rank] || [];
                 const lineage = getLineage(d);
@@ -325,8 +326,8 @@ var vueapp = new Vue({
                 return ranks
             }, {})
 
-            d.descendantLevels = levels;
-            console.log(d)
+            console.log(levels)
+            return levels
         },
 
         showAddButton: function(lineage) {

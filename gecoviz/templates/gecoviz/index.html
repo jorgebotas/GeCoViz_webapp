@@ -144,12 +144,12 @@
                                           style="font-size: .8rem;"
                                           data-toggle="dropdown"
                                           data-bs-auto-close="outside"
-                                          @click="getDescendantLevels(d)"
                                           role="button">
                                             ([[ d.taxids.length ]] genomes)
                                         </a>
-                                        <ul class="dropdown-menu suggestion-menu">
-                                            <li v-for="(lineages, level) in d.descendantLevels"
+                                        <ul class="dropdown-menu suggestion-menu"
+                                            v-if="d.source.descendantLevels">
+                                            <li v-for="(lineages, level) in d.source.descendantLevels"
                                                 class="dropdown-item"
                                                 @click="showLevels(level)">
                                                 [[ level ]]: [[ lineages.length ]]
