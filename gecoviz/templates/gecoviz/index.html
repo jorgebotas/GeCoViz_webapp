@@ -21,7 +21,7 @@
    <div id="sunburst-selector-container" 
         :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none' }">
         <div class="mt-0"
-             :class="{ d-flex : !isScreenLarge }"
+             {% comment %}:class="{ d-flex : !isScreenLarge }"{% endcomment %}
             :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
             <div class="sunburst-selector"
                  :class="{ isScreenLarge ? 'w-100' : 'w-50' }"
