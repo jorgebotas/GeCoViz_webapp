@@ -578,8 +578,8 @@ var vueapp = new Vue({
     },
     mounted: function() {
         document.addEventListener("click", () => {
-            if (!d3.select(".clone").node())
-                d3.selectAll("#add-button-container *").remove();
+            //if (!d3.select(".clone").node())
+                //d3.selectAll("#add-button-container *").remove();
         })
 
         ["query", "taxa"].forEach(d => {
