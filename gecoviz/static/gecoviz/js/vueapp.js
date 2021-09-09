@@ -667,9 +667,9 @@ var vueapp = new Vue({
             await this.searchQuery(searchType, query, urlParams);
 
             if (taxids && taxids.length) {
-                taxids.split("%2C").forEach(t => this.selectTaxid(t, this.root));
+                await taxids.split("%2C").forEach(t => this.selectTaxid(t, this.root));
                 console.log(this.selectedTaxids)
-                //this.visualizeSelection();
+                await this.visualizeSelection();
             }
         }
     },
