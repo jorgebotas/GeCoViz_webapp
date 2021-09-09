@@ -532,6 +532,11 @@ var vueapp = new Vue({
         },
     },
     computed: {
+
+        isScreenLarge: function() {
+            return this.isScreenLarge = +window.screen.availWidth > 2500;
+        },
+
         nMatches : function() {
             return this.allItems.reduce((total, i) => total + i.value, 0);
         },
@@ -585,8 +590,6 @@ var vueapp = new Vue({
         }
     },
     mounted: function() {
-        this.isScreenLarge = +window.screen.availWidth > 2500;
-
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
                 d3.selectAll("#add-button-container *").remove();
