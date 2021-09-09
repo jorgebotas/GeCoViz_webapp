@@ -138,9 +138,20 @@
                                     <a @click="sunBurst.highlightPath(d.source)">
                                         [[ d.source.data.tname ]] 
                                     </a>
-                                    <a> 
+                                    <a class="color-yellow f-bold dropdown-toggle no-after"
+                                      style="font-size: .8rem;"
+                                      data-toggle="dropdown"
+                                      data-bs-auto-close="outside"
+                                      role="button">
                                         ([[ d.taxids.length ]] genomes)
                                     </a>
+                                    <ul class="dropdown-menu suggestion-menu species-menu">
+                                        <li>hi</li>
+                                        <li>hi</li>
+                                        <li>hi</li>
+                                        <li>hi</li>
+                                    </ul>
+
                                     <a class="ml-1" role="button"
                                         @click="deselectTaxa(d.source)">
                                         <i class="fas fa-times"></i>
