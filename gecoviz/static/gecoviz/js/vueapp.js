@@ -136,7 +136,6 @@ var vueapp = new Vue({
         searchTimeout: undefined,
         allItems: [], 
         allTaxa: [],
-        allTaxaLineages: [],
         sunBurst: undefined,
         contextData: {
             newick: "",
@@ -217,11 +216,6 @@ var vueapp = new Vue({
                 d.data.lineage = getLineage(d)
             });
             this.allTaxa = this.root.descendants().slice(1);
-            this.allTaxaLineages = [...new Set(this.allTaxa.map(t => t.data.lineage))]
-                .map(lineage => { 
-                    const [ rank, name ] = getNameFromLineage(lineage).split("__");
-                    return { rank: rank, name: name, lineage: lineage }
-                })
             if (this.allItems.length == 0) {
                 fetchCatch();
                 return;
@@ -278,6 +272,8 @@ var vueapp = new Vue({
         },
 
         selectTaxid: function(id, source, show) {
+            console.log(id)
+            console.log(source)
             const isSelected = this.selectedTaxids.find(t => t.id === id);
             show = show || !isSelected;
             if (isSelected) {
@@ -671,8 +667,6 @@ var vueapp = new Vue({
             if (taxids && taxids.length) {
                 setTimeout(() => {
                     taxids.split("%2C").forEach(t => {
-                        console.log(t)
-                        console.log(this.root)
                         this.selectTaxid(t, this.root)
                     });
                     console.log(this.selectedTaxids)
