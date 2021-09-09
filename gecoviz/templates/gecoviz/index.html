@@ -121,7 +121,7 @@
                                                 Select representatives at taxonomic level
                                             </li>
                                             <li class="dropdown-item"
-                                                @click="selectLineages(lineages, d.source, true)">
+                                                @click="selectTaxa(d.source, true)">
                                                 All genomes
                                             </li>
                                             <li v-for="(lineages, level) in d.source.descendantLevels"
