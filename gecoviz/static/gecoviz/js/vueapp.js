@@ -272,6 +272,7 @@ var vueapp = new Vue({
         },
 
         selectTaxid: function(id, source, show) {
+            console.log(this.selectedTaxids)
             const isSelected = this.selectedTaxids.find(t => t.id === id);
             show = show || !isSelected;
             if (isSelected) {
