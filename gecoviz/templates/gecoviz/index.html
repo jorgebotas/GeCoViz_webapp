@@ -19,8 +19,8 @@
 <div class="container-xxl row" style="max-width:100%;">
 
    <div id="sunburst-selector-container" 
-        class="col-lg-5 col-sm-12"
-        :style="{ 'display': show === 'sunburst' ? 'block' : 'none' }">
+        class="col-xxl-5 col-sm-12"
+        :style="{ (isScreenLarge || show === 'sunburst') ? 'block' : 'none' }">
         <div class="mt-0 d-flex">
             <div class="sunburst-selector w-50"
                  style="z-index: 1"></div>
@@ -126,8 +126,8 @@
    </div>
 
    <div id="visualization-container"
-        class="col-lg-7 col-sm-12"
-        {% comment %}:style="{ 'display': show === 'gecoviz' ? 'block' : 'none' }"{% endcomment %}
+        class="col-xxl-7 col-sm-12"
+        :style="{ 'display': (isScreenLarge || show === 'gecoviz') ? 'block' : 'none' }"
         >
        <div class="text-center mb-3" v-if="contextData.context && nAnchors">
            Showing [[ nAnchors ]] context(s)

@@ -126,6 +126,7 @@ var vueapp = new Vue({
     el: '#GeCoVizApp',
     data: {
         show: "sunburst",
+        isScreenLarge: false,
         query: undefined,
         searchType: undefined,
         searchTypeChoices: undefined,
@@ -589,6 +590,8 @@ var vueapp = new Vue({
         }
     },
     mounted: function() {
+        this.isScreenLarge = window.screen.availWidth > 1900;
+
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
                 d3.selectAll("#add-button-container *").remove();
