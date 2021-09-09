@@ -201,7 +201,7 @@ var vueapp = new Vue({
             this.allItems = data.matches;
             this.root =  buildTaxaHierarchy(this.allItems
                 .map(i => [i.lineage, i.id, i.value]))
-            this.root.descendants().forEach(t => t.data.lineage = getLineage(t));
+            this.root.each(d => d.data.lineage = getLineage(t));
             this.allTaxa = this.root.descendants().slice(1);
             this.allTaxaLineages = [...new Set(this.allTaxa.map(t => t.data.lineage))]
                 .map(lineage => { 
@@ -337,8 +337,8 @@ var vueapp = new Vue({
             else {
                 show("#sunburst-selector-container")
                 d3.selectAll(".sunburst-selector *").remove();
-                const taxonomy = this.allItems.map(i => [i.lineage, i.value]);
-                this.sunBurst = SeqSunburst(taxonomy, 500, 6, true, this.getDescendantLevels)
+                //const taxonomy = this.allItems.map(i => [i.lineage, i.value]);
+                this.sunBurst = SeqSunburst(this.root, 500, 6, true, this.getDescendantLevels, true)
                     .draw(".sunburst-selector");
             }
         },
