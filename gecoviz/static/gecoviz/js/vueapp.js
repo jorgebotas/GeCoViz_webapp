@@ -667,7 +667,7 @@ var vueapp = new Vue({
                     this.selectedTaxids = taxids.split("%2C").map(t => { 
                         return { id: t, source: this.root }
                     });
-                    //this.visualizeSelection();
+                    this.visualizeSelection();
                 }, 100);
             }
         }
