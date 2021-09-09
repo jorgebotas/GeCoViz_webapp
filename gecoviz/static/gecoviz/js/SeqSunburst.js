@@ -227,7 +227,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 const sequence = getSequence(d);
                 if (clickCallBack) {
                     const sequenceString = sequence
-                        .map(d => d.data.name).join(separator);
+                        .map(d => d.data.name).join("--").replace(" ", "");
                     clickCallBack(d);
                 }
                 path.filter(d => sequence.slice(0, -1).indexOf(d) >= 0)
