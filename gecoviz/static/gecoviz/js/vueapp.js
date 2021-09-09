@@ -365,7 +365,6 @@ var vueapp = new Vue({
             const taxonomy = this.allItems.map(d => [d.lineage, d.value]);
             this.sunBurst = SeqSunburst(taxonomy, 500, 6, true, this.showAddButton, this.root)
                 .draw(".sunburst-selector");
-            }
         },
 
         async visualizeSelection(refresh=true) {
