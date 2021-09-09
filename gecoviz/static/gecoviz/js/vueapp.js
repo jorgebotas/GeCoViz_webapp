@@ -284,8 +284,10 @@ var vueapp = new Vue({
                 if (!show)
                     this.selectedTaxids = this.selectedTaxids.filter(
                         t => t.id != id);
-            } else if (show)
+            } else if (show) {
+                console.log(this.selectedTaxids)
                 this.selectedTaxids.push({ id: id, source: source });
+            }
         },
 
         selectLineage: function(lineage, taxa, allDescendants=false) {
