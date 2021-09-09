@@ -548,7 +548,9 @@ var vueapp = new Vue({
                 if (selectedTaxids[0] == i.id)
                     console.log(i.value)
                 if (selectedTaxids.includes(i.id))
-                    return total + i.value;
+                    console.log(i.value)
+                if (selectedTaxids.includes(i.id))
+                    total += i.value;
                 return total
             }, 0)
             console.log(s)
