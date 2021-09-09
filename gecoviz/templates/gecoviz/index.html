@@ -92,7 +92,7 @@
                                       v-for="t in searchedTaxa"
                                       @click="selectTaxa(t)">
                                       <b><span class="badge"
-                                              :class="taxBadgeColors[t.data.rank] || bg-indigo-lt">
+                                              :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
                                               [[ t.data.rank ]]
                                           </span>
                                       <b class="f-bold">
