@@ -285,7 +285,7 @@ var vueapp = new Vue({
                     .forEach(d => this.selectTaxid(d.id, taxa, true))
             else {
                 const taxid = this.root.leaves().find(
-                    d => d.data.lineage.includes(lineage)).id;
+                    d => d.data.lineage.includes(lineage)).data.id;
                 console.log(taxid)
                 this.selectTaxid(taxid, taxa, true);
             }
