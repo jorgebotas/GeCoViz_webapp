@@ -663,8 +663,8 @@ var vueapp = new Vue({
 
             if (taxids && taxids.length) {
                 setTimeout(() => {
-                    taxids.split("%2C").forEach(t => {
-                        this.selectTaxid(t, this.allTaxa[0]);
+                    this.selectedTaxids = taxids.split("%2C").map(t => { 
+                        return { id: t, source: this.root }
                     });
                     //this.visualizeSelection();
                 }, 10000);
