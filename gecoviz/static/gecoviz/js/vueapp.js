@@ -9,7 +9,7 @@ var colors = [
     "#CCE3DE"
 ];
 
-var cleanString = function(s) {
+function cleanString(s) {
     let clean = String(s);
     let dirt = " \t.,;:_/\\'@<>?()[]{}#%!*|".split("");
     dirt.forEach(d => {
@@ -18,7 +18,7 @@ var cleanString = function(s) {
     return String(clean)
 }
 
-var hideSpinner = function(callback) {
+function hideSpinner(callback) {
     setTimeout(() => {
         $('#spinner').modal('hide');
         if (callback)
@@ -26,7 +26,7 @@ var hideSpinner = function(callback) {
     }, 1000)
 }
 
-var fetchCatch = function(e) {
+function fetchCatch(e) {
     if (e) console.log(e)
     hideSpinner(() => {
         setTimeout(() => {
@@ -35,7 +35,7 @@ var fetchCatch = function(e) {
     });
 }
 
-var show = function (selector) {
+function show(selector) {
     $(selector).collapse("show");
     $(".accordion-button", $(selector).prev())
         .removeClass("collapsed");
@@ -46,7 +46,7 @@ var show = function (selector) {
         }, 1000)
 }
 
-var hide = function (selector) {
+function hide(selector) {
     $(selector).collapse("hide");
     $(".accordion-button", $(selector).prev()).addClass("collapsed");
 }
@@ -130,7 +130,6 @@ var vueapp = new Vue({
         searchTypeChoices: undefined,
         suggestions: [],
         selectedTaxids: [],
-        selectedTaxa: [],
         searchedTaxa: [],
         suggestionTimeout: undefined,
         searchTimeout: undefined,
@@ -280,25 +279,26 @@ var vueapp = new Vue({
             
             const lineage = taxa.data.lineage
 
-            //if (allDescendants)
-                //this.allItems
-                    //.filter(d => d.lineage.includes(lineage))
-                    //.forEach(d => this.selectTaxid(d.id, true))
-            //else {
-                //const taxid = this.allItems.find(
-                    //d => d.lineage.includes(lineage)).id;
-                //this.selectTaxid(taxid, true);
-            //}
+            if (allDescendants)
+                this.allItems
+                    .filter(d => d.lineage.includes(lineage))
+                    .forEach(d => this.selectTaxid(d.id, taxa, true))
+            else {
+                const taxid = this.allTaxa.find(
+                    d => d.data.lineage.includes(lineage)).id;
+                this.selectTaxid(taxid, taxa, true);
+            }
         },
 
-        selectTaxid: function(id, show) {
-            show = show || !this.selectedTaxids.includes(id);
-            if (this.selectedTaxids.includes(id)) {
+        selectTaxid: function(id, source, show) {
+            const isSelected = this.selectedTaxids.find(t => t.id === id);
+            show = show || !isSelected;
+            if (isSelected) {
                 if (!show)
                     this.selectedTaxids = this.selectedTaxids.filter(
-                        s => s != id);
+                        t => t.id != id);
             } else if (show)
-                this.selectedTaxids.push(id);
+                this.selectedTaxids.push({ id: id, source: source });
         },
 
         deselectAll: function() {
@@ -334,7 +334,7 @@ var vueapp = new Vue({
                 .html("Add " + toBeSelected);
             button.on("click", () => {
                 if (match.length)
-                    this.selectTaxid(match[0].id, true);
+                    this.selectTaxid(match[0].id, undefined, true);
                 else
                     matches.forEach(item => this.selectTaxid(item.id, true));
                 button.remove();
@@ -524,6 +524,7 @@ var vueapp = new Vue({
         nMatches : function() {
             return this.allItems.reduce((total, i) => total + i.value, 0);
         },
+
         nSelected : function() {
             return this.allItems.reduce((total, i) => {
                 if (this.selectedTaxids.includes(i.id))
@@ -531,6 +532,15 @@ var vueapp = new Vue({
                 return total
             }, 0)
         },
+
+        selectedTaxa: function() {
+            return this.selectedTaxids.reduce( (selected, t) => {
+                const source = t.source || { data: { tname: t.id } };
+                (selected[source] || []).push(t.id)
+                return selected
+            }, {})
+        },
+
         commonSelectedTaxa: function() {
             const sharedTaxa = this.searchedTaxa.reduce((t, it, i) => {
                 const itSplit = it.data.lineage.split(";")

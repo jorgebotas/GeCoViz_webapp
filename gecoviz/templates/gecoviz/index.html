@@ -11,7 +11,7 @@
                 <div class="badge bg-indigo mr-2" 
                      style="font-family:'Impact'; font-size:1.1rem">1</div>
                 Query a gene of interest from the search bar
-                <div class="ml-4 badge bg-indigo"
+                <div class="ml-4 badge bg-indigo-lt"
                     v-if="query"
                     style="font-size:.9rem">
                     [[ query ]]
@@ -61,7 +61,7 @@
                 <div class="badge bg-indigo mr-2" 
                      style="font-family:'Impact'; font-size:1.1rem">2</div>
                 Select a maximum of 250 genomes
-                <div class="ml-4 badge bg-indigo"
+                <div class="ml-4 badge bg-indigo-lt"
                     v-if="commonSelectedTaxa"
                     style="font-size:.9rem">
                     [[ commonSelectedTaxa | styleTaxa ]]
@@ -122,25 +122,30 @@
                                     Visualize
                                     <i class="fas fa-chevron-right ml-3"></i>
                                 </button>
-                                <div id="add-button-container" class="ml-3"></div>
+                                <div id="add-button-container" class="ml-3">
+                                    <button>Add </button>
+                                </div>
                             </div>
                             <div id="shown-items" class="d-flex" 
                                 style="max-height:350px;
                                        overflow-y:scroll;
                                        flex-direction:column;">
-                                <div v-for="d in allItems"
-                                     v-if="selectedTaxids.includes(d.id)"
+                                <div v-for="(d, taxids) in selectedTaxa"
                                     class="w-100 d-flex text-align-left">
+                                    <span class="badge"
+                                        :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
+                                    </span>
+                                    <b>[[ d.data.name ]] ([[ taxids.length ]] genomes)</b>
                                     <label class="form-selectgroup-item"
                                         style="margin: .2rem .5rem;">
                                         <input class="form-selectgroup-input"
                                                type="checkbox" 
-                                               :value="d.id"
-                                               :checked="selectedTaxids.includes(d.id)"
-                                               @click="selectTaxa(t, false)">
+                                               :value="d.data.id"
+                                               :checked="true"
+                                               @click="selectTaxa(d, false)">
                                         <span class="form-selectgroup-label"
                                             style="font-size:.7rem; padding: .1rem .5rem">
-                                            [[ d.name | styleTaxa ]]</span>
+                                            [[ d.data.name | styleTaxa ]]</span>
                                     </label>
                                 </div>
                             </div>
