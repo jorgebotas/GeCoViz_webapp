@@ -272,8 +272,6 @@ var vueapp = new Vue({
         },
 
         selectTaxid: function(id, source, show) {
-            console.log(id)
-            console.log(source)
             const isSelected = this.selectedTaxids.find(t => t.id === id);
             show = show || !isSelected;
             if (isSelected) {
@@ -281,7 +279,6 @@ var vueapp = new Vue({
                     this.selectedTaxids = this.selectedTaxids.filter(
                         t => t.id != id);
             } else if (show) {
-                console.log(this.selectedTaxids)
                 this.selectedTaxids.push({ id: id, source: source });
             }
         },
@@ -304,7 +301,6 @@ var vueapp = new Vue({
         },
 
         selectTaxa: function(taxa, allDescendants=false) {
-            console.log(taxa)
             this.sunBurst.highlightPath(taxa);
 
             if (!taxa.data.descendantLevels)
@@ -670,7 +666,7 @@ var vueapp = new Vue({
                         this.selectTaxid(t, this.allTaxa[0]);
                     });
                     //this.visualizeSelection();
-                }, 100);
+                }, 10000);
             }
         }
     },
