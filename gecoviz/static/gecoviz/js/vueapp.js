@@ -533,7 +533,7 @@ var vueapp = new Vue({
     computed: {
 
         isScreenLarge: function() {
-            return this.isScreenLarge = +window.screen.availWidth > 2500;
+            return this.isScreenLarge = +window.innerWidth > 2500;
         },
 
         nMatches : function() {
