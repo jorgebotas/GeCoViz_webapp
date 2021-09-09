@@ -664,10 +664,12 @@ var vueapp = new Vue({
                 //.attr("checked", true);
 
             await this.searchQuery(searchType, query, urlParams);
+            console.log(this.selectedTaxids)
 
             if (taxids && taxids.length) {
                 console.log(this.root)
                 taxids.split("%2C").forEach(t => this.selectTaxid(t, this.root));
+                console.log(this.selectedTaxids)
                 this.visualizeSelection();
             }
         }
