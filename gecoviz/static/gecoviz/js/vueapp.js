@@ -586,8 +586,6 @@ var vueapp = new Vue({
         }
     },
     mounted: async function() {
-        console.log(this.nAnchors)
-        console.log(this.contextData)
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
                 d3.selectAll("#add-button-container *").remove();
@@ -671,6 +669,8 @@ var vueapp = new Vue({
 
                 setTimeout(() => {
                     this.selectedTaxids = taxids.split("%2C").map(t => ({ id: t }));
+                    console.log(taxids)
+                    console.log(this.selectedTaxids)
                     this.visualizeSelection();
                 }, 100)
 
