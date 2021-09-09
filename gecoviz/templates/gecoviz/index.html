@@ -17,7 +17,7 @@
   </li>
 </ul>
 
-<div class="container-xxl row" style="max-width:100%;">
+<div class="container-xxl row mb-3" style="max-width:100%;">
 
    <div id="sunburst-selector-container" 
         :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none',
@@ -135,7 +135,7 @@
         class="mt-3"
         :style="{ 'display': (isScreenLarge || show === 'gecoviz') ? 'block' : 'none',
                   'width': isScreenLarge ? '60%' : '100%' }">
-       <div class="text-center mb-3" v-if="contextData.context && nAnchors">
+       <div class="text-center" v-if="contextData.context && nAnchors">
            Showing [[ nAnchors ]] context(s)
             <button class="btn btn-sm btn-primary ml-2"
                 @click="downloadNeighborhood()">Download (tsv)</button>
