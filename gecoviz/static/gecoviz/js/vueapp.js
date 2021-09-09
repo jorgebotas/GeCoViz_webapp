@@ -669,7 +669,7 @@ var vueapp = new Vue({
             if (taxids && taxids.length) {
                 await taxids.split("%2C").forEach(t => this.selectTaxid(t, this.root));
                 console.log(this.selectedTaxids)
-                await this.visualizeSelection();
+                this.visualizeSelection();
             }
         }
     },
