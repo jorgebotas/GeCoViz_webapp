@@ -147,8 +147,8 @@
                                           role="button">
                                             ([[ d.taxids.length ]] genomes)
                                         </a>
-                                        <ul class="dropdown-menu suggestion-menu"
-                                            v-if="d.source.descendantLevels.length">
+                                        <ul class="dropdown-menu suggestion-menu" 
+                                            :style="{ 'visibility': d.source.descendantLevels.length ? 'visible' : 'hidden' }">
                                             <li class="dropdown-header pl-2">
                                                 Select representatives at taxonomic level
                                             </li>
