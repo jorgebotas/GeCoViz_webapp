@@ -2,171 +2,140 @@
 {% load static %}
 {% block content %}
 
+<ul class="nav nav-pills w-100 justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" 
+        @click="toggleSunburstSelector()">Taxonomy selector</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" 
+        @click="toggleGeCoViz()">Genomic context</a>
+  </li>
+</ul>
+
 <div class="container-xxl" style="max-width:100%;">
 
-    <ul class="nav nav-pills">
-      <li class="nav-item">
-        <a class="nav-link active" 
-            @click="toggleSunburstSelector()">Taxonomy selector</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" 
-            @click="toggleGeCoViz()">Genomic context</a>
-      </li>
-    </ul>
-
-    <div id="form-accordion" class="accordion">
-        <div class="accordion-item">
-           <h2 class="accordion-header" id="step2-header">
-               <button class="accordion-button collapsed"
-                   @click="toggleSunburstSelector()">
-                <div class="badge bg-indigo mr-2" 
-                     style="font-family:'Impact'; font-size:1.1rem">2</div>
-                Select a maximum of 250 genomes
-                <div class="ml-4 badge bg-indigo-lt"
-                    v-if="commonSelectedTaxa"
-                    style="font-size:.9rem">
-                    [[ commonSelectedTaxa | styleTaxa ]]
-                </div>
-               </button>
-           </h2>
-           <div id="sunburst-selector-container" 
-               class="accordion-collapse collapse"
-               aria-labelledby="step2-header" 
-               data-bs-parent="#form-accordion">
-               <div class="accordion-body">
-                    <div class="mt-0 d-flex">
-                        <div class="sunburst-selector w-50"
-                             style="z-index: 1"></div>
-                        <div class="w-50">
-                            <div class="input-icon m-2" 
-                                 style='min-width:250px; max-width: 500px;'>
-                                <input type="text"
-                                       class="form-control text-left"
-                                       id="taxa-search"
-                                       @keydown="updateSearch"
-                                       placeholder="Search..."/>
-                                <ul class="dropdown-menu suggestion-menu" 
-                                  role="menu" id="taxa-suggestions"
-                                  style="top: 100% !important"
-                                  :style="{ 'visibility': searchedTaxa.length ? 'visible' : 'hidden' }">
-                                  <li class="dropdown-item"
-                                      v-for="t in searchedTaxa"
-                                      @click="selectTaxa(t)">
-                                      <b><span class="badge mr-1"
-                                              :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
-                                              [[ t.data.rank ]]
-                                          </span>
-                                      <b class="f-bold">
-                                          [[ t.data.tname ]]
-                                      </b></b>
-                                  </li>
-                                </ul>
-                                <span class="input-icon-addon search-icon">
-                                    <i class="fa fa-search"
-                                       aria-hidden="true">
-                                    </i>
-                                </span>
-                            </div>
-                            <div class="card-header d-flex"
-                                 style="min-height:70px; flex-wrap:wrap">
-                                Total matches: [[ nMatches ]]<br>
-                                Selected: [[ nSelected ]] hit(s), [[
-                                selectedTaxids.length ]] genome(s)
-                                <button class="btn btn-clean ml-5"
-                                     @click="deselectAll()"
-                                     :disabled="nSelected < 1">
-                                    Deselect all
-                                </button>
-                                <button class="btn btn-primary mx-2 my-1"
-                                     @click="visualizeSelection()"
-                                     :disabled="nSelected < 1">
-                                    Visualize
-                                    <i class="fas fa-chevron-right ml-3"></i>
-                                </button>
-                                <div id="add-button-container" class="ml-3">
-                                </div>
-                            </div>
-                            <div id="shown-items" class="d-flex h-100" 
-                                style="max-height:350px;
-                                       overflow-y:scroll;
-                                       flex-direction:column;">
-                                <div v-for="d in selectedTaxa"
-                                    class="w-100 text-align-left my-1"
-                                    style="overflow-y:visible">
-                                    <span class="badge mr-1"
-                                        :class="taxBadgeColors[d.source.data.rank] || 'bg-indigo-lt'">
-                                        [[ d.source.data.rank ]]
-                                    </span>
-                                    <a @click="sunBurst.highlightPath(d.source)">
-                                        [[ d.source.data.tname ]] 
-                                    </a>
-                                    <div class="dropdown d-inline">
-                                        <a class="color-yellow f-bold dropdown-toggle no-after"
-                                          style="font-size: .8rem;"
-                                          data-toggle="dropdown"
-                                          data-bs-auto-close="outside"
-                                          role="button">
-                                            ([[ d.taxids.length ]] genomes)
-                                        </a>
-                                        <ul class="dropdown-menu suggestion-menu" 
-                                            :style="{ 'visibility':
-                                                        Object.keys(d.source.descendantLevels).length ?
-                                                        'visible' : 'hidden' }">
-                                            <li class="dropdown-header pl-2">
-                                                Select representatives at taxonomic level
-                                            </li>
-                                            <li class="dropdown-item"
-                                                @click="selectTaxa(d.source, true)">
-                                                All genomes
-                                            </li>
-                                            <li v-for="(lineages, level) in d.source.descendantLevels"
-                                                class="dropdown-item"
-                                                @click="selectLineages(lineages, d.source)">
-                                                [[ level ]]: [[ lineages.length ]]
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <a class="ml-1" role="button"
-                                        @click="deselectTaxa(d.source)">
-                                        <i class="fas fa-times"
-                                           style="transform:translate(0,2px)"></i>
-                                    </a>
-                                </div>
-                            </div>
+   <div id="sunburst-selector-container" 
+        v-if="show === 'sunburst'">
+       <div class="accordion-body">
+            <div class="mt-0 d-flex">
+                <div class="sunburst-selector w-50"
+                     style="z-index: 1"></div>
+                <div class="w-50">
+                    <div class="input-icon m-2" 
+                         style='min-width:250px; max-width: 500px;'>
+                        <input type="text"
+                               class="form-control text-left"
+                               id="taxa-search"
+                               @keydown="updateSearch"
+                               placeholder="Search..."/>
+                        <ul class="dropdown-menu suggestion-menu" 
+                          role="menu" id="taxa-suggestions"
+                          style="top: 100% !important"
+                          :style="{ 'visibility': searchedTaxa.length ? 'visible' : 'hidden' }">
+                          <li class="dropdown-item"
+                              v-for="t in searchedTaxa"
+                              @click="selectTaxa(t)">
+                              <b><span class="badge mr-1"
+                                      :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
+                                      [[ t.data.rank ]]
+                                  </span>
+                              <b class="f-bold">
+                                  [[ t.data.tname ]]
+                              </b></b>
+                          </li>
+                        </ul>
+                        <span class="input-icon-addon search-icon">
+                            <i class="fa fa-search"
+                               aria-hidden="true">
+                            </i>
+                        </span>
+                    </div>
+                    <div class="card-header d-flex"
+                         style="min-height:70px; flex-wrap:wrap">
+                        Total matches: [[ nMatches ]]<br>
+                        Selected: [[ nSelected ]] hit(s), [[
+                        selectedTaxids.length ]] genome(s)
+                        <button class="btn btn-clean ml-5"
+                             @click="deselectAll()"
+                             :disabled="nSelected < 1">
+                            Deselect all
+                        </button>
+                        <button class="btn btn-primary mx-2 my-1"
+                             @click="visualizeSelection()"
+                             :disabled="nSelected < 1">
+                            Visualize
+                            <i class="fas fa-chevron-right ml-3"></i>
+                        </button>
+                        <div id="add-button-container" class="ml-3">
                         </div>
                     </div>
-               </div>
-           </div>
-        </div> 
+                    <div id="shown-items" class="d-flex h-100" 
+                        style="max-height:350px;
+                               overflow-y:scroll;
+                               flex-direction:column;">
+                        <div v-for="d in selectedTaxa"
+                            class="w-100 text-align-left my-1"
+                            style="overflow-y:visible">
+                            <span class="badge mr-1"
+                                :class="taxBadgeColors[d.source.data.rank] || 'bg-indigo-lt'">
+                                [[ d.source.data.rank ]]
+                            </span>
+                            <a @click="sunBurst.highlightPath(d.source)">
+                                [[ d.source.data.tname ]] 
+                            </a>
+                            <div class="dropdown d-inline">
+                                <a class="color-yellow f-bold dropdown-toggle no-after"
+                                  style="font-size: .8rem;"
+                                  data-toggle="dropdown"
+                                  data-bs-auto-close="outside"
+                                  role="button">
+                                    ([[ d.taxids.length ]] genomes)
+                                </a>
+                                <ul class="dropdown-menu suggestion-menu" 
+                                    :style="{ 'visibility':
+                                                Object.keys(d.source.descendantLevels).length ?
+                                                'visible' : 'hidden' }">
+                                    <li class="dropdown-header pl-2">
+                                        Select representatives at taxonomic level
+                                    </li>
+                                    <li class="dropdown-item"
+                                        @click="selectTaxa(d.source, true)">
+                                        All genomes
+                                    </li>
+                                    <li v-for="(lineages, level) in d.source.descendantLevels"
+                                        class="dropdown-item"
+                                        @click="selectLineages(lineages, d.source)">
+                                        [[ level ]]: [[ lineages.length ]]
+                                    </li>
+                                </ul>
+                            </div>
 
-        <div class="accordion-item">
-            <h2 class="accordion-header" id="step3-header">
-                <button class="accordion-button collapsed"
-                 @click="visualizeSelection(false)">
-                <div class="badge bg-indigo mr-2" 
-                     style="font-family:'Impact'; font-size:1.1rem">3</div>
-                Visualize genomic context
-                </button>
-            </h2>
-           <div id="visualization-container" 
-               class="accordion-collapse collapse"
-               aria-labelledby="step3-header" 
-               data-bs-parent="#form-accordion">
-               <div class="text-center" v-if="contextData.context && nAnchors">
-                   Showing [[ nAnchors ]] context(s)
-                    <button class="btn btn-sm btn-primary ml-2"
-                        @click="downloadNeighborhood()">Download (tsv)</button>
-               </div>
-               <div class="accordion-body" id="gecoviz-container"
-                   style="width: 100%">
-                       
-               </div>
-           </div>
-        </div>
+                            <a class="ml-1" role="button"
+                                @click="deselectTaxa(d.source)">
+                                <i class="fas fa-times"
+                                   style="transform:translate(0,2px)"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+   </div>
 
-    </div>
+   <div id="visualization-container"
+        v-if="show === 'gecoviz'">
+       <div class="text-center" v-if="contextData.context && nAnchors">
+           Showing [[ nAnchors ]] context(s)
+            <button class="btn btn-sm btn-primary ml-2"
+                @click="downloadNeighborhood()">Download (tsv)</button>
+       </div>
+       <div class="accordion-body" id="gecoviz-container"
+           style="width: 100%">
+               
+       </div>
+   </div>
+
 </div>
 
 {% endblock %}

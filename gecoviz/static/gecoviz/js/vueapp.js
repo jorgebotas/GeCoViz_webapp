@@ -352,6 +352,10 @@ var vueapp = new Vue({
         },
 
         toggleSunburstSelector: function() {
+            $("#gecoviz-tab-pill").removeClass("active");
+            $("#sunburst-tab-pill").addClass("active");
+            this.show = "sunburst";
+
             hide("#visualization-container");
             // Do not toggle if now query has been processed
             if (this.allItems.length == 0)
@@ -382,6 +386,10 @@ var vueapp = new Vue({
         },
 
         toggleGeCoViz : async function() {
+            $("#sunburst-tab-pill").removeClass("active");
+            $("#gecoviz-tab-pill").addClass("active");
+            this.show = "gecoviz";
+
             const selector = "#gecoviz-container";
 
             const content = d3.selectAll("#gecoviz-container *");
