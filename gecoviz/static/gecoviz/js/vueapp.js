@@ -286,6 +286,7 @@ var vueapp = new Vue({
             else {
                 const taxid = this.allTaxa.find(
                     d => d.data.lineage.includes(lineage)).id;
+                console.log(taxid)
                 this.selectTaxid(taxid, taxa, true);
             }
         },
@@ -299,6 +300,7 @@ var vueapp = new Vue({
                         t => t.id != id);
             } else if (show)
                 this.selectedTaxids.push({ id: id, source: source });
+            console.log(this.selectedTaxids)
         },
 
         deselectAll: function() {

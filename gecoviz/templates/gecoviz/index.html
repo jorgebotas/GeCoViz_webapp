@@ -136,17 +136,6 @@
                                         :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
                                     </span>
                                     <b>[[ d.data.name ]] ([[ taxids.length ]] genomes)</b>
-                                    <label class="form-selectgroup-item"
-                                        style="margin: .2rem .5rem;">
-                                        <input class="form-selectgroup-input"
-                                               type="checkbox" 
-                                               :value="d.data.id"
-                                               :checked="true"
-                                               @click="selectTaxa(d, false)">
-                                        <span class="form-selectgroup-label"
-                                            style="font-size:.7rem; padding: .1rem .5rem">
-                                            [[ d.data.name | styleTaxa ]]</span>
-                                    </label>
                                 </div>
                             </div>
                         </div>
