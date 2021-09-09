@@ -179,7 +179,6 @@ var vueapp = new Vue({
                  .then(response => response.json())
                  .then(this.fetchThen)
                  .catch(fetchCatch)
-
         },
 
         searchContext: async function () {
@@ -666,9 +665,9 @@ var vueapp = new Vue({
                 //.attr("checked", true);
 
             if (taxids && taxids.length) {
-                this.selectedTaxids = taxids.split("%2C").map(t => ({ id: t }));
                 if (this.isScreenLarge)
                     await this.searchQuery(searchType, query, urlParams);
+                this.selectedTaxids = taxids.split("%2C").map(t => ({ id: t }));
                 this.visualizeSelection();
             } else
                 this.searchQuery(searchType, query, urlParams);
