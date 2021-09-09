@@ -149,8 +149,7 @@ var vueapp = new Vue({
             const toAdd = $(`#${selector}-navlink`);
             if (toRemove.hasClass("active"))
                 toRemove.removeClass("active");
-            if (!toAdd.hasClass("active"))
-                toAdd.addClass("active");
+            toAdd.addClass("active");
             this.show = selector;
         },
 
@@ -415,7 +414,6 @@ var vueapp = new Vue({
 
             setTimeout(hideSpinner, 10);
             setTimeout(gecoviz.scaleDist, 2000);
-
         },
 
         getSeq : function(query) {
