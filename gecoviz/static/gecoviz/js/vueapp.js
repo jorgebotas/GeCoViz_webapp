@@ -179,7 +179,6 @@ var vueapp = new Vue({
                  .then(response => response.json())
                  .then(this.fetchThen)
                  .catch(fetchCatch)
-
         },
 
         searchContext: async function () {
@@ -307,6 +306,7 @@ var vueapp = new Vue({
         },
 
         selectTaxa: function(taxa, allDescendants=false) {
+            console.log(taxa)
             this.sunBurst.highlightPath(taxa);
 
             if (!taxa.data.descendantLevels)
@@ -363,7 +363,7 @@ var vueapp = new Vue({
 
             d3.selectAll(".sunburst-selector *").remove();
             const taxonomy = this.allItems.map(d => [d.lineage, d.value]);
-            this.sunBurst = SeqSunburst(taxonomy, 500, 6, true, this.showAddButton, this.root)
+            this.sunBurst = SeqSunburst(taxonomy, 600, 6, true, this.showAddButton, this.root)
                 .draw(".sunburst-selector");
         },
 
@@ -383,10 +383,8 @@ var vueapp = new Vue({
             const selector = "#gecoviz-container";
 
             const content = d3.selectAll("#gecoviz-container *");
-            if (content.nodes().length) {
+            if (content.nodes().length)
                 content.remove();
-                return
-            }
 
             $('#spinner').modal('show');
             const params = {
@@ -589,7 +587,6 @@ var vueapp = new Vue({
         }
     },
     mounted: function() {
-        console.log(this.isScreenLarge)
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
                 d3.selectAll("#add-button-container *").remove();
@@ -664,14 +661,16 @@ var vueapp = new Vue({
             
             $("#query-search").val(this.query);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
-            //d3.select(`#search-type input[value="${this.searchType}"]`)
+            //d3.select(`#search-type inpu.split("%2C")t[value="${this.searchType}"]`)
                 //.attr("checked", true);
 
-            if (taxids && taxids.length) {
-                this.selectedTaxids = taxids.split("%2C").map(t => ({ id: t }));
-                this.visualizeSelection();
-            } else
-                this.searchQuery(searchType, query, urlParams);
+            this.searchQuery(searchType, query, urlParams);
+
+            //if (taxids && taxids.length) {
+                //taxids.split("%2C").forEach(t => this.selectTaxid(t, this.root));
+                //console.log(this.selectedTaxids)
+                //this.visualizeSelection();
+            //}
         }
     },
 });
