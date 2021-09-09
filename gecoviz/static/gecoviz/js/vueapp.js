@@ -232,7 +232,7 @@ var vueapp = new Vue({
                 hideSpinner();
 
                 if (this.allItems.length <= 250) {
-                    this.selectTaxa(this.root.children[0], true);
+                    this.selectTaxa(this.root, true);
                 }
             }, 0)
         },
@@ -556,8 +556,8 @@ var vueapp = new Vue({
         },
 
         commonSelectedTaxa: function() {
-            const sharedTaxa = this.searchedTaxa.reduce((t, it, i) => {
-                const itSplit = it.data.lineage.split(";")
+            const sharedTaxa = this.selectedTaxa.reduce((t, it, i) => {
+                const itSplit = it.source.data.lineage.split(";");
                 if (i === 0)
                     t =  itSplit
                 else
