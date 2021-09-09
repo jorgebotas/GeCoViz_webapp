@@ -89,5 +89,20 @@
               {% comment %}</div>{% endcomment %}
 
           </div>
+
+          <div class="ml-auto">
+            <div class="mx-1 badge bg-indigo-lt"
+                v-if="query"
+                style="font-size:.9rem">
+                [[ query ]]
+            </div>
+            <div class="mx-1 badge bg-indigo-lt"
+                v-if="commonSelectedTaxa"
+                style="font-size:.9rem">
+                [[ commonSelectedTaxa | styleTaxa ]]
+            </div>
+          </div>
+
+
       </div>
   </header>
