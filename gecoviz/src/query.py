@@ -67,7 +67,8 @@ def get_newick(field, query, taxids):
     all_taxids = [ m.split(".")[0] for m in emapper_matches ]
     assert all(taxid in all_taxids for taxid in taxids)
     for l in tree:
-        assert l.name in taxids
+        if l.name not in taxids:
+            print(l.name)
 
     print(f'Taxids: {len(taxids)}   =====  Tree: {len(tree)}')
     print(f'Taxids: {len(taxids)}   =====  members: {len(members_in_taxid.keys())}')
