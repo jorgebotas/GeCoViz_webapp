@@ -35,17 +35,6 @@ function fetchCatch(e) {
     });
 }
 
-function show(selector) {
-    $(selector).collapse("show");
-    $(".accordion-button", $(selector).prev())
-        .removeClass("collapsed");
-    const searchbar = $(selector + " .form-control");
-    if (searchbar)
-        setTimeout(() => {
-            searchbar.focus();
-        }, 1000)
-}
-
 function hide(selector) {
     $(selector).collapse("hide");
     $(".accordion-button", $(selector).prev()).addClass("collapsed");
@@ -154,6 +143,17 @@ var vueapp = new Vue({
     },
 
     methods: {
+        showTab: function(selector) {
+            const otherSelector = selector === "sunburst" ? "gecoviz" : "sunburst";
+            const toRemove = $(`#${otherSelector}-navlink`);
+            const toAdd = $(`#${selector}-navlink`);
+            if (toRemove.hasClass("active"))
+                toRemove.removeClass("active");
+            if (!toAdd.hasClass("active"))
+                toAdd.addClass("active");
+            this.show = selector;
+        },
+
         searchQuery : async function(searchType, query, options) {
             $('#spinner').modal('show');
             const newQuery = query || $("#query-search").val().trim();
@@ -348,10 +348,7 @@ var vueapp = new Vue({
         },
 
         toggleSunburstSelector: function() {
-            $("#gecoviz-navlink").removeClass("active");
-            $("#sunburst-navlink").addClass("active");
-            this.show = "sunburst";
-
+            this.showTab("sunburst");
             // Do not toggle if now query has been processed
             if (this.allItems.length == 0)
                 this.searchQuery();
@@ -365,15 +362,13 @@ var vueapp = new Vue({
         async visualizeSelection(refresh=true) {
             const content = d3.selectAll("#gecoviz-container *").nodes();
             if (content.length && !refresh)
-                this.show = "gecoviz"
+                this.showTab("gecoviz");
             else
                 await this.toggleGeCoViz();
         },
 
         toggleGeCoViz : async function() {
-            $("#sunburst-navlink").removeClass("active");
-            $("#gecoviz-navlink").addClass("active");
-            this.show = "gecoviz";
+            showTab("gecoviz");
 
             const selector = "#gecoviz-container";
 
