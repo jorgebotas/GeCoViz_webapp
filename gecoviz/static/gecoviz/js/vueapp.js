@@ -151,7 +151,7 @@ var vueapp = new Vue({
                 toRemove.removeClass("active");
             setTimeout(() => {
                 toAdd.addClass("active");
-            }, 10)
+            }, 100)
             this.show = selector;
         },
 
