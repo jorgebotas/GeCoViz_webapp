@@ -668,11 +668,14 @@ var vueapp = new Vue({
 
             if (taxids && taxids.length) {
                 setTimeout(() => {
-                    //taxids.split("%2C").forEach(t => this.selectTaxid(t, this.root));
-                    console.log(taxids.split("%2C"))
+                    taxids.split("%2C").forEach(t => {
+                        console.log(t)
+                        console.log(this.root)
+                        this.selectTaxid(t, this.root)
+                    });
                     console.log(this.selectedTaxids)
                     //this.visualizeSelection();
-                })
+                }, 100)
             }
         }
     },
