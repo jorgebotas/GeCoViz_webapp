@@ -415,7 +415,7 @@ var vueapp = new Vue({
                 .draw();
 
             setTimeout(hideSpinner, 10);
-            setTimeout(gecoviz.scaleDist, 1500);
+            setTimeout(gecoviz.scaleDist, 1000);
         },
 
         getSeq : function(query) {
