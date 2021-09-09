@@ -8,10 +8,10 @@
        id="sunburst-navlink"
         @click="toggleSunburstSelector()">Taxonomy selector</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item"
+      :class="{ 'disabled' : selectedTaxids.length }">
     <a class="nav-link" 
        id="gecoviz-navlink"
-       :class="{ 'disabled' : selectedTaxids.length }"
         @click="toggleGeCoViz()">Genomic context</a>
   </li>
 </ul>
