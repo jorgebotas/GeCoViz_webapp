@@ -24,7 +24,7 @@ function twoLineText(name, maxChar) {
 }
 
 var SeqSunburst = function(unformattedData, width, depth=2,
-    semiCircle=false, clickCallBack) {
+    semiCircle=false, clickCallBack, formattedData) {
 
     var container;
     var removeClones = false;
@@ -99,7 +99,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
     // Value formatter
     const format = d3.format(",d");
 
-    const data = buildRoot(unformattedData);
+    const data = formattedData || buildRoot(unformattedData);
 
     data.each(d => d.current = d);
 
