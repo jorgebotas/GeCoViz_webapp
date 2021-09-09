@@ -90,7 +90,7 @@
                             :class="taxBadgeColors[d.source.data.rank] || 'bg-indigo-lt'">
                             [[ d.source.data.rank ]]
                         </span>
-                        <a @click="sunBurst.highlightPath(d.source)">
+                        <a class="f-bold f-oblique" @click="sunBurst.highlightPath(d.source)">
                             [[ d.source.data.tname ]] 
                         </a>
                         <div class="dropdown d-inline">
