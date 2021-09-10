@@ -4,7 +4,17 @@
 
 <div class="container-xxl" style="max-width:100%;">
 
-    KOS
+    <ul>
+        <li v-for="ko in kos">
+            <ul v-if="ko.children.length">
+                <li v-for="c in ko.children">
+                    hi
+                </li>
+
+                
+            </ul>
+        </li>
+    </ul>
 
    <h2 class="accordion-header" id="step2-header">
        <button class="accordion-button collapsed"
