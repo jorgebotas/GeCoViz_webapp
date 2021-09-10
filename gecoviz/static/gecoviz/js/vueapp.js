@@ -297,6 +297,8 @@ var vueapp = new Vue({
                 const taxid = matches[Math.floor(Math.random()*matches.length)].id;
                 this.selectTaxid(taxid, taxa, true);
            }
+            console.log(this.nSelected)
+            console.log(this.selectedTaxids)
         },
 
         selectLineages: function(lineages, taxa) {
