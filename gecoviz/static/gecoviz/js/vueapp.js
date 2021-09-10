@@ -294,7 +294,7 @@ var vueapp = new Vue({
             if (allDescendants)
                 matches.forEach(d => this.selectTaxid(d.id, taxa, true))
             else {
-                matches[Math.floor(Math.random()*matches.length)].id;
+                const taxid = matches[Math.floor(Math.random()*matches.length)].id;
                 this.selectTaxid(taxid, taxa, true);
            }
         },
