@@ -289,13 +289,12 @@ var vueapp = new Vue({
         },
 
         selectLineage: function(lineage, taxa, allDescendants=false) {
+            const matches = this.allItems
+                    .filter(d => d.lineage.includes(lineage));
             if (allDescendants)
-                this.root.leaves()
-                    .filter(d => d.data.lineage.includes(lineage))
-                    .forEach(d => this.selectTaxid(d.data.id, taxa, true))
+                matches.forEach(d => this.selectTaxid(d.id, taxa, true))
             else {
-                const taxid = this.root.leaves().find(
-                    d => d.data.lineage.includes(lineage)).data.id;
+                matches[Math.floor(Math.random()*matches.length)].id;
                 this.selectTaxid(taxid, taxa, true);
            }
         },

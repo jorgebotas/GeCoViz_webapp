@@ -6,22 +6,12 @@
 
     KOS
 
-        <div class="ml-4 badge bg-indigo-lt"
-            v-if="query"
-            style="font-size:.9rem">
-            [[ query ]]
-        </div>
    <h2 class="accordion-header" id="step2-header">
        <button class="accordion-button collapsed"
            @click="toggleSunburstSelector()">
         <div class="badge bg-indigo mr-2" 
              style="font-family:'Impact'; font-size:1.1rem">2</div>
         Select a maximum of 250 genomes
-        <div class="ml-4 badge bg-indigo-lt"
-            v-if="commonSelectedTaxa"
-            style="font-size:.9rem">
-            [[ commonSelectedTaxa | styleTaxa ]]
-        </div>
        </button>
    </h2>
 </div>
