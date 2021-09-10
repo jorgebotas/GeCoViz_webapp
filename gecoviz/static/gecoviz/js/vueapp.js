@@ -290,7 +290,7 @@ var vueapp = new Vue({
 
         selectLineage: function(lineage, taxa, allDescendants=false) {
             const matches = this.root.leaves()
-                    .filter(d => d.data.lineage.includes(lineage) && d.data.id);
+                    .filter(d => d.data.lineage.includes(lineage));
             if (allDescendants)
                 matches.forEach(d => this.selectTaxid(d.data.id, taxa, true))
             else {
