@@ -295,7 +295,6 @@ var vueapp = new Vue({
                 matches.forEach(d => this.selectTaxid(d.data.id, taxa, true))
             else {
                 const taxid = matches[Math.floor(Math.random()*matches.length)].data.id;
-                console.log(taxid)
                 this.selectTaxid(taxid, taxa, true);
            }
         },
