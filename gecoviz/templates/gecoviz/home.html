@@ -6,16 +6,16 @@
 
     <ul>
         <li v-for="first in kos">
-            [[ first.name ]]
-            <ul v-if="first.children.length">
+            <a @click="showKO(first)">[[ first.name ]]</a>
+            <ul v-if="first.children.length && first._show">
                 <li v-for="second in first.children">
-                    [[ second.name ]]
-                    <ul v-if="second.children.length">
+                    <a @click="showKO(second)">[[ second.name ]]</a>
+                    <ul v-if="second.children.length && second._show">
                         <li v-for="third in second.children">
-                            [[ third.name ]]
-                            <ul v-if="third.children.length">
-                                <li v-for="forth in third.children">
-                                    [[ forth.name ]]
+                            <a @click="showKO(third)">[[ third.name ]]</a>
+                            <ul v-if="third.children.length && third._show">
+                                <li v-for="fourth in third.children">
+                                    [[ fourth.name ]] [[ fourth.desc ]]
                                 </li>
                             </ul>
                         </li>
@@ -27,7 +27,4 @@
 
 </div>
 
-{% endblock %}
-{% block scripts %}
-    <script src="{% static "gecoviz/js/kos.js" %}"></script>
 {% endblock %}

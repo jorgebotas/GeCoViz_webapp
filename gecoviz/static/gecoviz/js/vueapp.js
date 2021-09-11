@@ -140,10 +140,12 @@ var vueapp = new Vue({
             'subspecies': 'bg-red-lt',
             'strain': 'bg-green-lt',
         },
-        kos: kos || [],
+        kos: kos,
     },
-
     methods: {
+        showKO: function(ko) {
+            ko._show = !ko._show;
+        },
         showTab: function(selector) {
             const otherSelector = selector === "sunburst" ? "gecoviz" : "sunburst";
             const toRemove = $(`#${otherSelector}-navlink`);
