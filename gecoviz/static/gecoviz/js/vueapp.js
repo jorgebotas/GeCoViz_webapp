@@ -160,12 +160,6 @@ var vueapp = new Vue({
             this.show = selector;
         },
 
-        updateSearchUrl: function(searchType, query) {
-            const newQuery = query || $("#query-search").val().trim();
-            const newSearchType = searchType || this.searchTypeChoices.getValue(true);
-            window.location.pathname = `/search/?searchType=${newSearchType}&query=${newQuery}`
-        },
-
         searchQuery : async function(searchType, query, _hideSpinner) {
             $('#spinner').modal('show');
             const newQuery = query || $("#query-search").val().trim();

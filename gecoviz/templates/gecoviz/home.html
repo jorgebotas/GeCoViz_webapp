@@ -2,8 +2,11 @@
 {% load static %}
 {% block content %}
 
-<div class="container-xxl" style="max-width:100%;">
+<div v-if="allItems.length" class="container-xxl" style="max-width:100%;">
+    {% include "gecoviz/search.html" %}
+</div>
 
+<div v-else class="container-xxl" style="max-width:100%;">
     <ul>
         <li v-for="first in kos"
             :style="{ 'list-style': (first._show ? 'disclosure-open' : 'disclosure-closed') }">
@@ -30,7 +33,6 @@
             </ul>
         </li>
     </ul>
-
 </div>
 
 {% endblock %}
