@@ -13068,6 +13068,9 @@ a:hover {
 .link-secondary {
   transition: color 0.5s; }
 
+button:focus {
+  outline: none !important; }
+
 .btn {
   border-radius: 25px !important; }
 
