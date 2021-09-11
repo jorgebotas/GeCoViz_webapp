@@ -13029,6 +13029,12 @@ Antialiasing
 .color-tomato {
   color: #ff726a !important; }
 
+.mw-75 {
+  max-width: 100%; }
+
+@media screen and (min-width: 128rem) {
+  .mw-75 {
+    max-width: 75%; } }
 .no-border {
   border: none !important; }
 
