@@ -166,7 +166,7 @@ var vueapp = new Vue({
             setTimeout(() => {
                 document.querySelector(`li#${ko.data.name}`).scrollIntoView({
                     behavior: "smooth",
-                    block: "nearest",
+                    block: "start",
                     inline: "center",
                   });
             }, 100)
