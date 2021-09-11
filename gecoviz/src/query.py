@@ -224,7 +224,7 @@ def get_emapper_matches(field, query, representative_only=True):
 
     start = time.time()
     matches = list(col_emapper.find({ field: query }, { 'q': 1 }))
-    print(f'{time.time() - start}')
+    print(f'mongo:  {time.time() - start}')
 
     return [ m['q'] for m in matches 
             if not representative_only or ".".join(m['q'].split(".")[0:2]) in representative_genomes ]
@@ -233,5 +233,5 @@ def get_emapper_matches(field, query, representative_only=True):
 def get_functional_matches(field, query):
     start = time.time()
     emapper = get_emapper_matches(field, query)
-    print(f'{time.time() - start}')
+    print(f'list:  {time.time() - start}')
     return get_taxonomy(emapper)
