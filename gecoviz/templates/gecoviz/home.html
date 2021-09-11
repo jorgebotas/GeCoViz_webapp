@@ -8,12 +8,15 @@
         <li v-for="first in kos">
             <a @click="showKO(first)">[[ first.name ]]</a>
             <ul v-if="first.children.length && first._show">
-                <li v-for="second in first.children">
+                <li v-for="second in first.children"
+                    style="{ 'list-style': first._show ? 'disclosure-open' : 'disclosure-close' }">
                     <a @click="showKO(second)">[[ second.name ]]</a>
-                    <ul v-if="second.children.length && second._show">
+                    <ul v-if="second.children.length && second._show"
+                        style="{ 'list-style': second._show ? 'disclosure-open' : 'disclosure-close' }">
                         <li v-for="third in second.children">
                             <a @click="showKO(third)">[[ third.name ]]</a>
-                            <ul v-if="third.children.length && third._show">
+                            <ul v-if="third.children.length && third._show"
+                                style="{ 'list-style': third._show ? 'disclosure-open' : 'disclosure-close' }">
                                 <li v-for="fourth in third.children">
                                     <a :href="'/search?searchType=kos&query=' + fourth.name"
                                         target="_self">[[ fourth.name ]]
