@@ -588,7 +588,6 @@ var vueapp = new Vue({
         }
     },
     mounted: async function() {
-        console.log(this.kos)
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
                 d3.selectAll("#add-button-container *").remove();
@@ -676,6 +675,7 @@ var vueapp = new Vue({
                     });
                     this.visualizeSelection();
                 }, 100);
+        console.log(this.kos)
         }
     },
 });
