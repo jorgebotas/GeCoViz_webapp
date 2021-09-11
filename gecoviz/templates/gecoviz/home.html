@@ -6,7 +6,7 @@
 
     <ul>
         <li v-for="first in kos"
-            :style="{ 'list-style': first._show ? 'disclosure-open' : 'disclosure-close' }">
+            :style="{ 'list-style': (first._show ? 'disclosure-open' : 'disclosure-close') }">
             <a @click="showKO(first)">[[ first.name ]]</a>
             <ul v-if="first.children.length && first._show">
                 <li v-for="second in first.children"
