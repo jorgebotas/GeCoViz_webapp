@@ -165,8 +165,6 @@ var vueapp = new Vue({
            this.searchTimeout.ko = setTimeout(() => {
                 const search = $("#ko-search").val();
 
-                console.log(search)
-
                 if (search.length < 3) {
                     this.suggestions.ko = [];
                     return
@@ -621,7 +619,7 @@ var vueapp = new Vue({
                 d3.selectAll("#add-button-container *").remove();
         });
 
-        ["query", "taxa"].forEach(d => {
+        ["query", "taxa", "ko"].forEach(d => {
             const searchbar = $(`#${d}-search`);
             const suggestions = $(`#${d}-suggestions`);
             searchbar.on("focus", () => {
