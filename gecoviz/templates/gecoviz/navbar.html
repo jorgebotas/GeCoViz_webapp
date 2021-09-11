@@ -23,7 +23,7 @@
                            class="form-control text-left"
                            id="query-search"
                            @keydown="updateSuggestions()"
-                           @keypress.enter.prevent="searchQuery()"
+                           @keypress.enter.prevent="updateSearchUrl()"
                            placeholder="Search..."/>
                     <ul class="dropdown-menu suggestion-menu" 
                       role="menu" id="query-suggestions"
@@ -31,7 +31,7 @@
                       :style="{ 'visibility': suggestions.length ? 'visible' : 'hidden' }">
                       <li class="dropdown-item"
                           v-for="s in suggestions"
-                          @click="searchQuery(undefined, s.id)">
+                          @click="updateSearchUrl(undefined, s.id)">
                           <b><b class="f-bold">[[ s.id ]]</b>
                           <br>
                           <b class="text-muted"
@@ -44,7 +44,7 @@
                     <span class="input-icon-addon search-icon">
                         <i class="fa fa-search"
                            aria-hidden="true"
-                           @click="searchQuery()">
+                           @click="updateSearchUrl()">
                         </i>
                     </span>
               </div>
