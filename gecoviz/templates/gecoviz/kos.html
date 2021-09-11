@@ -56,7 +56,8 @@
                                 <a @click="showKO(third)">[[ third.data.name ]]</a>
                                 <ul v-if="third.children.length && third._show">
                                     <li v-for="fourth in third.children"
-                                        :class="'bg-yellow' : (suggestions.ko && suggestions.ko.includes(fourth))"
+                                        :class="'bg-yellow' :
+                                        (suggestions.ko.length && suggestions.ko.includes(fourth))"
                                         style="list-style: circle; padding-left:5px">
                                         <a class="color-indigo f-bold mr-2"
                                            :href="'/?query=' + fourth.data.name + '&searchType=kos'">
