@@ -109,7 +109,6 @@ function buildTaxaHierarchy(data) {
 }
 
 
-
 var vueapp = new Vue({
     delimiters: ['[[', ']]'],
     el: '#GeCoVizApp',
@@ -140,7 +139,7 @@ var vueapp = new Vue({
             'subspecies': 'bg-red-lt',
             'strain': 'bg-green-lt',
         },
-        kos: kos,
+        kos: d3.hierarchy(kos),
     },
     methods: {
         showKO: function(ko) {
@@ -149,6 +148,11 @@ var vueapp = new Vue({
             this.kos = [];
             this.kos = kos;
         },
+
+        findKO: function() {
+            //const search = $("#ko-search").val().trim();
+        },
+
         showTab: function(selector) {
             const otherSelector = selector === "sunburst" ? "gecoviz" : "sunburst";
             const toRemove = $(`#${otherSelector}-navlink`);
