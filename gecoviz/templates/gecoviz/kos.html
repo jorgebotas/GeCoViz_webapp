@@ -26,7 +26,8 @@
                                     <li v-for="fourth in third.children"
                                         style="list-style: circle">
                                         <a class="color-indigo f-bold mr-2"
-                                            @click="searchQuery('kos', fourth.name)">[[ fourth.name ]]
+                                           :href="'/?query=' + fourth.name + '&searchType=kos'">
+                                            [[ fourth.name ]]
                                         </a> 
                                         <span class="badge bg-indigo f-bold mr-1" v-for="gene in fourth.geneNames">
                                             [[ gene ]]
