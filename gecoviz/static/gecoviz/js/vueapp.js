@@ -145,6 +145,9 @@ var vueapp = new Vue({
     methods: {
         showKO: function(ko) {
             ko._show = !ko._show;
+            const kos = this.kos;
+            this.kos = [];
+            this.kos = kos;
         },
         showTab: function(selector) {
             const otherSelector = selector === "sunburst" ? "gecoviz" : "sunburst";
