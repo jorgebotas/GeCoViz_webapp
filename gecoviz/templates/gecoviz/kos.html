@@ -1,46 +1,46 @@
-<div class="card mx-auto" style="max-width:900px">
-    <div class="card-header h3">
-        Browse the <a class="ml-2 f-bold color-indigo"
-            href="https://www.genome.jp/kegg/ko.html" 
-            target="_blank">KEGG Orthology hierarchy<title>The KEGG BRITE database is a
-                collection of Brite hierarchy and table files for
-                classification of various objects, including genes and
-                proteins, chemical compounds and reactions, drugs and diseases, and
-                organisms and viruses.</title>
-        </a>
-    </div>
-    <div class="card-body pt-0">
-        <ul>
-            <li v-for="first in kos"
-                :style="{ 'list-style': (first._show ? 'disclosure-open' : 'disclosure-closed') }">
-                <a @click="showKO(first)">[[ first.name ]]</a>
-                <ul v-if="first.children.length && first._show">
-                    <li v-for="second in first.children"
-                        :style="{ 'list-style': second._show ? 'disclosure-open' : 'disclosure-closed' }">
-                        <a @click="showKO(second)">[[ second.name ]]</a>
-                        <ul v-if="second.children.length && second._show">
-                            <li v-for="third in second.children"
-                                :style="{ 'list-style': third._show ? 'disclosure-open' : 'disclosure-closed' }">
-                                <a @click="showKO(third)">[[ third.name ]]</a>
-                                <ul v-if="third.children.length && third._show">
-                                    <li v-for="fourth in third.children"
-                                        style="list-style: circle">
-                                        <a class="color-indigo f-bold mr-2"
-                                           :href="'/?query=' + fourth.name + '&searchType=kos'">
-                                            [[ fourth.name ]]
-                                        </a> 
-                                        <span class="badge bg-indigo f-bold mr-1" v-for="gene in fourth.geneNames">
-                                            [[ gene ]]
-                                        </span>
-                                        [[ fourth.data.desc ]]
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-        </ul>
-    </div>
+<!--<div class="card mx-auto" style="max-width:900px">-->
+    <!--<div class="card-header h3">-->
+        <!--Browse the <a class="ml-2 f-bold color-indigo"-->
+            <!--href="https://www.genome.jp/kegg/ko.html" -->
+            <!--target="_blank">KEGG Orthology hierarchy<title>The KEGG BRITE database is a-->
+                <!--collection of Brite hierarchy and table files for-->
+                <!--classification of various objects, including genes and-->
+                <!--proteins, chemical compounds and reactions, drugs and diseases, and-->
+                <!--organisms and viruses.</title>-->
+        <!--</a>-->
+    <!--</div>-->
+    <!--<div class="card-body pt-0">-->
+        <!--<ul>-->
+            <!--<li v-for="first in kos"-->
+                <!--:style="{ 'list-style': (first._show ? 'disclosure-open' : 'disclosure-closed') }">-->
+                <!--<a @click="showKO(first)">[[ first.name ]]</a>-->
+                <!--<ul v-if="first.children.length && first._show">-->
+                    <!--<li v-for="second in first.children"-->
+                        <!--:style="{ 'list-style': second._show ? 'disclosure-open' : 'disclosure-closed' }">-->
+                        <!--<a @click="showKO(second)">[[ second.name ]]</a>-->
+                        <!--<ul v-if="second.children.length && second._show">-->
+                            <!--<li v-for="third in second.children"-->
+                                <!--:style="{ 'list-style': third._show ? 'disclosure-open' : 'disclosure-closed' }">-->
+                                <!--<a @click="showKO(third)">[[ third.name ]]</a>-->
+                                <!--<ul v-if="third.children.length && third._show">-->
+                                    <!--<li v-for="fourth in third.children"-->
+                                        <!--style="list-style: circle">-->
+                                        <!--<a class="color-indigo f-bold mr-2"-->
+                                           <!--:href="'/?query=' + fourth.name + '&searchType=kos'">-->
+                                            <!--[[ fourth.name ]]-->
+                                        <!--</a> -->
+                                        <!--<span class="badge bg-indigo f-bold mr-1" v-for="gene in fourth.geneNames">-->
+                                            <!--[[ gene ]]-->
+                                        <!--</span>-->
+                                        <!--[[ fourth.data.desc ]]-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</div>-->
     
-</div>
+<!--</div>-->
