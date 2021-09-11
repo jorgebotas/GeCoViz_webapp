@@ -14,7 +14,7 @@
                    class="form-control text-left"
                    id="ko-search"
                    @keydown="updateKOSuggestions()"
-                   @keypress.enter.prevent="findKO()"
+                   @keypress.enter.prevent="updateKOSuggestions()"
                    placeholder="Search..."/>
             <ul class="dropdown-menu suggestion-menu" 
               role="menu" id="ko-suggestions"

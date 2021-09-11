@@ -159,7 +159,7 @@ var vueapp = new Vue({
             ko.ancestors()
                 .reverse()
                 .slice(1)
-                .forEach(showKO)
+                .forEach(this.showKO)
         },
 
         updateKOSuggestions: function() {
