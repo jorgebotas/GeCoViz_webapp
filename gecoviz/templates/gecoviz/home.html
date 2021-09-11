@@ -10,14 +10,16 @@
             <ul v-if="first.children.length">
                 <li v-for="second in first.children">
                     [[ second.name ]]
-
                     <ul v-if="second.children.length">
                         <li v-for="third in second.children">
                             [[ third.name ]]
+                            <ul v-if="third.children.length">
+                                <li v-for="forth in third.children">
+                                    [[ forth.name ]]
+                                </li>
+                            </ul>
                         </li>
                     </ul>
-
-
                 </li>
             </ul>
         </li>
