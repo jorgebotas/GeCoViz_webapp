@@ -22,8 +22,7 @@
                             <ul v-if="third.children.length && third._show">
                                 <li v-for="fourth in third.children"
                                     style="list-style: circle">
-                                    <a :href="'/search?searchType=kos&query=' + fourth.name"
-                                        target="_self">[[ fourth.name ]]
+                                    <a @click="searchQuery('kos', fourth.name)">[[ fourth.name ]]
                                     </a> [[ fourth.desc ]]
                                 </li>
                             </ul>
