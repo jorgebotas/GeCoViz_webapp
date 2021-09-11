@@ -8,6 +8,38 @@
                 proteins, chemical compounds and reactions, drugs and diseases, and
                 organisms and viruses.</title>
         </a>
+
+      <div class="input-icon w-100 m-2">
+            <input type="text"
+                   class="form-control text-left"
+                   id="ko-search"
+                   @keydown="updateKOSuggestions()"
+                   @keypress.enter.prevent="findKO()"
+                   placeholder="Search..."/>
+            <ul class="dropdown-menu suggestion-menu" 
+              role="menu" id="ko-suggestions"
+              style="top: 100% !important"
+              :style="{ 'visibility': suggestions.ko.length ? 'visible' : 'hidden' }">
+              <li class="dropdown-item"
+                  v-for="s in suggestions.ko"
+                  @click="findKO(s)">
+                  <b><b class="f-bold">[[ s.data.name ]]</b>
+                  <br>
+                  <b class="text-muted"
+                      style="font-size:.6rem;
+                      color: rgba(33, 43, 54, 0.5184) !important;">
+                      [[ s.data.desc ]]
+                  </b></b>
+              </li>
+            </ul>
+            <span class="input-icon-addon search-icon">
+                <i class="fa fa-search"
+                   aria-hidden="true"
+                   @click="searchQuery()">
+                </i>
+            </span>
+      </div>
+
     </div>
     <div class="card-body pt-0">
         <ul>

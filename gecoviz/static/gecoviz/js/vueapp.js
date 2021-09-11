@@ -117,11 +117,17 @@ var vueapp = new Vue({
         query: undefined,
         searchType: undefined,
         searchTypeChoices: undefined,
-        suggestions: [],
+        suggestions: {
+            query: [],
+            ko: [],
+        },
         selectedTaxids: [],
         searchedTaxa: [],
-        suggestionTimeout: undefined,
-        searchTimeout: undefined,
+        searchTimeout: {
+            query: undefined,
+            taxa: undefined,
+            ko: undefined
+        },
         allItems: [], 
         allTaxa: [],
         sunBurst: undefined,
@@ -150,7 +156,26 @@ var vueapp = new Vue({
         },
 
         findKO: function() {
-            //const search = $("#ko-search").val().trim();
+
+        },
+
+        updateKOSuggestions: function() {
+            if (this.searchTimeout.ko)
+                clearTimeout(this.searchTimeout.ko);
+           this.searchTimeout.ko = setTimeout(() => {
+                const search = $("#ko-search").val();
+
+                if (search.length < 3) {
+                    this.suggestions.ko = [];
+                    return
+                }
+                
+               this.suggestions.ko = this.kos.leaves()
+                    .filter(d => 
+                        d.data.name.includes(search) 
+                        || d.data.desc.includes(search));
+            }, 500);
+
         },
 
         showTab: function(selector) {
@@ -247,33 +272,33 @@ var vueapp = new Vue({
         },
 
         updateSuggestions: function() {
-            if (this.suggestionTimeout)
-                clearTimeout(this.suggestionTimeout);
-            this.suggestionTimeout = setTimeout(() => {
+            if (this.searchTimeout.query)
+                clearTimeout(this.searchTimeout.query);
+           this.searchTimeout.query = setTimeout(() => {
                 this.searchType = this.searchTypeChoices.getValue(true);
                 const search = $("#query-search").val();
 
                 if (search.length < 3) {
-                    this.suggestions = [];
+                    this.suggestions.query = [];
                     return
                 }
                 
                 fetch(`${API_BASE_URL}/suggestions/${this.searchType}/${search}/`)
                     .then(response => response.json())
                     .then(data => {
-                        this.suggestions = data.suggestions;
+                        this.suggestions.query = data.suggestions;
                     })
                     .catch(() => {
-                        this.suggestions = [];
+                        this.suggestions.query = [];
                     });
                 
             }, 500);
         },
 
         updateSearch: function() {
-            if (this.searchTimeout)
-                clearTimeout(this.searchTimeout);
-            this.searchTimeout = setTimeout(() => {
+            if (this.searchTimeout.taxa)
+                clearTimeout(this.searchTimeout.taxa);
+            this.searchTimeout.taxa = setTimeout(() => {
                 const search = $("#taxa-search").val().trim().toLowerCase();
 
                 if (search.length < 3) {
