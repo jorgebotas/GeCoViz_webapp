@@ -15,7 +15,9 @@
                             <a @click="showKO(third)">[[ third.name ]]</a>
                             <ul v-if="third.children.length && third._show">
                                 <li v-for="fourth in third.children">
-                                    [[ fourth.name ]] [[ fourth.desc ]]
+                                    <a :href="'/search/?searchType=kos&query=' + fourth.name"
+                                        target="_self">[[ fourth.name ]]
+                                    </a> [[ fourth.desc ]]
                                 </li>
                             </ul>
                         </li>
