@@ -163,11 +163,13 @@ var vueapp = new Vue({
                     if (!d._show)
                         this.showKO(d)
                 })
-            document.querySelector(`li#${ko.data.name}`).scrollIntoView({
-                behavior: "smooth",
-                block: "nearest",
-                inline: "center",
-              });
+            setTimeout(() => {
+                document.querySelector(`li#${ko.data.name}`).scrollIntoView({
+                    behavior: "smooth",
+                    block: "nearest",
+                    inline: "center",
+                  });
+            }, 100)
         },
 
         updateKOSuggestions: function() {
