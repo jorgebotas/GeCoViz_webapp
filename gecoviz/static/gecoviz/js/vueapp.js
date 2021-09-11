@@ -155,8 +155,11 @@ var vueapp = new Vue({
             this.kos = kos;
         },
 
-        findKO: function() {
-
+        findKO: function(ko) {
+            ko.ancestors()
+                .reverse()
+                .slice(1)
+                .forEach(showKO)
         },
 
         updateKOSuggestions: function() {
