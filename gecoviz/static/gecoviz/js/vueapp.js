@@ -139,7 +139,8 @@ var vueapp = new Vue({
             'species': 'bg-blue-lt',
             'subspecies': 'bg-red-lt',
             'strain': 'bg-green-lt',
-        }
+        },
+        kos: kos || [],
     },
 
     methods: {
