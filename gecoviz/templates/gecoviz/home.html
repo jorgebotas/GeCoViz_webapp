@@ -22,7 +22,7 @@
                             <ul v-if="third.children.length && third._show">
                                 <li v-for="fourth in third.children"
                                     style="list-style: circle">
-                                    <a @click="searchQuery('kos', fourth.name)">[[ fourth.name ]]
+                                    <a class="color-indigo" @click="searchQuery('kos', fourth.name)">[[ fourth.name ]]
                                     </a> [[ fourth.desc ]]
                                 </li>
                             </ul>
