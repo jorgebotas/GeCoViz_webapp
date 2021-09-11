@@ -57,7 +57,8 @@
                                 <ul v-if="third.children.length && third._show">
                                     <li v-for="fourth in third.children"
                                         :class="{ 'bg-yellow' : suggestions.ko.includes(fourth) }"
-                                        style="list-style: circle; padding-left:5px">
+                                        style="list-style: circle; padding-left:5px;
+                                               border-radius:5px; margin-top: 5px">
                                         <a class="color-indigo f-bold mr-2"
                                            :href="'/?query=' + fourth.data.name + '&searchType=kos'">
                                             [[ fourth.data.name ]]
