@@ -7,7 +7,7 @@
   --bs-pink: #f66d9b;
   --bs-red: #cd201f;
   --bs-orange: #ff9f48;
-  --bs-yellow: #fab005;
+  --bs-yellow: #ffcc34;
   --bs-lime: #94d82d;
   --bs-green: #35bb83;
   --bs-teal: #2bcbba;
@@ -1642,15 +1642,15 @@ progress {
   border-color: #c4d6e3; }
 
 .table-warning {
-  --bs-table-bg: #feefcd;
-  --bs-table-striped-bg: #f1e3c3;
+  --bs-table-bg: #fff5d6;
+  --bs-table-striped-bg: #f2e9cb;
   --bs-table-striped-color: #000000;
-  --bs-table-active-bg: #e5d7b9;
+  --bs-table-active-bg: #e6ddc1;
   --bs-table-active-color: #000000;
-  --bs-table-hover-bg: #ebddbe;
+  --bs-table-hover-bg: #ece3c6;
   --bs-table-hover-color: #000000;
   color: #000000;
-  border-color: #e5d7b9; }
+  border-color: #e6ddc1; }
 
 .table-danger {
   --bs-table-bg: #f5d2d2;
@@ -11631,9 +11631,9 @@ Dimmer
   .ribbon.bg-orange-lt {
     border-color: #ffa757 !important; }
   .ribbon.bg-yellow {
-    border-color: #fab005; }
+    border-color: #ffcc34; }
   .ribbon.bg-yellow-lt {
-    border-color: #fab619 !important; }
+    border-color: #ffd044 !important; }
   .ribbon.bg-lime {
     border-color: #94d82d; }
   .ribbon.bg-lime-lt {
@@ -11830,10 +11830,10 @@ Dimmer
 
 .steps-yellow .step-item:after, .steps-yellow .step-item:before {
   color: white;
-  background: #fab005; }
+  background: #ffcc34; }
 .steps-yellow .step-item.active:before {
   color: inherit;
-  border-color: #fab005; }
+  border-color: #ffcc34; }
 
 .steps-lime .step-item:after, .steps-lime .step-item:before {
   color: white;
@@ -12555,14 +12555,14 @@ SOCIAL COLORS
   background: #ffa757 !important; }
 
 .bg-yellow {
-  background: #fab005; }
+  background: #ffcc34; }
 
 .text-yellow {
-  color: #fab005 !important; }
+  color: #ffcc34 !important; }
 
 .bg-yellow-lt {
-  color: #fab005 !important;
-  background: #fab619 !important; }
+  color: #ffcc34 !important;
+  background: #ffd044 !important; }
 
 .bg-lime {
   background: #94d82d; }
@@ -12982,6 +12982,10 @@ Antialiasing
 .bg-green {
   background-color: #35bb83;
   color: var(--sand) !important; }
+
+.bg-yellow {
+  background-color: #ffcc34 !important;
+  color: var(--sand); }
 
 .bg-orange {
   background-color: #ff9f48;

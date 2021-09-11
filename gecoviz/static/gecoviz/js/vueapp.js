@@ -163,7 +163,6 @@ var vueapp = new Vue({
                     if (!d._show)
                         this.showKO(d)
                 })
-            console.log(this)
         },
 
         updateKOSuggestions: function() {
@@ -620,7 +619,6 @@ var vueapp = new Vue({
         }
     },
     mounted: async function() {
-        console.log(this.kos)
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
                 d3.selectAll("#add-button-container *").remove();
