@@ -32,7 +32,7 @@
                             <ul v-if="third.children.length && third._show">
                                 <li v-for="fourth in third.children"
                                     style="list-style: circle">
-                                    <a class="color-indigo f-bold mr-2"
+                                    <a class="color-indigo f-bold"
                                         @click="searchQuery('kos', fourth.name)">[[ fourth.name ]]
                                     </a> 
                                     <span class="badge bg-green f-bold mx-1" v-for="gene in fourth.geneNames">
