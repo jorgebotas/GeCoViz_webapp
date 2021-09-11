@@ -1,5 +1,7 @@
-const kos = [
-        {
+const kos = {
+      "name": "ko00001",
+  "children": [
+    {
       "name": "09100 Metabolism",
       "children": [
         {
@@ -75570,4 +75572,8 @@ const kos = [
       "desc": "",
       "geneNames": []
     }
-]
+  ],
+  "desc": "",
+  "geneNames": []
+
+}
