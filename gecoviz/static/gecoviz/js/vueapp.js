@@ -165,6 +165,8 @@ var vueapp = new Vue({
            this.searchTimeout.ko = setTimeout(() => {
                 const search = $("#ko-search").val();
 
+                console.log(search)
+
                 if (search.length < 3) {
                     this.suggestions.ko = [];
                     return
