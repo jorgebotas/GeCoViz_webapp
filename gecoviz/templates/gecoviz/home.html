@@ -6,6 +6,7 @@
 
     <ul>
         <li v-for="first in kos">
+            [[ first.name ]]
             <ul v-if="first.children.length">
                 <li v-for="second in first.children">
                     [[ second.name ]]
