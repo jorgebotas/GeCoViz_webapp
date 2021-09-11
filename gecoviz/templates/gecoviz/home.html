@@ -7,6 +7,14 @@
 </div>
 
 <div v-else class="container-xxl" style="max-width:100%;">
+    <div class="card-title">
+        Browse the <b>KEGG Orthology hierarchy<title>The KEGG BRITE database is a
+                collection of Brite hierarchy and table files for
+                classification of various objects, including genes and
+                proteins, chemical compounds and reactions, drugs and diseases, and
+                organisms and viruses.</title>
+        </b>
+    </div>
     <ul>
         <li v-for="first in kos"
             :style="{ 'list-style': (first._show ? 'disclosure-open' : 'disclosure-closed') }">
