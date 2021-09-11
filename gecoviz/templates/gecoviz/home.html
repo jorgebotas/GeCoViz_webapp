@@ -34,7 +34,11 @@
                                     style="list-style: circle">
                                     <a class="color-indigo f-bold mr-2"
                                         @click="searchQuery('kos', fourth.name)">[[ fourth.name ]]
-                                    </a> [[ fourth.desc ]]
+                                    </a> 
+                                    <span v-for="gene in fourth.geneNames">
+                                        [[ gene ]]
+                                    </span>
+                                    [[ fourth.desc ]]
                                 </li>
                             </ul>
                         </li>
