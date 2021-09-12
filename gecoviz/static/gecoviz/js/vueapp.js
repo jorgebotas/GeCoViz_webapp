@@ -163,9 +163,9 @@ var vueapp = new Vue({
                     if (!d._show)
                         this.showKO(d)
                 })
-            const selector = `li#${ko.parent.data.name}_${ko.data.name}`;
+            const selector = `${ko.parent.data.name}_${ko.data.name}`;
             setTimeout(() => {
-                document.querySelector(selector).scrollIntoView({
+                document.getElementById(selector).scrollIntoView({
                     behavior: "smooth",
                     block: "start",
                     inline: "center",
