@@ -21,7 +21,7 @@
               style="top: 100% !important"
               :style="{ 'visibility': suggestions.ko.length ? 'visible' : 'hidden' }">
               <li class="dropdown-item"
-                  v-for="s in suggestions.ko"
+                  v-for="s in uniqueKOSuggestions"
                   @click="findKO(s)">
                   <b><b class="f-bold">[[ s.data.name ]]</b>
                   <br>
@@ -57,7 +57,7 @@
                                 <ul v-if="third.children.length && third._show">
                                     <li v-for="fourth in third.children"
                                         :class="fourth.data.name"
-                                        :class="{ 'bg-yellow' : suggestions.ko.map(s => s.data.name).includes(fourth.data.name) }"
+                                        :class="{ 'bg-yellow' : suggestions.ko.includes(fourth) }"
                                         style="list-style: circle; padding-left:5px;
                                                border-radius:5px; margin-top: 2px">
                                         <a class="color-indigo f-bold mr-2"

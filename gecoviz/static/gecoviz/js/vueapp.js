@@ -184,13 +184,7 @@ var vueapp = new Vue({
                     return
                 }
 
-               const uniqueSuggestions = this.kos.leaves().reduce((t, d) => {
-                   t[d.data.name] = d
-                   return t
-               }, {});
-               console.log(uniqueSuggestions)
-               console.log([...Object.values(uniqueSuggestions)])
-               this.suggestions.ko = [...Object.values(uniqueSuggestions)]
+               this.suggestions.ko = this.root.leaves()
                     .filter(d => 
                         d.data.name.includes(search) 
                         || d.data.desc.includes(search));
@@ -578,6 +572,14 @@ var vueapp = new Vue({
 
         isScreenLarge: function() {
             return this.isScreenLarge = +window.innerWidth > 2000;
+        },
+
+        uniqueKOSuggestions: function() {
+               const uniqueSuggestions = this.suggestions.ko.reduce((t, d) => {
+                   t[d.data.name] = d
+                   return t
+               }, {});
+            return [...Object.values(uniqueSuggestions)]
         },
 
         nMatches : function() {
