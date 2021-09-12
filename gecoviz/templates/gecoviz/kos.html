@@ -57,7 +57,7 @@
                                 <ul v-if="third.children.length && third._show">
                                     <li v-for="fourth in third.children"
                                         :class="fourth.data.name"
-                                        <!--:class="{ 'bg-yellow' : suggestions.ko.includes(fourth) }"-->
+                                        :class="{ 'bg-yellow' : suggestions.ko.includes(fourth) }"
                                         style="list-style: circle; padding-left:5px;
                                                border-radius:5px; margin-top: 2px">
                                         <a class="color-indigo f-bold mr-2"
