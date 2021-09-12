@@ -184,10 +184,12 @@ var vueapp = new Vue({
                     return
                 }
 
+
                this.suggestions.ko = this.kos.leaves()
                     .filter(d => 
                         d.data.name.includes(search) 
                         || d.data.desc.includes(search));
+               console.log(this.suggestions.ko.includes(ko))
             }, 500);
         },
 
