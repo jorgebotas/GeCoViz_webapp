@@ -163,6 +163,9 @@ var vueapp = new Vue({
                     if (!d._show)
                         this.showKO(d)
                 })
+            const suggestions = this.suggestions.ko;
+            this.suggestions.ko = []
+            this.suggestions.ko = suggestions;
             const selector = `li.${ko.data.name}`;
             setTimeout(() => {
                 document.querySelector(selector).scrollIntoView({
