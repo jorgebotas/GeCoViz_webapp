@@ -56,8 +56,8 @@
                                 <a @click="showKO(third)">[[ third.data.name ]]</a>
                                 <ul v-if="third.children.length && third._show">
                                     <li v-for="fourth in third.children"
-                                        :class="{ `${fourth.data.name}` : true,
-                                                  'bg-yellow' : suggestions.ko.includes(fourth) }"
+                                        :class="{ suggestions.ko.includes(fourth) ?
+                                                    `bg-yellow ${fourth.data.name}` : fourth.data.name }"
                                         style="list-style: circle; padding-left:5px;
                                                border-radius:5px; margin-top: 2px">
                                         <a class="color-indigo f-bold mr-2"
