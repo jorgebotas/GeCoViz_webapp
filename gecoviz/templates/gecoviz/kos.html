@@ -45,7 +45,7 @@
         <ul>
             <li v-for="first in kos.children"
                 :style="{ 'list-style': (first._show ? 'disclosure-open' : 'disclosure-closed') }">
-                <a @click="showKO(first)">[[ first.data.name [[ first.data.desc ]]</a>
+                <a @click="showKO(first)">[[ first.data.name ]] [[ first.data.desc ]]</a>
                 <ul v-if="first.children.length && first._show">
                     <li v-for="second in first.children"
                         :style="{ 'list-style': second._show ? 'disclosure-open' : 'disclosure-closed' }">
