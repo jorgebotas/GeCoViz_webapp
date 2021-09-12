@@ -186,7 +186,7 @@ var vueapp = new Vue({
 
                const uniqueSuggestions = this.kos.leaves().reduce((t, d) =>
                     t[d.data.name] = d, {})
-               this.suggestions.ko = uniqueSuggestions
+               this.suggestions.ko = [...Object.values(uniqueSuggestions)]
                     .filter(d => 
                         d.data.name.includes(search) 
                         || d.data.desc.includes(search));
