@@ -165,6 +165,7 @@ var vueapp = new Vue({
                 })
             const selector = `li.${ko.data.name}`;
             setTimeout(() => {
+               console.log(this.suggestions.ko.includes(ko))
                 document.querySelector(selector).scrollIntoView({
                     behavior: "smooth",
                     block: "start",
@@ -189,7 +190,6 @@ var vueapp = new Vue({
                     .filter(d => 
                         d.data.name.includes(search) 
                         || d.data.desc.includes(search));
-               console.log(this.suggestions.ko.includes(ko))
             }, 500);
         },
 
