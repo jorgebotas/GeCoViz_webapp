@@ -163,7 +163,7 @@ var vueapp = new Vue({
                     if (!d._show)
                         this.showKO(d)
                 })
-            const selector = `li#${ko.parent.data.name}_${ko.data.name}`;
+            const selector = `li#${ko.parent.data.name.split(" ")[0]}_${ko.data.name}`;
             setTimeout(() => {
                 document.querySelector(selector).scrollIntoView({
                     behavior: "smooth",
