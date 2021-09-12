@@ -184,8 +184,10 @@ var vueapp = new Vue({
                     return
                 }
 
-               const uniqueSuggestions = this.kos.leaves().reduce((t, d) =>
-                    t[d.data.name] = d, {})
+               const uniqueSuggestions = this.kos.leaves().reduce((t, d) => {
+                   t[d.data.name] = d
+                   return t
+               }, {});
                console.log(uniqueSuggestions)
                console.log([...Object.values(uniqueSuggestions)])
                this.suggestions.ko = [...Object.values(uniqueSuggestions)]
