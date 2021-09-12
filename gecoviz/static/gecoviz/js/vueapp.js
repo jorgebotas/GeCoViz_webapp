@@ -583,7 +583,6 @@ var vueapp = new Vue({
                    t[d.data.name] = d
                    return t
                }, {});
-            console.log(uniqueSuggestions)
             return [...Object.values(uniqueSuggestions)]
         },
 
