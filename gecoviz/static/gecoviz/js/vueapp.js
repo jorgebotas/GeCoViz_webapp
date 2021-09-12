@@ -195,7 +195,6 @@ var vueapp = new Vue({
                         d.data.name.includes(search) 
                         || d.data.desc.includes(search));
             }, 500);
-
         },
 
         showTab: function(selector) {
