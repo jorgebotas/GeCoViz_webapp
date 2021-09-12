@@ -165,7 +165,6 @@ var vueapp = new Vue({
                 })
             const selector = `li.${ko.data.name}`;
             setTimeout(() => {
-               console.log(this.suggestions.ko.includes(ko))
                 document.querySelector(selector).scrollIntoView({
                     behavior: "smooth",
                     block: "start",
