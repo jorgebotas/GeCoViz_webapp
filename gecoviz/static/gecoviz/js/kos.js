@@ -2,13 +2,13 @@ const kos = {
       "name": "ko00001",
   "children": [
     {
-      "name": "09100 Metabolism",
+      "name": "09100",
       "children": [
         {
-          "name": "09101 Carbohydrate metabolism",
+          "name": "09101",
           "children": [
             {
-              "name": "00010 Glycolysis / Gluconeogenesis [PATH:ko00010]",
+              "name": "00010",
               "children": [
                 {
                   "name": "K00844",
@@ -691,11 +691,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glycolysis / Gluconeogenesis [PATH:ko00010]",
               "geneNames": []
             },
             {
-              "name": "00020 Citrate cycle (TCA cycle) [PATH:ko00020]",
+              "name": "00020",
               "children": [
                 {
                   "name": "K01647",
@@ -1123,11 +1123,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Citrate cycle (TCA cycle) [PATH:ko00020]",
               "geneNames": []
             },
             {
-              "name": "00030 Pentose phosphate pathway [PATH:ko00030]",
+              "name": "00030",
               "children": [
                 {
                   "name": "K01810",
@@ -1715,11 +1715,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Pentose phosphate pathway [PATH:ko00030]",
               "geneNames": []
             },
             {
-              "name": "00040 Pentose and glucuronate interconversions [PATH:ko00040]",
+              "name": "00040",
               "children": [
                 {
                   "name": "K01051",
@@ -2226,11 +2226,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Pentose and glucuronate interconversions [PATH:ko00040]",
               "geneNames": []
             },
             {
-              "name": "00051 Fructose and mannose metabolism [PATH:ko00051]",
+              "name": "00051",
               "children": [
                 {
                   "name": "K01218",
@@ -2943,11 +2943,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Fructose and mannose metabolism [PATH:ko00051]",
               "geneNames": []
             },
             {
-              "name": "00052 Galactose metabolism [PATH:ko00052]",
+              "name": "00052",
               "children": [
                 {
                   "name": "K01785",
@@ -3405,11 +3405,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Galactose metabolism [PATH:ko00052]",
               "geneNames": []
             },
             {
-              "name": "00053 Ascorbate and aldarate metabolism [PATH:ko00053]",
+              "name": "00053",
               "children": [
                 {
                   "name": "K00012",
@@ -3751,11 +3751,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Ascorbate and aldarate metabolism [PATH:ko00053]",
               "geneNames": []
             },
             {
-              "name": "00500 Starch and sucrose metabolism [PATH:ko00500]",
+              "name": "00500",
               "children": [
                 {
                   "name": "K02810",
@@ -4398,11 +4398,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Starch and sucrose metabolism [PATH:ko00500]",
               "geneNames": []
             },
             {
-              "name": "00520 Amino sugar and nucleotide sugar metabolism [PATH:ko00520]",
+              "name": "00520",
               "children": [
                 {
                   "name": "K01183",
@@ -5371,11 +5371,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Amino sugar and nucleotide sugar metabolism [PATH:ko00520]",
               "geneNames": []
             },
             {
-              "name": "00620 Pyruvate metabolism [PATH:ko00620]",
+              "name": "00620",
               "children": [
                 {
                   "name": "K01895",
@@ -6185,11 +6185,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Pyruvate metabolism [PATH:ko00620]",
               "geneNames": []
             },
             {
-              "name": "00630 Glyoxylate and dicarboxylate metabolism [PATH:ko00630]",
+              "name": "00630",
               "children": [
                 {
                   "name": "K01637",
@@ -6877,11 +6877,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glyoxylate and dicarboxylate metabolism [PATH:ko00630]",
               "geneNames": []
             },
             {
-              "name": "00640 Propanoate metabolism [PATH:ko00640]",
+              "name": "00640",
               "children": [
                 {
                   "name": "K01895",
@@ -7590,11 +7590,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Propanoate metabolism [PATH:ko00640]",
               "geneNames": []
             },
             {
-              "name": "00650 Butanoate metabolism [PATH:ko00650]",
+              "name": "00650",
               "children": [
                 {
                   "name": "K00626",
@@ -8237,11 +8237,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Butanoate metabolism [PATH:ko00650]",
               "geneNames": []
             },
             {
-              "name": "00660 C5-Branched dibasic acid metabolism [PATH:ko00660]",
+              "name": "00660",
               "children": [
                 {
                   "name": "K01652",
@@ -8456,11 +8456,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "C5-Branched dibasic acid metabolism [PATH:ko00660]",
               "geneNames": []
             },
             {
-              "name": "00562 Inositol phosphate metabolism [PATH:ko00562]",
+              "name": "00562",
               "children": [
                 {
                   "name": "K18082",
@@ -8702,18 +8702,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Inositol phosphate metabolism [PATH:ko00562]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Carbohydrate metabolism",
           "geneNames": []
         },
         {
-          "name": "09102 Energy metabolism",
+          "name": "09102",
           "children": [
             {
-              "name": "00190 Oxidative phosphorylation [PATH:ko00190]",
+              "name": "00190",
               "children": [
                 {
                   "name": "K00330",
@@ -9716,11 +9716,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Oxidative phosphorylation [PATH:ko00190]",
               "geneNames": []
             },
             {
-              "name": "00195 Photosynthesis [PATH:ko00195]",
+              "name": "00195",
               "children": [
                 {
                   "name": "K02703",
@@ -10165,11 +10165,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Photosynthesis [PATH:ko00195]",
               "geneNames": []
             },
             {
-              "name": "00196 Photosynthesis - antenna proteins [PATH:ko00196]",
+              "name": "00196",
               "children": [
                 {
                   "name": "K02092",
@@ -10457,11 +10457,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Photosynthesis - antenna proteins [PATH:ko00196]",
               "geneNames": []
             },
             {
-              "name": "00710 Carbon fixation in photosynthetic organisms [PATH:ko00710]",
+              "name": "00710",
               "children": [
                 {
                   "name": "K01601",
@@ -10689,11 +10689,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Carbon fixation in photosynthetic organisms [PATH:ko00710]",
               "geneNames": []
             },
             {
-              "name": "00720 Carbon fixation pathways in prokaryotes [PATH:ko00720]",
+              "name": "00720",
               "children": [
                 {
                   "name": "K00169",
@@ -11455,11 +11455,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Carbon fixation pathways in prokaryotes [PATH:ko00720]",
               "geneNames": []
             },
             {
-              "name": "00680 Methane metabolism [PATH:ko00680]",
+              "name": "00680",
               "children": [
                 {
                   "name": "K16157",
@@ -12788,11 +12788,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Methane metabolism [PATH:ko00680]",
               "geneNames": []
             },
             {
-              "name": "00910 Nitrogen metabolism [PATH:ko00910]",
+              "name": "00910",
               "children": [
                 {
                   "name": "K01455",
@@ -13180,11 +13180,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Nitrogen metabolism [PATH:ko00910]",
               "geneNames": []
             },
             {
-              "name": "00920 Sulfur metabolism [PATH:ko00920]",
+              "name": "00920",
               "children": [
                 {
                   "name": "K02048",
@@ -13883,18 +13883,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Sulfur metabolism [PATH:ko00920]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Energy metabolism",
           "geneNames": []
         },
         {
-          "name": "09103 Lipid metabolism",
+          "name": "09103",
           "children": [
             {
-              "name": "00061 Fatty acid biosynthesis [PATH:ko00061]",
+              "name": "00061",
               "children": [
                 {
                   "name": "K01962",
@@ -14132,11 +14132,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Fatty acid biosynthesis [PATH:ko00061]",
               "geneNames": []
             },
             {
-              "name": "00062 Fatty acid elongation [PATH:ko00062]",
+              "name": "00062",
               "children": [
                 {
                   "name": "K07508",
@@ -14188,11 +14188,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Fatty acid elongation [PATH:ko00062]",
               "geneNames": []
             },
             {
-              "name": "00071 Fatty acid degradation [PATH:ko00071]",
+              "name": "00071",
               "children": [
                 {
                   "name": "K00626",
@@ -14493,11 +14493,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Fatty acid degradation [PATH:ko00071]",
               "geneNames": []
             },
             {
-              "name": "00072 Synthesis and degradation of ketone bodies [PATH:ko00072]",
+              "name": "00072",
               "children": [
                 {
                   "name": "K01641",
@@ -14562,11 +14562,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Synthesis and degradation of ketone bodies [PATH:ko00072]",
               "geneNames": []
             },
             {
-              "name": "00073 Cutin, suberine and wax biosynthesis [PATH:ko00073]",
+              "name": "00073",
               "children": [
                 {
                   "name": "K15400",
@@ -14590,11 +14590,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cutin, suberine and wax biosynthesis [PATH:ko00073]",
               "geneNames": []
             },
             {
-              "name": "00100 Steroid biosynthesis [PATH:ko00100]",
+              "name": "00100",
               "children": [
                 {
                   "name": "K00801",
@@ -14737,11 +14737,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Steroid biosynthesis [PATH:ko00100]",
               "geneNames": []
             },
             {
-              "name": "00120 Primary bile acid biosynthesis [PATH:ko00120]",
+              "name": "00120",
               "children": [
                 {
                   "name": "K12408",
@@ -14782,11 +14782,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Primary bile acid biosynthesis [PATH:ko00120]",
               "geneNames": []
             },
             {
-              "name": "00121 Secondary bile acid biosynthesis [PATH:ko00121]",
+              "name": "00121",
               "children": [
                 {
                   "name": "K01442",
@@ -14810,11 +14810,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Secondary bile acid biosynthesis [PATH:ko00121]",
               "geneNames": []
             },
             {
-              "name": "00140 Steroid hormone biosynthesis [PATH:ko00140]",
+              "name": "00140",
               "children": [
                 {
                   "name": "K00498",
@@ -14939,11 +14939,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Steroid hormone biosynthesis [PATH:ko00140]",
               "geneNames": []
             },
             {
-              "name": "00561 Glycerolipid metabolism [PATH:ko00561]",
+              "name": "00561",
               "children": [
                 {
                   "name": "K00865",
@@ -15311,11 +15311,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glycerolipid metabolism [PATH:ko00561]",
               "geneNames": []
             },
             {
-              "name": "00564 Glycerophospholipid metabolism [PATH:ko00564]",
+              "name": "00564",
               "children": [
                 {
                   "name": "K00006",
@@ -15860,11 +15860,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glycerophospholipid metabolism [PATH:ko00564]",
               "geneNames": []
             },
             {
-              "name": "00565 Ether lipid metabolism [PATH:ko00565]",
+              "name": "00565",
               "children": [
                 {
                   "name": "K00803",
@@ -16008,11 +16008,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Ether lipid metabolism [PATH:ko00565]",
               "geneNames": []
             },
             {
-              "name": "00600 Sphingolipid metabolism [PATH:ko00600]",
+              "name": "00600",
               "children": [
                 {
                   "name": "K00654",
@@ -16191,11 +16191,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Sphingolipid metabolism [PATH:ko00600]",
               "geneNames": []
             },
             {
-              "name": "00590 Arachidonic acid metabolism [PATH:ko00590]",
+              "name": "00590",
               "children": [
                 {
                   "name": "K01047",
@@ -16359,11 +16359,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Arachidonic acid metabolism [PATH:ko00590]",
               "geneNames": []
             },
             {
-              "name": "00591 Linoleic acid metabolism [PATH:ko00591]",
+              "name": "00591",
               "children": [
                 {
                   "name": "K01047",
@@ -16438,11 +16438,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Linoleic acid metabolism [PATH:ko00591]",
               "geneNames": []
             },
             {
-              "name": "00592 alpha-Linolenic acid metabolism [PATH:ko00592]",
+              "name": "00592",
               "children": [
                 {
                   "name": "K01047",
@@ -16520,11 +16520,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "alpha-Linolenic acid metabolism [PATH:ko00592]",
               "geneNames": []
             },
             {
-              "name": "01040 Biosynthesis of unsaturated fatty acids [PATH:ko01040]",
+              "name": "01040",
               "children": [
                 {
                   "name": "K10251",
@@ -16630,18 +16630,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biosynthesis of unsaturated fatty acids [PATH:ko01040]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Lipid metabolism",
           "geneNames": []
         },
         {
-          "name": "09104 Nucleotide metabolism",
+          "name": "09104",
           "children": [
             {
-              "name": "00230 Purine metabolism [PATH:ko00230]",
+              "name": "00230",
               "children": [
                 {
                   "name": "K13988",
@@ -17762,11 +17762,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Purine metabolism [PATH:ko00230]",
               "geneNames": []
             },
             {
-              "name": "00240 Pyrimidine metabolism [PATH:ko00240]",
+              "name": "00240",
               "children": [
                 {
                   "name": "K11540",
@@ -18435,18 +18435,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Pyrimidine metabolism [PATH:ko00240]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Nucleotide metabolism",
           "geneNames": []
         },
         {
-          "name": "09105 Amino acid metabolism",
+          "name": "09105",
           "children": [
             {
-              "name": "00250 Alanine, aspartate and glutamate metabolism [PATH:ko00250]",
+              "name": "00250",
               "children": [
                 {
                   "name": "K14455",
@@ -18891,11 +18891,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Alanine, aspartate and glutamate metabolism [PATH:ko00250]",
               "geneNames": []
             },
             {
-              "name": "00260 Glycine, serine and threonine metabolism [PATH:ko00260]",
+              "name": "00260",
               "children": [
                 {
                   "name": "K00928",
@@ -19551,11 +19551,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glycine, serine and threonine metabolism [PATH:ko00260]",
               "geneNames": []
             },
             {
-              "name": "00270 Cysteine and methionine metabolism [PATH:ko00270]",
+              "name": "00270",
               "children": [
                 {
                   "name": "K00640",
@@ -20198,11 +20198,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cysteine and methionine metabolism [PATH:ko00270]",
               "geneNames": []
             },
             {
-              "name": "00280 Valine, leucine and isoleucine degradation [PATH:ko00280]",
+              "name": "00280",
               "children": [
                 {
                   "name": "K00826",
@@ -20638,11 +20638,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Valine, leucine and isoleucine degradation [PATH:ko00280]",
               "geneNames": []
             },
             {
-              "name": "00290 Valine, leucine and isoleucine biosynthesis [PATH:ko00290]",
+              "name": "00290",
               "children": [
                 {
                   "name": "K01754",
@@ -20778,11 +20778,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Valine, leucine and isoleucine biosynthesis [PATH:ko00290]",
               "geneNames": []
             },
             {
-              "name": "00300 Lysine biosynthesis [PATH:ko00300]",
+              "name": "00300",
               "children": [
                 {
                   "name": "K00003",
@@ -21093,11 +21093,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Lysine biosynthesis [PATH:ko00300]",
               "geneNames": []
             },
             {
-              "name": "00310 Lysine degradation [PATH:ko00310]",
+              "name": "00310",
               "children": [
                 {
                   "name": "K00290",
@@ -21436,11 +21436,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Lysine degradation [PATH:ko00310]",
               "geneNames": []
             },
             {
-              "name": "00220 Arginine biosynthesis [PATH:ko00220]",
+              "name": "00220",
               "children": [
                 {
                   "name": "K00611",
@@ -21798,11 +21798,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Arginine biosynthesis [PATH:ko00220]",
               "geneNames": []
             },
             {
-              "name": "00330 Arginine and proline metabolism [PATH:ko00330]",
+              "name": "00330",
               "children": [
                 {
                   "name": "K00613",
@@ -22407,11 +22407,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Arginine and proline metabolism [PATH:ko00330]",
               "geneNames": []
             },
             {
-              "name": "00340 Histidine metabolism [PATH:ko00340]",
+              "name": "00340",
               "children": [
                 {
                   "name": "K00765",
@@ -22694,11 +22694,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Histidine metabolism [PATH:ko00340]",
               "geneNames": []
             },
             {
-              "name": "00350 Tyrosine metabolism [PATH:ko00350]",
+              "name": "00350",
               "children": [
                 {
                   "name": "K14455",
@@ -23102,11 +23102,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Tyrosine metabolism [PATH:ko00350]",
               "geneNames": []
             },
             {
-              "name": "00360 Phenylalanine metabolism [PATH:ko00360]",
+              "name": "00360",
               "children": [
                 {
                   "name": "K00500",
@@ -23549,11 +23549,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Phenylalanine metabolism [PATH:ko00360]",
               "geneNames": []
             },
             {
-              "name": "00380 Tryptophan metabolism [PATH:ko00380]",
+              "name": "00380",
               "children": [
                 {
                   "name": "K00453",
@@ -23899,11 +23899,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Tryptophan metabolism [PATH:ko00380]",
               "geneNames": []
             },
             {
-              "name": "00400 Phenylalanine, tyrosine and tryptophan biosynthesis [PATH:ko00400]",
+              "name": "00400",
               "children": [
                 {
                   "name": "K01626",
@@ -24360,18 +24360,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Phenylalanine, tyrosine and tryptophan biosynthesis [PATH:ko00400]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Amino acid metabolism",
           "geneNames": []
         },
         {
-          "name": "09106 Metabolism of other amino acids",
+          "name": "09106",
           "children": [
             {
-              "name": "00410 beta-Alanine metabolism [PATH:ko00410]",
+              "name": "00410",
               "children": [
                 {
                   "name": "K01579",
@@ -24631,11 +24631,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "beta-Alanine metabolism [PATH:ko00410]",
               "geneNames": []
             },
             {
-              "name": "00430 Taurine and hypotaurine metabolism [PATH:ko00430]",
+              "name": "00430",
               "children": [
                 {
                   "name": "K00456",
@@ -24792,11 +24792,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Taurine and hypotaurine metabolism [PATH:ko00430]",
               "geneNames": []
             },
             {
-              "name": "00440 Phosphonate and phosphinate metabolism [PATH:ko00440]",
+              "name": "00440",
               "children": [
                 {
                   "name": "K01841",
@@ -24962,11 +24962,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Phosphonate and phosphinate metabolism [PATH:ko00440]",
               "geneNames": []
             },
             {
-              "name": "00450 Selenocompound metabolism [PATH:ko00450]",
+              "name": "00450",
               "children": [
                 {
                   "name": "K01739",
@@ -25196,11 +25196,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Selenocompound metabolism [PATH:ko00450]",
               "geneNames": []
             },
             {
-              "name": "00460 Cyanoamino acid metabolism [PATH:ko00460]",
+              "name": "00460",
               "children": [
                 {
                   "name": "K01188",
@@ -25320,11 +25320,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cyanoamino acid metabolism [PATH:ko00460]",
               "geneNames": []
             },
             {
-              "name": "00471 D-Glutamine and D-glutamate metabolism [PATH:ko00471]",
+              "name": "00471",
               "children": [
                 {
                   "name": "K01425",
@@ -25380,11 +25380,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "D-Glutamine and D-glutamate metabolism [PATH:ko00471]",
               "geneNames": []
             },
             {
-              "name": "00472 D-Arginine and D-ornithine metabolism [PATH:ko00472]",
+              "name": "00472",
               "children": [
                 {
                   "name": "K00273",
@@ -25444,11 +25444,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "D-Arginine and D-ornithine metabolism [PATH:ko00472]",
               "geneNames": []
             },
             {
-              "name": "00473 D-Alanine metabolism [PATH:ko00473]",
+              "name": "00473",
               "children": [
                 {
                   "name": "K01775",
@@ -25486,11 +25486,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "D-Alanine metabolism [PATH:ko00473]",
               "geneNames": []
             },
             {
-              "name": "00480 Glutathione metabolism [PATH:ko00480]",
+              "name": "00480",
               "children": [
                 {
                   "name": "K00681",
@@ -25737,18 +25737,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glutathione metabolism [PATH:ko00480]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Metabolism of other amino acids",
           "geneNames": []
         },
         {
-          "name": "09107 Glycan biosynthesis and metabolism",
+          "name": "09107",
           "children": [
             {
-              "name": "00510 N-Glycan biosynthesis [PATH:ko00510]",
+              "name": "00510",
               "children": [
                 {
                   "name": "K00902",
@@ -25845,11 +25845,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "N-Glycan biosynthesis [PATH:ko00510]",
               "geneNames": []
             },
             {
-              "name": "00513 Various types of N-glycan biosynthesis [PATH:ko00513]",
+              "name": "00513",
               "children": [
                 {
                   "name": "K07441",
@@ -25930,11 +25930,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Various types of N-glycan biosynthesis [PATH:ko00513]",
               "geneNames": []
             },
             {
-              "name": "00512 Mucin type O-glycan biosynthesis [PATH:ko00512]",
+              "name": "00512",
               "children": [
                 {
                   "name": "K00710",
@@ -25981,11 +25981,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Mucin type O-glycan biosynthesis [PATH:ko00512]",
               "geneNames": []
             },
             {
-              "name": "00515 Mannose type O-glycan biosynthesis [PATH:ko00515]",
+              "name": "00515",
               "children": [
                 {
                   "name": "K00728",
@@ -26024,11 +26024,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Mannose type O-glycan biosynthesis [PATH:ko00515]",
               "geneNames": []
             },
             {
-              "name": "00514 Other types of O-glycan biosynthesis [PATH:ko00514]",
+              "name": "00514",
               "children": [
                 {
                   "name": "K09667",
@@ -26106,11 +26106,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Other types of O-glycan biosynthesis [PATH:ko00514]",
               "geneNames": []
             },
             {
-              "name": "00532 Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate [PATH:ko00532]",
+              "name": "00532",
               "children": [
                 {
                   "name": "K00771",
@@ -26155,11 +26155,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glycosaminoglycan biosynthesis - chondroitin sulfate / dermatan sulfate [PATH:ko00532]",
               "geneNames": []
             },
             {
-              "name": "00534 Glycosaminoglycan biosynthesis - heparan sulfate / heparin [PATH:ko00534]",
+              "name": "00534",
               "children": [
                 {
                   "name": "K00771",
@@ -26253,11 +26253,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glycosaminoglycan biosynthesis - heparan sulfate / heparin [PATH:ko00534]",
               "geneNames": []
             },
             {
-              "name": "00533 Glycosaminoglycan biosynthesis - keratan sulfate [PATH:ko00533]",
+              "name": "00533",
               "children": [
                 {
                   "name": "K00781",
@@ -26281,11 +26281,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glycosaminoglycan biosynthesis - keratan sulfate [PATH:ko00533]",
               "geneNames": []
             },
             {
-              "name": "00531 Glycosaminoglycan degradation [PATH:ko00531]",
+              "name": "00531",
               "children": [
                 {
                   "name": "K01197",
@@ -26381,11 +26381,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glycosaminoglycan degradation [PATH:ko00531]",
               "geneNames": []
             },
             {
-              "name": "00563 Glycosylphosphatidylinositol (GPI)-anchor biosynthesis [PATH:ko00563]",
+              "name": "00563",
               "children": [
                 {
                   "name": "K03857",
@@ -26453,11 +26453,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glycosylphosphatidylinositol (GPI)-anchor biosynthesis [PATH:ko00563]",
               "geneNames": []
             },
             {
-              "name": "00601 Glycosphingolipid biosynthesis - lacto and neolacto series [PATH:ko00601]",
+              "name": "00601",
               "children": [
                 {
                   "name": "K03766",
@@ -26524,11 +26524,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glycosphingolipid biosynthesis - lacto and neolacto series [PATH:ko00601]",
               "geneNames": []
             },
             {
-              "name": "00603 Glycosphingolipid biosynthesis - globo and isoglobo series [PATH:ko00603]",
+              "name": "00603",
               "children": [
                 {
                   "name": "K01988",
@@ -26582,11 +26582,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glycosphingolipid biosynthesis - globo and isoglobo series [PATH:ko00603]",
               "geneNames": []
             },
             {
-              "name": "00604 Glycosphingolipid biosynthesis - ganglio series [PATH:ko00604]",
+              "name": "00604",
               "children": [
                 {
                   "name": "K00725",
@@ -26626,11 +26626,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glycosphingolipid biosynthesis - ganglio series [PATH:ko00604]",
               "geneNames": []
             },
             {
-              "name": "00540 Lipopolysaccharide biosynthesis [PATH:ko00540]",
+              "name": "00540",
               "children": [
                 {
                   "name": "K00677",
@@ -27054,11 +27054,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Lipopolysaccharide biosynthesis [PATH:ko00540]",
               "geneNames": []
             },
             {
-              "name": "00542 O-Antigen repeat unit biosynthesis [PATH:ko00542]",
+              "name": "00542",
               "children": [
                 {
                   "name": "K02851",
@@ -27109,11 +27109,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "O-Antigen repeat unit biosynthesis [PATH:ko00542]",
               "geneNames": []
             },
             {
-              "name": "00541 O-Antigen nucleotide sugar biosynthesis [PATH:ko00541]",
+              "name": "00541",
               "children": [
                 {
                   "name": "K00963",
@@ -27522,11 +27522,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "O-Antigen nucleotide sugar biosynthesis [PATH:ko00541]",
               "geneNames": []
             },
             {
-              "name": "00550 Peptidoglycan biosynthesis [PATH:ko00550]",
+              "name": "00550",
               "children": [
                 {
                   "name": "K00790",
@@ -27878,11 +27878,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Peptidoglycan biosynthesis [PATH:ko00550]",
               "geneNames": []
             },
             {
-              "name": "00511 Other glycan degradation [PATH:ko00511]",
+              "name": "00511",
               "children": [
                 {
                   "name": "K01186",
@@ -28004,11 +28004,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Other glycan degradation [PATH:ko00511]",
               "geneNames": []
             },
             {
-              "name": "00571 Lipoarabinomannan (LAM) biosynthesis [PATH:ko00571]",
+              "name": "00571",
               "children": [
                 {
                   "name": "K08256",
@@ -28102,11 +28102,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Lipoarabinomannan (LAM) biosynthesis [PATH:ko00571]",
               "geneNames": []
             },
             {
-              "name": "00572 Arabinogalactan biosynthesis - Mycobacterium [PATH:ko00572]",
+              "name": "00572",
               "children": [
                 {
                   "name": "K02851",
@@ -28188,18 +28188,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Arabinogalactan biosynthesis - Mycobacterium [PATH:ko00572]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Glycan biosynthesis and metabolism",
           "geneNames": []
         },
         {
-          "name": "09108 Metabolism of cofactors and vitamins",
+          "name": "09108",
           "children": [
             {
-              "name": "00730 Thiamine metabolism [PATH:ko00730]",
+              "name": "00730",
               "children": [
                 {
                   "name": "K03147",
@@ -28427,11 +28427,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Thiamine metabolism [PATH:ko00730]",
               "geneNames": []
             },
             {
-              "name": "00740 Riboflavin metabolism [PATH:ko00740]",
+              "name": "00740",
               "children": [
                 {
                   "name": "K01497",
@@ -28708,11 +28708,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Riboflavin metabolism [PATH:ko00740]",
               "geneNames": []
             },
             {
-              "name": "00750 Vitamin B6 metabolism [PATH:ko00750]",
+              "name": "00750",
               "children": [
                 {
                   "name": "K00275",
@@ -28860,11 +28860,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Vitamin B6 metabolism [PATH:ko00750]",
               "geneNames": []
             },
             {
-              "name": "00760 Nicotinate and nicotinamide metabolism [PATH:ko00760]",
+              "name": "00760",
               "children": [
                 {
                   "name": "K00278",
@@ -29451,11 +29451,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Nicotinate and nicotinamide metabolism [PATH:ko00760]",
               "geneNames": []
             },
             {
-              "name": "00770 Pantothenate and CoA biosynthesis [PATH:ko00770]",
+              "name": "00770",
               "children": [
                 {
                   "name": "K01652",
@@ -29744,11 +29744,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Pantothenate and CoA biosynthesis [PATH:ko00770]",
               "geneNames": []
             },
             {
-              "name": "00780 Biotin metabolism [PATH:ko00780]",
+              "name": "00780",
               "children": [
                 {
                   "name": "K02169",
@@ -29917,11 +29917,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biotin metabolism [PATH:ko00780]",
               "geneNames": []
             },
             {
-              "name": "00785 Lipoic acid metabolism [PATH:ko00785]",
+              "name": "00785",
               "children": [
                 {
                   "name": "K03801",
@@ -29971,11 +29971,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Lipoic acid metabolism [PATH:ko00785]",
               "geneNames": []
             },
             {
-              "name": "00790 Folate biosynthesis [PATH:ko00790]",
+              "name": "00790",
               "children": [
                 {
                   "name": "K01495",
@@ -30448,11 +30448,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Folate biosynthesis [PATH:ko00790]",
               "geneNames": []
             },
             {
-              "name": "00670 One carbon pool by folate [PATH:ko00670]",
+              "name": "00670",
               "children": [
                 {
                   "name": "K00287",
@@ -30640,11 +30640,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "One carbon pool by folate [PATH:ko00670]",
               "geneNames": []
             },
             {
-              "name": "00830 Retinol metabolism [PATH:ko00830]",
+              "name": "00830",
               "children": [
                 {
                   "name": "K00515",
@@ -30798,11 +30798,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Retinol metabolism [PATH:ko00830]",
               "geneNames": []
             },
             {
-              "name": "00860 Porphyrin and chlorophyll metabolism [PATH:ko00860]",
+              "name": "00860",
               "children": [
                 {
                   "name": "K00643",
@@ -31638,11 +31638,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Porphyrin and chlorophyll metabolism [PATH:ko00860]",
               "geneNames": []
             },
             {
-              "name": "00130 Ubiquinone and other terpenoid-quinone biosynthesis [PATH:ko00130]",
+              "name": "00130",
               "children": [
                 {
                   "name": "K00815",
@@ -32004,18 +32004,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Ubiquinone and other terpenoid-quinone biosynthesis [PATH:ko00130]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Metabolism of cofactors and vitamins",
           "geneNames": []
         },
         {
-          "name": "09109 Metabolism of terpenoids and polyketides",
+          "name": "09109",
           "children": [
             {
-              "name": "00900 Terpenoid backbone biosynthesis [PATH:ko00900]",
+              "name": "00900",
               "children": [
                 {
                   "name": "K01662",
@@ -32320,11 +32320,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Terpenoid backbone biosynthesis [PATH:ko00900]",
               "geneNames": []
             },
             {
-              "name": "00902 Monoterpenoid biosynthesis [PATH:ko00902]",
+              "name": "00902",
               "children": [
                 {
                   "name": "K05525",
@@ -32335,11 +32335,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Monoterpenoid biosynthesis [PATH:ko00902]",
               "geneNames": []
             },
             {
-              "name": "00909 Sesquiterpenoid and triterpenoid biosynthesis [PATH:ko00909]",
+              "name": "00909",
               "children": [
                 {
                   "name": "K00801",
@@ -32442,11 +32442,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Sesquiterpenoid and triterpenoid biosynthesis [PATH:ko00909]",
               "geneNames": []
             },
             {
-              "name": "00904 Diterpenoid biosynthesis [PATH:ko00904]",
+              "name": "00904",
               "children": [
                 {
                   "name": "K04120",
@@ -32463,11 +32463,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Diterpenoid biosynthesis [PATH:ko00904]",
               "geneNames": []
             },
             {
-              "name": "00906 Carotenoid biosynthesis [PATH:ko00906]",
+              "name": "00906",
               "children": [
                 {
                   "name": "K02291",
@@ -32718,11 +32718,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Carotenoid biosynthesis [PATH:ko00906]",
               "geneNames": []
             },
             {
-              "name": "00981 Insect hormone biosynthesis [PATH:ko00981]",
+              "name": "00981",
               "children": [
                 {
                   "name": "K00128",
@@ -32771,11 +32771,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Insect hormone biosynthesis [PATH:ko00981]",
               "geneNames": []
             },
             {
-              "name": "00908 Zeatin biosynthesis [PATH:ko00908]",
+              "name": "00908",
               "children": [
                 {
                   "name": "K00279",
@@ -32793,11 +32793,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Zeatin biosynthesis [PATH:ko00908]",
               "geneNames": []
             },
             {
-              "name": "00903 Limonene and pinene degradation [PATH:ko00903]",
+              "name": "00903",
               "children": [
                 {
                   "name": "K14731",
@@ -32851,11 +32851,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Limonene and pinene degradation [PATH:ko00903]",
               "geneNames": []
             },
             {
-              "name": "00281 Geraniol degradation [PATH:ko00281]",
+              "name": "00281",
               "children": [
                 {
                   "name": "K12957",
@@ -32960,11 +32960,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Geraniol degradation [PATH:ko00281]",
               "geneNames": []
             },
             {
-              "name": "01052 Type I polyketide structures [PATH:ko01052]",
+              "name": "01052",
               "children": [
                 {
                   "name": "K10817",
@@ -33448,11 +33448,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Type I polyketide structures [PATH:ko01052]",
               "geneNames": []
             },
             {
-              "name": "00522 Biosynthesis of 12-, 14- and 16-membered macrolides [PATH:ko00522]",
+              "name": "00522",
               "children": [
                 {
                   "name": "K15996",
@@ -33542,11 +33542,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biosynthesis of 12-, 14- and 16-membered macrolides [PATH:ko00522]",
               "geneNames": []
             },
             {
-              "name": "01051 Biosynthesis of ansamycins [PATH:ko01051]",
+              "name": "01051",
               "children": [
                 {
                   "name": "K16015",
@@ -33783,11 +33783,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biosynthesis of ansamycins [PATH:ko01051]",
               "geneNames": []
             },
             {
-              "name": "01059 Biosynthesis of enediyne antibiotics [PATH:ko01059]",
+              "name": "01059",
               "children": [
                 {
                   "name": "K15314",
@@ -34189,11 +34189,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biosynthesis of enediyne antibiotics [PATH:ko01059]",
               "geneNames": []
             },
             {
-              "name": "01056 Biosynthesis of type II polyketide backbone [PATH:ko01056]",
+              "name": "01056",
               "children": [
                 {
                   "name": "K05551",
@@ -34253,11 +34253,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biosynthesis of type II polyketide backbone [PATH:ko01056]",
               "geneNames": []
             },
             {
-              "name": "01057 Biosynthesis of type II polyketide products [PATH:ko01057]",
+              "name": "01057",
               "children": [
                 {
                   "name": "K05555",
@@ -34494,11 +34494,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biosynthesis of type II polyketide products [PATH:ko01057]",
               "geneNames": []
             },
             {
-              "name": "00253 Tetracycline biosynthesis [PATH:ko00253]",
+              "name": "00253",
               "children": [
                 {
                   "name": "K05551",
@@ -34592,11 +34592,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Tetracycline biosynthesis [PATH:ko00253]",
               "geneNames": []
             },
             {
-              "name": "00523 Polyketide sugar unit biosynthesis [PATH:ko00523]",
+              "name": "00523",
               "children": [
                 {
                   "name": "K00973",
@@ -34899,11 +34899,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Polyketide sugar unit biosynthesis [PATH:ko00523]",
               "geneNames": []
             },
             {
-              "name": "01054 Nonribosomal peptide structures [PATH:ko01054]",
+              "name": "01054",
               "children": [
                 {
                   "name": "K16093",
@@ -35137,11 +35137,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Nonribosomal peptide structures [PATH:ko01054]",
               "geneNames": []
             },
             {
-              "name": "01053 Biosynthesis of siderophore group nonribosomal peptides [PATH:ko01053]",
+              "name": "01053",
               "children": [
                 {
                   "name": "K01851",
@@ -35380,11 +35380,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biosynthesis of siderophore group nonribosomal peptides [PATH:ko01053]",
               "geneNames": []
             },
             {
-              "name": "01055 Biosynthesis of vancomycin group antibiotics [PATH:ko01055]",
+              "name": "01055",
               "children": [
                 {
                   "name": "K16421",
@@ -35588,18 +35588,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biosynthesis of vancomycin group antibiotics [PATH:ko01055]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Metabolism of terpenoids and polyketides",
           "geneNames": []
         },
         {
-          "name": "09110 Biosynthesis of other secondary metabolites",
+          "name": "09110",
           "children": [
             {
-              "name": "00940 Phenylpropanoid biosynthesis [PATH:ko00940]",
+              "name": "00940",
               "children": [
                 {
                   "name": "K10775",
@@ -35697,11 +35697,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Phenylpropanoid biosynthesis [PATH:ko00940]",
               "geneNames": []
             },
             {
-              "name": "00945 Stilbenoid, diarylheptanoid and gingerol biosynthesis [PATH:ko00945]",
+              "name": "00945",
               "children": [
                 {
                   "name": "K16040",
@@ -35734,11 +35734,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Stilbenoid, diarylheptanoid and gingerol biosynthesis [PATH:ko00945]",
               "geneNames": []
             },
             {
-              "name": "00941 Flavonoid biosynthesis [PATH:ko00941]",
+              "name": "00941",
               "children": [
                 {
                   "name": "K00660",
@@ -35792,11 +35792,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Flavonoid biosynthesis [PATH:ko00941]",
               "geneNames": []
             },
             {
-              "name": "00944 Flavone and flavonol biosynthesis [PATH:ko00944]",
+              "name": "00944",
               "children": [
                 {
                   "name": "K01195",
@@ -35815,11 +35815,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Flavone and flavonol biosynthesis [PATH:ko00944]",
               "geneNames": []
             },
             {
-              "name": "00942 Anthocyanin biosynthesis [PATH:ko00942]",
+              "name": "00942",
               "children": [
                 {
                   "name": "K12930",
@@ -35829,11 +35829,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Anthocyanin biosynthesis [PATH:ko00942]",
               "geneNames": []
             },
             {
-              "name": "00943 Isoflavonoid biosynthesis [PATH:ko00943]",
+              "name": "00943",
               "children": [
                 {
                   "name": "K13262",
@@ -35850,11 +35850,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Isoflavonoid biosynthesis [PATH:ko00943]",
               "geneNames": []
             },
             {
-              "name": "00901 Indole alkaloid biosynthesis [PATH:ko00901]",
+              "name": "00901",
               "children": [
                 {
                   "name": "K01593",
@@ -35872,11 +35872,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Indole alkaloid biosynthesis [PATH:ko00901]",
               "geneNames": []
             },
             {
-              "name": "00950 Isoquinoline alkaloid biosynthesis [PATH:ko00950]",
+              "name": "00950",
               "children": [
                 {
                   "name": "K14455",
@@ -35981,11 +35981,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Isoquinoline alkaloid biosynthesis [PATH:ko00950]",
               "geneNames": []
             },
             {
-              "name": "00960 Tropane, piperidine and pyridine alkaloid biosynthesis [PATH:ko00960]",
+              "name": "00960",
               "children": [
                 {
                   "name": "K00276",
@@ -36098,11 +36098,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Tropane, piperidine and pyridine alkaloid biosynthesis [PATH:ko00960]",
               "geneNames": []
             },
             {
-              "name": "01058 Acridone alkaloid biosynthesis [PATH:ko01058]",
+              "name": "01058",
               "children": [
                 {
                   "name": "K12644",
@@ -36112,11 +36112,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Acridone alkaloid biosynthesis [PATH:ko01058]",
               "geneNames": []
             },
             {
-              "name": "00232 Caffeine metabolism [PATH:ko00232]",
+              "name": "00232",
               "children": [
                 {
                   "name": "K21723",
@@ -36161,11 +36161,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Caffeine metabolism [PATH:ko00232]",
               "geneNames": []
             },
             {
-              "name": "00965 Betalain biosynthesis [PATH:ko00965]",
+              "name": "00965",
               "children": [
                 {
                   "name": "K00505",
@@ -36197,11 +36197,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Betalain biosynthesis [PATH:ko00965]",
               "geneNames": []
             },
             {
-              "name": "00966 Glucosinolate biosynthesis [PATH:ko00966]",
+              "name": "00966",
               "children": [
                 {
                   "name": "K01703",
@@ -36220,11 +36220,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glucosinolate biosynthesis [PATH:ko00966]",
               "geneNames": []
             },
             {
-              "name": "00311 Penicillin and cephalosporin biosynthesis [PATH:ko00311]",
+              "name": "00311",
               "children": [
                 {
                   "name": "K12743",
@@ -36319,11 +36319,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Penicillin and cephalosporin biosynthesis [PATH:ko00311]",
               "geneNames": []
             },
             {
-              "name": "00332 Carbapenem biosynthesis [PATH:ko00332]",
+              "name": "00332",
               "children": [
                 {
                   "name": "K00931",
@@ -36468,11 +36468,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Carbapenem biosynthesis [PATH:ko00332]",
               "geneNames": []
             },
             {
-              "name": "00261 Monobactam biosynthesis [PATH:ko00261]",
+              "name": "00261",
               "children": [
                 {
                   "name": "K16421",
@@ -36634,11 +36634,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Monobactam biosynthesis [PATH:ko00261]",
               "geneNames": []
             },
             {
-              "name": "00331 Clavulanic acid biosynthesis [PATH:ko00331]",
+              "name": "00331",
               "children": [
                 {
                   "name": "K12673",
@@ -36676,11 +36676,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Clavulanic acid biosynthesis [PATH:ko00331]",
               "geneNames": []
             },
             {
-              "name": "00521 Streptomycin biosynthesis [PATH:ko00521]",
+              "name": "00521",
               "children": [
                 {
                   "name": "K00844",
@@ -36812,11 +36812,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Streptomycin biosynthesis [PATH:ko00521]",
               "geneNames": []
             },
             {
-              "name": "00524 Neomycin, kanamycin and gentamicin biosynthesis [PATH:ko00524]",
+              "name": "00524",
               "children": [
                 {
                   "name": "K00844",
@@ -36833,11 +36833,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Neomycin, kanamycin and gentamicin biosynthesis [PATH:ko00524]",
               "geneNames": []
             },
             {
-              "name": "00525 Acarbose and validamycin biosynthesis [PATH:ko00525]",
+              "name": "00525",
               "children": [
                 {
                   "name": "K19969",
@@ -36990,11 +36990,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Acarbose and validamycin biosynthesis [PATH:ko00525]",
               "geneNames": []
             },
             {
-              "name": "00401 Novobiocin biosynthesis [PATH:ko00401]",
+              "name": "00401",
               "children": [
                 {
                   "name": "K04517",
@@ -37060,11 +37060,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Novobiocin biosynthesis [PATH:ko00401]",
               "geneNames": []
             },
             {
-              "name": "00404 Staurosporine biosynthesis [PATH:ko00404]",
+              "name": "00404",
               "children": [
                 {
                   "name": "K16438",
@@ -37152,11 +37152,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Staurosporine biosynthesis [PATH:ko00404]",
               "geneNames": []
             },
             {
-              "name": "00405 Phenazine biosynthesis [PATH:ko00405]",
+              "name": "00405",
               "children": [
                 {
                   "name": "K13063",
@@ -37264,11 +37264,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Phenazine biosynthesis [PATH:ko00405]",
               "geneNames": []
             },
             {
-              "name": "00333 Prodigiosin biosynthesis [PATH:ko00333]",
+              "name": "00333",
               "children": [
                 {
                   "name": "K21428",
@@ -37422,11 +37422,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Prodigiosin biosynthesis [PATH:ko00333]",
               "geneNames": []
             },
             {
-              "name": "00999 Biosynthesis of various secondary metabolites - part 1 [PATH:ko00999]",
+              "name": "00999",
               "children": [
                 {
                   "name": "K18686",
@@ -37500,11 +37500,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biosynthesis of various secondary metabolites - part 1 [PATH:ko00999]",
               "geneNames": []
             },
             {
-              "name": "00998 Biosynthesis of various secondary metabolites - part 2 [PATH:ko00998]",
+              "name": "00998",
               "children": [
                 {
                   "name": "K18652",
@@ -37605,11 +37605,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biosynthesis of various secondary metabolites - part 2 [PATH:ko00998]",
               "geneNames": []
             },
             {
-              "name": "00997 Biosynthesis of various secondary metabolites - part 3 [PATH:ko00997]",
+              "name": "00997",
               "children": [
                 {
                   "name": "K21949",
@@ -37696,18 +37696,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biosynthesis of various secondary metabolites - part 3 [PATH:ko00997]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Biosynthesis of other secondary metabolites",
           "geneNames": []
         },
         {
-          "name": "09111 Xenobiotics biodegradation and metabolism",
+          "name": "09111",
           "children": [
             {
-              "name": "00362 Benzoate degradation [PATH:ko00362]",
+              "name": "00362",
               "children": [
                 {
                   "name": "K05549",
@@ -38442,11 +38442,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Benzoate degradation [PATH:ko00362]",
               "geneNames": []
             },
             {
-              "name": "00627 Aminobenzoate degradation [PATH:ko00627]",
+              "name": "00627",
               "children": [
                 {
                   "name": "K10215",
@@ -38928,11 +38928,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Aminobenzoate degradation [PATH:ko00627]",
               "geneNames": []
             },
             {
-              "name": "00364 Fluorobenzoate degradation [PATH:ko00364]",
+              "name": "00364",
               "children": [
                 {
                   "name": "K05549",
@@ -39019,11 +39019,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Fluorobenzoate degradation [PATH:ko00364]",
               "geneNames": []
             },
             {
-              "name": "00625 Chloroalkane and chloroalkene degradation [PATH:ko00625]",
+              "name": "00625",
               "children": [
                 {
                   "name": "K01563",
@@ -39289,11 +39289,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Chloroalkane and chloroalkene degradation [PATH:ko00625]",
               "geneNames": []
             },
             {
-              "name": "00361 Chlorocyclohexane and chlorobenzene degradation [PATH:ko00361]",
+              "name": "00361",
               "children": [
                 {
                   "name": "K01563",
@@ -39526,11 +39526,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Chlorocyclohexane and chlorobenzene degradation [PATH:ko00361]",
               "geneNames": []
             },
             {
-              "name": "00623 Toluene degradation [PATH:ko00623]",
+              "name": "00623",
               "children": [
                 {
                   "name": "K07540",
@@ -39822,11 +39822,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Toluene degradation [PATH:ko00623]",
               "geneNames": []
             },
             {
-              "name": "00622 Xylene degradation [PATH:ko00622]",
+              "name": "00622",
               "children": [
                 {
                   "name": "K15757",
@@ -40063,11 +40063,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Xylene degradation [PATH:ko00622]",
               "geneNames": []
             },
             {
-              "name": "00633 Nitrotoluene degradation [PATH:ko00633]",
+              "name": "00633",
               "children": [
                 {
                   "name": "K10678",
@@ -40223,11 +40223,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Nitrotoluene degradation [PATH:ko00633]",
               "geneNames": []
             },
             {
-              "name": "00642 Ethylbenzene degradation [PATH:ko00642]",
+              "name": "00642",
               "children": [
                 {
                   "name": "K14579",
@@ -40350,11 +40350,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Ethylbenzene degradation [PATH:ko00642]",
               "geneNames": []
             },
             {
-              "name": "00643 Styrene degradation [PATH:ko00643]",
+              "name": "00643",
               "children": [
                 {
                   "name": "K14481",
@@ -40510,11 +40510,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Styrene degradation [PATH:ko00643]",
               "geneNames": []
             },
             {
-              "name": "00791 Atrazine degradation [PATH:ko00791]",
+              "name": "00791",
               "children": [
                 {
                   "name": "K03382",
@@ -40587,11 +40587,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Atrazine degradation [PATH:ko00791]",
               "geneNames": []
             },
             {
-              "name": "00930 Caprolactam degradation [PATH:ko00930]",
+              "name": "00930",
               "children": [
                 {
                   "name": "K18199",
@@ -40697,11 +40697,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Caprolactam degradation [PATH:ko00930]",
               "geneNames": []
             },
             {
-              "name": "00363 Bisphenol degradation [PATH:ko00363]",
+              "name": "00363",
               "children": [
                 {
                   "name": "K14520",
@@ -40718,11 +40718,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Bisphenol degradation [PATH:ko00363]",
               "geneNames": []
             },
             {
-              "name": "00621 Dioxin degradation [PATH:ko00621]",
+              "name": "00621",
               "children": [
                 {
                   "name": "K01821",
@@ -40891,11 +40891,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Dioxin degradation [PATH:ko00621]",
               "geneNames": []
             },
             {
-              "name": "00626 Naphthalene degradation [PATH:ko00626]",
+              "name": "00626",
               "children": [
                 {
                   "name": "K14579",
@@ -41027,11 +41027,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Naphthalene degradation [PATH:ko00626]",
               "geneNames": []
             },
             {
-              "name": "00624 Polycyclic aromatic hydrocarbon degradation [PATH:ko00624]",
+              "name": "00624",
               "children": [
                 {
                   "name": "K14579",
@@ -41279,11 +41279,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Polycyclic aromatic hydrocarbon degradation [PATH:ko00624]",
               "geneNames": []
             },
             {
-              "name": "00365 Furfural degradation [PATH:ko00365]",
+              "name": "00365",
               "children": [
                 {
                   "name": "K16873",
@@ -41342,11 +41342,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Furfural degradation [PATH:ko00365]",
               "geneNames": []
             },
             {
-              "name": "00984 Steroid degradation [PATH:ko00984]",
+              "name": "00984",
               "children": [
                 {
                   "name": "K03333",
@@ -41447,11 +41447,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Steroid degradation [PATH:ko00984]",
               "geneNames": []
             },
             {
-              "name": "00980 Metabolism of xenobiotics by cytochrome P450 [PATH:ko00980]",
+              "name": "00980",
               "children": [
                 {
                   "name": "K07408",
@@ -41563,11 +41563,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Metabolism of xenobiotics by cytochrome P450 [PATH:ko00980]",
               "geneNames": []
             },
             {
-              "name": "00982 Drug metabolism - cytochrome P450 [PATH:ko00982]",
+              "name": "00982",
               "children": [
                 {
                   "name": "K17689",
@@ -41666,11 +41666,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Drug metabolism - cytochrome P450 [PATH:ko00982]",
               "geneNames": []
             },
             {
-              "name": "00983 Drug metabolism - other enzymes [PATH:ko00983]",
+              "name": "00983",
               "children": [
                 {
                   "name": "K00760",
@@ -41880,18 +41880,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Drug metabolism - other enzymes [PATH:ko00983]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Xenobiotics biodegradation and metabolism",
           "geneNames": []
         },
         {
-          "name": "09112 Not included in regular maps",
+          "name": "09112",
           "children": [
             {
-              "name": "09113 Global maps only",
+              "name": "09113",
               "children": [
                 {
                   "name": "K02080",
@@ -41901,25 +41901,25 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Global maps only",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Not included in regular maps",
           "geneNames": []
         }
       ],
-      "desc": "",
+      "desc": "Metabolism",
       "geneNames": []
     },
     {
-      "name": "09120 Genetic Information Processing",
+      "name": "09120",
       "children": [
         {
-          "name": "09121 Transcription",
+          "name": "09121",
           "children": [
             {
-              "name": "03020 RNA polymerase [PATH:ko03020]",
+              "name": "03020",
               "children": [
                 {
                   "name": "K03040",
@@ -42109,11 +42109,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "RNA polymerase [PATH:ko03020]",
               "geneNames": []
             },
             {
-              "name": "03022 Basal transcription factors [PATH:ko03022]",
+              "name": "03022",
               "children": [
                 {
                   "name": "K03124",
@@ -42189,11 +42189,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Basal transcription factors [PATH:ko03022]",
               "geneNames": []
             },
             {
-              "name": "03040 Spliceosome [PATH:ko03040]",
+              "name": "03040",
               "children": [
                 {
                   "name": "K12811",
@@ -42358,18 +42358,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Spliceosome [PATH:ko03040]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Transcription",
           "geneNames": []
         },
         {
-          "name": "09122 Translation",
+          "name": "09122",
           "children": [
             {
-              "name": "03010 Ribosome [PATH:ko03010]",
+              "name": "03010",
               "children": [
                 {
                   "name": "K02945",
@@ -43346,11 +43346,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Ribosome [PATH:ko03010]",
               "geneNames": []
             },
             {
-              "name": "00970 Aminoacyl-tRNA biosynthesis [PATH:ko00970]",
+              "name": "00970",
               "children": [
                 {
                   "name": "K01885",
@@ -43673,11 +43673,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Aminoacyl-tRNA biosynthesis [PATH:ko00970]",
               "geneNames": []
             },
             {
-              "name": "03013 Nucleocytoplasmic transport [PATH:ko03013]",
+              "name": "03013",
               "children": [
                 {
                   "name": "K14297",
@@ -43800,11 +43800,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Nucleocytoplasmic transport [PATH:ko03013]",
               "geneNames": []
             },
             {
-              "name": "03015 mRNA surveillance pathway [PATH:ko03015]",
+              "name": "03015",
               "children": [
                 {
                   "name": "K12812",
@@ -43938,11 +43938,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "mRNA surveillance pathway [PATH:ko03015]",
               "geneNames": []
             },
             {
-              "name": "03008 Ribosome biogenesis in eukaryotes [PATH:ko03008]",
+              "name": "03008",
               "children": [
                 {
                   "name": "K03097",
@@ -44165,18 +44165,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Ribosome biogenesis in eukaryotes [PATH:ko03008]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Translation",
           "geneNames": []
         },
         {
-          "name": "09123 Folding, sorting and degradation",
+          "name": "09123",
           "children": [
             {
-              "name": "03060 Protein export [PATH:ko03060]",
+              "name": "03060",
               "children": [
                 {
                   "name": "K03076",
@@ -44369,11 +44369,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Protein export [PATH:ko03060]",
               "geneNames": []
             },
             {
-              "name": "04141 Protein processing in endoplasmic reticulum [PATH:ko04141]",
+              "name": "04141",
               "children": [
                 {
                   "name": "K07342",
@@ -44720,11 +44720,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Protein processing in endoplasmic reticulum [PATH:ko04141]",
               "geneNames": []
             },
             {
-              "name": "04130 SNARE interactions in vesicular transport [PATH:ko04130]",
+              "name": "04130",
               "children": [
                 {
                   "name": "K08498",
@@ -44748,11 +44748,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "SNARE interactions in vesicular transport [PATH:ko04130]",
               "geneNames": []
             },
             {
-              "name": "04120 Ubiquitin mediated proteolysis [PATH:ko04120]",
+              "name": "04120",
               "children": [
                 {
                   "name": "K04551",
@@ -45061,11 +45061,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Ubiquitin mediated proteolysis [PATH:ko04120]",
               "geneNames": []
             },
             {
-              "name": "04122 Sulfur relay system [PATH:ko04122]",
+              "name": "04122",
               "children": [
                 {
                   "name": "K04487",
@@ -45259,11 +45259,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Sulfur relay system [PATH:ko04122]",
               "geneNames": []
             },
             {
-              "name": "03050 Proteasome [PATH:ko03050]",
+              "name": "03050",
               "children": [
                 {
                   "name": "K03030",
@@ -45313,11 +45313,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Proteasome [PATH:ko03050]",
               "geneNames": []
             },
             {
-              "name": "03018 RNA degradation [PATH:ko03018]",
+              "name": "03018",
               "children": [
                 {
                   "name": "K07573",
@@ -45588,18 +45588,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "RNA degradation [PATH:ko03018]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Folding, sorting and degradation",
           "geneNames": []
         },
         {
-          "name": "09124 Replication and repair",
+          "name": "09124",
           "children": [
             {
-              "name": "03030 DNA replication [PATH:ko03030]",
+              "name": "03030",
               "children": [
                 {
                   "name": "K02345",
@@ -45886,11 +45886,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "DNA replication [PATH:ko03030]",
               "geneNames": []
             },
             {
-              "name": "03410 Base excision repair [PATH:ko03410]",
+              "name": "03410",
               "children": [
                 {
                   "name": "K10563",
@@ -46102,11 +46102,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Base excision repair [PATH:ko03410]",
               "geneNames": []
             },
             {
-              "name": "03420 Nucleotide excision repair [PATH:ko03420]",
+              "name": "03420",
               "children": [
                 {
                   "name": "K03723",
@@ -46281,11 +46281,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Nucleotide excision repair [PATH:ko03420]",
               "geneNames": []
             },
             {
-              "name": "03430 Mismatch repair [PATH:ko03430]",
+              "name": "03430",
               "children": [
                 {
                   "name": "K03555",
@@ -46539,11 +46539,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Mismatch repair [PATH:ko03430]",
               "geneNames": []
             },
             {
-              "name": "03440 Homologous recombination [PATH:ko03440]",
+              "name": "03440",
               "children": [
                 {
                   "name": "K07462",
@@ -46825,11 +46825,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Homologous recombination [PATH:ko03440]",
               "geneNames": []
             },
             {
-              "name": "03450 Non-homologous end-joining [PATH:ko03450]",
+              "name": "03450",
               "children": [
                 {
                   "name": "K10979",
@@ -46861,11 +46861,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Non-homologous end-joining [PATH:ko03450]",
               "geneNames": []
             },
             {
-              "name": "03460 Fanconi anemia pathway [PATH:ko03460]",
+              "name": "03460",
               "children": [
                 {
                   "name": "K10896",
@@ -46967,25 +46967,25 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Fanconi anemia pathway [PATH:ko03460]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Replication and repair",
           "geneNames": []
         }
       ],
-      "desc": "",
+      "desc": "Genetic Information Processing",
       "geneNames": []
     },
     {
-      "name": "09130 Environmental Information Processing",
+      "name": "09130",
       "children": [
         {
-          "name": "09131 Membrane transport",
+          "name": "09131",
           "children": [
             {
-              "name": "02010 ABC transporters [PATH:ko02010]",
+              "name": "02010",
               "children": [
                 {
                   "name": "K02048",
@@ -50209,11 +50209,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "ABC transporters [PATH:ko02010]",
               "geneNames": []
             },
             {
-              "name": "02060 Phosphotransferase system (PTS) [PATH:ko02060]",
+              "name": "02060",
               "children": [
                 {
                   "name": "K08483",
@@ -50731,11 +50731,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Phosphotransferase system (PTS) [PATH:ko02060]",
               "geneNames": []
             },
             {
-              "name": "03070 Bacterial secretion system [PATH:ko03070]",
+              "name": "03070",
               "children": [
                 {
                   "name": "K12340",
@@ -51320,18 +51320,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Bacterial secretion system [PATH:ko03070]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Membrane transport",
           "geneNames": []
         },
         {
-          "name": "09132 Signal transduction",
+          "name": "09132",
           "children": [
             {
-              "name": "02020 Two-component system [PATH:ko02020]",
+              "name": "02020",
               "children": [
                 {
                   "name": "K07636",
@@ -54493,11 +54493,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Two-component system [PATH:ko02020]",
               "geneNames": []
             },
             {
-              "name": "04010 MAPK signaling pathway [PATH:ko04010]",
+              "name": "04010",
               "children": [
                 {
                   "name": "K04345",
@@ -54788,11 +54788,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "MAPK signaling pathway [PATH:ko04010]",
               "geneNames": []
             },
             {
-              "name": "04013 MAPK signaling pathway - fly [PATH:ko04013]",
+              "name": "04013",
               "children": [
                 {
                   "name": "K20227",
@@ -54949,11 +54949,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "MAPK signaling pathway - fly [PATH:ko04013]",
               "geneNames": []
             },
             {
-              "name": "04016 MAPK signaling pathway - plant [PATH:ko04016]",
+              "name": "04016",
               "children": [
                 {
                   "name": "K20603",
@@ -55033,11 +55033,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "MAPK signaling pathway - plant [PATH:ko04016]",
               "geneNames": []
             },
             {
-              "name": "04011 MAPK signaling pathway - yeast [PATH:ko04011]",
+              "name": "04011",
               "children": [
                 {
                   "name": "K01383",
@@ -55227,11 +55227,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "MAPK signaling pathway - yeast [PATH:ko04011]",
               "geneNames": []
             },
             {
-              "name": "04012 ErbB signaling pathway [PATH:ko04012]",
+              "name": "04012",
               "children": [
                 {
                   "name": "K05083",
@@ -55336,11 +55336,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "ErbB signaling pathway [PATH:ko04012]",
               "geneNames": []
             },
             {
-              "name": "04014 Ras signaling pathway [PATH:ko04014]",
+              "name": "04014",
               "children": [
                 {
                   "name": "K04358",
@@ -55566,11 +55566,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Ras signaling pathway [PATH:ko04014]",
               "geneNames": []
             },
             {
-              "name": "04015 Rap1 signaling pathway [PATH:ko04015]",
+              "name": "04015",
               "children": [
                 {
                   "name": "K04353",
@@ -55682,11 +55682,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Rap1 signaling pathway [PATH:ko04015]",
               "geneNames": []
             },
             {
-              "name": "04310 Wnt signaling pathway [PATH:ko04310]",
+              "name": "04310",
               "children": [
                 {
                   "name": "K00444",
@@ -55849,11 +55849,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Wnt signaling pathway [PATH:ko04310]",
               "geneNames": []
             },
             {
-              "name": "04330 Notch signaling pathway [PATH:ko04330]",
+              "name": "04330",
               "children": [
                 {
                   "name": "K02599",
@@ -55891,11 +55891,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Notch signaling pathway [PATH:ko04330]",
               "geneNames": []
             },
             {
-              "name": "04340 Hedgehog signaling pathway [PATH:ko04340]",
+              "name": "04340",
               "children": [
                 {
                   "name": "K04345",
@@ -55921,11 +55921,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Hedgehog signaling pathway [PATH:ko04340]",
               "geneNames": []
             },
             {
-              "name": "04341 Hedgehog signaling pathway - fly [PATH:ko04341]",
+              "name": "04341",
               "children": [
                 {
                   "name": "K06228",
@@ -55965,11 +55965,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Hedgehog signaling pathway - fly [PATH:ko04341]",
               "geneNames": []
             },
             {
-              "name": "04350 TGF-beta signaling pathway [PATH:ko04350]",
+              "name": "04350",
               "children": [
                 {
                   "name": "K04500",
@@ -56008,11 +56008,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "TGF-beta signaling pathway [PATH:ko04350]",
               "geneNames": []
             },
             {
-              "name": "04390 Hippo signaling pathway [PATH:ko04390]",
+              "name": "04390",
               "children": [
                 {
                   "name": "K05689",
@@ -56105,11 +56105,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Hippo signaling pathway [PATH:ko04390]",
               "geneNames": []
             },
             {
-              "name": "04391 Hippo signaling pathway - fly [PATH:ko04391]",
+              "name": "04391",
               "children": [
                 {
                   "name": "K16674",
@@ -56155,11 +56155,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Hippo signaling pathway - fly [PATH:ko04391]",
               "geneNames": []
             },
             {
-              "name": "04392 Hippo signaling pathway - multiple species [PATH:ko04392]",
+              "name": "04392",
               "children": [
                 {
                   "name": "K16507",
@@ -56191,11 +56191,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Hippo signaling pathway - multiple species [PATH:ko04392]",
               "geneNames": []
             },
             {
-              "name": "04370 VEGF signaling pathway [PATH:ko04370]",
+              "name": "04370",
               "children": [
                 {
                   "name": "K04718",
@@ -56257,11 +56257,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "VEGF signaling pathway [PATH:ko04370]",
               "geneNames": []
             },
             {
-              "name": "04371 Apelin signaling pathway [PATH:ko04371]",
+              "name": "04371",
               "children": [
                 {
                   "name": "K11265",
@@ -56395,11 +56395,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Apelin signaling pathway [PATH:ko04371]",
               "geneNames": []
             },
             {
-              "name": "04630 JAK-STAT signaling pathway [PATH:ko04630]",
+              "name": "04630",
               "children": [
                 {
                   "name": "K05415",
@@ -56430,11 +56430,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "JAK-STAT signaling pathway [PATH:ko04630]",
               "geneNames": []
             },
             {
-              "name": "04064 NF-kappa B signaling pathway [PATH:ko04064]",
+              "name": "04064",
               "children": [
                 {
                   "name": "K07371",
@@ -56554,11 +56554,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "NF-kappa B signaling pathway [PATH:ko04064]",
               "geneNames": []
             },
             {
-              "name": "04668 TNF signaling pathway [PATH:ko04668]",
+              "name": "04668",
               "children": [
                 {
                   "name": "K09849",
@@ -56714,11 +56714,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "TNF signaling pathway [PATH:ko04668]",
               "geneNames": []
             },
             {
-              "name": "04066 HIF-1 signaling pathway [PATH:ko04066]",
+              "name": "04066",
               "children": [
                 {
                   "name": "K02580",
@@ -56843,11 +56843,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "HIF-1 signaling pathway [PATH:ko04066]",
               "geneNames": []
             },
             {
-              "name": "04068 FoxO signaling pathway [PATH:ko04068]",
+              "name": "04068",
               "children": [
                 {
                   "name": "K07298",
@@ -56976,11 +56976,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "FoxO signaling pathway [PATH:ko04068]",
               "geneNames": []
             },
             {
-              "name": "04020 Calcium signaling pathway [PATH:ko04020]",
+              "name": "04020",
               "children": [
                 {
                   "name": "K05849",
@@ -57129,11 +57129,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Calcium signaling pathway [PATH:ko04020]",
               "geneNames": []
             },
             {
-              "name": "04070 Phosphatidylinositol signaling system [PATH:ko04070]",
+              "name": "04070",
               "children": [
                 {
                   "name": "K13711",
@@ -57220,11 +57220,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Phosphatidylinositol signaling system [PATH:ko04070]",
               "geneNames": []
             },
             {
-              "name": "04072 Phospholipase D signaling pathway [PATH:ko04072]",
+              "name": "04072",
               "children": [
                 {
                   "name": "K03099",
@@ -57299,11 +57299,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Phospholipase D signaling pathway [PATH:ko04072]",
               "geneNames": []
             },
             {
-              "name": "04071 Sphingolipid signaling pathway [PATH:ko04071]",
+              "name": "04071",
               "children": [
                 {
                   "name": "K00654",
@@ -57462,11 +57462,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Sphingolipid signaling pathway [PATH:ko04071]",
               "geneNames": []
             },
             {
-              "name": "04024 cAMP signaling pathway [PATH:ko04024]",
+              "name": "04024",
               "children": [
                 {
                   "name": "K12323",
@@ -57670,11 +57670,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "cAMP signaling pathway [PATH:ko04024]",
               "geneNames": []
             },
             {
-              "name": "04022 cGMP-PKG signaling pathway [PATH:ko04022]",
+              "name": "04022",
               "children": [
                 {
                   "name": "K06268",
@@ -57818,11 +57818,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "cGMP-PKG signaling pathway [PATH:ko04022]",
               "geneNames": []
             },
             {
-              "name": "04151 PI3K-Akt signaling pathway [PATH:ko04151]",
+              "name": "04151",
               "children": [
                 {
                   "name": "K04358",
@@ -58068,11 +58068,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "PI3K-Akt signaling pathway [PATH:ko04151]",
               "geneNames": []
             },
             {
-              "name": "04152 AMPK signaling pathway [PATH:ko04152]",
+              "name": "04152",
               "children": [
                 {
                   "name": "K04427",
@@ -58252,11 +58252,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "AMPK signaling pathway [PATH:ko04152]",
               "geneNames": []
             },
             {
-              "name": "04150 mTOR signaling pathway [PATH:ko04150]",
+              "name": "04150",
               "children": [
                 {
                   "name": "K02144",
@@ -58414,11 +58414,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "mTOR signaling pathway [PATH:ko04150]",
               "geneNames": []
             },
             {
-              "name": "04075 Plant hormone signal transduction [PATH:ko04075]",
+              "name": "04075",
               "children": [
                 {
                   "name": "K14489",
@@ -58457,18 +58457,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Plant hormone signal transduction [PATH:ko04075]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Signal transduction",
           "geneNames": []
         },
         {
-          "name": "09133 Signaling molecules and interaction",
+          "name": "09133",
           "children": [
             {
-              "name": "04080 Neuroactive ligand-receptor interaction [PATH:ko04080]",
+              "name": "04080",
               "children": [
                 {
                   "name": "K03990",
@@ -58529,11 +58529,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Neuroactive ligand-receptor interaction [PATH:ko04080]",
               "geneNames": []
             },
             {
-              "name": "04060 Cytokine-cytokine receptor interaction [PATH:ko04060]",
+              "name": "04060",
               "children": [
                 {
                   "name": "K05415",
@@ -58543,11 +58543,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cytokine-cytokine receptor interaction [PATH:ko04060]",
               "geneNames": []
             },
             {
-              "name": "04512 ECM-receptor interaction [PATH:ko04512]",
+              "name": "04512",
               "children": [
                 {
                   "name": "K06236",
@@ -58621,11 +58621,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "ECM-receptor interaction [PATH:ko04512]",
               "geneNames": []
             },
             {
-              "name": "04514 Cell adhesion molecules [PATH:ko04514]",
+              "name": "04514",
               "children": [
                 {
                   "name": "K06752",
@@ -58673,25 +58673,25 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cell adhesion molecules [PATH:ko04514]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Signaling molecules and interaction",
           "geneNames": []
         }
       ],
-      "desc": "",
+      "desc": "Environmental Information Processing",
       "geneNames": []
     },
     {
-      "name": "09140 Cellular Processes",
+      "name": "09140",
       "children": [
         {
-          "name": "09141 Transport and catabolism",
+          "name": "09141",
           "children": [
             {
-              "name": "04144 Endocytosis [PATH:ko04144]",
+              "name": "04144",
               "children": [
                 {
                   "name": "K00889",
@@ -58877,11 +58877,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Endocytosis [PATH:ko04144]",
               "geneNames": []
             },
             {
-              "name": "04145 Phagosome [PATH:ko04145]",
+              "name": "04145",
               "children": [
                 {
                   "name": "K05692",
@@ -59004,11 +59004,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Phagosome [PATH:ko04145]",
               "geneNames": []
             },
             {
-              "name": "04142 Lysosome [PATH:ko04142]",
+              "name": "04142",
               "children": [
                 {
                   "name": "K02146",
@@ -59334,11 +59334,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Lysosome [PATH:ko04142]",
               "geneNames": []
             },
             {
-              "name": "04146 Peroxisome [PATH:ko04146]",
+              "name": "04146",
               "children": [
                 {
                   "name": "K13339",
@@ -59610,11 +59610,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Peroxisome [PATH:ko04146]",
               "geneNames": []
             },
             {
-              "name": "04140 Autophagy - animal [PATH:ko04140]",
+              "name": "04140",
               "children": [
                 {
                   "name": "K02649",
@@ -59799,11 +59799,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Autophagy - animal [PATH:ko04140]",
               "geneNames": []
             },
             {
-              "name": "04138 Autophagy - yeast [PATH:ko04138]",
+              "name": "04138",
               "children": [
                 {
                   "name": "K04345",
@@ -59916,11 +59916,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Autophagy - yeast [PATH:ko04138]",
               "geneNames": []
             },
             {
-              "name": "04136 Autophagy - other [PATH:ko04136]",
+              "name": "04136",
               "children": [
                 {
                   "name": "K08266",
@@ -59953,11 +59953,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Autophagy - other [PATH:ko04136]",
               "geneNames": []
             },
             {
-              "name": "04137 Mitophagy - animal [PATH:ko04137]",
+              "name": "04137",
               "children": [
                 {
                   "name": "K08860",
@@ -60044,11 +60044,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Mitophagy - animal [PATH:ko04137]",
               "geneNames": []
             },
             {
-              "name": "04139 Mitophagy - yeast [PATH:ko04139]",
+              "name": "04139",
               "children": [
                 {
                   "name": "K08955",
@@ -60115,18 +60115,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Mitophagy - yeast [PATH:ko04139]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Transport and catabolism",
           "geneNames": []
         },
         {
-          "name": "09143 Cell growth and death",
+          "name": "09143",
           "children": [
             {
-              "name": "04110 Cell cycle [PATH:ko04110]",
+              "name": "04110",
               "children": [
                 {
                   "name": "K06619",
@@ -60268,11 +60268,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cell cycle [PATH:ko04110]",
               "geneNames": []
             },
             {
-              "name": "04111 Cell cycle - yeast [PATH:ko04111]",
+              "name": "04111",
               "children": [
                 {
                   "name": "K04563",
@@ -60437,11 +60437,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cell cycle - yeast [PATH:ko04111]",
               "geneNames": []
             },
             {
-              "name": "04112 Cell cycle - Caulobacter [PATH:ko04112]",
+              "name": "04112",
               "children": [
                 {
                   "name": "K02313",
@@ -60651,11 +60651,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cell cycle - Caulobacter [PATH:ko04112]",
               "geneNames": []
             },
             {
-              "name": "04113 Meiosis - yeast [PATH:ko04113]",
+              "name": "04113",
               "children": [
                 {
                   "name": "K04563",
@@ -60796,11 +60796,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Meiosis - yeast [PATH:ko04113]",
               "geneNames": []
             },
             {
-              "name": "04114 Oocyte meiosis [PATH:ko04114]",
+              "name": "04114",
               "children": [
                 {
                   "name": "K04345",
@@ -60943,11 +60943,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Oocyte meiosis [PATH:ko04114]",
               "geneNames": []
             },
             {
-              "name": "04210 Apoptosis [PATH:ko04210]",
+              "name": "04210",
               "children": [
                 {
                   "name": "K04398",
@@ -61198,11 +61198,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Apoptosis [PATH:ko04210]",
               "geneNames": []
             },
             {
-              "name": "04214 Apoptosis - fly [PATH:ko04214]",
+              "name": "04214",
               "children": [
                 {
                   "name": "K20009",
@@ -61332,11 +61332,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Apoptosis - fly [PATH:ko04214]",
               "geneNames": []
             },
             {
-              "name": "04215 Apoptosis - multiple species [PATH:ko04215]",
+              "name": "04215",
               "children": [
                 {
                   "name": "K04398",
@@ -61411,11 +61411,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Apoptosis - multiple species [PATH:ko04215]",
               "geneNames": []
             },
             {
-              "name": "04216 Ferroptosis [PATH:ko04216]",
+              "name": "04216",
               "children": [
                 {
                   "name": "K05361",
@@ -61463,11 +61463,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Ferroptosis [PATH:ko04216]",
               "geneNames": []
             },
             {
-              "name": "04217 Necroptosis [PATH:ko04217]",
+              "name": "04217",
               "children": [
                 {
                   "name": "K09849",
@@ -61661,11 +61661,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Necroptosis [PATH:ko04217]",
               "geneNames": []
             },
             {
-              "name": "04115 p53 signaling pathway [PATH:ko04115]",
+              "name": "04115",
               "children": [
                 {
                   "name": "K06641",
@@ -61726,11 +61726,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "p53 signaling pathway [PATH:ko04115]",
               "geneNames": []
             },
             {
-              "name": "04218 Cellular senescence [PATH:ko04218]",
+              "name": "04218",
               "children": [
                 {
                   "name": "K04500",
@@ -61864,18 +61864,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cellular senescence [PATH:ko04218]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Cell growth and death",
           "geneNames": []
         },
         {
-          "name": "09144 Cellular community - eukaryotes",
+          "name": "09144",
           "children": [
             {
-              "name": "04510 Focal adhesion [PATH:ko04510]",
+              "name": "04510",
               "children": [
                 {
                   "name": "K06236",
@@ -62166,11 +62166,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Focal adhesion [PATH:ko04510]",
               "geneNames": []
             },
             {
-              "name": "04520 Adherens junction [PATH:ko04520]",
+              "name": "04520",
               "children": [
                 {
                   "name": "K04392",
@@ -62279,11 +62279,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Adherens junction [PATH:ko04520]",
               "geneNames": []
             },
             {
-              "name": "04530 Tight junction [PATH:ko04530]",
+              "name": "04530",
               "children": [
                 {
                   "name": "K04392",
@@ -62418,11 +62418,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Tight junction [PATH:ko04530]",
               "geneNames": []
             },
             {
-              "name": "04540 Gap junction [PATH:ko04540]",
+              "name": "04540",
               "children": [
                 {
                   "name": "K03099",
@@ -62475,11 +62475,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Gap junction [PATH:ko04540]",
               "geneNames": []
             },
             {
-              "name": "04550 Signaling pathways regulating pluripotency of stem cells [PATH:ko04550]",
+              "name": "04550",
               "children": [
                 {
                   "name": "K02649",
@@ -62555,18 +62555,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Signaling pathways regulating pluripotency of stem cells [PATH:ko04550]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Cellular community - eukaryotes",
           "geneNames": []
         },
         {
-          "name": "09145 Cellular community - prokaryotes",
+          "name": "09145",
           "children": [
             {
-              "name": "02024 Quorum sensing [PATH:ko02024]",
+              "name": "02024",
               "children": [
                 {
                   "name": "K07173",
@@ -64276,11 +64276,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Quorum sensing [PATH:ko02024]",
               "geneNames": []
             },
             {
-              "name": "05111 Biofilm formation - Vibrio cholerae [PATH:ko05111]",
+              "name": "05111",
               "children": [
                 {
                   "name": "K07173",
@@ -65002,11 +65002,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biofilm formation - Vibrio cholerae [PATH:ko05111]",
               "geneNames": []
             },
             {
-              "name": "02025 Biofilm formation - Pseudomonas aeruginosa [PATH:ko02025]",
+              "name": "02025",
               "children": [
                 {
                   "name": "K02660",
@@ -65628,11 +65628,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biofilm formation - Pseudomonas aeruginosa [PATH:ko02025]",
               "geneNames": []
             },
             {
-              "name": "02026 Biofilm formation - Escherichia coli [PATH:ko02026]",
+              "name": "02026",
               "children": [
                 {
                   "name": "K02777",
@@ -65979,18 +65979,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Biofilm formation - Escherichia coli [PATH:ko02026]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Cellular community - prokaryotes",
           "geneNames": []
         },
         {
-          "name": "09142 Cell motility",
+          "name": "09142",
           "children": [
             {
-              "name": "02030 Bacterial chemotaxis [PATH:ko02030]",
+              "name": "02030",
               "children": [
                 {
                   "name": "K03406",
@@ -66175,11 +66175,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Bacterial chemotaxis [PATH:ko02030]",
               "geneNames": []
             },
             {
-              "name": "02040 Flagellar assembly [PATH:ko02040]",
+              "name": "02040",
               "children": [
                 {
                   "name": "K02408",
@@ -66554,11 +66554,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Flagellar assembly [PATH:ko02040]",
               "geneNames": []
             },
             {
-              "name": "04810 Regulation of actin cytoskeleton [PATH:ko04810]",
+              "name": "04810",
               "children": [
                 {
                   "name": "K04358",
@@ -66778,25 +66778,25 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Regulation of actin cytoskeleton [PATH:ko04810]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Cell motility",
           "geneNames": []
         }
       ],
-      "desc": "",
+      "desc": "Cellular Processes",
       "geneNames": []
     },
     {
-      "name": "09150 Organismal Systems",
+      "name": "09150",
       "children": [
         {
-          "name": "09151 Immune system",
+          "name": "09151",
           "children": [
             {
-              "name": "04640 Hematopoietic cell lineage [PATH:ko04640]",
+              "name": "04640",
               "children": [
                 {
                   "name": "K06752",
@@ -66830,11 +66830,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Hematopoietic cell lineage [PATH:ko04640]",
               "geneNames": []
             },
             {
-              "name": "04610 Complement and coagulation cascades [PATH:ko04610]",
+              "name": "04610",
               "children": [
                 {
                   "name": "K01314",
@@ -66959,11 +66959,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Complement and coagulation cascades [PATH:ko04610]",
               "geneNames": []
             },
             {
-              "name": "04611 Platelet activation [PATH:ko04611]",
+              "name": "04611",
               "children": [
                 {
                   "name": "K04513",
@@ -67117,11 +67117,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Platelet activation [PATH:ko04611]",
               "geneNames": []
             },
             {
-              "name": "04613 Neutrophil extracellular trap formation [PATH:ko04613]",
+              "name": "04613",
               "children": [
                 {
                   "name": "K06005",
@@ -67310,11 +67310,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Neutrophil extracellular trap formation [PATH:ko04613]",
               "geneNames": []
             },
             {
-              "name": "04620 Toll-like receptor signaling pathway [PATH:ko04620]",
+              "name": "04620",
               "children": [
                 {
                   "name": "K01371",
@@ -67410,11 +67410,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Toll-like receptor signaling pathway [PATH:ko04620]",
               "geneNames": []
             },
             {
-              "name": "04624 Toll and Imd signaling pathway [PATH:ko04624]",
+              "name": "04624",
               "children": [
                 {
                   "name": "K01446",
@@ -67565,11 +67565,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Toll and Imd signaling pathway [PATH:ko04624]",
               "geneNames": []
             },
             {
-              "name": "04621 NOD-like receptor signaling pathway [PATH:ko04621]",
+              "name": "04621",
               "children": [
                 {
                   "name": "K04734",
@@ -67835,11 +67835,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "NOD-like receptor signaling pathway [PATH:ko04621]",
               "geneNames": []
             },
             {
-              "name": "04622 RIG-I-like receptor signaling pathway [PATH:ko04622]",
+              "name": "04622",
               "children": [
                 {
                   "name": "K03174",
@@ -67923,11 +67923,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "RIG-I-like receptor signaling pathway [PATH:ko04622]",
               "geneNames": []
             },
             {
-              "name": "04623 Cytosolic DNA-sensing pathway [PATH:ko04623]",
+              "name": "04623",
               "children": [
                 {
                   "name": "K03022",
@@ -67997,11 +67997,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cytosolic DNA-sensing pathway [PATH:ko04623]",
               "geneNames": []
             },
             {
-              "name": "04625 C-type lectin receptor signaling pathway [PATH:ko04625]",
+              "name": "04625",
               "children": [
                 {
                   "name": "K04469",
@@ -68123,11 +68123,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "C-type lectin receptor signaling pathway [PATH:ko04625]",
               "geneNames": []
             },
             {
-              "name": "04650 Natural killer cell mediated cytotoxicity [PATH:ko04650]",
+              "name": "04650",
               "children": [
                 {
                   "name": "K06751",
@@ -68215,11 +68215,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Natural killer cell mediated cytotoxicity [PATH:ko04650]",
               "geneNames": []
             },
             {
-              "name": "04612 Antigen processing and presentation [PATH:ko04612]",
+              "name": "04612",
               "children": [
                 {
                   "name": "K03283",
@@ -68318,11 +68318,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Antigen processing and presentation [PATH:ko04612]",
               "geneNames": []
             },
             {
-              "name": "04660 T cell receptor signaling pathway [PATH:ko04660]",
+              "name": "04660",
               "children": [
                 {
                   "name": "K04409",
@@ -68449,11 +68449,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "T cell receptor signaling pathway [PATH:ko04660]",
               "geneNames": []
             },
             {
-              "name": "04658 Th1 and Th2 cell differentiation [PATH:ko04658]",
+              "name": "04658",
               "children": [
                 {
                   "name": "K20995",
@@ -68513,11 +68513,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Th1 and Th2 cell differentiation [PATH:ko04658]",
               "geneNames": []
             },
             {
-              "name": "04659 Th17 cell differentiation [PATH:ko04659]",
+              "name": "04659",
               "children": [
                 {
                   "name": "K04441",
@@ -68571,11 +68571,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Th17 cell differentiation [PATH:ko04659]",
               "geneNames": []
             },
             {
-              "name": "04657 IL-17 signaling pathway [PATH:ko04657]",
+              "name": "04657",
               "children": [
                 {
                   "name": "K02187",
@@ -68680,11 +68680,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "IL-17 signaling pathway [PATH:ko04657]",
               "geneNames": []
             },
             {
-              "name": "04662 B cell receptor signaling pathway [PATH:ko04662]",
+              "name": "04662",
               "children": [
                 {
                   "name": "K07371",
@@ -68751,11 +68751,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "B cell receptor signaling pathway [PATH:ko04662]",
               "geneNames": []
             },
             {
-              "name": "04664 Fc epsilon RI signaling pathway [PATH:ko04664]",
+              "name": "04664",
               "children": [
                 {
                   "name": "K02649",
@@ -68815,11 +68815,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Fc epsilon RI signaling pathway [PATH:ko04664]",
               "geneNames": []
             },
             {
-              "name": "04666 Fc gamma R-mediated phagocytosis [PATH:ko04666]",
+              "name": "04666",
               "children": [
                 {
                   "name": "K02649",
@@ -68894,11 +68894,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Fc gamma R-mediated phagocytosis [PATH:ko04666]",
               "geneNames": []
             },
             {
-              "name": "04670 Leukocyte transendothelial migration [PATH:ko04670]",
+              "name": "04670",
               "children": [
                 {
                   "name": "K05692",
@@ -68978,11 +68978,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Leukocyte transendothelial migration [PATH:ko04670]",
               "geneNames": []
             },
             {
-              "name": "04672 Intestinal immune network for IgA production [PATH:ko04672]",
+              "name": "04672",
               "children": [
                 {
                   "name": "K06752",
@@ -68992,11 +68992,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Intestinal immune network for IgA production [PATH:ko04672]",
               "geneNames": []
             },
             {
-              "name": "04062 Chemokine signaling pathway [PATH:ko04062]",
+              "name": "04062",
               "children": [
                 {
                   "name": "K04345",
@@ -69118,18 +69118,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Chemokine signaling pathway [PATH:ko04062]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Immune system",
           "geneNames": []
         },
         {
-          "name": "09152 Endocrine system",
+          "name": "09152",
           "children": [
             {
-              "name": "04911 Insulin secretion [PATH:ko04911]",
+              "name": "04911",
               "children": [
                 {
                   "name": "K01539",
@@ -69170,11 +69170,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Insulin secretion [PATH:ko04911]",
               "geneNames": []
             },
             {
-              "name": "04910 Insulin signaling pathway [PATH:ko04910]",
+              "name": "04910",
               "children": [
                 {
                   "name": "K02649",
@@ -69360,11 +69360,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Insulin signaling pathway [PATH:ko04910]",
               "geneNames": []
             },
             {
-              "name": "04922 Glucagon signaling pathway [PATH:ko04922]",
+              "name": "04922",
               "children": [
                 {
                   "name": "K04345",
@@ -69534,11 +69534,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glucagon signaling pathway [PATH:ko04922]",
               "geneNames": []
             },
             {
-              "name": "04923 Regulation of lipolysis in adipocytes [PATH:ko04923]",
+              "name": "04923",
               "children": [
                 {
                   "name": "K04345",
@@ -69608,11 +69608,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Regulation of lipolysis in adipocytes [PATH:ko04923]",
               "geneNames": []
             },
             {
-              "name": "04920 Adipocytokine signaling pathway [PATH:ko04920]",
+              "name": "04920",
               "children": [
                 {
                   "name": "K04734",
@@ -69697,11 +69697,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Adipocytokine signaling pathway [PATH:ko04920]",
               "geneNames": []
             },
             {
-              "name": "03320 PPAR signaling pathway [PATH:ko03320]",
+              "name": "03320",
               "children": [
                 {
                   "name": "K08752",
@@ -69863,11 +69863,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "PPAR signaling pathway [PATH:ko03320]",
               "geneNames": []
             },
             {
-              "name": "04929 GnRH secretion [PATH:ko04929]",
+              "name": "04929",
               "children": [
                 {
                   "name": "K02649",
@@ -69877,11 +69877,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "GnRH secretion [PATH:ko04929]",
               "geneNames": []
             },
             {
-              "name": "04912 GnRH signaling pathway [PATH:ko04912]",
+              "name": "04912",
               "children": [
                 {
                   "name": "K04345",
@@ -69964,11 +69964,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "GnRH signaling pathway [PATH:ko04912]",
               "geneNames": []
             },
             {
-              "name": "04913 Ovarian steroidogenesis [PATH:ko04913]",
+              "name": "04913",
               "children": [
                 {
                   "name": "K04345",
@@ -70036,11 +70036,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Ovarian steroidogenesis [PATH:ko04913]",
               "geneNames": []
             },
             {
-              "name": "04915 Estrogen signaling pathway [PATH:ko04915]",
+              "name": "04915",
               "children": [
                 {
                   "name": "K04079",
@@ -70122,11 +70122,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Estrogen signaling pathway [PATH:ko04915]",
               "geneNames": []
             },
             {
-              "name": "04914 Progesterone-mediated oocyte maturation [PATH:ko04914]",
+              "name": "04914",
               "children": [
                 {
                   "name": "K02649",
@@ -70233,11 +70233,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Progesterone-mediated oocyte maturation [PATH:ko04914]",
               "geneNames": []
             },
             {
-              "name": "04917 Prolactin signaling pathway [PATH:ko04917]",
+              "name": "04917",
               "children": [
                 {
                   "name": "K02649",
@@ -70290,11 +70290,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Prolactin signaling pathway [PATH:ko04917]",
               "geneNames": []
             },
             {
-              "name": "04921 Oxytocin signaling pathway [PATH:ko04921]",
+              "name": "04921",
               "children": [
                 {
                   "name": "K16342",
@@ -70451,11 +70451,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Oxytocin signaling pathway [PATH:ko04921]",
               "geneNames": []
             },
             {
-              "name": "04926 Relaxin signaling pathway [PATH:ko04926]",
+              "name": "04926",
               "children": [
                 {
                   "name": "K04345",
@@ -70542,11 +70542,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Relaxin signaling pathway [PATH:ko04926]",
               "geneNames": []
             },
             {
-              "name": "04935 Growth hormone synthesis, secretion and action [PATH:ko04935]",
+              "name": "04935",
               "children": [
                 {
                   "name": "K11265",
@@ -70591,11 +70591,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Growth hormone synthesis, secretion and action [PATH:ko04935]",
               "geneNames": []
             },
             {
-              "name": "04918 Thyroid hormone synthesis [PATH:ko04918]",
+              "name": "04918",
               "children": [
                 {
                   "name": "K04345",
@@ -70675,11 +70675,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Thyroid hormone synthesis [PATH:ko04918]",
               "geneNames": []
             },
             {
-              "name": "04919 Thyroid hormone signaling pathway [PATH:ko04919]",
+              "name": "04919",
               "children": [
                 {
                   "name": "K04345",
@@ -70789,11 +70789,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Thyroid hormone signaling pathway [PATH:ko04919]",
               "geneNames": []
             },
             {
-              "name": "04928 Parathyroid hormone synthesis, secretion and action [PATH:ko04928]",
+              "name": "04928",
               "children": [
                 {
                   "name": "K04612",
@@ -70905,11 +70905,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Parathyroid hormone synthesis, secretion and action [PATH:ko04928]",
               "geneNames": []
             },
             {
-              "name": "04916 Melanogenesis [PATH:ko04916]",
+              "name": "04916",
               "children": [
                 {
                   "name": "K04345",
@@ -70970,11 +70970,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Melanogenesis [PATH:ko04916]",
               "geneNames": []
             },
             {
-              "name": "04924 Renin secretion [PATH:ko04924]",
+              "name": "04924",
               "children": [
                 {
                   "name": "K04345",
@@ -71043,11 +71043,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Renin secretion [PATH:ko04924]",
               "geneNames": []
             },
             {
-              "name": "04614 Renin-angiotensin system [PATH:ko04614]",
+              "name": "04614",
               "children": [
                 {
                   "name": "K01283",
@@ -71102,11 +71102,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Renin-angiotensin system [PATH:ko04614]",
               "geneNames": []
             },
             {
-              "name": "04925 Aldosterone synthesis and secretion [PATH:ko04925]",
+              "name": "04925",
               "children": [
                 {
                   "name": "K01539",
@@ -71188,11 +71188,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Aldosterone synthesis and secretion [PATH:ko04925]",
               "geneNames": []
             },
             {
-              "name": "04927 Cortisol synthesis and secretion [PATH:ko04927]",
+              "name": "04927",
               "children": [
                 {
                   "name": "K04345",
@@ -71239,18 +71239,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cortisol synthesis and secretion [PATH:ko04927]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Endocrine system",
           "geneNames": []
         },
         {
-          "name": "09153 Circulatory system",
+          "name": "09153",
           "children": [
             {
-              "name": "04260 Cardiac muscle contraction [PATH:ko04260]",
+              "name": "04260",
               "children": [
                 {
                   "name": "K00476",
@@ -71373,11 +71373,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cardiac muscle contraction [PATH:ko04260]",
               "geneNames": []
             },
             {
-              "name": "04261 Adrenergic signaling in cardiomyocytes [PATH:ko04261]",
+              "name": "04261",
               "children": [
                 {
                   "name": "K04345",
@@ -71495,11 +71495,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Adrenergic signaling in cardiomyocytes [PATH:ko04261]",
               "geneNames": []
             },
             {
-              "name": "04270 Vascular smooth muscle contraction [PATH:ko04270]",
+              "name": "04270",
               "children": [
                 {
                   "name": "K01047",
@@ -71642,18 +71642,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Vascular smooth muscle contraction [PATH:ko04270]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Circulatory system",
           "geneNames": []
         },
         {
-          "name": "09154 Digestive system",
+          "name": "09154",
           "children": [
             {
-              "name": "04970 Salivary secretion [PATH:ko04970]",
+              "name": "04970",
               "children": [
                 {
                   "name": "K04345",
@@ -71736,11 +71736,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Salivary secretion [PATH:ko04970]",
               "geneNames": []
             },
             {
-              "name": "04971 Gastric acid secretion [PATH:ko04971]",
+              "name": "04971",
               "children": [
                 {
                   "name": "K05692",
@@ -71793,11 +71793,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Gastric acid secretion [PATH:ko04971]",
               "geneNames": []
             },
             {
-              "name": "04972 Pancreatic secretion [PATH:ko04972]",
+              "name": "04972",
               "children": [
                 {
                   "name": "K07901",
@@ -71947,11 +71947,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Pancreatic secretion [PATH:ko04972]",
               "geneNames": []
             },
             {
-              "name": "04976 Bile secretion [PATH:ko04976]",
+              "name": "04976",
               "children": [
                 {
                   "name": "K01253",
@@ -72070,11 +72070,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Bile secretion [PATH:ko04976]",
               "geneNames": []
             },
             {
-              "name": "04973 Carbohydrate digestion and absorption [PATH:ko04973]",
+              "name": "04973",
               "children": [
                 {
                   "name": "K01176",
@@ -72138,11 +72138,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Carbohydrate digestion and absorption [PATH:ko04973]",
               "geneNames": []
             },
             {
-              "name": "04974 Protein digestion and absorption [PATH:ko04974]",
+              "name": "04974",
               "children": [
                 {
                   "name": "K06002",
@@ -72299,11 +72299,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Protein digestion and absorption [PATH:ko04974]",
               "geneNames": []
             },
             {
-              "name": "04975 Fat digestion and absorption [PATH:ko04975]",
+              "name": "04975",
               "children": [
                 {
                   "name": "K14073",
@@ -72366,11 +72366,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Fat digestion and absorption [PATH:ko04975]",
               "geneNames": []
             },
             {
-              "name": "04979 Cholesterol metabolism [PATH:ko04979]",
+              "name": "04979",
               "children": [
                 {
                   "name": "K05641",
@@ -72438,11 +72438,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cholesterol metabolism [PATH:ko04979]",
               "geneNames": []
             },
             {
-              "name": "04977 Vitamin digestion and absorption [PATH:ko04977]",
+              "name": "04977",
               "children": [
                 {
                   "name": "K01435",
@@ -72474,11 +72474,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Vitamin digestion and absorption [PATH:ko04977]",
               "geneNames": []
             },
             {
-              "name": "04978 Mineral absorption [PATH:ko04978]",
+              "name": "04978",
               "children": [
                 {
                   "name": "K14683",
@@ -72569,18 +72569,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Mineral absorption [PATH:ko04978]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Digestive system",
           "geneNames": []
         },
         {
-          "name": "09155 Excretory system",
+          "name": "09155",
           "children": [
             {
-              "name": "04962 Vasopressin-regulated water reabsorption [PATH:ko04962]",
+              "name": "04962",
               "children": [
                 {
                   "name": "K04345",
@@ -72648,11 +72648,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Vasopressin-regulated water reabsorption [PATH:ko04962]",
               "geneNames": []
             },
             {
-              "name": "04960 Aldosterone-regulated sodium reabsorption [PATH:ko04960]",
+              "name": "04960",
               "children": [
                 {
                   "name": "K01539",
@@ -72684,11 +72684,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Aldosterone-regulated sodium reabsorption [PATH:ko04960]",
               "geneNames": []
             },
             {
-              "name": "04961 Endocrine and other factor-regulated calcium reabsorption [PATH:ko04961]",
+              "name": "04961",
               "children": [
                 {
                   "name": "K04345",
@@ -72749,11 +72749,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Endocrine and other factor-regulated calcium reabsorption [PATH:ko04961]",
               "geneNames": []
             },
             {
-              "name": "04964 Proximal tubule bicarbonate reclamation [PATH:ko04964]",
+              "name": "04964",
               "children": [
                 {
                   "name": "K01539",
@@ -72803,11 +72803,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Proximal tubule bicarbonate reclamation [PATH:ko04964]",
               "geneNames": []
             },
             {
-              "name": "04966 Collecting duct acid secretion [PATH:ko04966]",
+              "name": "04966",
               "children": [
                 {
                   "name": "K02146",
@@ -72818,18 +72818,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Collecting duct acid secretion [PATH:ko04966]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Excretory system",
           "geneNames": []
         },
         {
-          "name": "09156 Nervous system",
+          "name": "09156",
           "children": [
             {
-              "name": "04724 Glutamatergic synapse [PATH:ko04724]",
+              "name": "04724",
               "children": [
                 {
                   "name": "K01425",
@@ -72885,11 +72885,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Glutamatergic synapse [PATH:ko04724]",
               "geneNames": []
             },
             {
-              "name": "04727 GABAergic synapse [PATH:ko04727]",
+              "name": "04727",
               "children": [
                 {
                   "name": "K01425",
@@ -72947,11 +72947,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "GABAergic synapse [PATH:ko04727]",
               "geneNames": []
             },
             {
-              "name": "04725 Cholinergic synapse [PATH:ko04725]",
+              "name": "04725",
               "children": [
                 {
                   "name": "K01049",
@@ -72997,11 +72997,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Cholinergic synapse [PATH:ko04725]",
               "geneNames": []
             },
             {
-              "name": "04728 Dopaminergic synapse [PATH:ko04728]",
+              "name": "04728",
               "children": [
                 {
                   "name": "K01593",
@@ -73091,11 +73091,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Dopaminergic synapse [PATH:ko04728]",
               "geneNames": []
             },
             {
-              "name": "04726 Serotonergic synapse [PATH:ko04726]",
+              "name": "04726",
               "children": [
                 {
                   "name": "K01593",
@@ -73207,11 +73207,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Serotonergic synapse [PATH:ko04726]",
               "geneNames": []
             },
             {
-              "name": "04720 Long-term potentiation [PATH:ko04720]",
+              "name": "04720",
               "children": [
                 {
                   "name": "K04345",
@@ -73285,11 +73285,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Long-term potentiation [PATH:ko04720]",
               "geneNames": []
             },
             {
-              "name": "04730 Long-term depression [PATH:ko04730]",
+              "name": "04730",
               "children": [
                 {
                   "name": "K07376",
@@ -73321,11 +73321,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Long-term depression [PATH:ko04730]",
               "geneNames": []
             },
             {
-              "name": "04723 Retrograde endocannabinoid signaling [PATH:ko04723]",
+              "name": "04723",
               "children": [
                 {
                   "name": "K13985",
@@ -73476,11 +73476,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Retrograde endocannabinoid signaling [PATH:ko04723]",
               "geneNames": []
             },
             {
-              "name": "04721 Synaptic vesicle cycle [PATH:ko04721]",
+              "name": "04721",
               "children": [
                 {
                   "name": "K06027",
@@ -73521,11 +73521,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Synaptic vesicle cycle [PATH:ko04721]",
               "geneNames": []
             },
             {
-              "name": "04722 Neurotrophin signaling pathway [PATH:ko04722]",
+              "name": "04722",
               "children": [
                 {
                   "name": "K03099",
@@ -73700,18 +73700,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Neurotrophin signaling pathway [PATH:ko04722]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Nervous system",
           "geneNames": []
         },
         {
-          "name": "09157 Sensory system",
+          "name": "09157",
           "children": [
             {
-              "name": "04744 Phototransduction [PATH:ko04744]",
+              "name": "04744",
               "children": [
                 {
                   "name": "K00909",
@@ -73735,11 +73735,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Phototransduction [PATH:ko04744]",
               "geneNames": []
             },
             {
-              "name": "04745 Phototransduction - fly [PATH:ko04745]",
+              "name": "04745",
               "children": [
                 {
                   "name": "K02183",
@@ -73763,11 +73763,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Phototransduction - fly [PATH:ko04745]",
               "geneNames": []
             },
             {
-              "name": "04740 Olfactory transduction [PATH:ko04740]",
+              "name": "04740",
               "children": [
                 {
                   "name": "K04257",
@@ -73820,11 +73820,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Olfactory transduction [PATH:ko04740]",
               "geneNames": []
             },
             {
-              "name": "04742 Taste transduction [PATH:ko04742]",
+              "name": "04742",
               "children": [
                 {
                   "name": "K04345",
@@ -73834,11 +73834,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Taste transduction [PATH:ko04742]",
               "geneNames": []
             },
             {
-              "name": "04750 Inflammatory mediator regulation of TRP channels [PATH:ko04750]",
+              "name": "04750",
               "children": [
                 {
                   "name": "K16342",
@@ -73920,18 +73920,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Inflammatory mediator regulation of TRP channels [PATH:ko04750]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Sensory system",
           "geneNames": []
         },
         {
-          "name": "09158 Development and regeneration",
+          "name": "09158",
           "children": [
             {
-              "name": "04320 Dorso-ventral axis formation [PATH:ko04320]",
+              "name": "04320",
               "children": [
                 {
                   "name": "K03099",
@@ -73984,11 +73984,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Dorso-ventral axis formation [PATH:ko04320]",
               "geneNames": []
             },
             {
-              "name": "04360 Axon guidance [PATH:ko04360]",
+              "name": "04360",
               "children": [
                 {
                   "name": "K06268",
@@ -74156,11 +74156,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Axon guidance [PATH:ko04360]",
               "geneNames": []
             },
             {
-              "name": "04361 Axon regeneration [PATH:ko04361]",
+              "name": "04361",
               "children": [
                 {
                   "name": "K04345",
@@ -74244,11 +74244,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Axon regeneration [PATH:ko04361]",
               "geneNames": []
             },
             {
-              "name": "04380 Osteoclast differentiation [PATH:ko04380]",
+              "name": "04380",
               "children": [
                 {
                   "name": "K02649",
@@ -74352,18 +74352,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Osteoclast differentiation [PATH:ko04380]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Development and regeneration",
           "geneNames": []
         },
         {
-          "name": "09149 Aging",
+          "name": "09149",
           "children": [
             {
-              "name": "04211 Longevity regulating pathway [PATH:ko04211]",
+              "name": "04211",
               "children": [
                 {
                   "name": "K02649",
@@ -74462,11 +74462,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Longevity regulating pathway [PATH:ko04211]",
               "geneNames": []
             },
             {
-              "name": "04212 Longevity regulating pathway - worm [PATH:ko04212]",
+              "name": "04212",
               "children": [
                 {
                   "name": "K17491",
@@ -74600,11 +74600,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Longevity regulating pathway - worm [PATH:ko04212]",
               "geneNames": []
             },
             {
-              "name": "04213 Longevity regulating pathway - multiple species [PATH:ko04213]",
+              "name": "04213",
               "children": [
                 {
                   "name": "K02649",
@@ -74695,18 +74695,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Longevity regulating pathway - multiple species [PATH:ko04213]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Aging",
           "geneNames": []
         },
         {
-          "name": "09159 Environmental adaptation",
+          "name": "09159",
           "children": [
             {
-              "name": "04710 Circadian rhythm [PATH:ko04710]",
+              "name": "04710",
               "children": [
                 {
                   "name": "K02295",
@@ -74740,11 +74740,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Circadian rhythm [PATH:ko04710]",
               "geneNames": []
             },
             {
-              "name": "04713 Circadian entrainment [PATH:ko04713]",
+              "name": "04713",
               "children": [
                 {
                   "name": "K02183",
@@ -74797,11 +74797,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Circadian entrainment [PATH:ko04713]",
               "geneNames": []
             },
             {
-              "name": "04711 Circadian rhythm - fly [PATH:ko04711]",
+              "name": "04711",
               "children": [
                 {
                   "name": "K03083",
@@ -74811,11 +74811,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Circadian rhythm - fly [PATH:ko04711]",
               "geneNames": []
             },
             {
-              "name": "04712 Circadian rhythm - plant [PATH:ko04712]",
+              "name": "04712",
               "children": [
                 {
                   "name": "K12129",
@@ -74876,11 +74876,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Circadian rhythm - plant [PATH:ko04712]",
               "geneNames": []
             },
             {
-              "name": "04714 Thermogenesis [PATH:ko04714]",
+              "name": "04714",
               "children": [
                 {
                   "name": "K11265",
@@ -75351,11 +75351,11 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Thermogenesis [PATH:ko04714]",
               "geneNames": []
             },
             {
-              "name": "04626 Plant-pathogen interaction [PATH:ko04626]",
+              "name": "04626",
               "children": [
                 {
                   "name": "K13412",
@@ -75561,19 +75561,18 @@ const kos = {
                   ]
                 }
               ],
-              "desc": "",
+              "desc": "Plant-pathogen interaction [PATH:ko04626]",
               "geneNames": []
             }
           ],
-          "desc": "",
+          "desc": "Environmental adaptation",
           "geneNames": []
         }
       ],
-      "desc": "",
+      "desc": "Organismal Systems",
       "geneNames": []
     }
   ],
   "desc": "",
   "geneNames": []
-
 }
