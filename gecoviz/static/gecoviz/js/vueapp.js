@@ -163,7 +163,7 @@ var vueapp = new Vue({
                     if (!d._show)
                         this.showKO(d)
                 })
-            const selector = `li#${ko.parent.data.name}${ko.data.name}`;
+            const selector = `li.${ko.data.name}`;
             setTimeout(() => {
                 document.querySelector(selector).scrollIntoView({
                     behavior: "smooth",
@@ -183,8 +183,10 @@ var vueapp = new Vue({
                     this.suggestions.ko = [];
                     return
                 }
-                
-               this.suggestions.ko = this.kos.leaves()
+
+               const uniqueSuggestions = this.kos.leaves().reduce((t, d) =>
+                    t[d.data.name] = d, {})
+               this.suggestions.ko = uniqueSuggestions
                     .filter(d => 
                         d.data.name.includes(search) 
                         || d.data.desc.includes(search));
