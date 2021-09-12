@@ -53,7 +53,7 @@
                         <ul v-if="second.children.length && second._show">
                             <li v-for="third in second.children"
                                 :style="{ 'list-style': third._show ? 'disclosure-open' : 'disclosure-closed' }">
-                                <a @click="showKO(third)">[[ third.data.name ]]</a>
+                                <a @click="showKO(third)">[[ third.data.name ]]  [[ third.data.name ]]</a>
                                 <ul v-if="third.children.length && third._show">
                                     <li v-for="fourth in third.children"
                                         :id=`${third.data.name}_${fourth.data.name}`
