@@ -296,6 +296,7 @@ var vueapp = new Vue({
                     hideSpinner();
 
                 const sharedTaxa = this.getSharedTaxa(this.root);
+                console.log(sharedTaxa)
                 if (this.allItems.length <= this.maxSelected)
                     this.selectTaxa(sharedTaxa, true);
                 else {
