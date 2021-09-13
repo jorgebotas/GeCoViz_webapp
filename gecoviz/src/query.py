@@ -227,14 +227,16 @@ def get_emapper_matches(field, query, representative_only=True):
     matches = list(col_emapper.aggregate([
         { '$match': { field: query} },
         { '$project': {
+            'gene' : '$q',
             #'taxid': {'$arrayElemAt': [ { '$split': ["$q", "." ] }, 0]},
-            'genome': {'$slice': [ { '$split': ["$q", "." ] }, 0 , 2]},
+            # 'genome': {'$slice': [ { '$split': ["$q", "." ] }, 0 , 2]},
                        } },
-        { '$group' : { '_id' : "$genome" } } ]))
-    print(f'mongo:  {time.time() - start}')
+        # { '$group' : { '_id' : "$genome" } } 
+        ]))
+    print(f'mongo:  {time.time() - start}'))
 
-    return [ m['_id'] for m in matches 
-            if not representative_only or ".".join(m['_id']) in representative_genomes ]
+    return [ m['gene'] for m in matches 
+            if not representative_only or ".".join(m['gene'].split(".")[0:2]) in representative_genomes ]
 
 
 def get_functional_matches(field, query):
