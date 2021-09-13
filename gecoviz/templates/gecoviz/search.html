@@ -19,7 +19,7 @@
         :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none',
                   'width': (isScreenLarge && show === 'gecoviz') ? '40%' : '100%'  }">
         <div class="mt-0"
-            :class="{ 'd-flex' : !isScreenLarge }"
+            :class="{ 'd-flex' : (!isScreenLarge || show === 'gecoviz') }"
             :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
             <div class="sunburst-selector mb-4"
                  :class="{ 'w-100' : isScreenLarge, 'w-50' : (!isScreenLarge || show === 'gecoviz') }"
