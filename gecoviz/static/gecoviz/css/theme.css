@@ -12979,9 +12979,6 @@ Antialiasing
     color: inherit !important; }
   .theme-dark-auto .navbar-brand-autodark {
     filter: brightness(0) invert(1); } }
-* {
-  font-family: var(--bs-font-sans-serif), sans-serif; }
-
 .bg-green {
   background-color: #35bb83;
   color: var(--sand) !important; }
