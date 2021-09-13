@@ -300,13 +300,16 @@ var vueapp = new Vue({
                 if (this.allItems.length <= maxSelected)
                     this.selectTaxa(sharedTaxa, true);
                 else {
-                    //const ranks = ["genus", "family", "phylum"];
-                    //sharedTaxa.descendantLevels = this.getDescendantLevels(sharedTaxa);
-                    //ranks.filter(rank =>
-                        //sharedTaxa.descendantLevels[rank] && 
-                        //sharedTaxa.descendantLevels[rank].length <= maxSelected);
-                    //if (ranks.length)
-                        //this.selectLineages(sharedTaxa.descendantLevels[ranks[0]], sharedTaxa);
+                    const ranks = ["genus", "family", "phylum"];
+                    sharedTaxa.descendantLevels = this.getDescendantLevels(sharedTaxa);
+                    ranks.filter(rank => {
+                        console.log(sharedTaxa.descendantLevels[rank].length)
+                        return sharedTaxa.descendantLevels[rank] && 
+                        sharedTaxa.descendantLevels[rank].length <= maxSelected
+                    });
+                    console.log(ranks)
+                    if (ranks.length)
+                        this.selectLineages(sharedTaxa.descendantLevels[ranks[0]], sharedTaxa);
                 }
             }, 0)
         },
