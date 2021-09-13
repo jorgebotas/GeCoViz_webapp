@@ -7,8 +7,8 @@
     {% include "gecoviz/search.html" %}
 </div>
 
-<div class="container-xxl justify-content-center" style="max-width:100%;"
-    :style="{ 'display': allItems.length ? 'none' : 'block' }">
+<div v-if="!allItems.length" 
+    class="container-xxl justify-content-center" style="max-width:100%;">
     {% include "gecoviz/kos.html" %}
 </div>
 
