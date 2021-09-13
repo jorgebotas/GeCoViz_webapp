@@ -302,14 +302,11 @@ var vueapp = new Vue({
                 else {
                     const ranks = ["genus", "family", "phylum"];
                     sharedTaxa.descendantLevels = this.getDescendantLevels(sharedTaxa);
-                    ranks.filter(rank => {
-                        console.log(sharedTaxa.descendantLevels[rank].length)
-                        return sharedTaxa.descendantLevels[rank] && 
-                        sharedTaxa.descendantLevels[rank].length <= maxSelected
-                    });
-                    console.log(ranks)
-                    if (ranks.length)
-                        this.selectLineages(sharedTaxa.descendantLevels[ranks[0]], sharedTaxa);
+                    const filteredRanks = ranks.filter(rank =>
+                        sharedTaxa.descendantLevels[rank] && 
+                        sharedTaxa.descendantLevels[rank].length <= maxSelected);
+                    if (filteredRanks.length)
+                        this.selectLineages(sharedTaxa.descendantLevels[filteredRanks[0]], sharedTaxa);
                 }
             }, 0)
         },
