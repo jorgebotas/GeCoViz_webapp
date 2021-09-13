@@ -294,7 +294,7 @@ var vueapp = new Vue({
                 if (_hideSpinner)
                     hideSpinner();
 
-                const sharedTaxa = getSharedTaxa(this.root)
+                const sharedTaxa = this.getSharedTaxa(this.root)
                 if (this.allItems.length <= 250) {
                     this.selectTaxa(sharedTaxa, true);
                 }
