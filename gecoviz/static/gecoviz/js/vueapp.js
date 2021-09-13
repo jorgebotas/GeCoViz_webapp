@@ -296,15 +296,15 @@ var vueapp = new Vue({
                     hideSpinner();
 
                 const sharedTaxa = this.getSharedTaxa(this.root);
-                console.log(sharedTaxa)
-                if (this.allItems.length <= this.maxSelected)
+                const maxSelected = 100;
+                if (this.allItems.length <= maxSelected)
                     this.selectTaxa(sharedTaxa, true);
                 else {
                     const ranks = ["genus", "family", "phylum"];
                     sharedTaxa.descendantLevels = this.getDescendantLevels(sharedTaxa);
                     ranks.filter(rank =>
                         sharedTaxa.descendantLevels[rank] && 
-                        sharedTaxa.descendantLevels[rank] <= this.maxSelected);
+                        sharedTaxa.descendantLevels[rank] <= maxSelected);
                     if (ranks.length)
                         this.selectLineages(sharedTaxa.descendantLevels[ranks[0]], sharedTaxa);
                 }
@@ -407,6 +407,7 @@ var vueapp = new Vue({
 
         // Getters
         getNumberOfHits: function(selectedTaxids, lineage) {
+            if (lineage === "")
             return this.allItems.reduce((total, i) => {
                 if ((selectedTaxids || []).includes(+i.id) ||
                     (lineage && i.lineage.includes(lineage)))
