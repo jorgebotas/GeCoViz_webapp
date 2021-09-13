@@ -101,12 +101,12 @@
                                 :style="{ 'visibility':
                                             Object.keys(d.source.descendantLevels).length ?
                                             'visible' : 'hidden' }">
-                                <li class="dropdown-header pl-2">
+                                <li class="dropdown-header pl-2 f-bold">
                                     Select representatives at taxonomic level
                                 </li>
-                                <li class="dropdown-item"
+                                <li class="dropdown-item f-bold"
                                     @click="selectTaxa(d.source, true)">
-                                    All genomes
+                                    All genomes ([[ getNumberOfHits([], d.source.data.lineage) ]])
                                 </li>
                                 <li v-for="(lineages, level) in d.source.descendantLevels"
                                     class="dropdown-item"
