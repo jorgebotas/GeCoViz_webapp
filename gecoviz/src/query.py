@@ -226,11 +226,7 @@ def get_emapper_matches(field, query, representative_only=True):
     # matches = list(col_emapper.find({ field: query }, { 'q': 1 }))
     matches = list(col_emapper.aggregate([
         { '$match': { field: query} },
-        { '$project': {
-            'gene' : '$q',
-            #'taxid': {'$arrayElemAt': [ { '$split': ["$q", "." ] }, 0]},
-            # 'genome': {'$slice': [ { '$split': ["$q", "." ] }, 0 , 2]},
-                       } },
+        { '$project': { 'gene' : '$q' } },
         # { '$group' : { '_id' : "$genome" } } 
         ]))
     print(f'mongo:  {time.time() - start}')
