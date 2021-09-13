@@ -615,7 +615,7 @@ var vueapp = new Vue({
             if (!this.contextData.context)
                 return 0
             return this.contextData.context.filter(c => c.pos == 0).length
-        }
+        },
 
         allTaxa: function() {
             return this.root.descendants().slice(1);
