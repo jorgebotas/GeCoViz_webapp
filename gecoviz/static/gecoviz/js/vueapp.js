@@ -315,10 +315,11 @@ var vueapp = new Vue({
             $('#spinner').modal('show');
             const newQuery = query || $("#query-search").val().trim();
             if (newQuery) {
-                this.selectedTaxids = [];
                 this.allItems = [];
                 this.root = [];
+                this.selectedTaxids = [];
                 this.searchedTaxa = [];
+                this.contextData.context = [];
                 this.query = newQuery;
             }
             $("#query-search").val(this.query);
