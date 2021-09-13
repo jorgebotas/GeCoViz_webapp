@@ -223,12 +223,12 @@ def get_emapper_annotation(genes):
 def get_emapper_matches(field, query, representative_only=True):
 
     start = time.time()
-    # matches = list(col_emapper.find({ field: query }, { 'q': 1 }))
-    matches = list(col_emapper.aggregate([
-        { '$match': { field: query} },
-        { '$project': { 'gene' : '$q' } },
-        # { '$group' : { '_id' : "$genome" } } 
-        ]))
+    matches = col_emapper.find({ field: query }, { 'q': 1 })
+    # matches = list(col_emapper.aggregate([
+        # { '$match': { field: query} },
+        # { '$project': { 'gene' : '$q' } },
+        # # { '$group' : { '_id' : "$genome" } } 
+        # ]))
     print(f'mongo:  {time.time() - start}')
 
     return [ m['gene'] for m in matches 
