@@ -304,7 +304,7 @@ var vueapp = new Vue({
                     sharedTaxa.descendantLevels = this.getDescendantLevels(sharedTaxa);
                     ranks.filter(rank =>
                         sharedTaxa.descendantLevels[rank] && 
-                        sharedTaxa.descendantLevels[rank] <= maxSelected);
+                        sharedTaxa.descendantLevels[rank].length <= maxSelected);
                     if (ranks.length)
                         this.selectLineages(sharedTaxa.descendantLevels[ranks[0]], sharedTaxa);
                 }
