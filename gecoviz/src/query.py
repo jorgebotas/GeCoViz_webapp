@@ -232,7 +232,7 @@ def get_emapper_matches(field, query, representative_only=True):
                        } },
         { '$group' : { '_id' : "$genome" } } ]))
     print(matches)
-    print(f'mongo:  {time.time() - start}'))
+    print(f'mongo:  {time.time() - start}')
 
     return [ m['q'] for m in matches 
             if not representative_only or ".".join(m['q'].split(".")[0:2]) in representative_genomes ]
