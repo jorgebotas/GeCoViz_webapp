@@ -135,11 +135,11 @@ def get_lineage(taxid):
     sys.stdout = open(os.devnull, "w")
 
     taxid2name = ncbi.get_taxid_translator(lineage)
+    ranks = ncbi.get_rank(lineage)
 
     sys.stdout = old_stdout # reset old stdout
 
-    ranks = ncbi.get_rank(lineage)
-    return [ f'{ranks[tid]}__{taxid2name[tid].replace(".", "")}' for tid in lineage ]
+    return [ f'{ranks[tid]}__{taxid2name[tid].replace(".", "")}' for tid in lineage ][1:]
 
 
 def get_taxonomy(queries):
