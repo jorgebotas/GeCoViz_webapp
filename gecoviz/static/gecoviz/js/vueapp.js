@@ -129,7 +129,6 @@ var vueapp = new Vue({
             ko: undefined
         },
         allItems: [], 
-        allTaxa: [],
         sunBurst: undefined,
         contextData: {
             newick: "",
@@ -148,6 +147,7 @@ var vueapp = new Vue({
         kos: d3.hierarchy(kos),
     },
     methods: {
+        // HOME PAGE
         showKO: function(ko) {
             ko._show = !ko._show;
             const kos = this.kos;
@@ -192,6 +192,7 @@ var vueapp = new Vue({
             }, 500);
         },
 
+        // UI helpers
         showTab: function(selector) {
             const otherSelector = selector === "sunburst" ? "gecoviz" : "sunburst";
             const toRemove = $(`#${otherSelector}-navlink`);
@@ -203,6 +204,103 @@ var vueapp = new Vue({
             this.show = selector;
         },
 
+        showAddButton: function(d) {
+            const container = d3.select("#add-button-container")
+            container.selectAll("*").remove();
+
+            const button = container.append("button")
+                .attr("class", "btn btn-primary")
+                .attr("disabled", () => this.nSelected > 250 ? true : null)
+                .html("Add " + d.data.tname);
+            button.on("click", () => {
+                this.selectTaxa(d);
+                button.remove();
+            });
+        },
+
+        scrollToTop: function() {
+            $("html, body").animate({ scrollTop: 0 }, "slow");
+        },
+
+        toggleFullScreen: async function(selector, action=null) {
+            const placeholder_div = document.getElementById("full-screen-placeholder");
+            if (placeholder_div || action) {
+                try { $("#full-screen .modal").modal('hide') } catch {};
+                return
+            }
+            let modal = document.createElement("div");
+            modal.id = "full-screen";
+            modal.innerHTML = `
+                <div class="modal modal-blur fade" 
+                      tabindex="-1" 
+                      aria-hidden="false">
+                    <div class="modal-dialog modal-dialog-centered 
+                                justify-content-center" 
+                        style="min-width:97%;"
+                        role="document">
+                    </div>
+                </div>`;
+            const placeholder = document.createElement("div");
+            placeholder.id = "full-screen-placeholder";
+            const contentNode = document.querySelector(selector);
+            const parentNode = contentNode.parentNode;
+            const content = $(parentNode.replaceChild(placeholder, contentNode));
+            if (!content.hasClass("modal-content"))
+                content.addClass("modal-content");
+            $(modal.childNodes[1].childNodes[1])
+                .append(content);
+            $("body").append($(modal))
+            $("#full-screen .modal").on("hidden.bs.modal", () => {
+                const contentDiv = $(selector);
+                contentDiv.removeClass("modal-content");
+                parentNode.replaceChild(contentDiv[0],
+                                      placeholder);
+            })
+            $("#full-screen .modal").modal("show")
+        },
+
+        // Server interaction
+        updateSearchParams: function(params, replace=true) {
+            const url = new URL(location);
+            if (replace) url.search = '';
+            const sparams = url.searchParams;
+            Object.entries(params).forEach(([k, v]) => sparams.set(k, v));
+            const historyObj = {
+                Title: document.title,
+                Url: `${url.origin}/?${sparams.toString()}`
+            };
+            history.pushState(historyObj, historyObj.Title, historyObj.Url);
+        },
+
+        fetchThen : function(data, _hideSpinner=true) {
+            this.allItems = data.matches;
+            this.root =  buildTaxaHierarchy(this.allItems
+                .map(i => [i.lineage, i.id, i.value]))
+            this.root.each(d => {
+                const [ rank, tname ] = d.data.name.split("__");
+                d.data.rank = rank;
+                d.data.tname = tname;
+                d.data.lineage = getLineage(d)
+            });
+
+            if (this.allItems.length == 0) {
+                fetchCatch();
+                return;
+            }
+
+            setTimeout(() => {
+                this.toggleSunburstSelector();
+                this.updateSearch();
+                if (_hideSpinner)
+                    hideSpinner();
+
+                const sharedTaxa = getSharedTaxa(this.root)
+                if (this.allItems.length <= 250) {
+                    this.selectTaxa(sharedTaxa, true);
+                }
+            }, 0)
+        },
+
         searchQuery : async function(searchType, query, _hideSpinner) {
             $('#spinner').modal('show');
             const newQuery = query || $("#query-search").val().trim();
@@ -210,7 +308,6 @@ var vueapp = new Vue({
                 this.selectedTaxids = [];
                 this.allItems = [];
                 this.root = [];
-                this.allTaxa = [];
                 this.searchedTaxa = [];
                 this.query = newQuery;
             }
@@ -258,33 +355,79 @@ var vueapp = new Vue({
             this.contextData.context = await getContext(endpoint);
         },
 
-        fetchThen : function(data, _hideSpinner=true) {
-            this.allItems = data.matches;
-            this.root =  buildTaxaHierarchy(this.allItems
-                .map(i => [i.lineage, i.id, i.value]))
-            this.root.each(d => {
-                const [ rank, tname ] = d.data.name.split("__");
-                d.data.rank = rank;
-                d.data.tname = tname;
-                d.data.lineage = getLineage(d)
-            });
-            this.allTaxa = this.root.descendants().slice(1);
-            if (this.allItems.length == 0) {
-                fetchCatch();
-                return;
-            }
-            setTimeout(() => {
-                this.toggleSunburstSelector();
-                this.updateSearch();
-                if (_hideSpinner)
-                    hideSpinner();
+        getSeq : function(query) {
+            fetch(API_BASE_URL + `/seq/${query}/`)
+                .then(response => response.blob())
+                .then(blob => saveAs(blob, `${query}_sequence.fasta`))
+        },
 
-                if (this.allItems.length <= 250) {
-                    this.selectTaxa(this.root, true);
-                }
+        getNeighSeqs : function(query) {
+            fetch(API_BASE_URL + `/neigh_seqs/${query}/`)
+                .then(response => response.blob())
+                .then(blob => saveAs(blob, `${query}_sequences.fasta`))
+        },
+
+        downloadNeighborhood: function() {
+            const fields = ["anchor", "pos", "gene", "Gene name", 
+                "Description", "strand", "start", "end", "KEGG pathways",
+                "KEGG Orthology", "Orthologous groups"];
+            const tsv = this.contextData.context.map(g => {
+                return fields.map(f => {
+                    const info = g[f];
+                    return typeof info === "object" ? info.map(i => i.id) : info;
+                }).join("\t")
+            });
+
+            const headedTsv = [ fields.join("\t"), ...tsv ].join("\n");
+
+            saveAs(new Blob([headedTsv]), "neighborhood.tsv")
+        },
+
+        getNewick: function(query) {
+            fetch(API_BASE_URL + '/tree/' + query + '/')
+                .then(response => response.blob())
+                .then(blob => saveAs(blob, `${query}_tree.nwx`))
+        },
+
+        getHMM: function(query) {
+            fetch(API_BASE_URL + '/hmm/' + query + '/')
+                .then(response => response.blob())
+                .then(blob => saveAs(blob, `${query}_hmm.txt`))
+        },
+
+        // Getters
+        getNumberOfHits: function(selectedTaxids) {
+            return this.allItems.reduce((total, i) => {
+                if (selectedTaxids.includes(+i.id))
+                    total += i.value;
+                return total
             }, 0)
         },
 
+        getSharedTaxa: function(root) {
+            function getShared(node) {
+                if (node.children.length > 1)
+                    return node
+                return getShared(node.children[0])
+            };
+            const shared = getShared(root);
+            console.log(shared)
+            return shared;
+        },
+
+        getDescendantLevels: function(d) {
+            const levels = d.descendants().slice(1).reduce((ranks, d) => {
+                const rank = d.data.name.split("__")[0];
+                ranks[rank] = ranks[rank] || [];
+                const lineage = getLineage(d);
+                ranks[rank].push(lineage);
+                return ranks
+            }, {})
+
+            return levels
+        },
+
+        // Suggestions
         updateSuggestions: function() {
             if (this.searchTimeout.query)
                 clearTimeout(this.searchTimeout.query);
@@ -325,6 +468,7 @@ var vueapp = new Vue({
             }, 500);
         },
 
+        // Selectors
         selectTaxid: function(id, source, show) {
             const isSelected = this.selectedTaxids.find(t => t.id === id);
             show = show || !isSelected;
@@ -373,33 +517,8 @@ var vueapp = new Vue({
             this.updateSearch();
         },
 
-        getDescendantLevels: function(d) {
-            const levels = d.descendants().slice(1).reduce((ranks, d) => {
-                const rank = d.data.name.split("__")[0];
-                ranks[rank] = ranks[rank] || [];
-                const lineage = getLineage(d);
-                ranks[rank].push(lineage);
-                return ranks
-            }, {})
-
-            return levels
-        },
-
-        showAddButton: function(d) {
-            const container = d3.select("#add-button-container")
-            container.selectAll("*").remove();
-
-            const button = container.append("button")
-                .attr("class", "btn btn-primary")
-                .attr("disabled", () => this.nSelected > 250 ? true : null)
-                .html("Add " + d.data.tname);
-            button.on("click", () => {
-                this.selectTaxa(d);
-                button.remove();
-            });
-        },
-
-        toggleSunburstSelector: function(hideSpinner=true) {
+        // Sunburst and GeCoViz
+        toggleSunburstSelector: function() {
             this.showTab("sunburst");
             // Do not toggle if now query has been processed
             if (this.allItems.length == 0)
@@ -469,108 +588,8 @@ var vueapp = new Vue({
             setTimeout(hideSpinner, 10);
             setTimeout(gecoviz.scaleDist, 1000);
         },
-
-        getSeq : function(query) {
-            fetch(API_BASE_URL + `/seq/${query}/`)
-                .then(response => response.blob())
-                .then(blob => saveAs(blob, `${query}_sequence.fasta`))
-        },
-
-        getNeighSeqs : function(query) {
-            fetch(API_BASE_URL + `/neigh_seqs/${query}/`)
-                .then(response => response.blob())
-                .then(blob => saveAs(blob, `${query}_sequences.fasta`))
-        },
-
-        downloadNeighborhood: function() {
-            const fields = ["anchor", "pos", "gene", "Gene name", 
-                "Description", "strand", "start", "end", "KEGG pathways",
-                "KEGG Orthology", "Orthologous groups"];
-            const tsv = this.contextData.context.map(g => {
-                return fields.map(f => {
-                    const info = g[f];
-                    return typeof info === "object" ? info.map(i => i.id) : info;
-                }).join("\t")
-            });
-
-            const headedTsv = [ fields.join("\t"), ...tsv ].join("\n");
-
-            saveAs(new Blob([headedTsv]), "neighborhood.tsv")
-        },
-
-        getNewick: function(query) {
-            fetch(API_BASE_URL + '/tree/' + query + '/')
-                .then(response => response.blob())
-                .then(blob => saveAs(blob, `${query}_tree.nwx`))
-        },
-
-        getHMM: function(query) {
-            fetch(API_BASE_URL + '/hmm/' + query + '/')
-                .then(response => response.blob())
-                .then(blob => saveAs(blob, `${query}_hmm.txt`))
-        },
-
-        updateSearchParams: function(params, replace=true) {
-            const url = new URL(location);
-            if (replace) url.search = '';
-            const sparams = url.searchParams;
-            Object.entries(params).forEach(([k, v]) => sparams.set(k, v));
-            const historyObj = {
-                Title: document.title,
-                Url: `${url.origin}/?${sparams.toString()}`
-            };
-            history.pushState(historyObj, historyObj.Title, historyObj.Url);
-        },
-
-        scrollToTop: function() {
-            $("html, body").animate({ scrollTop: 0 }, "slow");
-        },
-
-        focusSearchbar: function() {
-            $("#query-search").focus();
-            $("#visualization-container").collapse("hide");
-            $("#sunburst-selector-container").collapse("hide");
-        },
-
-        toggleFullScreen: async function(selector, action=null) {
-            const placeholder_div = document.getElementById("full-screen-placeholder");
-            if (placeholder_div || action) {
-                try { $("#full-screen .modal").modal('hide') } catch {};
-                return
-            }
-            let modal = document.createElement("div");
-            modal.id = "full-screen";
-            modal.innerHTML = `
-                <div class="modal modal-blur fade" 
-                      tabindex="-1" 
-                      aria-hidden="false">
-                    <div class="modal-dialog modal-dialog-centered 
-                                justify-content-center" 
-                        style="min-width:97%;"
-                        role="document">
-                    </div>
-                </div>`;
-            const placeholder = document.createElement("div");
-            placeholder.id = "full-screen-placeholder";
-            const contentNode = document.querySelector(selector);
-            const parentNode = contentNode.parentNode;
-            const content = $(parentNode.replaceChild(placeholder, contentNode));
-            if (!content.hasClass("modal-content"))
-                content.addClass("modal-content");
-            $(modal.childNodes[1].childNodes[1])
-                .append(content);
-            $("body").append($(modal))
-            $("#full-screen .modal").on("hidden.bs.modal", () => {
-                const contentDiv = $(selector);
-                contentDiv.removeClass("modal-content");
-                parentNode.replaceChild(contentDiv[0],
-                                      placeholder);
-            })
-            $("#full-screen .modal").modal("show")
-        },
     },
     computed: {
-
         isScreenLarge: function() {
             return this.isScreenLarge = +window.innerWidth > 2000;
         },
@@ -589,11 +608,17 @@ var vueapp = new Vue({
 
         nSelected : function() {
             const selectedTaxids = this.selectedTaxids.map(d => d.id);
-            return this.allItems.reduce((total, i) => {
-                if (selectedTaxids.includes(+i.id))
-                    total += i.value;
-                return total
-            }, 0)
+            return this.getNumberOfHits(selectedTaxids);
+        },
+
+        nAnchors: function() {
+            if (!this.contextData.context)
+                return 0
+            return this.contextData.context.filter(c => c.pos == 0).length
+        }
+
+        allTaxa: function() {
+            return this.root.descendants().slice(1);
         },
 
         selectedTaxa: function() {
@@ -607,25 +632,17 @@ var vueapp = new Vue({
             }, {}))
         },
 
-        commonSelectedTaxa: function() {
-            const sharedTaxa = this.selectedTaxa.reduce((t, it, i) => {
+        sharedTaxa: function() {
+            const shared = this.selectedTaxa.reduce((t, it, i) => {
                 const itSplit = it.source.data.lineage.split(";");
                 if (i === 0)
                     t =  itSplit
                 else
                     t = t.filter((d, i) => d === itSplit[i]);
                 return t
-            }, [])
-            if (sharedTaxa.length > 1)
-                return sharedTaxa[sharedTaxa.length-1]
-            return sharedTaxa[sharedTaxa.length-1] || ""
+            }, []);
+            return shared[shared.length-1] || ""
         },
-
-        nAnchors: function() {
-            if (!this.contextData.context)
-                return 0
-            return this.contextData.context.filter(c => c.pos == 0).length
-        }
     },
     filters : {
         styleTaxa: function(taxa) {
