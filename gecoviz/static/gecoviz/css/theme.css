@@ -12979,7 +12979,7 @@ Antialiasing
     color: inherit !important; }
   .theme-dark-auto .navbar-brand-autodark {
     filter: brightness(0) invert(1); } }
-.body {
+* {
   font-family: var(--bs-font-sans-serif), sans-serif; }
 
 .bg-green {
