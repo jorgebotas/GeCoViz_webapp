@@ -2,11 +2,13 @@
 {% load static %}
 {% block content %}
 
-<div v-if="allItems.length" class="container-xxl" style="max-width:100%;">
+<div class="container-xxl" style="max-width:100%;"
+    :style="{ 'display': allItems.length ? 'block' : 'none' }">
     {% include "gecoviz/search.html" %}
 </div>
 
-<div v-else class="container-xxl justify-content-center" style="max-width:100%;">
+<div class="container-xxl justify-content-center" style="max-width:100%;"
+    :style="{ 'display': allItems.length ? 'none' : 'block' }">
     {% include "gecoviz/kos.html" %}
 </div>
 
