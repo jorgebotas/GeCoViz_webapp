@@ -294,9 +294,12 @@ var vueapp = new Vue({
                 if (_hideSpinner)
                     hideSpinner();
 
-                const sharedTaxa = this.getSharedTaxa(this.root)
-                if (this.allItems.length <= 250) {
+                const sharedTaxa = this.getSharedTaxa(this.root);
+                if (this.allItems.length <= 250)
                     this.selectTaxa(sharedTaxa, true);
+                else {
+                    const descendant = this.getDescendantLevels(sharedTaxa);
+                    console.log(descendant)
                 }
             }, 0)
         },
@@ -411,7 +414,6 @@ var vueapp = new Vue({
                 return getShared(node.children[0])
             };
             const shared = getShared(root);
-            console.log(shared)
             return shared;
         },
 
