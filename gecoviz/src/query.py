@@ -223,13 +223,16 @@ def get_emapper_annotation(genes):
 def get_emapper_matches(field, query, representative_only=True):
 
     start = time.time()
-    matches = list(col_emapper.find({ field: query }, { 'q': 1 }))
-    # matches = list(col_emapper.aggregate([
-        # { '$match': { query_field: query} },
-        # { '$project': { 'result':
-                        # {'$arrayElemAt': [ { '$split': ["$q", "." ] }, 0]} } },
-        # { '$group' : { '_id' : "$result" } } ]))
-    print(f'mongo:  {time.time() - start}')
+    # matches = list(col_emapper.find({ field: query }, { 'q': 1 }))
+    matches = list(col_emapper.aggregate([
+        { '$match': { field: query} },
+        { '$project': {
+            #'taxid': {'$arrayElemAt': [ { '$split': ["$q", "." ] }, 0]},
+            'genome': {'$slice': [ { '$split': ["$q", "." ] }, 0 , 2]},
+                       } },
+        { '$group' : { '_id' : "$genome" } } ]))
+    print(matches)
+    print(f'mongo:  {time.time() - start}'))
 
     return [ m['q'] for m in matches 
             if not representative_only or ".".join(m['q'].split(".")[0:2]) in representative_genomes ]
