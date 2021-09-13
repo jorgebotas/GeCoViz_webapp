@@ -17,7 +17,7 @@
 
    <div id="sunburst-selector-container" 
         :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none',
-                  'width': isScreenLarge ? '40%' : '100%'  }">
+                  'width': (isScreenLarge && show === 'gecoviz') ? '40%' : '100%'  }">
         <div class="mt-0"
             :class="{ 'd-flex' : !isScreenLarge }"
             :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
