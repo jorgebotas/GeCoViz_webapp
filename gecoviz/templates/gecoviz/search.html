@@ -105,6 +105,7 @@
                                     Select representatives at taxonomic level
                                 </li>
                                 <li class="dropdown-item"
+                                    :class="{ disabled : nSelected + getNumberOfHits([], d.source.data.lineage) > maxSelected }"
                                     @click="selectTaxa(d.source, true)">
                                     All genomes ([[ getNumberOfHits([], d.source.data.lineage) ]])
                                 </li>
