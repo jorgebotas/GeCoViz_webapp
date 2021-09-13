@@ -107,7 +107,7 @@
                                 <li class="dropdown-item"
                                     :class="{ disabled : nSelected + getNumberOfHits([], d.source.data.lineage) > maxSelected }"
                                     @click="selectTaxa(d.source, true)">
-                                    All genomes ([[ getNumberOfHits([], d.source.data.lineage) ]])
+                                    All genomes ([[ getNumberOfHits([], d.source.data.lineage) ]] hits)
                                 </li>
                                 <li v-for="(lineages, level) in d.source.descendantLevels"
                                     class="dropdown-item"
