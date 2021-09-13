@@ -121,6 +121,7 @@ var vueapp = new Vue({
             query: [],
             ko: [],
         },
+        maxSelected: 250,
         selectedTaxids: [],
         searchedTaxa: [],
         searchTimeout: {
@@ -210,7 +211,7 @@ var vueapp = new Vue({
 
             const button = container.append("button")
                 .attr("class", "btn btn-primary")
-                .attr("disabled", () => this.nSelected > 250 ? true : null)
+                .attr("disabled", () => this.nSelected > this.maxSelected ? true : null)
                 .html("Add " + d.data.tname);
             button.on("click", () => {
                 this.selectTaxa(d);
@@ -295,11 +296,16 @@ var vueapp = new Vue({
                     hideSpinner();
 
                 const sharedTaxa = this.getSharedTaxa(this.root);
-                if (this.allItems.length <= 250)
+                if (this.allItems.length <= this.maxSelected)
                     this.selectTaxa(sharedTaxa, true);
                 else {
-                    const descendant = this.getDescendantLevels(sharedTaxa);
-                    console.log(descendant)
+                    const ranks = ["genus", "family", "phylum"];
+                    sharedTaxa.descendantLevels = this.getDescendantLevels(sharedTaxa);
+                    ranks.filter(rank =>
+                        sharedTaxa.descendantLevels[rank] && 
+                        sharedTaxa.descendantLevels[rank] <= this.maxSelected);
+                    if (ranks.length)
+                        this.selectLineages(sharedTaxa.descendantLevels[ranks[0]], sharedTaxa);
                 }
             }, 0)
         },
