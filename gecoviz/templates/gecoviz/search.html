@@ -108,6 +108,10 @@
                                     Select representative genomes for:
                                 </li>
                                 <li class="dropdown-item"
+                                    @click="selectTaxa(d.source, d.source.data.rank)">
+                                    One genome
+                                </li>
+                                <li class="dropdown-item"
                                     :class="{ disabled : nSelected + getNumberOfHits([], d.source.data.lineage) > maxSelected }"
                                     @click="selectTaxa(d.source, '', true)">
                                     All genomes ([[ getNumberOfHits([], d.source.data.lineage) ]] genes)
