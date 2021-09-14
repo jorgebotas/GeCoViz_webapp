@@ -213,7 +213,7 @@ def get_emapper_annotation(genes):
                 "Description": description,
                 "KEGG pathways": kpaths,
                 "KEGG Orthology": kos,
-                "Orthologous groups": ogs,
+                "eggNOG Orthology": ogs,
                 "Pfam": pfam,
                 }
 

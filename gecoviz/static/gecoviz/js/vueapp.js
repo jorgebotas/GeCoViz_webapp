@@ -381,7 +381,7 @@ var vueapp = new Vue({
         downloadNeighborhood: function() {
             const fields = ["anchor", "pos", "gene", "Gene name", 
                 "Description", "strand", "start", "end", "KEGG pathways",
-                "KEGG Orthology", "Orthologous groups"];
+                "KEGG Orthology", "eggNOG Orthology"];
             const tsv = this.contextData.context.map(g => {
                 return fields.map(f => {
                     const info = g[f];
@@ -594,7 +594,7 @@ var vueapp = new Vue({
                 .zoom(0.3)
                 .viewPort(document.querySelector(selector))
                 .geneText("Gene name")
-                .annotation("Orthologous groups", 2)
+                .annotation("eggNOG Orthology", 2)
                 .options({ shrinkTreeWidth: true, onlyViewport: false })
                 .draw();
 
@@ -701,7 +701,7 @@ var vueapp = new Vue({
             choices : [
                 {
                     value: 'ogs', 
-                    label: 'Orthologous groups',
+                    label: 'eggNOG Orthology',
                     selected: this.searchType == 'ogs' 
                 },
                 {

@@ -1,12 +1,12 @@
 <ul class="nav nav-pills w-100 justify-content-center"
         :style="{ 'display': isScreenLarge ? 'none' : 'flex' }">
   <li class="nav-item">
-    <a class="nav-link active" 
+    <a class="nav-link f-bold active" 
        id="sunburst-navlink"
         @click="toggleSunburstSelector()">Taxonomy selector</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" 
+    <a class="nav-link f-bold" 
        id="gecoviz-navlink"
        :class="{ disabled : !selectedTaxids.length }"
         @click="visualizeSelection(false)">Genomic context</a>
@@ -22,9 +22,11 @@
             :class="{ 'd-flex' : (!isScreenLarge || !(contextData.context && nAnchors)) }"
             :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
             <div class="sunburst-selector mb-4"
-                 :class="{ 'w-100' : isScreenLarge, 'w-50' : (!isScreenLarge || !(contextData.context && nAnchors)) }"
+                 :class="{ 'w-100' : isScreenLarge, 
+                           'w-50' : (!isScreenLarge || !(contextData.context && nAnchors)) }"
                  style="z-index: 1"></div>
-            <div :class="{ 'w-100' : isScreenLarge, 'w-50' : (!isScreenLarge || !(contextData.context && nAnchors)) }">
+            <div :class="{ 'w-100' : isScreenLarge, 
+                           'w-50' : (!isScreenLarge || !(contextData.context && nAnchors)) }">
                 <div class="input-icon m-2" 
                      style='min-width:250px; max-width: 500px;'>
                     <input type="text"
@@ -56,9 +58,8 @@
                 </div>
                 <div class="card-header d-flex"
                      style="min-height:70px; flex-wrap:wrap">
-                    <b class="mr-4">Total matches: [[ nMatches ]]</b>
-                    <b>Selected: [[ nSelected ]] hit(s), [[
-                    selectedTaxids.length ]] genome(s)</b>
+                    <b class="mr-4">Total: [[ nMatches ]] genes, [[ allItems.length ]] genomes</b>
+                    <b>Selected: [[ nSelected ]] gene(s), [[ selectedTaxids.length ]] genome(s)</b>
                     <div class="w-100 mt-2">
                         <button class="btn btn-clean d-inline"
                              @click="deselectAll()"
@@ -102,18 +103,18 @@
                                             Object.keys(d.source.descendantLevels).length ?
                                             'visible' : 'hidden' }">
                                 <li class="dropdown-header pl-2 f-bold">
-                                    Select representatives at taxonomic level
+                                    Select representative genomes for:
                                 </li>
                                 <li class="dropdown-item"
                                     :class="{ disabled : nSelected + getNumberOfHits([], d.source.data.lineage) > maxSelected }"
                                     @click="selectTaxa(d.source, true)">
-                                    All genomes ([[ getNumberOfHits([], d.source.data.lineage) ]] hits)
+                                    All genomes ([[ getNumberOfHits([], d.source.data.lineage) ]] genes)
                                 </li>
                                 <li v-for="(lineages, level) in d.source.descendantLevels"
                                     class="dropdown-item"
                                     :class="{ disabled : nSelected + lineages.length > maxSelected }"
                                     @click="selectLineages(lineages, d.source)">
-                                    [[ level ]]: [[ lineages.length ]]
+                                    [[ lineages.length ]] [[ level ]](s)
                                 </li>
                             </ul>
                         </div>
