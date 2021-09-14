@@ -109,7 +109,7 @@
                                 </li>
                                 <li class="dropdown-item"
                                     @click="selectTaxa(d.source, d.source.data.rank)">
-                                    [[ d.source.data.name ]] ([[ d.source.data.rank ]])
+                                    [[ d.source.data.tname ]] ([[ d.source.data.rank ]])
                                 </li>
                                 <li class="dropdown-item"
                                     :class="{ disabled : nSelected + getNumberOfHits([], d.source.data.lineage) > maxSelected }"
