@@ -747,7 +747,7 @@ var vueapp = new Vue({
                 setTimeout(() => {
                     this.root.descendantRanks = this.getDescendantRanks(this.root);
                     this.selectedTaxids = taxids.split("%2C").map(t => { 
-                        return { id: t, source: this.root, rank: "species" }
+                        return { id: +t, source: this.root, rank: "species" }
                     });
                     this.visualizeSelection();
                 }, 100);
