@@ -316,8 +316,8 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .attr("transform", d => labelTransform(d.current))
             .text(d => {
                 let name = d.data.tname;
-                if (name.length > 15)
-                    name = name.slice(0, 13) + "...";
+                if (name.length > 14)
+                    name = name.slice(0, 12) + "...";
                 return name
             });
 
