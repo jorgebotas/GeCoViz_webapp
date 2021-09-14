@@ -41,7 +41,7 @@
                       <li class="dropdown-item"
                           v-for="t in searchedTaxa"
                           @click="selectTaxa(t)">
-                          <b><span class="badge mr-1"
+                          <b><span class="badge f-bold mr-1"
                                   :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
                                   [[ t.data.rank ]]
                               </span>
@@ -83,7 +83,7 @@
                     <div v-for="d in selectedTaxa"
                         class="w-100 text-align-left my-1"
                         style="overflow-y:visible">
-                        <span class="badge mr-1"
+                        <span class="badge f-bold mr-1"
                             :class="taxBadgeColors[d.source.data.rank] || 'bg-indigo-lt'">
                             [[ d.source.data.rank ]]
                         </span>

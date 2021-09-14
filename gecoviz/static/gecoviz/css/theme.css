@@ -13137,7 +13137,7 @@ button:focus {
 
 .dropdown-menu-arrow.dropdown-menu-right::before {
   right: 29px !important;
-  left: auto; }
+  left: auto !important; }
 
 .dropdown-menu-rounded {
   padding: 10px;
