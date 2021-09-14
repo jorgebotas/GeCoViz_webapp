@@ -13119,7 +13119,7 @@ button:focus {
   content: "";
   position: absolute;
   top: 11px;
-  left: 29px !important;
+  left: 0;
   margin-left: -4px;
   display: block;
   background: inherit;
@@ -13131,6 +13131,9 @@ button:focus {
   border-color: inherit;
   z-index: -1;
   clip: rect(0px, 9px, 9px, 0px); }
+
+.dropdown-menu-arrow::before {
+  left: 29px !important; }
 
 .dropdown-menu-arrow.dropdown-menu-right::before {
   right: 29px !important;

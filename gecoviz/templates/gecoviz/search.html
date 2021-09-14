@@ -131,7 +131,7 @@
    </div>
 
    <div id="visualization-container"
-        :style="{ 'display': (isScreenLarge || show === 'gecoviz') ? 'block' : 'none',
+        :style="{ 'display': (isScreenLarge || show === 'gecoviz') && contextData.context.length ? 'block' : 'none',
                   'width': isScreenLarge ? '60%' : '100%' }">
        <div class="text-center mb-3" v-if="contextData.context && nAnchors">
            Showing [[ nAnchors ]] context(s)
