@@ -112,9 +112,9 @@
                                 </li>
                                 <li v-for="(lineages, rank) in d.source.descendantRanks"
                                     class="dropdown-item"
-                                    :class="{ disabled : nSelected + lineages.length > maxSelected }"
+                                    :class="{ disabled : nSelected + getNumberOfHits(lineages) > maxSelected }"
                                     @click="selectLineages(lineages, d.source, rank)">
-                                    [[ lineages.length ]] [[ rank ]]
+                                    [[ getNumberOfHits(lineages) ]] genes in [[ lineages.length ]] [[ rank ]]
                                 </li>
                             </ul>
                         </div>
