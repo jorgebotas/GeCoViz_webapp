@@ -538,7 +538,7 @@ var vueapp = new Vue({
 
             d3.selectAll(".sunburst-selector *").remove();
             const taxonomy = this.allItems.map(d => [d.lineage, d.value]);
-            this.sunBurst = SeqSunburst(taxonomy, 600, 4, false, this.showAddButton, this.root)
+            this.sunBurst = SeqSunburst(taxonomy, 600, 4, true, this.showAddButton, this.root)
                 .draw(".sunburst-selector");
         },
 
