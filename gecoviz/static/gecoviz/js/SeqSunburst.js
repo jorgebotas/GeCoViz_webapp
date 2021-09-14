@@ -302,20 +302,18 @@ var SeqSunburst = function(unformattedData, width, depth=2,
           //.attr('y', d => d.y);
         
 
-
-
-        //const textLabels = g.append("g")
-            //.attr("class", "text-labels")
-            //.attr("pointer-events", "none")
-            //.attr("text-anchor", "middle")
-            //.style("user-select", "none")
-          //.selectAll("text")
-          //.data(root.descendants().slice(1))
-          //.join("text")
-            //.attr("dy", "0.35em")
-            //.attr("fill-opacity", d => +labelVisible(d.current))
-            //.attr("transform", d => labelTransform(d.current))
-            //.text(d => d.value);
+        const textLabels = g.append("g")
+            .attr("class", "text-labels")
+            .attr("pointer-events", "none")
+            .attr("text-anchor", "middle")
+            .style("user-select", "none")
+          .selectAll("text")
+          .data(root.descendants().slice(1))
+          .join("text")
+            .attr("dy", "0.35em")
+            .attr("fill-opacity", d => +labelVisible(d.current))
+            .attr("transform", d => labelTransform(d.current))
+            .text(d => d.data.name);
 
         const parent = g.append("circle")
             .datum(root)
@@ -354,11 +352,11 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 .style("visibility", d => arcVisible(d.target) ? "visible" : "hidden")
                 .attrTween("d", d => () => arc(d.current));
 
-            //textLabels.filter(function(d) {
-                //return +this.getAttribute("fill-opacity") || labelVisible(d.target);
-              //}).transition(t)
-                //.attr("fill-opacity", d => +labelVisible(d.target))
-                //.attrTween("transform", d => () => labelTransform(d.current));
+            textLabels.filter(function(d) {
+                return +this.getAttribute("fill-opacity") || labelVisible(d.target);
+              }).transition(t)
+                .attr("fill-opacity", d => +labelVisible(d.target))
+                .attrTween("transform", d => () => labelTransform(d.current));
 
             return graph;
         };
