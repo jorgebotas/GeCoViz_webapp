@@ -96,7 +96,8 @@
                               data-toggle="dropdown"
                               data-bs-auto-close="outside"
                               role="button">
-                                ([[ getNumberOfHits(d.taxids) ]] genes from [[ d.taxids.length ]] [[ d.rank ]])
+                                [[ getNumberOfHits(d.taxids) ]] genes from [[
+                                d.taxids.length ]] [[ d.rank ]] <i class="fa fa-chevron-down"></i>
                             </a>
                             <ul class="dropdown-menu suggestion-menu" 
                                 :style="{ 'visibility':
