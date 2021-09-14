@@ -90,14 +90,15 @@
                         <a class="f-bold f-oblique" @click="sunBurst.highlightPath(d.source)">
                             [[ d.source.data.tname ]] 
                         </a>
-                        <div class="dropdown d-inline ml-1">
+                        <div class="dropdown d-inline ml-1 mr-2">
                             <a class="color-tomato f-bold dropdown-toggle no-after"
                               style="font-size: .8rem;"
                               data-toggle="dropdown"
                               data-bs-auto-close="outside"
                               role="button">
                                 [[ getNumberOfHits(d.taxids) ]] genes from [[
-                                d.taxids.length ]] [[ d.rank ]] <i class="fa fa-chevron-down"></i>
+                                d.taxids.length ]] [[ d.rank ]] <i class="fa fa-chevron-down"
+                                    style="transform:translate(0,3px)"></i>
                             </a>
                             <ul class="dropdown-menu suggestion-menu" 
                                 :style="{ 'visibility':
