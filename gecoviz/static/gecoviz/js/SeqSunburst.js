@@ -411,8 +411,14 @@ var SeqSunburst = function(unformattedData, width, depth=2,
     function labelTransform(d) {
       const x = (d.x0 + d.x1) / 2 * 360 / maxAngle;
       const y = (d.y0 + d.y1) / 2 * radius;
-      return `rotate(${x - 90}) translate(${y},0) rotate(${90 - x})`;
+    return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
     }
+
+      //function labelTransform(d) {
+    //const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
+    //const y = (d.y0 + d.y1) / 2 * radius;
+    //return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+  //}
 
     graph.draw = function(selector) {
         container = d3.select(selector);
