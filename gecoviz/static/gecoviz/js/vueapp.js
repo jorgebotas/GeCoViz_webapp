@@ -639,7 +639,7 @@ var vueapp = new Vue({
                 const source = t.source || { data: { tname: t.id, lineage: t.id } };
                 const lineage = source.data.lineage;
                 selected[lineage] = selected[lineage] 
-                    || { source: source, taxids: [] };
+                    || { source: source, rank: t.rank, taxids: [] };
                 selected[lineage].taxids.push(t.id);
                 return selected
             }, {}))
