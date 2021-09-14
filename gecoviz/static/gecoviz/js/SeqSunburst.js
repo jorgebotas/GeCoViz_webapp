@@ -310,10 +310,16 @@ var SeqSunburst = function(unformattedData, width, depth=2,
           .selectAll("text")
           .data(root.descendants().slice(1))
           .join("text")
+            .style("font-size", ".6rem")
             .attr("dy", "0.35em")
             .attr("fill-opacity", d => +labelVisible(d.current))
             .attr("transform", d => labelTransform(d.current))
-            .text(d => d.data.name);
+            .text(d => {
+                let name = d.data.name;
+                if (name.length > 15)
+                    name = name.slice(0, 13) + "...";
+                return name
+            });
 
         const parent = g.append("circle")
             .datum(root)
