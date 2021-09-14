@@ -298,15 +298,15 @@ var vueapp = new Vue({
                 const sharedTaxa = this.getSharedTaxa(this.root);
                 const maxSelected = 100;
                 if (this.allItems.length <= maxSelected)
-                    this.selectTaxa(sharedTaxa, true);
+                    this.selectTaxa(sharedTaxa, "species", true);
                 else {
                     const ranks = ["genus", "family", "phylum"];
-                    sharedTaxa.descendantLevels = this.getDescendantLevels(sharedTaxa);
+                    sharedTaxa.descendantRanks = this.getDescendantRanks(sharedTaxa);
                     const filteredRanks = ranks.filter(rank =>
-                        sharedTaxa.descendantLevels[rank] && 
-                        sharedTaxa.descendantLevels[rank].length <= maxSelected);
+                        sharedTaxa.descendantRanks[rank] && 
+                        sharedTaxa.descendantRanks[rank].length <= maxSelected);
                     if (filteredRanks.length)
-                        this.selectLineages(sharedTaxa.descendantLevels[filteredRanks[0]], sharedTaxa);
+                        this.selectLineages(sharedTaxa.descendantRanks[filteredRanks[0]], sharedTaxa, filteredRanks[0]);
                 }
             }, 0)
         },
@@ -427,7 +427,7 @@ var vueapp = new Vue({
             return shared;
         },
 
-        getDescendantLevels: function(d) {
+        getDescendantRanks: function(d) {
             const levels = d.descendants().slice(1).reduce((ranks, d) => {
                 const rank = d.data.name.split("__")[0];
                 ranks[rank] = ranks[rank] || [];
@@ -481,7 +481,7 @@ var vueapp = new Vue({
         },
 
         // Selectors
-        selectTaxid: function(id, source, show) {
+        selectTaxid: function(id, source, rank, show) {
             const isSelected = this.selectedTaxids.find(t => t.id === id);
             show = show || !isSelected;
             if (isSelected) {
@@ -489,35 +489,35 @@ var vueapp = new Vue({
                     this.selectedTaxids = this.selectedTaxids.filter(
                         t => t.id != id);
             } else if (show) {
-                this.selectedTaxids.push({ id: id, source: source });
+                this.selectedTaxids.push({ id: id, source: source, rank: rank || "species" });
             }
         },
 
-        selectLineage: function(lineage, taxa, allDescendants=false) {
+        selectLineage: function(lineage, taxa, rank, allDescendants=false) {
             const matches = this.root.leaves()
                     .filter(d => d.data.lineage.includes(lineage));
             if (allDescendants)
-                matches.forEach(d => this.selectTaxid(d.data.id, taxa, true))
+                matches.forEach(d => this.selectTaxid(d.data.id, taxa, "species", true))
             else {
                 const taxid = matches[Math.floor(Math.random()*matches.length)].data.id;
-                this.selectTaxid(taxid, taxa, true);
+                this.selectTaxid(taxid, taxa, rank || taxa.data.rank, true);
            }
         },
 
-        selectLineages: function(lineages, taxa) {
+        selectLineages: function(lineages, taxa, rank) {
             this.deselectTaxa(taxa);
-            lineages.forEach(l => this.selectLineage(l, taxa));
+            lineages.forEach(l => this.selectLineage(l, taxa, rank));
         },
 
-        selectTaxa: function(taxa, allDescendants=false) {
+        selectTaxa: function(taxa, rank, allDescendants=false) {
             this.sunBurst.highlightPath(taxa);
 
-            if (!taxa.data.descendantLevels)
-                taxa.descendantLevels = this.getDescendantLevels(taxa);
+            if (!taxa.data.descendantRanks)
+                taxa.descendantRanks = this.getDescendantRanks(taxa);
             
             const lineage = taxa.data.lineage;
             this.deselectTaxa(taxa);
-            this.selectLineage(lineage, taxa, allDescendants);
+            this.selectLineage(lineage, taxa, rank || taxa.data.rank, allDescendants);
         },
 
         deselectTaxa: function(taxa) {
@@ -745,7 +745,7 @@ var vueapp = new Vue({
 
             if (taxids && taxids.length)
                 setTimeout(() => {
-                    this.root.descendantLevels = this.getDescendantLevels(this.root);
+                    this.root.descendantRanks = this.getDescendantRanks(this.root);
                     this.selectedTaxids = taxids.split("%2C").map(t => { 
                         return { id: t, source: this.root }
                     });

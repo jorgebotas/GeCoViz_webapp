@@ -58,8 +58,8 @@
                 </div>
                 <div class="card-header d-flex"
                      style="min-height:70px; flex-wrap:wrap">
-                    <b class="mr-4">Total: [[ nMatches ]] genes, [[ allItems.length ]] genomes</b>
-                    <b>Selected: [[ nSelected ]] gene(s), [[ selectedTaxids.length ]] genome(s)</b>
+                    <b class="mr-4">Total: [[ nMatches ]] genes in [[ allItems.length ]] genomes</b>
+                    <b>Selected: [[ nSelected ]] genes in [[ selectedTaxids.length ]] genomes</b>
                     <div class="w-100 mt-2">
                         <button class="btn btn-clean d-inline"
                              @click="deselectAll()"
@@ -96,25 +96,25 @@
                               data-toggle="dropdown"
                               data-bs-auto-close="outside"
                               role="button">
-                                ([[ d.taxids.length ]] genomes)
+                                (representative genomes for [[ d.taxids.length ]] [[ d.rank ]])
                             </a>
                             <ul class="dropdown-menu suggestion-menu" 
                                 :style="{ 'visibility':
-                                            Object.keys(d.source.descendantLevels).length ?
+                                            Object.keys(d.source.descendantRanks).length ?
                                             'visible' : 'hidden' }">
                                 <li class="dropdown-header pl-2 f-bold">
                                     Select representative genomes for:
                                 </li>
                                 <li class="dropdown-item"
                                     :class="{ disabled : nSelected + getNumberOfHits([], d.source.data.lineage) > maxSelected }"
-                                    @click="selectTaxa(d.source, true)">
+                                    @click="selectTaxa(d.source, "", true)">
                                     All genomes ([[ getNumberOfHits([], d.source.data.lineage) ]] genes)
                                 </li>
-                                <li v-for="(lineages, level) in d.source.descendantLevels"
+                                <li v-for="(lineages, rank) in d.source.descendantRanks"
                                     class="dropdown-item"
                                     :class="{ disabled : nSelected + lineages.length > maxSelected }"
-                                    @click="selectLineages(lineages, d.source)">
-                                    [[ lineages.length ]] [[ level ]](s)
+                                    @click="selectLineages(lineages, d.source, rank)">
+                                    [[ lineages.length ]] [[ rank ]](s)
                                 </li>
                             </ul>
                         </div>
