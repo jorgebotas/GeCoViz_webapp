@@ -409,7 +409,7 @@ var vueapp = new Vue({
         // Getters
         getNumberOfHits: function(selectedTaxids, lineage) {
             return this.allItems.reduce((total, i) => {
-                if ((selectedTaxids || []).includes(+i.id) ||
+                if ((selectedTaxids || []).includes(i.id) ||
                     (lineage && i.lineage.includes(lineage)) ||
                     (lineage === ""))
                     total += i.value;
