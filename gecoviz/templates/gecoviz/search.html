@@ -96,7 +96,7 @@
                               data-toggle="dropdown"
                               data-bs-auto-close="outside"
                               role="button">
-                                (representative genomes for [[ d.taxids.length ]] [[ d.rank ]])
+                                ([[ getNumberOfHits(d.taxids) ]] genes from [[ d.taxids.length ]] [[ d.rank ]])
                             </a>
                             <ul class="dropdown-menu suggestion-menu" 
                                 :style="{ 'visibility':
