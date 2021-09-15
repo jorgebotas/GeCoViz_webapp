@@ -307,8 +307,9 @@ var vueapp = new Vue({
                         sharedTaxa.descendantRanks[rank].length <= maxSelected);
                     if (filteredRanks.length)
                         this.selectLineages(sharedTaxa.descendantRanks[filteredRanks[0]], sharedTaxa, filteredRanks[0]);
-                    this.visualizeSelection(true);
                 }
+
+                this.visualizeSelection(true);
             }, 0)
         },
 
