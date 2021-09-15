@@ -33,6 +33,19 @@ def suggestions(request, field, query):
     return JsonResponse({ 'suggestions': desc_hits })
 
 
+def description(request, field, query):
+    if field == "ogs":
+        path = PICKLE_PATH / 'OG_DESCRIPTION.pickle'
+    elif field == "kos":
+        path = PICKLE_PATH / 'KO_DESCRIPTION.pickle'
+    else:
+        return HttpResponseNotFound()
+
+    desc_dict = get_pickle(str(path))
+    return JsonResponse({ "description": desc_dict.get(query, "") })
+
+
+
 def emapper(request, field, query):
     matches = get_functional_matches(field, query)
     return JsonResponse({ 'matches': matches })
