@@ -261,7 +261,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .attr("fill-opacity", d => +labelVisible(d.current))
             .attr("transform", d => labelTransform(d.current))
             .html(d => {
-                const maxChar = 14;
+                const maxChar = 13;
                 let name = d.data.tname;
                 if (!twoLineLabelVisible(d)) {
                     if (name.length > maxChar)
