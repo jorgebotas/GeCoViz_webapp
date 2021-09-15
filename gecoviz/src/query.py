@@ -97,11 +97,15 @@ def get_genome_info(field, query, taxids):
 
 
 def get_context(field, query, taxids):
+    start = time.time()
     emapper_matches = get_emapper_matches(field, query);
     # TODO: this could be done in the mongo...
     queries = [ m for m in emapper_matches if m.split(".")[0] in taxids ]
+    print(f'get queries:  {time.time() - start}')
 
+    start = time.time()
     matches = col_neighs.find({ 'genes.g': { '$in': queries } })
+    print(f'get neighs:  {time.time() - start}')
 
     count = 0
     nside = 10
@@ -121,8 +125,10 @@ def get_context(field, query, taxids):
             } for g in m["genes"] if abs(g["p"] - anchor["p"]) <= nside)
 
 
+    start = time.time()
     all_genes = [ g["gene"] for g in context ]
     functional_info = get_emapper_annotation(all_genes)
+    print(f'get functional_info:  {time.time() - start}')
 
     context = [ { **gene, **functional_info.get(gene["gene"], {}) }
                 for gene in context ]
@@ -235,7 +241,6 @@ def get_emapper_matches(field, query, representative_only=True, retrieved_field=
         # { '$project': { 'gene' : '$q' } },
         # # { '$group' : { '_id' : "$genome" } } 
         # ]))
-    print(f'mongo:  {time.time() - start}')
 
     return ( m[retrieved_field] for m in matches )
 
