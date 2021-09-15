@@ -1,22 +1,22 @@
 {% load static %}
-  <header class="navbar navbar-expand-md navbar-dark d-print-none mb-3 p-2"
+  <header class="navbar navbar-expand-md navbar-dark d-print-none mb-3"
           style="z-index:100;">
       <div class="container-sm pl-4 justify-content-start" 
            style='min-width:100%'>
-          <h1 class="navbar-brand navbar-brand-autodark
-              d-none-navbar-horizontal my-auto d-none d-sm-block">
-              <a href="/" target="_self">
-                  <img src="{% static 'gecoviz/img/gecoviz.png' %}"
-                  class="navbar-brand-image" 
-                  style="width:100px; height:auto; min-width:100px; padding-top:-3px;"/>
-              </a>
-          </h1>
-          <h2 class="ml-4 mr-6 mt-2 mb-0 w-sm-100 text-center text-md-left"
-              style="font-family:Chela One, font-size:2rem">
+{% comment %}          <h1 class="navbar-brand navbar-brand-autodark{% endcomment %}
+              {% comment %}d-none-navbar-horizontal my-auto d-none d-sm-block">{% endcomment %}
+              {% comment %}<a href="/" target="_self">{% endcomment %}
+                  {% comment %}<img src="{% static 'gecoviz/img/gecoviz.png' %}"{% endcomment %}
+                  {% comment %}class="navbar-brand-image" {% endcomment %}
+                  {% comment %}style="width:100px; height:auto; min-width:100px; padding-top:-3px;"/>{% endcomment %}
+              {% comment %}</a>{% endcomment %}
+          {% comment %}</h1>{% endcomment %}
+          <h1 class="ml-4 mr-6 mb-0 w-sm-100 text-center f-bold text-md-left"
+              style="font-family:Chela One;">
             <em class="gecoviz-title">Ge</em>nomic 
             <em class="gecoviz-title">Co</em>ntext 
             <em class="gecoviz-title">Viz</em>ualizer
-          </h2>
+          </h1>
           <div class="navbar-nav d-flex pt-2">
               <select name="search-type" id="search-type" data-type="select-one"
                   class="form-select form-control m-2"></select>
