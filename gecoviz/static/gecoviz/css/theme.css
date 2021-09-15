@@ -13194,6 +13194,9 @@ button:focus {
   transition: color 0.5s, opacity 0.5s, background 0.5s, border-color 0.5s !important;
   border-radius: 25px; }
 
+.choices__list--single {
+  width: 260px; }
+
 .form-control {
   border-radius: 25px !important; }
 
