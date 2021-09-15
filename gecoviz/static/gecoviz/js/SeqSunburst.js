@@ -299,12 +299,12 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 .style("visibility", d => arcVisible(d.target) ? "visible" : "hidden")
                 .attrTween("d", d => () => arc(d.current));
 
-            const labels = textLabels.filter(function(d) {
+            textLabels.filter(function(d) {
                 return +this.getAttribute("fill-opacity") || labelVisible(d.target);
               }).transition(t)
-                .attr("fill-opacity", d => +labelVisible(d.target));
-            labels.attrTween("transform", d => () => labelTransform(d.current))
-            labels.html(labelText);
+                .attr("fill-opacity", d => +labelVisible(d.target))
+                .html(labelText)
+                .attrTween("transform", d => () => labelTransform(d.current));
 
             return graph;
         };
