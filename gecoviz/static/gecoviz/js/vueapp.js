@@ -339,13 +339,13 @@ var vueapp = new Vue({
 
             await fetch(API_BASE_URL + `/description/${this.searchType}/${this.query.name}/`)
                  .then(response => response.json())
-                 .then(data => this.fetchThen(data, _hideSpinner))
-                 .catch(fetchCatch)
+                 .then(data => this.query.description = data.description)
+                 .catch();
 
             await fetch(API_BASE_URL + `/emapper/${this.searchType}/${this.query.name}/`)
                  .then(response => response.json())
-                 .then(data => this.query.description = data.description)
-                 .catch(fetchCatch)
+                 .then(data => this.fetchThen(data, _hideSpinner))
+                 .catch(fetchCatch);
         },
 
         searchContext: async function () {
