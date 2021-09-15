@@ -107,16 +107,6 @@ var SeqSunburst = function(unformattedData, width, depth=2,
     let oldRootSequence = [];
     let rootSequence = [];
 
-    function getFirstSplit(d) {
-        const length = d.children.length;
-        if (length > 1)
-            return length
-        if (length == 1)
-            return getFirstSplit(d.children[0])
-        else
-            return 0
-    }
-
     const colors = [
         "#82a8c4",
         "#99c1de",
@@ -160,6 +150,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .append("text")
             .attr("text-anchor", "middle")
             .attr("fill", "#888")
+            .style("cursor", "pointer");
         label
             .append("tspan")
             .attr("class", "value")
@@ -167,13 +158,12 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .attr("y", 0)
             .attr("dx", () => semiCircle ? "0.5em" : 0)
             .attr("dy", "0.3em")
-            .attr("font-size", "16px")
+            .style("font-size", "16px")
             .text("");
 
         function mouseEnter(_, d) {
             if (!arcVisible(d.current))
                 return
-
             graph.highlightPath(d)
         }
 
@@ -206,11 +196,8 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 const gClone = g.insert("g", ".text-labels")
                     .attr("class", "clone");
                 const sequence = getSequence(d);
-                if (clickCallBack) {
-                    const sequenceString = sequence
-                        .map(d => d.data.name).join(separator);
+                if (clickCallBack)
                     clickCallBack(d);
-                }
                 path.filter(d => sequence.slice(0, -1).indexOf(d) >= 0)
                     .each(function() {
                         const clone = d3.select(this.cloneNode(false))
@@ -261,47 +248,6 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .text(d => d.ancestors().map(d => d.data.name).reverse().join(" > ")
                 + "\n" + format(d.value));
 
-        //g.select("g").append("text")
-            //.text(d => d.data.name)
-
-
-
-
-        //const visibleStates = states.filter(s => s.show);
-        //const labelHeight = 14;
-
-        //const labels = visibleStates.map(s => {
-          //return {
-            //fx: 0,
-            //targetY: y(s.currentPopulation)
-          //};
-        //});
-
-        //const force = d3.forceSimulation()
-          //.nodes(labels)
-          //.force('collide', d3.forceCollide(labelHeight / 2))
-          //.force('y', d3.forceY(d => d.targetY).strength(1))    
-          //.stop();
-        //for (let i = 0; i < 300; i++) force.tick();
-
-        //labels.sort((a, b) => a.y - b.y);
-        //visibleStates.sort((a, b) => b.currentPopulation - a.currentPopulation);
-        //visibleStates.forEach((state, i) => state.y = labels[i].y);
-
-        //const legendItems = chart.selectAll('.legend-item').data(visibleStates, d => d.name);
-        //legendItems.exit().remove();
-        //legendItems.attr('y', d => d.y);
-        //legendItems.enter().append('text')
-          //.attr('class', 'legend-item')
-          //.html(d => d.name)
-          //.attr('fill', d => d.color)
-          //.attr('font-size', labelHeight)
-          //.attr('alignment-baseline', 'middle')
-          //.attr('x', width)
-          //.attr('dx', '.5em')
-          //.attr('y', d => d.y);
-        
-
         const textLabels = g.append("g")
             .attr("class", "text-labels")
             .attr("pointer-events", "none")
@@ -314,11 +260,27 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .attr("dy", "0.35em")
             .attr("fill-opacity", d => +labelVisible(d.current))
             .attr("transform", d => labelTransform(d.current))
-            .text(d => {
+            .html(d => {
+                const maxChar = 14;
                 let name = d.data.tname;
-                if (name.length > 14)
-                    name = name.slice(0, 12) + "...";
-                return name
+                if (!twoLineLabelVisible(d)) {
+                    if (name.length > maxChar)
+                        name = name.slice(0, maxChar - 3) + "...";
+                    return name
+                }
+                const [ fittedName, remainderName ] = twoLineText(name, maxChar);
+
+                if (!remainderName)
+                    return fittedName
+
+                return `<tspan
+                               dy="-6px">
+                            ${fittedName}
+                        </tspan>
+                        <tspan
+                               dy="9px">
+                            ${remainderName}
+                        </tspan>`;
             });
 
         const parent = g.append("circle")
@@ -422,17 +384,15 @@ var SeqSunburst = function(unformattedData, width, depth=2,
       return d.y1 <= (depth + 1) && d.y0 >= 1 && (d.y1 - d.y0) * (d.x1 - d.x0) > 0.03;
     }
 
+    function twoLineLabelVisible(d) {
+      return d.y1 <= (depth + 1) && d.y0 >= 1 && (d.y1 - d.y0) * (d.x1 - d.x0) > 0.1;
+    }
+
     function labelTransform(d) {
       const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
       const y = (d.y0 + d.y1) / 2 * radius;
       return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
     }
-
-      //function labelTransform(d) {
-    //const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
-    //const y = (d.y0 + d.y1) / 2 * radius;
-    //return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
-  //}
 
     graph.draw = function(selector) {
         container = d3.select(selector);
