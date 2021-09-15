@@ -1,16 +1,17 @@
-<div class="w-100 d-flex align-items-center"
+<div class="ml-3 w-100 d-flex align-items-center"
      v-if="query.name"
      style="flex-wrap:wrap">
     <div class="mx-1 badge bg-orange-lt f-bold"
         v-if="query"
-        style="font-size:.9rem">
+        style="font-size:1.1rem">
         [[ query.name ]]
     </div>
     <div class="mx-1">
         [[ query.description ]]
     </div>
     <div class="ml-2">
-         Found [[ nMatches ]] proteins from [[ allItems.length ]] representative species
+         Found <span class="badge bg-green-lt">[[ nMatches ]] proteins
+         </span> from <span class="badge bg-red-lt">[[ allItems.length ]] representative species</span>
     </div>
     <div class="mx-1 badge bg-green-lt f-bold"
         v-if="sharedTaxa"
