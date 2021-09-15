@@ -113,7 +113,7 @@ var vueapp = new Vue({
     delimiters: ['[[', ']]'],
     el: '#GeCoVizApp',
     data: {
-        show: "sunburst",
+        show: "gecoviz",
         query: undefined,
         searchType: undefined,
         searchTypeChoices: undefined,
@@ -307,6 +307,7 @@ var vueapp = new Vue({
                         sharedTaxa.descendantRanks[rank].length <= maxSelected);
                     if (filteredRanks.length)
                         this.selectLineages(sharedTaxa.descendantRanks[filteredRanks[0]], sharedTaxa, filteredRanks[0]);
+                    this.visualizeSelection(true);
                 }
             }, 0)
         },
