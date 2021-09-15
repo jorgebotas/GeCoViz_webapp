@@ -98,7 +98,8 @@ def get_genome_info(field, query, taxids):
 
 def get_context(field, query, taxids):
     emapper_matches = get_emapper_matches(field, query);
-    queries = [ m for m in emapper_matches if m.split(".")[0] in taxids ]
+    # TODO: this could be done in the mongo...
+    queries = set( m for m in emapper_matches if m.split(".")[0] in taxids )
 
     matches = col_neighs.find({ 'genes.g': { '$in': queries } })
 
@@ -220,10 +221,15 @@ def get_emapper_annotation(genes):
     return annotation
 
 
-def get_emapper_matches(field, query, representative_only=True):
+def get_emapper_matches(field, query, representative_only=True, retrieved_field="q"):
+
+    if representative_only:
+        query = { '$and': [{ field: query}, {'g': {'$in': representative_genomes}} ]}
+    else:
+        query = { field: query }
 
     start = time.time()
-    matches = col_emapper.find({ field: query }, { 'q': 1 })
+    matches = db.emapper2.find(query, { retrieved_field: 1 })
     # matches = list(col_emapper.aggregate([
         # { '$match': { field: query} },
         # { '$project': { 'gene' : '$q' } },
@@ -231,12 +237,11 @@ def get_emapper_matches(field, query, representative_only=True):
         # ]))
     print(f'mongo:  {time.time() - start}')
 
-    return [ m['q'] for m in matches 
-            if not representative_only or ".".join(m['q'].split(".")[0:2]) in representative_genomes ]
+    return ( m[retrieved_field] for m in matches )
 
 
 def get_functional_matches(field, query):
     start = time.time()
-    emapper = get_emapper_matches(field, query)
+    emapper = get_emapper_matches(field, query, True, "g")
     print(f'list:  {time.time() - start}')
     return get_taxonomy(emapper)
