@@ -65,7 +65,7 @@ def get_newick(field, query, taxids):
         tree = ncbi.get_topology(taxids)
 
     all_taxids = [ m.split(".")[0] for m in emapper_matches ]
-    assert all(taxid in all_taxids for taxid in taxids)
+    # assert all(taxid in all_taxids for taxid in taxids)
     for l in tree:
         if l.name not in taxids:
             print(l.name)
