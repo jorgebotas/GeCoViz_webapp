@@ -194,6 +194,8 @@ def get_emapper_annotation(genes):
     matches = list(col_emapper.find({ "q": { "$in": genes } }))
     print(f'emapper in functional_info:  {time.time() - start}')
 
+    start = time.time()
+
     annotation = {}
     for m in matches:
         gene = m["q"]
@@ -225,6 +227,8 @@ def get_emapper_annotation(genes):
                 "eggNOG Orthology": ogs,
                 "Pfam": pfam,
                 }
+
+    print(f'annotation in functional_info:  {time.time() - start}')
 
     return annotation
 
