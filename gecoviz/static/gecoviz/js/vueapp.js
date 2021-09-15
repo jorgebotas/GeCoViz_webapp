@@ -292,8 +292,8 @@ var vueapp = new Vue({
             setTimeout(() => {
                 this.toggleSunburstSelector();
                 this.updateSearch();
-                if (_hideSpinner)
-                    hideSpinner();
+                //if (_hideSpinner)
+                    //hideSpinner();
 
                 const sharedTaxa = this.getSharedTaxa(this.root);
                 const maxSelected = 100;
