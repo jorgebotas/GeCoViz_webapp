@@ -149,8 +149,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
         const label = g
             .append("text")
             .attr("text-anchor", "middle")
-            .attr("fill", "#888")
-            .style("cursor", "pointer");
+            .attr("fill", "#888");
         label
             .append("tspan")
             .attr("class", "value")
@@ -260,32 +259,14 @@ var SeqSunburst = function(unformattedData, width, depth=2,
             .attr("dy", "0.35em")
             .attr("fill-opacity", d => +labelVisible(d.current))
             .attr("transform", d => labelTransform(d.current))
-            .html(d => {
-                const maxChar = 13;
-                let name = d.data.tname;
-                if (!twoLineLabelVisible(d)) {
-                    if (name.length > maxChar)
-                        name = name.slice(0, maxChar - 3) + "...";
-                    return name
-                }
-                const [ fittedName, remainderName ] = twoLineText(name, maxChar);
-
-                if (!remainderName)
-                    return fittedName
-
-                return `<tspan x="0" dy="-1px">
-                            ${fittedName}
-                        </tspan>
-                        <tspan x="0" dy="8px">
-                            ${remainderName}
-                        </tspan>`;
-            });
+            .html(labelText);
 
         const parent = g.append("circle")
             .datum(root)
             .attr("r", radius)
             .attr("fill", "none")
             .attr("pointer-events", "all")
+            .style("cursor", "pointer")
             .on("click", (_, d) => graph.update(d));
 
         graph.update = function(p) {
@@ -322,7 +303,8 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 return +this.getAttribute("fill-opacity") || labelVisible(d.target);
               }).transition(t)
                 .attr("fill-opacity", d => +labelVisible(d.target))
-                .attrTween("transform", d => () => labelTransform(d.current));
+                .attrTween("transform", d => () => labelTransform(d.current))
+                .html(labelText);
 
             return graph;
         };
@@ -390,6 +372,27 @@ var SeqSunburst = function(unformattedData, width, depth=2,
       const x = (d.x0 + d.x1) / 2 * 180 / Math.PI;
       const y = (d.y0 + d.y1) / 2 * radius;
       return `rotate(${x - 90}) translate(${y},0) rotate(${x < 180 ? 0 : 180})`;
+    }
+
+    function labelText(d) {
+        const maxChar = 13;
+        let name = d.data.tname;
+        if (!twoLineLabelVisible(d)) {
+            if (name.length > maxChar)
+                name = name.slice(0, maxChar - 3) + "...";
+            return name
+        }
+        const [ fittedName, remainderName ] = twoLineText(name, maxChar);
+
+        if (!remainderName)
+            return fittedName
+
+        return `<tspan x="0" dy="-1px">
+                    ${fittedName}
+                </tspan>
+                <tspan x="0" dy="8px">
+                    ${remainderName}
+                </tspan>`;
     }
 
     graph.draw = function(selector) {
