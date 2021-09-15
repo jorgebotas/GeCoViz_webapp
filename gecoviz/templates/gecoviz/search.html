@@ -9,16 +9,11 @@
     <div class="mx-1">
         [[ query.description ]]
     </div>
-    <div class="ml-2">
-         Found <span class="badge bg-green-lt"
-             style="font-size:.9rem">[[ nMatches ]] proteins
-         </span> from <span class="badge bg-red-lt"
-             style="font-size:.9rem">[[ allItems.length ]] representative species</span>
-    </div>
-    <div class="mx-1 badge bg-green-lt f-bold"
-        v-if="sharedTaxa"
-        style="font-size:.9rem">
-        [[ sharedTaxa | styleTaxa ]]
+    <div class="ml-2 d-flex align-items-center">
+         Found <span class="badge bg-green-lt mx-1"
+             style="font-size:.8rem">[[ nMatches ]] proteins
+         </span> from <span class="badge bg-red-lt mx-1"
+             style="font-size:.8rem">[[ allItems.length ]] representative species</span>
     </div>
 </div>
 
