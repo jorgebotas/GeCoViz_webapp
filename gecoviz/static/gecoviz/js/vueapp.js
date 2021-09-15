@@ -321,6 +321,7 @@ var vueapp = new Vue({
                 this.searchedTaxa = [];
                 this.contextData.context = [];
                 this.query = newQuery;
+                d3.selectAll(".sunburst-selector *").remove();
             }
             $("#query-search").val(this.query);
             this.searchType = searchType || this.searchTypeChoices.getValue(true);
@@ -536,7 +537,8 @@ var vueapp = new Vue({
             if (this.allItems.length == 0)
                 this.searchQuery();
 
-            d3.selectAll(".sunburst-selector *").remove();
+            if (d3.selectAll(".sunburst-selector *").nodes().length)
+                return
             const taxonomy = this.allItems.map(d => [d.lineage, d.value]);
             this.sunBurst = SeqSunburst(taxonomy, 600, 4, true, this.showAddButton, this.root)
                 .draw(".sunburst-selector");
