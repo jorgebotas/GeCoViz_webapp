@@ -1,5 +1,5 @@
 <div class="ml-3 w-100 d-flex align-items-center"
-     v-if="query.name && contextData.context.length"
+     v-if="query.name"
      style="flex-wrap:wrap">
     <div class="mx-1 badge bg-orange-lt f-bold"
         v-if="query"
@@ -9,7 +9,7 @@
     <div class="mx-1">
         [[ query.description ]]
     </div>
-    <div class="ml-2 d-flex align-items-center">
+    <div class="ml-2 d-flex align-items-center" style="flex-wrap:wrap">
          Found <span class="badge bg-green-lt mx-1"
              style="font-size:.8rem">[[ nMatches ]] proteins
          </span> from <span class="badge bg-red-lt mx-1"

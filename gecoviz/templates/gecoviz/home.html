@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="container-xxl" style="max-width:100%;"
-    :style="{ 'display': allItems.length ? 'block' : 'none' }">
+    :style="{ 'display': allItems.length && contextData.context.length ? 'block' : 'none' }">
     {% include "gecoviz/search.html" %}
 </div>
 
