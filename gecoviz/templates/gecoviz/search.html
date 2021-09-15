@@ -87,8 +87,8 @@
                         <button class="btn btn-primary mx-2 my-1 f-bold d-inline"
                              @click="visualizeSelection()"
                              :disabled="nSelected < 1">
-                            Visualize
-                            <i class="fas fa-chevron-right ml-3"></i>
+                            Visualize genomic context
+                            <i class="fas fa-chevron-right ml-2"></i>
                         </button>
                         <div id="add-button-container" class="ml-3 d-inline">
                         </div>
@@ -165,6 +165,7 @@
             </span> <span v-if="sharedTaxa">belonging to <b
                     class="f-bold mx-1">[[ sharedTaxa | styleTaxa ]]</b></span>
             <button class="btn btn-sm btn-primary ml-2 f-bold"
+                v-if="!isScreenLarge"
                 @click="toggleSunburstSelector">Select custom genomes
                 <i class="fas fa-chevron-right ml-2"></i>
             </button>
