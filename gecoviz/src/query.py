@@ -237,7 +237,7 @@ def get_emapper_matches(field, query, representative_only=True, retrieved_field=
         # ]))
     print(f'mongo:  {time.time() - start}')
 
-    return ( m[retrieved_field] for m in matches )
+    return list( m[retrieved_field] for m in matches )
 
 
 def get_functional_matches(field, query):
