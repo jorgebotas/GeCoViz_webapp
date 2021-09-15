@@ -304,7 +304,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
               }).transition(t)
                 .attr("fill-opacity", d => +labelVisible(d.target))
                 .attrTween("transform", d => () => labelTransform(d.current))
-                .html(labelText);
+                .html(d => labelText(d.target));
 
             return graph;
         };
