@@ -32,7 +32,7 @@ def get_pickle(filePath):
 
 def get_set(filePath):
     with open(filePath) as handle:
-        return set([ l.strip() for l in handle.readlines() ])
+        return [ l.strip() for l in handle.readlines() ]
 
 tax_level_dict = get_pickle(STATIC_PATH / "pickle/TAX_LEVELS.pickle")
 kpath_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
@@ -237,7 +237,7 @@ def get_emapper_matches(field, query, representative_only=True, retrieved_field=
         # ]))
     print(f'mongo:  {time.time() - start}')
 
-    return list( m[retrieved_field] for m in matches )
+    return ( m[retrieved_field] for m in matches )
 
 
 def get_functional_matches(field, query):
