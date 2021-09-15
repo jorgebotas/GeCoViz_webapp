@@ -1,25 +1,4 @@
-<div class="ml-3 w-100 d-flex align-items-center"
-     v-if="query.name"
-     style="flex-wrap:wrap">
-    <div class="mx-1 badge bg-orange-lt f-bold"
-        v-if="query"
-        style="font-size:1.1rem">
-        [[ query.name ]]
-    </div>
-    <div class="mx-1">
-        [[ query.description ]].
-    </div>
-    <div class="ml-2 d-flex align-items-end" style="flex-wrap:wrap">
-         Found <span class="badge bg-green-lt mx-1"
-             style="font-size:.8rem">[[ nMatches ]] proteins
-         </span> from <span class="badge bg-red-lt mx-1"
-             style="font-size:.8rem">[[ allItems.length ]] representative species</span>
-    </div>
-</div>
-
-
-
-<ul class="nav nav-pills w-100 justify-content-center"
+<ul class="nav nav-pills w-100 justify-content-end"
     style="position: absolute; right: 10px"
     :style="{ 'display': isScreenLarge ? 'none' : 'flex' }">
   <li class="nav-item">
@@ -34,6 +13,27 @@
         @click="visualizeSelection(false)">Genomic context</a>
   </li>
 </ul>
+
+<div class="ml-3 w-100 d-flex align-items-center"
+     v-if="query.name"
+     style="flex-wrap:wrap">
+    <div class="mx-1 badge bg-orange-lt f-bold"
+        v-if="query"
+        style="font-size:1.1rem">
+        [[ query.name ]]
+    </div>
+    <div class="mx-1">
+        [[ query.description ]].
+    </div>
+    <div class="ml-2 d-flex align-items-center" style="flex-wrap:wrap">
+         Found <span class="badge bg-green-lt mx-1"
+             style="font-size:.8rem">[[ nMatches ]] proteins
+         </span> from <span class="badge bg-red-lt mx-1"
+             style="font-size:.8rem">[[ allItems.length ]] representative species</span>
+    </div>
+</div>
+
+
 
 <div class="container-xxl row mt-3" style="max-width:100%;">
 
