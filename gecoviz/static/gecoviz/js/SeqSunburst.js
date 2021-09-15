@@ -273,12 +273,10 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 if (!remainderName)
                     return fittedName
 
-                return `<tspan
-                               dy="-6px">
+                return `<tspan x="0" dy="-6px">
                             ${fittedName}
                         </tspan>
-                        <tspan
-                               dy="9px">
+                        <tspan x="0" dy="9px">
                             ${remainderName}
                         </tspan>`;
             });
