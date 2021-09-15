@@ -164,7 +164,8 @@
             <span class="f-bold" v-for="(d, i) in selectedTaxa">
               <span v-if="i != 0" class="colon">,</span>
               [[ d.taxids.length ]] [[ d.rank ]]
-            </span> <span v-if="sharedTaxa">belonging to [[ sharedTaxa | styleTaxa ]]</span>
+            </span> <span v-if="sharedTaxa">belonging to <b
+                    class="f-bold color-indigo">[[ sharedTaxa | styleTaxa ]]</b></span>
             <button class="btn btn-sm btn-primary ml-2"
                 @click="toggleSunburstSelector">Select custom genomes</button>
             <button class="btn-clean ml-2 d-inline" style="padding:0.125rem 0.5rem;"
