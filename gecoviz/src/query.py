@@ -99,7 +99,7 @@ def get_genome_info(field, query, taxids):
 def get_context(field, query, taxids):
     emapper_matches = get_emapper_matches(field, query);
     # TODO: this could be done in the mongo...
-    queries = set( m for m in emapper_matches if m.split(".")[0] in taxids )
+    queries = [ m for m in emapper_matches if m.split(".")[0] in taxids ]
 
     matches = col_neighs.find({ 'genes.g': { '$in': queries } })
 
