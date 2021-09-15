@@ -758,13 +758,10 @@ var vueapp = new Vue({
             await this.searchQuery(searchType, query, !(taxids && taxids.length));
 
             if (taxids && taxids.length)
-                setTimeout(() => {
-                    this.root.descendantRanks = this.getDescendantRanks(this.root);
-                    this.selectedTaxids = taxids.split("%2C").map(t => { 
-                        return { id: +t, source: this.root, rank: "species" }
-                    });
-                    this.visualizeSelection();
-                }, 100);
+                this.root.descendantRanks = this.getDescendantRanks(this.root);
+                this.selectedTaxids = taxids.split("%2C").map(t => { 
+                    return { id: +t, source: this.root, rank: "species" }
+                });
         }
     },
 });
