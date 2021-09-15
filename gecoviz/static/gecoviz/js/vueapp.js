@@ -720,7 +720,7 @@ var vueapp = new Vue({
                 },
                 {
                     value: 'pname', 
-                    label: 'Gene/protein name',
+                    label: 'Gene / protein name',
                     selected: this.searchType == 'pname' 
                 },
                 {
