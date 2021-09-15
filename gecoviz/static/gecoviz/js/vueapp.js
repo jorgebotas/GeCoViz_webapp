@@ -114,7 +114,7 @@ var vueapp = new Vue({
     el: '#GeCoVizApp',
     data: {
         show: "gecoviz",
-        query: undefined,
+        query: { name: undefined, desc: undefined },
         searchType: undefined,
         searchTypeChoices: undefined,
         suggestions: {
@@ -322,24 +322,29 @@ var vueapp = new Vue({
                 this.selectedTaxids = [];
                 this.searchedTaxa = [];
                 this.contextData.context = [];
-                this.query = newQuery;
+                this.query.name = newQuery;
                 d3.selectAll(".sunburst-selector *").remove();
             }
-            $("#query-search").val(this.query);
+            $("#query-search").val(this.query.name);
             this.searchType = searchType || this.searchTypeChoices.getValue(true);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
 
             const params = {
-                query: this.query,
+                query: this.query.name,
                 searchType: this.searchType,
             }
             this.updateSearchParams(params);
 
             $('#query-search').trigger('blur');
 
-            await fetch(API_BASE_URL + `/emapper/${this.searchType}/${this.query}/`)
+            await fetch(API_BASE_URL + `/description/${this.searchType}/${this.query.name}/`)
                  .then(response => response.json())
                  .then(data => this.fetchThen(data, _hideSpinner))
+                 .catch(fetchCatch)
+
+            await fetch(API_BASE_URL + `/emapper/${this.searchType}/${this.query.name}/`)
+                 .then(response => response.json())
+                 .then(data => this.query.description = data.description)
                  .catch(fetchCatch)
         },
 
@@ -362,7 +367,7 @@ var vueapp = new Vue({
             }
 
             const taxids = this.selectedTaxids.map(t => t.id).join(",");
-            const endpoint = `${this.searchType}/${this.query}/${taxids}/`;
+            const endpoint = `${this.searchType}/${this.query.name}/${taxids}/`;
 
             this.contextData.context = [];
             this.contextData.newick = await getNewick(endpoint);
@@ -565,7 +570,7 @@ var vueapp = new Vue({
 
             $('#spinner').modal('show');
             const params = {
-                query: this.query,
+                query: this.query.name,
                 searchType: this.searchType,
                 taxids: this.selectedTaxids.map(t => t.id).join(",")
             }
@@ -665,7 +670,7 @@ var vueapp = new Vue({
         styleTaxa: function(taxa) {
             if (!taxa) return 
             const [ rank, t ] = taxa.split("__");
-            return `${rank}: ${t}`;
+            return `${rank} ${t}`;
         }
     },
     mounted: async function() {
@@ -737,10 +742,10 @@ var vueapp = new Vue({
         const taxids = urlParams['taxids'];
 
         if (searchType && query) {
-            this.query = query;
+            this.query.name = query;
             this.searchType = searchType;
             
-            $("#query-search").val(this.query);
+            $("#query-search").val(this.query.name);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
             //d3.select(`#search-type inpu.split("%2C")t[value="${this.searchType}"]`)
                 //.attr("checked", true);
