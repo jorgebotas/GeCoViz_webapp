@@ -383,7 +383,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
     }
 
     function twoLineLabelVisible(d) {
-      return (d.y1 - d.y0) > 0.06;
+      return (d.y1 - d.y0) > 0.1;
     }
 
     function labelTransform(d) {
