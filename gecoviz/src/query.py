@@ -209,20 +209,23 @@ def get_emapper_annotation(genes):
         kos = [ { "id": ko, "description": get_ko_desc(ko) } 
                 for ko in set(m.get("kos", [])) ]
 
-        # ogs = [ { 
-                # "id": og,
-                # "level": get_og_level(og),
-                # "levelName": get_tax_levelname(str(get_og_level(og))),
-                # "description": get_og_desc(og),
-            # } for og in set(m.get("ogs", [])) ]
+        ogs = [ { 
+                "id": og,
+                "level": get_og_level(og),
+                "levelName": get_tax_levelname(str(get_og_level(og))),
+                "description": get_og_desc(og),
+            } for og in set(m.get("ogs", [])) ]
+
+        pfam = [ { "id": p, "description": get_pfam_desc(p) }
+                for p in m.get("pfam", []) ]
 
         annotation[gene] = { 
                 "Gene name": name,
                 "Description": description,
                 "KEGG pathways": kpaths,
                 "KEGG Orthology": kos,
-                # "eggNOG Orthology": ogs,
-                # "Pfam": pfam,
+                "eggNOG Orthology": ogs,
+                "Pfam": pfam,
                 }
 
     print(f'annotation in functional_info:  {time.time() - start}')
