@@ -30,7 +30,7 @@ def get_pickle(filePath):
         pdict = pickle.load(pickle_in)
     return pdict
 
-def get_set(filePath):
+def get_list(filePath):
     with open(filePath) as handle:
         return [ l.strip() for l in handle.readlines() ]
 
@@ -39,7 +39,7 @@ kpath_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
 ko_dict = get_pickle(STATIC_PATH / "pickle/KO_DESCRIPTION.pickle")
 og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
-representative_genomes = get_set(STATIC_PATH / "txt/representative_genomes.txt")
+representative_genomes = get_list(STATIC_PATH / "txt/representative_genomes.txt")
 
 
 def get_sequence(query, fasta=True):

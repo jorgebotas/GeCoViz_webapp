@@ -373,10 +373,15 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 // Get the ancestors of the current segment, minus the root
                 const sequence = getSequence(d);
                 // Highlight the ancestors
-                path.attr("fill-opacity", node => arcVisible(node.current) ?
-                    (sequence.indexOf(node) >= 0 ? 1 : 0.8) : 0)
-                    .attr("stroke-width", node => arcVisible(node.current) && 
-                        sequence.indexOf(node) >= 0 ? "1.5px" : 0);
+                path.filter(d => arcVisible(d.current))
+                    .attr("fill-opacity", d => 
+                        sequence.indexOf(d) >= 0 ? 1 : 0.8)
+                    .attr("stroke-width", d => 
+                        sequence.indexOf(d) >= 0 ? "1.5px" : 0)
+                //path.attr("fill-opacity", node => arcVisible(node.current) ?
+                    //(sequence.indexOf(node) >= 0 ? 1 : 0.8) : 0)
+                    //.attr("stroke-width", node => arcVisible(node.current) && 
+                        //sequence.indexOf(node) >= 0 ? "1.5px" : 0);
                 // Value label
                 label
                     .style("visibility", null)
@@ -385,12 +390,15 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 
                 //Update breadcrumb
                 breadcrumb.update(sequence)
-                path.attr("fill-opacity", node => arcVisible(node.current) ?
-                    (sequence.indexOf(node) >= 0 ? 1 : 0.8) : 0);
             } else {
-                path.attr("fill-opacity", d => 
-                    arcVisible(d.current) ? (d.children ? 0.8 : 0.6) : 0)
+                path.filter(d => arcVisible(d.current))
+                    .attr("fill-opacity", d => 
+                        d.children ? 0.8 : 0.6)
                     .attr("stroke-width", 0);
+
+                //path.attr("fill-opacity", d => 
+                    //arcVisible(d.current) ? (d.children ? 0.8 : 0.6) : 0)
+                    //.attr("stroke-width", 0);
                 label.style("visibility", "hidden");
                 breadcrumb.update(rootSequence)
             }
