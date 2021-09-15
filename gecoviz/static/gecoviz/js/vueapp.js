@@ -710,18 +710,23 @@ var vueapp = new Vue({
             choices : [
                 {
                     value: 'ogs', 
-                    label: 'eggNOG Orthology',
+                    label: 'eggNOG v5 Orthologous Group (COG/ENOG)',
                     selected: this.searchType == 'ogs' 
                 },
                 {
                     value: 'kos', 
-                    label: 'KEGG Orthology',
+                    label: 'KEGG Orthologous Group (KO)',
                     selected: this.searchType == 'kos' 
                 },
                 {
                     value: 'pname', 
-                    label: 'Gene name',
+                    label: 'Gene/protein name',
                     selected: this.searchType == 'pname' 
+                },
+                {
+                    value: 'pfam', 
+                    label: 'PFAM domain',
+                    selected: this.searchType == 'pfam'
                 },
             ]
           });
