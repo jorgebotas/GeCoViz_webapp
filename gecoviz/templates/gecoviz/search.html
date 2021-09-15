@@ -140,7 +140,11 @@
         :style="{ 'display': (isScreenLarge || show === 'gecoviz') && contextData.context.length ? 'block' : 'none',
                   'width': isScreenLarge ? '60%' : '100%' }">
        <div class="text-center mb-3" v-if="contextData.context && nAnchors">
-           Showing [[ nAnchors ]] context(s)
+           Showing genomic context of [[ nAnchors ]] representative genes spanning
+            <span v-for="(d, i) in selectedTaxa">
+              <span v-if="i != 0" class="colon">,</span>
+              [[ d.taxids.length ]] [[ d.rank ]]
+            </span>
             <button class="btn btn-sm btn-primary ml-2"
                 @click="downloadNeighborhood()">Download (tsv)</button>
        </div>
