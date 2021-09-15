@@ -222,7 +222,7 @@ def get_emapper_annotation(genes):
                 "KEGG pathways": kpaths,
                 "KEGG Orthology": kos,
                 # "eggNOG Orthology": ogs,
-                "Pfam": pfam,
+                # "Pfam": pfam,
                 }
 
     print(f'annotation in functional_info:  {time.time() - start}')
