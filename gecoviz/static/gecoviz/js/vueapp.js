@@ -710,7 +710,7 @@ var vueapp = new Vue({
             choices : [
                 {
                     value: 'ogs', 
-                    label: 'eggNOG v5 Orthologous Group (COG/ENOG)',
+                    label: 'eggNOGv5 Orthologous Group (COG/ENOG)',
                     selected: this.searchType == 'ogs' 
                 },
                 {
