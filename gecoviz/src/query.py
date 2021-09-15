@@ -190,7 +190,9 @@ def get_og_desc(og):
 
 
 def get_emapper_annotation(genes):
+    start = time.time()
     matches = col_emapper.find({ "q": { "$in": genes } })
+    print(f'emapper in functional_info:  {time.time() - start}')
 
     annotation = {}
     for m in matches:
