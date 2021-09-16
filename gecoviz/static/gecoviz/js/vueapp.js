@@ -228,7 +228,7 @@ var vueapp = new Vue({
                     return n
                 return getParent(parent, stop, count + 1)
             }
-            this.sunBurst.update(getParent(d, 3));
+            this.sunBurst.update(getParent(d, 4));
             setTimeout(() => {
                 this.sunBurst.highlightPath(d);
                 this.showSunburstPopup(undefined, d);
