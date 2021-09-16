@@ -269,7 +269,7 @@ var vueapp = new Vue({
                     .append("li")
                     .attr("class", "dropdown-item")
                     .on("click", () => this.selectTaxa(d, d.data.rank))
-                    .text("Add 1 representative genome (random)");
+                    .html(`Add <b>1 representative</b> genome (random)`);
 
                 const nGenes = this.getNumberOfHits([], d.data.lineage);
 
@@ -278,7 +278,7 @@ var vueapp = new Vue({
                     .attr("class", () => "dropdown-item" 
                         + (nGenes > this.maxSelected ? " disabled" : ""))
                     .on("click", () => this.selectTaxa(d, d.data.rank))
-                    .html(`Add all <b class="mx-1 f-bold">${nGenes}</b> representative genomes`);
+                    .html(`Add <b class="mx-1 f-bold"> all ${nGenes}</b> representative genomes`);
 
                 if (!d.descendantRanks)
                     d.descendantRanks = this.getDescendantRanks(d);
