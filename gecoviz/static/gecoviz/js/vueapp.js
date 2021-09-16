@@ -250,8 +250,8 @@ var vueapp = new Vue({
 
                 popperContent
                     .append("div")
-                    .attr("class", "w-100 f-bold")
-                    .html(`Add representative genomes for ${d.data.rank} <i>${d.data.tname}</i>`)
+                    .attr("class", "h5 w-100 f-bold")
+                    .html(`Add representative genomes for ${d.data.rank} <i class="color-tomato">${d.data.tname}</i>`)
 
 
                 const addButton = popperContent.append("button")
