@@ -268,7 +268,7 @@ var vueapp = new Vue({
                     .attr("class", () => "dropdown-item" 
                         + (nGenes > this.maxSelected ? " disabled" : ""))
                     .on("click", () => this.selectTaxa(d, d.data.rank))
-                    .text(`Add all <b>${nGenes}</b> representative genomes`);
+                    .html(`Add all <b>${nGenes}</b> representative genomes`);
 
                 if (!d.descendantRanks)
                     d.descendantRanks = this.getDescendantRanks(d);
@@ -279,7 +279,7 @@ var vueapp = new Vue({
                         .append("li")
                         .attr("class", () => "dropdown-item" + (disabled ? " disabled" : ""))
                         .on("click", () => this.selectLineages(lineages, d, rank))
-                        .text(`Add representatives for <b>${lineages.length} ${rank}</b>`)
+                        .html(`Add representatives for <b>${lineages.length} ${rank}</b>`)
                 });
 
                 // popper arrow
