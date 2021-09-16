@@ -238,7 +238,6 @@ var vueapp = new Vue({
         showSunburstPopup: function(event, d) {
             const target = event ? event.target :
                 d3.select(`.${d.data.lineage.replaceAll(";", "--").replaceAll(" ", "")}`).node();
-            console.log(target);
             const createPopper = () => {
                 const popper = d3.select(popperContainer)
                     .append('div')
@@ -248,6 +247,12 @@ var vueapp = new Vue({
                 // popper content
                 const popperContent = popper.append('div')
                     .attr('class', 'popper-content card-body h6 pt-2');
+
+                popperContent
+                    .append("div")
+                    .attr("class", "w-100 f-bold")
+                    .html(`Add representative genomes for ${d.data.rank} <i>${d.data.tname}</i>`)
+
 
                 const addButton = popperContent.append("button")
                     .attr("class", "btn btn-primary")
