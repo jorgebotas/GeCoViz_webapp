@@ -60,7 +60,7 @@
                       :style="{ 'visibility': searchedTaxa.length ? 'visible' : 'hidden' }">
                       <li class="dropdown-item"
                           v-for="t in searchedTaxa"
-                          @click="showTaxaPopup(undefined, t)">
+                          @click="showTaxaPopup(t)">
                           <b><span class="badge f-bold mr-1"
                                   :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
                                   [[ t.data.rank ]]
