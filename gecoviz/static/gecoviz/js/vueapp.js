@@ -232,7 +232,7 @@ var vueapp = new Vue({
             setTimeout(() => {
                 this.sunBurst.highlightPath(d);
                 this.showSunburstPopup(undefined, d);
-            }, 100)
+            }, 1100)
         },
 
         showSunburstPopup: function(event, d) {
