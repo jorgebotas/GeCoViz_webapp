@@ -269,7 +269,7 @@ var vueapp = new Vue({
                     .append("li")
                     .attr("class", "dropdown-item")
                     .on("click", () => this.selectTaxa(d, d.data.rank))
-                    .html(`Add <b>1 representative</b> genome (random)`);
+                    .html("Add <b class='mx-1 f-bold'>1 representative</b> genome (random)");
 
                 const nGenes = this.getNumberOfHits([], d.data.lineage);
 
