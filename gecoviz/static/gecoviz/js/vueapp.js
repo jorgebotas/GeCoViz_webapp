@@ -257,6 +257,12 @@ var vueapp = new Vue({
 
                 popperContent
                     .append("li")
+                    .attr("class", "dropdown-item f-bold bg-indigo-lt")
+                    .on("click", () => this.sunBurst.update(d))
+                    .text("Zoom into taxa");
+
+                popperContent
+                    .append("li")
                     .attr("class", "dropdown-item")
                     .on("click", () => this.selectTaxa(d, d.data.rank))
                     .text("Add 1 representative genome (random)");
