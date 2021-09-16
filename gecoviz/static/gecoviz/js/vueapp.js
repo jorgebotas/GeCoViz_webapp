@@ -245,13 +245,40 @@ var vueapp = new Vue({
                     .attr('role', 'tooltip')
                     .style('width', 'auto');
                 // popper content
-                const popperContent = popper.append('div')
-                    .attr('class', 'popper-content card-body h6 pt-2');
+                const popperContent = popper.append('ul')
+                    .attr('class', 'popper-content pt-2');
 
                 popperContent
-                    .append("div")
-                    .attr("class", "h5 w-100 f-bold")
-                    .html(`Add representative genomes for ${d.data.rank} <i class="color-tomato">${d.data.tname}</i>`)
+                    .append("li")
+                    .attr("class", "dropdown-header f-bold")
+                    .html(`${d.data.rank} <i class="color-tomato">${d.data.tname}</i>`)
+
+                popperContent
+                    .append("li")
+                    .attr("class", "dropdown-item")
+                    .on("click", () => this.selectTaxa(d, d.data.rank))
+                    .text("Add 1 representative genome (random)");
+
+                const nGenes = this.getNumberOfHits([], d.data.lineage);
+
+                popperContent
+                    .append("li")
+                    .attr("class", "dropdown-item" 
+                        + nGenes > this.maxSelected ? " disabled" : "")
+                    .on("click", () => this.selectTaxa(d, d.data.rank))
+                    .text(`All ${nGenes} representative genomes`);
+
+                if (!d.descendantRanks)
+                    d.description = this.getDescendantRanks(d);
+
+                Object.entries(d.descendantRanks).forEach(([rank, lineages]) => {
+                    const disabled = lineages.length + this.nSelected > this.maxSelected;
+                    popperContent
+                        .append("li")
+                        .attr("class", "dropdown-item" + disabled ? " disabled" : "" )
+                        .on("click", () => this.selectLineages(lineages, d, rank))
+                        .text(`Add representatives for ${lineages.length} ${rank}`)
+                });
 
 
                 const addButton = popperContent.append("button")
