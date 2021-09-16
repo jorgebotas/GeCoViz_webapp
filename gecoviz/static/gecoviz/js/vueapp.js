@@ -353,7 +353,7 @@ var vueapp = new Vue({
                         this.selectLineages(sharedTaxa.descendantRanks[filteredRanks[0]], sharedTaxa, filteredRanks[0]);
                 }
 
-                this.visualizeSelection(true);
+                //this.visualizeSelection(true);
             }, 0)
         },
 
