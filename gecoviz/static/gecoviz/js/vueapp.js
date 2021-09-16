@@ -220,7 +220,7 @@ var vueapp = new Vue({
         },
 
         showSunburstPopup: function(event, d) {
-            const target = event.target || 
+            const target = event ? event.target :
                 d3.select(`.${d.data.lineage.replace(";", "--").replace(" ", "")}`).node();
             console.log(target);
             const createPopper = () => {
