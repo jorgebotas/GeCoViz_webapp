@@ -162,7 +162,7 @@
            v-if="contextData.context && nAnchors">
            Showing genomic context of <b class="f-bold mx-1">[[ nAnchors ]] representative genes</b> spanning
            <span class="f-bold" v-for="(d, i) in selectedTaxa"
-                :class="{ 'mr-1': i !=0 }">
+                :class="{ 'ml-1': i == 0 }">
               <span v-if="i != 0" class="colon mr-1">,</span>
               [[ d.taxids.length ]] [[ d.rank ]]
             </span> <span v-if="sharedTaxa">belonging to <b

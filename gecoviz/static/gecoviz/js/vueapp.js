@@ -219,6 +219,50 @@ var vueapp = new Vue({
             });
         },
 
+        showSunburstPopup: function(d) {
+
+            console.log(this)
+
+            let popper = d3.select(GeCoVizApp)
+                .append('div')
+                .attr('class', 'popper')
+                .attr('role', 'tooltip')
+            // popper content
+            const popperContent = popper.append('div')
+                .attr('class', 'popper-content card-body h6 pt-2');
+
+            const addButton = popperContent.append("button")
+                .attr("class", "btn btn-primary")
+                .attr("disabled", () => this.nSelected > this.maxSelected ? true : null)
+                .html("Add " + d.data.tname);
+            addButton.on("click", () => this.selectTaxa(d));
+            // popper arrow
+            popper.append('div')
+                .attr('class', 'popper-arrow')
+                .attr('data-popper-arrow', '');
+            popper = popper.node();
+
+            createPopper(this, popper, {
+                  placement: 'right',
+                  modifiers: [
+                    {
+                      name: 'offset',
+                      options: {
+                        offset: [0, 10],
+                      },
+                    },
+                    {
+                      name: 'flip',
+                      options: {
+                          fallbackPlacements: ['left'],
+                      }
+                    }
+                  ],
+                });
+            popper.setAttribute('data-show', '');
+
+        },
+
         scrollToTop: function() {
             $("html, body").animate({ scrollTop: 0 }, "slow");
         },
@@ -547,7 +591,7 @@ var vueapp = new Vue({
             if (d3.selectAll(".sunburst-selector *").nodes().length)
                 return
             const taxonomy = this.allItems.map(d => [d.lineage, d.value]);
-            this.sunBurst = SeqSunburst(taxonomy, 600, 4, true, this.showAddButton, this.root)
+            this.sunBurst = SeqSunburst(taxonomy, 600, 4, true, this.showSunburstPopup, this.root)
                 .draw(".sunburst-selector");
         },
 
