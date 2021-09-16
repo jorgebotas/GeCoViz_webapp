@@ -219,9 +219,9 @@ var vueapp = new Vue({
             });
         },
 
-        showSunburstPopup: function(d) {
+        showSunburstPopup: function(event, d) {
 
-            console.log(this)
+            console.log(event.target)
 
             let popper = d3.select(GeCoVizApp)
                 .append('div')
@@ -242,7 +242,7 @@ var vueapp = new Vue({
                 .attr('data-popper-arrow', '');
             popper = popper.node();
 
-            Popper.createPopper(this, popper, {
+            Popper.createPopper(event.target, popper, {
                   placement: 'right',
                   modifiers: [
                     {

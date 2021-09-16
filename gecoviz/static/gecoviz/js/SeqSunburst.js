@@ -191,12 +191,12 @@ var SeqSunburst = function(unformattedData, width, depth=2,
                 graph.highlightPath(d, false)
             })
 
-        path.style("cursor", "pointer").on("click", function(_, d) {
+        path.style("cursor", "pointer").on("click", function(e, d) {
                 const gClone = g.insert("g", ".text-labels")
                     .attr("class", "clone");
                 const sequence = getSequence(d);
                 if (clickCallBack)
-                    clickCallBack(d);
+                    clickCallBack(e, d);
                 path.filter(d => sequence.slice(0, -1).indexOf(d) >= 0)
                     .each(function() {
                         const clone = d3.select(this.cloneNode(false))
