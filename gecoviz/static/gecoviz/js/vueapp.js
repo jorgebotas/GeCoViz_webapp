@@ -246,7 +246,8 @@ var vueapp = new Vue({
                     .style('width', 'auto');
                 // popper content
                 const popperContent = popper.append('ul')
-                    .attr('class', 'popper-content pt-2');
+                    .attr('class', 'popper-content text-align-left m-0')
+                    .style("padding", "0 5px 5px 5xp");
 
                 popperContent
                     .append("li")

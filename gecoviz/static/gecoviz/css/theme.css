@@ -13172,12 +13172,20 @@ button:focus {
   padding: 7px !important;
   transform: none !important; }
 
+.dropdown-item {
+  padding: .25rem .5rem !important; }
+
 .suggestion-menu .dropdown-item {
   min-width: 14.5rem;
   border-radius: 5px;
   white-space: normal;
-  padding: .25rem .5rem;
   cursor: pointer; }
+
+.popper .dropdown-item {
+  cursor: pointer; }
+
+.popper .dropdown-header {
+  padding: .5rem !important; }
 
 .navbar .choices > .form-control {
   padding: .3rem .5rem;
