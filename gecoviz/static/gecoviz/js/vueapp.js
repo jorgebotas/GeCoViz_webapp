@@ -269,7 +269,7 @@ var vueapp = new Vue({
                     .text(`All ${nGenes} representative genomes`);
 
                 if (!d.descendantRanks)
-                    d.description = this.getDescendantRanks(d);
+                    d.descendantRanks = this.getDescendantRanks(d);
 
                 Object.entries(d.descendantRanks).forEach(([rank, lineages]) => {
                     const disabled = lineages.length + this.nSelected > this.maxSelected;
