@@ -220,7 +220,7 @@ var vueapp = new Vue({
         },
 
         showSunburstPopup: function(event, d) {
-            function createPopper() {
+            const createPopper = () => {
                 const popper = d3.select(popperContainer)
                     .append('div')
                     .attr('class', 'popper')
@@ -248,7 +248,7 @@ var vueapp = new Vue({
                         {
                           name: 'offset',
                           options: {
-                            offset: [0, 0],
+                            offset: [0, 5],
                           },
                         },
                         {
