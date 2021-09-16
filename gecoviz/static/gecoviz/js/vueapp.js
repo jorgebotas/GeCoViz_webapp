@@ -242,7 +242,7 @@ var vueapp = new Vue({
                 .attr('data-popper-arrow', '');
             popper = popper.node();
 
-            createPopper(this, popper, {
+            Popper.createPopper(this, popper, {
                   placement: 'right',
                   modifiers: [
                     {
