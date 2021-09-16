@@ -353,6 +353,8 @@ var vueapp = new Vue({
                         this.selectLineages(sharedTaxa.descendantRanks[filteredRanks[0]], sharedTaxa, filteredRanks[0]);
                 }
 
+                this.show = "sunburst";
+                this.contextData.context = [1, 2,]
                 //this.visualizeSelection(true);
             }, 0)
         },
