@@ -172,7 +172,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
           .selectAll("path")
           .data(root.descendants().slice(1)) //.filter(d => arcVisible(d.current) || arcVisible(d.target))) // //
           .join("path")
-            .attr("class", d => getSequence(d).map(a => a.data.name).join("--").replace(" ", ""))
+            .attr("class", d => getSequence(d).map(a => a.data.name).join("--").replaceAll(" ", ""))
             .attr("fill", d => palette(d.data.name))
             //.attr("fill", d => { while (d.depth > 1) d = d.parent; return palette(d.data.name); })
             .attr("fill-opacity", d => arcVisible(d.current) ? (d.children ? 0.8 : 0.8) : 0)
