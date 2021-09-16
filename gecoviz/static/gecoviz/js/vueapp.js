@@ -219,6 +219,11 @@ var vueapp = new Vue({
             });
         },
 
+        showTaxaPopup: function(d) {
+            this.sunBurst.highlightPath(d);
+            this.showSunburstPopup(d);
+        },
+
         showSunburstPopup: function(event, d) {
             const target = event ? event.target :
                 d3.select(`.${d.data.lineage.replaceAll(";", "--").replaceAll(" ", "")}`).node();
