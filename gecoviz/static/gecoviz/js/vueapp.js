@@ -220,47 +220,49 @@ var vueapp = new Vue({
         },
 
         showSunburstPopup: function(event, d) {
+            function createPopper() {
+                const popper = d3.select(popperContainer)
+                    .append('div')
+                    .attr('class', 'popper')
+                    .attr('role', 'tooltip')
+                    .style('width', 'auto');
+                // popper content
+                const popperContent = popper.append('div')
+                    .attr('class', 'popper-content card-body h6 pt-2');
 
-            console.log(event.target)
+                const addButton = popperContent.append("button")
+                    .attr("class", "btn btn-primary")
+                    .attr("disabled", () => this.nSelected > this.maxSelected ? true : null)
+                    .html("Add " + d.data.tname);
+                addButton.on("click", () => this.selectTaxa(d));
+                // popper arrow
+                popper.append('div')
+                    .attr('class', 'popper-arrow')
+                    .attr('data-popper-arrow', '');
 
-            let popper = d3.select(GeCoVizApp)
-                .append('div')
-                .attr('class', 'popper')
-                .attr('role', 'tooltip')
-            // popper content
-            const popperContent = popper.append('div')
-                .attr('class', 'popper-content card-body h6 pt-2');
+                const popperNode = popper.node();
 
-            const addButton = popperContent.append("button")
-                .attr("class", "btn btn-primary")
-                .attr("disabled", () => this.nSelected > this.maxSelected ? true : null)
-                .html("Add " + d.data.tname);
-            addButton.on("click", () => this.selectTaxa(d));
-            // popper arrow
-            popper.append('div')
-                .attr('class', 'popper-arrow')
-                .attr('data-popper-arrow', '');
-            popper = popper.node();
+                Popper.createPopper(event.target, popperNode, {
+                      placement: 'right',
+                      modifiers: [
+                        {
+                          name: 'offset',
+                          options: {
+                            offset: [0, 10],
+                          },
+                        },
+                        {
+                          name: 'flip',
+                          options: {
+                              fallbackPlacements: ['left'],
+                          }
+                        }
+                      ],
+                    });
+                popperNode.setAttribute('data-show', '');
+            }
 
-            Popper.createPopper(event.target, popper, {
-                  placement: 'right',
-                  modifiers: [
-                    {
-                      name: 'offset',
-                      options: {
-                        offset: [0, 10],
-                      },
-                    },
-                    {
-                      name: 'flip',
-                      options: {
-                          fallbackPlacements: ['left'],
-                      }
-                    }
-                  ],
-                });
-            popper.setAttribute('data-show', '');
-
+            setTimeout(createPopper, 10);
         },
 
         scrollToTop: function() {
@@ -723,6 +725,7 @@ var vueapp = new Vue({
         document.addEventListener("click", () => {
             if (!d3.select(".clone").node())
                 d3.selectAll("#add-button-container *").remove();
+            d3.selectAll("#popperContainer .popper").remove();
         });
 
         ["query", "taxa", "ko"].forEach(d => {
