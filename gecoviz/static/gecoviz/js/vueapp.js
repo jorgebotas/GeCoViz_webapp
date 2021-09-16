@@ -221,7 +221,7 @@ var vueapp = new Vue({
 
         showTaxaPopup: function(d) {
             this.sunBurst.highlightPath(d);
-            this.showSunburstPopup(d);
+            this.showSunburstPopup(undefined, d);
         },
 
         showSunburstPopup: function(event, d) {
