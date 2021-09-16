@@ -243,7 +243,8 @@ var vueapp = new Vue({
                     .append('div')
                     .attr('class', 'popper')
                     .attr('role', 'tooltip')
-                    .style('width', 'auto');
+                    .style('width', 'auto')
+                    .style("border-color", "lightgray");
                 // popper content
                 const popperContent = popper.append('ul')
                     .attr('class', 'popper-content text-align-left m-0')
@@ -267,7 +268,7 @@ var vueapp = new Vue({
                     .attr("class", () => "dropdown-item" 
                         + (nGenes > this.maxSelected ? " disabled" : ""))
                     .on("click", () => this.selectTaxa(d, d.data.rank))
-                    .text(`All ${nGenes} representative genomes`);
+                    .text(`Add all <b>${nGenes}</b> representative genomes`);
 
                 if (!d.descendantRanks)
                     d.descendantRanks = this.getDescendantRanks(d);
@@ -278,13 +279,14 @@ var vueapp = new Vue({
                         .append("li")
                         .attr("class", () => "dropdown-item" + (disabled ? " disabled" : ""))
                         .on("click", () => this.selectLineages(lineages, d, rank))
-                        .text(`Add representatives for ${lineages.length} ${rank}`)
+                        .text(`Add representatives for <b>${lineages.length} ${rank}</b>`)
                 });
 
                 // popper arrow
                 popper.append('div')
                     .attr('class', 'popper-arrow')
-                    .attr('data-popper-arrow', '');
+                    .attr('data-popper-arrow', '')
+                    .style("border-color", "transparent transparent lightgray lightgray");
 
                 const popperNode = popper.node();
 
