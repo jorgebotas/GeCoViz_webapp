@@ -13173,7 +13173,8 @@ button:focus {
   transform: none !important; }
 
 .dropdown-item {
-  padding: .25rem .5rem !important; }
+  padding: .25rem .5rem !important;
+  border-radius: 5px; }
 
 .suggestion-menu .dropdown-item {
   min-width: 14.5rem;
@@ -13181,11 +13182,11 @@ button:focus {
   white-space: normal;
   cursor: pointer; }
 
-.popper .dropdown-item {
-  cursor: pointer; }
-
 .popper .dropdown-header {
   padding: .5rem !important; }
+
+.popper .dropdown-item {
+  cursor: pointer; }
 
 .navbar .choices > .form-control {
   padding: .3rem .5rem;

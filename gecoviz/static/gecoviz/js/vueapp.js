@@ -263,6 +263,10 @@ var vueapp = new Vue({
 
                 popperContent
                     .append("li")
+                    .attr("class", "dropdown-divider mb-1");
+
+                popperContent
+                    .append("li")
                     .attr("class", "dropdown-item")
                     .on("click", () => this.selectTaxa(d, d.data.rank))
                     .text("Add 1 representative genome (random)");
