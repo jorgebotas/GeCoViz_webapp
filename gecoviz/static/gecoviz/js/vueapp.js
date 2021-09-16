@@ -248,7 +248,7 @@ var vueapp = new Vue({
                         {
                           name: 'offset',
                           options: {
-                            offset: [0, 10],
+                            offset: [-10, 10],
                           },
                         },
                         {
