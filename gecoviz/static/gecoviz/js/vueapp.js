@@ -220,6 +220,15 @@ var vueapp = new Vue({
         },
 
         showTaxaPopup: function(d) {
+            function getParent(n, stop, count=0) {
+                if (count >= stop)
+                    return n
+                const parent = n.parent
+                if (!parent)
+                    return n
+                return getParent(parent, stop, count + 1)
+            }
+            this.sunBurst.update(getParent(d, 3));
             this.sunBurst.highlightPath(d);
             this.showSunburstPopup(undefined, d);
         },
