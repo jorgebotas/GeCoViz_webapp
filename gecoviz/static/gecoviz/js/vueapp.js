@@ -275,7 +275,7 @@ var vueapp = new Vue({
                     const disabled = lineages.length + this.nSelected > this.maxSelected;
                     popperContent
                         .append("li")
-                        .attr("class", () => "dropdown-item" + disabled ? " disabled" : "" )
+                        .attr("class", () => "dropdown-item" + (disabled ? " disabled" : ""))
                         .on("click", () => this.selectLineages(lineages, d, rank))
                         .text(`Add representatives for ${lineages.length} ${rank}`)
                 });
