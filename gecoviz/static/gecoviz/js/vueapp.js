@@ -281,12 +281,6 @@ var vueapp = new Vue({
                         .text(`Add representatives for ${lineages.length} ${rank}`)
                 });
 
-
-                const addButton = popperContent.append("button")
-                    .attr("class", "btn btn-primary")
-                    .attr("disabled", () => this.nSelected > this.maxSelected ? true : null)
-                    .html("Add " + d.data.tname);
-                addButton.on("click", () => this.selectTaxa(d));
                 // popper arrow
                 popper.append('div')
                     .attr('class', 'popper-arrow')
