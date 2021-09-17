@@ -13229,6 +13229,9 @@ button:focus {
 .navbar, ul.navbar-nav {
   min-height: 1rem !important; }
 
+.navbar-dark .nav-link {
+  color: inherit; }
+
 .nav-link-icon {
   padding-top: 2px; }
 

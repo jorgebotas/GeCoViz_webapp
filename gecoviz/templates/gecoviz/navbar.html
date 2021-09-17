@@ -64,6 +64,23 @@
               </div>
 
           </div>
+              
+        <ul class="nav nav-pills justify-content-end d-flex">
+          <li class="nav-item" 
+              style="padding-top:0 !important; padding-bottom:0 !important">
+            <a class="nav-link f-bold" 
+               id="sunburst-navlink"
+                @click="toggleSunburstSelector()">Taxonomy selector</a>
+          </li>
+          <li class="nav-item" 
+              style="padding-top:0 !important; padding-bottom:0 !important">
+            <a class="nav-link f-bold" 
+               id="gecoviz-navlink"
+               :class="{ disabled : !selectedTaxids.length }"
+                @click="visualizeSelection(false)">Genomic context</a>
+          </li>
+        </ul>
+
 
       </div>
   </header>
