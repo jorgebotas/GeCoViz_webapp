@@ -404,19 +404,25 @@ var vueapp = new Vue({
                     //hideSpinner();
 
                 const sharedTaxa = this.getSharedTaxa(this.root);
-                const maxSelected = 100;
-                if (this.allItems.length <= maxSelected)
-                    this.selectTaxa(sharedTaxa, "species", true);
+
+                if (this.selectedTaxids.length
+                    && this.selectedTaxids.length < this.maxSelected)
+                    this.selectedTaxids.forEach(t => t.source = sharedTaxa);
                 else {
-                    const ranks = ["genus", "family", "phylum"];
-                    sharedTaxa.descendantRanks = this.getDescendantRanks(sharedTaxa);
-                    const filteredRanks = ranks.filter(rank =>
-                        sharedTaxa.descendantRanks[rank] && 
-                        sharedTaxa.descendantRanks[rank].length <= maxSelected);
-                    if (filteredRanks.length)
-                        this.selectLineages(sharedTaxa.descendantRanks[filteredRanks[0]], sharedTaxa, filteredRanks[0]);
+                    const maxSelected = 100;
+                    if (this.allItems.length <= maxSelected)
+                        this.selectTaxa(sharedTaxa, "species", true);
+                    else {
+                        const ranks = ["genus", "family", "phylum"];
+                        sharedTaxa.descendantRanks = this.getDescendantRanks(sharedTaxa);
+                        const filteredRanks = ranks.filter(rank =>
+                            sharedTaxa.descendantRanks[rank] && 
+                            sharedTaxa.descendantRanks[rank].length <= maxSelected);
+                        if (filteredRanks.length)
+                            this.selectLineages(sharedTaxa.descendantRanks[filteredRanks[0]],
+                                sharedTaxa, filteredRanks[0]);
+                    }
                 }
-                
                 this.visualizeSelection(true);
             }, 0)
         },
