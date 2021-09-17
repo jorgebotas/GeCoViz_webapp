@@ -274,14 +274,15 @@ var vueapp = new Vue({
                     .on("click", () => this.selectTaxa(d, d.data.rank))
                     .html("Add <b class='mx-1 f-bold'>1 representative</b> genome (random)");
 
-                const nGenes = this.getNumberOfHits([], d.data.lineage);
+                const genomes = this.allItems.filter(it => it.lineage.includes(d.data.lineage));
+                const nHits = genomes.reduce((total, it) => total = total + it.value, 0);
 
                 popperContent
                     .append("li")
                     .attr("class", () => "dropdown-item" 
-                        + (nGenes > this.maxSelected ? " disabled" : ""))
+                        + (nHits + this.nSelected > this.maxSelected ? " disabled" : ""))
                     .on("click", () => this.selectTaxa(d, "", true))
-                    .html(`Add <b class="mx-1 f-bold"> all ${nGenes} genomes</b>`);
+                    .html(`Add <b class="mx-1 f-bold"> all ${genomes.length} genomes</b>`);
 
                 if (!d.descendantRanks)
                     d.descendantRanks = this.getDescendantRanks(d);
