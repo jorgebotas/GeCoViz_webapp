@@ -1,20 +1,49 @@
 <div class="ml-3 w-100 d-flex align-items-center"
      v-if="query.name"
      style="flex-wrap:wrap; max-width: calc(100% - 370px);">
-    <div class="mx-1 badge bg-orange-lt f-bold"
+    <div class="mx-1 badge bg-orange-lt f-bold d-inline"
         v-if="query"
         style="font-size:1.1rem">
         [[ query.name ]]
     </div>
-    <div class="mx-1">
-        [[ query.description ]].
-    </div>
-    <div class="ml-2 d-flex align-items-center" style="flex-wrap:wrap">
-         Found <span class="badge bg-green-lt mx-1"
-             style="font-size:.8rem">[[ nMatches ]] proteins
+    <div class="d-inline">
+        <div class="mx-1">
+            [[ query.description ]].
+        </div>
+        <div class="ml-2 d-flex align-items-center" style="flex-wrap:wrap">
+             Found <span class="badge bg-green-lt mx-1"
+                 style="font-size:.8rem">[[ nMatches ]] proteins
+             </span> from <span class="badge bg-red-lt mx-1"
+                 style="font-size:.8rem">[[ allItems.length ]] representative species</span>
+        </div>
+
+       <div class="d-flex align-items-center" style="flex-wrap:wrap"
+           v-if="contextData.context && nAnchors">
+
+         Showing <span class="badge bg-green-lt mx-1"
+             style="font-size:.8rem">[[ nAnchors ]] genes
          </span> from <span class="badge bg-red-lt mx-1"
-             style="font-size:.8rem">[[ allItems.length ]] representative species</span>
+             style="font-size:.8rem">[[ selectedTaxids.length ]] representative species</span>
+         <span class="mx-1 d-flex align-items-center"
+               v-if="sharedTaxa.length">belonging to <span class="badge bg-orange-lt mx-1"
+             style="font-size:.8rem">[[ sharedTaxa | styleTaxa ]]</span></span>
+
+           <!--Showing genomic context of <b class="f-bold mx-1">[[ nAnchors ]] representative genes</b> spanning-->
+           <!--<span class="f-bold" v-for="(d, i) in selectedTaxa"-->
+                <!--:class="{ 'ml-1': i == 0 }">-->
+              <!--<span v-if="i != 0" class="colon mr-1">,</span>-->
+              <!--[[ d.taxids.length ]] [[ d.rank ]]-->
+            <!--</span> <span v-if="sharedTaxa" class="ml-1">belonging to <b-->
+                    <!--class="f-bold mx-1">[[ sharedTaxa | styleTaxa ]]</b></span>-->
+            <button class="btn btn-sm btn-primary ml-2 f-bold"
+                @click="toggleSunburstSelector">Select custom genomes
+                <i class="fas fa-chevron-right ml-2"></i>
+            </button>
+            <button class="btn-clean ml-2 d-inline" style="padding:0.125rem 0.5rem;"
+                @click="downloadNeighborhood()">Download context data (tsv)</button>
+       </div>
     </div>
+
 </div>
 
 
@@ -212,32 +241,6 @@
 
    <div id="visualization-container"
         :style="{ 'display': show === 'gecoviz' && contextData.context.length ? 'block' : 'none'}">
-       <div class="d-flex align-items-center mb-3" style="flex-wrap:wrap"
-           v-if="contextData.context && nAnchors">
-
-
-         Showing <span class="badge bg-green-lt mx-1"
-             style="font-size:.8rem">[[ nAnchors ]] genes
-         </span> from <span class="badge bg-red-lt mx-1"
-             style="font-size:.8rem">[[ selectedTaxids.length ]] representative species</span>
-         <span class="mx-1 d-flex align-items-center"
-               v-if="sharedTaxa.length">belonging to <span class="badge bg-orange-lt mx-1"
-             style="font-size:.8rem">[[ sharedTaxa | styleTaxa ]]</span></span>
-
-           <!--Showing genomic context of <b class="f-bold mx-1">[[ nAnchors ]] representative genes</b> spanning-->
-           <!--<span class="f-bold" v-for="(d, i) in selectedTaxa"-->
-                <!--:class="{ 'ml-1': i == 0 }">-->
-              <!--<span v-if="i != 0" class="colon mr-1">,</span>-->
-              <!--[[ d.taxids.length ]] [[ d.rank ]]-->
-            <!--</span> <span v-if="sharedTaxa" class="ml-1">belonging to <b-->
-                    <!--class="f-bold mx-1">[[ sharedTaxa | styleTaxa ]]</b></span>-->
-            <button class="btn btn-sm btn-primary ml-2 f-bold"
-                @click="toggleSunburstSelector">Select custom genomes
-                <i class="fas fa-chevron-right ml-2"></i>
-            </button>
-            <button class="btn-clean ml-2 d-inline" style="padding:0.125rem 0.5rem;"
-                @click="downloadNeighborhood()">Download context data (tsv)</button>
-       </div>
        <div class="w-100" id="gecoviz-container"></div>
    </div>
 
