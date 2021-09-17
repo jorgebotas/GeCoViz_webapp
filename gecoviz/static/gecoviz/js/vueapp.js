@@ -407,8 +407,7 @@ var vueapp = new Vue({
 
                 const sharedTaxa = this.getSharedTaxa(this.root);
 
-                this.sunBurst.update(sharedTaxa);
-                console.log(sharedTaxa);
+                this.sunBurst.update(sharedTaxa.parent || this.root);
 
                 if (this.selectedTaxids.length
                     && this.selectedTaxids.length < this.maxSelected) {
