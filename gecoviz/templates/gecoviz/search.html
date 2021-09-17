@@ -3,14 +3,14 @@
      style="flex-wrap:wrap; max-width: calc(100% - 370px);">
     <div class="mx-1 badge bg-orange-lt f-bold d-inline"
         v-if="query"
-        style="font-size:1.1rem">
+        style="font-size:1.1rem; align-self:start;">
         [[ query.name ]]
     </div>
-    <div class="d-inline">
-        <div class="mx-1">
+    <div class="d-inline ml-2">
+        <div>
             [[ query.description ]].
         </div>
-        <div class="ml-2 d-flex align-items-center" style="flex-wrap:wrap">
+        <div class="d-flex align-items-center" style="flex-wrap:wrap">
              Found <span class="badge bg-green-lt mx-1"
                  style="font-size:.8rem">[[ nMatches ]] proteins
              </span> from <span class="badge bg-red-lt mx-1"
