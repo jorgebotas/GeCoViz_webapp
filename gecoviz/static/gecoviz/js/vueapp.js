@@ -727,7 +727,7 @@ var vueapp = new Vue({
                 .draw();
 
             setTimeout(hideSpinner, 10);
-            setTimeout(gecoviz.scaleDist, 1000);
+            setTimeout(this.GeCoViz.scaleDist, 1000);
         },
     },
     computed: {

@@ -47,11 +47,13 @@
                   role="button">Export
                   <i class="fas fa-chevron-right ml-2"></i>
                 </a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-item">
+                <ul class="dropdown-menu suggestion-menu">
+                    <li class="dropdown-item"
+                        @click="downloadNeighborhood">
                         Context data (tsv)
                     </li>
-                    <li class="dropdown-item">
+                    <li class="dropdown-item"
+                        @click="GeCoViz.toSvg">
                         Graph (svg)
                     </li>
                 </ul>
