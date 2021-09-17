@@ -409,8 +409,7 @@ var vueapp = new Vue({
 
                 if (this.selectedTaxids.length
                     && this.selectedTaxids.length < this.maxSelected) {
-                    this.selectedTaxids.forEach(t => t.source = sharedTaxa);
-                    console.log(this.selectedTaxids)
+                    //this.selectedTaxids.forEach(t => t.source = sharedTaxa);
                 }
                 else {
                     const maxSelected = 100;
