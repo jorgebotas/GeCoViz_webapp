@@ -13047,6 +13047,9 @@ Antialiasing
 .no-after::after {
   display: none !important; }
 
+.no-list-style {
+  list-style: none !important; }
+
 .neomorph-dark {
   border-radius: 32px;
   background: #2a2a2a;
