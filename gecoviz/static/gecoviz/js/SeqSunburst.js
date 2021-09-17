@@ -360,7 +360,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
     }
 
     function labelVisible(d) {
-      return d.y1 <= (depth + 1) && d.y0 >= 1 && (d.y1 - d.y0) * (d.x1 - d.x0) > 0.045;
+      return d.y1 <= (depth + 1) && d.y0 >= 1 && (d.y1 - d.y0) * (d.x1 - d.x0) > 0.047;
     }
 
     function twoLineLabelVisible(d) {
