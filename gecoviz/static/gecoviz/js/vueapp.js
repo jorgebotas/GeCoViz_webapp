@@ -131,6 +131,7 @@ var vueapp = new Vue({
         },
         allItems: [], 
         sunBurst: undefined,
+        GeCoViz: undefined,
         contextData: {
             newick: "",
             context: [],
@@ -713,7 +714,7 @@ var vueapp = new Vue({
                 'subspecies',
                 'strain',
             ]
-            const gecoviz = await GeCoViz(selector)
+            this.GeCoViz = await GeCoViz(selector)
                 .treeData(newick, newickFields[1], newickFields)
                 .contextData(context)
                 .nSide(4)

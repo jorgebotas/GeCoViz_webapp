@@ -39,8 +39,25 @@
                 @click="toggleSunburstSelector">Select custom genomes
                 <i class="fas fa-chevron-right ml-2"></i>
             </button>
-            <button class="btn-clean ml-2 d-inline" style="padding:0.125rem 0.5rem;"
-                @click="downloadNeighborhood()">Download context data (tsv)</button>
+            <div class="dropdown">
+                <a class="color-tomato f-bold dropdown-toggle no-after"
+                  style="font-size: .8rem;"
+                  data-toggle="dropdown"
+                  data-bs-auto-close="outside"
+                  role="button">Export
+                  <i class="fas fa-chevron-right ml-2"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                        Context data (tsv)
+                    </li>
+                    <li class="dropdown-item">
+                        Graph (svg)
+                    </li>
+                </ul>
+            </div>
+            <!--<button class="btn-clean ml-2 d-inline" style="padding:0.125rem 0.5rem;"-->
+                <!--@click="downloadNeighborhood()">Download context data (tsv)</button>-->
        </div>
     </div>
 
