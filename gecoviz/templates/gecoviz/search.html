@@ -45,9 +45,10 @@
             :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
             <div class="sunburst-selector mb-4"
                  :class="{ 'w-100' : isScreenLarge, 'w-50' : !isScreenLarge }"
-                 style="z-index: 1"></div>
-            <div :class="{ 'w-100' : isScreenLarge, 'w-50' : !isScreenLarge }">
-                <div class="input-icon m-2" 
+                 style="z-index: 1">
+                <div class="sunburst-searchbar">
+                    <label class="h6 text-muted">Search within Taxonomy Sunburst</label>
+                    <div class="input-icon m-2" 
                      style='min-width:250px; max-width: 500px;'>
                     <input type="text"
                            class="form-control text-left"
@@ -76,6 +77,10 @@
                         </i>
                     </span>
                 </div>
+                </div>
+            </div>
+
+            <div :class="{ 'w-100' : isScreenLarge, 'w-50' : !isScreenLarge }">
                 <div class="card-header d-flex"
                      style="min-height:70px; flex-wrap:wrap"> 
                     <b>Selected: [[ nSelected ]] genes from [[ selectedTaxids.length ]] genomes</b>
