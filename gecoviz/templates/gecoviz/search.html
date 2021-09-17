@@ -235,7 +235,8 @@
              style="font-size:.8rem">[[ nAnchors ]] genes
          </span> from <span class="badge bg-red-lt mx-1"
              style="font-size:.8rem">[[ selectedTaxids.length ]] representative species</span>
-         <span class="mx-1" v-if="sharedTaxa.length">belonging to <span class="badge bg-purple-lt mx-1"
+         <span class="mx-1 d-flex align-items-center"
+               v-if="sharedTaxa.length">belonging to <span class="badge bg-orange-lt mx-1"
              style="font-size:.8rem">[[ sharedTaxa | styleTaxa ]]</span></span>
 
            <!--Showing genomic context of <b class="f-bold mx-1">[[ nAnchors ]] representative genes</b> spanning-->
