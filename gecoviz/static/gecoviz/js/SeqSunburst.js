@@ -139,7 +139,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
 
         const svg = container.append("svg")
             .attr("viewBox", `${semiCircle ? 0 : -width/2} ${-width/2} ${width} ${width}`)
-            .style("max-width", "900px")
+            .style("max-width", "60vh")
             .attr("class", "seq-sunburst")
             .style("overflow", "visible")
             .style("font", "10px sans-serif");
