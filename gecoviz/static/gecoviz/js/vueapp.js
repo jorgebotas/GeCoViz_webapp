@@ -237,7 +237,10 @@ var vueapp = new Vue({
 
         showSunburstPopup: function(event, d) {
             const target = event ? event.target :
-                d3.select(`.${d.data.lineage.replaceAll(";", "--").replaceAll(" ", "")}`).node();
+                d3.select(`.${d.data.lineage.replaceAll(";", "--")
+                                .replaceAll("/", "-")
+                                .replaceAll(" ", "")}`)
+                  .node();
             const createPopper = () => {
                 const popper = d3.select(popperContainer)
                     .append('div')
