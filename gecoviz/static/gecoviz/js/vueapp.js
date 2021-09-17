@@ -406,24 +406,19 @@ var vueapp = new Vue({
                     //hideSpinner();
 
                 const sharedTaxa = this.getSharedTaxa(this.root);
+                sharedTaxa.descendantRanks = this.getDescendantRanks(sharedTaxa);
 
                 this.sunBurst.update(sharedTaxa.parent || this.root);
 
                 if (this.selectedTaxids.length
-                    && this.selectedTaxids.length < this.maxSelected) {
-                    const selectedTaxids = this.selectedTaxids.map(t => {
-                        return { id: t.id, source: sharedTaxa }
-                    })
-                    this.selectedTaxids = selectedTaxids;
-                    //this.selectedTaxids.forEach(t => { t.source = sharedTaxa});
-                }
+                    && this.selectedTaxids.length < this.maxSelected)
+                    this.selectedTaxids.forEach(t => { t.source = sharedTaxa});
                 else {
                     const maxSelected = 100;
                     if (this.allItems.length <= maxSelected)
                         this.selectTaxa(sharedTaxa, "species", true);
                     else {
                         const ranks = ["genus", "family", "phylum"];
-                        sharedTaxa.descendantRanks = this.getDescendantRanks(sharedTaxa);
                         const filteredRanks = ranks.filter(rank =>
                             sharedTaxa.descendantRanks[rank] && 
                             sharedTaxa.descendantRanks[rank].length <= maxSelected);
