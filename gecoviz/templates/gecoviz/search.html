@@ -43,9 +43,9 @@
         <div class="mt-0"
             :class="{ 'd-flex' : (!isScreenLarge || !(contextData.context && nAnchors)) }"
             :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
-            <div class="sunburst-searchbar">
-                <label class="h6 text-muted">Search within Taxonomy Sunburst</label>
-                <div class="input-icon m-2" 
+            <div class="sunburst-searchbar mb-3">
+                <label class="h6 text-muted f-bold ml-2">Search within Taxonomy Sunburst</label>
+                <div class="input-icon" 
                      style='min-width:250px; max-width: 500px;'>
                     <input type="text"
                            class="form-control text-left"
@@ -75,7 +75,7 @@
                     </span>
                 </div>
             </div>
-            <div class="sunburst-selector mb-4"
+            <div class="sunburst-selector mb-4 ml-1"
                  :class="{ 'w-100' : isScreenLarge, 'w-50' : !isScreenLarge }"
                  style="z-index: 1">
             </div>
