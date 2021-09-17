@@ -35,11 +35,10 @@
 
 
 
-<div class="container-xxl row mt-3" style="max-width:100%;">
+<div class="container-xxl mt-3" style="max-width:100%;">
 
    <div id="sunburst-selector-container" 
-        :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none',
-                  'width': isScreenLarge ? '40%' : '100%'  }">
+        :style="{ 'display': show === 'sunburst' ? 'block' : 'none' }">
         <div class="mt-0"
             :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
             <div class="sunburst-searchbar mb-3 col-lg-6 col-sm-12">
@@ -228,8 +227,7 @@
    </div>
 
    <div id="visualization-container"
-        :style="{ 'display': (isScreenLarge || show === 'gecoviz') && contextData.context.length ? 'block' : 'none',
-                  'width': isScreenLarge ? '60%' : '100%' }">
+        :style="{ 'display': show === 'gecoviz' && contextData.context.length ? 'block' : 'none'}">
        <div class="d-flex align-items-center mb-3" style="flex-wrap:wrap"
            v-if="contextData.context && nAnchors">
            Showing genomic context of <b class="f-bold mx-1">[[ nAnchors ]] representative genes</b> spanning
