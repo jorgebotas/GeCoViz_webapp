@@ -140,6 +140,12 @@
                         </ul>
                         
                     </div>
+                    <div  class="card-footer btn btn-primary mx-2 my-1 f-bold d-inline"
+                             @click="visualizeselection()"
+                             :disabled="nselected < 1">
+                            visualize genomic context
+                            <i class="fas fa-chevron-right ml-2"></i>
+                    </div>
                     <!--<div class="card-header d-flex"-->
                          <!--style="min-height:70px; flex-wrap:wrap"> -->
                         <!--<b>Selected: [[ nSelected ]] genes from [[ selectedTaxids.length ]] genomes</b>-->
