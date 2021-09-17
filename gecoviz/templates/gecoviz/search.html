@@ -94,7 +94,11 @@
                 </div>
                 <div class="col-lg-6 col-sm-12 sunburst-selection card">
                     <div class="card-header h3 bg-indigo-lt f-bold mx-auto">
-                        Selected species ([[ nSelected ]] / 250)
+                        Selected species ([[ nSelected ]] / 250) <button class="btn btn-clean d-inline"
+                             @click="deselectAll()"
+                             :disabled="nSelected < 1">
+                            Deselect all
+                        </button>
                     </div>
                     <div class="card-body">
                         <ul>
