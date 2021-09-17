@@ -282,7 +282,7 @@ var vueapp = new Vue({
                     .attr("class", () => "dropdown-item" 
                         + (nHits + this.nSelected > this.maxSelected ? " disabled" : ""))
                     .on("click", () => this.selectTaxa(d, "", true))
-                    .html(`Add <b class="mx-1 f-bold"> all ${genomes.length} genomes</b>`);
+                    .html(`Add <b class="mx-1 f-bold"> all ${genomes.length} genomes</b> (${nHits} genes)`);
 
                 if (!d.descendantRanks)
                     d.descendantRanks = this.getDescendantRanks(d);
