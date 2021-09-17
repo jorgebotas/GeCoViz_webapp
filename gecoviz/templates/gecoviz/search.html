@@ -40,49 +40,49 @@
    <div id="sunburst-selector-container" 
         :style="{ 'display': (isScreenLarge || show === 'sunburst') ? 'block' : 'none',
                   'width': isScreenLarge ? '40%' : '100%'  }">
-        <div class="mt-0"
-            :class="{ 'd-flex' : (!isScreenLarge || !(contextData.context && nAnchors)) }"
+        <div class="mt-0 row"
             :style="{ 'visibility': allItems.length ? 'visible' : 'hidden' }">
-            <div class="sunburst-searchbar mb-3">
-                <div class="ml-auto" style='min-width:250px; max-width: 500px;'>
-                    <label class="h6 text-muted f-bold ml-2">Search within Taxonomy Sunburst</label>
-                    <div class="input-icon" 
-                         style='min-width:250px; max-width: 500px;'>
-                        <input type="text"
-                               class="form-control text-left"
-                               id="taxa-search"
-                               @keydown="updateSearch"
-                               placeholder="Search..."/>
-                        <ul class="dropdown-menu suggestion-menu" 
-                          role="menu" id="taxa-suggestions"
-                          style="top: 100% !important"
-                          :style="{ 'visibility': searchedTaxa.length ? 'visible' : 'hidden' }">
-                          <li class="dropdown-item"
-                              v-for="t in searchedTaxa"
-                              @click="showTaxaPopup(t)">
-                              <b><span class="badge f-bold mr-1"
-                                      :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
-                                      [[ t.data.rank ]]
-                                  </span>
-                              <b class="f-bold">
-                                  [[ t.data.tname ]]
-                              </b></b>
-                          </li>
-                        </ul>
-                        <span class="input-icon-addon search-icon">
-                            <i class="fa fa-search"
-                               aria-hidden="true">
-                            </i>
-                        </span>
+            <div class="sunburst-and-searchbar mb-4 col-md-6 col-sm-12">
+                <div class="sunburst-searchbar mb-3">
+                    <div class="ml-auto" style='min-width:250px; max-width: 500px;'>
+                        <label class="h6 text-muted f-bold ml-2">Search within Taxonomy Sunburst</label>
+                        <div class="input-icon" 
+                             style='min-width:250px; max-width: 500px;'>
+                            <input type="text"
+                                   class="form-control text-left"
+                                   id="taxa-search"
+                                   @keydown="updateSearch"
+                                   placeholder="Search..."/>
+                            <ul class="dropdown-menu suggestion-menu" 
+                              role="menu" id="taxa-suggestions"
+                              style="top: 100% !important"
+                              :style="{ 'visibility': searchedTaxa.length ? 'visible' : 'hidden' }">
+                              <li class="dropdown-item"
+                                  v-for="t in searchedTaxa"
+                                  @click="showTaxaPopup(t)">
+                                  <b><span class="badge f-bold mr-1"
+                                          :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
+                                          [[ t.data.rank ]]
+                                      </span>
+                                  <b class="f-bold">
+                                      [[ t.data.tname ]]
+                                  </b></b>
+                              </li>
+                            </ul>
+                            <span class="input-icon-addon search-icon">
+                                <i class="fa fa-search"
+                                   aria-hidden="true">
+                                </i>
+                            </span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="sunburst-selector mb-4 ml-1"
-                 :class="{ 'w-100' : isScreenLarge, 'w-50' : !isScreenLarge }"
-                 style="z-index: 1">
+                <div class="sunburst-selector ml-1"
+                     style="z-index: 1">
+                </div>
             </div>
 
-            <div :class="{ 'w-100' : isScreenLarge, 'w-50' : !isScreenLarge }">
+            <div class="col-md-6 col-sm-12 sunburst-selection">
                 <div class="card-header d-flex"
                      style="min-height:70px; flex-wrap:wrap"> 
                     <b>Selected: [[ nSelected ]] genes from [[ selectedTaxids.length ]] genomes</b>
