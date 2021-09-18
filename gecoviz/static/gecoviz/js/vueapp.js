@@ -235,7 +235,7 @@ var vueapp = new Vue({
                     return n
                 return getParent(parent, stop, count + 1)
             }
-            function show(n) {
+            const show = (n) => {
                 this.sunBurst.highlightPath(n);
                 this.showSunburstPopup(undefined, n);
             }
