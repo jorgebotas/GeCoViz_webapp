@@ -107,6 +107,12 @@ function buildTaxaHierarchy(data) {
     const hierarchy = buildHierarchy(data);
     return partition(hierarchy);
 }
+    
+const sunBurstDepth = 4;
+function arcVisible(d) {
+  return d.y1 <= (sunBurstDepth + 1) && d.y0 >= 1 && d.x1 > d.x0;
+}
+
 
 
 var vueapp = new Vue({
@@ -229,11 +235,17 @@ var vueapp = new Vue({
                     return n
                 return getParent(parent, stop, count + 1)
             }
-            this.sunBurst.update(getParent(d, 4));
-            setTimeout(() => {
-                this.sunBurst.highlightPath(d);
-                this.showSunburstPopup(undefined, d);
-            }, 1100)
+            function show(n) {
+                this.sunBurst.highlightPath(n);
+                this.showSunburstPopup(undefined, n);
+            }
+
+            if (arcVisible(d))
+                show(d);
+            else {
+                this.sunBurst.update(getParent(d, sunBurstDepth));
+                setTimeout(() => show(d), 1200);
+            };
         },
 
         showSunburstPopup: function(event, d) {
@@ -668,7 +680,7 @@ var vueapp = new Vue({
             if (d3.selectAll(".sunburst-selector *").nodes().length)
                 return
             const taxonomy = this.allItems.map(d => [d.lineage, d.value]);
-            this.sunBurst = SeqSunburst(taxonomy, 600, 4, true, this.showSunburstPopup, this.root)
+            this.sunBurst = SeqSunburst(taxonomy, 600, sunBurstDepth, true, this.showSunburstPopup, this.root)
                 .draw(".sunburst-selector");
         },
 
