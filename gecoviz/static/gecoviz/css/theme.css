@@ -13106,11 +13106,11 @@ button:focus {
   background: rgba(132, 144, 215, 0.2);
   border-color: #6574cd; }
 
-.split-btn-group :first-child {
+.split-btn-group > :first-child {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0; }
 
-.split-btn-group :last-child {
+.split-btn-group > :last-child {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0; }
 
