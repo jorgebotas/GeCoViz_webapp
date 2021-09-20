@@ -458,7 +458,7 @@ class BreadCrumb {
                 this.maxSeqLength*this.polygonWidth
                 + this.tipWidth
                 + this.polygonPadding)
-            .attr('height', this.polygonHeight + this.fieldsHeight);
+            .attr('height', 2 * (this.polygonHeight + this.fieldsHeight));
         if (seq)
             this.update(seq)
     }
@@ -484,6 +484,12 @@ class BreadCrumb {
         return points.join(" ");
     }
 
+    polygonTransform(i) {
+        const x = this.polygonWidth * ( i % 6 );
+        const y = i >= 6 ? (this.polygonHeight + this.fieldsHeight) : 0;
+        return `translate(${x}, ${y})`
+    }
+
     updatePolygons() {
         const breadcrumbs = this.container
             .selectAll('.breadcrumb-g')
@@ -494,8 +500,7 @@ class BreadCrumb {
             .attr('class', 'breadcrumb-g')
             .style('cursor', 'pointer')
             .style('text-align', 'center')
-            .attr('transform', (_, i) =>
-                `translate(${this.polygonWidth*i}, 0)`);
+            .attr('transform', (_, i) => this.polygonTransform(i));
         // Polygon
         breadcrumbsEnter
             .append('polygon')
