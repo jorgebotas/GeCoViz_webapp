@@ -588,7 +588,7 @@ var vueapp = new Vue({
                 clearTimeout(this.searchTimeout.query);
            this.searchTimeout.query = setTimeout(() => {
                 this.searchType = this.searchTypeChoices.getValue(true);
-                const search = $("#query-search").val();
+                const search = $("#query-search").val().replace("ENOG50", "");
 
                 if (search.length < 3) {
                     this.suggestions.query = [];
