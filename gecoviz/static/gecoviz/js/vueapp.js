@@ -289,7 +289,7 @@ var vueapp = new Vue({
                     .append("li")
                     .attr("class", "dropdown-item")
                     .on("click", () => this.selectTaxa(d, d.data.rank))
-                    .html("Add <b class='mx-1 f-bold'>1 representative</b> genome (random)");
+                    .html("Add <b class='mx-1 f-bold'>1 genome</b> (random)");
 
                 const genomes = this.allItems.filter(it => it.lineage.includes(d.data.lineage));
                 const nHits = genomes.reduce((total, it) => total = total + it.value, 0);
@@ -310,7 +310,7 @@ var vueapp = new Vue({
                         .append("li")
                         .attr("class", () => "dropdown-item" + (disabled ? " disabled" : ""))
                         .on("click", () => this.selectLineages(lineages, d, rank))
-                        .html(`Add representatives for <b class="mx-1 f-bold">${lineages.length} ${rank}</b>`)
+                        .html(`Add representative genomes from <b class="mx-1 f-bold">${lineages.length} ${rank}</b>`)
                 });
 
                 // popper arrow
@@ -455,12 +455,14 @@ var vueapp = new Vue({
                 this.selectedTaxids = [];
                 this.searchedTaxa = [];
                 this.contextData.context = [];
-                this.query.name = newQuery;
+                this.query.name = newQuery.replace("ENOG50", "");
                 d3.selectAll(".sunburst-selector *").remove();
             }
             $("#query-search").val(this.query.name);
             this.searchType = searchType || this.searchTypeChoices.getValue(true);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
+            if (["ogs", "kos"].includes(this.searchType))
+                this.query.name = this.query.name.toUpperCase();
 
             const params = {
                 query: this.query.name,
@@ -881,7 +883,7 @@ var vueapp = new Vue({
         const taxids = urlParams['taxids'];
 
         if (searchType && query) {
-            this.query.name = query;
+            this.query.name = query.replace("ENOG50", "");
             this.searchType = searchType;
             
             $("#query-search").val(this.query.name);
