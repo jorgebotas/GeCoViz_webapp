@@ -34,7 +34,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
     const separator = ";";
     function buildRoot(data) {
         const buildHierarchy = data => {
-            const root = { name: "root", children: [] };
+            const root = { name: "All organisms", children: [] };
             for (let i = 0; i < data.length; i++) {
               const sequence = data[i][0];
               const size = +data[i][1];
