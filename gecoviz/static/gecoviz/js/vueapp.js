@@ -55,7 +55,7 @@ function getLineage(d) {
 const separator = ";";
 function buildTaxaHierarchy(data) {
     const buildHierarchy = data => {
-        const root = { name: "root", children: [] };
+        const root = { name: "All organisms", children: [] };
         for (let i = 0; i < data.length; i++) {
           const sequence = data[i][0];
           const id = +data[i][1]
