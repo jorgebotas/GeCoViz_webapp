@@ -71,6 +71,7 @@
               style="padding-top:0 !important; padding-bottom:0 !important">
             <a class="nav-link f-bold h-100 mt-1 pt-1" 
                id="sunburst-navlink"
+               :class="{ disabled : !query.length }"
                 @click="toggleSunburstSelector()"
                 style="border-bottom-color:transparent;">Taxonomy selector</a>
           </li>
