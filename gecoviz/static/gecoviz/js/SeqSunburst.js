@@ -86,7 +86,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
         return partition(hierarchy);
     }
 
-    const radius = width / ((depth + 1) * 4);
+    const radius = width / ((depth + 1) * 2);
     // Arc function
     const arc = d3.arc()
       .startAngle(d => d.x0)
@@ -138,7 +138,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
     function buildSunburst() {
 
         const svg = container.append("svg")
-            .attr("viewBox", `${semiCircle ? 0 : -width/2} ${-width/2} ${width/2} ${width/2}`)
+            .attr("viewBox", `${semiCircle ? 0 : -width/2} ${-width/2} ${width} ${width}`)
             .style("max-width", "60vh")
             .attr("class", "seq-sunburst")
             .style("overflow", "visible")
