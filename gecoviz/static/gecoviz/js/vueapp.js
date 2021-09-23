@@ -387,7 +387,7 @@ var vueapp = new Vue({
 
         copyUrl: function() {
             if (navigator.clipboard) {
-                navigator.clipboard.writeText(location.href);
+                navigator.clipboard.writeText(window.location.href);
             }
          },
 
