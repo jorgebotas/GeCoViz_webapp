@@ -581,14 +581,13 @@ var vueapp = new Vue({
 
             return levels
         },
-         copyUrl: function() {
+        copyUrl: function() {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(location.href);
             }
             else {
             }
-
-         }
+         },
 
         // Suggestions
         updateSuggestions: function() {
