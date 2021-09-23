@@ -86,7 +86,7 @@ var SeqSunburst = function(unformattedData, width, depth=2,
         return partition(hierarchy);
     }
 
-    const radius = width / ((depth + 1) );
+    const radius = width / ((depth + 1) * 4);
     // Arc function
     const arc = d3.arc()
       .startAngle(d => d.x0)
