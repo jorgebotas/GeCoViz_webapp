@@ -155,7 +155,7 @@ var vueapp = new Vue({
         kos: d3.hierarchy(kos),
     },
     methods: {
-        // HOME PAGE
+        // HME PAGE
         showKO: function(ko) {
             ko._show = !ko._show;
             const kos = this.kos;
