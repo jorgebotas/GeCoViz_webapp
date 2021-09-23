@@ -385,6 +385,12 @@ var vueapp = new Vue({
             $("#full-screen .modal").modal("show")
         },
 
+        copyUrl: function() {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(location.href);
+            }
+         },
+
         // Server interaction
         updateSearchParams: function(params, replace=true) {
             const url = new URL(location);
@@ -581,13 +587,6 @@ var vueapp = new Vue({
 
             return levels
         },
-        copyUrl: function() {
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(location.href);
-            }
-            else {
-            }
-         },
 
         // Suggestions
         updateSuggestions: function() {
