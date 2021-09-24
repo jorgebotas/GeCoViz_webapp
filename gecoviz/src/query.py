@@ -147,6 +147,7 @@ def get_taxonomy(queries):
     taxa = []
     for taxid, n in counter.items():
         lineage = get_lineage(taxid)
+        print(lineage)
         taxa.append({ 
             'id': taxid,
             'lineage': ";".join(lineage),
