@@ -156,7 +156,9 @@ def get_taxonomy(queries):
     return taxa
 
 def get_tax_levelname(taxid):
-    return og_level_name_dict.get(taxid, "__").split("__")[1]
+    name = og_level_name_dict.get(taxid, "__").split("__")
+    if name:
+        name += f' ({taxid})'
 
 def get_ko_desc(ko):
     return ko_dict.get(ko, "")
