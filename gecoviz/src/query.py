@@ -233,8 +233,13 @@ def get_emapper_matches(field, query, representative_only=True, retrieved_field=
     else:
         query = { field: query }
 
+    if field == "pfam":
+        col = col_pfam
+    else:
+        col = col_emapper
+
     start = time.time()
-    matches = db.emapper2.find(query, { retrieved_field: 1 })
+    matches = col.find(query, { retrieved_field: 1 })
     # matches = list(col_emapper.aggregate([
         # { '$match': { field: query} },
         # { '$project': { 'gene' : '$q' } },
