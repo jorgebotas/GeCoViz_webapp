@@ -38,7 +38,9 @@ tax_level_dict = get_pickle(STATIC_PATH / "pickle/TAX_LEVELS.pickle")
 kpath_dict = get_pickle(STATIC_PATH / "pickle/KEGG_DESCRIPTION.pickle")
 ko_dict = get_pickle(STATIC_PATH / "pickle/KO_DESCRIPTION.pickle")
 og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
+og_level_name_dict = get_pickle(STATIC_PATH / "pickle/e5_og_level_names.pickle")
 og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
+lineage_dict = get_pickle(STATIC_PATH / "pickle/progenomes2_1_reps_lineage.pickle")
 representative_genomes = get_list(STATIC_PATH / "txt/representative_genomes.txt")
 
 
@@ -136,17 +138,7 @@ def get_context(field, query, taxids):
 
 
 def get_lineage(taxid):
-    lineage = ncbi.get_lineage(taxid)[1:]
-
-    old_stdout = sys.stdout # backup current stdout
-    sys.stdout = open(os.devnull, "w")
-
-    taxid2name = ncbi.get_taxid_translator(lineage)
-    ranks = ncbi.get_rank(lineage)
-
-    sys.stdout = old_stdout # reset old stdout
-
-    return [ f'{ranks[tid]}__{taxid2name[tid].replace(".", "")}' for tid in lineage ][1:]
+    return lineage_dict.get(taxid[1:], [])
 
 
 def get_taxonomy(queries):
@@ -164,17 +156,7 @@ def get_taxonomy(queries):
     return taxa
 
 def get_tax_levelname(taxid):
-    old_stdout = sys.stdout # backup current stdout
-    sys.stdout = open(os.devnull, "w")
-
-    lineage = list(ncbi.get_taxid_translator(taxid).values())
-
-    sys.stdout = old_stdout # reset old stdout
-
-    if len(lineage) > 0:
-        return lineage[-1]
-    else:
-        return ""
+    return og_level_name_dict.get(taxid, "")
 
 def get_ko_desc(ko):
     return ko_dict.get(ko, "")
