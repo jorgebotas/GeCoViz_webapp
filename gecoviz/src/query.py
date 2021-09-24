@@ -159,6 +159,7 @@ def get_tax_levelname(taxid):
     name = og_level_name_dict.get(taxid, "__").split("__")
     if name:
         name += f' ({taxid})'
+    return name
 
 def get_ko_desc(ko):
     return ko_dict.get(ko, "")
