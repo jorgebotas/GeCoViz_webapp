@@ -18,6 +18,8 @@ def suggestions(request, field, query):
         path = PICKLE_PATH / 'KO_DESCRIPTION.pickle'
     elif field == "pname":
         path = PICKLE_PATH / 'PNAME_DESCRIPTION.pickle'
+    elif field == "pfam":
+        path = PICKLE_PATH / 'PFAM.pickle'
     else:
         return HttpResponseNotFound()
 
