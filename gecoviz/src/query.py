@@ -138,7 +138,7 @@ def get_context(field, query, taxids):
 
 
 def get_lineage(taxid):
-    return lineage_dict.get(taxid[1:], [])
+    return lineage_dict.get(int(taxid), ["", ])[1:]
 
 
 def get_taxonomy(queries):
