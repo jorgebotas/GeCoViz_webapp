@@ -12,6 +12,7 @@ import time
 client = MongoClient('10.0.3.1')
 db = client.progenomes2
 col_emapper = db.emapper2
+col_pfam = db.pfam
 col_neighs = db.neighs
 col_proteins = db.proteins
 ncbi = NCBITaxa()
@@ -129,7 +130,7 @@ def get_context(field, query, taxids):
 
     start = time.time()
     all_genes = [ g["gene"] for g in context ]
-    functional_info = get_emapper_annotation(all_genes)
+    functional_info = get_functional_annotation(all_genes)
     print(f'get functional_info:  {time.time() - start}')
 
     context = [ { **gene, **functional_info.get(gene["gene"], {}) }
@@ -174,11 +175,15 @@ def get_og_desc(og):
     return og_dict.get(og, "")
 
 
-def get_emapper_annotation(genes):
+def get_functional_annotation(genes):
     start = time.time()
     matches = list(col_emapper.find({ "q": { "$in": genes } }))
     print(f'emapper in functional_info:  {time.time() - start}')
 
+    start = time.time()
+    pfam = { m["q"]: m["pfam"] for m in col_pfam.find({ "q": { "$in": genes } }, 
+                                                      { q: 1, pfam: 1 }) }
+    print(f'pfam in functional_info:  {time.time() - start}')
     start = time.time()
 
     annotation = {}
@@ -202,7 +207,7 @@ def get_emapper_annotation(genes):
             } for og in set(m.get("ogs", [])) ]
 
         pfam = [ { "id": p, "description": get_pfam_desc(p) }
-                for p in m.get("pfam", []) ]
+                for p in pfam.get(gene, []) ]
 
         annotation[gene] = { 
                 "Gene name": name,
