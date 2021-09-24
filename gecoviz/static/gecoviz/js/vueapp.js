@@ -481,7 +481,7 @@ var vueapp = new Vue({
             await fetch(API_BASE_URL + `/description/${this.searchType}/${this.query.name}/`)
                  .then(response => response.json())
                  .then(data => this.query.description = data.description)
-                 .catch();
+                 .catch(() => {});
 
             await fetch(API_BASE_URL + `/emapper/${this.searchType}/${this.query.name}/`)
                  .then(response => response.json())
