@@ -234,18 +234,19 @@ def get_emapper_matches(field, query, representative_only=True, retrieved_field=
         mquery = { field: query }
 
     if field == "pfam":
-        matches = col_pfam.find({ field: query },
-                                { retrieved_field: 1 })
+        matches = [ m["q"] for m in col_pfam.find({ field: query },
+                                                  { "q": 1 }) ]
     else:
         start = time.time()
         matches = col_emapper.find(mquery, { retrieved_field: 1 })
+        matches = [ m[retrieved_field] for m in matches ]
     # matches = list(col_emapper.aggregate([
         # { '$match': { field: query} },
         # { '$project': { 'gene' : '$q' } },
         # # { '$group' : { '_id' : "$genome" } } 
         # ]))
 
-    return list( m[retrieved_field] for m in matches )
+    return matches
 
 
 def get_functional_matches(field, query):
