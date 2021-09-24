@@ -43,6 +43,7 @@ og_level_name_dict = get_pickle(STATIC_PATH / "pickle/e5_og_level_names.pickle")
 og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
 lineage_dict = get_pickle(STATIC_PATH / "pickle/progenomes2_1_reps_lineage.pickle")
 representative_genomes = get_list(STATIC_PATH / "txt/representative_genomes.txt")
+pnames = get_list(STATIC_PATH / "txt/pnames.txt")
 
 
 def get_sequence(query, fasta=True):
