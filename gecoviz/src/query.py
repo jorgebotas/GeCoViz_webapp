@@ -174,6 +174,8 @@ def get_og_level(og):
 def get_og_desc(og):
     return og_dict.get(og, "")
 
+def get_pfam_desc(pfam):
+    return ""
 
 def get_functional_annotation(genes):
     start = time.time()
