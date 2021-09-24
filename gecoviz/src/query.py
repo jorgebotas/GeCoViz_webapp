@@ -138,8 +138,6 @@ def get_context(field, query, taxids):
 
 
 def get_lineage(taxid):
-    print(lineage_dict)
-    print(taxid)
     return lineage_dict.get(str(taxid), ["", ])[1:]
 
 
