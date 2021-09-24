@@ -230,11 +230,14 @@ def get_emapper_matches(field, query, representative_only=True, retrieved_field=
         # # { '$group' : { '_id' : "$genome" } } 
         # ]))
 
-    return ( m[retrieved_field] for m in matches )
+    return list( m[retrieved_field] for m in matches )
 
 
 def get_functional_matches(field, query):
     start = time.time()
     emapper = get_emapper_matches(field, query, True, "g")
     print(f'list:  {time.time() - start}')
-    return get_taxonomy(emapper)
+    start = time.time()
+    taxonomy = get_taxonomy(emapper)
+    print(f'taxonomy:  {time.time() - start}')
+    return taxonomy
