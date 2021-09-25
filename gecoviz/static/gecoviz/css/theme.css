@@ -13114,6 +13114,7 @@ button:focus {
   background-color: #d63939; }
 
 .btn-danger:hover {
+  color: white;
   background-color: #b62626; }
 
 .btn-danger:focus {
