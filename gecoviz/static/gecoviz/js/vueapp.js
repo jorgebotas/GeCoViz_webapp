@@ -741,7 +741,7 @@ var vueapp = new Vue({
             this.GeCoViz = await GeCoViz(selector)
                 .treeData(newick, newickFields[1], newickFields)
                 .contextData(context)
-                .nSide(4)
+                .nSide(4, 4)
                 .scaleDist()
                 .zoom(0.3)
                 .viewPort(document.querySelector(selector))
