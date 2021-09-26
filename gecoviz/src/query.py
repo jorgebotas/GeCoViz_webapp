@@ -1,6 +1,6 @@
 from collections import defaultdict, Counter
 from django.conf import settings
-from ete3 import NCBITaxa
+from ete3 import NCBITaxa, PhyloTree
 from ete4 import Tree
 import json
 import pickle
@@ -65,9 +65,12 @@ def get_newick(field, query, taxids):
     if len(taxids) < 2:
         tree = Tree(name=taxids[0])
     else:
-        tree = ncbi.get_topology(taxids)
+        start = time.time()
+        tree = PhyloTree(ncbi.get_topology(taxids).write())
+        tree.annotate_ncbi_taxa()
+        print(f'Phylotree and NCBI annotation {time.time() - start}')
 
-    all_taxids = [ m.split(".")[0] for m in emapper_matches ]
+    # all_taxids = [ m.split(".")[0] for m in emapper_matches ]
     # assert all(taxid in all_taxids for taxid in taxids)
     for l in tree:
         if l.name not in taxids:
@@ -76,6 +79,10 @@ def get_newick(field, query, taxids):
     print(f'Taxids: {len(taxids)}   =====  Tree: {len(tree)}')
     print(f'Taxids: {len(taxids)}   =====  members: {len(members_in_taxid.keys())}')
     print(f'Taxid_lineages: {len(taxids)}   =====  {len(taxid_lineages.keys())}')
+
+    for n in tree.traverse():
+        if not n.is_leaf():
+            n.name = f'{n.rank or "no rank"}__{n.sci_name}'
 
     for leaf in tree.get_leaves():
         taxid = leaf.name
@@ -86,12 +93,13 @@ def get_newick(field, query, taxids):
             child_name = children[0].replace(".", "")
             leaf.name = ".".join([ child_name, last_tax_level, *lineage ])
         else:
+            leaf.name = f'{n.rank or "no rank"}__{n.sci_name}'
             for ch in children:
                 child_name = ch.replace(".", "")
                 leaf.add_child(name=".".join([ child_name, last_tax_level, *lineage ]))
     
     print(f'Matches: {sum(len(m) for m in members_in_taxid.values())}\nTree: {len(tree)}')
-    return tree.write()
+    return tree.write(features=["name"])
 
 
 def get_genome_info(field, query, taxids):
