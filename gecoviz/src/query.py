@@ -100,6 +100,7 @@ def get_newick(field, query, taxids):
                 for child in node.children[1:]:
                     lineage = [ l for i, l in enumerate(lineage) 
                                 if l == child.lineage[i] ]
+            print(lineage)
             last_tax_level = lineage[-1].replace("__", "_")
             node.name = ".".join([ "", last_tax_level, *lineage ])
 
