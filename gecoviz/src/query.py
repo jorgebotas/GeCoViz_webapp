@@ -84,7 +84,7 @@ def get_newick(field, query, taxids):
         n.taxid = n.name
         n.name = f'{n.rank or "no rank"}__{n.sci_name}'
     
-    # print(tree.write(features=["name"]))
+    print(tree.write(features=["name"]))
 
     for leaf in tree.get_leaves():
         taxid = leaf.taxid
