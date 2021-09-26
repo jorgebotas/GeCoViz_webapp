@@ -99,7 +99,7 @@ def get_newick(field, query, taxids):
         else:
             lineage = node.children[0].lineage
             if len(children) > 1:
-                for child in node.children[1:]:
+                for child in node.children:
                     lineage = [ lineage[i] for i in range(min(len(lineage), len(child.lineage)))
                                 if lineage[i] == child.lineage[i] ]
                     print(lineage, child.lineage)
