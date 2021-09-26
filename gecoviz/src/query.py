@@ -99,7 +99,9 @@ def get_newick(field, query, taxids):
                 leaf.add_child(name=".".join([ child_name, last_tax_level, *lineage ]))
     
     print(f'Matches: {sum(len(m) for m in members_in_taxid.values())}\nTree: {len(tree)}')
-    return tree.write(features=["name"])
+    t = tree.write(features=["name"])
+    print(t)
+    return t
 
 
 def get_genome_info(field, query, taxids):
