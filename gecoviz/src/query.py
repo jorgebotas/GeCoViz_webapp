@@ -95,14 +95,12 @@ def get_newick(field, query, taxids):
             leaf.name = ".".join([ child_name, last_tax_level, *lineage ])
         else:
             leaf.name = f'{n.rank or "no rank"}__{n.sci_name}'
-            print(leaf.name)
             for ch in children:
                 child_name = ch.replace(".", "")
                 leaf.add_child(name=".".join([ child_name, last_tax_level, *lineage ]))
     
     print(f'Matches: {sum(len(m) for m in members_in_taxid.values())}\nTree: {len(tree)}')
     t = tree.write(features=["name"])
-    print(t)
     return t
 
 
