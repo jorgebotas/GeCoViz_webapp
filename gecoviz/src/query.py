@@ -66,7 +66,7 @@ def get_newick(field, query, taxids):
         tree = Tree(name=taxids[0])
     else:
         start = time.time()
-        tree = ncbi.get_topology(taxids).write()
+        tree = ncbi.get_topology(taxids)
         print(f'Phylotree and NCBI annotation {time.time() - start}')
 
     # all_taxids = [ m.split(".")[0] for m in emapper_matches ]
