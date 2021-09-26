@@ -95,6 +95,7 @@ def get_newick(field, query, taxids):
             leaf.name = ".".join([ child_name, last_tax_level, *lineage ])
         else:
             leaf.name = f'{n.rank or "no rank"}__{n.sci_name}'
+            print(leaf.name)
             for ch in children:
                 child_name = ch.replace(".", "")
                 leaf.add_child(name=".".join([ child_name, last_tax_level, *lineage ]))
