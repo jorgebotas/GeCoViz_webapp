@@ -66,8 +66,7 @@ def get_newick(field, query, taxids):
         tree = Tree(name=taxids[0])
     else:
         start = time.time()
-        tree = PhyloTree(ncbi.get_topology(taxids).write())
-        tree.annotate_ncbi_taxa()
+        tree = ncbi.get_topology(taxids).write()
         print(f'Phylotree and NCBI annotation {time.time() - start}')
 
     # all_taxids = [ m.split(".")[0] for m in emapper_matches ]
@@ -80,25 +79,30 @@ def get_newick(field, query, taxids):
     print(f'Taxids: {len(taxids)}   =====  members: {len(members_in_taxid.keys())}')
     print(f'Taxid_lineages: {len(taxids)}   =====  {len(taxid_lineages.keys())}')
 
-    for n in tree.traverse():
-        n.taxid = n.name
-        n.name = f'{n.rank or "no rank"}__{n.sci_name}'
-    
-    print(tree.write(features=["name"]))
-
-    for leaf in tree.get_leaves():
-        taxid = leaf.taxid
-        children = members_in_taxid[taxid]
-        lineage = taxid_lineages.get(taxid, [""])
-        last_tax_level = lineage[-1].replace("__", "_")
-        if len(children) == 1:
-            child_name = children[0].replace(".", "")
-            leaf.name = ".".join([ child_name, last_tax_level, *lineage ])
+    for node in tree.traverse("postorder"):
+        if node.is_leaf():
+            taxid = node.name
+            children = members_in_taxid[taxid]
+            lineage = taxid_lineages.get(taxid, [""])
+            last_tax_level = lineage[-1].replace("__", "_")
+            if len(children) == 1:
+                child_name = children[0].replace(".", "")
+                node.name = ".".join([ child_name, last_tax_level, *lineage ])
+            else:
+                node.name = f'{n.rank or "no rank"}__{n.sci_name}'
+                for ch in children:
+                    child_name = ch.replace(".", "")
+                    child = node.add_child(name=".".join([ child_name, last_tax_level, *lineage ]))
+                    child.lineage = lineage
         else:
-            leaf.name = f'{n.rank or "no rank"}__{n.sci_name}'
-            for ch in children:
-                child_name = ch.replace(".", "")
-                leaf.add_child(name=".".join([ child_name, last_tax_level, *lineage ]))
+            lineage = [node.children[0].lineage]
+            if len(children) > 1:
+                for child in node.children[1:]:
+                    lineage = [ l for l, i in enumerate(lineage) 
+                                if l == child.lineage[i] ]
+            last_tax_level = lineage[-1].replace("__", "_")
+            node.name = ".".join([ "", last_tax_level, *lineage ])
+
     
     print(f'Matches: {sum(len(m) for m in members_in_taxid.values())}\nTree: {len(tree)}')
     t = tree.write(features=["name"])
