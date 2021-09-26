@@ -81,12 +81,13 @@ def get_newick(field, query, taxids):
     print(f'Taxid_lineages: {len(taxids)}   =====  {len(taxid_lineages.keys())}')
 
     for n in tree.traverse():
-        if not n.is_leaf():
-            n.name = f'{n.rank or "no rank"}__{n.sci_name}'
-            print(n.name)
+        n.taxid = n.name
+        n.name = f'{n.rank or "no rank"}__{n.sci_name}'
+    
+    print(n.write(features=["name"]))
 
     for leaf in tree.get_leaves():
-        taxid = leaf.name
+        taxid = leaf.taxid
         children = members_in_taxid[taxid]
         lineage = taxid_lineages.get(taxid, [""])
         last_tax_level = lineage[-1].replace("__", "_")
@@ -95,7 +96,6 @@ def get_newick(field, query, taxids):
             leaf.name = ".".join([ child_name, last_tax_level, *lineage ])
         else:
             leaf.name = f'{n.rank or "no rank"}__{n.sci_name}'
-            print(leaf.name)
             for ch in children:
                 child_name = ch.replace(".", "")
                 leaf.add_child(name=".".join([ child_name, last_tax_level, *lineage ]))
