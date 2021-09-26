@@ -95,7 +95,7 @@ def get_newick(field, query, taxids):
                     child = node.add_child(name=".".join([ child_name, last_tax_level, *lineage ]))
                     child.lineage = lineage
         else:
-            lineage = [node.children[0].lineage]
+            lineage = node.children[0].lineage
             if len(children) > 1:
                 for child in node.children[1:]:
                     lineage = [ l for l, i in enumerate(lineage) 
