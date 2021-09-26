@@ -62,12 +62,11 @@ def get_newick(field, query, taxids):
             members_in_taxid[taxid].append(match)
 
     taxid_lineages = { t: get_lineage(t) for t in taxids }
+    start = time.time()
     if len(taxids) < 2:
         tree = Tree(name=taxids[0])
     else:
-        start = time.time()
         tree = ncbi.get_topology(taxids)
-        print(f'Phylotree and NCBI annotation {time.time() - start}')
 
     # all_taxids = [ m.split(".")[0] for m in emapper_matches ]
     # assert all(taxid in all_taxids for taxid in taxids)
@@ -99,14 +98,14 @@ def get_newick(field, query, taxids):
         else:
             lineage = node.children[0].lineage
             if len(children) > 1:
-                for child in node.children:
+                for child in node.children[1:]:
                     lineage = [ lineage[i] for i in range(min(len(lineage), len(child.lineage)))
                                 if lineage[i] == child.lineage[i] ]
-                    print(lineage, child.lineage)
             last_tax_level = lineage[-1].replace("__", "_")
             node.name = ".".join([ "", last_tax_level, *lineage ])
             node.lineage = lineage
 
+    print(f'Tree and NCBI annotation {time.time() - start}')
     
     print(f'Matches: {sum(len(m) for m in members_in_taxid.values())}\nTree: {len(tree)}')
     t = tree.write(features=["name"])
