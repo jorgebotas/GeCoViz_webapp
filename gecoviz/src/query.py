@@ -96,6 +96,7 @@ def get_newick(field, query, taxids):
                     child.lineage = lineage
         else:
             lineage = node.children[0].lineage
+            print(node.children)
             if len(children) > 1:
                 for child in node.children[1:]:
                     lineage = [ l for i, l in enumerate(lineage) 
