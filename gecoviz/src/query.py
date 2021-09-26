@@ -83,6 +83,7 @@ def get_newick(field, query, taxids):
     for n in tree.traverse():
         if not n.is_leaf():
             n.name = f'{n.rank or "no rank"}__{n.sci_name}'
+            print(n.name)
 
     for leaf in tree.get_leaves():
         taxid = leaf.name
