@@ -88,8 +88,10 @@ def get_newick(field, query, taxids):
             if len(children) == 1:
                 child_name = children[0].replace(".", "")
                 node.name = ".".join([ child_name, last_tax_level, *lineage ])
+                node.lineage = lineage
             else:
                 node.name = ".".join([ "", last_tax_level, *lineage ])
+                node.lineage = lineage
                 for ch in children:
                     child_name = ch.replace(".", "")
                     child = node.add_child(name=".".join([ child_name, last_tax_level, *lineage ]))
