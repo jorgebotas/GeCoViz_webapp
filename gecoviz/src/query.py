@@ -249,25 +249,29 @@ def get_functional_annotation(genes):
 
 def get_emapper_matches(field, query, representative_only=True, retrieved_field="q"):
 
-    if representative_only:
-        mquery = { '$and': [{ field: query}, {'g': {'$in': representative_genomes}} ]}
-    else:
-        mquery = { field: query }
+    collection = f'repgenomes_{field}'
+    matches = collection.find({ "n": query })
+    return [ m[retrieved_field] for m in matches ]
 
-    if field == "pfam":
-        matches = [ m["q"] for m in col_pfam.find({ field: query },
-                                                  { "q": 1 }) ]
-    else:
-        start = time.time()
-        matches = col_emapper.find(mquery, { retrieved_field: 1 })
-        matches = [ m[retrieved_field] for m in matches ]
+    # if representative_only:
+        # mquery = { '$and': [{ field: query}, {'g': {'$in': representative_genomes}} ]}
+    # else:
+        # mquery = { field: query }
+
+    # if field == "pfam":
+        # matches = [ m["q"] for m in col_pfam.find({ field: query },
+                                                  # { "q": 1 }) ]
+    # else:
+        # start = time.time()
+        # matches = col_emapper.find(mquery, { retrieved_field: 1 })
+        # matches = [ m[retrieved_field] for m in matches ]
     # matches = list(col_emapper.aggregate([
         # { '$match': { field: query} },
         # { '$project': { 'gene' : '$q' } },
         # # { '$group' : { '_id' : "$genome" } } 
         # ]))
 
-    return matches
+    # return matches
 
 
 def get_functional_matches(field, query):
