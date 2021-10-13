@@ -140,6 +140,10 @@ def get_context(field, query, taxids):
     matches = col_neighs.find({ 'genes.g': { '$in': queries } })
     print(f'get neighs:  {time.time() - start}')
 
+    start = time.time()
+    matches = list(matches)
+    print(f'get neighs docs:  {time.time() - start}')
+
     count = 0
     nside = 10
     context = []
