@@ -249,7 +249,7 @@ def get_functional_annotation(genes):
 
 def get_emapper_matches(field, query, representative_only=True, retrieved_field="q"):
 
-    collection = f'repgenomes_{field}'
+    collection = db[f'repgenomes_{field}']
     matches = collection.find({ "n": query })
     return [ m[retrieved_field] for m in matches ]
 
