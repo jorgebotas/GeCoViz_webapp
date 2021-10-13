@@ -208,6 +208,7 @@ def get_pfam_desc(pfam):
     return ""
 
 def get_functional_annotation(genes):
+    print('hi')
     start = time.time()
     matches = list(col_emapper.find({ "q": { "$in": genes } }))
     print(f'emapper in functional_info:  {time.time() - start}')
