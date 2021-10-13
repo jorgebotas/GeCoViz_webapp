@@ -54,12 +54,18 @@ def get_sequence(query, fasta=True):
 
 
 def get_newick(field, query, taxids):
-    emapper_matches = get_emapper_matches(field, query);
-    members_in_taxid = defaultdict(list)
-    for match in emapper_matches:
-        taxid = match.split(".")[0]
-        if taxid in taxids:
-            members_in_taxid[taxid].append(match)
+    start = time.time()
+    emapper_matches = col_emapper.aggregate([
+        { "$match": { field: query, "$g": { "$in": representative_genomes } } },
+        { "$project": 
+            { "taxid": { "$arrayElemAt": [ { "$split": [ "$g", "." ] }, 0 ] } },
+            { "q": "$q" },
+        },
+        { "$match": { "taxid": { "$in": taxids } } },
+        { "$group": { "_id": "$taxid", "genes": { "$push": "$q" } } }
+    ])
+    members_in_taxid = { m["_id"]: m["genes"] for m in emapper_matches }
+    print(f'Members in taxids {time.time() - start}')
 
     taxid_lineages = { t: get_lineage(t) for t in taxids }
     start = time.time()
@@ -81,7 +87,7 @@ def get_newick(field, query, taxids):
     for node in tree.traverse("postorder"):
         if node.is_leaf():
             taxid = node.name
-            children = members_in_taxid[taxid]
+            children = members_in_taxid.get(taxid, [])
             lineage = taxid_lineages.get(taxid, [""])
             last_tax_level = lineage[-1].replace("__", "_")
             if len(children) == 1:
@@ -122,9 +128,20 @@ def get_genome_info(field, query, taxids):
 
 def get_context(field, query, taxids):
     start = time.time()
-    emapper_matches = get_emapper_matches(field, query);
-    # TODO: this could be done in the mongo...
-    queries = [ m for m in emapper_matches if m.split(".")[0] in taxids ]
+    # emapper_matches = get_emapper_matches(field, query);
+    # # TODO: this could be done in the mongo...
+    # queries = [ m for m in emapper_matches if m.split(".")[0] in taxids ]
+
+    emapper_matches = col_emapper.aggregate([
+        { "$match": { field: query, "$g": { "$in": representative_genomes } } },
+        { "$project": 
+            { "taxid": { "$arrayElemAt": [ { "$split": [ "$g", "." ] }, 0 ] } },
+            { "q": "$q" },
+        },
+        { "$match": { "taxid": { "$in": taxids } } },
+        # { "$group": { "_id": "$taxid", "genes": { "$push": "$q" } } }
+    ])
+    queries = [ m["q"] for m in emapper_matches ]
     print(f'get queries:  {time.time() - start}')
 
     start = time.time()
@@ -247,12 +264,19 @@ def get_functional_annotation(genes):
     return annotation
 
 
-def get_emapper_matches(field, query, representative_only=True, retrieved_field="q"):
+def get_taxids_from_function(field, query):
 
     collection = db[f'repgenomes_{field}']
-    matches = collection.find({ "n": query })
-    return [ m[retrieved_field] for m in matches ]
+    matches = ( collection.find_one({ "n": query }) or {} ).get("repg", [])
 
+    taxids = []
+    for m in matches:
+        taxids.extend([ m[0] ] * m[1])
+
+    return taxids
+
+
+    
     # if representative_only:
         # mquery = { '$and': [{ field: query}, {'g': {'$in': representative_genomes}} ]}
     # else:
@@ -276,7 +300,7 @@ def get_emapper_matches(field, query, representative_only=True, retrieved_field=
 
 def get_functional_matches(field, query):
     start = time.time()
-    emapper = get_emapper_matches(field, query, True, "g")
+    emapper = get_taxids_from_function(field, query)
     print(f'list:  {time.time() - start}')
     start = time.time()
     taxonomy = get_taxonomy(emapper)
