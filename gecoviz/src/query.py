@@ -134,9 +134,9 @@ def get_context(field, query, taxids):
 
     emapper_matches = col_emapper.aggregate([
         { "$match": { field: query, "$g": { "$in": representative_genomes } } },
-        { "$project": 
-            { "taxid": { "$arrayElemAt": [ { "$split": [ "$g", "." ] }, 0 ] } },
-            { "q": "$q" }
+        { "$project":  {
+            "taxid": { "$arrayElemAt": [ { "$split": [ "$g", "." ] }, 0 ] },
+            "q": "$q" }
         },
         { "$match": { "taxid": { "$in": taxids } } },
         # { "$group": { "_id": "$taxid", "genes": { "$push": "$q" } } }
