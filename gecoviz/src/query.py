@@ -59,7 +59,7 @@ def get_newick(field, query, taxids):
         { "$match": { field: query, "$g": { "$in": representative_genomes } } },
         { "$project": 
             { "taxid": { "$arrayElemAt": [ { "$split": [ "$g", "." ] }, 0 ] } },
-            { "q": "$q" },
+            { "q": "$q" }
         },
         { "$match": { "taxid": { "$in": taxids } } },
         { "$group": { "_id": "$taxid", "genes": { "$push": "$q" } } }
@@ -136,7 +136,7 @@ def get_context(field, query, taxids):
         { "$match": { field: query, "$g": { "$in": representative_genomes } } },
         { "$project": 
             { "taxid": { "$arrayElemAt": [ { "$split": [ "$g", "." ] }, 0 ] } },
-            { "q": "$q" },
+            { "q": "$q" }
         },
         { "$match": { "taxid": { "$in": taxids } } },
         # { "$group": { "_id": "$taxid", "genes": { "$push": "$q" } } }
