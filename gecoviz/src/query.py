@@ -56,7 +56,7 @@ def get_sequence(query, fasta=True):
 def get_newick(field, query, taxids):
     start = time.time()
     emapper_matches = col_emapper.aggregate([
-        { "$match": { field: query, "$g": { "$in": representative_genomes } } },
+        { "$match": { field: query, "g": { "$in": representative_genomes } } },
         { "$project": { 
             "taxid": { "$arrayElemAt": [ { "$split": [ "$g", "." ] }, 0 ] },
             "q": "$q" }
@@ -133,7 +133,7 @@ def get_context(field, query, taxids):
     # queries = [ m for m in emapper_matches if m.split(".")[0] in taxids ]
 
     emapper_matches = col_emapper.aggregate([
-        { "$match": { field: query, "$g": { "$in": representative_genomes } } },
+        { "$match": { field: query, "g": { "$in": representative_genomes } } },
         { "$project":  {
             "taxid": { "$arrayElemAt": [ { "$split": [ "$g", "." ] }, 0 ] },
             "q": "$q" }
