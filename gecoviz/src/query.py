@@ -157,6 +157,7 @@ def get_context(field, query, taxids):
                 "strand": g["o"],
             } for g in m["genes"] if abs(g["p"] - anchor["p"]) <= nside)
 
+    print('hi')
 
     start = time.time()
     all_genes = [ g["gene"] for g in context ]
@@ -208,7 +209,6 @@ def get_pfam_desc(pfam):
     return ""
 
 def get_functional_annotation(genes):
-    print('hi')
     start = time.time()
     matches = list(col_emapper.find({ "q": { "$in": genes } }))
     print(f'emapper in functional_info:  {time.time() - start}')
