@@ -55,7 +55,7 @@ def get_sequence(query, fasta=True):
 
 def get_newick(field, query, taxids):
     start = time.time()
-    selected_genomes = get_genomes_from_function(fied, query)
+    selected_genomes = get_genomes_from_function(field, query)
     emapper_matches = col_emapper.find(
         {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
         { "q": 1 })
@@ -129,7 +129,7 @@ def get_context(field, query, taxids):
     start = time.time()
 
     # Get selected+representative genomes
-    selected_genomes = get_genomes_from_function(fied, query)
+    selected_genomes = get_genomes_from_function(field, query)
     emapper_matches = col_emapper.find(
         {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
         { "q": 1 })
