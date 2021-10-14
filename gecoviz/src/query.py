@@ -225,7 +225,7 @@ def get_functional_annotation(genes):
     # pfam_matches = { m["q"]: m["pfam"] 
             # for m in col_pfam.find({ "q": { "$in": genes } },
                                    # { "q": 1, "pfam": 1 }) }
-    print(f'  (functional_info)  pfam:  {time.time() - start}')
+    print(f' (functional_info)  pfam:  {time.time() - start}')
     start = time.time()
 
     annotation = {}
@@ -260,7 +260,7 @@ def get_functional_annotation(genes):
                 # "Pfam": pfam,
                 }
 
-    print(f'  (functional_info)  annotation:  {time.time() - start}')
+    print(f' (functional_info)  annotation:  {time.time() - start}')
 
     return annotation
 
