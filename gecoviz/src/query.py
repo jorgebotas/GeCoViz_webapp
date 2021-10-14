@@ -121,7 +121,6 @@ def get_newick(field, query, taxids):
 
 
 def get_genome_info(field, query, taxids):
-
     return
 
 
@@ -143,8 +142,6 @@ def get_context(field, query, taxids):
         { "q": 1 })
     queries = [ m["q"] for m in emapper_matches ]
     print(f'get genes from emapper (context):  {time.time() - start}')
-
-    print(len(queries))
 
     start = time.time()
     matches = col_neighs.find({ 'genes.g': { '$in': queries } })
@@ -170,8 +167,6 @@ def get_context(field, query, taxids):
                 "end": g["e"],
                 "strand": g["o"],
             } for g in m["genes"] if abs(g["p"] - anchor["p"]) <= nside)
-
-    print('hi')
 
     start = time.time()
     all_genes = [ g["gene"] for g in context ]
@@ -228,9 +223,11 @@ def get_functional_annotation(genes):
     print(f'emapper in functional_info:  {time.time() - start}')
 
     start = time.time()
+    pfam_matches = list(col_pfam.find({ "q": { "$in": genes } },
+                                   { "q": 1, "pfam": 1 }))
+    print(f'pfam in functional_info:  {time.time() - start}')
     pfam_matches = { m["q"]: m["pfam"] 
-            for m in col_pfam.find({ "q": { "$in": genes } },
-                                   { "q": 1, "pfam": 1 }) }
+            for m in pfam_matches }
     print(f'pfam in functional_info:  {time.time() - start}')
     start = time.time()
 
