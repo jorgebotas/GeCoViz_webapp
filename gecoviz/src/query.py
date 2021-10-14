@@ -65,13 +65,11 @@ def get_newick(field, query, taxids):
     emapper_matches = list(emapper_matches)
     print(f'get genes from {len(selected_genomes)} genomes (newick): {time.time() - start}')
 
-    start = time.time()
     members_in_taxid = defaultdict(list)
     for m in emapper_matches:
         gene = m["q"]
         taxid = gene.split(".")[0]
         members_in_taxid[taxid].append(gene)
-    print(f'Members in taxids {time.time() - start}')
 
     taxid_lineages = { t: get_lineage(t) for t in taxids }
     start = time.time()
@@ -142,7 +140,7 @@ def get_context(field, query, taxids):
         {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
         { "q": 1 })
     queries = [ m["q"] for m in emapper_matches ]
-    print(f'get genes from emapper (context):  {time.time() - start}')
+    print(f'get genes from {len(selected_genomes)} genomes (context):  {time.time() - start}')
 
     start = time.time()
     matches = col_neighs.find({ 'genes.g': { '$in': queries } })
