@@ -55,7 +55,9 @@ def get_sequence(query, fasta=True):
 
 def get_newick(field, query, taxids):
     start = time.time()
-    selected_genomes = get_genomes_from_function(field, query)
+    selected_genomes = get_filtered_genomes_from_function(field, query, taxids)
+    print(f'get filtered genomes (newick):  {time.time() - start}')
+
     emapper_matches = col_emapper.find(
         {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
         { "q": 1 })
@@ -126,15 +128,9 @@ def get_genome_info(field, query, taxids):
 
 def get_context(field, query, taxids):
 
-    # Get genomes with hits associated to function
     start = time.time()
-    genomes = get_genomes_from_function(field, query)
-    print(f'get genomes fron function (context):  {time.time() - start}')
-
-    # Filter by selected taxids (front front-end SunBurst)
-    start = time.time()
-    selected_genomes = [ g for g in genomes if g.split(".")[0] in taxids ]
-    print(f'filter genomes (context):  {time.time() - start}')
+    selected_genomes = get_filtered_genomes_from_function(field, query, taxids)
+    print(f'get filtered genomes (context):  {time.time() - start}')
 
     start = time.time()
     emapper_matches = col_emapper.find(
@@ -223,14 +219,10 @@ def get_functional_annotation(genes):
     print(f'emapper in functional_info:  {time.time() - start}')
 
     start = time.time()
-    pfam_matches = list(col_pfam.find({ "q": { "$in": genes } },
-                                   { "q": 1, "pfam": 1 }))
-    print(f'pfam in functional_info:  {time.time() - start}')
-    start = time.time()
     pfam_matches = { m["q"]: m["pfam"] 
-            for m in pfam_matches }
-    print(f'pfam in comprehesion:  {time.time() - start}')
-
+            for m in col_pfam.find({ "q": { "$in": genes } },
+                                   { "q": 1, "pfam": 1 }) }
+    print(f'pfam in functional_info:  {time.time() - start}')
     start = time.time()
 
     annotation = {}
@@ -268,6 +260,16 @@ def get_functional_annotation(genes):
     print(f'annotation in functional_info:  {time.time() - start}')
 
     return annotation
+
+def get_filtered_genomes_from_function(field, query, taxids):
+    # Get genomes with hits associated to function
+    genomes = get_genomes_from_function(field, query)
+
+    # Filter by selected taxids (front front-end SunBurst)
+    selected_genomes = [ g for g in genomes if g.split(".")[0] in taxids ]
+
+    return selected_genomes
+
 
 def get_genomes_from_function(field, query, unique=True):
 
