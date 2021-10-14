@@ -219,13 +219,13 @@ def get_pfam_desc(pfam):
 def get_functional_annotation(genes):
     start = time.time()
     matches = list(col_emapper.find({ "q": { "$in": genes } }))
-    print(f'emapper in functional_info:  {time.time() - start}')
+    print(f' (functional_info)  emapper:  {time.time() - start}')
 
     start = time.time()
     # pfam_matches = { m["q"]: m["pfam"] 
             # for m in col_pfam.find({ "q": { "$in": genes } },
                                    # { "q": 1, "pfam": 1 }) }
-    print(f'pfam in functional_info:  {time.time() - start}')
+    print(f'  (functional_info)  pfam:  {time.time() - start}')
     start = time.time()
 
     annotation = {}
@@ -260,7 +260,7 @@ def get_functional_annotation(genes):
                 # "Pfam": pfam,
                 }
 
-    print(f'annotation in functional_info:  {time.time() - start}')
+    print(f'  (functional_info)  annotation:  {time.time() - start}')
 
     return annotation
 
