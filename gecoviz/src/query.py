@@ -226,9 +226,11 @@ def get_functional_annotation(genes):
     pfam_matches = list(col_pfam.find({ "q": { "$in": genes } },
                                    { "q": 1, "pfam": 1 }))
     print(f'pfam in functional_info:  {time.time() - start}')
+    start = time.time()
     pfam_matches = { m["q"]: m["pfam"] 
             for m in pfam_matches }
-    print(f'pfam in functional_info:  {time.time() - start}')
+    print(f'pfam in comprehesion:  {time.time() - start}')
+
     start = time.time()
 
     annotation = {}
