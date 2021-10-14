@@ -58,6 +58,7 @@ def get_newick(field, query, taxids):
     selected_genomes = get_filtered_genomes_from_function(field, query, taxids)
     print(f'get filtered genomes (newick):  {time.time() - start}')
 
+    start = time.time()
     emapper_matches = col_emapper.find(
         {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
         { "q": 1 })
