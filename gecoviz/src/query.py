@@ -129,7 +129,10 @@ def get_context(field, query, taxids):
     start = time.time()
 
     # Get selected+representative genomes
-    selected_genomes = get_genomes_from_function(field, query)
+    genomes = get_genomes_from_function(field, query)
+
+    selected_genomes = [ g for g in genomes if g.split(".")[0] in taxids ]
+
     emapper_matches = col_emapper.find(
         {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
         { "q": 1 })
