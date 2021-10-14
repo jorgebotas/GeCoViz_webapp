@@ -136,7 +136,7 @@ def get_context(field, query, taxids):
     queries = [ m["q"] for m in emapper_matches ]
     print(f'get queries:  {time.time() - start}')
 
-    print(queries)
+    print(len(queries))
 
     start = time.time()
     matches = col_neighs.find({ 'genes.g': { '$in': queries } })
