@@ -126,18 +126,23 @@ def get_genome_info(field, query, taxids):
 
 
 def get_context(field, query, taxids):
+
+    # Get genomes with hits associated to function
     start = time.time()
-
-    # Get selected+representative genomes
     genomes = get_genomes_from_function(field, query)
+    print(f'get genomes fron function (context):  {time.time() - start}')
 
+    # Filter by selected taxids (front front-end SunBurst)
+    start = time.time()
     selected_genomes = [ g for g in genomes if g.split(".")[0] in taxids ]
+    print(f'filter genomes (context):  {time.time() - start}')
 
+    start = time.time()
     emapper_matches = col_emapper.find(
         {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
         { "q": 1 })
     queries = [ m["q"] for m in emapper_matches ]
-    print(f'get queries:  {time.time() - start}')
+    print(f'get genes from emapper (context):  {time.time() - start}')
 
     print(len(queries))
 
