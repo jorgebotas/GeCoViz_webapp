@@ -78,12 +78,6 @@ def get_newick(field, query, taxids):
     else:
         tree = ncbi.get_topology(taxids)
 
-    # all_taxids = [ m.split(".")[0] for m in emapper_matches ]
-    # assert all(taxid in all_taxids for taxid in taxids)
-    for l in tree:
-        if l.name not in taxids:
-            print(l.name)
-
     print(f'Taxids: {len(taxids)}   =====  Tree: {len(tree)}')
     print(f'Taxids: {len(taxids)}   =====  members: {len(members_in_taxid.keys())}')
     print(f'Taxid_lineages: {len(taxids)}   =====  {len(taxid_lineages.keys())}')
@@ -143,7 +137,7 @@ def get_context(field, query, taxids):
     print(f'get genes from {len(selected_genomes)} genomes (context):  {time.time() - start}')
 
     start = time.time()
-    matches = col_neighs.find({ 'genes.g': { '$in': queries } })
+    matches = col_neighs.find({ 'genes.g': { '$in': queries } }, { "genes": 1 })
     print(f'get neighs:  {time.time() - start}')
 
     start = time.time()
