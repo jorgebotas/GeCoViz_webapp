@@ -228,6 +228,7 @@ def get_functional_annotation(genes):
     pfam_matches = { m["q"]: m["pfam"] 
             for m in col_pfam.find({ "q": { "$in": genes } },
                                    { "q": 1, "pfam": 1 }) }
+    print(len(pfam_matches.keys()))
     print(f' (functional_info)  pfam:  {time.time() - start}')
     start = time.time()
 
@@ -280,7 +281,12 @@ def get_filtered_genomes_from_function(field, query, taxids):
 def get_genomes_from_function(field, query, unique=True):
 
     if field == "pname":
-        return [ m for m in get_emapper_matches(field, query, "g") ]
+        match = col_emapper.find_one({ "pname": query }, { "ogs": 1 })
+        if match:
+            field = "ogs"
+            query = match["ogs"][0] if len(match["ogs"]) else ""
+        else:
+            return []
 
     collection = db[f'repgenomes_{field}']
     matches = ( collection.find_one({ "n": query }) or {} ).get("repg", [])
@@ -297,7 +303,7 @@ def get_genomes_from_function(field, query, unique=True):
 
 def get_emapper_matches(field, query, retrieved_field="q"):
     start = time.time()
-    mquery = { '$and': [{ field: query}, {'g': {'$in': representative_genomes}} ]}
+    mquery = { "$and": [{ field: query}, {'g': {'$in': representative_genomes}} ]}
     matches = col_emapper.find(mquery, { retrieved_field: 1 })
     print(f'Emapper matches ({field}, {query}):  {time.time() - start}')
     return [ m[retrieved_field] for m in matches ]
