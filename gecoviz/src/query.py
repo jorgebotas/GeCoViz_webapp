@@ -149,9 +149,11 @@ def get_context(field, query, taxids):
     nside = 10
     context = []
     for m in matches:
-        print(len(m["genes"]))
         count += 1
         anchors = (g for g in m["genes"] if g["g"] in queries)
+        for idx, g in enumerate(m["genes"]):
+            if idx > 0:
+                assert m["genes"][idx-1]["p"] = g["p"] + 1
         for anchor in anchors:
             context.extend( { 
                 "anchor": anchor["g"],
