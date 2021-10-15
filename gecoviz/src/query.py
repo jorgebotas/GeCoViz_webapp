@@ -153,12 +153,11 @@ def get_context(field, query, taxids):
     for m in matches:
         count += 1
         innerstart = time.time()
-        anchors = [(idx, g) for idx, g in enumerate(m["genes"]) if g["g"] in queries]
+        anchors = ( (idx, g) for idx, g in enumerate(m["genes"]) if g["g"] in queries] )
         anchors_timer += time.time() - innerstart
 
         for idx, anchor in anchors:
-            neighbors = m["genes"][max(idx-nside, 0) : idx+nside]
-            innerstart = time.time()
+            neighbors = m["genes"][max(0, idx - nside) : idx + nside + 1]
             context.extend( { 
                 "anchor": anchor["g"],
                 "gene": g["g"],
@@ -168,7 +167,6 @@ def get_context(field, query, taxids):
                 "end": g["e"],
                 "strand": g["o"],
             } for g in neighbors)
-            context_timer += time.time() - innerstart
 
     print(f'anchors_timer:  {anchors_timer}')
     print(f'context_timer:  {context_timer}')
