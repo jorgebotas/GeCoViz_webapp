@@ -160,7 +160,7 @@ def get_context(field, query, taxids):
                 "start": g["s"],
                 "end": g["e"],
                 "strand": g["o"],
-            } for g in m["genes"][max(idx-nside, 0), idx+nside])
+            } for g in m["genes"][max(idx-nside, 0) : idx+nside])
 
     print(f'get neighs_info:  {time.time() - start}')
 
