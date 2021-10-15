@@ -62,8 +62,10 @@ def get_newick(field, query, taxids):
     emapper_matches = col_emapper.find(
         {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
         { "q": 1 })
-    emapper_matches = list(emapper_matches)
     print(f'get genes from {len(selected_genomes)} genomes (newick): {time.time() - start}')
+    start = time.time()
+    emapper_matches = list(emapper_matches)
+    print(f'get gene docs from {len(selected_genomes)} genomes (newick): {time.time() - start}')
 
     members_in_taxid = defaultdict(list)
     for m in emapper_matches:
