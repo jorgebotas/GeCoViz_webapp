@@ -144,18 +144,13 @@ def get_context(field, query, taxids):
     matches = list(matches)
     print(f'get neighs docs:  {time.time() - start}')
 
-    anchors_timer = 0
-    context_timer = 0
     start = time.time()
     count = 0
     nside = 10
     context = []
     for m in matches:
         count += 1
-        innerstart = time.time()
         anchors = ( (idx, g) for idx, g in enumerate(m["genes"]) if g["g"] in queries )
-        anchors_timer += time.time() - innerstart
-
         for idx, anchor in anchors:
             neighbors = m["genes"][max(0, idx - nside) : idx + nside + 1]
             context.extend( { 
@@ -168,8 +163,6 @@ def get_context(field, query, taxids):
                 "strand": g["o"],
             } for g in neighbors)
 
-    print(f'anchors_timer:  {anchors_timer}')
-    print(f'context_timer:  {context_timer}')
     print(f'get neighs_info:  {time.time() - start}')
 
     start = time.time()
