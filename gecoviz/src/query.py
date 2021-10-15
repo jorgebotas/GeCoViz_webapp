@@ -153,7 +153,7 @@ def get_context(field, query, taxids):
     for m in matches:
         count += 1
         innerstart = time.time()
-        anchors = ((idx, g) for idx, g in enumerate(m["genes"]) if g["g"] in queries)
+        anchors = [(idx, g) for idx, g in enumerate(m["genes"]) if g["g"] in queries]
         anchors_timer += time.time() - innerstart
 
         for idx, anchor in anchors:
