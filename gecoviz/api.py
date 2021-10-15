@@ -3,7 +3,6 @@ from django.http import JsonResponse, HttpResponse, HttpResponseNotFound
 from ete4 import Tree
 
 from json import load
-import time
 from .src.query import get_pickle, get_functional_matches, get_newick,\
                        get_context, get_sequence
 
@@ -62,9 +61,7 @@ def tree(request, field, query, taxids):
 
 
 def context(request, field, query, taxids):
-    start = time.time()
     context = get_context(field, query, taxids.split(','))
-    print(f'context:  {time.time() - start}')
     return JsonResponse( { 'context': context } )
 
 

@@ -124,7 +124,7 @@ def get_genome_info(field, query, taxids):
 
 
 def get_context(field, query, taxids):
-
+    context_start = time.time()
     start = time.time()
     selected_genomes = get_filtered_genomes_from_function(field, query, taxids)
     print(f'get filtered genomes (context):  {time.time() - start}')
@@ -144,6 +144,7 @@ def get_context(field, query, taxids):
     matches = list(matches)
     print(f'get neighs docs:  {time.time() - start}')
 
+    start = time.time()
     count = 0
     nside = 10
     context = []
@@ -161,13 +162,19 @@ def get_context(field, query, taxids):
                 "strand": g["o"],
             } for g in m["genes"] if abs(g["p"] - anchor["p"]) <= nside)
 
+    print(f'get neighs_info:  {time.time() - start}')
+
     start = time.time()
     all_genes = [ g["gene"] for g in context ]
     functional_info = get_functional_annotation(all_genes)
     print(f'get functional_info:  {time.time() - start}')
 
+    start = time.time()
     context = [ { **gene, **functional_info.get(gene["gene"], {}) }
                 for gene in context ]
+    print(f'merge functional and neighs info:  {time.time() - start}')
+
+    print(f'get context:  {time.time() - context_start}')
     return context
 
 
