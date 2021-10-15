@@ -149,6 +149,7 @@ def get_context(field, query, taxids):
     nside = 10
     context = []
     for m in matches:
+        innerstart = time.time()
         count += 1
         anchors = (g for g in m["genes"] if g["g"] in queries)
         for anchor in anchors:
@@ -161,6 +162,7 @@ def get_context(field, query, taxids):
                 "end": g["e"],
                 "strand": g["o"],
             } for g in m["genes"] if abs(g["p"] - anchor["p"]) <= nside)
+        print(f'inner:  {time.time() - innerstart}')
 
     print(f'get neighs_info:  {time.time() - start}')
 
