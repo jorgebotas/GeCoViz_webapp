@@ -61,7 +61,7 @@ def get_newick(field, query, taxids):
     start = time.time()
     emapper_matches = col_emapper.find(
         {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
-        { "q": 1 })
+        { "q": 1, "_id": 0 })
     emapper_matches = list(emapper_matches)
     print(len(emapper_matches))
     print(f'get genes from {len(selected_genomes)} genomes (newick): {time.time() - start}')
@@ -133,17 +133,22 @@ def get_context(field, query, taxids):
     start = time.time()
     emapper_matches = col_emapper.find(
         {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
-        { "q": 1 })
+        { "q": 1, "_id": 0 })
     queries = [ m["q"] for m in emapper_matches ]
     print(f'get genes from {len(selected_genomes)} genomes (context):  {time.time() - start}')
 
     start = time.time()
-    matches = col_neighs.find({ 'genes.g': { '$in': queries } }, { "genes": 1 })
+    matches = col_neighs.find({ 'genes.g': { '$in': queries } }, { "genome": 1, "genes": 1, "_id": 0 })
     print(f'get neighs:  {time.time() - start}')
 
     start = time.time()
     matches = list(matches)
     print(f'get neighs docs:  {time.time() - start}')
+
+    genome_to_queries = defaultdict(set)
+    for q in queries:
+        genome = ".".join(q.split(".")[:-1])
+        genome_to_queries[genome].add(q)
 
     start = time.time()
     count = 0
@@ -151,7 +156,8 @@ def get_context(field, query, taxids):
     context = []
     for m in matches:
         count += 1
-        anchors = ( (idx, g) for idx, g in enumerate(m["genes"]) if g["g"] in queries )
+        queries_in_genome = genome_to_queries[m["genome"]]
+        anchors = ( (idx, g) for idx, g in enumerate(m["genes"]) if g["g"] in queries_in_genome )
         for idx, anchor in anchors:
             neighbors = m["genes"][max(0, idx - nside) : idx + nside + 1]
             context.extend( { 
@@ -221,14 +227,13 @@ def get_pfam_desc(pfam):
 
 def get_functional_annotation(genes):
     start = time.time()
-    matches = list(col_emapper.find({ "q": { "$in": genes } }))
+    matches = list(col_emapper.find({ "q": { "$in": genes } }, { "_id": 0  }))
     print(f' (functional_info)  emapper:  {time.time() - start}')
 
     start = time.time()
     pfam_matches = { m["q"]: m["pfam"] 
             for m in col_pfam.find({ "q": { "$in": genes } },
-                                   { "q": 1, "pfam": 1 }) }
-    print(len(pfam_matches.keys()))
+                                   { "q": 1, "pfam": 1, "_id": 0 }) }
     print(f' (functional_info)  pfam:  {time.time() - start}')
     start = time.time()
 
@@ -304,7 +309,7 @@ def get_genomes_from_function(field, query, unique=True):
 def get_emapper_matches(field, query, retrieved_field="q"):
     start = time.time()
     mquery = { "$and": [{ field: query}, {'g': {'$in': representative_genomes}} ]}
-    matches = col_emapper.find(mquery, { retrieved_field: 1 })
+    matches = col_emapper.find(mquery, { retrieved_field: 1, "_id": 0 })
     print(f'Emapper matches ({field}, {query}):  {time.time() - start}')
     return [ m[retrieved_field] for m in matches ]
 
