@@ -511,8 +511,10 @@ var vueapp = new Vue({
             function getHabitat(contextData) {
                 const anchors = contextData.filter(c => c.pos == 0);
                 return anchors.reduce((t, a) => {
-                    for (const h of a.habitats)
+                    for (const h of a.habitats) {
+                        console.log(h)
                         t.push({ anchor: a.anchor, habitat: h, value: 100 });
+                    }
                     return t;
                 }, []);
             }
