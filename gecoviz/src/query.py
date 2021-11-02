@@ -15,6 +15,7 @@ col_emapper = db.emapper2
 col_pfam = db.pfam
 col_neighs = db.neighs
 col_proteins = db.proteins
+col_genome_info = db.genome_info
 ncbi = NCBITaxa()
 
 
@@ -118,8 +119,12 @@ def get_newick(field, query, taxids):
     return t
 
 
-def get_genome_info(field, query, taxids):
-    return
+def get_genome_info(genomes):
+    matches = col_genome_info.find({ "genomes": { "$in": genomes } },
+                                { "_id": 0 })
+    return { m["genome"]: { "habitats": m["habitats"],
+                            "disease": int(m["disease"]), }
+            for m in matches }
 
 
 def get_context(field, query, taxids):
@@ -149,6 +154,10 @@ def get_context(field, query, taxids):
         genome_to_queries[genome].add(q)
 
     start = time.time()
+    genome_info = get_genome_info(selected_genomes)
+    print(f'get genome_info:  {time.time() - start}')
+
+    start = time.time()
     count = 0
     nside = 10
     context = []
@@ -161,6 +170,7 @@ def get_context(field, query, taxids):
             context.extend( { 
                 "anchor": anchor["g"],
                 "gene": g["g"],
+                "genome": ".".join(g["g"].split(".")[:2]),
                 "seqID": g["g"],
                 "pos": int(g["p"] - anchor["p"]),
                 "start": g["s"],
@@ -176,7 +186,9 @@ def get_context(field, query, taxids):
     print(f'get functional_info:  {time.time() - start}')
 
     start = time.time()
-    context = [ { **gene, **functional_info.get(gene["gene"], {}) }
+    context = [ { **gene, 
+                  **functional_info.get(gene["gene"], {}),
+                  **genome_info.get(gene["genome"], {}), }
                 for gene in context ]
     print(f'merge functional and neighs info:  {time.time() - start}')
 
