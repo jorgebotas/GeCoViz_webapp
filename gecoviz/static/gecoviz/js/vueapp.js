@@ -735,7 +735,7 @@ var vueapp = new Vue({
 
             const { newick, context, habitat } = this.contextData;
 
-            newickFields = [
+            const newickFields = [
                 'name',
                 'last tax level',
                 'domain',
@@ -748,10 +748,20 @@ var vueapp = new Vue({
                 'subspecies',
                 'strain',
             ]
+            const habitatColors = {
+                "soil": "#8E663E",            // brown
+                "aquatic": "#6272BC",         // blue
+                "host_associated": "#EF6B6B", // red
+                // orange  #E48825
+                // yellow  #FCC065
+                // purple  #9A4DA8
+                // green   #7BB77B
+            }
+
             this.GeCoViz = await GeCoViz(selector)
                 .treeData(newick, newickFields[1], newickFields)
                 .contextData(context)
-                .heatmapData(habitat, { x: "habitat", y: "anchor" })
+                .heatmapData(habitat, { x: "habitat", y: "anchor" }, { customColors: habitatColors })
                 .nSide(4, 4)
                 .scaleDist()
                 .zoom(0.3)
