@@ -749,13 +749,14 @@ var vueapp = new Vue({
                 'strain',
             ]
             const habitatColors = {
-                "soil": "#8E663E",            // brown
-                "aquatic": "#6272BC",         // blue
-                "host_associated": "#EF6B6B", // red
-                // orange  #E48825
-                // yellow  #FCC065
+                "soil": "#E48825",                  // orange
+                "aquatic": "#6272BC",               // blue
+                "aquatic_freshwater": "#13D5CC",    // turquoise
+                "aquatic_sediment_mud": "#8E663E",  // brown
+                "host_associated": "#EF6B6B",       // red
+                "host_plant_associated": "#7BB77B", // green
+                "food_associated": "#FCC065",       // yellow
                 // purple  #9A4DA8
-                // green   #7BB77B
             }
 
             this.GeCoViz = await GeCoViz(selector)
