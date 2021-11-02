@@ -753,6 +753,12 @@ var vueapp = new Vue({
             setTimeout(hideSpinner, 10);
             setTimeout(this.GeCoViz.scaleDist, 1000);
         },
+
+        downloadContextView: function() {
+            const fileName = `${this.query.name}_${this.nAnchors}genes_${this.selectTaxids.length}repspec`
+                + (this.sharedTaxa ? `-${this.sharedTaxa}` : "");
+            this.GeCoViz.toSvg(fileName);
+        },
     },
     computed: {
         isScreenLarge: function() {

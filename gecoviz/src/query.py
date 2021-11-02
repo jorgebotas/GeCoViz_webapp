@@ -47,7 +47,6 @@ representative_genomes = get_list(STATIC_PATH / "txt/representative_genomes.txt"
 
 def get_sequence(query, fasta=True):
     seq = col_proteins.find_one({'n': query}).get('aa', 'Sequence not found')
-    print(seq)
     if fasta:
         return '>{}\n{}'.format(query, seq)
     return seq
@@ -63,7 +62,6 @@ def get_newick(field, query, taxids):
         {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
         { "q": 1, "_id": 0 })
     emapper_matches = list(emapper_matches)
-    print(len(emapper_matches))
     print(f'get genes from {len(selected_genomes)} genomes (newick): {time.time() - start}')
 
     members_in_taxid = defaultdict(list)

@@ -54,7 +54,7 @@
                     </li>
                     <li class="dropdown-item"
                         v-if="GeCoViz"
-                        @click="GeCoViz.toSvg">
+                        @click="downloadContextView">
                         Graph (svg)
                     </li>
                     <li class="dropdown-item"
@@ -63,8 +63,6 @@
                     </li>
                 </ul>
             </div>
-            <!--<button class="btn-clean ml-2 d-inline" style="padding:0.125rem 0.5rem;"-->
-                <!--@click="downloadNeighborhood()">Download context data (tsv)</button>-->
        </div>
     </div>
 
