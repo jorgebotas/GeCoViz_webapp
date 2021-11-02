@@ -122,7 +122,7 @@ def get_newick(field, query, taxids):
 def get_genome_info(genomes):
     matches = col_genome_info.find({ "genome": { "$in": genomes } },
                                 { "_id": 0 })
-    return { m["genome"]: { "habitats": [ { "id": h } for h in m["habitats"] ],
+    return { m["genome"]: { "habitats": [ { "id": h.replace("_habitat", "") } for h in m["habitats"] ],
                             "disease": int(m["disease"]), }
             for m in matches }
 
