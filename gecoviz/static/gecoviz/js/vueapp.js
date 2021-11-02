@@ -519,7 +519,7 @@ var vueapp = new Vue({
             this.contextData.context = [];
             this.contextData.newick = await getNewick(endpoint);
             this.contextData.context = await getContext(endpoint);
-            this.contextData.habitat = getHabitat();
+            this.contextData.habitat = await getHabitat();
         },
 
         getSeq : function(query) {
