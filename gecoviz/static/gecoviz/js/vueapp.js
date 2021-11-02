@@ -510,7 +510,11 @@ var vueapp = new Vue({
 
             function getHabitat(contextData) {
                 const anchors = contextData.filter(c => c.pos == 0);
-                return anchors.map(a => { return { anchor: a.anchor, habitat: a.habitats, value: 100 } })
+                return anchors.reduce((t, a) => {
+                    for (const h in a.habitats)
+                        t.push({ anchor: a.anchor, habitat: h, value: 100 });
+                    return t;
+                }, []);
             }
 
             const taxids = this.selectedTaxids.map(t => t.id).join(",");
