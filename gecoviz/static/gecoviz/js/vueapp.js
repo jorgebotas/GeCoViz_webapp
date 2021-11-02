@@ -508,8 +508,8 @@ var vueapp = new Vue({
                 return context;
             }
 
-            function getHabitat() {
-                const anchors = this.contextData.context.filter(c => c.pos == 0);
+            function getHabitat(contextData) {
+                const anchors = contextData.filter(c => c.pos == 0);
                 return anchors.map(a => { return { anchor: a.anchor, habitat: a.habitats, value: 100 } })
             }
 
@@ -519,7 +519,7 @@ var vueapp = new Vue({
             this.contextData.context = [];
             this.contextData.newick = await getNewick(endpoint);
             this.contextData.context = await getContext(endpoint);
-            this.contextData.habitat = await getHabitat();
+            this.contextData.habitat = await getHabitat(this.contextData.context);
         },
 
         getSeq : function(query) {
