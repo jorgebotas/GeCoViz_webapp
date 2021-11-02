@@ -141,7 +141,7 @@ var vueapp = new Vue({
         contextData: {
             newick: "",
             context: [],
-            biomes: [],
+            habitat: [],
         },
         taxBadgeColors: {
             'phylum': 'bg-red-lt',
@@ -508,14 +508,14 @@ var vueapp = new Vue({
                 return context;
             }
 
-            async function getBiomes(endpoint) {
-                let biomes;
-                await fetch(API_BASE_URL + '/biomes/'+ endpoint)
-                    .then(response => response.json())
-                     .then(data => biomes = data.biomes)
-                     .catch(fetchCatch);
-                return biomes;
-            }
+            //async function getHabitat(endpoint) {
+                //let habitat;
+                //await fetch(API_BASE_URL + '/habitat/'+ endpoint)
+                    //.then(response => response.json())
+                     //.then(data => biomes = data.biomes)
+                     //.catch(fetchCatch);
+                //return biomes;
+            //}
 
             const taxids = this.selectedTaxids.map(t => t.id).join(",");
             const endpoint = `${this.searchType}/${this.query.name}/${taxids}/`;
@@ -523,7 +523,7 @@ var vueapp = new Vue({
             this.contextData.context = [];
             this.contextData.newick = await getNewick(endpoint);
             this.contextData.context = await getContext(endpoint);
-            this.contextData.biomes = await getBiomes(endpoint);
+            //this.contextData.biomes = await getBiomes(endpoint);
         },
 
         getSeq : function(query) {
@@ -732,7 +732,7 @@ var vueapp = new Vue({
             // Fetch context data
             await this.searchContext();
 
-            const { newick, context, biomes } = this.contextData;
+            const { newick, context, habitat } = this.contextData;
 
             newickFields = [
                 'name',
@@ -750,7 +750,7 @@ var vueapp = new Vue({
             this.GeCoViz = await GeCoViz(selector)
                 .treeData(newick, newickFields[1], newickFields)
                 .contextData(context)
-                .heatmapData(biomes, { x: "biome", y: "anchor" })
+                //.heatmapData(habitats, { x: "biome", y: "anchor" })
                 .nSide(4, 4)
                 .scaleDist()
                 .zoom(0.3)
