@@ -755,7 +755,7 @@ var vueapp = new Vue({
         },
 
         downloadContextView: function() {
-            const fileName = `${this.query.name}_${this.nAnchors}genes_${this.selectedTaxids.length}repspec`
+            const fileName = `${this.query.name}_${this.nAnchors}g_${this.selectedTaxids.length}sp`
                 + (this.sharedTaxa ? `-${this.sharedTaxa}` : "");
             this.GeCoViz.toSvg(fileName);
         },
