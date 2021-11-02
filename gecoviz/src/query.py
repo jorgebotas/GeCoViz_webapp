@@ -155,7 +155,9 @@ def get_context(field, query, taxids):
 
     start = time.time()
     genome_info = get_genome_info(selected_genomes)
+    print(genome_info)
     print(f'get genome_info:  {time.time() - start}')
+
 
     start = time.time()
     count = 0
