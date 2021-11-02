@@ -508,14 +508,10 @@ var vueapp = new Vue({
                 return context;
             }
 
-            //async function getHabitat(endpoint) {
-                //let habitat;
-                //await fetch(API_BASE_URL + '/habitat/'+ endpoint)
-                    //.then(response => response.json())
-                     //.then(data => biomes = data.biomes)
-                     //.catch(fetchCatch);
-                //return biomes;
-            //}
+            function getHabitat() {
+                const anchors = this.contextData.context.filter(c => c.pos == 0);
+                return anchors.map(a => { return { anchor: a.anchor, habitat: a.habitats, value: 100 } })
+            }
 
             const taxids = this.selectedTaxids.map(t => t.id).join(",");
             const endpoint = `${this.searchType}/${this.query.name}/${taxids}/`;
@@ -523,7 +519,7 @@ var vueapp = new Vue({
             this.contextData.context = [];
             this.contextData.newick = await getNewick(endpoint);
             this.contextData.context = await getContext(endpoint);
-            //this.contextData.biomes = await getBiomes(endpoint);
+            this.contextData.habitat = getHabitat();
         },
 
         getSeq : function(query) {
@@ -750,7 +746,7 @@ var vueapp = new Vue({
             this.GeCoViz = await GeCoViz(selector)
                 .treeData(newick, newickFields[1], newickFields)
                 .contextData(context)
-                //.heatmapData(habitats, { x: "biome", y: "anchor" })
+                .heatmapData(habitat, { x: "habitat", y: "anchor" })
                 .nSide(4, 4)
                 .scaleDist()
                 .zoom(0.3)
