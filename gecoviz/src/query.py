@@ -86,6 +86,8 @@ def get_newick(field, query, taxids):
         if node.is_leaf():
             taxid = node.name
             children = members_in_taxid[taxid]
+            if len(children) == 0:
+                node.up.children.remove(node)
             lineage = taxid_lineages.get(taxid, [""])
             last_tax_level = lineage[-1].replace("__", "_")
             if len(children) == 1:
@@ -93,8 +95,6 @@ def get_newick(field, query, taxids):
                 node.name = ".".join([ child_name, last_tax_level, *lineage ])
                 node.lineage = lineage
             else:
-                if (len(children) == 0):
-                    print("fuck") 
                 node.name = ".".join([ "", last_tax_level, *lineage ])
                 node.lineage = lineage
                 for ch in children:
