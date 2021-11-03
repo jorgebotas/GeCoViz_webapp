@@ -59,7 +59,7 @@ def get_pname_og(field, query):
         if match:
             field = "ogs"
             query = match["ogs"][0] if len(match["ogs"]) else ""
-            return field, query
+    return field, query
 
 
 def get_newick(field, query, taxids):
