@@ -58,8 +58,11 @@ def get_newick(field, query, taxids):
     selected_genomes = get_filtered_genomes_from_function(field, query, taxids)
     print(f'get filtered genomes (newick):  {time.time() - start}')
 
-    if field == "pname": 
-        field = "ogs"
+    if field == "pname":
+        match = col_emapper.find_one({ "pname": query }, { "ogs": 1 })
+        if match:
+            field = "ogs"
+            query = match["ogs"][0] if len(match["ogs"]) else ""
 
     start = time.time()
     emapper_matches = col_emapper.find(
