@@ -97,6 +97,7 @@ def get_newick(field, query, taxids):
                 node.lineage = lineage
                 for ch in children:
                     child_name = ch.replace(".", "")
+                    print(child_name)
                     child = node.add_child(name=".".join([ child_name, last_tax_level, *lineage ]))
                     child.lineage = lineage
         else:
@@ -109,7 +110,6 @@ def get_newick(field, query, taxids):
                 last_tax_level = lineage[-1].replace("__", "_")
             else:
                 last_tax_level = ""
-            print(node.name)
             node.name = ".".join([ "", last_tax_level, *lineage ])
             node.lineage = lineage
 
