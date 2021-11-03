@@ -53,16 +53,20 @@ def get_sequence(query, fasta=True):
     return seq
 
 
-def get_newick(field, query, taxids):
-    start = time.time()
-    selected_genomes = get_filtered_genomes_from_function(field, query, taxids)
-    print(f'get filtered genomes (newick):  {time.time() - start}')
-
+def get_pname_og(field, query):
     if field == "pname":
         match = col_emapper.find_one({ "pname": query }, { "ogs": 1 })
         if match:
             field = "ogs"
             query = match["ogs"][0] if len(match["ogs"]) else ""
+            return field, query
+
+
+def get_newick(field, query, taxids):
+    start = time.time()
+    field, query = get_pname_og(field, query)
+    selected_genomes = get_filtered_genomes_from_function(field, query, taxids)
+    print(f'get filtered genomes (newick):  {time.time() - start}')
 
     start = time.time()
     emapper_matches = col_emapper.find(
@@ -139,6 +143,7 @@ def get_genome_info(genomes):
 def get_context(field, query, taxids):
     context_start = time.time()
     start = time.time()
+    field, query = get_pname_og(field, query)
     selected_genomes = get_filtered_genomes_from_function(field, query, taxids)
     print(f'get filtered genomes (context):  {time.time() - start}')
 
@@ -305,13 +310,7 @@ def get_filtered_genomes_from_function(field, query, taxids):
 
 def get_genomes_from_function(field, query, unique=True):
 
-    if field == "pname":
-        match = col_emapper.find_one({ "pname": query }, { "ogs": 1 })
-        if match:
-            field = "ogs"
-            query = match["ogs"][0] if len(match["ogs"]) else ""
-        else:
-            return []
+    field, query = get_pname_og(field, query)
 
     collection = db[f'repgenomes_{field}']
     matches = ( collection.find_one({ "n": query }) or {} ).get("repg", [])
