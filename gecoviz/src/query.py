@@ -109,7 +109,7 @@ def get_newick(field, query, taxids):
                 last_tax_level = lineage[-1].replace("__", "_")
             else:
                 last_tax_level = ""
-            node.name = ".".join([ "", last_tax_level, *lineage ])
+            node.name = ".".join([ node.name, last_tax_level, *lineage ])
             node.lineage = lineage
 
     print(f'Tree and NCBI annotation {time.time() - start}')
