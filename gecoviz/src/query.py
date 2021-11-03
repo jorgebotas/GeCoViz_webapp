@@ -90,7 +90,8 @@ def get_newick(field, query, taxids):
             taxid = node.name
             children = members_in_taxid[taxid]
             if len(children) == 0:
-                node.up.children.remove(node)
+                print("no match in leaf")
+                # node.up.children.remove(node)
             lineage = taxid_lineages.get(taxid, [""])
             last_tax_level = lineage[-1].replace("__", "_")
             if len(children) == 1:
@@ -120,7 +121,6 @@ def get_newick(field, query, taxids):
     print(f'Tree and NCBI annotation {time.time() - start}')
     
     print(f'Matches: {sum(len(m) for m in members_in_taxid.values())}\nTree: {len(tree)}')
-    print(t)
     t = tree.write(features=["name"])
     return t
 
