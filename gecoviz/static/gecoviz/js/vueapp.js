@@ -511,7 +511,7 @@ var vueapp = new Vue({
             function getHabitat(contextData) {
                 const anchors = contextData.filter(c => c.pos == 0);
                 return anchors.reduce((t, a) => {
-                    for (const h of a.habitats) {
+                    for (const h of a["isolation source"]) {
                         t.push({ anchor: a.anchor, "isolation source": h.id, value: 1 });
                     }
                     return t;
