@@ -512,7 +512,7 @@ var vueapp = new Vue({
                 const anchors = contextData.filter(c => c.pos == 0);
                 return anchors.reduce((t, a) => {
                     for (const h of a.habitats) {
-                        t.push({ anchor: a.anchor, habitat: h.id, value: 1 });
+                        t.push({ anchor: a.anchor, "isolation source": h.id, value: 1 });
                     }
                     return t;
                 }, []);
