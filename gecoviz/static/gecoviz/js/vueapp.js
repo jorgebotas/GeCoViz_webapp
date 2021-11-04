@@ -753,10 +753,10 @@ var vueapp = new Vue({
                 "aquatic": "#6272BC",               // blue
                 "aquatic_freshwater": "#13D5CC",    // turquoise
                 "aquatic_sediment_mud": "#8E663E",  // brown
-                "host_associated": "#EF6B6B",       // red
+                "host_associated": "#9A4DA8",       // purple (red: EF6B6B)
                 "host_plant_associated": "#7BB77B", // green
                 "food_associated": "#FCC065",       // yellow
-                // purple  #9A4DA8
+                "disease_associated": "#C80414"     // red
             }
 
             this.GeCoViz = await GeCoViz(selector)
