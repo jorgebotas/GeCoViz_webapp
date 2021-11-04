@@ -762,7 +762,7 @@ var vueapp = new Vue({
             this.GeCoViz = await GeCoViz(selector)
                 .treeData(newick, newickFields[1], newickFields)
                 .contextData(context)
-                .heatmapData(habitat, { x: "isolation source", y: "anchor" }, habitatColors)
+                .heatmapData(habitat, { x: "isolation source", y: "anchor" }, habitatColors, "Isolation source")
                 .nSide(4, 4)
                 .scaleDist()
                 .zoom(0.3)
