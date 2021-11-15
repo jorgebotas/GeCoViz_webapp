@@ -15,7 +15,6 @@ col_pfam = db.pfam
 col_neighs = db.neighs
 col_proteins = db.proteins
 col_genome_info = db.genome_info
-ncbi = NCBITaxa()
 
 
 STATIC_PATH = settings.BASE_DIR / 'static/gecoviz/'
@@ -62,6 +61,7 @@ def get_pname_og(field, query):
 
 
 def get_newick(field, query, taxids):
+    ncbi = NCBITaxa()
     start = time.time()
     field, query = get_pname_og(field, query)
     selected_genomes = get_filtered_genomes_from_function(field, query, taxids)
