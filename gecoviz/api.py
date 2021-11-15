@@ -48,7 +48,6 @@ def description(request, field, query):
     return JsonResponse({ "description": desc_dict.get(query, "") })
 
 
-
 def emapper(request, field, query):
     matches = get_functional_matches(field, query)
     return JsonResponse({ 'matches': matches })
