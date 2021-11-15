@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.http import JsonResponse, HttpResponse, HttpResponseNotFound
-from ete4 import Tree
 
 from json import load
 from .src.query import get_pickle, get_functional_matches, get_newick,\
