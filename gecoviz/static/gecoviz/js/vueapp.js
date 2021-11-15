@@ -213,20 +213,6 @@ var vueapp = new Vue({
             this.show = selector;
         },
 
-        showAddButton: function(d) {
-            const container = d3.select("#add-button-container")
-            container.selectAll("*").remove();
-
-            const button = container.append("button")
-                .attr("class", "btn btn-primary")
-                .attr("disabled", () => this.nSelected > this.maxSelected ? true : null)
-                .html("Add " + d.data.tname);
-            button.on("click", () => {
-                this.selectTaxa(d);
-                button.remove();
-            });
-        },
-
         showTaxaPopup: function(d) {
             function getParent(n, stop, count=0) {
                 if (count >= stop)
@@ -847,11 +833,6 @@ var vueapp = new Vue({
         }
     },
     mounted: async function() {
-        document.addEventListener("click", () => {
-            if (!d3.select(".clone").node())
-                d3.selectAll("#add-button-container *").remove();
-            d3.selectAll("#popperContainer .popper").remove();
-        });
 
         ["query", "taxa", "ko"].forEach(d => {
             const searchbar = $(`#${d}-search`);
