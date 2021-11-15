@@ -460,7 +460,7 @@ var vueapp = new Vue({
             const newQuery = query || $("#query-search").val().trim();
             if (newQuery) {
                 this.allItems = [];
-                this.root = [];
+                this.root = undefined;
                 this.selectedTaxids = [];
                 this.searchedTaxa = [];
                 this.contextData.context = [];

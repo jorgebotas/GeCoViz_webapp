@@ -61,7 +61,6 @@ def get_pname_og(field, query):
 
 
 def get_newick(field, query, taxids):
-    ncbi = NCBITaxa()
     start = time.time()
     field, query = get_pname_og(field, query)
     selected_genomes = get_filtered_genomes_from_function(field, query, taxids)
@@ -85,6 +84,7 @@ def get_newick(field, query, taxids):
     if len(taxids) < 2:
         tree = Tree(name=taxids[0])
     else:
+        ncbi = NCBITaxa()
         tree = ncbi.get_topology(taxids)
 
     print(f'Taxids: {len(taxids)}   =====  Tree: {len(tree)}')
