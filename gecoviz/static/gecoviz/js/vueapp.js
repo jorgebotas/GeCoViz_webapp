@@ -833,6 +833,9 @@ var vueapp = new Vue({
         }
     },
     mounted: async function() {
+        document.addEventListener("click", () => {
+            d3.selectAll("#popperContainer .popper").remove();
+        });
 
         ["query", "taxa", "ko"].forEach(d => {
             const searchbar = $(`#${d}-search`);
