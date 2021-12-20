@@ -1,6 +1,16 @@
 <!-- BEGIN: Banner for cookies/gdpr policy -->
 {% if not request.COOKIES.cookies_consent %}
-<div id="cookie_directive_container" class="cookies-toast card">
+<div id="cookie_directive_container" class="cookies-toast card"
+    style="
+        position: sticky !important;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        align-items: center;
+        justify-content: center;
+        max-width: 600px;
+        z-index: 10;
+        transition: opacity 0.5s, display 0.5s;">
     <div class="card-body text-center">
         <div>
             <span>To keep using this website you are in accordance with our
