@@ -9,6 +9,15 @@ var colors = [
     "#CCE3DE"
 ];
 
+
+function acceptCookies() {
+    fetch("/accept_cookies/")
+        .then(() => {
+            cookie_directive_container.style.opacity = 0;
+        })
+        .catch(() => {});
+}
+
 function cleanString(s) {
     let clean = String(s);
     let dirt = " \t.,;:_/\\'@<>?()[]{}#%!*|".split("");

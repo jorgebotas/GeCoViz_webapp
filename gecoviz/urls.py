@@ -5,6 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path(r'accept_cookies/', view.accept_cookies)
     path(r'api/suggestions/<str:field>/<str:query>/', api.suggestions),
     path(r'api/description/<str:field>/<str:query>/', api.description),
     path(r'api/emapper/<str:field>/<str:query>/', api.emapper),

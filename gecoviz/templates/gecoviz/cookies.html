@@ -1,0 +1,18 @@
+<!-- BEGIN: Banner for cookies/gdpr policy -->
+{% if not request.COOKIES.cookies_consent %}
+<div id="cookie_directive_container" class="cookies-toast card">
+    <div class="card-body text-center">
+        <div>
+            <span>To keep using this website you are in accordance with our
+                data privacy policy.
+        </div>
+        <button type="button" 
+            class="btn btn-sm btn-primary font-weight-bold acceptcookies mt-2"
+            id="acceptcookies"
+            onclick="acceptCookies()">
+        I agree
+    </button>
+    </div>
+</div>
+{% endif %}
+<!-- END: banner gdpr policy -->
