@@ -1,4 +1,4 @@
-from django.http import HtttpResponse
+from django.http import HttpResponse
 from django.shortcuts import render
 
 def home(request):
@@ -8,6 +8,6 @@ def search(request):
     return render(request, 'gecoviz/search.html', {})
 
 def accept_cookies(request):
-    response = HtttpResponse()
+    response = HttpResponse()
     response.set_cookie("cookies_consent", 1)
     return response
