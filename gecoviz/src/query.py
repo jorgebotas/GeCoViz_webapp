@@ -45,7 +45,7 @@ representative_genomes = get_list(STATIC_PATH / "txt/representative_genomes.txt"
 
 
 def get_sequence(query, fasta=True):
-    seq = col_proteins.find_one({'n': query}).get('aa', 'Sequence not found')
+    seq = (col_proteins.find_one({'n': query}) or {}).get('aa', 'Sequence not found')
     if fasta:
         return '>{}\n{}'.format(query, seq)
     return seq
