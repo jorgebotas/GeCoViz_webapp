@@ -13064,6 +13064,9 @@ Antialiasing
 .f-oblique {
   font-style: oblique !important; }
 
+.b-1 {
+  border: solid 1px; }
+
 a {
   text-decoration: none !important;
   color: #6574cd;
