@@ -227,6 +227,8 @@ def get_tax_levelname(taxid):
     name = og_level_name_dict.get(str(taxid), "__").split("__")[1]
     if name:
         name += f' ({taxid})'
+    else:
+        name = str(taxid)
     return name
 
 def get_ko_desc(ko):
@@ -362,10 +364,20 @@ def get_ogs_from_sequence(sequence):
     req =  requests.post('http://eggnogapi5.embl.de/fast_webscan', json=query).json()
 
     if req: 
-        for match in req['seq_matches'][0]['hit']['matches'][:nhits]:
-            level, og, nseqs, evalue = match['level'], match['nogname'], match['nseqs'], match['evalue']
-            matches.append({
-                "level": get_tax_levelname(level), "og": og, "nseqs": nseqs, "evalue": evalue
-                })
+        for match in req['seq_matches'][0]['hit']['matches']:
+
+            if len(matches) >= nhits:
+                break
+
+            level, og, nseqs, evalue = match['level'], match['nogname'],\
+                                       match['nseqs'], match['evalue']
+            is_match = collection.find_one({ "n": og }, { "_id": 1 })
+            if is_match:
+                matches.append({
+                    "og": og, 
+                    "level": get_tax_levelname(level), 
+                    "nseqs": nseqs, 
+                    "evalue": evalue
+                    })
 
     return matches
