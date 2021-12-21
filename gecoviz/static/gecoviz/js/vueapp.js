@@ -464,6 +464,38 @@ var vueapp = new Vue({
             }, 0)
         },
 
+        searchBySequence: async function() {
+
+            const sequence = sequence_search.value;
+
+            if (!sequence)
+                alert("Please copy and paste sequence of interest")
+
+            $('#spinner').modal('show');
+
+            const rootLevels  = [2759, 2, 2157];
+
+            fetch("http://eggnogapi5.embl.de/fast_webscan", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    fasta: sequence,
+                    nqueries: 1
+                })
+            }).then(res => res.json())
+              .then(data => {
+                  console.log(data)
+                  const matches = data[0]["hit"]["matches"];
+                  for (m of matches) {
+                      if (rootLevels.includes(m.level)) {
+                          this.searchQuery("ogs", m.nogname, true)
+                          break
+                      }
+                  }
+            })
+
+        },
+
         searchQuery : async function(searchType, query, _hideSpinner) {
             $('#spinner').modal('show');
             const newQuery = query || $("#query-search").val().trim();
