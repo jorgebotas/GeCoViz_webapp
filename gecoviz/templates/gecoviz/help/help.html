@@ -21,7 +21,12 @@
           Genomic context visualizer
       </div>
       <div class="card-body">
-          {% include "gecoviz/help/context_vis.html" %}
+          The resulting genomic context graph is outline bellow:
+          <img src="{% static "gecoviz/img/blueprint.png" %}"
+               alt="Genomic context graph outline"
+               class="mt-2"
+               style="width:95%; height: auto"/>
+          {% comment %}{% include "gecoviz/help/context_vis.html" %}{% endcomment %}
       </div>
     </div>
 </div>
