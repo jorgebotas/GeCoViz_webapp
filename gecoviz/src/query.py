@@ -331,7 +331,7 @@ def get_emapper_matches(field, query, selected_genomes):
                     "q": "$q" 
                     }
                 },
-                # { "$match": { "g": { "$in": selected_genomes } } },
+                { "$match": { "g": { "$in": selected_genomes } } },
             ])
         print("pfam", list(matches))
     else:
