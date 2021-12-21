@@ -327,8 +327,7 @@ def get_emapper_matches(field, query, selected_genomes):
                     "g": { "$concat": [
                         { "$arrayElemAt": [ { "$split": ["$q", "." ] }, 0 ] },
                         ".",
-                        { "$arrayElemAt": [ { "$split": ["$q", "." ] }, 1 ] }, 
-                        }] },
+                        { "$arrayElemAt": [ { "$split": ["$q", "." ] }, 1 ] }, ] },
                     "q": "$q" 
                     }
                 },
