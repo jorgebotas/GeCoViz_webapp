@@ -466,7 +466,7 @@ var vueapp = new Vue({
 
         searchBySequence: async function() {
 
-            const sequence = sequence_search.value;
+            const sequence = sequence_search.value.trim();
 
             if (!sequence)
                 alert("Please copy and paste sequence of interest")
