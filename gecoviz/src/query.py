@@ -154,7 +154,7 @@ def get_context(field, query, taxids):
 
     start = time.time()
     matches = list(matches)
-    print(f'get neighs docs {len()}:  {time.time() - start}')
+    print(f'get neighs docs {len(matches)}:  {time.time() - start}')
 
     genome_to_queries = defaultdict(set)
     for q in queries:
