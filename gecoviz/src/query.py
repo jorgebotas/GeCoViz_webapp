@@ -250,7 +250,7 @@ def get_functional_annotation(genes):
 
     start_all = time.time()
 
-    annotation = {}
+    annotation = defaultdict(dict)
     for m in matches:
         gene = m["q"]
         name = m.get("pname", "")
@@ -284,12 +284,8 @@ def get_functional_annotation(genes):
     print(f' (functional_info)  pfam:  {time.time() - start}')
 
     for m in pfam_matches:
-        gene = m["q"]
-
         pfam = [ { "id": p, "description": get_pfam_desc(p) } for p in m["pfam"] ]
-
-        annotation[gene] = annotation[gene] or {} 
-        annotation[gene]["Pfam"] = pfam
+        annotation[m["q"]]["Pfam"] = pfam
 
 
     print(f' (functional_info)  annotation:  {time.time() - start_all}')
