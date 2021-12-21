@@ -71,9 +71,8 @@ def seq(request, query):
 
 @csrf_exempt
 def ogs_from_seq(request):
-    payload = request.POST.dict()
-    seq = payload.get("sequence", "")
-    print(payload)
-    print(request)
-    matches = get_ogs_from_sequence(seq)
-    return JsonResponse({ "matches": matches })
+    if request.method == "POST":
+        seq = request.body.get("sequence", "")
+        print(seq)
+        matches = get_ogs_from_sequence(seq)
+        return JsonResponse({ "matches": matches })
