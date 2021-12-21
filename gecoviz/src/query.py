@@ -276,7 +276,6 @@ def get_functional_annotation(genes):
                 "KEGG pathways": kpaths,
                 "KEGG Orthology": kos,
                 "eggNOG Orthology": ogs,
-                "Pfam": pfam,
                 }
 
     start = time.time()
@@ -290,7 +289,7 @@ def get_functional_annotation(genes):
         pfam = [ { "id": p, "description": get_pfam_desc(p) }
                 for p in pfam_matches.get(gene, []) ]
 
-        annotation[gene]["pfam"] = pfam
+        annotation[gene]["Pfam"] = pfam
 
 
     print(f' (functional_info)  annotation:  {time.time() - start_all}')
