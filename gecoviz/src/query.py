@@ -71,8 +71,7 @@ def get_newick(field, query, taxids):
     print(f'get genes from {len(selected_genomes)} genomes (newick): {time.time() - start}')
 
     members_in_taxid = defaultdict(list)
-    for m in emapper_matches:
-        gene = m["q"]
+    for gene in emapper_matches:
         taxid = gene.split(".")[0]
         members_in_taxid[taxid].append(gene)
 
