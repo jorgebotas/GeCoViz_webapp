@@ -72,6 +72,7 @@ def seq(request, query):
 @csrf_exempt
 def ogs_from_seq(request):
     seq = request.POST.get("sequence", "")
+    print(request.POST)
     print(seq)
     matches = get_ogs_from_sequence(seq)
     return JsonResponse({ "matches": matches })
