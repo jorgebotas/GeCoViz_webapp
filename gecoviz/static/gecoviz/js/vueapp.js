@@ -18,11 +18,16 @@ function acceptCookies() {
         .catch(() => {});
 }
 
+function welcomeModal(action="show") {
+    const modal = $("#welcome");
+    if (modal.length)
+        modal.modal(action)
+}
+
 function dismissWelcome() {
-    const welcomeModal = $("#welcome");
     fetch("/accept_welcome/")
         .then(() => {
-            $(welcome).modal("hide");
+            welcomeModal("hide");
         })
         .catch(() => {});
 }
@@ -942,3 +947,8 @@ var vueapp = new Vue({
         }
     },
 });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    welcomeModal("show");
+})
