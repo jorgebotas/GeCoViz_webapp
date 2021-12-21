@@ -365,7 +365,7 @@ def get_ogs_from_sequence(sequence):
         for match in req['seq_matches'][0]['hit']['matches'][:nhits]:
             level, og, nseqs, evalue = match['level'], match['nogname'], match['nseqs'], match['evalue']
             matches.append({
-                "level": level, "og": og, "nseqs": nseqs, "evalue": evalue
+                "level": get_tax_levelname(level), "og": og, "nseqs": nseqs, "evalue": evalue
                 })
 
     return matches
