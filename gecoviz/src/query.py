@@ -205,7 +205,7 @@ def get_context(field, query, taxids):
 
 
 def get_lineage(taxid):
-    return lineage_dict.get(str(taxid), ["", ])[1:]
+    return lineage_dict.get(str(taxid), ["", ])
 
 
 def get_taxonomy(queries):
@@ -217,7 +217,7 @@ def get_taxonomy(queries):
         taxa.append({ 
             'id': taxid,
             'lineage': ";".join(lineage),
-            'name': lineage[-1],
+            'name': lineage[-1] if len(lineage) else taxid,
             'value': n,
             })
     return taxa
