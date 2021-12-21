@@ -150,6 +150,7 @@ var vueapp = new Vue({
             query: [],
             ko: [],
         },
+        sequenceSearchResults: [],
         maxSelected: 250,
         selectedTaxids: [],
         searchedTaxa: [],
@@ -464,7 +465,7 @@ var vueapp = new Vue({
             }, 0)
         },
 
-        searchBySequence: async function() {
+        searchOgsBySequence: async function() {
 
             const sequence = sequence_search.value.trim();
 
@@ -473,27 +474,14 @@ var vueapp = new Vue({
 
             $('#spinner').modal('show');
 
-            const rootLevels  = [2759, 2, 2157];
-
-            fetch("http://eggnogapi5.embl.de/fast_webscan", {
+            fetch(API_BASE_URL + "/ogs_from_seq/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    fasta: sequence,
-                    nqueries: 1
-                })
+                body: JSON.stringify({ sequence: sequence })
             }).then(res => res.json())
               .then(data => {
-                  console.log(data)
-                  const matches = data[0]["hit"]["matches"];
-                  for (m of matches) {
-                      if (rootLevels.includes(m.level)) {
-                          this.searchQuery("ogs", m.nogname, true)
-                          break
-                      }
-                  }
-            })
-
+                  this.sequenceSearchResults = data.matches;
+            }).catch(fetchCatch)
         },
 
         searchQuery : async function(searchType, query, _hideSpinner) {
@@ -501,6 +489,7 @@ var vueapp = new Vue({
             const newQuery = query || $("#query-search").val().trim();
             if (newQuery) {
                 this.allItems = [];
+                this.sequenceSearchResults = [];
                 this.root = undefined;
                 this.selectedTaxids = [];
                 this.searchedTaxa = [];

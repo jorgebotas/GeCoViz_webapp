@@ -1,22 +1,37 @@
-<!--<div class="card mx-auto" style="max-width:900px">-->
-    <!--<div class="card-header h3">-->
-       <!--Enter protein sequence -->
-    <!--</div>-->
-    <!--<div class="card-body d-flex justify-content-center flex-wrap">-->
-        <!--<div class="w-100">-->
-            <!--<textarea name="sequence" id="sequence_search" -->
-                <!--spellcheck="false"-->
-                <!--class="form-control mx-auto"-->
-                <!--style="max-width:700px; height: 150px; -->
-                       <!--border-radius:5px !important;">-->
-            <!--</textarea>-->
-        <!--</div>-->
-        <!--<button class="btn btn-primary bg-indigo-lt mt-3"-->
-            <!--@click="searchBySequence()">-->
-            <!--Search context-->
-        <!--</button>-->
-    <!--</div>-->
-<!--</div>-->
+<div class="card mx-auto" style="max-width:900px">
+    <div class="card-header h3">
+       Enter protein sequence to find closest eggNOG Orthologous Group
+    </div>
+    <div class="card-body d-flex justify-content-center flex-wrap">
+        <div class="w-100">
+            <textarea name="sequence" id="sequence_search" 
+                spellcheck="false"
+                class="form-control mx-auto"
+                style="max-width:700px; height: 150px; 
+                       border-radius:5px !important;">
+            </textarea>
+        </div>
+        <button class="btn btn-primary bg-indigo-lt mt-3"
+            @click="searchBySequence()">
+            Search context
+        </button>
+
+        <table id="sequence_search_results" 
+               v-if="sequenceSearchResults.length"
+             class="">
+            <tbody>
+                <tr v-for="result in sequenceSearchResults">
+                    <td>[[ result.og ]]</td>
+                    <td>[[ result.level ]]</td>
+                    <td>[[ result.nseqs ]]</td>
+                    <td>[[ result.evalue ]]</td>
+                </tr>
+            </tbody>
+            
+        </table>
+
+    </div>
+</div>
 
 <div class="card mx-auto" style="max-width:900px">
     <div class="card-header h3">
