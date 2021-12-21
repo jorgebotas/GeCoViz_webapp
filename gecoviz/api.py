@@ -73,6 +73,6 @@ def seq(request, query):
 def ogs_from_seq(request):
     seq = request.POST.get("sequence", "")
     print(request.POST)
-    print(seq)
+    print(request)
     matches = get_ogs_from_sequence(seq)
     return JsonResponse({ "matches": matches })
