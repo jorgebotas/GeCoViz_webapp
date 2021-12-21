@@ -321,13 +321,19 @@ def get_genomes_from_function(field, query, unique=True):
 
 def get_emapper_matches(field, query, selected_genomes):
     if field == "pfam":
-        col = col_pfam
-        print("PFAM")
+        matches = col_emapper.aggregate([
+                { "$match": { field: query } },
+                { "$project": { 
+                    "g": { "$slice": [ { "$split": ["$q", "." ] }, 0 , 2 ] },
+                    "q": "$q" 
+                    }
+                },
+                { "$match": { "g": { "$in": representative_genomes } } },
+            ])
     else:
-        col = col_emapper
-    matches = col.find(
-        {"$and": [{ field: query }, {'g': {'$in': selected_genomes }}]},
-        { "q": 1, "_id": 0 })
+        matches = col_emapper.find(
+            {"$and": [{ field: query }, {'g': {'$in': selected_genomes }}]},
+            { "q": 1, "_id": 0 })
     print("emapper_matches", len(list(matches)))
     return [ m["q"] for m in matches ]
 
