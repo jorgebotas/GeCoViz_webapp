@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.http import JsonResponse, HttpResponse, HttpResponseNotFound
+from django.views.decorators.csrf import csrf_exempt
 
 from json import load
 from .src.query import get_pickle, get_functional_matches, get_newick,\
@@ -68,6 +69,7 @@ def seq(request, query):
     return HttpResponse(sequence)
 
 
+@csrf_exempt
 def ogs_from_seq(request):
     print('hi')
     # seq = request.POST.get("sequence_search")
