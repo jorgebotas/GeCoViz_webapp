@@ -66,4 +66,3 @@ def context(request, field, query, taxids):
 def seq(request, query):
     sequence = get_sequence(query, fasta=True)
     return HttpResponse(sequence)
-

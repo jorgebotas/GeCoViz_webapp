@@ -148,10 +148,7 @@ def get_context(field, query, taxids):
     print(f'get filtered genomes (context):  {time.time() - start}')
 
     start = time.time()
-    emapper_matches = col_emapper.find(
-        {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
-        { "q": 1, "_id": 0 })
-    queries = [ m["q"] for m in emapper_matches ]
+    queries = get_emapper_matches(field, query, selected_genomes)
     print(f'get genes from {len(selected_genomes)} genomes (context):  {time.time() - start}')
 
     start = time.time()
@@ -325,12 +322,15 @@ def get_genomes_from_function(field, query, unique=True):
     return genomes
 
 
-def get_emapper_matches(field, query, retrieved_field="q"):
-    start = time.time()
-    mquery = { "$and": [{ field: query}, {'g': {'$in': representative_genomes}} ]}
-    matches = col_emapper.find(mquery, { retrieved_field: 1, "_id": 0 })
-    print(f'Emapper matches ({field}, {query}):  {time.time() - start}')
-    return [ m[retrieved_field] for m in matches ]
+def get_emapper_matches(field, query, selected_genomes):
+    if field == "pfam":
+        col = col_pfam
+    else:
+        col = col_emapper
+    matches = col.find(
+        {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
+        { "q": 1, "_id": 0 })
+    return [ m["q"] for m in matches ]
 
 
 def get_functional_matches(field, query):
