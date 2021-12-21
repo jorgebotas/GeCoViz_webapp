@@ -2,7 +2,7 @@ from django.conf import settings
 from django.http import JsonResponse, HttpResponse, HttpResponseNotFound
 from django.views.decorators.csrf import csrf_exempt
 
-from json import load
+from json import load, loads
 from .src.query import get_pickle, get_functional_matches, get_newick,\
                        get_context, get_sequence, get_ogs_from_sequence
 
@@ -72,7 +72,8 @@ def seq(request, query):
 @csrf_exempt
 def ogs_from_seq(request):
     if request.method == "POST":
-        seq = request.body.json().get("sequence", "")
+        body = loads(request.body.decode('utf-8'))
+        seq = body.get("sequence", "")
         print(seq)
         matches = get_ogs_from_sequence(seq)
         return JsonResponse({ "matches": matches })
