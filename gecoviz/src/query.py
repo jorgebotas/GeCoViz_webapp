@@ -286,8 +286,7 @@ def get_functional_annotation(genes):
     for m in pfam_matches:
         gene = m["q"]
 
-        pfam = [ { "id": p, "description": get_pfam_desc(p) }
-                for p in pfam_matches.get(gene, []) ]
+        pfam = [ { "id": p, "description": get_pfam_desc(p) } for p in m["pfam"] ]
 
         annotation[gene]["Pfam"] = pfam
 
