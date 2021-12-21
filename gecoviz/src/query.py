@@ -7,6 +7,7 @@ from pymongo import MongoClient, ASCENDING, DESCENDING
 from re import split as resplit
 import sys, os
 import time
+import requests
 
 client = MongoClient('10.0.3.1')
 db = client.progenomes2
@@ -349,3 +350,24 @@ def get_functional_matches(field, query):
     taxonomy = get_taxonomy(emapper)
     print(f'taxonomy:  {time.time() - start}')
     return taxonomy
+
+
+def get_og_from_sequence(sequence):
+    root_levels  = set([2759, 2, 2157])
+
+    query = { "fasta": sequence, "nqueries": 1 }
+
+    og = ""
+    evalue = 0
+
+    req =  requests.post('http://eggnogapi5.embl.de/fast_webscan', json=query).json()
+
+    if req: 
+        for match in req['seq_matches'][0]['hit']['matches']: 
+            if match['level'] in root_levels: 
+                # data = match['level'], match['nogname'], match['nseqs'], match['evalue']
+                og, evalue = match["nogname"], match["evalue"]
+                break
+
+    print(og, evalue)
+    return og
