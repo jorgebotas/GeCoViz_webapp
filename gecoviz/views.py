@@ -15,7 +15,7 @@ def accept_cookies(request):
     response.set_cookie("cookies_consent", 1)
     return response
 
-def accept_cookies(request):
+def accept_welcome(request):
     response = HttpResponse()
     response.set_cookie("welcome", 1)
     return response
