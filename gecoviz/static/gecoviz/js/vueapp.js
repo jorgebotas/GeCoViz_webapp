@@ -969,8 +969,3 @@ var vueapp = new Vue({
         }
     },
 });
-
-
-document.addEventListener("DOMContentLoaded", () => {
-    welcomeModal("show");
-})
