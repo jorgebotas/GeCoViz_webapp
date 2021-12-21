@@ -481,6 +481,7 @@ var vueapp = new Vue({
             }).then(res => res.json())
               .then(data => {
                   this.sequenceSearchResults = data.matches;
+                  hideSpinner();
             }).catch(fetchCatch)
         },
 

@@ -74,6 +74,5 @@ def ogs_from_seq(request):
     if request.method == "POST":
         body = loads(request.body.decode('utf-8'))
         seq = body.get("sequence", "")
-        print(seq)
         matches = get_ogs_from_sequence(seq)
         return JsonResponse({ "matches": matches })
