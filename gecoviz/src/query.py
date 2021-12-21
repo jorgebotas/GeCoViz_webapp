@@ -157,7 +157,7 @@ def get_context(field, query, taxids):
 
     start = time.time()
     matches = list(matches)
-    print(f'get neighs docs:  {time.time() - start}')
+    print(f'get neighs docs {len(matches)}:  {time.time() - start}')
 
     genome_to_queries = defaultdict(set)
     for q in queries:
@@ -328,7 +328,7 @@ def get_emapper_matches(field, query, selected_genomes):
     else:
         col = col_emapper
     matches = col.find(
-        {"$and": [{ field: query}, {'g': {'$in': selected_genomes }}]},
+        {"$and": [{ field: query }, {'g': {'$in': selected_genomes }}]},
         { "q": 1, "_id": 0 })
     return [ m["q"] for m in matches ]
 
