@@ -3,7 +3,7 @@ from django.http import JsonResponse, HttpResponse, HttpResponseNotFound
 
 from json import load
 from .src.query import get_pickle, get_functional_matches, get_newick,\
-                       get_context, get_sequence, get_og_from_sequence
+                       get_context, get_sequence, get_ogs_from_sequence
 
 
 RESULTS_PATH = settings.BASE_DIR / 'gecoviz/tmp'
@@ -68,9 +68,9 @@ def seq(request, query):
     return HttpResponse(sequence)
 
 
-def og_from_seq(request):
+def ogs_from_seq(request):
     print('hi')
     # seq = request.POST.get("sequence_search")
     seq = "MTQITPGTFDPQGFRECWGDYRAEADLEDPSRPLYRFQRDLPRLPVPLLADTVSLYLETIKPLTSPAEFARSKELATAFLRPGGMGEELQRRLVDRAKDRSDSSFLVEWWNTLGYLQVRDPVVFNVSYFFHFADSVHPAQRSNIGRAAALLRGSVLFARQVADGSLEPEQLGKKKTPVCSTAYKYMFNACRIPRR"
-    og, evalue = get_og_from_sequence(seq)
-    return JsonResponse({ "og": og, "evalue": evalue })
+    matches = get_ogs_from_sequence(seq)
+    return JsonResponse({ "matches": matches })

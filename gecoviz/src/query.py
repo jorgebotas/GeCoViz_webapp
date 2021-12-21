@@ -352,22 +352,21 @@ def get_functional_matches(field, query):
     return taxonomy
 
 
-def get_og_from_sequence(sequence):
-    root_levels  = set([2759, 2, 2157])
+def get_ogs_from_sequence(sequence):
+    nhits = 10
 
     query = { "fasta": sequence, "nqueries": 1 }
 
-    og = ""
-    evalue = 0
+    matches = []
 
     req =  requests.post('http://eggnogapi5.embl.de/fast_webscan', json=query).json()
 
     if req: 
-        for match in req['seq_matches'][0]['hit']['matches']: 
-            if match['level'] in root_levels: 
-                # data = match['level'], match['nogname'], match['nseqs'], match['evalue']
-                og, evalue = match["nogname"], match["evalue"]
-                break
+        for match in req['seq_matches'][0]['hit']['matches'][:nhits]:
+            level, og, nseqs, evalue = match['level'], match['nogname'], match['nseqs'], match['evalue']
+            matches.append({
+                "level": level, "og": og, "nseqs": nseqs, "evalue": evalue
+                })
 
-    print(og, evalue)
-    return og, evalue
+    print(matches)
+    return matches

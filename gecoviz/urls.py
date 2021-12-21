@@ -14,5 +14,5 @@ urlpatterns = [
     path(r'api/tree/<str:field>/<str:query>/<str:taxids>/', api.tree),
     path(r'api/context/<str:field>/<str:query>/<str:taxids>/', api.context),
     path(r'api/seq/<str:query>/', api.seq),
-    path(r'api/og_from_seq/', api.og_from_seq),
+    path(r'api/ogs_from_seq/', api.ogs_from_seq),
 ]
