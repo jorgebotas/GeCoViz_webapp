@@ -81,8 +81,8 @@
         <script charset="utf-8">
             window.onload = () => {
                 document.body.style.display = "block";
-                if ("{{ request.path }}" === "/help/")
-                    dismissWelcome();
+                {% comment %}if ("{{ request.path }}" === "/help/"){% endcomment %}
+                    {% comment %}dismissWelcome();{% endcomment %}
             }
         </script>
     </body>
