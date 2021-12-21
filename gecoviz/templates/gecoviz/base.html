@@ -81,9 +81,14 @@
         <script charset="utf-8">
             window.onload = () => {
                 document.body.style.display = "block";
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
                 if ("{{ request.path }}" === "/help/")
                     dismissWelcome();
-            }
+                else
+                    welcomeModal("show");
+            })
         </script>
     </body>
 </html>
