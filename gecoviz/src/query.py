@@ -332,7 +332,6 @@ def get_emapper_matches(field, query, selected_genomes):
                 },
                 { "$match": { "g": { "$in": selected_genomes } } },
             ])
-        print("pfam", list(matches))
     else:
         matches = col_emapper.find(
             {"$and": [{ field: query }, {'g': {'$in': selected_genomes }}]},
