@@ -321,7 +321,7 @@ def get_genomes_from_function(field, query, unique=True):
 
 def get_emapper_matches(field, query, selected_genomes):
     if field == "pfam":
-        matches = col_emapper.aggregate([
+        matches = col_pfam.aggregate([
                 { "$match": { field: query } },
                 { "$project": { 
                     "g": { "$slice": [ { "$split": ["$q", "." ] }, 0 , 2 ] },
