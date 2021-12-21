@@ -21,7 +21,7 @@ function acceptCookies() {
 function welcomeModal(action="show") {
     const modal = $("#welcome");
     if (modal.length)
-        modal.modal(action)
+        setTimeout(() => modal.modal(action), 20)
 }
 
 function dismissWelcome() {
