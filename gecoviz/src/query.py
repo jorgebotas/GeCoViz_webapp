@@ -371,12 +371,12 @@ def get_ogs_from_sequence(sequence):
 
             level, og, nseqs, evalue = match['level'], match['nogname'],\
                                        match['nseqs'], match['evalue']
-            is_match = db.repgenomes_ogs.find_one({ "n": og }, { "_id": 1 })
-            if is_match:
+            nmatches = db.repgenomes_ogs.find({ "n": og }, { "_id": 1 }).count()
+            if nmatches:
                 matches.append({
                     "og": og, 
                     "level": get_tax_levelname(level), 
-                    "nseqs": nseqs, 
+                    "nseqs": nmatches, 
                     "evalue": evalue
                     })
 
