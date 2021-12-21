@@ -1,0 +1,35 @@
+{% if not request.COOKIES.welcome %}
+<div class="modal modal-blur fade" 
+      id="welcome" 
+      tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered justify-content-center" 
+        role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+                Welcome to GeCoViz!
+            </h5>
+          </div>
+          <div class="modal-body">
+              <p>First time around ?</p>
+              <p>Please, take a look at our
+                  <a href="/help/" target="_self"
+                      onclick="dismissWelcome()">documentation</a>
+                  or start browsing right away!
+              </p>
+              <div class="mx-auto btn-list">
+                  <a class="btn btn-sm btn-pill bg-indigo-lt"
+                     href="/help/"
+                     onclick="dismissWelcome()">
+                      Go to documentation
+                  </a>
+                  <button class="btn btn-sm btn-pill bg-red-lt"
+                     onclick="dismissWelcome()">
+                      Do not show message again
+                  </button>
+              </div>
+          </div>
+        </div>
+    </div>
+</div>
+{% endif %}

@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-2">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <a class="nav-link active" id="v-pills-workflow-tab" 
+          data-toggle="pill" href="#v-pills-workflow" 
+          role="tab" aria-controls="v-pills-workflow" 
+          aria-selected="true"
+        >Workflow</a>
+      <a class="nav-link" id="v-pills-taxselector-tab" 
+          data-toggle="pill" href="#v-pills-taxselector" 
+          role="tab" aria-controls="v-pills-taxselector" 
+          aria-selected="false"
+        >Taxonomy selector</a>
+  </div>
+  <div class="col-10">
+    <div class="tab-content" id="v-pills-tabContent-overall">
+      <div class="tab-pane fade" 
+          id="v-pills-workflow" role="tabpanel" 
+          aria-labelledby="v-pills-workflow-tab">
+            <p class='ml-5 mt-2'>
+                Toggle night mode on the top right corner
+            </p>
+      </div>
+      <div class="tab-pane fade show active" 
+          id="v-pills-taxselector" role="tabpanel" 
+          aria-labelledby="v-pills-taxselector-tab">
+            <p class='ml-5 mt-2'>
+                Adjust gene neighbors up and dowstream with a
+                slider. Cluster members (homologs), anchored at the central
+                position, are highlighted by black stroke.
+            </p>
+            <img class="m-4"
+                 width=95%
+                 src="{% static "gecoviz/img/nNeigh.gif" %}"/>
+      </div>
+    </div>
+  </div>
+</div>

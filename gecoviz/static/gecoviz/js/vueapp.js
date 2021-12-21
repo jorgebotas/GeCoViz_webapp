@@ -18,6 +18,14 @@ function acceptCookies() {
         .catch(() => {});
 }
 
+function dismissWelcome() {
+    fetch("/accept_welcome/")
+        .then(() => {
+            $(welcome).toggle("hide");
+        })
+        .catch(() => {});
+}
+
 function cleanString(s) {
     let clean = String(s);
     let dirt = " \t.,;:_/\\'@<>?()[]{}#%!*|".split("");
