@@ -87,7 +87,7 @@
                 if ("{{ request.path }}" === "/help/")
                     dismissWelcome();
                 else
-                    welcomeModal("show");
+                    setTimeout(welcomeModal, 1000);
             })
         </script>
     </body>
