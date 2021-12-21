@@ -1,5 +1,5 @@
 {% if not request.COOKIES.welcome %}
-<div class="modal modal-blur fade" 
+<div class="modal modal-blur fade show"
       id="welcome" 
       tabindex="-1">
     <div class="modal-dialog modal-dialog-centered justify-content-center" 
@@ -18,12 +18,12 @@
                   or start browsing right away!
               </p>
               <div class="mx-auto btn-list">
-                  <a class="btn btn-sm btn-pill bg-indigo-lt"
+                  <a class="btn btn-sm b-1 bg-indigo-lt"
                      href="/help/"
                      onclick="dismissWelcome()">
                       Go to documentation
                   </a>
-                  <button class="btn btn-sm btn-pill bg-red-lt"
+                  <button class="btn btn-sm b-1 bg-red-lt"
                      onclick="dismissWelcome()">
                       Do not show message again
                   </button>
