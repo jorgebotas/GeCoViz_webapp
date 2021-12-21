@@ -18,8 +18,14 @@
 
         <table id="sequence_search_results" 
                v-if="sequenceSearchResults.length"
-             class="">
+             class="w-100">
             <tbody>
+                <tr>
+                    <td>EggNOG OG</td>
+                    <td>Taxonomic level</td>
+                    <td>Number of sequences</td>
+                    <td>e-value</td>
+                </tr>
                 <tr v-for="result in sequenceSearchResults">
                     <td>[[ result.og ]]</td>
                     <td>[[ result.level ]]</td>
