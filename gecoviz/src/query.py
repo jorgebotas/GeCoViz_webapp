@@ -248,12 +248,7 @@ def get_functional_annotation(genes):
     matches = list(col_emapper.find({ "q": { "$in": genes } }, { "_id": 0  }))
     print(f' (functional_info)  emapper:  {time.time() - start}')
 
-    start = time.time()
-    pfam_matches = { m["q"]: m["pfam"] 
-            for m in col_pfam.find({ "q": { "$in": genes } },
-                                   { "q": 1, "pfam": 1, "_id": 0 }) }
-    print(f' (functional_info)  pfam:  {time.time() - start}')
-    start = time.time()
+    start_all = time.time()
 
     annotation = {}
     for m in matches:
@@ -284,6 +279,11 @@ def get_functional_annotation(genes):
                 "Pfam": pfam,
                 }
 
+    start = time.time()
+    pfam_matches =  col_pfam.find({ "q": { "$in": genes } },
+                                   { "q": 1, "pfam": 1, "_id": 0 })
+    print(f' (functional_info)  pfam:  {time.time() - start}')
+
     for m in pfam_matches:
         gene = m["q"]
 
@@ -293,7 +293,7 @@ def get_functional_annotation(genes):
         annotation[gene]["pfam"] = pfam
 
 
-    print(f' (functional_info)  annotation:  {time.time() - start}')
+    print(f' (functional_info)  annotation:  {time.time() - start_all}')
 
     return annotation
 
