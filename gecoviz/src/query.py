@@ -369,14 +369,14 @@ def get_ogs_from_sequence(sequence):
             if len(matches) >= nhits:
                 break
 
-            level, og, nseqs, evalue = match['level'], match['nogname'],\
-                                       match['nseqs'], match['evalue']
-            nmatches = db.repgenomes_ogs.find({ "n": og }, { "_id": 1 }).count()
-            if nmatches:
+            level, og, evalue = match['level'], match['nogname'], match['evalue']
+            is_match = db.repgenomes_ogs.find_one({ "n": og }, { "repg": 1 })
+            if is_match:
+                nseqs = len(is_match.get("repg", []))
                 matches.append({
                     "og": og, 
                     "level": get_tax_levelname(level), 
-                    "nseqs": nmatches, 
+                    "nseqs": nseqs, 
                     "evalue": evalue
                     })
 
