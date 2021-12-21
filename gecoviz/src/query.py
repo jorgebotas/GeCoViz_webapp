@@ -224,7 +224,7 @@ def get_taxonomy(queries):
     return taxa
 
 def get_tax_levelname(taxid):
-    name = og_level_name_dict.get(taxid, "__").split("__")[1]
+    name = og_level_name_dict.get(str(taxid), "__").split("__")[1]
     if name:
         name += f' ({taxid})'
     return name
@@ -267,7 +267,7 @@ def get_functional_annotation(genes):
         ogs = [ { 
                 "id": og,
                 "level": get_og_level(og),
-                "levelName": get_tax_levelname(str(get_og_level(og))),
+                "levelName": get_tax_levelname(get_og_level(og)),
                 "description": get_og_desc(og),
             } for og in set(m.get("ogs", [])) ]
 
