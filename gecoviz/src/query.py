@@ -322,11 +322,13 @@ def get_genomes_from_function(field, query, unique=True):
 def get_emapper_matches(field, query, selected_genomes):
     if field == "pfam":
         col = col_pfam
+        print("PFAM")
     else:
         col = col_emapper
     matches = col.find(
         {"$and": [{ field: query }, {'g': {'$in': selected_genomes }}]},
         { "q": 1, "_id": 0 })
+    print("emapper_matches", len(list(matches)))
     return [ m["q"] for m in matches ]
 
 
