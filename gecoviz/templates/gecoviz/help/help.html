@@ -6,14 +6,14 @@
 
 
 <div class="container-xxl mx-auto m-1">
-    <div class="card col-12">
-      <div class="card-header card-title mb-0 mt-2">
-          Overall
-      </div>
-      <div class="card-body">
-          {% include "gecoviz/help/overall.html" %}
-      </div>
-    </div>
+    {% comment %}<div class="card col-12">{% endcomment %}
+      {% comment %}<div class="card-header card-title mb-0 mt-2">{% endcomment %}
+          {% comment %}Overall{% endcomment %}
+      {% comment %}</div>{% endcomment %}
+      {% comment %}<div class="card-body">{% endcomment %}
+          {% comment %}{% include "gecoviz/help/overall.html" %}{% endcomment %}
+      {% comment %}</div>{% endcomment %}
+    {% comment %}</div>{% endcomment %}
 
 
     <div class="card col-12 mt-3">
@@ -26,7 +26,6 @@
                alt="Genomic context graph outline"
                class="mt-2"
                style="width:95%; height: auto"/>
-          {% comment %}{% include "gecoviz/help/context_vis.html" %}{% endcomment %}
       </div>
     </div>
 </div>
