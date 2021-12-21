@@ -480,8 +480,12 @@ var vueapp = new Vue({
                 body: JSON.stringify({ sequence: sequence })
             }).then(res => res.json())
               .then(data => {
-                  this.sequenceSearchResults = data.matches;
-                  hideSpinner();
+                  if (data.matches.length === 0)
+                      fetchCatch();
+                  else {
+                      this.sequenceSearchResults = data.matches;
+                      hideSpinner();
+                  }
             }).catch(fetchCatch)
         },
 
@@ -969,3 +973,4 @@ var vueapp = new Vue({
         }
     },
 });
+
