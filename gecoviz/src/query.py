@@ -370,4 +370,4 @@ def get_og_from_sequence(sequence):
                 break
 
     print(og, evalue)
-    return og
+    return og, evalue
