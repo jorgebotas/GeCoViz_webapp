@@ -19,9 +19,10 @@ function acceptCookies() {
 }
 
 function dismissWelcome() {
+    const welcomeModal = $("#welcome");
     fetch("/accept_welcome/")
         .then(() => {
-            $(welcome).toggle("hide");
+            $(welcome).modal("hide");
         })
         .catch(() => {});
 }
