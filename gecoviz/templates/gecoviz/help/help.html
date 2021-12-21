@@ -6,14 +6,25 @@
 
 
 <div class="container-xxl mx-auto m-1">
-    {% comment %}<div class="card col-12">{% endcomment %}
-      {% comment %}<div class="card-header card-title mb-0 mt-2">{% endcomment %}
-          {% comment %}searches{% endcomment %}
-      {% comment %}</div>{% endcomment %}
-      {% comment %}<div class="card-body">{% endcomment %}
-          {% comment %}{% include "gecoviz/help/overall.html" %}{% endcomment %}
-      {% comment %}</div>{% endcomment %}
-    {% comment %}</div>{% endcomment %}
+    <div class="card col-12">
+      <div class="card-header card-title mb-0 mt-2">
+          Searches
+      </div>
+      <div class="card-body">
+          <ul class="">
+              <li>Browse the KEGG Orthology hierarchy</li>
+              <li>Enter a custom sequence. After mapping it to eggNOG
+                  Orthologous Groups, you can visualize their genomic context</li>
+              <li>Search by functional terms (search bar)
+                  <ul>
+                      <li>Orthologous Groups (KEGG KOs, eggNOG OGs)</li>
+                      <li>PFAM protein families</li>
+                  </ul>
+              </li>
+              
+          </ul>
+      </div>
+    </div>
 
     <div class="card col-12 mt-3">
       <div class="card-header card-title mb-0 mt-2 f-bold">
