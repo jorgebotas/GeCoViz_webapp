@@ -368,5 +368,4 @@ def get_ogs_from_sequence(sequence):
                 "level": level, "og": og, "nseqs": nseqs, "evalue": evalue
                 })
 
-    print(matches)
     return matches

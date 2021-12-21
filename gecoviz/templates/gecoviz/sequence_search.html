@@ -1,5 +1,5 @@
 <div class="card mx-auto" style="max-width:900px">
-    <div class="card-header h3">
+    <div class="card-header h3 mt-2">
        Enter protein sequence to find closest eggNOG Orthologous Group
     </div>
     <div class="card-body d-flex justify-content-center flex-wrap">
@@ -18,16 +18,22 @@
 
         <table id="sequence_search_results" 
                v-if="sequenceSearchResults.length"
-             class="w-100">
-            <tbody>
-                <tr>
+             class="table table-responsive-card-table mt-4">
+            <thead>
+                <th>
                     <td>EggNOG OG</td>
                     <td>Taxonomic level</td>
                     <td>Number of sequences</td>
                     <td>e-value</td>
-                </tr>
+                </th>
+            </thead>
+            <tbody>
                 <tr v-for="result in sequenceSearchResults">
-                    <td>[[ result.og ]]</td>
+                    <td><button class="btn btn-sm bg-blue-lt"
+                            @click="searchQuery('ogs', result.og)">
+                        [[ result.og ]]
+                        </button>
+                    </td>
                     <td>[[ result.level ]]</td>
                     <td>[[ result.nseqs ]]</td>
                     <td>[[ result.evalue ]]</td>
@@ -36,29 +42,5 @@
             
         </table>
 
-    </div>
-</div>
-
-<div class="card mx-auto" style="max-width:900px">
-    <div class="card-header h3">
-       Enter protein sequence to find closest eggNOG Orthologous Group
-    </div>
-    <div class="card-body d-flex justify-content-center flex-wrap">
-        <!--<div class="w-100">-->
-            <!--<textarea name="sequence" id="sequence_search" -->
-                <!--spellcheck="false"-->
-                <!--class="form-control mx-auto"-->
-                <!--style="max-width:700px; height: 150px; -->
-                       <!--border-radius:5px !important;">-->
-            <!--</textarea>-->
-        <!--</div>-->
-        <!--<button class="btn btn-primary bg-indigo-lt mt-3"-->
-            <!--@click="searchBySequence()">-->
-            <!--Search context-->
-        <!--</button>-->
-        <a href="http://eggnog5.embl.de/#/app/seqscan" target="_blank"
-            class="btn btn-primary bg-indigo-lt">
-            Redirect to EggNOG
-        </a>
     </div>
 </div>
