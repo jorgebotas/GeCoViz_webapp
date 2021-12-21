@@ -275,9 +275,6 @@ def get_functional_annotation(genes):
                 "description": get_og_desc(og),
             } for og in set(m.get("ogs", [])) ]
 
-        pfam = [ { "id": p, "description": get_pfam_desc(p) }
-                for p in pfam_matches.get(gene, []) ]
-
         annotation[gene] = { 
                 "Gene name": name,
                 "Description": description,
@@ -286,6 +283,15 @@ def get_functional_annotation(genes):
                 "eggNOG Orthology": ogs,
                 "Pfam": pfam,
                 }
+
+    for m in pfam_matches:
+        gene = m["q"]
+
+        pfam = [ { "id": p, "description": get_pfam_desc(p) }
+                for p in pfam_matches.get(gene, []) ]
+
+        annotation[gene]["pfam"] = pfam
+
 
     print(f' (functional_info)  annotation:  {time.time() - start}')
 
