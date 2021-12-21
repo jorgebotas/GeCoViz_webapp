@@ -288,6 +288,7 @@ def get_functional_annotation(genes):
 
         pfam = [ { "id": p, "description": get_pfam_desc(p) } for p in m["pfam"] ]
 
+        annotation[gene] = annotation[gene] or {} 
         annotation[gene]["Pfam"] = pfam
 
 
