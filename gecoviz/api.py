@@ -71,8 +71,7 @@ def seq(request, query):
 
 @csrf_exempt
 def ogs_from_seq(request):
-    print('hi')
-    # seq = request.POST.get("sequence_search")
-    seq = "MTQITPGTFDPQGFRECWGDYRAEADLEDPSRPLYRFQRDLPRLPVPLLADTVSLYLETIKPLTSPAEFARSKELATAFLRPGGMGEELQRRLVDRAKDRSDSSFLVEWWNTLGYLQVRDPVVFNVSYFFHFADSVHPAQRSNIGRAAALLRGSVLFARQVADGSLEPEQLGKKKTPVCSTAYKYMFNACRIPRR"
+    seq = request.POST.get("sequence_search")
+    print(seq)
     matches = get_ogs_from_sequence(seq)
     return JsonResponse({ "matches": matches })
