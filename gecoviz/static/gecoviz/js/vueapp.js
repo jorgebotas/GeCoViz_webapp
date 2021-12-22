@@ -58,6 +58,14 @@ function fetchCatch(e) {
     });
 }
 
+function sequenceNotFound(_) {
+    hideSpinner(() => {
+        setTimeout(() => {
+            $('#alert-sequence').modal('show')
+        }, 160);
+    });
+}
+
 function hide(selector) {
     $(selector).collapse("hide");
     $(".accordion-button", $(selector).prev()).addClass("collapsed");
@@ -482,10 +490,10 @@ var vueapp = new Vue({
               .then(data => {
                   this.sequenceSearchResults = data.matches;
                   if (data.matches.length === 0)
-                      fetchCatch();
+                      sequenceNotFound();
                   else
                       hideSpinner();
-            }).catch(fetchCatch)
+            }).catch(sequenceNotFound)
         },
 
         searchQuery : async function(searchType, query, _hideSpinner) {
