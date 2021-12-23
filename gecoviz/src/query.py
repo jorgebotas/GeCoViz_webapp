@@ -205,7 +205,10 @@ def get_context(field, query, taxids):
 
 
 def get_lineage(taxid):
-    return lineage_dict.get(str(taxid), ["", ])
+    lin = lineage_dict.get(str(taxid), ["", ])
+    if lin == ["", ]:
+        print(taxid)
+    return lin
 
 
 def get_taxonomy(queries):
