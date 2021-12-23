@@ -58,6 +58,10 @@ function fetchCatch(e) {
     });
 }
 
+function showSeqExample() {
+    sequence_search.value = "MQEESPVAVQGTFVTNPVRPPAEVATSDSAISLRQPRPQTGEERAETKDTSPEKLQERLEALQKHLEEQGAPLHFSIVHDAGRVLVEVTQRDSQKVLMRIPPEGVLQVGADGLPSLGKLLDRRY";
+}
+
 function sequenceNotFound(_) {
     hideSpinner(() => {
         setTimeout(() => {

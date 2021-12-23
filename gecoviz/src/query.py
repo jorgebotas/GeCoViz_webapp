@@ -42,7 +42,6 @@ og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 og_level_name_dict = get_pickle(STATIC_PATH / "pickle/e5_og_level_names.pickle")
 og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
 lineage_dict = get_pickle(STATIC_PATH / "pickle/progenomes2_1_reps_lineage.pickle")
-representative_genomes = get_list(STATIC_PATH / "txt/representative_genomes.txt")
 
 
 def get_sequence(query, fasta=True):
@@ -284,11 +283,12 @@ def get_functional_annotation(genes):
     start = time.time()
     pfam_matches =  col_pfam.find({ "q": { "$in": genes } },
                                    { "q": 1, "pfam": 1, "_id": 0 })
-    print(f' (functional_info)  pfam:  {time.time() - start}')
 
     for m in pfam_matches:
         pfam = [ { "id": p, "description": get_pfam_desc(p) } for p in m["pfam"] ]
         annotation[m["q"]]["Pfam"] = pfam
+
+    print(f' (functional_info)  pfam:  {time.time() - start}')
 
 
     print(f' (functional_info)  annotation:  {time.time() - start_all}')
