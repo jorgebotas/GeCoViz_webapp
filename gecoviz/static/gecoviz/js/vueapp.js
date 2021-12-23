@@ -436,8 +436,8 @@ var vueapp = new Vue({
             this.root.each(d => {
                 const [ rank, tname ] = d.data.name.split("__");
                 d.data.rank = rank;
-                d.data.tname = tname;
-                d.data.lineage = getLineage(d)
+                d.data.tname = tname || d.data.id;
+                d.data.lineage = getLineage(d);
             });
 
             if (this.allItems.length == 0) {
@@ -464,7 +464,7 @@ var vueapp = new Vue({
                     if (this.allItems.length <= maxSelected)
                         this.selectTaxa(sharedTaxa, "species", true);
                     else {
-                        const ranks = ["genus", "family", "phylum"];
+                        const ranks = ["genus", "family", "phylum", "clade"];
                         const filteredRanks = ranks.filter(rank =>
                             sharedTaxa.descendantRanks[rank] && 
                             sharedTaxa.descendantRanks[rank].length <= maxSelected);
