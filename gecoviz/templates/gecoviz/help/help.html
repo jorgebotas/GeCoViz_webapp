@@ -20,11 +20,11 @@
 
           <div class="col-xl-6 pl-xl-4">
               On the other hand, explicit searches can be performed by using
-              the <b class="f-bold color-primary">search bar</b>
+              the <b class="f-bold color-indigo">search bar</b>
               on the website's navigation bar. Through the selector on
               the left, choose the category that matches the functional term of
-              interest, which can be entered in the text input of the right.
-              Furthermore, we provide a set of four examples. 
+              interest, which can be entered in the text input on the right.
+              Functional terms may belong to the following categories:
               <ul>
                   <li>Gene / protein name.</li>
                   <li>Orthologous Groups (KEGG KOs, eggNOG OGs).</li>
@@ -49,14 +49,49 @@
 
 
     <div class="card col-12 mt-3">
-      <div class="card-header card-title mb-0 mt-2 f-bold">
-          Genomic context visualizer
+      <div class="card-header mb-0 mt-2 f-bold">
+          <div class="card-title">
+              Genomic context visualizer
+          </div>
+          <ul class="nav nav-tabs" id="gcv-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="gcv-overview-tab" data-bs-toggle="tab"
+                    data-bs-target="#gcv-overview" type="button" role="tab" 
+                    aria-controls="gcv-overview" aria-selected="true">
+                    Overview
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="gcv-controlpanel-tab" data-bs-toggle="tab"
+                    data-bs-target="#gcv-controlpanel" type="button" role="tab" 
+                    aria-controls="gcv-controlpanel" aria-selected="false">
+                    Control panel
+                </button>
+              </li>
+              {% comment %}<li class="nav-item" role="presentation">{% endcomment %}
+                {% comment %}<button class="nav-link" id="contact-tab" data-bs-toggle="tab"{% endcomment %}
+                    {% comment %}data-bs-target="#contact" type="button" role="tab" {% endcomment %}
+                    {% comment %}aria-controls="contact" aria-selected="false">{% endcomment %}
+                    {% comment %}Legend{% endcomment %}
+                {% comment %}</button>{% endcomment %}
+              {% comment %}</li>{% endcomment %}
+          </ul>
       </div>
-      <div class="card-body d-flex justify-content-center">
-          <img src="{% static "gecoviz/img/context_vis.png" %}"
-               alt="Genomic context graph outline"
-               class="mt-2"
-               style="width:95%; height:auto; max-width:80rem"/>
+      <div class="card-body tab-content" id="gcv-tab-content">
+          <div class="tab-pane fade show active d-flex justify-content-center"
+              id="gcv-overview" role="tabpanel" aria-labelledby="gcv-overview-tab">
+              <img src="{% static "gecoviz/img/context_vis.png" %}"
+                   alt="Genomic context graph outline"
+                   class="mt-2"
+                   style="width:95%; height:auto; max-width:80rem"/>
+          </div>
+          <div class="tab-pane fade" id="gcv-controlpanel" 
+              role="tabpanel" aria-labelledby="gcv-control-tab">
+              ...
+          </div>
+          {% comment %}<div class="tab-pane fade" id="gcv-legend" role="tabpanel" aria-labelledby="contact-tab">{% endcomment %}
+              {% comment %}...{% endcomment %}
+          {% comment %}</div>{% endcomment %}
       </div>
     </div>
 </div>
