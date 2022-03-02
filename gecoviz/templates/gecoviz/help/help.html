@@ -53,7 +53,8 @@
           <div class="card-title">
               Genomic context visualizer
           </div>
-          <ul class="nav nav-tabs" id="gcv-tab" role="tablist">
+          <ul class="nav nav-tabs ml-4" id="gcv-tab" role="tablist"
+              style="border-bottom:none">
               <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="gcv-overview-tab" data-toggle="tab"
                     data-target="#gcv-overview" type="button" role="tab" 
@@ -78,12 +79,14 @@
           </ul>
       </div>
       <div class="card-body tab-content" id="gcv-tab-content">
-          <div class="tab-pane fade show active d-flex justify-content-center"
+          <div class="tab-pane fade show active"
               id="gcv-overview" role="tabpanel" aria-labelledby="gcv-overview-tab">
-              <img src="{% static "gecoviz/img/context_vis.png" %}"
-                   alt="Genomic context graph outline"
-                   class="mt-2"
-                   style="width:95%; height:auto; max-width:80rem"/>
+              <div class="d-flex justify-content-center">
+                  <img src="{% static "gecoviz/img/context_vis.png" %}"
+                       alt="Genomic context graph outline"
+                       class="mt-2"
+                       style="width:95%; height:auto; max-width:80rem"/>
+              </div>
           </div>
           <div class="tab-pane fade" id="gcv-controlpanel" 
               role="tabpanel" aria-labelledby="gcv-control-tab">
