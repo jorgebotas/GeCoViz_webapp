@@ -69,13 +69,13 @@
                     Control panel
                 </button>
               </li>
-              {% comment %}<li class="nav-item" role="presentation">{% endcomment %}
-                {% comment %}<button class="nav-link" id="contact-tab" data-toggle="tab"{% endcomment %}
-                    {% comment %}data-target="#contact" type="button" role="tab" {% endcomment %}
-                    {% comment %}aria-controls="contact" aria-selected="false">{% endcomment %}
-                    {% comment %}Legend{% endcomment %}
-                {% comment %}</button>{% endcomment %}
-              {% comment %}</li>{% endcomment %}
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="gcv-legend-tab" data-toggle="tab"
+                    data-target="#gcv-legend" type="button" role="tab" 
+                    aria-controls="gcv-legend" aria-selected="false">
+                    Legend
+                </button>
+              </li>
           </ul>
       </div>
       <div class="card-body tab-content" id="gcv-tab-content">
@@ -223,6 +223,20 @@
                               </div>
                           </div>
                       </div>
+                  </div>
+              </div>
+          </div>
+          <div class="tab-pane fade"
+              id="gcv-legend" role="tabpanel" aria-labelledby="gcv-legend-tab">
+              <div class="d-flex flex-wrap">
+                  <div>
+                      <img src="{% static "gecoviz/img/legend.png" %}"
+                           alt="Genomic context graph outline"
+                           class="mt-2"
+                           style="width:95%; height:auto; max-width:80rem"/>
+                  </div>
+                  <div>
+                      Hello
                   </div>
               </div>
           </div>
