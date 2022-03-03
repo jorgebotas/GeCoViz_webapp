@@ -49,11 +49,11 @@
 
 
     <div class="card col-12 mt-3">
-      <div class="card-header mb-0 mt-2 f-bold">
-          <div class="card-title">
+      <div class="card-header mb-0 mt-2">
+          <div class="card-title f-bold">
               Genomic context visualizer
           </div>
-          <ul class="nav nav-tabs ml-4" id="gcv-tab" role="tablist"
+          <ul class="nav nav-tabs ml-5" id="gcv-tab" role="tablist"
               style="border-bottom:none">
               <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="gcv-overview-tab" data-toggle="tab"
@@ -90,7 +90,10 @@
           </div>
           <div class="tab-pane fade" id="gcv-controlpanel" 
               role="tabpanel" aria-labelledby="gcv-control-tab">
-              ...
+                  <img src="{% static "gecoviz/img/control_panel.png" %}"
+                       alt="Genomic context control panel"
+                       class="mt-2"
+                       style="width:95%; height:auto; max-width:80rem"/>
           </div>
           {% comment %}<div class="tab-pane fade" id="gcv-legend" role="tabpanel" aria-labelledby="contact-tab">{% endcomment %}
               {% comment %}...{% endcomment %}
