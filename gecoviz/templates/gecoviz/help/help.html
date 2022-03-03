@@ -36,14 +36,66 @@
     </div>
 
     <div class="card col-12 mt-3">
-      <div class="card-header card-title mb-0 mt-2 f-bold">
-          Taxonomy selector
+      <div class="card-header mb-0 mt-2">
+          <div class="card-title f-bold">
+              Taxonomy selector
+          </div>
+          <ul class="nav nav-tabs ml-5" id="ts-tab" role="tablist"
+              style="border-bottom:none">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="ts-overview-tab" data-toggle="tab"
+                    data-target="#ts-overview" type="button" role="tab" 
+                    aria-controls="ts-overview" aria-selected="true">
+                    Overview
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="ts-sunburst-tab" data-toggle="tab"
+                    data-target="#ts-sunburst" type="button" role="tab" 
+                    aria-controls="ts-sunburst" aria-selected="false">
+                    Sunburst
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="ts-basket-tab" data-toggle="tab"
+                    data-target="#ts-basket" type="button" role="tab" 
+                    aria-controls="ts-basket" aria-selected="false">
+                    Genome basket
+                </button>
+              </li>
+          </ul>
       </div>
       <div class="card-body d-flex justify-content-center">
-          <img src="{% static "gecoviz/img/taxselector.png" %}"
-               alt="Genomic context graph outline"
-               class="mt-2"
-               style="width:95%; height:auto; max-width:80rem"/>
+
+      <div class="card-body tab-content" id="ts-tab-content">
+          <div class="tab-pane fade show active"
+              id="ts-overview" role="tabpanel" aria-labelledby="ts-overview-tab">
+              <div class="d-flex justify-content-center">
+                  <img src="{% static "gecoviz/img/taxselector.png" %}"
+                       alt="Genomic context graph outline"
+                       class="mt-2"
+                       style="width:95%; height:auto; max-width:80rem"/>
+              </div>
+          </div>
+          <div class="tab-pane fade" id="ts-sunburst" 
+              role="tabpanel" aria-labelledby="ts-sunburst-tab">
+              <div class="d-flex justify-content-center">
+                  <img src="{% static "gecoviz/img/sunburst.png" %}"
+                       alt="Sunburst taxonomy selector"
+                       class="mt-2"
+                       style="width:95%; height:auto; max-width:80rem"/>
+              </div>
+          </div>
+          <div class="tab-pane fade" id="ts-basket" 
+              role="tabpanel" aria-labelledby="ts-basket-tab">
+              <div class="d-flex justify-content-center">
+                  <img src="{% static "gecoviz/img/sunburst.png" %}"
+                       alt="Genome basket in taxonomy selector"
+                       class="mt-2"
+                       style="width:95%; height:auto; max-width:80rem"/>
+              </div>
+          </div>
+
       </div>
     </div>
 
