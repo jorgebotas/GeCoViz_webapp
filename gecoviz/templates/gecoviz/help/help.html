@@ -108,10 +108,10 @@
                              Its width can be shrunk (for a more compact
                              visualization) and the branch length and support
                              can be shown or hidden at user's discretion.
-                             Lastly, the text displayed on the leaves can me
+                             Lastly, the text displayed on the leaves can be
                              modified. As every leaf node has a phylogeny
-                             associated, the taxonomic level that is shown can
-                             be selected (as seen in the picture above)
+                             associated, the taxonomic level that is shown on
+                             the tree can be selected.
                           </div>
                       </div>
                   </div>
@@ -124,7 +124,9 @@
                               Each genome may have an isolation source
                               associated. We can then filter genomes by their
                               isolation source, by switching on/off the checkboxes shown
-                              in section 2 of the figure above.
+                              in section 2 of the figure above. Furthermore,
+                              this panel acts as a legend to the isolation
+                              source plot.
                               <div class="text-muted">
                                   Note: genomes with unknown isolation source
                                   can be filtered out by switching off the
@@ -140,15 +142,19 @@
                           </div>
                           <div class="card-body p-4 pt-0">
                               The genomic context visualization (central panel
-                              in graph. See overview) can be customized in
+                              in graph. See a) can be customized in
                               several ways:
                               <ul>
                                   <li>
-                                      Gene size: gene length and distance can
-                                      be scaled to depict genomic dimensions
+                                      <b>Gene size:</b> 
+                                      gene length and distance can
+                                      be scaled to depict genomic dimensions 
+                                      (activated by default). We can zoom in
+                                      and out by means of the zoom slider.
                                   </li>
                                   <li>
-                                      Height collapsing: gene height can be collapsed
+                                      <b>Height collapsing:</b> 
+                                      gene height can be collapsed
                                       to fit a greater number of genomes in the
                                       screen. Although less detailed (text on
                                       leaves and genes will not be seen), this
@@ -157,14 +163,15 @@
                                       genomes.
                                   </li>
                                   <li>
-                                      Number of genes in neighborhood: the
-                                      number of genes upstream and downstream
+                                      <b>Number of genes in neighborhood:</b>
+                                      the number of genes upstream and downstream
                                       to the anchor/central gene can be
                                       modified independently. A maximum of 10
                                       genes can be visualized on each side.
                                   </li>
                                   <li>
-                                      Text on gene: although the most common
+                                      <b>Text on gene:</b>
+                                      although the most common
                                       setting is to show their gene name, the
                                       text displayed on genes can be chosen.
                                   </li>
@@ -207,8 +214,11 @@
                               Genes are colored by functional terms. However,
                               to better assess functional conservation, these
                               terms can be filtered by vertical conservation. 
-                              <div class="text-muted">
-                                  Vertical conservation = ( genomes with functional term in neighborhood ) / total genomes
+                              By default, the conservation threshold is set to
+                              50% but it can be easily modified by using the
+                              slider in the control panel.
+                              <div class="text-muted mt-1">
+                                  Vertical conservation = genomes with functional term in neighborhood / total genomes
                               </div>
                           </div>
                       </div>
