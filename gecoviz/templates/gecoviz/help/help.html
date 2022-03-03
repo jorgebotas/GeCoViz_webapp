@@ -98,43 +98,117 @@
               </div>
               <div class="row row-cols-xxl-5 row-cols-xl-3 row-cols-2 g-2">
                   <div class="col">
-                      <div class="card">
+                      <div class="card no-box-shadow">
                           <div class="card-header card-title">
                               1. Tree visualization
                           </div>
                           <div class="card-body">
-                              
+                             The phylogenetic tree on the left of the graph
+                             (see overview) can be modified in several ways.
+                             Its width can be shrunk (for a more compact
+                             visualization) and the branch length and support
+                             can be shown or hidden at user's discretion.
+                             Lastly, the text displayed on the leaves can me
+                             modified. As every leaf node has a phylogeny
+                             associated, the taxonomic level that is shown can
+                             be selected (as seen in the picture above)
                           </div>
                       </div>
                   </div>
                   <div class="col">
-                      <div class="card">
+                      <div class="card no-box-shadow">
                           <div class="card-header card-title">
                               2. Isolation source
                           </div>
                           <div class="card-body">
-                              
+                              Each genome may have an isolation source
+                              associated. We can then filter genomes by their
+                              isolation source, by switching on/off the checkboxes shown
+                              in section 2 of the figure above.
+                              <div class="text-muted">
+                                  Note: genomes with unknown isolation source
+                                  can be filtered out by switching off the
+                                  "Unknown" checkbox
+                              </div>
                           </div>
                       </div>
                   </div>
                   <div class="col">
-                      <div class="card">
+                      <div class="card no-box-shadow">
                           <div class="card-header card-title">
                               3. Genomic context
                           </div>
                           <div class="card-body">
-                              
+                              The genomic context visualization (central panel
+                              in graph. See overview) can be customized in
+                              several ways:
+                              <ul>
+                                  <li>
+                                      Gene size: gene length and distance can
+                                      be scaled to depict genomic dimensions
+                                  </li>
+                                  <li>
+                                      Height collapsing: gene height can be collapsed
+                                      to fit a greater number of genomes in the
+                                      screen. Although less detailed (text on
+                                      leaves and genes will not be seen), this
+                                      view can be particularly useful if we are
+                                      studying a relatively elevated number of
+                                      genomes.
+                                  </li>
+                                  <li>
+                                      Number of genes in neighborhood: the
+                                      number of genes upstream and downstream
+                                      to the anchor/central gene can be
+                                      modified independently. A maximum of 10
+                                      genes can be visualized on each side.
+                                  </li>
+                                  <li>
+                                      Text on gene: although the most common
+                                      setting is to show their gene name, the
+                                      text displayed on genes can be chosen.
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="card no-box-shadow">
+                          <div class="card-header card-title">
+                              3. Color by function
+                          </div>
+                          <div class="card-body">
+                              Genes can be colored by different functional
+                              annotations. This selector allows us to seemingly
+                              transition from one to another, obtaining a more
+                              comprehensive view of the gene-of-interest
+                              neighborhood.
+                              Among those functional terms, we can color genes
+                              by KEGG pathways, KEGG Orthology, EggNOG
+                              Orthology of Pfam domains. Furthermore,
+                              hierarchical functional terms such as EggNOG
+                              Orthology can be fine-grained using the selector
+                              on the right (we can choose at which taxa the
+                              orthology cluster has been computed).
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <div class="card no-box-shadow">
+                          <div class="card-header card-title">
+                              4. Conservation threshold
+                          </div>
+                          <div class="card-body">
+                              Genes are colored by functional terms. However,
+                              to better assess functional conservation, these
+                              terms can be filtered by vertical conservation. 
+                              <div class="text-muted">
+                                  Vertical conservation = ( genomes with functional term in neighborhood ) / total genomes
+                              </div>
                           </div>
                       </div>
                   </div>
               </div>
-              {% comment %}<ol>{% endcomment %}
-                  {% comment %}<li>Tree visualization:</li>{% endcomment %}
-                  {% comment %}<li>Isolation source:</li>{% endcomment %}
-                  {% comment %}<li>Context visualization:</li>{% endcomment %}
-                  {% comment %}<li>Color by function:</li>{% endcomment %}
-                  {% comment %}<li>Conservation threshold:</li>{% endcomment %}
-              {% comment %}</ol>{% endcomment %}
           </div>
           {% comment %}<div class="tab-pane fade" id="gcv-legend" role="tabpanel" aria-labelledby="contact-tab">{% endcomment %}
               {% comment %}...{% endcomment %}
