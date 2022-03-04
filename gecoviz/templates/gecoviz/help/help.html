@@ -105,7 +105,7 @@
                   <br><br>
                   <b>Sunburst:</b> the graph itself is interactive. Hover over
                   a tile and the breadcrumb will update to display the whole
-                  phylogeny of the taxa represented by that tile. Click on the
+                  taxonomy of the taxa represented by that tile. Click on the
                   tile to toggle the submenu associated with it.
                   <br><br>
                   <b>Submenu:</b> toggled on a particular taxa. It allows to
@@ -131,13 +131,29 @@
           <div class="tab-pane fade" id="ts-basket" 
               role="tabpanel" aria-labelledby="ts-basket-tab">
               <div style="float: left">
-                  <img src="{% static "gecoviz/img/sunburst.png" %}"
+                  <img src="{% static "gecoviz/img/basket.png" %}"
                        alt="Genome basket in taxonomy selector"
                        class="mt-2"
                        style="width:95%; height:auto; max-width:50rem"/>
               </div>
-              <div>
-                  asdfasdf
+              <div class="pt-4 mr-5">
+                  The genome basket shows a summary of the selected genomes
+                  from different taxa. These genomes can be added from the
+                  sunburst's submenu (see sunburst > submenu). A similar
+                  submenu can be toggled by clicking on the downwards arrow in
+                  any basket entry, allowing the user to modify the number of
+                  genomes that will be shown for that taxa. 
+                  <br><br>
+                  A <b>maximum of 250 genomes</b> can be selected in total.
+                  This upper limit is set for user experience, to avoid
+                  excessive scrolling when visualizing the genomic context 
+                  (a global view is helpful when infering functional
+                  conservation) as well as to mantain high browser performance
+                  and quick response time to user interaction.
+                  <br><br>
+                  Once we have finished selected the desired genomes, we can
+                  click on the button on the bottom to visualize their genomic
+                  context.
               </div>
           </div>
       </div>
@@ -205,7 +221,7 @@
                              visualization) and the branch length and support
                              can be shown or hidden at user's discretion.
                              Lastly, the text displayed on the leaves can be
-                             modified. As every leaf node has a phylogeny
+                             modified. As every leaf node has a taxonomy
                              associated, the taxonomic level that is shown on
                              the tree can be selected.
                           </div>
