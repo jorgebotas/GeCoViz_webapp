@@ -42,6 +42,7 @@ og_level_dict = get_pickle(STATIC_PATH / "pickle/e5_og_levels.pickle")
 og_level_name_dict = get_pickle(STATIC_PATH / "pickle/e5_og_level_names.pickle")
 og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
 lineage_dict = get_pickle(STATIC_PATH / "pickle/progenomes2_1_reps_lineage.pickle")
+pname_lower = get_pickle(STATIC_PATH / "pickle/PNAME_LOWERCASE.pickle")
 
 
 def get_sequence(query, fasta=True):
@@ -53,6 +54,7 @@ def get_sequence(query, fasta=True):
 
 def get_pname_og(field, query):
     if field == "pname":
+        query = pname_lower.get(str(query).lower(), "")
         match = col_emapper.find_one({ "pname": query }, { "ogs": 1 })
         if match:
             field = "ogs"

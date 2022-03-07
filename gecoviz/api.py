@@ -10,6 +10,7 @@ from .src.query import get_pickle, get_functional_matches, get_newick,\
 RESULTS_PATH = settings.BASE_DIR / 'gecoviz/tmp'
 PICKLE_PATH = settings.STATIC_ROOT / 'gecoviz/pickle'
 
+
 def suggestions(request, field, query):
     if field == "ogs":
         path = PICKLE_PATH / 'OG_DESCRIPTION.pickle'
@@ -26,8 +27,16 @@ def suggestions(request, field, query):
 
     # Return hits in ids
     if len(query) <= 10:
-        key_hits = [ { 'id': k, 'desc': v }
-                for k,v in desc_dict.items() if k.__contains__(query) ]
+        if field == "pname":
+            # Case insensitive search for gene names
+            lower = str(query).lower()
+            key_hits = [ v for k,v \
+                    in get_pickle(PICKLE_PATH / "PNAME_LOWERCASE.pickle").items()\
+                    if v.__contains__(lower)]
+            key_hits [ { 'id': k, 'desc': desc_dict.get(k, "") } ]
+        else:
+            key_hits = [ { 'id': k, 'desc': v }
+                    for k,v in desc_dict.items() if k.__contains__(query) ]
         if len(key_hits) > 0:
             return JsonResponse({ 'suggestions': key_hits })
 
