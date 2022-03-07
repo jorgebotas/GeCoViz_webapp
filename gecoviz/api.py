@@ -33,7 +33,7 @@ def suggestions(request, field, query):
             key_hits = [ v for k,v \
                     in get_pickle(PICKLE_PATH / "PNAME_LOWERCASE.pickle").items()\
                     if v.__contains__(lower)]
-            key_hits [ { 'id': k, 'desc': desc_dict.get(k, "") } for k in key_hits ]
+            key_hits = [ { 'id': k, 'desc': desc_dict.get(k, "") } for k in key_hits ]
         else:
             key_hits = [ { 'id': k, 'desc': v }
                     for k,v in desc_dict.items() if k.__contains__(query) ]
