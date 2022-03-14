@@ -367,13 +367,48 @@
                        class="mt-2"
                        style="width:95%; height:auto; max-width:80rem"/>
               </div>
-              <div class="pt-4 mr-5">
-                  Four main panels comprise the genomic context graph produced
+              <div class="pt-4 m-5">
+                  Four highly interactive panels comprise the genomic context graph produced
                   by <a class="color-indigo f-bol" 
                       href="https://github.com/jorgebotas/GeCoViz.js"
                       target="_blank">GeCoViz.js</a>, from left to right:
                   a phylogenetic tree, isolation source information, genomic
                   neighborhood and a legend for the latter.
+
+                  <div class="row row-cols-xxl-3 row-cols-xl-2 row-cols-1 g-2">
+                      <div class="col">
+                          <div class="card no-box-shadow h-100">
+                              <div class="card-header card-title f-bold">
+                                  Phylogenetic tree
+                              </div>
+                              <div class="card-body p-4 pt-0">
+                                 The phylogenetic tree on the left of the graph
+                                 provides an evolutionary perspective to the
+                                 genomic context conservation analysis. 
+                                 <br><br>
+                                 <b>Hover</b> over any node (leaf or internal) to
+                                 highlight the information associated to it:
+                                 children nodes, genomic neighborhoods and
+                                 isolation sources.
+                                 <br><br>
+                                 <b>Click</b> on any node to trigger their
+                                 pop-up. This pop-up contains a complete
+                                 taxonomy lineage and two buttons that allow to
+                                 either:
+                                 <ul>
+                                     <li>Collapse their genomic context. We can
+                                         collapse whole clades by performing this
+                                         action on an internal node.
+                                     </li>
+                                     <li>Permanently remove a node. This
+                                         feature may be useful when trimming
+                                         the graph for publication purposes.
+                                     </li>
+                                 </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
 
               </div>
           </div>

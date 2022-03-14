@@ -938,7 +938,7 @@ var vueapp = new Vue({
                 },
                 {
                     value: 'pname', 
-                    label: 'Gene / protein name',
+                    label: 'Gene name',
                     selected: this.searchType == 'pname' 
                 },
                 {
@@ -984,4 +984,3 @@ var vueapp = new Vue({
         }
     },
 });
-
