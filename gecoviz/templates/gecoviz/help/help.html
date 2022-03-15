@@ -399,9 +399,9 @@
                                  either: <b>collapse</b> their genomic context
                                  (whole clades may be collapsed by performing
                                  this action on an internal node), or 
-                                 <b>permanently remove</b> a node. 
-                                 This feature may be useful when trimming 
-                                 the graph for publication purposes.
+                                 <b>permanently remove</b> a node
+                                 (may be useful when trimming the graph for
+                                 publication purposes).
                               </div>
                           </div>
                       </div>
@@ -430,8 +430,6 @@
                                       <li><span style="background-color:#FCC065"></span>food associated</li>
                                       <li><span style="background-color:#C80414"></span>disease associated</li>
                                   </ul>
-
-                                  
                               </div>
                           </div>
                       </div>
@@ -442,7 +440,38 @@
                                   Genomic context
                               </div>
                               <div class="card-body p-4 pt-0">
-
+                                  The genomic context graph shows a default
+                                  neighborhood with four genes up and
+                                  downstream to the gene of interest
+                                  (vertically aligned and highlighted with
+                                  a thicker border). Moreover, genes and their
+                                  distances are <b>scaled to their genomic
+                                  dimensions</b>. A myriad of features can be
+                                  modified from the control panel (see
+                                  documentation). 
+                                  <br><br>
+                                  Genes are colored by their associated
+                                  functional terms (eggNOG orthologous groups
+                                  by default). However, only those terms that
+                                  surpass the <b>vertical conservation</b> treshold
+                                  (defaults to 50%) will be shown. This filter
+                                  facilitates the assessment of functional
+                                  conservation along the graph.
+                                  <br><br>
+                                 <b class="color-indigo">Hover</b> 
+                                 over any gene to
+                                 highlight the information associated to it:
+                                 other genes with same functional annotation
+                                 (very useful when studying conservation),
+                                 corresponding legend entries, isolation source
+                                 and their associated node in the tree.
+                                  <br><br>
+                                 <b class="color-indigo">Click</b> 
+                                 on any node to trigger their
+                                 <b>pop-up</b>. This pop-up contains a more complete
+                                 description of the gene's functional
+                                 annotation. Moreover, its sequence may be
+                                 downloaded from this container for further analysis.
                               </div>
                           </div>
                       </div>
