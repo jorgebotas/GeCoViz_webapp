@@ -510,7 +510,7 @@ var vueapp = new Vue({
         },
 
         searchOgsByGeneName: async function(query, _hideSpinner) {
-            await fetch(API_BASE_URL + `/ogs_from_pname/pname/${query}/`)
+            await fetch(API_BASE_URL + `/ogs_from_pname/${query}/`)
                  .then(response => response.json())
                  .then(data => {
                       this.geneNameSearchResults = data.matches;
