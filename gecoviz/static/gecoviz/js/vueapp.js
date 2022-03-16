@@ -280,8 +280,6 @@ var vueapp = new Vue({
                 this.showSunburstPopup(undefined, n);
             }
 
-            console.log("Showing popup")
-
             if (arcVisible(d))
                 show(d);
             else {
@@ -528,7 +526,6 @@ var vueapp = new Vue({
                           $("#og-selector").modal("show")
                           hideSpinner();
                       }
-                      console.log(this.geneNameSearchResults)
                   }).catch(geneNameNotFound)
         },
 
