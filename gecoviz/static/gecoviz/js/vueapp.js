@@ -550,7 +550,7 @@ var vueapp = new Vue({
 
             $('#query-search').trigger('blur');
 
-            if (seachType === "pname") {
+            if (searchType === "pname") {
                 this.searchOgsByGeneName(this.query.name, _hideSpinner);
                 return
             };
