@@ -535,10 +535,11 @@ var vueapp = new Vue({
         searchQuery : async function(searchType, query, _hideSpinner) {
             $('#spinner').modal('show');
             const newQuery = query || $("#query-search").val().trim();
+            this.searchType = searchType || this.searchTypeChoices.getValue(true);
             if (newQuery) {
                 this.allItems = [];
                 this.sequenceSearchResults = [];
-                if (searchType !== "pname")
+                if (this.searchType !== "pname")
                     hideOgSelector(() => this.geneNameSearchResults = []);
                 else
                     this.geneNameSearchResults = [];
@@ -550,7 +551,6 @@ var vueapp = new Vue({
                 d3.selectAll(".sunburst-selector *").remove();
             }
             $("#query-search").val(this.query.name);
-            this.searchType = searchType || this.searchTypeChoices.getValue(true);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
 
             if (["ogs", "kos"].includes(this.searchType))
@@ -564,7 +564,7 @@ var vueapp = new Vue({
 
             $('#query-search').trigger('blur');
 
-            if (searchType === "pname") {
+            if (this.searchType === "pname") {
                 this.searchOgsByGeneName(this.query.name, _hideSpinner);
                 return
             };

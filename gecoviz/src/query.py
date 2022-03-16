@@ -393,10 +393,7 @@ def get_ogs_from_sequence(sequence):
 
 def get_ogs_from_pname(query):
     query = pname_lower.get(str(query).lower(), "")
-    # ogs = []
     ogs = col_emapper.find({ "pname": query }, { "ogs": 1 })
-
-    # ogs = pname2ogs.get(query, [])
     matches = {}
     for og in ogs:
         if not len(og["ogs"]):
