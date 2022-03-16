@@ -539,8 +539,9 @@ var vueapp = new Vue({
                 this.allItems = [];
                 this.sequenceSearchResults = [];
                 if (searchType !== "pname")
-                    hideOgSelector();
-                this.geneNameSearchResults = [];
+                    hideOgSelector(() => this.geneNameSearchResults = []);
+                else
+                    this.geneNameSearchResults = [];
                 this.root = undefined;
                 this.selectedTaxids = [];
                 this.searchedTaxa = [];
