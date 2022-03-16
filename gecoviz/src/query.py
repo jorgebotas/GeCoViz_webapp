@@ -397,11 +397,10 @@ def get_ogs_from_pname(query):
     ogs = col_emapper.find({ "pname": query }, { "ogs": 1 })
 
     # ogs = pname2ogs.get(query, [])
-    matches = []
+    matches = {}
     for og in ogs:
         if not len(og["ogs"]):
             continue
         og = og["ogs"][0]
-        matches.append({ "og": og, "level": get_tax_levelname(get_og_level(og)), "desc": get_og_desc(og) })
-    print(matches)
-    return matches
+        matches[og] = { "og": og, "level": get_tax_levelname(get_og_level(og)), "desc": get_og_desc(og) }
+    return list(matches.values())
