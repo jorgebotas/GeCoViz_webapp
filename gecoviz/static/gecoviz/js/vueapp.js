@@ -53,7 +53,7 @@ function hideOgSelector(callback) {
     setTimeout(() => {
         $('#og-selector').modal('hide');
         if (callback)
-            callback()
+            setTimeout(() => callback, 1000)
     }, 1000)
 }
 
