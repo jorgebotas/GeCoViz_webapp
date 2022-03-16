@@ -49,6 +49,14 @@ function hideSpinner(callback) {
     }, 1000)
 }
 
+function hideOgSelector(callback) {
+    setTimeout(() => {
+        $('#og-selector').modal('hide');
+        if (callback)
+            callback()
+    }, 1000)
+}
+
 function fetchCatch(e) {
     if (e) console.log(e)
     hideSpinner(() => {
@@ -459,6 +467,7 @@ var vueapp = new Vue({
                 this.updateSearch();
                 //if (_hideSpinner)
                     //hideSpinner();
+                hideOgSelector();
 
                 const sharedTaxa = this.getSharedTaxa(this.root);
                 sharedTaxa.descendantRanks = this.getDescendantRanks(sharedTaxa);
@@ -516,8 +525,10 @@ var vueapp = new Vue({
                       this.geneNameSearchResults = data.matches;
                       if (data.matches.length === 0)
                           geneNameNotFound();
-                      else
+                      else {
+                          $("#og-selector").modal("show")
                           hideSpinner();
+                      }
                       console.log(this.geneNameSearchResults)
                   }).catch(geneNameNotFound)
         },
