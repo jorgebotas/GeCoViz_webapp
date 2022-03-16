@@ -1,6 +1,7 @@
 <div class="modal modal-blur fade show"
       id="welcome" 
-      tabindex="-1">
+      tabindex="-1"
+      style="max-width: calc(min(80rem, 80vw))">
     <div class="modal-dialog modal-dialog-centered justify-content-center" 
         role="document">
         <div class="modal-content">
@@ -9,7 +10,7 @@
                 Please select eggNOG Orthologous group associated to [[ query.name ]]
             </h5>
           </div>
-          <div class="modal-body">
+          <div class="modal-body" style="max-height:80vh; overflow-y:scroll">
                 <table id="og_selector" 
                      class="table table-responsive card-table mt-4">
                     <thead>
