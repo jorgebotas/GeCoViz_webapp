@@ -403,5 +403,4 @@ def get_ogs_from_pname(query):
             continue
         og = og["ogs"][0]
         matches.append({ "og": og, "level": get_tax_levelname(get_og_level(og)), "desc": get_og_desc(og) })
-    print(matches)
     return matches

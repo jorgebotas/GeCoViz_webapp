@@ -518,6 +518,7 @@ var vueapp = new Vue({
                           geneNameNotFound();
                       else
                           hideSpinner();
+                      console.log(this.geneNameSearchResults)
                   }).catch(geneNameNotFound)
         },
 
