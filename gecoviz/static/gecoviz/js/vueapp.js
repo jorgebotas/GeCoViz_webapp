@@ -467,7 +467,6 @@ var vueapp = new Vue({
                 this.updateSearch();
                 //if (_hideSpinner)
                     //hideSpinner();
-                hideOgSelector();
 
                 const sharedTaxa = this.getSharedTaxa(this.root);
                 sharedTaxa.descendantRanks = this.getDescendantRanks(sharedTaxa);
@@ -539,6 +538,7 @@ var vueapp = new Vue({
             if (newQuery) {
                 this.allItems = [];
                 this.sequenceSearchResults = [];
+                hideOgSelector();
                 this.geneNameSearchResults = [];
                 this.root = undefined;
                 this.selectedTaxids = [];
