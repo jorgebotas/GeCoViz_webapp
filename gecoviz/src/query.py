@@ -43,6 +43,7 @@ og_level_name_dict = get_pickle(STATIC_PATH / "pickle/e5_og_level_names.pickle")
 og_dict = get_pickle(STATIC_PATH / "pickle/OG_DESCRIPTION.pickle")
 lineage_dict = get_pickle(STATIC_PATH / "pickle/progenomes2_1_reps_lineage.pickle")
 pname_lower = get_pickle(STATIC_PATH / "pickle/PNAME_LOWERCASE.pickle")
+# pname2ogs = get_pickle(STATIC_PATH / "pickle/PNAME_OGS.pickle")
 
 
 def get_sequence(query, fasta=True):
@@ -387,4 +388,22 @@ def get_ogs_from_sequence(sequence):
                     "evalue": evalue
                     })
 
+    return matches
+
+
+def get_ogs_from_pname(query):
+    query = pname_lower.get(str(query).lower(), "")
+    # ogs = []
+    ogs = col_emapper.find_one({ "pname": query }, { "ogs": 1 })
+
+    if not ogs:
+        return []
+
+    # ogs = pname2ogs.get(query, [])
+    matches = []
+    for og in ogs:
+        if not len(og["ogs"]):
+            continue
+        og = og["ogs"][0] if  else ""
+        matches.append({ "og": og, "level": get_tax_levelname(get_og_level(og)), "desc": get_og_desc(og) })
     return matches

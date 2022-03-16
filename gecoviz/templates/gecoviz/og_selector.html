@@ -1,0 +1,41 @@
+<div class="modal modal-blur fade show"
+      id="welcome" 
+      tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered justify-content-center" 
+        role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">
+                Please select eggNOG Orthologous group associated to [[ query.name ]]
+            </h5>
+          </div>
+          <div class="modal-body">
+                <table id="og_selector" 
+                     class="table table-responsive card-table mt-4">
+                    <thead>
+                        <tr>
+                            <td>eggNOG OG</td>
+                            <td>Taxonomic level</td>
+                            <td>Description</td>
+                            <!--<td>Number of representative genomes</td>-->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="result in geneNameSearchResults">
+                            <td><button class="btn btn-sm bg-blue-lt"
+                                    @click="searchQuery('ogs', result.og)">
+                                [[ result.og ]]
+                                </button>
+                            </td>
+                            <td>[[ result.level ]]</td>
+                            <td>[[ result.desc ]]</td>
+                            <!--<td>[[ result.ngenomes ]]</td>-->
+                        </tr>
+                    </tbody>
+                </table>          
+          </div>
+        </div>
+    </div>
+</div>
+
+

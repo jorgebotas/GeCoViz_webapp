@@ -4,7 +4,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 from json import load, loads
 from .src.query import get_pickle, get_functional_matches, get_newick,\
-                       get_context, get_sequence, get_ogs_from_sequence
+                       get_context, get_sequence, get_ogs_from_sequence,\
+                       get_ogs_from_pname
 
 
 RESULTS_PATH = settings.BASE_DIR / 'gecoviz/tmp'
@@ -85,3 +86,8 @@ def ogs_from_seq(request):
         seq = body.get("sequence", "")
         matches = get_ogs_from_sequence(seq)
         return JsonResponse({ "matches": matches })
+
+
+def ogs_from_pname(request, query):
+    matches = get_ogs_from_pname(query)
+    return JsonResponse({ "matches" matches })

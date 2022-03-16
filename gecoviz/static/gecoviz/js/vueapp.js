@@ -70,6 +70,14 @@ function sequenceNotFound(_) {
     });
 }
 
+function geneNameNotFound(_) {
+    hideSpinner(() => {
+        setTimeout(() => {
+            $('#alert-pname').modal('show')
+        }, 160);
+    });
+}
+
 function hide(selector) {
     $(selector).collapse("hide");
     $(".accordion-button", $(selector).prev()).addClass("collapsed");
@@ -163,6 +171,7 @@ var vueapp = new Vue({
             ko: [],
         },
         sequenceSearchResults: [],
+        geneNameSearchResults: [],
         maxSelected: 250,
         selectedTaxids: [],
         searchedTaxa: [],
@@ -500,12 +509,25 @@ var vueapp = new Vue({
             }).catch(sequenceNotFound)
         },
 
+        searchOgsByGeneName: async function(query, _hideSpinner) {
+            await fetch(API_BASE_URL + `/ogs_from_pname/pname/${query}/`)
+                 .then(response => response.json())
+                 .then(data => {
+                      this.geneNameSearchResults = data.matches;
+                      if (data.matches.length === 0)
+                          geneNameNotFound();
+                      else
+                          hideSpinner();
+                  }).catch(geneNameNotFound)
+        },
+
         searchQuery : async function(searchType, query, _hideSpinner) {
             $('#spinner').modal('show');
             const newQuery = query || $("#query-search").val().trim();
             if (newQuery) {
                 this.allItems = [];
                 this.sequenceSearchResults = [];
+                this.geneNameSearchResults = [];
                 this.root = undefined;
                 this.selectedTaxids = [];
                 this.searchedTaxa = [];
@@ -516,6 +538,7 @@ var vueapp = new Vue({
             $("#query-search").val(this.query.name);
             this.searchType = searchType || this.searchTypeChoices.getValue(true);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
+
             if (["ogs", "kos"].includes(this.searchType))
                 this.query.name = this.query.name.toUpperCase();
 
@@ -526,6 +549,11 @@ var vueapp = new Vue({
             this.updateSearchParams(params);
 
             $('#query-search').trigger('blur');
+
+            if (seachType === "pname") {
+                this.searchOgsByGeneName(this.query.name, _hideSpinner);
+                return
+            };
 
             await fetch(API_BASE_URL + `/description/${this.searchType}/${this.query.name}/`)
                  .then(response => response.json())
