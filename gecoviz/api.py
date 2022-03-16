@@ -90,4 +90,4 @@ def ogs_from_seq(request):
 
 def ogs_from_pname(request, query):
     matches = get_ogs_from_pname(query)
-    return JsonResponse({ "matches" matches })
+    return JsonResponse({ "matches": matches })
