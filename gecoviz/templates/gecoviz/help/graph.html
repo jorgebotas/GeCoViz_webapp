@@ -1,0 +1,344 @@
+{% load static %}
+  <div class="card-header mb-0 mt-2">
+      <div class="card-title f-bold">
+          Genomic context visualizer
+      </div>
+      <ul class="nav nav-tabs ml-5" id="gcv-tab" role="tablist"
+          style="border-bottom:none">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="gcv-overview-tab" data-toggle="tab"
+                data-target="#gcv-overview" type="button" role="tab" 
+                aria-controls="gcv-overview" aria-selected="true">
+                Overview
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="gcv-controlpanel-tab" data-toggle="tab"
+                data-target="#gcv-controlpanel" type="button" role="tab" 
+                aria-controls="gcv-controlpanel" aria-selected="false">
+                Control panel
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="gcv-graph-tab" data-toggle="tab"
+                data-target="#gcv-graph" type="button" role="tab" 
+                aria-controls="gcv-graph" aria-selected="false">
+                Graph
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="gcv-legend-tab" data-toggle="tab"
+                data-target="#gcv-legend" type="button" role="tab" 
+                aria-controls="gcv-legend" aria-selected="false">
+                Legend
+            </button>
+          </li>
+      </ul>
+  </div>
+  <div class="card-body tab-content" id="gcv-tab-content">
+      <div class="tab-pane fade show active"
+          id="gcv-overview" role="tabpanel" aria-labelledby="gcv-overview-tab">
+          <div class="d-flex justify-content-center">
+              <img src="{% static "gecoviz/img/context_vis.png" %}"
+                   alt="Genomic context graph outline"
+                   class="mt-2"
+                   style="width:95%; height:auto; max-width:80rem"/>
+          </div>
+      </div>
+      <div class="tab-pane fade" id="gcv-controlpanel" 
+          role="tabpanel" aria-labelledby="gcv-control-tab">
+          <div class="d-flex justify-content-center">
+              <img src="{% static "gecoviz/img/control_panel.png" %}"
+                   alt="Genomic context control panel"
+                   class="mt-2"
+                   style="width:95%; height:auto; max-width:80rem"/>
+          </div>
+          <div class="row row-cols-xxl-3 row-cols-xl-2 row-cols-1 g-2">
+              <div class="col">
+                  <div class="card no-box-shadow h-100">
+                      <div class="card-header card-title f-bold">
+                          1. Tree visualization
+                      </div>
+                      <div class="card-body p-4 pt-0">
+                         The phylogenetic tree on the left of the graph
+                         (see overview) can be modified in several ways.
+                         Its width can be shrunk (for a more compact
+                         visualization) and the branch length and support
+                         can be shown or hidden at user's discretion.
+                         Lastly, the text displayed on the leaves can be
+                         modified. As every leaf node has a taxonomy
+                         associated, the taxonomic level that is shown on
+                         the tree can be selected.
+                      </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="card no-box-shadow h-100">
+                      <div class="card-header card-title f-bold">
+                          2. Isolation source
+                      </div>
+                      <div class="card-body p-4 pt-0">
+                          Each genome may have an isolation source
+                          associated. We can then filter genomes by their
+                          isolation source, by switching on/off the checkboxes shown
+                          in section 2 of the figure above. Furthermore,
+                          this panel acts as a legend to the isolation
+                          source plot.
+                          <div class="text-muted mt-3">
+                              Note: genomes with unknown isolation source
+                              can be filtered out by switching off the
+                              "Unknown" checkbox
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="card no-box-shadow h-100">
+                      <div class="card-header card-title f-bold">
+                          3. Genomic context
+                      </div>
+                      <div class="card-body p-4 pt-0">
+                          The genomic context visualization (central panel
+                          in graph. See a) can be customized in
+                          several ways:
+                          <ul>
+                              <li>
+                                  <b class="f-bold">Gene size:</b> 
+                                  gene length and distance can
+                                  be scaled to depict genomic dimensions 
+                                  (activated by default). We can zoom in
+                                  and out by means of the zoom slider.
+                              </li>
+                              <li>
+                                  <b class="f-bold">Height collapsing:</b> 
+                                  gene height can be collapsed
+                                  to fit a greater number of genomes in the
+                                  screen. Although less detailed (text on
+                                  leaves and genes will not be seen), this
+                                  view can be particularly useful if we are
+                                  studying a relatively elevated number of
+                                  genomes.
+                              </li>
+                              <li>
+                                  <b class="f-bold">Number of genes in neighborhood:</b>
+                                  the number of genes upstream and downstream
+                                  to the anchor/central gene can be
+                                  modified independently. A maximum of 10
+                                  genes can be visualized on each side.
+                              </li>
+                              <li>
+                                  <b class="f-bold">Text on gene:</b>
+                                  although the most common
+                                  setting is to show their gene name, the
+                                  text displayed on genes can be chosen.
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="card no-box-shadow h-100">
+                      <div class="card-header card-title f-bold">
+                          3. Color by function
+                      </div>
+                      <div class="card-body p-4 pt-0">
+                          Genes can be colored by different functional
+                          annotations. This selector allows us to seemingly
+                          transition from one to another, obtaining a more
+                          comprehensive view of the gene-of-interest
+                          neighborhood.
+                          Among those functional terms, we can color genes
+                          by:
+                          <ul>
+                              <li>KEGG pathways</li>
+                              <li>KEGG Orthology</li>
+                              <li>EggNOG Orthology</li>
+                              <li>Pfam domains</li>
+                          </ul>
+                          Furthermore, hierarchical functional terms such as EggNOG
+                          Orthology can be fine-grained using the selector
+                          on the right (we can choose at which taxa the
+                          orthology cluster has been computed).
+                      </div>
+                  </div>
+              </div>
+              <div class="col">
+                  <div class="card no-box-shadow h-100">
+                      <div class="card-header card-title f-bold">
+                          4. Conservation threshold
+                      </div>
+                      <div class="card-body p-4 pt-0">
+                          Genes are colored by functional terms. However,
+                          to better assess functional conservation, these
+                          terms can be filtered by 
+                          <b class="f-bold">vertical conservation</b>. 
+                          By default, the conservation threshold is set to
+                          50% but it can be easily modified by using the
+                          slider in the control panel.
+                          <div class="text-muted mt-3">
+                              Vertical conservation = genomes with functional term in neighborhood / total genomes
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="tab-pane fade"
+          id="gcv-graph" role="tabpanel" aria-labelledby="gcv-graph-tab">
+          <div class="d-flex justify-content-center">
+              <img src="{% static "gecoviz/img/graph.png" %}"
+                   alt="Genomic context control panel"
+                   class="mt-2"
+                   style="width:95%; height:auto; max-width:80rem"/>
+          </div>
+          <div class="pt-4 m-5">
+              Four highly interactive panels comprise the genomic context graph produced
+              by <a class="color-indigo f-bol" 
+                  href="https://github.com/jorgebotas/GeCoViz.js"
+                  target="_blank">GeCoViz.js</a>, from left to right:
+              a phylogenetic tree, isolation source information, genomic
+              neighborhood and a legend for the latter.
+
+              <div class="row row-cols-xxl-3 row-cols-xl-2 row-cols-1 g-2 mt-3">
+                  <div class="col">
+                      <div class="card no-box-shadow h-100">
+                          <div class="card-header card-title f-bold">
+                              Phylogenetic tree
+                          </div>
+                          <div class="card-body p-4 pt-0">
+                             The phylogenetic tree on the left of the graph
+                             provides an evolutionary perspective to the
+                             genomic context conservation analysis. 
+                             <br><br>
+                             <b class="color-indigo">Hover</b> 
+                             over any node (leaf or internal) to
+                             highlight the information associated to it:
+                             children nodes, genomic neighborhoods and
+                             isolation sources.
+                             <br><br>
+                             <b class="color-indigo">Click</b> 
+                             on any node to trigger their
+                             <b>pop-up</b>. This pop-up contains a complete
+                             taxonomy lineage and two buttons that allow to
+                             either: <b>collapse</b> their genomic context
+                             (whole clades may be collapsed by performing
+                             this action on an internal node, shortcut
+                             <span class="btn-sm bg-indigo-lt f-bold mx-1">
+                                 Shift + Click</span>),
+                             or <b>permanently remove</b> a node
+                             (may be useful when trimming the graph for
+                             publication purposes).
+                          </div>
+                      </div>
+                  </div>
+
+                 <div class="col">
+                      <div class="card no-box-shadow h-100">
+                          <div class="card-header card-title f-bold">
+                              Isolation site and pathogenesis
+                          </div>
+                          <div class="card-body p-4 pt-0">
+                              This panel shows isolation site and
+                              pathogenesis from 
+                              <a href="https://progenomes.embl.de/" 
+                                 target="_blank">Progenomes</a>,
+                              providing a potential ecological
+                              interpretation of the displayed genomic context.
+                              Below, we provide a legend for all of the
+                              eight distinct classes:
+                              <ul class="progenomes-legend" style="list-style:none">
+                                  <li><span style="background-color:#E48825"></span>soil</li>
+                                  <li><span style="background-color:#6272BC"></span>aquatic</li>
+                                  <li><span style="background-color:#13D5CC"></span>aquatic freshwater</li>
+                                  <li><span style="background-color:#8E663E"></span>aquatic sediment mud</li>
+                                  <li><span style="background-color:#9A4DA8"></span>host associated</li>
+                                  <li><span style="background-color:#7BB77B"></span>host plant associated</li>
+                                  <li><span style="background-color:#FCC065"></span>food associated</li>
+                                  <li><span style="background-color:#C80414"></span>disease associated</li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+
+                 <div class="col">
+                      <div class="card no-box-shadow h-100">
+                          <div class="card-header card-title f-bold">
+                              Genomic context
+                          </div>
+                          <div class="card-body p-4 pt-0">
+                              The genomic context graph shows a default
+                              neighborhood with four genes up and
+                              downstream to the gene of interest
+                              (vertically aligned and highlighted with
+                              a thicker border). Moreover, genes and their
+                              distances are <b>scaled to their genomic
+                              dimensions</b>. A myriad of features can be
+                              modified from the control panel (see
+                              documentation). 
+                              <br><br>
+                              Genes are colored by their associated
+                              functional terms (eggNOG orthologous groups
+                              by default). However, only those terms that
+                              surpass the <b>vertical conservation</b> treshold
+                              (defaults to 50%) will be shown. This filter
+                              facilitates the assessment of functional
+                              conservation along the graph.
+                              <br><br>
+                             <b class="color-indigo">Hover</b> 
+                             over any gene to
+                             highlight the information associated to it:
+                             other genes with same functional annotation
+                             (very useful when studying conservation),
+                             corresponding legend entries, isolation source
+                             and their associated node in the tree.
+                              <br><br>
+                             <b class="color-indigo">Click</b> 
+                             on any node to trigger their
+                             <b>pop-up</b>. This pop-up contains a more complete
+                             description of the gene's functional
+                             annotation. Moreover, its sequence may be
+                             downloaded from this container for further analysis.
+                          </div>
+                      </div>
+                  </div>
+
+              </div> {% comment %}row-cols{% endcomment %}
+
+          </div>
+      </div>
+
+      <div class="tab-pane fade"
+          id="gcv-legend" role="tabpanel" aria-labelledby="gcv-legend-tab">
+          <div style="float: left">
+              <img src="{% static "gecoviz/img/legend.png" %}"
+                   alt="Genomic context graph outline"
+                   class="mt-2"
+                   style="width:95%; height:auto; max-width:80rem"/>
+          </div>
+          <div class="pt-4 mr-5">
+              The dynamic legend for gene color by functional term 
+              is displayed on the right side of the
+              graph (see overview). To hide it, click on the close
+              button "X" on top. Colors can be shuffled by clicking on
+              the corresponding button.
+              <br><br>
+              Legend entries are functional terms from the category
+              specified on its title, EggNOG Orthology in this example
+              (may be changed from the control panel, section 4). 
+              These entries are ordered by their vertical conservation,
+              and they can be hidden (remove color from genes in
+              the genomic context graph) by clicking on their checkbox
+              between their color and name. 
+              <br><br>
+              Legend entry names are links to their corresponding
+              website. Vertical conservation and their description (if
+              any) are shown below.
+              <br><br>
+                 <b class="color-indigo">Hover</b> 
+                 over entries to <b>highlight genes</b> with such functional term
+                 associated.
+          </div>
+      </div>
+
+  </div>
