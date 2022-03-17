@@ -383,9 +383,10 @@ def get_ogs_from_sequence(sequence):
                 matches.append({
                     "og": og, 
                     "level": get_tax_levelname(level), 
+                    "desc": get_og_desc(og), 
                     "nseqs": nseqs, 
                     "ngenomes": ngenomes, 
-                    "evalue": evalue
+                    "evalue": evalue,
                     })
 
     return matches
