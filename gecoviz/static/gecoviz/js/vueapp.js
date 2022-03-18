@@ -874,9 +874,12 @@ var vueapp = new Vue({
             this.GeCoViz.toSvg(fileName);
         },
 
-        downloadContextPdf: function() {
+        downloadContextPdf: async function() {
             const fileName = this.getOutputFilename();
-            this.GeCoViz.toPdf(fileName);
+            
+            $('#spinner').modal('show');
+            await this.GeCoViz.toPdf(fileName);
+            hideSpinner();
         },
     },
     computed: {
