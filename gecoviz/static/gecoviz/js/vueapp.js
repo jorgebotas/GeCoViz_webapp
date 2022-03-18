@@ -878,7 +878,7 @@ var vueapp = new Vue({
             const fileName = this.getOutputFilename();
             
             $('#spinner').modal('show');
-            setTimeout(() => this.GeCoViz.toPdf(fileName), 100);
+            setTimeout(() => this.GeCoViz.toPdf(fileName), 500);
             hideSpinner();
         },
     },
