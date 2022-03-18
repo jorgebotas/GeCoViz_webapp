@@ -371,6 +371,7 @@ def get_ogs_from_sequence(sequence):
 
     if req: 
         for match in req['seq_matches'][0]['hit']['matches']:
+            print(match)
 
             if len(matches) >= nhits:
                 break
