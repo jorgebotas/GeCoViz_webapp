@@ -47,8 +47,13 @@
                     </li>
                     <li class="dropdown-item"
                         v-if="GeCoViz"
-                        @click="downloadContextView">
-                        Graph (svg)
+                        @click="downloadContextSvg">
+                        Graph (SVG)
+                    </li>
+                    <li class="dropdown-item"
+                        v-if="GeCoViz"
+                        @click="downloadContextPdf">
+                        Graph (PDF)
                     </li>
                     <li class="dropdown-item"
                         @click="copyUrl">

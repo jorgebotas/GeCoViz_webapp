@@ -863,10 +863,19 @@ var vueapp = new Vue({
             setTimeout(this.GeCoViz.scaleDist, 1000);
         },
 
-        downloadContextView: function() {
+        getOutputFilename: function() {
             const fileName = `${this.query.name}_${this.nAnchors}g_${this.selectedTaxids.length}sp`
                 + (this.sharedTaxa ? `-${this.sharedTaxa}` : "");
+            return fileName
+        },
+
+        downloadContextSvg: function() {
+            const fileName = this.getOutputFilename();
             this.GeCoViz.toSvg(fileName);
+        },
+
+        downloadContextPdf: function() {
+            const fileName = this.getOutputFilename();
             this.GeCoViz.toPdf(fileName);
         },
     },
