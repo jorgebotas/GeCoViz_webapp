@@ -34,6 +34,8 @@
 
 /*! choices.js v9.0.1 | © 2019 Josh Johnson | https://github.com/jshjohnson/Choices#readme */
 
+/*! https://mths.be/cssesc v3.0.0 by @mathias */
+
 /*! nouislider - 14.6.4 - 3/18/2021 */
 
 /**
