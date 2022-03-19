@@ -257,10 +257,7 @@ def get_ncbi(gene):
     """Progenomes gene id to NCBI"""
     ncbi = gene2ncbi.find_one({ "g": gene })
     if ncbi:
-        ncbi = f'{ncbi["ncbi"]}'
-        desc = get_ncbi_desc(ncbi)
-        if desc:
-            ncbi = f'  {desc}'
+        ncbi = f'{ncbi["ncbi"]}  {get_ncbi_desc(ncbi)}'
     return ncbi or ""
 
 def get_ncbi_desc(ncbi):
