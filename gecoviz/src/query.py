@@ -260,7 +260,7 @@ def get_ncbi(gene):
         ncbi = f'{ncbi["ncbi"]}'
         desc = get_ncbi_desc(ncbi)
         if desc:
-            ncbi = f': {desc}'
+            ncbi = f'  {desc}'
     return ncbi or ""
 
 def get_ncbi_desc(ncbi):
