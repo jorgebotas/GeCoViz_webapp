@@ -184,7 +184,7 @@ def get_context(field, query, taxids):
                 "gene": g["g"],
                 "genome": ".".join(g["g"].split(".")[:2]),
                 "seqID": g["g"],
-                "ncbi": get_ncbi(g["g"]),
+                "ncbi": [{ "id": get_ncbi(g["g"]), "description": get_ncbi_desc(g["g"]) }],
                 "pos": int(g["p"] - anchor["p"]),
                 "start": g["s"],
                 "end": g["e"],
@@ -261,6 +261,8 @@ def get_ncbi(gene):
     return ncbi or ""
 
 def get_ncbi_desc(ncbi):
+    if not ncbi:
+        return ""
     return ""
 
 def get_functional_annotation(genes):
