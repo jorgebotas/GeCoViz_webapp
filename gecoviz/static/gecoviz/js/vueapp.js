@@ -875,7 +875,7 @@ var vueapp = new Vue({
 
         downloadContextHtml: function() {
             const fileName = this.getOutputFilename();
-            this.GeCoViz.toSvg(fileName);
+            this.GeCoViz.toHtml(fileName);
         },
 
         downloadContextPdf: async function() {
