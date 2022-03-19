@@ -886,10 +886,12 @@ var vueapp = new Vue({
             hideSpinner();
         },
     },
-    computed: {
+    watch: {
         isScreenLarge: function() {
             return +window.innerWidth >= 1680;
         },
+    },
+    computed: {
 
         uniqueKOSuggestions: function() {
                const uniqueSuggestions = this.suggestions.ko.reduce((t, d) => {
