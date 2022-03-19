@@ -67,6 +67,7 @@ def get_pname_og(field, query):
 def get_newick(field, query, taxids):
     start = time.time()
     field, query = get_pname_og(field, query)
+    print(field, query)
     selected_genomes = get_filtered_genomes_from_function(field, query, taxids)
     print(f'get filtered genomes (newick):  {time.time() - start}')
 
