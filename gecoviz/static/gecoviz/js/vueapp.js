@@ -886,9 +886,6 @@ var vueapp = new Vue({
             hideSpinner();
         },
     },
-    watch: {
-
-    },
     computed: {
         isScreenLarge: function() {
             return +window.innerWidth >= 1680;
