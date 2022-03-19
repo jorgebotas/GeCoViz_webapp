@@ -873,7 +873,7 @@ var vueapp = new Vue({
             return fileName
         },
 
-        downloadContextSvg: function() {
+        downloadContextHtml: function() {
             const fileName = this.getOutputFilename();
             this.GeCoViz.toSvg(fileName);
         },
