@@ -550,8 +550,12 @@ var vueapp = new Vue({
             $("#query-search").val(this.query.name);
             this.searchTypeChoices.setChoiceByValue(this.searchType);
 
-            if (["ogs", "kos"].includes(this.searchType))
+            if (["ogs", "kos"].includes(this.searchType)) {
                 this.query.name = this.query.name.toUpperCase();
+                if (this.searchType === "ogs" &&
+                    this.query.name.slice(0,2) === "AR")
+                    this.query.name = `ar${this.query.name.slice(2)}`
+            }
 
             const params = {
                 query: this.query.name,
