@@ -949,6 +949,10 @@ var vueapp = new Vue({
         }
     },
     mounted: async function() {
+
+        if (window.innerWidth < 1680)
+            mainTabs.style.display = "none";
+
         document.addEventListener("click", () => {
             d3.selectAll("#popperContainer .popper").remove();
         });
