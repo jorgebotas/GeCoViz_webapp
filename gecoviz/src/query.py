@@ -16,6 +16,7 @@ col_pfam = db.pfam
 col_neighs = db.neighs
 col_proteins = db.proteins
 col_genome_info = db.genome_info
+gene2ncbi = db.gene2ncbi
 
 
 STATIC_PATH = settings.BASE_DIR / 'static/gecoviz/'
@@ -183,6 +184,7 @@ def get_context(field, query, taxids):
                 "gene": g["g"],
                 "genome": ".".join(g["g"].split(".")[:2]),
                 "seqID": g["g"],
+                "ncbi": get_ncbi(g["g"]),
                 "pos": int(g["p"] - anchor["p"]),
                 "start": g["s"],
                 "end": g["e"],
@@ -251,6 +253,16 @@ def get_og_desc(og):
 def get_pfam_desc(pfam):
     return ""
 
+def get_ncbi(gene):
+    """Progenomes gene id to NCBI"""
+    ncbi = gene2ncbi.find_one({ "g": gene })
+    if ncbi:
+        ncbi = f'{ncbi}. get_ncbi_desc(ncbi)'
+    return ncbi or ""
+
+def get_ncbi_desc(ncbi):
+    return ""
+
 def get_functional_annotation(genes):
     start = time.time()
     matches = list(col_emapper.find({ "q": { "$in": genes } }, { "_id": 0  }))
@@ -296,10 +308,12 @@ def get_functional_annotation(genes):
 
     print(f' (functional_info)  pfam:  {time.time() - start}')
 
+    
 
     print(f' (functional_info)  annotation:  {time.time() - start_all}')
 
     return annotation
+
 
 def get_filtered_genomes_from_function(field, query, taxids):
     # Get genomes with hits associated to function
