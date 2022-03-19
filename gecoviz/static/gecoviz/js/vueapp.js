@@ -888,7 +888,7 @@ var vueapp = new Vue({
     },
     computed: {
         isScreenLarge: function() {
-            return this.isScreenLarge = +window.innerWidth >= 1680;
+            return +window.innerWidth >= 1680;
         },
 
         uniqueKOSuggestions: function() {
