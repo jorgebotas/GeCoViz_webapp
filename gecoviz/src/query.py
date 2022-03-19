@@ -184,7 +184,8 @@ def get_context(field, query, taxids):
                 "gene": g["g"],
                 "genome": ".".join(g["g"].split(".")[:2]),
                 "seqID": g["g"],
-                "ncbi": [{ "id": get_ncbi(g["g"]), "description": get_ncbi_desc(g["g"]) }],
+                "ncbi": [{ "id": get_ncbi(g["g"]), "description": get_ncbi_desc(g["g"]) } ]\ 
+                           if get_ncbi(g["g"]) else "",
                 "pos": int(g["p"] - anchor["p"]),
                 "start": g["s"],
                 "end": g["e"],
