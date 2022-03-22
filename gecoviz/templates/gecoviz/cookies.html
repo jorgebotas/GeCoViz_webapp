@@ -11,7 +11,7 @@
         max-width: 600px;
         z-index: 10;
         transition: opacity 0.5s, display 0.5s;">
-    <div class="card-body text-center">
+    <div class="card-body">
         <div>
             <span><b class="color-indigo">GeCoViz</b>
                 is an online tool that allows users to remain anonymous.
@@ -28,12 +28,14 @@
                 </a>
             </span>
         </div>
-        <button type="button" 
-            class="btn btn-sm btn-primary font-weight-bold acceptcookies mt-2"
-            id="acceptcookies"
-            onclick="acceptCookies()">
-        I agree, dismiss banner
-    </button>
+        <div class="w-100 text-center">
+            <button type="button" 
+                class="btn btn-sm btn-primary font-weight-bold acceptcookies mt-2"
+                id="acceptcookies"
+                onclick="acceptCookies()">
+            I agree, dismiss banner
+            </button>
+        </div>
     </div>
 </div>
 {% endif %}
