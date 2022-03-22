@@ -17041,6 +17041,7 @@ button:focus {
 .card {
   border-radius: 25px !important;
   box-shadow: 5px 5px 10px #c1c1c1;
+  transition: box-shadow 0.5s;
 }
 
 .card-header {
@@ -17051,6 +17052,10 @@ button:focus {
 .card .row > .col > div {
   border-radius: 25px !important;
   box-shadow: 5px 5px 10px #c1c1c1;
+}
+
+a:hover > .card {
+  box-shadow: none;
 }
 
 .accordion-button {
