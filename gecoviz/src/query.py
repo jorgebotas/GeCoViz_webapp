@@ -414,7 +414,7 @@ def get_ogs_from_sequence(sequence):
 
 def get_ogs_from_pname(query):
     query = pname_lower.get(str(query).lower(), "")
-    ogs = col_emapper.find({ "pname": query }, { "ogs": 1 })
+    ogs = col_emapper.find({ "pname": query }, { "ogs": 1 }).limit(20)
     print(f'OGs in {query}: {ogs.count()}')
     matches = {}
     for og in ogs:
