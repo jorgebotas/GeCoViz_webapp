@@ -864,7 +864,7 @@ var vueapp = new Vue({
                 .draw();
 
             setTimeout(hideSpinner, 10);
-            setTimeouk(Svgthis.GeCoViz.scaleDist, 1000);
+            setTimeout(Svgthis.GeCoViz.scaleDist, 1000);
         },
 
         getOutputFilename: function() {
