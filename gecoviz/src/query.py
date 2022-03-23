@@ -261,7 +261,7 @@ def get_ncbi(gene):
     ncbi = gene2ncbi.find_one({ "g": gene })
     # if ncbi:
         # ncbi = f'{ncbi["ncbi"]}  {get_ncbi_desc(ncbi)}'
-    return ncbi or ""
+    return ncbi["ncbi"] if ncbi else ""
 
 def get_ncbi_desc(ncbi):
     if not ncbi:
