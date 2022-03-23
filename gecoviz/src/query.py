@@ -259,8 +259,8 @@ def get_pfam_desc(pfam):
 def get_ncbi(gene):
     """Progenomes gene id to NCBI"""
     ncbi = gene2ncbi.find_one({ "g": gene })
-    if ncbi:
-        ncbi = f'{ncbi["ncbi"]}  {get_ncbi_desc(ncbi)}'
+    # if ncbi:
+        # ncbi = f'{ncbi["ncbi"]}  {get_ncbi_desc(ncbi)}'
     return ncbi or ""
 
 def get_ncbi_desc(ncbi):
