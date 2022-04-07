@@ -381,7 +381,7 @@ var vueapp = new Vue({
                 popperNode.setAttribute('data-show', '');
             }
 
-            setTimeout(createPopper, 10);
+            setTimeout(createPopper, 100);
         },
 
         scrollToTop: function() {
