@@ -284,7 +284,7 @@ var vueapp = new Vue({
                 show(d);
             else {
                 this.sunBurst.update(getParent(d, sunBurstDepth));
-                setTimeout(() => show(d), 1500);
+                setTimeout(() => show(d), 1200);
             };
         },
 
