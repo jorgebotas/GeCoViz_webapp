@@ -283,7 +283,7 @@ var vueapp = new Vue({
             if (arcVisible(d))
                 show(d);
             else {
-                this.sunBurst.update(getParent(d, sunBurstDepth));
+                setTimeout(() => this.sunBurst.update(getParent(d, sunBurstDepth)), 100);
                 setTimeout(() => show(d), 1200);
             };
         },
