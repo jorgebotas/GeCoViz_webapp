@@ -482,9 +482,12 @@ var vueapp = new Vue({
                         const ranks = ["genus", "family", "phylum", "clade"];
                         const filteredRanks = ranks.filter(rank => {
                             const descendantRanks = sharedTaxa.descendantRanks[rank];
-                            return descendantRanks && descendantRanks.length <= maxSelected &&
-                                descendantRanks.reduce((total, d) => 
-                                    total += getNumberOfHits(undefined, d)) <= maxSelected
+                            if (!(descendantRanks && descendantRanks.length <= maxSelected))
+                                return false
+                            const n = descendantRanks.reduce((total, d) => 
+                                    total += getNumberOfHits(undefined, d))
+                            console.log(rank, n)
+                            return n <= maxSelected
                         });
                         if (filteredRanks.length)
                             this.selectLineages(sharedTaxa.descendantRanks[filteredRanks[0]],
