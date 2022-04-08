@@ -484,10 +484,11 @@ var vueapp = new Vue({
                             const descendantRanks = sharedTaxa.descendantRanks[rank];
                             if (!(descendantRanks && descendantRanks.length <= maxSelected))
                                 return false
-                            const n = descendantRanks.reduce((total, d) => {
-                                const nhits = this.getNumberOfHits(undefined, d);
-                                total += nhits
-                                console.log(nhits, total)
+                            const n = descendantRanks.reduce((total, lineage) => {
+                                const matches = this.root.leaves()
+                                        .filter(d => d.data.lineage.includes(lineage));
+                                const randomHit = matches[Math.floor(Math.random()*matches.length)].data.value;
+                                total += randomHit
                                 return total
                             }, 0);
                             console.log(n)
