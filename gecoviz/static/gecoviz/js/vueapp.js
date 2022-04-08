@@ -486,7 +486,7 @@ var vueapp = new Vue({
                                 return false
                             const n = descendantRanks.reduce((total, d) => {
                                 const nhits = this.getNumberOfHits(undefined, d);
-                                print(nhits)
+                                console.log(nhits)
                                 total += nhits
                                 return total
                             })
