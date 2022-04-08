@@ -345,7 +345,9 @@ var vueapp = new Vue({
                     d.descendantRanks = this.getDescendantRanks(d);
 
                 Object.entries(d.descendantRanks).forEach(([rank, lineages]) => {
-                    const disabled = this.getNumberOfRandomHits(lineages) + this.nSelected > this.maxSelected;
+                    const randomHits = this.getNumberOfRandomHits(lineages);
+                    console.log(randomHits)
+                    const disabled = randomHits + this.nSelected > this.maxSelected;
                     popperContent
                         .append("li")
                         .attr("class", () => "dropdown-item" + (disabled ? " disabled" : ""))
