@@ -484,9 +484,12 @@ var vueapp = new Vue({
                             const descendantRanks = sharedTaxa.descendantRanks[rank];
                             if (!(descendantRanks && descendantRanks.length <= maxSelected))
                                 return false
-                            const n = descendantRanks.reduce((total, d) => 
-                                    total += this.getNumberOfHits(undefined, d))
-                            console.log(rank, n)
+                            const n = descendantRanks.reduce((total, d) => {
+                                const nhits = this.getNumberOfHits(undefined, d);
+                                print(nhits)
+                                total += nhits
+                                return total
+                            })
                             return n <= maxSelected
                         });
                         if (filteredRanks.length)
