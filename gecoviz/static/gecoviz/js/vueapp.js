@@ -482,19 +482,10 @@ var vueapp = new Vue({
                         const ranks = ["genus", "family", "phylum", "clade", "superkingdom"];
                         const filteredRanks = ranks.filter(rank => {
                             const descendantRanks = sharedTaxa.descendantRanks[rank];
-                            if (!(descendantRanks && descendantRanks.length <= maxSelected))
-                                return false
-                            const n = descendantRanks.reduce((total, lineage) => {
-                                const matches = this.root.leaves()
-                                        .filter(d => d.data.lineage.includes(lineage));
-                                const randomHit = matches[Math.floor(Math.random()*matches.length)].data.value;
-                                total += randomHit
-                                return total
-                            }, 0);
-                            console.log(n)
-                            return n <= maxSelected
+                            // Simulate selecting random genomes from descendantRanks
+                            return descendantRanks && descendantRanks.length <= maxSelected
+                                && this.getNumberOfRandomHits(descendantRanks);
                         });
-                        console.log(filteredRanks)
                         if (filteredRanks.length)
                             this.selectLineages(sharedTaxa.descendantRanks[filteredRanks[0]],
                                 sharedTaxa, filteredRanks[0]);
@@ -679,6 +670,16 @@ var vueapp = new Vue({
                     total += i.value;
                 return total
             }, 0)
+        },
+
+        getNumberOfRandomHits: function(lineages) {
+            return lineages.reduce((total, lineage) => {
+                const matches = this.root.leaves()
+                        .filter(d => d.data.lineage.includes(lineage));
+                const randomHit = matches[Math.floor(Math.random()*matches.length)].data.value;
+                total += randomHit
+                return total
+            }, 0);
         },
 
         getSharedTaxa: function(root) {
