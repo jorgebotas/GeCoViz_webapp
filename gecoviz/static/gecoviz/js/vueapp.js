@@ -484,8 +484,8 @@ var vueapp = new Vue({
                         const filteredRanks = ranks.filter(rank => {
                             const descendantRanks = sharedTaxa.descendantRanks[rank];
                             // Simulate selecting random genomes from descendantRanks
-                            return descendantRanks && descendantRanks.length <= maxSelected
-                                && this.getNumberOfRandomHits(descendantRanks) <= maxSelected;
+                            return descendantRanks && descendantRanks.length <= maxSelected;
+                                //&& this.getNumberOfRandomHits(descendantRanks) <= maxSelected;
                         });
                         if (filteredRanks.length)
                             this.selectLineages(sharedTaxa.descendantRanks[filteredRanks[0]],
