@@ -397,6 +397,7 @@ def get_ogs_from_sequence(sequence):
             level, og, nseqs, evalue = match['level'], match['nogname'],\
                                        match['nseqs'], match['evalue']
             is_match = db.repgenomes_ogs.find_one({ "n": og.rstrip("ENOG50") }, { "repg": 1 })
+            print(og)
             print(og.rstrip("ENOG50"))
             print(is_match)
             if is_match:
