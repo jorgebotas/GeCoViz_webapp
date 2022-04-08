@@ -345,7 +345,7 @@ var vueapp = new Vue({
                     d.descendantRanks = this.getDescendantRanks(d);
 
                 Object.entries(d.descendantRanks).forEach(([rank, lineages]) => {
-                    const disabled = randomHits + this.nSelected > this.maxSelected ||
+                    const disabled = lineages.length + this.nSelected > this.maxSelected ||
                         this.getNumberOfRandomHits(lineages) + this.nSelected > this.maxSelected;
                     popperContent
                         .append("li")
