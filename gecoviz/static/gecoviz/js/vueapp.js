@@ -486,12 +486,13 @@ var vueapp = new Vue({
                                 return false
                             const n = descendantRanks.reduce((total, d) => {
                                 const nhits = this.getNumberOfHits(undefined, d);
-                                console.log(nhits)
                                 total += nhits
                                 return total
                             })
+                            console.log(n)
                             return n <= maxSelected
                         });
+                        console.log(filteredRanks)
                         if (filteredRanks.length)
                             this.selectLineages(sharedTaxa.descendantRanks[filteredRanks[0]],
                                 sharedTaxa, filteredRanks[0]);
