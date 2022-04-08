@@ -675,9 +675,9 @@ var vueapp = new Vue({
 
         getNumberOfRandomHits: function(lineages) {
             // Get number of random hits within each of the lineages
-            return lineages.reduce((total, lineage) => {
-                const matches = this.root.leaves()
-                        .filter(d => d.data.lineage.includes(lineage));
+            const matches = this.root.leaves()
+                    .filter(d => lineages.some(lineage => d.data.lineage.includes(lineage)));
+            return lineages.reduce((total, _) => {
                 const randomHit = matches[Math.floor(Math.random()*matches.length)].data.value;
                 total += randomHit
                 return total
