@@ -150,7 +150,7 @@ def get_context(field, query, taxids):
 
     start = time.time()
     queries = get_emapper_matches(field, query, selected_genomes)
-    print(f'get genes from {len(selected_genomes)} genomes (context):  {time.time() - start}')
+    print(f'get {len(queries)} genes from {len(selected_genomes)} genomes (context):  {time.time() - start}')
 
     start = time.time()
     matches = col_neighs.find({ 'genes.g': { '$in': queries } }, { "genome": 1, "genes": 1, "_id": 0 })
@@ -429,6 +429,7 @@ def get_ogs_from_pname(query):
         if not len(og["ogs"]):
             continue
         og = og["ogs"][0]
+        # Filter ogs that do not have matches in repgenomes
         if db.repgenomes_ogs.find_one({ "n": og }, { "repg": 1 }):
             matches[og] = { "og": og, "level": get_tax_levelname(get_og_level(og)), "desc": get_og_desc(og) }
     return list(matches.values())
