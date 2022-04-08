@@ -479,7 +479,7 @@ var vueapp = new Vue({
                     if (this.allItems.length <= maxSelected)
                         this.selectTaxa(sharedTaxa, "species", true);
                     else {
-                        const ranks = ["genus", "family", "phylum", "clade"];
+                        const ranks = ["genus", "family", "phylum", "clade", "superkingdom"];
                         const filteredRanks = ranks.filter(rank => {
                             const descendantRanks = sharedTaxa.descendantRanks[rank];
                             if (!(descendantRanks && descendantRanks.length <= maxSelected))
