@@ -371,7 +371,7 @@ def get_emapper_matches(field, query, selected_genomes):
 
 def get_functional_matches(field, query):
     start = time.time()
-    emapper = get_genomes_from_function(field, query)
+    emapper = get_genomes_from_function(field, query, False)
     print(f'list:  {time.time() - start}')
     start = time.time()
     taxonomy = get_taxonomy(emapper)
