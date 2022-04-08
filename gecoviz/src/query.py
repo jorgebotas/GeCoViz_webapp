@@ -398,8 +398,7 @@ def get_ogs_from_sequence(sequence):
                                        match['nseqs'], match['evalue']
             db_og = og.replace("ENOG50", "")
             is_match = db.repgenomes_ogs.find_one({ "n": db_og }, { "repg": 1 })
-            print(og)
-            print(og.replace("ENOG50", ""))
+            print(og, db_og)
             print(is_match)
             if is_match:
                 ngenomes = len(is_match.get("repg", []))
