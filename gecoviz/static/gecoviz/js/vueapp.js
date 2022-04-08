@@ -485,7 +485,7 @@ var vueapp = new Vue({
                             if (!(descendantRanks && descendantRanks.length <= maxSelected))
                                 return false
                             const n = descendantRanks.reduce((total, d) => 
-                                    total += getNumberOfHits(undefined, d))
+                                    total += this.getNumberOfHits(undefined, d))
                             console.log(rank, n)
                             return n <= maxSelected
                         });
