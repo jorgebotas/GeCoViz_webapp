@@ -489,7 +489,7 @@ var vueapp = new Vue({
                                 total += nhits
                                 console.log(nhits, total)
                                 return total
-                            })
+                            }, 0);
                             console.log(n)
                             return n <= maxSelected
                         });
