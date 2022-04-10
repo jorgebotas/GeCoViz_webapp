@@ -334,7 +334,6 @@ var vueapp = new Vue({
                     .attr("class", "dropdown-divider mb-1");
 
                 const ranks = Object.keys(this.taxBadgeColors);
-                console.log(d)
                 if (ranks.indexOf(d.data.rank) >= ranks.indexOf("genus")
                     && d.children) {
                     const li = popperContent
