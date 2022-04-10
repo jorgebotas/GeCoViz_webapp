@@ -341,7 +341,7 @@ var vueapp = new Vue({
                         .attr("class", "dropdown-toggle no-after")
                         .attr("href", "#")
                         .attr("data-toggle", "dropdown")
-                        .html("Choose <b class='mx-1 f-bold'>specific genome</b>")
+                        .html("Choose <b class='f-bold'>specific genome</b>")
                         .append("i")
                             .attr("class", "fas fa-angle-right ml-2");
                     const submenu = li.append("ul")
