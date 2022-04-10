@@ -348,6 +348,22 @@ var vueapp = new Vue({
                     .on("click", () => this.selectTaxa(d, "", true))
                     .html(`Add <b class="mx-1 f-bold"> all ${genomes.length} genomes</b> (${nHits} genes)`);
 
+
+                if (d.data.rank === "genus") {
+                    const li = popperContent
+                        .append("li")
+                        .attr("class", "dropdown-item dropdown-submenu dropend");
+                    li.append("a")
+                        .attr("class", "dropdown-toggle no-after")
+                        .attr("href", "#")
+                        .attr("data-toggle", "dropdown")
+                        .html("Choose <b class='mx-1 f-bold'>specific genome</b>")
+                        .append("i")
+                            .attr("class", "fas fa-angle-right ml-2");
+                    const submenu = li.append("ul").attr("class", "dropdown-menu");
+                    console.log(d.leaves())
+                }
+
                 if (!d.descendantRanks)
                     d.descendantRanks = this.getDescendantRanks(d);
 
