@@ -16872,6 +16872,12 @@ button:focus {
   cursor: pointer;
 }
 
+.popper .dropdown-menu .dropdown-item {
+  color: #5d5d5d;
+  text-align: left;
+  font-size: 10px;
+}
+
 .navbar .choices > .form-control {
   padding: 0.3rem 0.5rem;
   margin-top: 0.4rem !important;

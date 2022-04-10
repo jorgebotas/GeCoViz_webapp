@@ -353,7 +353,9 @@ var vueapp = new Vue({
                 if (d.data.rank === "genus") {
                     const li = popperContent
                         .append("li")
-                        .attr("class", "dropdown-item dropdown-submenu dropend");
+                        .attr("class", "dropdown-item dropdown-submenu dropend")
+                        .style("width", "auto")
+                        .style("height", "auto");
                     li.append("a")
                         .attr("class", "dropdown-toggle no-after")
                         .attr("href", "#")
