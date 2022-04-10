@@ -315,7 +315,8 @@ var vueapp = new Vue({
                 // popper content
                 const popperContent = popper.append('ul')
                     .attr('class', 'popper-content text-align-left m-0')
-                    .style("padding", "0 5px 5px 5xp");
+                    .style("padding", "0 5px 5px 5xp")
+                    style("overflow", "visible");
 
                 popperContent
                     .append("li")
@@ -360,8 +361,13 @@ var vueapp = new Vue({
                         .html("Choose <b class='mx-1 f-bold'>specific genome</b>")
                         .append("i")
                             .attr("class", "fas fa-angle-right ml-2");
-                    const submenu = li.append("ul").attr("class", "dropdown-menu");
-                    console.log(d.leaves())
+                    const submenu = li.append("ul").attr("class", "dropdown-menu popper-content");
+                    d.leaves().forEach(l => {
+                        submenu.append("li")
+                            .attr("class", "dropdown-item")
+                            .on("click", () => this.selectTaxa(l, l.data.rank))
+                            .html(`Add <b class='mx-1 f-bold f-oblique'>${l.data.name}</b>`);
+                    })
                 }
 
                 if (!d.descendantRanks)
