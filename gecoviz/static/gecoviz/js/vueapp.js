@@ -334,7 +334,8 @@ var vueapp = new Vue({
                     .attr("class", "dropdown-divider mb-1");
 
                 const ranks = Object.keys(this.taxBadgeColors);
-                if (ranks.indexOf(d.data.rank) >= ranks.indexOf("genus")) {
+                if (ranks.indexOf(d.data.rank) >= ranks.indexOf("genus")
+                    && d.descendants().length) {
                     const li = popperContent
                         .append("li")
                         .attr("class", "dropdown-item dropdown-submenu dropend");
