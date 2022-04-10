@@ -235,6 +235,14 @@ var vueapp = new Vue({
             }, 100)
         },
 
+        findSuggestedKO: function() {
+            if (!this.uniqueKOSuggestions.length)
+                return
+            const suggested = this.uniqueKOSuggestions[0];
+            console.log(suggested)
+            this.findKO(suggested);
+        },
+
         updateKOSuggestions: function() {
             if (this.searchTimeout.ko)
                 clearTimeout(this.searchTimeout.ko);
@@ -380,7 +388,7 @@ var vueapp = new Vue({
                       ],
                     });
                 popperNode.setAttribute('data-show', '');
-            }
+            };
 
             setTimeout(createPopper, 10);
         },
