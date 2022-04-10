@@ -350,11 +350,12 @@ var vueapp = new Vue({
                         .style("height", "auto")
                         .style("max-height", "400px");
                     d.leaves().forEach(l => {
-                        console.log(l.data)
+                        const color = this.taxBadgeColors[l.data.rank];
                         submenu.append("li")
                             .attr("class", "dropdown-item")
                             .on("click", () => this.selectTaxa(l, l.data.rank))
-                            .html(`Add <b class='mx-1 f-bold f-oblique'>${l.data.name}</b>`);
+                            .html(`Add <span style="background-color: color">${l.data.rank}</span>`+
+                                `<b class='mx-1 f-bold f-oblique'>${l.data.name}</b>`);
                     })
                 }
                 
