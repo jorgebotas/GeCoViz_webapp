@@ -354,7 +354,7 @@ var vueapp = new Vue({
                         submenu.append("li")
                             .attr("class", "dropdown-item")
                             .on("click", () => this.selectTaxa(l, l.data.rank))
-                            .html(`Add <span style="background-color: color">${l.data.rank}</span>`+
+                            .html(`Add <span class="badge f-bold ${color}">${l.data.rank}</span>`+
                                 `<b class='mx-1 f-bold f-oblique'>${l.data.name}</b>`);
                     })
                 }
