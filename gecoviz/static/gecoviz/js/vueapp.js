@@ -239,7 +239,6 @@ var vueapp = new Vue({
             if (!this.uniqueKOSuggestions.length)
                 return
             const suggested = this.uniqueKOSuggestions[0];
-            console.log(suggested)
             this.findKO(suggested);
         },
 
