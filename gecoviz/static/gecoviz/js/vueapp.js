@@ -349,7 +349,10 @@ var vueapp = new Vue({
                         .style("width", "auto")
                         .style("height", "auto")
                         .style("max-height", "400px");
-                    d.leaves().forEach(l => {
+                    const ranks = Object.keys(this.taxBadgeColors)
+                    d.leaves()
+                     .sort((a,b) => ranks.indexOf(b.data.rank) > ranks.indexOf(a.data.rank))
+                     .forEach(l => {
                         const color = this.taxBadgeColors[l.data.rank];
                         submenu.append("li")
                             .attr("class", "dropdown-item")
