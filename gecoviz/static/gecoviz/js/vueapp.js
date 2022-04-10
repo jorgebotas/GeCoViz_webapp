@@ -333,6 +333,29 @@ var vueapp = new Vue({
                     .append("li")
                     .attr("class", "dropdown-divider mb-1");
 
+                if (d.data.rank === "genus") {
+                    const li = popperContent
+                        .append("li")
+                        .attr("class", "dropdown-item dropdown-submenu dropend");
+                    li.append("a")
+                        .attr("class", "dropdown-toggle no-after")
+                        .attr("href", "#")
+                        .attr("data-toggle", "dropdown")
+                        .html("Choose <b class='mx-1 f-bold'>specific genome</b>")
+                        .append("i")
+                            .attr("class", "fas fa-angle-right ml-2");
+                    const submenu = li.append("ul")
+                        .attr("class", "dropdown-menu popper-content")
+                        .style("width", "auto")
+                        .style("height", "auto");
+                    d.leaves().forEach(l => {
+                        submenu.append("li")
+                            .attr("class", "dropdown-item")
+                            .on("click", () => this.selectTaxa(l, l.data.rank))
+                            .html(`Add <b class='mx-1 f-bold f-oblique'>${l.data.name}</b>`);
+                    })
+                }
+                
                 popperContent
                     .append("li")
                     .attr("class", "dropdown-item")
@@ -349,28 +372,6 @@ var vueapp = new Vue({
                     .on("click", () => this.selectTaxa(d, "", true))
                     .html(`Add <b class="mx-1 f-bold"> all ${genomes.length} genomes</b> (${nHits} genes)`);
 
-
-                if (d.data.rank === "genus") {
-                    const li = popperContent
-                        .append("li")
-                        .attr("class", "dropdown-item dropdown-submenu dropend")
-                        .style("width", "auto")
-                        .style("height", "auto");
-                    li.append("a")
-                        .attr("class", "dropdown-toggle no-after")
-                        .attr("href", "#")
-                        .attr("data-toggle", "dropdown")
-                        .html("Choose <b class='mx-1 f-bold'>specific genome</b>")
-                        .append("i")
-                            .attr("class", "fas fa-angle-right ml-2");
-                    const submenu = li.append("ul").attr("class", "dropdown-menu popper-content");
-                    d.leaves().forEach(l => {
-                        submenu.append("li")
-                            .attr("class", "dropdown-item")
-                            .on("click", () => this.selectTaxa(l, l.data.rank))
-                            .html(`Add <b class='mx-1 f-bold f-oblique'>${l.data.name}</b>`);
-                    })
-                }
 
                 if (!d.descendantRanks)
                     d.descendantRanks = this.getDescendantRanks(d);
