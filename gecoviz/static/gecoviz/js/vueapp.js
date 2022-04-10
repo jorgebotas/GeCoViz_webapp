@@ -333,8 +333,6 @@ var vueapp = new Vue({
                     .append("li")
                     .attr("class", "dropdown-divider mb-1");
 
-                console.log(d)
-
                 const ranks = Object.keys(this.taxBadgeColors);
                 if (ranks.indexOf(d.data.rank) >= ranks.indexOf("genus")
                     && d.children.length) {
