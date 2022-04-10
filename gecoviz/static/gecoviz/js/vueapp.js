@@ -351,14 +351,14 @@ var vueapp = new Vue({
                         .style("max-height", "400px");
                     const ranks = Object.keys(this.taxBadgeColors)
                     d.leaves()
-                     .sort((a,b) => ranks.indexOf(b.data.rank) > ranks.indexOf(a.data.rank))
+                     .sort((a,b) => ranks.indexOf(b.data.rank) < ranks.indexOf(a.data.rank))
                      .forEach(l => {
                         const color = this.taxBadgeColors[l.data.rank];
                         submenu.append("li")
                             .attr("class", "dropdown-item")
                             .on("click", () => this.selectTaxa(l, l.data.rank))
-                            .html(`Add <span class="badge f-bold ${color}">${l.data.rank}</span>`+
-                                `<b class='mx-1 f-bold f-oblique'>${l.data.name}</b>`);
+                            .html(`Add <span class="mx-1 badge f-bold ${color}">${l.data.rank}</span>`+
+                                `<b class='mx-1 f-bold f-oblique'>${l.data.tname}</b>`);
                     })
                 }
                 
