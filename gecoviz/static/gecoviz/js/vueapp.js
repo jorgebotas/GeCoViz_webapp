@@ -347,7 +347,8 @@ var vueapp = new Vue({
                     const submenu = li.append("ul")
                         .attr("class", "dropdown-menu popper-content")
                         .style("width", "auto")
-                        .style("height", "auto");
+                        .style("height", "auto")
+                        .style("max-height", "400px");
                     d.leaves().forEach(l => {
                         submenu.append("li")
                             .attr("class", "dropdown-item")
