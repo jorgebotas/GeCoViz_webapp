@@ -350,6 +350,7 @@ var vueapp = new Vue({
                         .style("height", "auto")
                         .style("max-height", "400px");
                     d.leaves().forEach(l => {
+                        console.log(l.data)
                         submenu.append("li")
                             .attr("class", "dropdown-item")
                             .on("click", () => this.selectTaxa(l, l.data.rank))
