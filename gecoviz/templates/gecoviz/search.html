@@ -95,17 +95,36 @@
                           role="menu" id="taxa-suggestions"
                           style="top: 100% !important"
                           :style="{ 'visibility': searchedTaxa.length ? 'visible' : 'hidden' }">
-                          <li class="dropdown-item"
+
+                          <li class="dropdown-item dropdown-submenu dropend"
                               v-for="t in searchedTaxa"
                               @click="showTaxaPopup(t)">
-                              <b><span class="badge f-bold mr-1"
+                              <a href="#" class="f-bold dropdown-toggle no-after"
+                                 data-toggle="dropdown">
+                                  <span class="badge f-bold mr-1"
                                       :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
                                       [[ t.data.rank ]]
                                   </span>
-                              <b class="f-bold">
                                   [[ t.data.tname ]]
-                              </b></b>
+                                  <i class="fas fa-angle-right ml-2"></i>
+                              </a>
+                              <ul class="dropdown-menu">
+                                  
+                              </ul>
                           </li>
+
+                          <!--<li class="dropdown-item"-->
+                              <!--v-for="t in searchedTaxa"-->
+                              <!--@click="showTaxaPopup(t)">-->
+                              <!--<b><span class="badge f-bold mr-1"-->
+                                      <!--:class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">-->
+                                      <!--[[ t.data.rank ]]-->
+                                  <!--</span>-->
+                              <!--<b class="f-bold">-->
+                                  <!--[[ t.data.tname ]]-->
+                              <!--</b></b>-->
+                          <!--</li>-->
+
                         </ul>
                         <span class="input-icon-addon search-icon">
                             <i class="fa fa-search"
@@ -175,7 +194,7 @@
                                         </li>
                                         <li v-for="(lineages, rank) in d.source.descendantRanks"
                                             class="dropdown-item"
-                                            :class="{ disabled : nSelected + lineages.length > maxSelected }"
+                                            :class="{ disabled : isDisabled(lineages) }"
                                             @click="selectLineages(lineages, d.source, rank)">
                                             [[ lineages.length ]] [[ rank ]]
                                         </li>

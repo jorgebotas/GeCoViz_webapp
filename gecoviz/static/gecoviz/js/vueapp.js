@@ -209,7 +209,7 @@ var vueapp = new Vue({
         kos: d3.hierarchy(kos),
     },
     methods: {
-        // HME PAGE
+        // HOME PAGE
         showKO: function(ko) {
             ko._show = !ko._show;
             const kos = this.kos;
@@ -383,15 +383,14 @@ var vueapp = new Vue({
                 if (!d.descendantRanks)
                     d.descendantRanks = this.getDescendantRanks(d);
 
-                Object.entries(d.descendantRanks).forEach(([rank, lineages]) => {
-                    const disabled = lineages.length + this.nSelected > this.maxSelected ||
-                        this.getNumberOfRandomHits(lineages) + this.nSelected > this.maxSelected;
+                Object.entries(d.descendantRanks).forEach(([rank, lineages]) =>
                     popperContent
                         .append("li")
-                        .attr("class", () => "dropdown-item" + (disabled ? " disabled" : ""))
+                        .attr("class", () => "dropdown-item" + 
+                            (this.isDisabled(lineages) ? " disabled" : ""))
                         .on("click", () => this.selectLineages(lineages, d, rank))
-                        .html(`Add representative genomes from <b class="mx-1 f-bold">${lineages.length} ${rank}</b>`)
-                });
+                        .html("Add representative genomes from " +
+                            `<b class="mx-1 f-bold">${lineages.length} ${rank}</b>`));
 
                 // popper arrow
                 popper.append('div')
@@ -470,6 +469,11 @@ var vueapp = new Vue({
                 navigator.clipboard.writeText(window.location.href);
             }
          },
+
+        isDisabled: function(lineages) {
+            return lineages.length + this.nSelected > this.maxSelected ||
+                this.getNumberOfRandomHits(lineages) + this.nSelected > this.maxSelected;
+        }
 
         // Server interaction
         updateSearchParams: function(params, replace=true) {
