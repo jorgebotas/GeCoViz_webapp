@@ -209,7 +209,7 @@ var vueapp = new Vue({
         kos: d3.hierarchy(kos),
     },
     methods: {
-        // HOME PAGE
+        // HME PAGE
         showKO: function(ko) {
             ko._show = !ko._show;
             const kos = this.kos;
@@ -470,10 +470,6 @@ var vueapp = new Vue({
                 navigator.clipboard.writeText(window.location.href);
             }
          },
-
-        isDisabled: function(d) {
-
-        }
 
         // Server interaction
         updateSearchParams: function(params, replace=true) {
