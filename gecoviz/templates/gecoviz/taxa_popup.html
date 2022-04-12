@@ -1,27 +1,27 @@
 <ul class="dropdown-menu" 
     :style="{ 'visibility':
-                Object.keys(d.descendantRanks).length ?
+                Object.keys(t.descendantRanks).length ?
                 'visible' : 'hidden' }">
     <li class="dropdown-header pl-2 f-bold">
         Select representative genomes for:
     </li>
     <li class="dropdown-item"
-        @click="selectTaxa(d, d.data.rank)">
+        @click="selectTaxa(t, t.data.rank)">
         <span class="badge f-bold mr-1"
-            :class="taxBadgeColors[d.data.rank] || 'bg-indigo-lt'">
-            [[ d.data.rank ]]
+            :class="taxBadgeColors[t.data.rank] || 'bg-indigo-lt'">
+            [[ t.data.rank ]]
         </span>
-        [[ d.data.tname ]]
+        [[ t.data.tname ]]
     </li>
     <li class="dropdown-item"
-        :class="{ disabled : nSelected + getNumberOfHits([], d.data.lineage) > maxSelected }"
-        @click="selectTaxa(d, '', true)">
-        All genomes ([[ getNumberOfHits([], d.data.lineage) ]] genes)
+        :class="{ disabled : nSelected + getNumberOfHits([], t.data.lineage) > maxSelected }"
+        @click="selectTaxa(t, '', true)">
+        All genomes ([[ getNumberOfHits([], t.data.lineage) ]] genes)
     </li>
-    <li v-for="(lineages, rank) in d.descendantRanks"
+    <li v-for="(lineages, rank) in t.descendantRanks"
         class="dropdown-item"
         :class="{ disabled : isDisabled(lineages) }"
-        @click="selectLineages(lineages, d, rank)">
+        @click="selectLineages(lineages, t, rank)">
         [[ lineages.length ]] [[ rank ]]
     </li>
 </ul>
