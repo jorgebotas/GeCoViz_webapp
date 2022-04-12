@@ -843,7 +843,7 @@ var vueapp = new Vue({
                 this.searchQuery();
 
             if (d3.selectAll(".sunburst-selector *").nodes().length) {
-                setTimeout($("#taxa-search").focus, 1000);
+                setTimeout($("#taxa-search").focus, 800);
                 return
             }
             const taxonomy = this.allItems.map(d => [d.lineage, d.value]);
