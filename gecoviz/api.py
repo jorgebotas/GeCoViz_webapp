@@ -12,7 +12,7 @@ RESULTS_PATH = settings.BASE_DIR / 'gecoviz/tmp'
 PICKLE_PATH = settings.STATIC_ROOT / 'gecoviz/pickle'
 
 
-def suggestions(request, field, query):
+def get_description_path(field):
     if field == "ogs":
         path = PICKLE_PATH / 'OG_DESCRIPTION.pickle'
     elif field == "kos":
@@ -22,6 +22,13 @@ def suggestions(request, field, query):
     elif field == "pfam":
         path = PICKLE_PATH / 'PFAM_DESCRIPTION.pickle'
     else:
+        path = None
+    return path
+
+def suggestions(request, field, query):
+    path = get_description_path(field)
+
+    if path is None:
         return HttpResponseNotFound()
 
     desc_dict = get_pickle(str(path))
@@ -48,11 +55,9 @@ def suggestions(request, field, query):
 
 
 def description(request, field, query):
-    if field == "ogs":
-        path = PICKLE_PATH / 'OG_DESCRIPTION.pickle'
-    elif field == "kos":
-        path = PICKLE_PATH / 'KO_DESCRIPTION.pickle'
-    else:
+    path = get_description_path(field)
+
+    if path is None:
         return HttpResponseNotFound()
 
     desc_dict = get_pickle(str(path))
