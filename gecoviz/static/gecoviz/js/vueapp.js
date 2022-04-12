@@ -333,9 +333,8 @@ var vueapp = new Vue({
                     .append("li")
                     .attr("class", "dropdown-divider mb-1");
 
-                const ranks = Object.keys(this.taxBadgeColors);
-                if (ranks.indexOf(d.data.rank) >= ranks.indexOf("genus")
-                    && d.children) {
+                const leaves = d.leaves();
+                if (d.children && leaves.length < 500) {
                     const li = popperContent
                         .append("li")
                         .attr("class", "dropdown-item dropdown-submenu dropend");
@@ -351,7 +350,8 @@ var vueapp = new Vue({
                         .style("width", "auto")
                         .style("height", "auto")
                         .style("max-height", "400px");
-                    d.leaves()
+                    const ranks = Object.keys(this.taxBadgeColors);
+                    leaves
                      .sort((a,b) => ranks.indexOf(b.data.rank) < ranks.indexOf(a.data.rank))
                      .forEach(l => {
                         const color = this.taxBadgeColors[l.data.rank];
