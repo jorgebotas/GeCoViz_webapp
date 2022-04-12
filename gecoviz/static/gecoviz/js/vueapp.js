@@ -383,14 +383,15 @@ var vueapp = new Vue({
                 if (!d.descendantRanks)
                     d.descendantRanks = this.getDescendantRanks(d);
 
-                Object.entries(d.descendantRanks).forEach(([rank, lineages]) =>
+                Object.entries(d.descendantRanks).forEach(([rank, lineages]) => {
+                    const disabled = lineages.length + this.nSelected > this.maxSelected ||
+                        this.getNumberOfRandomHits(lineages) + this.nSelected > this.maxSelected;
                     popperContent
                         .append("li")
-                        .attr("class", () => "dropdown-item" + 
-                            (this.isDisabled(lineages) ? " disabled" : ""))
+                        .attr("class", () => "dropdown-item" + (disabled ? " disabled" : ""))
                         .on("click", () => this.selectLineages(lineages, d, rank))
-                        .html("Add representative genomes from " +
-                            `<b class="mx-1 f-bold">${lineages.length} ${rank}</b>`));
+                        .html(`Add representative genomes from <b class="mx-1 f-bold">${lineages.length} ${rank}</b>`)
+                });
 
                 // popper arrow
                 popper.append('div')
@@ -470,9 +471,8 @@ var vueapp = new Vue({
             }
          },
 
-        isDisabled: function(lineages) {
-            return lineages.length + this.nSelected > this.maxSelected ||
-                this.getNumberOfRandomHits(lineages) + this.nSelected > this.maxSelected;
+        isDisabled: function(d) {
+
         }
 
         // Server interaction
