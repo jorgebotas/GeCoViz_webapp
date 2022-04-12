@@ -162,7 +162,11 @@
                                         </li>
                                         <li class="dropdown-item"
                                             @click="selectTaxa(d.source, d.source.data.rank)">
-                                            [[ d.source.data.tname ]] ([[ d.source.data.rank ]])
+                                            <span class="badge f-bold mr-1"
+                                                :class="taxBadgeColors[d.source.data.rank] || 'bg-indigo-lt'">
+                                                [[ d.source.data.rank ]]
+                                            </span>
+                                            [[ d.source.data.tname ]]
                                         </li>
                                         <li class="dropdown-item"
                                             :class="{ disabled : nSelected + getNumberOfHits([], d.source.data.lineage) > maxSelected }"
