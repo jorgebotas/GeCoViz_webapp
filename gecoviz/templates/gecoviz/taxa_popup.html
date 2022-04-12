@@ -1,0 +1,27 @@
+<ul class="dropdown-menu" 
+    :style="{ 'visibility':
+                Object.keys(d.descendantRanks).length ?
+                'visible' : 'hidden' }">
+    <li class="dropdown-header pl-2 f-bold">
+        Select representative genomes for:
+    </li>
+    <li class="dropdown-item"
+        @click="selectTaxa(d, d.data.rank)">
+        <span class="badge f-bold mr-1"
+            :class="taxBadgeColors[d.data.rank] || 'bg-indigo-lt'">
+            [[ d.data.rank ]]
+        </span>
+        [[ d.data.tname ]]
+    </li>
+    <li class="dropdown-item"
+        :class="{ disabled : nSelected + getNumberOfHits([], d.data.lineage) > maxSelected }"
+        @click="selectTaxa(d, '', true)">
+        All genomes ([[ getNumberOfHits([], d.data.lineage) ]] genes)
+    </li>
+    <li v-for="(lineages, rank) in d.descendantRanks"
+        class="dropdown-item"
+        :class="{ disabled : isDisabled(lineages) }"
+        @click="selectLineages(lineages, d, rank)">
+        [[ lineages.length ]] [[ rank ]]
+    </li>
+</ul>
