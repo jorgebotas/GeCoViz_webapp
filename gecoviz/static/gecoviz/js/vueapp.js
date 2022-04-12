@@ -842,8 +842,10 @@ var vueapp = new Vue({
             if (this.allItems.length == 0)
                 this.searchQuery();
 
-            if (d3.selectAll(".sunburst-selector *").nodes().length)
+            if (d3.selectAll(".sunburst-selector *").nodes().length) {
+                setTimeout($("#taxa-search").focus, 1000);
                 return
+            }
             const taxonomy = this.allItems.map(d => [d.lineage, d.value]);
             this.sunBurst = SeqSunburst(taxonomy, 600, sunBurstDepth, false, this.showSunburstPopup, this.root)
                 .draw(".sunburst-selector");
