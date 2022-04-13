@@ -721,7 +721,8 @@ var vueapp = new Vue({
             const matches = this.root.leaves()
                     .filter(d => lineages.some(lineage => d.data.lineage.includes(lineage)));
             return lineages.reduce((total, _) => {
-                const randomHit = matches[Math.floor(Math.random()*matches.length)].data.value;
+                //const randomHit = matches[Math.floor(Math.random()*matches.length)].data.value;
+                const randomHit = matches[0].data.value;
                 total += randomHit
                 return total
             }, 0);
@@ -809,7 +810,8 @@ var vueapp = new Vue({
             if (allDescendants)
                 matches.forEach(d => this.selectTaxid(d.data.id, taxa, "species", true))
             else {
-                const taxid = matches[Math.floor(Math.random()*matches.length)].data.id;
+                //const taxid = matches[Math.floor(Math.random()*matches.length)].data.id;
+                const taxid = matches[0].data.id;
                 this.selectTaxid(taxid, taxa, rank || taxa.data.rank, true);
            }
         },
