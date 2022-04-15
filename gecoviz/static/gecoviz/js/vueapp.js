@@ -530,7 +530,14 @@ var vueapp = new Vue({
                             const descendantRanks = sharedTaxa.descendantRanks[rank];
                             if (descendantRanks && descendantRanks.length <= maxSelected) {
                                 // Simulate selecting random genomes from descendantRanks
-                                const hits = this.getNumberOfRandomHits(descendantRanks);
+                                //const hits = this.getNumberOfRandomHits(descendantRanks);
+                                const hits = descendantRanks.reduce((total, lineage) => {
+                                    const genomes = this.allItems.filter(it => it.lineage.includes(lineage));
+                                    const nHits = genomes.reduce((total, it) => total = total + it.value, 0);
+                                    total += nHits;
+                                    return total;
+                                });
+
                                 if (hits <= maxSelected)
                                     hitsInRanks.push([rank, hits]);
                             };
