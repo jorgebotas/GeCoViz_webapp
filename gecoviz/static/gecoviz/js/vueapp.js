@@ -557,7 +557,7 @@ var vueapp = new Vue({
                             for (let i = 0; i < nToSelect; i += delta) {
                                 if (nAdded > maxSelected) break
                                 const left = leaves[i];
-                                const right = leaves[leaves.length - (i + 1)]
+                                const right = leaves[leaves.length - (i + 1)];
                                 [left, right].forEach(d => {
                                     if (d.data.value <= 5 || i > leaves.length / 4) {
                                         this.selectTaxid(d.data.id, sharedTaxa, "species", true);
