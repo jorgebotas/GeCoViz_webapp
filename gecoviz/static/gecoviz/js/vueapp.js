@@ -519,7 +519,7 @@ var vueapp = new Vue({
                     && this.selectedTaxids.length < this.maxSelected)
                     this.selectedTaxids.forEach(t => { t.source = sharedTaxa});
                 else {
-                    const minSelected = 25;
+                    const minSelected = 50;
                     const maxSelected = 100;
                     if (this.allItems.length <= maxSelected)
                         this.selectTaxa(sharedTaxa, "species", true);
@@ -552,9 +552,8 @@ var vueapp = new Vue({
                             this.selectLineages(sharedTaxa.descendantRanks[rank], sharedTaxa, rank);
                         } else {
                             const leaves = this.root.leaves();
-                            const nToSelect = 50;
                             let nAdded = 0;
-                            const delta = Math.floor(leaves.length / (2 * nToSelect));
+                            const delta = Math.floor(leaves.length / (2 * minSelected));
                             for (let i = 0; i < leaves.length / 2; i += delta) {
                                 if (nAdded > maxSelected) break
                                 const left = leaves[i];
