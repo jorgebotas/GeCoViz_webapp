@@ -555,7 +555,7 @@ var vueapp = new Vue({
                             let nAdded = 0;
                             const delta = Math.floor(leaves.length / (2 * nToSelect));
                             console.log(nToSelect, delta)
-                            for (let i = 0; i < nToSelect; i += delta) {
+                            for (let i = 0; i < leaves.length / 2; i += delta) {
                                 if (nAdded > maxSelected) break
                                 const left = leaves[i];
                                 const right = leaves[leaves.length - (i + 1)];
