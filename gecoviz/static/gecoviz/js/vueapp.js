@@ -490,7 +490,7 @@ var vueapp = new Vue({
 
         fetchThen : function(data, _hideSpinner=true) {
             this.allItems = data.matches;
-            this.root =  buildTaxaHierarchy(this.allItems
+            this.root = buildTaxaHierarchy(this.allItems
                 .map(i => [i.lineage, i.id, i.value]))
             this.root.each(d => {
                 const [ rank, tname ] = d.data.name.split("__");
@@ -519,20 +519,50 @@ var vueapp = new Vue({
                     && this.selectedTaxids.length < this.maxSelected)
                     this.selectedTaxids.forEach(t => { t.source = sharedTaxa});
                 else {
+                    const minSelected = 25;
                     const maxSelected = 100;
                     if (this.allItems.length <= maxSelected)
                         this.selectTaxa(sharedTaxa, "species", true);
                     else {
                         const ranks = ["genus", "family", "phylum", "clade", "superkingdom"];
-                        const filteredRanks = ranks.filter(rank => {
+                        const hitsInRanks = [];
+                        ranks.forEach(rank => {
                             const descendantRanks = sharedTaxa.descendantRanks[rank];
+                            if (!descendantRanks) continue;
+                            if (descendantRanks.length > maxSelected) continue;
+                            const hits = this.getNumberOfRandomHits(descendantRanks);
+                            if (hits > maxSelected) continue;
                             // Simulate selecting random genomes from descendantRanks
-                            return descendantRanks && descendantRanks.length <= maxSelected
-                                && this.getNumberOfRandomHits(descendantRanks) <= maxSelected;
+                            hitsInRanks.push([rank, hits]);
                         });
-                        if (filteredRanks.length)
-                            this.selectLineages(sharedTaxa.descendantRanks[filteredRanks[0]],
-                                sharedTaxa, filteredRanks[0]);
+
+                        //const filteredRanks = ranks.filter(rank => {
+                            //const descendantRanks = sharedTaxa.descendantRanks[rank];
+                            //// Simulate selecting random genomes from descendantRanks
+                            //if (!descendantRanks) return false;
+                            //if (descendantRanks.length > maxSelected) return false;
+
+                            //nInitialHits = this.getNumberOfRandomHits(descendantRanks);
+                            //return nInitialHits <= maxSelected;
+                        //});
+
+                        if (hitsInRanks.length && hitsInRanks[0][1] >= 25) {
+                            const rank = hitsInRanks[0][1];
+                            this.selectLineages(sharedTaxa.descendantRanks[rank], sharedTaxa, rank);
+                        } else {
+                            const leaves = this.root.leaves();
+                            const nToSelect = 50;
+                            let nAdded = 0;
+                            const delta = Math.floor(leaves.length / (2 * nToSelect));
+                            for (let i = 0; i < nToSelect; i += delta) {
+                                if (nAdded > maxSelected) break
+                                const left = leaves[i];
+                                const right = leaves[leaves.length - (i + 1)]
+                                this.selectTaxid(left.data.id, sharedTaxa, "species", true);
+                                this.selectTaxid(right.data.id, sharedTaxa, "species", true);
+                                nAdded += left.data.value + right.data.value;
+                            }
+                        }
                     }
                 }
                 this.visualizeSelection(true);
