@@ -558,9 +558,12 @@ var vueapp = new Vue({
                                 if (nAdded > maxSelected) break
                                 const left = leaves[i];
                                 const right = leaves[leaves.length - (i + 1)]
-                                this.selectTaxid(left.data.id, sharedTaxa, "species", true);
-                                this.selectTaxid(right.data.id, sharedTaxa, "species", true);
-                                nAdded += left.data.value + right.data.value;
+                                [left, right].forEach(d => {
+                                    if (d.data.value <= 5 || i > leaves.length / 4) {
+                                        this.selectTaxid(d.data.id, sharedTaxa, "species", true);
+                                        nAdded += d.data.value;
+                                    }
+                                })
                             }
                         }
                     }
