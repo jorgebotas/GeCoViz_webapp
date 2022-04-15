@@ -546,6 +546,7 @@ var vueapp = new Vue({
                             //return nInitialHits <= maxSelected;
                         //});
 
+                        consoele.log(hitsInRanks)
                         if (hitsInRanks.length && hitsInRanks[0][1] >= 25) {
                             const rank = hitsInRanks[0][0];
                             this.selectLineages(sharedTaxa.descendantRanks[rank], sharedTaxa, rank);
@@ -554,7 +555,6 @@ var vueapp = new Vue({
                             const nToSelect = 50;
                             let nAdded = 0;
                             const delta = Math.floor(leaves.length / (2 * nToSelect));
-                            console.log(nToSelect, delta)
                             for (let i = 0; i < leaves.length / 2; i += delta) {
                                 if (nAdded > maxSelected) break
                                 const left = leaves[i];
