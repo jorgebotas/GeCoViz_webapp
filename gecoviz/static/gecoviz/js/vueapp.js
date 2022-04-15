@@ -545,10 +545,9 @@ var vueapp = new Vue({
                             //nInitialHits = this.getNumberOfRandomHits(descendantRanks);
                             //return nInitialHits <= maxSelected;
                         //});
-                        console.log(hitsInRanks)
 
                         if (hitsInRanks.length && hitsInRanks[0][1] >= 25) {
-                            const rank = hitsInRanks[0][1];
+                            const rank = hitsInRanks[0][0];
                             this.selectLineages(sharedTaxa.descendantRanks[rank], sharedTaxa, rank);
                         } else {
                             const leaves = this.root.leaves();
