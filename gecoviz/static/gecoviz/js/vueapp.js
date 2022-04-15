@@ -560,7 +560,6 @@ var vueapp = new Vue({
                                 const left = leaves[i];
                                 const right = leaves[leaves.length - (i + 1)];
                                 [left, right].forEach(d => {
-                                    console.log(d.data.value, i, nAdded)
                                     if (d.data.value <= 5 || i > leaves.length / 4) {
                                         this.selectTaxid(d.data.id, sharedTaxa, "species", true);
                                         nAdded += d.data.value;
