@@ -9,6 +9,22 @@
 
 <div v-if="!allItems.length" 
     class="container-xxl justify-content-center" style="max-width:100%;">
+    
+        <div class="card mx-auto" style="max-width:900px">
+            <div class="card-header">
+                <div class="h3 m-0" style="color: #212b36 !important">
+                    Dear <b class="color-indigo">GeCoViz</b> users
+                </div>
+            </div>
+            <div class="card-body">
+                The node in which our database dwells is currently down. Our
+                administrators are working to fix the problem.
+                <br>
+                We are deeply sorry for the inconvinience and hope to see you
+                soon!
+            </div>
+        </div>
+
     {% include "gecoviz/kos.html" %}
     {% include "gecoviz/sequence_search.html" %}
 
