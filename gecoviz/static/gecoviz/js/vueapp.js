@@ -695,7 +695,7 @@ var vueapp = new Vue({
                 }, []);
             }
 
-            const taxids = [...Set(this.selectedTaxids.map(t => t.id))].join(",");
+            const taxids = [...new Set(this.selectedTaxids.map(t => t.id))].join(",");
             const endpoint = `${this.searchType}/${this.query.name}/${taxids}/`;
 
             this.contextData.context = [];
