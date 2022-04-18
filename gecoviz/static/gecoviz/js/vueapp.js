@@ -517,7 +517,7 @@ var vueapp = new Vue({
 
                 if (this.selectedTaxids.length
                     && this.selectedTaxids.length < this.maxSelected)
-                    this.selectedTaxids.forEach(t => { t.source = sharedTaxa});
+                    this.selectedTaxids.forEach(t => { t.sources = [ sharedTaxa ]});
                 else {
                     const minSelected = 50;
                     const maxSelected = 100;
@@ -553,7 +553,6 @@ var vueapp = new Vue({
                             //return nInitialHits <= maxSelected;
                         //});
 
-                        console.log(hitsInRanks)
                         if (hitsInRanks.length && hitsInRanks[0][1] >= 25) {
                             const rank = hitsInRanks[0][0];
                             this.selectLineages(sharedTaxa.descendantRanks[rank], sharedTaxa, rank);
@@ -696,7 +695,7 @@ var vueapp = new Vue({
                 }, []);
             }
 
-            const taxids = this.selectedTaxids.map(t => t.id).join(",");
+            const taxids = [...Set(this.selectedTaxids.map(t => t.id))].join(",");
             const endpoint = `${this.searchType}/${this.query.name}/${taxids}/`;
 
             this.contextData.context = [];
@@ -832,16 +831,18 @@ var vueapp = new Vue({
         },
 
         // Selectors
-        selectTaxid: function(id, source, rank, show) {
-            const isSelected = this.selectedTaxids.find(t => t.id === id);
-            show = show || !isSelected;
-            if (isSelected) {
-                if (!show)
-                    this.selectedTaxids = this.selectedTaxids.filter(
-                        t => t.id != id);
-            } else if (show) {
-                this.selectedTaxids.push({ id: id, source: source, rank: rank || "species" });
-            }
+        selectTaxid: function(id, source, rank, show=true) {
+            const selected = this.selectedTaxids.find(t => t.id === id);
+            if (selected) {
+                if (show)
+                    selected.sources.push(source)
+                else {
+                    selected.sources = selected.sources.filter(s => s !== source);
+                    if (!selected.sources.length)
+                        this.selectedTaxids.filter(t => t.id !== id);
+                }
+            } else if (show)
+                this.selectedTaxids.push({ id: id, sources: [ source ], rank: rank || "species" });
         },
 
         selectLineage: function(lineage, taxa, rank, allDescendants=false) {
@@ -873,7 +874,8 @@ var vueapp = new Vue({
         },
 
         deselectTaxa: function(taxa) {
-            this.selectedTaxids = this.selectedTaxids.filter(t => t.source != taxa);
+            this.selectedTaxids.forEach(t => t.sources = t.sources.filter(s => s != taxa));
+            this.selectedTaxids = this.selectedTaxids.filter(t => t.sources.length);
         },
 
         deselectAll: function() {
@@ -1022,11 +1024,13 @@ var vueapp = new Vue({
 
         selectedTaxa: function() {
             return Object.values(this.selectedTaxids.reduce( (selected, t) => {
-                const source = t.source || { data: { tname: t.id, lineage: t.id } };
-                const lineage = source.data.lineage;
-                selected[lineage] = selected[lineage] 
-                    || { source: source, rank: t.rank, taxids: [] };
-                selected[lineage].taxids.push(t.id);
+                const sources = t.sources || [{ data: { tname: t.id, lineage: t.id } }];
+                sources.forEach(source => {
+                    const lineage = source.data.lineage;
+                    selected[lineage] = selected[lineage] 
+                        || { source: source, rank: t.rank, taxids: [] };
+                    selected[lineage].taxids.push(t.id);
+                });
                 return selected
             }, {}))
         },
@@ -1137,7 +1141,7 @@ var vueapp = new Vue({
             if (taxids && taxids.length) {
                 this.root.descendantRanks = this.getDescendantRanks(this.root);
                 this.selectedTaxids = taxids.split("%2C").map(t => { 
-                    return { id: +t, source: this.root, rank: "species" }
+                    return { id: +t, sources: [ this.root ], rank: "species" }
                 });
             }
         }
