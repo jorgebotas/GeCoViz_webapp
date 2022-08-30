@@ -180,7 +180,7 @@ var vueapp = new Vue({
         },
         sequenceSearchResults: [],
         geneNameSearchResults: [],
-        maxSelected: 250,
+        maxSelected: 400,
         selectedTaxids: [],
         searchedTaxa: [],
         searchTimeout: {
