@@ -380,7 +380,7 @@ def get_functional_matches(field, query):
 
 
 def get_ogs_from_sequence(sequence):
-    nhits = 10
+    nhits = 100
 
     query = { "fasta": sequence, "nqueries": 1 }
 
