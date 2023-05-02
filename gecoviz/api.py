@@ -25,6 +25,7 @@ def get_description_path(field):
         path = None
     return path
 
+
 def suggestions(request, field, query):
     path = get_description_path(field)
 

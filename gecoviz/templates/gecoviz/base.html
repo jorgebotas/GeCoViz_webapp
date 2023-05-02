@@ -83,7 +83,7 @@
                 {% include "gecoviz/alert.html"%}
                 {% include "gecoviz/alert_sequence.html"%}
                 {% include "gecoviz/alert_pname.html"%}
-                {% include "gecoviz/welcome_modal.html" %}
+                {% comment %}{% include "gecoviz/welcome_modal.html" %}{% endcomment %}
                 {% include "gecoviz/cookies.html" %}
                 {% include "gecoviz/gdpr_policy.html" %}
                 {% include "gecoviz/footer.html" %}
@@ -111,12 +111,12 @@
                 document.body.style.display = "block";
             }
 
-            document.addEventListener("DOMContentLoaded", () => {
-                if ("{{ request.path }}" === "/help/")
-                    dismissWelcome();
-                else
-                    setTimeout(welcomeModal, 1000);
-            })
+            {% comment %}document.addEventListener("DOMContentLoaded", () => {{% endcomment %}
+                {% comment %}if ("{{ request.path }}" === "/help/"){% endcomment %}
+                    {% comment %}dismissWelcome();{% endcomment %}
+                {% comment %}else{% endcomment %}
+                    {% comment %}setTimeout(welcomeModal, 1000);{% endcomment %}
+            {% comment %}}){% endcomment %}
         </script>
     </body>
 </html>
