@@ -172,7 +172,7 @@ var vueapp = new Vue({
     data: {
         show: "gecoviz",
         query: { name: undefined, desc: undefined },
-        searchType: undefined,
+        searchType: "ogs",
         searchTypeChoices: undefined,
         suggestions: {
             query: [],
@@ -1055,6 +1055,7 @@ var vueapp = new Vue({
         }
     },
     mounted: async function() {
+      console.log(this.searchType)
 
         document.addEventListener("click", () => {
             d3.selectAll("#popperContainer .popper").remove();
