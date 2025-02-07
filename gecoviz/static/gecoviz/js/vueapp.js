@@ -1078,7 +1078,7 @@ var vueapp = new Vue({
         const searchTypeSelect = $("#search-type");
         this.searchTypeChoices = new Choices(searchTypeSelect[0], {
             classNames: {
-                containerInner: searchTypeSelect[0].className,
+                containerInner: searchTypeSelect[0].className.split(" "),
                 input: 'form-control',
                 inputCloned: 'form-control-sm',
                 listDropdown: 'dropdown-menu',
