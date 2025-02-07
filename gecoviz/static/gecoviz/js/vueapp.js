@@ -1125,7 +1125,6 @@ var vueapp = new Vue({
         }
         const urlParams = getUrlParams();
         const searchType = urlParams['searchType'] || 'pname';
-        console.log(this.searchType, searchType)
         const query = urlParams['query'];
         const taxids = urlParams['taxids'];
 
