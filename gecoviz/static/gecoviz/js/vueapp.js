@@ -1091,22 +1091,22 @@ var vueapp = new Vue({
             choices : [
                 {
                     value: 'ogs', 
-                    label: 'eggNOGv5 Orthologous Group (COG/ENOG)',
+                    label: 'eggNOGv5_Orthologous_Group_(COG/ENOG)',
                     selected: this.searchType == 'ogs' 
                 },
                 {
                     value: 'kos', 
-                    label: 'KEGG Orthologous Group (KO)',
+                    label: 'KEGG_Orthologous_Group_(KO)',
                     selected: this.searchType == 'kos' 
                 },
                 {
                     value: 'pname', 
-                    label: 'Gene name',
+                    label: 'Gene_name',
                     selected: this.searchType == 'pname' 
                 },
                 {
                     value: 'pfam', 
-                    label: 'PFAM domain',
+                    label: 'PFAM_domain',
                     selected: this.searchType == 'pfam'
                 },
             ]
