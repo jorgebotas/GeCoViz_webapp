@@ -1091,22 +1091,22 @@ var vueapp = new Vue({
             choices : [
                 {
                     value: 'ogs', 
-                    label: 'eggNOGv5_Orthologous_Group_(COG/ENOG)',
+                    label: 'eggNOGv5 Orthologous Group (COG/ENOG)',
                     selected: this.searchType == 'ogs' 
                 },
                 {
                     value: 'kos', 
-                    label: 'KEGG_Orthologous_Group_(KO)',
+                    label: 'KEGG Orthologous Group (KO)',
                     selected: this.searchType == 'kos' 
                 },
                 {
                     value: 'pname', 
-                    label: 'Gene_name',
+                    label: 'Gene name',
                     selected: this.searchType == 'pname' 
                 },
                 {
                     value: 'pfam', 
-                    label: 'PFAM_domain',
+                    label: 'PFAM domain',
                     selected: this.searchType == 'pfam'
                 },
             ]
@@ -1124,6 +1124,7 @@ var vueapp = new Vue({
         }
         const urlParams = getUrlParams();
         const searchType = urlParams['searchType'] || 'pname';
+        console.log(this.searchType, searchType)
         const query = urlParams['query'];
         const taxids = urlParams['taxids'];
 
