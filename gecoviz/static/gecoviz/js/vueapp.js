@@ -172,7 +172,7 @@ var vueapp = new Vue({
     data: {
         show: "gecoviz",
         query: { name: undefined, desc: undefined },
-        searchType: "ogs",
+        searchType: undefined,
         searchTypeChoices: undefined,
         suggestions: {
             query: [],
